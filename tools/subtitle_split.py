@@ -145,7 +145,7 @@ def main() -> int:
     ap.add_argument("--max", type=int, default=MAX_CHARS)
     ap.add_argument("--target", type=int, default=TARGET)
     ap.add_argument("--srt", action="store_true", help="SRT도 저장(길이 균등 배분)")
-    ap.add_argument("--cps", type=float, default=8.5, help="SRT 타이밍용 자/초 (실측 중앙 8.5)")
+    ap.add_argument("--cps", type=float, default=8.07, help="SRT 타이밍용 자/초 (실측 8.07)")
     args = ap.parse_args()
 
     if not args.script.exists():

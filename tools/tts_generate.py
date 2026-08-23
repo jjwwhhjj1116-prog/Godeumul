@@ -41,6 +41,10 @@ for _stream in (sys.stdout, sys.stderr):
 ROOT = Path(__file__).resolve().parent.parent
 API_URL = "https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
 
+# 투탕카멘 편 캡컷 프로젝트 실측: 자막 1,016자 / 125.9초 = 8.07 자/초
+CPS_MEASURED = 8.07
+CPS_PLANNING = 7.5      # 기획용 보수값 (여유 7%)
+
 
 # ──────────────────────────────────────────────────────────────
 # 환경변수
@@ -255,7 +259,10 @@ def main() -> int:
     print(f"\n대본      : {args.script}")
     print(f"출력      : {outdir}")
     print(f"보이스    : {cfg.voice_id}  ({cfg.model}, speed {cfg.speed})")
+    est = total_chars / CPS_PLANNING
+    warn = "  ← ★ 3분 초과" if est >= 180 else ""
     print(f"장면      : {len(scenes)}개 / 총 {total_chars:,}자")
+    print(f"예상 길이 : {int(est)//60}:{int(est)%60:02d}  (실측 {CPS_MEASURED}자/초, 보수 {CPS_PLANNING}){warn}")
     print(f"모드      : {'실제 생성' if args.run else '드라이런 (크레딧 0)'}\n")
 
     results: dict[str, dict] = {}
