@@ -210,6 +210,8 @@ def main() -> int:
     # ── 영상 + 오디오 ──────────────────────────────────────
     cursor = 0
     timeline: list[dict] = []
+    media_registry: list[tuple[Path, str, int]] = []   # (경로, 종류, 길이us)
+    used_media: list[Path] = []
     for k in sorted(scenes, key=int):
         n = int(k)
         tts = float(scenes[k]["duration"])
@@ -236,6 +238,8 @@ def main() -> int:
         vs["volume"] = 0.0
         cl.set_speed(vs, speed)
         v_track["segments"].append(vs)
+        media_registry.append((media.resolve(), "video", int((src if src > 0 else tts) * US)))
+        used_media.append(media.resolve())
 
         # 오디오 소재
         amedia = find_media(audio_dir, n, (".mp3", ".wav", ".m4a"))
@@ -251,6 +255,8 @@ def main() -> int:
         as_["source_timerange"] = {"start": 0, "duration": dur}
         as_["speed"] = 1.0
         a_track["segments"].append(as_)
+        media_registry.append((amedia.resolve(), "music", int(tts * US)))
+        used_media.append(amedia.resolve())
 
         timeline.append({"scene": n, "start": cursor, "dur": dur,
                          "tts": tts, "speed": speed, "img": is_img})
@@ -320,24 +326,62 @@ def main() -> int:
     out["materials"] = {**tpl["materials"], **cl.out}
     out["tracks"] = [v_track, t_track, wm_track, a_track]
 
+    out["group_container"] = None
+
+    # ★ 템플릿 폴더를 통째로 복사하면 안 된다.
+    #   draft.extra / key_value.json / Timelines/ 등 옛 프로젝트 상태가 남아
+    #   캡컷이 프로젝트를 열지 못한다. 깨끗한 폴더에 3개 파일만 쓴다.
     dest = DRAFT_ROOT / name
     if dest.exists():
         shutil.rmtree(dest)
-    shutil.copytree(args.template, dest, ignore=shutil.ignore_patterns(
-        "draft_content.json*", "template-*.tmp", "*.bak"))
+    dest.mkdir(parents=True)
     (dest / "draft_content.json").write_text(
         json.dumps(out, ensure_ascii=False), encoding="utf-8")
 
-    meta_p = dest / "draft_meta_info.json"
-    if meta_p.exists():
-        meta = json.loads(meta_p.read_text(encoding="utf-8"))
-        now = int(time.time() * US)
-        meta.update(draft_id=uid(), draft_name=name,
-                    draft_fold_path=str(dest).replace("\\", "/"),
-                    draft_root_path=str(DRAFT_ROOT).replace("\\", "/"),
-                    tm_draft_create=now, tm_draft_modified=now,
-                    tm_duration=total)
-        meta_p.write_text(json.dumps(meta, ensure_ascii=False), encoding="utf-8")
+    # ── draft_meta_info ──────────────────────────────────
+    meta = json.loads((args.template / "draft_meta_info.json").read_text(encoding="utf-8"))
+    now = int(time.time() * US)
+    meta.update(draft_id=uid(), draft_name=name,
+                draft_fold_path=str(dest).replace("\\", "/"),
+                draft_root_path=str(DRAFT_ROOT).replace("\\", "/"),
+                draft_cover="draft_cover.jpg",
+                tm_draft_create=now, tm_draft_modified=now,
+                tm_duration=total)
+    meta["draft_timeline_materials_size_"] = sum(
+        p.stat().st_size for p in used_media if p.exists())
+
+    # 미디어 등록부(draft_materials)를 새로 채운다. 비워두면 캡컷이 소재를 못 잡는다.
+    proto_media = None
+    for blk in meta.get("draft_materials") or []:
+        if blk.get("type") == 0 and blk.get("value"):
+            proto_media = blk["value"][0]
+            break
+    reg = []
+    for path, mtype, dur_us in media_registry:
+        e = copy.deepcopy(proto_media) if proto_media else {}
+        e.update({"id": uid(), "file_Path": str(path).replace("\\", "/"),
+                  "metetype": mtype, "duration": int(dur_us),
+                  "extra_info": path.name,
+                  "width": 1080 if mtype == "video" else 0,
+                  "height": 1920 if mtype == "video" else 0,
+                  "create_time": -1, "import_time": int(time.time()),
+                  "import_time_ms": now, "md5": ""})
+        reg.append(e)
+    for blk in meta.get("draft_materials") or []:
+        blk["value"] = reg if blk.get("type") == 0 else []
+    (dest / "draft_meta_info.json").write_text(
+        json.dumps(meta, ensure_ascii=False), encoding="utf-8")
+
+    # ── 표지 (첫 클립에서 뽑는다. 템플릿 표지를 물려받으면 안 된다) ──
+    first = next((p for p, k, _ in media_registry if k == "video"), None)
+    if first:
+        try:
+            subprocess.run(["ffmpeg", "-y", "-i", str(first), "-vf",
+                            "thumbnail,scale=480:-1", "-frames:v", "1",
+                            str(dest / "draft_cover.jpg")],
+                           capture_output=True, check=True)
+        except Exception:
+            pass
 
     # ── 보고 ────────────────────────────────────────────────
     print(f"\n{'장면':>4} {'시작':>8} {'길이':>7} {'TTS':>7} {'배속':>7}")
