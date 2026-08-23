@@ -5,12 +5,16 @@
 *api*key*.txt
 *API*key*.txt
 
-# ═══ 산출물 (용량) ═══
-산출물/
+# ═══ 무거운 산출물 (텍스트 산출물은 커밋한다) ═══
+산출물/**/audio/
+산출물/**/images/
+산출물/**/clips/
 *.mp3
+*.wav
 *.mp4
 *.mov
-*.wav
+*.mkv
+*.webm
 *.png
 *.jpg
 *.jpeg

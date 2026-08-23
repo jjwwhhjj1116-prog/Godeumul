@@ -69,6 +69,8 @@ class Config:
     style: float
     speaker_boost: bool
     speed: float
+    language: str
+    output_format: str
 
     @classmethod
     def from_env(cls, env: dict[str, str]) -> "Config":
@@ -86,11 +88,13 @@ class Config:
             api_key=api_key,
             voice_id=voice_id,
             model=get("ARTIFACT_MODEL", "eleven_multilingual_v2"),
-            stability=float(get("ARTIFACT_STABILITY", "0.45")),
-            similarity=float(get("ARTIFACT_SIMILARITY", "0.80")),
-            style=float(get("ARTIFACT_STYLE", "0.25")),
+            stability=float(get("ARTIFACT_STABILITY", "0.38")),
+            similarity=float(get("ARTIFACT_SIMILARITY", "0.85")),
+            style=float(get("ARTIFACT_STYLE", "0.50")),
             speaker_boost=get("ARTIFACT_SPEAKER_BOOST", "true").lower() == "true",
-            speed=float(get("ARTIFACT_SPEED", "1.05")),
+            speed=float(get("ARTIFACT_SPEED", "1.0")),
+            language=get("ARTIFACT_LANGUAGE", "ko"),
+            output_format=get("ARTIFACT_OUTPUT_FORMAT", "mp3_44100_128"),
         )
 
     def signature(self) -> str:
@@ -98,6 +102,7 @@ class Config:
         parts = [
             self.voice_id, self.model, f"{self.stability}", f"{self.similarity}",
             f"{self.style}", f"{self.speaker_boost}", f"{self.speed}",
+            self.language, self.output_format,
         ]
         return "|".join(parts)
 
@@ -172,12 +177,26 @@ def synth(cfg: Config, text: str, out: Path) -> None:
             "speed": cfg.speed,
         },
     }
-    resp = requests.post(
-        API_URL.format(voice_id=cfg.voice_id),
-        headers={"xi-api-key": cfg.api_key, "Content-Type": "application/json"},
-        json=payload,
-        timeout=180,
-    )
+    # 대시보드의 Language Override에 해당. 모델에 따라 거부될 수 있어 실패 시 빼고 재시도한다.
+    if cfg.language:
+        payload["language_code"] = cfg.language
+
+    def post(body: dict):
+        return requests.post(
+            API_URL.format(voice_id=cfg.voice_id),
+            headers={"xi-api-key": cfg.api_key, "Content-Type": "application/json"},
+            params={"output_format": cfg.output_format} if cfg.output_format else None,
+            json=body,
+            timeout=180,
+        )
+
+    resp = post(payload)
+    if resp.status_code != 200 and "language_code" in payload and \
+            "language" in resp.text.lower():
+        payload.pop("language_code")
+        print("    (이 모델은 language_code를 받지 않아 생략하고 재시도)")
+        resp = post(payload)
+
     if resp.status_code != 200:
         raise RuntimeError(f"HTTP {resp.status_code}: {resp.text[:400]}")
 
