@@ -33,9 +33,10 @@ for _stream in (sys.stdout, sys.stderr):
     except (AttributeError, ValueError):
         pass
 
-# 캡컷에서 티 안 나게 넘어가는 실용 범위. 밖으로 나가면 눈에 보인다.
-SPEED_OK = (0.60, 2.00)
-SPEED_WARN = (0.50, 3.00)
+# 실제 프로젝트("투탕카멘_고대유물의 비밀") 실측 배속은 0.78x~3.80x였다.
+# 생성 클립이 대부분 느린 카메라 무빙이라 3배속도 티가 안 난다.
+SPEED_OK = (0.75, 3.00)
+SPEED_WARN = (0.50, 4.50)
 
 VIDEO_EXTS = (".mp4", ".mov", ".webm", ".mkv", ".m4v")
 IMAGE_EXTS = (".png", ".jpg", ".jpeg", ".webp")

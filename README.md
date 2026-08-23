@@ -55,7 +55,8 @@ L5 MECHANISM★ 부품 하나에 초근접. 힘이 붉은 화살표로 흐른다
 ├─ 01~07 단계 지침
 ├─ tools/
 │  ├─ tts_generate.py    3단계 — 장면별 TTS + 길이표
-│  └─ speed_table.py     5단계 — 캡컷 배속 계산
+│  ├─ speed_table.py     5단계 — 캡컷 배속 계산
+│  └─ subtitle_split.py  5단계 — 자막 한 줄 분할(어절 보존)
 └─ 산출물/
    └─ EP01_진시황릉/
       ├─ 01.대본.txt
@@ -82,6 +83,9 @@ python tools/tts_generate.py "산출물/EP01_진시황릉/02.시각화.txt" --ru
 ```bash
 python tools/speed_table.py "산출물/EP01_진시황릉"
 ```
+```bash
+python tools/subtitle_split.py "산출물/EP01_진시황릉/01.대본.txt" --srt
+```
 
 `tts_generate.py`는 **기본이 드라이런**이다. `--run` 없이는 크레딧을 쓰지 않는다.
 텍스트가 안 바뀐 장면은 자동으로 건너뛰므로 재실행해도 안전하다.
@@ -94,9 +98,12 @@ python tools/speed_table.py "산출물/EP01_진시황릉"
 |---|---|
 | 출력 | 1080×1920 · 9:16 · 30fps · 3분 미만 |
 | 나레이션 보이스 | `wTGzPmtwk7nDNybbk0OL` (ElevenLabs) |
-| TTS 모델 | `eleven_multilingual_v2` · speed 1.05 (Ch4만 1.00) |
-| 자막 | 지마켓 산스 Bold · 크기 11 · 획 40 · **정가운데** · 흰색 |
-| 자막 분할 | 한 호흡 1줄 · 최대 16자 · 2행 금지 |
+| TTS 모델 | `eleven_multilingual_v2` · speed 1.05 · stability 0.4 · similarity 0.85 · style 0.50 · Language ko |
+| 자막 | **KCC간판체 · 크기 12 · 획 0.08 · 흰색+검정테두리 · 그림자 없음** |
+| 자막 위치 | 가로 중앙, 세로 −0.206 · 스케일 1.0 |
+| 자막 애니 | 입장 "하나씩" 33ms · 퇴장 없음 |
+| 자막 분할 | **한 줄 고정 · 최대 16자 · 어절 경계** (`tools/subtitle_split.py`) |
+| 워터마크 | 우하단 x=0.6772 y=−0.8164 · 스케일 0.2304 · 크로마키 #fcfcfc |
 | 사운드 | 나레이션 −16 LUFS / BGM −26 LUFS |
 | 안전 영역 | 하단 18%를 비운다 (쇼츠 UI) |
 
