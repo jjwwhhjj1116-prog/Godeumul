@@ -674,8 +674,39 @@ v1.0은 "이미지 모델이 글자를 뭉개니 캡컷에서 얹어라"였다. 
    L5 MECHANISM  ★ static 고정. 부품 하나의 동작 1회 + 매질 흐름.
                  화살표는 정지시키거나 아주 느리게 맥동.
 
+■ ★★★ [카메라 이동 쿼터] — 2026-08-24 신설. 이걸 어기면 슬라이드쇼가 된다.
+
+   EP01 1차 작성에서 STATIC이 25컷 중 14컷(56%)이 나왔다. 이미지에는 단면이
+   있는데 <카메라가 파고들지 않아> 정지 이미지를 넘기는 영상이 됐다.
+   원본 신비한건축사전은 <정지 컷이 사실상 없다>. 전 구간이 슬로우 드리프트·
+   달리·궤도다. 그래서 아래를 쿼터로 강제한다.
+
+   ┌────────────────────────────────────────────────┐
+   │  STATIC(정지)        전체의 20% 이하 (25컷이면 5컷)  │
+   │  ★ THROUGH(관통)     최소 4컷                      │
+   │  같은 무빙 2연속      금지                          │
+   └────────────────────────────────────────────────┘
+
+   ★ [관통 THROUGH] — 이 채널의 시그니처 무빙이다.
+     카메라가 <표면·지층·벽·증기층을 뚫고> 안으로 들어간다.
+     L2 → L3 전환(겉 → 속)에는 반드시 이 무빙을 쓴다. 컷을 바꿔 끼우는 게
+     아니라 카메라가 실제로 들어가야 "파헤친다"는 느낌이 난다.
+
+     표기 예:
+       The camera keeps descending and pushes straight through the mound
+       surface into the cross-section, the sliced strata sweeping past the lens.
+       The camera descends through the ground line, passing down through the
+       soil strata into the lit underground palace below.
+       The camera pushes straight through the corridor wall, the stone opening
+       away to reveal the row of bronze crossbows inside.
+
+   ※ 아래 "L3 정지" 주의는 <큰 스윙·궤도 회전>을 하지 말라는 뜻이지
+     카메라를 세우라는 뜻이 아니다. 느린 push in·관통은 문제없이 나온다.
+     (EP01에서 이 문장을 정지로 오독해 56%가 STATIC이 됐다.)
+
 ■ ★ 절대 금지 (이 채널 특유의 실패 패턴):
-   · L3 단면 컷에서 카메라를 크게 움직이면 → 단면이 닫히거나 벽이 생긴다.
+   · L3 단면 컷에서 카메라를 <크게 휘두르거나 궤도 회전>하면 → 단면이 닫히거나
+     벽이 생긴다. 느린 직진(push in·관통)은 괜찮다.
    · L4 분해 컷에서 "assemble" / "come together"를 쓰면 → 부품이 뭉개진다.
    · 붉은 화살표에 "animate" / "flowing"을 쓰면 → 화살표가 액체로 변한다.
      화살표는 "steady red arrows remain in place"로 고정한다.
@@ -780,6 +811,9 @@ technical documentary mood.
   ☐ 마지막에 🔩 단면 컷 = N, N / ⚙ 분해 컷 = N, N?
 
   ─── I2V 영상 프롬프트 ───
+  ☐ ★ STATIC이 전체의 20%를 넘지 않나?
+  ☐ ★ 관통(THROUGH) 컷이 4개 이상인가? L2→L3 전환에 들어갔나?
+  ☐ ★ 같은 무빙이 2연속으로 오지 않나?
   ☐ 형태 재묘사 0건? 움직임 1개 + 환경만? 20~50단어?
   ☐ L3에서 카메라를 크게 움직이지 않았나?
   ☐ L4에서 "assemble" 계열 단어를 안 썼나?
@@ -836,7 +870,8 @@ technical documentary mood.
   ── I2V 영상 프롬프트 ──
   18. ★ 유물·부품 형태 재묘사 절대 금지.
   19. 움직임 1개 + 카메라 + 환경 + 톤만. 20~50단어.
-  20. L3 정지·L4 궤도1회·L5 고정 — [줌인 레벨별 I2V 가이드] 준수.
+  20. ★ [카메라 이동 쿼터] 준수 — STATIC 20% 이하, 관통 4컷 이상, 같은 무빙 2연속 금지.
+      L3는 <느린 직진>은 되고 큰 스윙만 안 된다. 세워두는 게 아니다.
   21. 화살표는 "remain in place"로 고정. "flowing/animate" 금지.
   22. 컷 사이 빈 줄 1개, 라벨 금지 — Flow Automation 직행.
   23. 콘텐츠 필터 치환은 영상 프롬프트에만. 나레이션 원문은 무수정.

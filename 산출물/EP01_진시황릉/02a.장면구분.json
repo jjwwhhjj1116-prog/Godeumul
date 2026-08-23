@@ -18,7 +18,7 @@
   "tts": 5.108,
   "speed": 1.17,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a wide establishing shot of a vast grass-covered earthen burial mound rising from a flat plain, the mound in full color with green turf and ochre soil, a distant walled Qin-era town and the Li mountain ridge behind it rendered in grayscale, tiny scale-reference trees and a footpath at the base, soft overcast morning light, a thin red leader line with a small dark label plate reading \"QIN SHI HUANG MAUSOLEUM\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
-  "vid": "Slow aerial crane descending toward the burial mound as thin morning mist drifts across the plain and cloud shadows sweep over the turf. Clean 3D diorama render, ochre and grayscale tones, technical documentary mood.",
+  "vid": "Continuous aerial crane descending steadily toward the burial mound, the camera never stopping, thin morning mist drifting across the plain below. Clean 3D diorama render, ochre and grayscale tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 42,
   "img_file": "EP01_cut01_a.jpg"
@@ -42,7 +42,7 @@
   "tts": 4.505,
   "speed": 1.33,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a vertical cross-section cutaway of the burial mound, the ground sliced open along a clean flat cut face like an architectural section drawing, clearly layered strata of topsoil, rammed earth courses, clay and bedrock, several thin rough looter shafts boring inward from the outer edges but stopping far short, the sealed central chamber deep in the middle untouched and lit in full color while the surrounding earth stays grayscale, thin red dashed lines tracing each shaft, clinical even lighting so the interior is fully legible, a small dark label plate reading \"LOOTER SHAFTS\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
-  "vid": "Static shot on the vertical cutaway. Thin red dashed tunnel lines trace inward from the outer edges and stop short of the central chamber while fine dust settles. Clean 3D diorama render, sandstone and signal-red tones, technical documentary mood.",
+  "vid": "The camera keeps descending and pushes straight through the mound surface into the cross-section, the sliced strata sweeping past the lens as the lit central chamber comes into view. Clean 3D diorama render, sandstone and signal-red tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 48,
   "img_file": "EP01_cut02_a.jpg"
@@ -66,7 +66,7 @@
   "tts": 4.923,
   "speed": 1.22,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a medium approach shot of the burial mound grass surface, weathered turf and exposed patches of ochre soil in full color, everything beyond the mound fully grayscale, a few bare pomegranate trees on the slope, completely deserted, still heavy air, flat overcast light. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground. No text, no letters, no numbers.",
-  "vid": "Slow dolly in toward the empty grass slope. Only the grass blades and one drifting seed head move; nothing else stirs. Clean 3D diorama render, muted green and gray tones, technical documentary mood.",
+  "vid": "Slow steady dolly in across the empty grass slope, grass blades passing close to the lens. Clean 3D diorama render, muted green and gray tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 40,
   "img_file": "EP01_cut03_a.jpg"
@@ -90,7 +90,7 @@
   "tts": 4.83,
   "speed": 1.24,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an extreme wide shot of the burial mound as a dark silhouette against a pale overcast dusk sky, the entire scene desaturated to near monochrome, a single bold 3D red pointer arrow with an attached dark label plate reading \"NO GUARDS\" in white uppercase letters pointing at the mound, low mist drifting across the plain. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
-  "vid": "Static wide shot. The red label plate pops in with an elastic bounce and settles while low mist drifts across the plain. Clean 3D diorama render, monochrome and signal-red tones, technical documentary mood.",
+  "vid": "Slow drift back and up from the mound silhouette while the red label plate pops in with an elastic bounce and low mist rolls past. Clean 3D diorama render, monochrome and signal-red tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 38,
   "img_file": "EP01_cut04_a.jpg"
@@ -114,7 +114,7 @@
   "tts": 5.898,
   "speed": 1.36,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an aerial isometric view of a vast rectangular construction pit freshly cut into the plain at the foot of a mountain, long earth ramps descending into it, surveying stakes and taut rope grid lines across the floor, the pit and raw earthworks in full color, the background mountains and sky in grayscale, warm dawn backlight throwing long shadows, a small dark label plate reading \"246 BC\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
-  "vid": "Slow crane rising over the open construction pit as dawn light sweeps across the earth ramps and dust drifts through the shadows. Clean 3D diorama render, dawn-gold and gray tones, technical documentary mood.",
+  "vid": "Crane rising steadily over the open construction pit as dawn light sweeps along the earth ramps and dust drifts through the shadows. Clean 3D diorama render, dawn-gold and gray tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 36,
   "img_file": "EP01_cut05_a.jpg"
@@ -138,7 +138,7 @@
   "tts": 5.248,
   "speed": 1.14,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a high-angle wide shot of hundreds of laborers in coarse linen tunics hauling massive stone blocks on wooden sledges in long converging lines down earth ramps into a construction pit, the crowd, sledges and stone in full color, the surrounding landscape in grayscale, thick sunlit dust haze and hard ground shadows, composition emphasizing the scale contrast between the tiny figures and the enormous excavation, a small dark label plate reading \"700,000 LABORERS\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark.",
-  "vid": "Slow high-angle crane over the worksite. The lines of laborers inch forward hauling their sledges as dust rises through the light. Clean 3D diorama render, ochre and gray tones, technical documentary mood.",
+  "vid": "High-angle camera tracking sideways across the worksite while the lines of laborers haul their sledges forward through the dust. Clean 3D diorama render, ochre and gray tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 35,
   "img_file": "EP01_cut06_b.jpg"
@@ -161,7 +161,7 @@
   "tts": 3.111,
   "speed": 1.29,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a vertical cross-section cutaway with the ground sliced open along a clean flat cut face, above the ground line a grayscale Qin palace city with courtyards and tiled roofs, below the ground line an identical palace complex rebuilt underground in full color, the two mirrored in exact symmetry across the ground line, layered soil and bedrock strata between them, clinical even lighting, a small dark label plate reading \"MIRRORED BELOW\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
-  "vid": "Static shot on the mirrored cutaway. The underground palace lights warm up room by room while the surface city above stays gray and still. Clean 3D diorama render, warm amber and gray tones, technical documentary mood.",
+  "vid": "The camera descends through the ground line, passing down through the soil strata from the gray surface city into the lit underground palace below. Clean 3D diorama render, warm amber and gray tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 33,
   "img_file": "EP01_cut07_b.jpg"
@@ -185,7 +185,7 @@
   "tts": 5.526,
   "speed": 1.45,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a vertical cross-section cutaway of a sloping stone entrance corridor cut into bedrock, a massive multi-ton stone portcullis slab poised high in its carved runner slot above the passage, heavy timber props and rope restraints holding it, the corridor and slab in full color, the surrounding rock strata in grayscale, clinical even lighting so the whole mechanism is legible, a small dark label plate reading \"STONE PORTCULLIS\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
-  "vid": "Static cutaway. The stone slab lowers a short distance into its runner slot as grit spills from the channels. Clean 3D diorama render, stone-gray and amber tones, technical documentary mood.",
+  "vid": "Steady dolly in down the sloping corridor toward the raised stone slab, the walls sliding past the lens as grit spills from the runner channels. Clean 3D diorama render, stone-gray and amber tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 30,
   "img_file": "EP01_cut08_a.jpg"
@@ -208,7 +208,7 @@
   "tts": 3.111,
   "speed": 1.29,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, the same sloping corridor cutaway now completely sealed by the lowered stone slab, the chamber beyond dark and empty, a single guttering torch on the wall casting a small amber pool of light, everything else desaturated to near black, heavy still air. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground. No text, no letters, no numbers.",
-  "vid": "Static shot. The last torch flame gutters lower and the chamber dims as dust hangs motionless in the air. Clean 3D diorama render, near-black and amber tones, technical documentary mood.",
+  "vid": "The camera holds still on the sealed corridor as the last torch gutters out and the chamber sinks into darkness. Clean 3D diorama render, near-black and amber tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 28,
   "img_file": "EP01_cut09_a.jpg"
@@ -233,7 +233,7 @@
   "tts": 5.573,
   "speed": 1.44,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a vertical cross-section cutaway of a sealed side chamber deep underground, about a dozen artisan figures in simple linen tunics standing and crouching inside among scattered bronze tools and half-finished work, the doorway behind them plugged solid with a fitted stone block, the figures and torchlight in warm full color, the surrounding rock strata in grayscale, a small dark label plate reading \"ARTISANS SEALED IN\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark.",
-  "vid": "Static cutaway. The artisan figures shift slightly and torchlight flickers across the fitted stone plug behind them. Clean 3D diorama render, amber and gray tones, technical documentary mood.",
+  "vid": "Slow dolly in through the sealed chamber toward the trapped artisans, torchlight flickering across the fitted stone plug behind them. Clean 3D diorama render, amber and gray tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 26,
   "img_file": "EP01_cut10_a.jpg"
@@ -257,7 +257,7 @@
   "tts": 5.016,
   "speed": 1.2,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, the same sealed underground chamber now drained of nearly all color, the wall torch extinguished with a thin ribbon of smoke rising, the artisan figures collapsed on the floor, a glowing red digital HUD readout showing \"O2 6%\" floating in the air, bright warning red as the only saturated color in the frame, harsh raking side light and heavy shadow. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark.",
-  "vid": "Static shot. The torch dies to a thread of smoke and the red HUD figure ticks steadily downward. Clean 3D diorama render, desaturated gray and warning-red tones, technical documentary mood.",
+  "vid": "Slow tilt down from the dying torch to the collapsed figures on the floor as the red HUD figure ticks steadily downward. Clean 3D diorama render, desaturated gray and warning-red tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 25,
   "img_file": "EP01_cut11_b.jpg"
@@ -282,7 +282,7 @@
   "tts": 5.016,
   "speed": 1.2,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an extreme close-up on a multi-ton granite portcullis slab dropping into its carved runner socket, thick bold red 3D directional arrows tracing the load path straight down through the slab and into the stone floor socket, stone grit and chips spraying from the channel, the slab and the red arrows in full color, everything around them grayscale, clinical high-key lighting so every edge is legible, a small dark label plate reading \"MULTI-TON SLAB\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
-  "vid": "Static extreme close-up. The slab drops the last few centimetres into its socket with grit spraying outward, and the steady red arrows remain in place. Clean 3D diorama render, stone-gray and signal-red tones, technical documentary mood.",
+  "vid": "Fast push in following the granite slab as it drops into its socket, grit spraying outward, the steady red arrows remaining in place. Clean 3D diorama render, stone-gray and signal-red tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 47,
   "img_file": "EP01_cut12_b.jpg"
@@ -306,7 +306,7 @@
   "tts": 4.412,
   "speed": 1.36,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a wide vertical cross-section cutaway showing the sealed stone door blocking the main corridor and a narrow rough looter tunnel curving around it through the surrounding packed earth and breaking into the chamber from the side, the bypass tunnel path traced with a thin red line, the tunnel and chamber interior in full color, the bedrock and soil strata in grayscale, clinical even lighting, a small dark label plate reading \"BYPASS TUNNEL\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
-  "vid": "Static cutaway. The thin red line draws itself along the bypass tunnel from outside toward the chamber as loose soil trickles down the shaft. Clean 3D diorama render, earth-brown and signal-red tones, technical documentary mood.",
+  "vid": "The camera travels along the bypass tunnel from outside, curving around the sealed door and breaking into the chamber, a thin red line drawing ahead of it. Clean 3D diorama render, earth-brown and signal-red tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 22,
   "img_file": "EP01_cut13_a.jpg"
@@ -330,7 +330,7 @@
   "tts": 5.944,
   "speed": 1.35,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a vertical cross-section cutaway split into two halves side by side, on the left a sealed chamber with collapsed artisan figures and a dead torch, on the right the same tomb breached by a rough bypass tunnel with the stone door still intact and useless, both halves drained to near monochrome with bright warning red as the only saturated color, a bold red X mark over each half, a small dark label plate reading \"BOTH FAIL\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark.",
-  "vid": "Static shot on the split cutaway. The two red X marks pop in one after the other with an elastic bounce as dust settles in both halves. Clean 3D diorama render, monochrome and warning-red tones, technical documentary mood.",
+  "vid": "Slow pull back from the split cutaway as the two red X marks pop in one after the other and dust settles in both halves. Clean 3D diorama render, monochrome and warning-red tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 21,
   "img_file": "EP01_cut14_b.jpg"
@@ -354,7 +354,7 @@
   "tts": 5.341,
   "speed": 1.12,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a vertical cross-section cutaway of a long stone tomb corridor, the side wall sliced open to reveal a row of bronze crossbows mounted inside recessed niches along its whole length, each aimed down the passage, the crossbows in warm bronze full color while the corridor stonework stays grayscale, thin taut trip cords running along the floor, clinical even lighting so every niche is legible, a small dark label plate reading \"CROSSBOWS IN THE WALL\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
-  "vid": "Static cutaway with a very slow push in along the corridor. Dust drifts through the niches while the mounted crossbows stay perfectly still. Clean 3D diorama render, bronze and gray tones, technical documentary mood.",
+  "vid": "The camera pushes straight through the corridor wall, the stone opening away to reveal the row of bronze crossbows waiting inside their niches. Clean 3D diorama render, bronze and gray tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 19,
   "img_file": "EP01_cut15_b.jpg"
@@ -378,7 +378,7 @@
   "tts": 4.969,
   "speed": 1.21,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a cross-section cutaway of a simple deep pit trap dug under a tomb corridor floor, the pit already sprung and standing open with broken planks, a second intruder figure calmly stepping around its edge and walking on, the whole scene desaturated to near monochrome, a large bold red X mark over the open pit, a small dark label plate reading \"ONE USE ONLY\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark.",
-  "vid": "Static cutaway. The red X mark pops in over the open pit with an elastic bounce while loose soil trickles from the broken planks. Clean 3D diorama render, monochrome and warning-red tones, technical documentary mood.",
+  "vid": "Locked-off shot on the sprung pit as the red X mark pops in with an elastic bounce and loose soil trickles from the broken planks. Clean 3D diorama render, monochrome and warning-red tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 17,
   "img_file": "EP01_cut16_b.jpg"
@@ -401,7 +401,7 @@
   "tts": 3.204,
   "speed": 1.25,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a medium side-tracking shot along a row of ancient bronze Qin dynasty crossbows mounted in wall niches, their lacquered wooden stocks and green verdigris bronze fittings in rich full color, the stone wall behind them completely grayscale, taut bowstrings catching a hard rim light, shallow depth of field falling off down the row. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground. No text, no letters, no numbers.",
-  "vid": "Slow lateral tracking move along the row of mounted crossbows. The weapons stay perfectly still as the light sweeps across their bronze fittings. Clean 3D diorama render, verdigris and gray tones, technical documentary mood.",
+  "vid": "Lateral tracking move gliding along the row of mounted crossbows, hard rim light sweeping across their bronze fittings. Clean 3D diorama render, verdigris and gray tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 15,
   "img_file": "EP01_cut17_b.jpg"
@@ -425,7 +425,7 @@
   "tts": 6.13,
   "speed": 1.31,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an exploded technical view of an ancient Chinese bronze crossbow trigger mechanism, exactly three cast bronze components floating apart in mid-air with wide visible gaps between them, arranged in assembly order from top to bottom: the string catch that holds the bowstring, the trigger lever, and the pivot link between them, thin white assembly axis lines connecting the three parts through their pivot holes, a plain neutral grayscale studio backdrop with no environment at all, even soft light from all directions with no strong shadows, the bronze parts in rich warm full color, a small dark label plate reading \"THREE PARTS ONLY\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
-  "vid": "Slow orbit around the three floating bronze parts. Each component hovers in place and rotates almost imperceptibly while the thin white axis lines stay fixed. Clean 3D diorama render, bronze and neutral gray tones, technical documentary mood.",
+  "vid": "Slow orbit around the three floating bronze parts, each hovering and turning almost imperceptibly while the thin white axis lines stay fixed. Clean 3D diorama render, bronze and neutral gray tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 45,
   "img_file": "EP01_cut18_b.jpg"
@@ -450,7 +450,7 @@
   "tts": 7.57,
   "speed": 1.32,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an extreme close-up on the assembled bronze crossbow trigger mechanism seen in cross section, the taut bowstring hooked over the string catch, thick bold red 3D directional arrows tracing the tension load from the drawn bowstring into the catch and down through the pivot link into the locked trigger lever, a glowing red digital HUD readout showing \"200 KG DRAW\" floating beside it, the bronze parts and red arrows in full color, everything else grayscale, clinical high-key lighting so every contact surface is legible. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
-  "vid": "Static extreme close-up. The bowstring creaks under load and the bronze parts hold absolutely still while the steady red arrows remain in place. Clean 3D diorama render, bronze and signal-red tones, technical documentary mood.",
+  "vid": "Extreme slow push in onto the loaded string catch, the bowstring creaking under tension while the steady red arrows remain in place. Clean 3D diorama render, bronze and signal-red tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 12,
   "img_file": "EP01_cut19_a.jpg"
@@ -474,7 +474,7 @@
   "tts": 5.898,
   "speed": 1.36,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an exploded technical view showing the link between a tomb floor and a mounted crossbow, a thin taut trip cord running along the stone floor, rising through a drilled channel in the wall, and hooking onto the crossbow trigger lever, the whole linkage pulled apart in mid-air with visible gaps between the floor slab, the cord, the wall channel and the trigger, a continuous thin red line tracing the cord path through all the separated pieces, plain neutral grayscale studio backdrop, even soft light from all directions, a small dark label plate reading \"TRIP CORD PATH\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
-  "vid": "Slow orbit around the separated linkage pieces. They hover in place while the thin red cord line stays fixed through the gaps. Clean 3D diorama render, neutral gray and signal-red tones, technical documentary mood.",
+  "vid": "Slow orbit around the separated linkage while the camera follows the thin red cord line from the floor slab up through the wall channel to the trigger. Clean 3D diorama render, neutral gray and signal-red tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 11,
   "img_file": "EP01_cut20_b.jpg"
@@ -498,7 +498,7 @@
   "tts": 5.294,
   "speed": 1.13,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an extreme close-up at the instant the bronze crossbow trigger releases, the string catch snapping over and the bowstring driving forward, a bronze bolt already blurring out of the frame, thick bold red 3D directional arrows exploding outward along the release path from the catch through the string to the bolt, a bright flash of stored energy at the catch, the bronze and red arrows in vivid full color against a fully grayscale stone background, clinical high-key lighting. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground. No text, no letters.",
-  "vid": "Static extreme close-up. The catch snaps over and the bowstring drives forward once while the steady red arrows remain in place and dust bursts from the niche. Clean 3D diorama render, bronze and flash-red tones, technical documentary mood.",
+  "vid": "Sudden fast push in at the instant of release, the catch snapping over and the bowstring driving forward once, dust bursting from the niche while the steady red arrows remain in place. Clean 3D diorama render, bronze and flash-red tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 8,
   "img_file": "EP01_cut21_a.jpg"
@@ -523,7 +523,7 @@
   "tts": 7.105,
   "speed": 1.13,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a vertical cross-section cutaway of the underground palace floor, shallow channels and basins cut into the stone and filled with dense mirror-like liquid mercury forming miniature rivers and a sea, a pale toxic vapour layer rising from the surface and filling the chamber and the corridor above it, the mercury in bright metallic silver and the vapour in a faint sickly green, everything else grayscale, clinical even lighting, a small dark label plate reading \"MERCURY VAPOUR\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
-  "vid": "Static cutaway. The mirror-like mercury surface ripples very slightly while the pale vapour layer drifts upward and thickens in the corridor. Clean 3D diorama render, silver and sickly-green tones, technical documentary mood.",
+  "vid": "The camera sinks down through the drifting vapour layer to the mirror-like mercury below, its surface rippling very slightly. Clean 3D diorama render, silver and sickly-green tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 6,
   "img_file": "EP01_cut22_a.jpg"
@@ -548,7 +548,7 @@
   "tts": 7.059,
   "speed": 1.13,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an exploded technical view of the tomb's three defence layers pulled apart vertically in mid-air with wide visible gaps between them, from top to bottom: the multi-ton stone portcullis slab, the row of wall-mounted bronze crossbows with their trip cords, and the mercury-filled floor channels with rising vapour, thin white assembly axis lines connecting the three layers, plain neutral grayscale studio backdrop with no environment, even soft light from all directions, each layer picked out in its own color while the backdrop stays gray, a small dark label plate reading \"THREE LAYERS\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
-  "vid": "Slow orbit around the three separated defence layers. Each layer hovers in place and turns almost imperceptibly while the white axis lines stay fixed. Clean 3D diorama render, neutral gray with stone, bronze and silver accents, technical documentary mood.",
+  "vid": "Slow orbit rising above the three separated defence layers, each turning almost imperceptibly while the white axis lines stay fixed. Clean 3D diorama render, neutral gray with stone, bronze and silver accents tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 5,
   "img_file": "EP01_cut23_b.jpg"
@@ -571,7 +571,7 @@
   "tts": 3.855,
   "speed": 1.56,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a wide pull-back shot of the present-day burial mound covered in grass and scrub, modern survey equipment and a small remote sensing station standing quietly at its base, no excavation anywhere, the mound and equipment in muted full color, the surrounding farmland in grayscale, flat even overcast light, calm settled atmosphere. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground. No text, no letters, no numbers.",
-  "vid": "Slow pull back away from the mound. Grass moves faintly in the wind and a thin cloud shadow crosses the slope. Clean 3D diorama render, muted green-gray tones, technical documentary mood.",
+  "vid": "The camera descends back down to ground level at the present-day mound, grass moving faintly and a thin cloud shadow crossing the slope. Clean 3D diorama render, muted green-gray tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 2,
   "img_file": "EP01_cut24_a.jpg"
@@ -594,7 +594,7 @@
   "tts": 5.898,
   "speed": 1.36,
   "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an extreme wide final shot of the burial mound at rest on the plain seen from a distance, the whole landscape softly desaturated with only the mound holding a faint warm tone, a vast quiet sky above, low haze along the horizon, calm settled closing atmosphere. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground. No text, no letters, no numbers.",
-  "vid": "Very slow pull back and slight crane up away from the distant mound as low haze drifts across the plain. Clean 3D diorama render, muted earth and pale sky tones, technical documentary mood.",
+  "vid": "Very slow pull back to an extreme wide view of the distant mound as low haze drifts along the horizon. Clean 3D diorama render, muted earth and pale sky tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 1,
   "img_file": "EP01_cut25_b.jpg"
