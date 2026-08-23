@@ -143,7 +143,7 @@ def main() -> int:
     ap.add_argument("--template", type=Path, default=TEMPLATE)
     args = ap.parse_args()
 
-    ep = args.episode
+    ep = args.episode.resolve()          # 캡컷은 절대경로만 인식한다
     name = args.name or f"{ep.name}_자동"
     audio_dir, clip_dir = ep / "audio", ep / "clips"
     dur_path, cue_path = audio_dir / "durations.json", ep / "자막.json"
@@ -221,7 +221,7 @@ def main() -> int:
 
         # 영상 소재
         vm = copy.deepcopy(tpl["materials"]["videos"][0])
-        vm.update(id=uid(), path=str(media).replace("\\", "/"),
+        vm.update(id=uid(), path=str(media.resolve()).replace("\\", "/"),
                   material_name=media.name, local_material_id=uid(),
                   duration=int((src if src > 0 else tts) * US),
                   type="photo" if is_img else "video",
@@ -240,7 +240,7 @@ def main() -> int:
         # 오디오 소재
         amedia = find_media(audio_dir, n, (".mp3", ".wav", ".m4a"))
         am = copy.deepcopy(tpl["materials"]["audios"][0])
-        am.update(id=uid(), path=str(amedia).replace("\\", "/"),
+        am.update(id=uid(), path=str(amedia.resolve()).replace("\\", "/"),
                   name=amedia.name, duration=int(tts * US), local_material_id=uid())
         cl.out["audios"].append(am)
 
@@ -305,7 +305,7 @@ def main() -> int:
         if m["id"] == wseg["material_id"]:
             wm_mat = copy.deepcopy(m); break
     if wm_mat:
-        wm_mat.update(id=uid(), path=str(WATERMARK).replace("\\", "/"),
+        wm_mat.update(id=uid(), path=str(WATERMARK.resolve()).replace("\\", "/"),
                       material_name=WATERMARK.name, local_material_id=uid())
         cl.out["videos"].append(wm_mat)
         wseg["id"] = uid(); wseg["material_id"] = wm_mat["id"]

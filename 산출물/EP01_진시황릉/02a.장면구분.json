@@ -21,7 +21,9 @@
   "vid": "Continuous aerial crane descending steadily toward the burial mound, the camera never stopping, thin morning mist drifting across the plain below. Clean 3D diorama render, ochre and grayscale tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 42,
-  "img_file": "EP01_cut01_a.jpg"
+  "img_file": "EP01_cut01_a.jpg",
+  "search": "qin shi",
+  "res_idx": 0
  },
  {
   "n": 2,
@@ -45,7 +47,9 @@
   "vid": "The camera keeps descending and pushes straight through the mound surface into the cross-section, the sliced strata sweeping past the lens as the lit central chamber comes into view. Clean 3D diorama render, sandstone and signal-red tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 48,
-  "img_file": "EP01_cut02_a.jpg"
+  "img_file": "EP01_cut02_a.jpg",
+  "search": "cross section view",
+  "res_idx": 0
  },
  {
   "n": 3,
@@ -69,7 +73,9 @@
   "vid": "Slow steady dolly in across the empty grass slope, grass blades passing close to the lens. Clean 3D diorama render, muted green and gray tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 40,
-  "img_file": "EP01_cut03_a.jpg"
+  "img_file": "EP01_cut03_a.jpg",
+  "search": "grass surface",
+  "res_idx": 0
  },
  {
   "n": 4,
@@ -93,7 +99,9 @@
   "vid": "Slow drift back and up from the mound silhouette while the red label plate pops in with an elastic bounce and low mist rolls past. Clean 3D diorama render, monochrome and signal-red tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 38,
-  "img_file": "EP01_cut04_a.jpg"
+  "img_file": "EP01_cut04_a.jpg",
+  "search": "pointer",
+  "res_idx": 0
  },
  {
   "n": 5,
@@ -117,7 +125,9 @@
   "vid": "Crane rising steadily over the open construction pit as dawn light sweeps along the earth ramps and dust drifts through the shadows. Clean 3D diorama render, dawn-gold and gray tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 36,
-  "img_file": "EP01_cut05_a.jpg"
+  "img_file": "EP01_cut05_a.jpg",
+  "search": "construction pit",
+  "res_idx": 0
  },
  {
   "n": 6,
@@ -141,7 +151,9 @@
   "vid": "High-angle camera tracking sideways across the worksite while the lines of laborers haul their sledges forward through the dust. Clean 3D diorama render, ochre and gray tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 35,
-  "img_file": "EP01_cut06_b.jpg"
+  "img_file": "EP01_cut06_b.jpg",
+  "search": "laborers",
+  "res_idx": 1
  },
  {
   "n": 7,
@@ -164,7 +176,9 @@
   "vid": "The camera descends through the ground line, passing down through the soil strata from the gray surface city into the lit underground palace below. Clean 3D diorama render, warm amber and gray tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 33,
-  "img_file": "EP01_cut07_b.jpg"
+  "img_file": "EP01_cut07_b.jpg",
+  "search": "mirrored",
+  "res_idx": 1
  },
  {
   "n": 8,
@@ -188,7 +202,9 @@
   "vid": "Steady dolly in down the sloping corridor toward the raised stone slab, the walls sliding past the lens as grit spills from the runner channels. Clean 3D diorama render, stone-gray and amber tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 30,
-  "img_file": "EP01_cut08_a.jpg"
+  "img_file": "EP01_cut08_a.jpg",
+  "search": "portcullis mechanism",
+  "res_idx": 0
  },
  {
   "n": 9,
@@ -211,7 +227,9 @@
   "vid": "The camera holds still on the sealed corridor as the last torch gutters out and the chamber sinks into darkness. Clean 3D diorama render, near-black and amber tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 28,
-  "img_file": "EP01_cut09_a.jpg"
+  "img_file": "EP01_cut09_a.jpg",
+  "search": "slab sealing",
+  "res_idx": 0
  },
  {
   "n": 10,
@@ -236,7 +254,9 @@
   "vid": "Slow dolly in through the sealed chamber toward the trapped artisans, torchlight flickering across the fitted stone plug behind them. Clean 3D diorama render, amber and gray tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 26,
-  "img_file": "EP01_cut10_a.jpg"
+  "img_file": "EP01_cut10_a.jpg",
+  "search": "artisans",
+  "res_idx": 0
  },
  {
   "n": 11,
@@ -260,7 +280,9 @@
   "vid": "Slow tilt down from the dying torch to the collapsed figures on the floor as the red HUD figure ticks steadily downward. Clean 3D diorama render, desaturated gray and warning-red tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 25,
-  "img_file": "EP01_cut11_b.jpg"
+  "img_file": "EP01_cut11_b.jpg",
+  "search": "oxygen",
+  "res_idx": 1
  },
  {
   "n": 12,
@@ -285,7 +307,9 @@
   "vid": "Fast push in following the granite slab as it drops into its socket, grit spraying outward, the steady red arrows remaining in place. Clean 3D diorama render, stone-gray and signal-red tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 47,
-  "img_file": "EP01_cut12_b.jpg"
+  "img_file": "EP01_cut12_b.jpg",
+  "search": "granite",
+  "res_idx": 1
  },
  {
   "n": 13,
@@ -309,7 +333,9 @@
   "vid": "The camera travels along the bypass tunnel from outside, curving around the sealed door and breaking into the chamber, a thin red line drawing ahead of it. Clean 3D diorama render, earth-brown and signal-red tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 22,
-  "img_file": "EP01_cut13_a.jpg"
+  "img_file": "EP01_cut13_a.jpg",
+  "search": "bypass",
+  "res_idx": 0
  },
  {
   "n": 14,
@@ -333,7 +359,9 @@
   "vid": "Slow pull back from the split cutaway as the two red X marks pop in one after the other and dust settles in both halves. Clean 3D diorama render, monochrome and warning-red tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 21,
-  "img_file": "EP01_cut14_b.jpg"
+  "img_file": "EP01_cut14_b.jpg",
+  "search": "technical cutaway",
+  "res_idx": 0
  },
  {
   "n": 15,
@@ -357,7 +385,9 @@
   "vid": "The camera pushes straight through the corridor wall, the stone opening away to reveal the row of bronze crossbows waiting inside their niches. Clean 3D diorama render, bronze and gray tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 19,
-  "img_file": "EP01_cut15_b.jpg"
+  "img_file": "EP01_cut15_b.jpg",
+  "search": "stone corridor",
+  "res_idx": 1
  },
  {
   "n": 16,
@@ -381,7 +411,9 @@
   "vid": "Locked-off shot on the sprung pit as the red X mark pops in with an elastic bounce and loose soil trickles from the broken planks. Clean 3D diorama render, monochrome and warning-red tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 17,
-  "img_file": "EP01_cut16_b.jpg"
+  "img_file": "EP01_cut16_b.jpg",
+  "search": "intruder",
+  "res_idx": 1
  },
  {
   "n": 17,
@@ -404,7 +436,9 @@
   "vid": "Lateral tracking move gliding along the row of mounted crossbows, hard rim light sweeping across their bronze fittings. Clean 3D diorama render, verdigris and gray tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 15,
-  "img_file": "EP01_cut17_b.jpg"
+  "img_file": "EP01_cut17_b.jpg",
+  "search": "ancient",
+  "res_idx": 1
  },
  {
   "n": 18,
@@ -428,7 +462,9 @@
   "vid": "Slow orbit around the three floating bronze parts, each hovering and turning almost imperceptibly while the thin white axis lines stay fixed. Clean 3D diorama render, bronze and neutral gray tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 45,
-  "img_file": "EP01_cut18_b.jpg"
+  "img_file": "EP01_cut18_b.jpg",
+  "search": "mechanism explo",
+  "res_idx": 0
  },
  {
   "n": 19,
@@ -453,7 +489,9 @@
   "vid": "Extreme slow push in onto the loaded string catch, the bowstring creaking under tension while the steady red arrows remain in place. Clean 3D diorama render, bronze and signal-red tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 12,
-  "img_file": "EP01_cut19_a.jpg"
+  "img_file": "EP01_cut19_a.jpg",
+  "search": "trigger mechanism",
+  "res_idx": 0
  },
  {
   "n": 20,
@@ -477,7 +515,9 @@
   "vid": "Slow orbit around the separated linkage while the camera follows the thin red cord line from the floor slab up through the wall channel to the trigger. Clean 3D diorama render, neutral gray and signal-red tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 11,
-  "img_file": "EP01_cut20_b.jpg"
+  "img_file": "EP01_cut20_b.jpg",
+  "search": "trip cord",
+  "res_idx": 1
  },
  {
   "n": 21,
@@ -501,7 +541,9 @@
   "vid": "Sudden fast push in at the instant of release, the catch snapping over and the bowstring driving forward once, dust bursting from the niche while the steady red arrows remain in place. Clean 3D diorama render, bronze and flash-red tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 8,
-  "img_file": "EP01_cut21_a.jpg"
+  "img_file": "EP01_cut21_a.jpg",
+  "search": "releas",
+  "res_idx": 0
  },
  {
   "n": 22,
@@ -526,7 +568,9 @@
   "vid": "The camera sinks down through the drifting vapour layer to the mirror-like mercury below, its surface rippling very slightly. Clean 3D diorama render, silver and sickly-green tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 6,
-  "img_file": "EP01_cut22_a.jpg"
+  "img_file": "EP01_cut22_a.jpg",
+  "search": "mercury",
+  "res_idx": 0
  },
  {
   "n": 23,
@@ -551,7 +595,9 @@
   "vid": "Slow orbit rising above the three separated defence layers, each turning almost imperceptibly while the white axis lines stay fixed. Clean 3D diorama render, neutral gray with stone, bronze and silver accents tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 5,
-  "img_file": "EP01_cut23_b.jpg"
+  "img_file": "EP01_cut23_b.jpg",
+  "search": "defenses",
+  "res_idx": 1
  },
  {
   "n": 24,
@@ -574,7 +620,9 @@
   "vid": "The camera descends back down to ground level at the present-day mound, grass moving faintly and a thin cloud shadow crossing the slope. Clean 3D diorama render, muted green-gray tones, technical documentary mood.",
   "pick": "a",
   "dom_idx": 2,
-  "img_file": "EP01_cut24_a.jpg"
+  "img_file": "EP01_cut24_a.jpg",
+  "search": "survey",
+  "res_idx": 0
  },
  {
   "n": 25,
@@ -597,6 +645,8 @@
   "vid": "Very slow pull back to an extreme wide view of the distant mound as low haze drifts along the horizon. Clean 3D diorama render, muted earth and pale sky tones, technical documentary mood.",
   "pick": "b",
   "dom_idx": 1,
-  "img_file": "EP01_cut25_b.jpg"
+  "img_file": "EP01_cut25_b.jpg",
+  "search": "mound on",
+  "res_idx": 1
  }
 ]

@@ -1,0 +1,257 @@
+{
+  "episode": "산출물\\EP01_진시황릉",
+  "total_tts": 130.544,
+  "rows": [
+    {
+      "seq": 1,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.108,
+      "ratio": 1.178,
+      "state": "OK",
+      "note": "",
+      "file": "001.mp4"
+    },
+    {
+      "seq": 2,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 4.505,
+      "ratio": 1.335,
+      "state": "OK",
+      "note": "",
+      "file": "002.mp4"
+    },
+    {
+      "seq": 3,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 4.923,
+      "ratio": 1.222,
+      "state": "OK",
+      "note": "",
+      "file": "003.mp4"
+    },
+    {
+      "seq": 4,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 4.83,
+      "ratio": 1.246,
+      "state": "OK",
+      "note": "",
+      "file": "004.mp4"
+    },
+    {
+      "seq": 5,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 5.898,
+      "ratio": 1.356,
+      "state": "OK",
+      "note": "",
+      "file": "005.mp4"
+    },
+    {
+      "seq": 6,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.248,
+      "ratio": 1.146,
+      "state": "OK",
+      "note": "",
+      "file": "006.mp4"
+    },
+    {
+      "seq": 7,
+      "kind": "영상",
+      "clip": 4.01,
+      "tts": 3.111,
+      "ratio": 1.289,
+      "state": "OK",
+      "note": "",
+      "file": "007.mp4"
+    },
+    {
+      "seq": 8,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 5.526,
+      "ratio": 1.448,
+      "state": "OK",
+      "note": "",
+      "file": "008.mp4"
+    },
+    {
+      "seq": 9,
+      "kind": "영상",
+      "clip": 4.01,
+      "tts": 3.111,
+      "ratio": 1.289,
+      "state": "OK",
+      "note": "",
+      "file": "009.mp4"
+    },
+    {
+      "seq": 10,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 5.573,
+      "ratio": 1.435,
+      "state": "OK",
+      "note": "",
+      "file": "010.mp4"
+    },
+    {
+      "seq": 11,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.016,
+      "ratio": 1.199,
+      "state": "OK",
+      "note": "",
+      "file": "011.mp4"
+    },
+    {
+      "seq": 12,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.016,
+      "ratio": 1.199,
+      "state": "OK",
+      "note": "",
+      "file": "012.mp4"
+    },
+    {
+      "seq": 13,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 4.412,
+      "ratio": 1.364,
+      "state": "OK",
+      "note": "",
+      "file": "013.mp4"
+    },
+    {
+      "seq": 14,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 5.944,
+      "ratio": 1.346,
+      "state": "OK",
+      "note": "",
+      "file": "014.mp4"
+    },
+    {
+      "seq": 15,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.341,
+      "ratio": 1.126,
+      "state": "OK",
+      "note": "",
+      "file": "015.mp4"
+    },
+    {
+      "seq": 16,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 4.969,
+      "ratio": 1.211,
+      "state": "OK",
+      "note": "",
+      "file": "016.mp4"
+    },
+    {
+      "seq": 17,
+      "kind": "영상",
+      "clip": 4.01,
+      "tts": 3.204,
+      "ratio": 1.252,
+      "state": "OK",
+      "note": "",
+      "file": "017.mp4"
+    },
+    {
+      "seq": 18,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 6.13,
+      "ratio": 1.305,
+      "state": "OK",
+      "note": "",
+      "file": "018.mp4"
+    },
+    {
+      "seq": 19,
+      "kind": "영상",
+      "clip": 10.005,
+      "tts": 7.57,
+      "ratio": 1.322,
+      "state": "OK",
+      "note": "",
+      "file": "019.mp4"
+    },
+    {
+      "seq": 20,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 5.898,
+      "ratio": 1.356,
+      "state": "OK",
+      "note": "",
+      "file": "020.mp4"
+    },
+    {
+      "seq": 21,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.294,
+      "ratio": 1.136,
+      "state": "OK",
+      "note": "",
+      "file": "021.mp4"
+    },
+    {
+      "seq": 22,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 7.105,
+      "ratio": 1.126,
+      "state": "OK",
+      "note": "",
+      "file": "022.mp4"
+    },
+    {
+      "seq": 23,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 7.059,
+      "ratio": 1.133,
+      "state": "OK",
+      "note": "",
+      "file": "023.mp4"
+    },
+    {
+      "seq": 24,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 3.855,
+      "ratio": 1.561,
+      "state": "OK",
+      "note": "",
+      "file": "024.mp4"
+    },
+    {
+      "seq": 25,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 5.898,
+      "ratio": 1.356,
+      "state": "OK",
+      "note": "",
+      "file": "025.mp4"
+    }
+  ],
+  "missing": []
+}
