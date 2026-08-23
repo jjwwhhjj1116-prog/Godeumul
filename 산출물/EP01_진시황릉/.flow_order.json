@@ -1,0 +1,156 @@
+{
+ "episode": "EP01_진시황릉",
+ "count": 25,
+ "order": [
+  {
+   "idx": 1,
+   "scene": 1,
+   "type": "DIORAMA",
+   "omni": 6
+  },
+  {
+   "idx": 2,
+   "scene": 2,
+   "type": "CUTAWAY",
+   "omni": 6
+  },
+  {
+   "idx": 3,
+   "scene": 3,
+   "type": "ARTIFACT",
+   "omni": 6
+  },
+  {
+   "idx": 4,
+   "scene": 4,
+   "type": "DIORAMA",
+   "omni": 6
+  },
+  {
+   "idx": 5,
+   "scene": 5,
+   "type": "DIORAMA",
+   "omni": 8
+  },
+  {
+   "idx": 6,
+   "scene": 6,
+   "type": "LABOR",
+   "omni": 6
+  },
+  {
+   "idx": 7,
+   "scene": 7,
+   "type": "CUTAWAY",
+   "omni": 4
+  },
+  {
+   "idx": 8,
+   "scene": 8,
+   "type": "CUTAWAY",
+   "omni": 8
+  },
+  {
+   "idx": 9,
+   "scene": 9,
+   "type": "CUTAWAY",
+   "omni": 4
+  },
+  {
+   "idx": 10,
+   "scene": 10,
+   "type": "CUTAWAY",
+   "omni": 8
+  },
+  {
+   "idx": 11,
+   "scene": 11,
+   "type": "FAILURE",
+   "omni": 6
+  },
+  {
+   "idx": 12,
+   "scene": 12,
+   "type": "MECHANISM",
+   "omni": 6
+  },
+  {
+   "idx": 13,
+   "scene": 13,
+   "type": "CUTAWAY",
+   "omni": 6
+  },
+  {
+   "idx": 14,
+   "scene": 14,
+   "type": "FAILURE",
+   "omni": 8
+  },
+  {
+   "idx": 15,
+   "scene": 15,
+   "type": "CUTAWAY",
+   "omni": 6
+  },
+  {
+   "idx": 16,
+   "scene": 16,
+   "type": "FAILURE",
+   "omni": 6
+  },
+  {
+   "idx": 17,
+   "scene": 17,
+   "type": "ARTIFACT",
+   "omni": 4
+  },
+  {
+   "idx": 18,
+   "scene": 18,
+   "type": "EXPLODED",
+   "omni": 8
+  },
+  {
+   "idx": 19,
+   "scene": 19,
+   "type": "MECHANISM",
+   "omni": 10
+  },
+  {
+   "idx": 20,
+   "scene": 20,
+   "type": "EXPLODED",
+   "omni": 8
+  },
+  {
+   "idx": 21,
+   "scene": 21,
+   "type": "MECHANISM",
+   "omni": 6
+  },
+  {
+   "idx": 22,
+   "scene": 22,
+   "type": "CUTAWAY",
+   "omni": 8
+  },
+  {
+   "idx": 23,
+   "scene": 23,
+   "type": "EXPLODED",
+   "omni": 8
+  },
+  {
+   "idx": 24,
+   "scene": 24,
+   "type": "DIORAMA",
+   "omni": 6
+  },
+  {
+   "idx": 25,
+   "scene": 25,
+   "type": "DIORAMA",
+   "omni": 8
+  }
+ ]
+}

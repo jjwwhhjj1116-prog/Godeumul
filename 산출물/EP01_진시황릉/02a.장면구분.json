@@ -289,7 +289,9 @@
   "tone": "무채색+적색X",
   "note": "외통수",
   "tts": 5.944,
-  "speed": 1.35
+  "speed": 1.35,
+  "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a vertical cross-section cutaway split into two halves side by side, on the left a sealed chamber with collapsed artisan figures and a dead torch, on the right the same tomb breached by a rough bypass tunnel with the stone door still intact and useless, both halves drained to near monochrome with bright warning red as the only saturated color, a bold red X mark over each half, a small dark label plate reading \"BOTH FAIL\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark.",
+  "vid": "Static shot on the split cutaway. The two red X marks pop in one after the other with an elastic bounce as dust settles in both halves. Clean 3D diorama render, monochrome and warning-red tones, technical documentary mood."
  },
  {
   "n": 15,
@@ -308,7 +310,9 @@
   "tone": "청동+적색",
   "note": "해법 진입",
   "tts": 5.341,
-  "speed": 1.12
+  "speed": 1.12,
+  "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a vertical cross-section cutaway of a long stone tomb corridor, the side wall sliced open to reveal a row of bronze crossbows mounted inside recessed niches along its whole length, each aimed down the passage, the crossbows in warm bronze full color while the corridor stonework stays grayscale, thin taut trip cords running along the floor, clinical even lighting so every niche is legible, a small dark label plate reading \"CROSSBOWS IN THE WALL\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
+  "vid": "Static cutaway with a very slow push in along the corridor. Dust drifts through the niches while the mounted crossbows stay perfectly still. Clean 3D diorama render, bronze and gray tones, technical documentary mood."
  },
  {
   "n": 16,
@@ -327,7 +331,9 @@
   "tone": "무채색+적색X",
   "note": "셀프문답3 · 기각",
   "tts": 4.969,
-  "speed": 1.21
+  "speed": 1.21,
+  "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a cross-section cutaway of a simple deep pit trap dug under a tomb corridor floor, the pit already sprung and standing open with broken planks, a second intruder figure calmly stepping around its edge and walking on, the whole scene desaturated to near monochrome, a large bold red X mark over the open pit, a small dark label plate reading \"ONE USE ONLY\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark.",
+  "vid": "Static cutaway. The red X mark pops in over the open pit with an elastic bounce while loose soil trickles from the broken planks. Clean 3D diorama render, monochrome and warning-red tones, technical documentary mood."
  },
  {
   "n": 17,
@@ -345,7 +351,9 @@
   "tone": "청동녹청",
   "note": "",
   "tts": 3.204,
-  "speed": 1.25
+  "speed": 1.25,
+  "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a medium side-tracking shot along a row of ancient bronze Qin dynasty crossbows mounted in wall niches, their lacquered wooden stocks and green verdigris bronze fittings in rich full color, the stone wall behind them completely grayscale, taut bowstrings catching a hard rim light, shallow depth of field falling off down the row. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground. No text, no letters, no numbers.",
+  "vid": "Slow lateral tracking move along the row of mounted crossbows. The weapons stay perfectly still as the light sweeps across their bronze fittings. Clean 3D diorama render, verdigris and gray tones, technical documentary mood."
  },
  {
   "n": 18,
@@ -364,7 +372,9 @@
   "tone": "스튜디오회+청동",
   "note": "★분해",
   "tts": 6.13,
-  "speed": 1.31
+  "speed": 1.31,
+  "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an exploded technical view of an ancient Chinese bronze crossbow trigger mechanism, exactly three cast bronze components floating apart in mid-air with wide visible gaps between them, arranged in assembly order from top to bottom: the string catch that holds the bowstring, the trigger lever, and the pivot link between them, thin white assembly axis lines connecting the three parts through their pivot holes, a plain neutral grayscale studio backdrop with no environment at all, even soft light from all directions with no strong shadows, the bronze parts in rich warm full color, a small dark label plate reading \"THREE PARTS ONLY\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
+  "vid": "Slow orbit around the three floating bronze parts. Each component hovers in place and rotates almost imperceptibly while the thin white axis lines stay fixed. Clean 3D diorama render, bronze and neutral gray tones, technical documentary mood."
  },
  {
   "n": 19,
@@ -384,7 +394,9 @@
   "tone": "청동+적색화살표",
   "note": "★힘의경로",
   "tts": 7.57,
-  "speed": 1.32
+  "speed": 1.32,
+  "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an extreme close-up on the assembled bronze crossbow trigger mechanism seen in cross section, the taut bowstring hooked over the string catch, thick bold red 3D directional arrows tracing the tension load from the drawn bowstring into the catch and down through the pivot link into the locked trigger lever, a glowing red digital HUD readout showing \"200 KG DRAW\" floating beside it, the bronze parts and red arrows in full color, everything else grayscale, clinical high-key lighting so every contact surface is legible. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
+  "vid": "Static extreme close-up. The bowstring creaks under load and the bronze parts hold absolutely still while the steady red arrows remain in place. Clean 3D diorama render, bronze and signal-red tones, technical documentary mood."
  },
  {
   "n": 20,
@@ -403,7 +415,9 @@
   "tone": "스튜디오회+적색선",
   "note": "★분해",
   "tts": 5.898,
-  "speed": 1.36
+  "speed": 1.36,
+  "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an exploded technical view showing the link between a tomb floor and a mounted crossbow, a thin taut trip cord running along the stone floor, rising through a drilled channel in the wall, and hooking onto the crossbow trigger lever, the whole linkage pulled apart in mid-air with visible gaps between the floor slab, the cord, the wall channel and the trigger, a continuous thin red line tracing the cord path through all the separated pieces, plain neutral grayscale studio backdrop, even soft light from all directions, a small dark label plate reading \"TRIP CORD PATH\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
+  "vid": "Slow orbit around the separated linkage pieces. They hover in place while the thin red cord line stays fixed through the gaps. Clean 3D diorama render, neutral gray and signal-red tones, technical documentary mood."
  },
  {
   "n": 21,
@@ -422,7 +436,9 @@
   "tone": "청동+섬광적색",
   "note": "★힘의경로 · A/B",
   "tts": 5.294,
-  "speed": 1.13
+  "speed": 1.13,
+  "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an extreme close-up at the instant the bronze crossbow trigger releases, the string catch snapping over and the bowstring driving forward, a bronze bolt already blurring out of the frame, thick bold red 3D directional arrows exploding outward along the release path from the catch through the string to the bolt, a bright flash of stored energy at the catch, the bronze and red arrows in vivid full color against a fully grayscale stone background, clinical high-key lighting. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground. No text, no letters.",
+  "vid": "Static extreme close-up. The catch snaps over and the bowstring drives forward once while the steady red arrows remain in place and dust bursts from the niche. Clean 3D diorama render, bronze and flash-red tones, technical documentary mood."
  },
  {
   "n": 22,
@@ -442,7 +458,9 @@
   "tone": "은빛수은+독성녹",
   "note": "2중 방어",
   "tts": 7.105,
-  "speed": 1.13
+  "speed": 1.13,
+  "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a vertical cross-section cutaway of the underground palace floor, shallow channels and basins cut into the stone and filled with dense mirror-like liquid mercury forming miniature rivers and a sea, a pale toxic vapour layer rising from the surface and filling the chamber and the corridor above it, the mercury in bright metallic silver and the vapour in a faint sickly green, everything else grayscale, clinical even lighting, a small dark label plate reading \"MERCURY VAPOUR\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
+  "vid": "Static cutaway. The mirror-like mercury surface ripples very slightly while the pale vapour layer drifts upward and thickens in the corridor. Clean 3D diorama render, silver and sickly-green tones, technical documentary mood."
  },
  {
   "n": 23,
@@ -462,7 +480,9 @@
   "tone": "무채색+요소별컬러",
   "note": "★분해 · A/B",
   "tts": 7.059,
-  "speed": 1.13
+  "speed": 1.13,
+  "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an exploded technical view of the tomb's three defence layers pulled apart vertically in mid-air with wide visible gaps between them, from top to bottom: the multi-ton stone portcullis slab, the row of wall-mounted bronze crossbows with their trip cords, and the mercury-filled floor channels with rising vapour, thin white assembly axis lines connecting the three layers, plain neutral grayscale studio backdrop with no environment, even soft light from all directions, each layer picked out in its own color while the backdrop stays gray, a small dark label plate reading \"THREE LAYERS\". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.",
+  "vid": "Slow orbit around the three separated defence layers. Each layer hovers in place and turns almost imperceptibly while the white axis lines stay fixed. Clean 3D diorama render, neutral gray with stone, bronze and silver accents, technical documentary mood."
  },
  {
   "n": 24,
@@ -480,7 +500,9 @@
   "tone": "차분한 회록",
   "note": "현재 착지",
   "tts": 3.855,
-  "speed": 1.56
+  "speed": 1.56,
+  "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a wide pull-back shot of the present-day burial mound covered in grass and scrub, modern survey equipment and a small remote sensing station standing quietly at its base, no excavation anywhere, the mound and equipment in muted full color, the surrounding farmland in grayscale, flat even overcast light, calm settled atmosphere. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground. No text, no letters, no numbers.",
+  "vid": "Slow pull back away from the mound. Grass moves faintly in the wind and a thin cloud shadow crosses the slope. Clean 3D diorama render, muted green-gray tones, technical documentary mood."
  },
  {
   "n": 25,
@@ -498,6 +520,8 @@
   "tone": "차분한 회록",
   "note": "고정 마무리",
   "tts": 5.898,
-  "speed": 1.36
+  "speed": 1.36,
+  "img": "High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an extreme wide final shot of the burial mound at rest on the plain seen from a distance, the whole landscape softly desaturated with only the mound holding a faint warm tone, a vast quiet sky above, low haze along the horizon, calm settled closing atmosphere. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground. No text, no letters, no numbers.",
+  "vid": "Very slow pull back and slight crane up away from the distant mound as low haze drifts across the plain. Clean 3D diorama render, muted earth and pale sky tones, technical documentary mood."
  }
 ]

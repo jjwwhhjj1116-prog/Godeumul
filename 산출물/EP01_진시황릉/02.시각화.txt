@@ -1,5 +1,5 @@
-# EP01 진시황릉 — 02 시각화 대본 (2b 프롬프트 작성 중)
-# [한국어 나레이션]은 TTS 원천이므로 수정 금지.
+# EP01 진시황릉 — 02 시각화 대본 (완성)
+# 25컷 · 컷별 6대 항목. [한국어 나레이션]은 TTS 원천이므로 수정 금지.
 
 [장면 1]
 [챕터] Ch1   [줌인] L1   [컷타입] DIORAMA
@@ -124,8 +124,8 @@
 [실측 TTS] 5.94초  →  [옴니 생성] 8초  (캡컷 배속 1.35x)
 [카메라 & 단면 무빙] 좌우 분할 단면. 왼쪽 질식 / 오른쪽 우회
 [색톤] 무채색+적색X
-[영어 이미지 프롬프트] (2b 미작성)
-[영어 영상 프롬프트] (2b 미작성)
+[영어 이미지 프롬프트] High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a vertical cross-section cutaway split into two halves side by side, on the left a sealed chamber with collapsed artisan figures and a dead torch, on the right the same tomb breached by a rough bypass tunnel with the stone door still intact and useless, both halves drained to near monochrome with bright warning red as the only saturated color, a bold red X mark over each half, a small dark label plate reading "BOTH FAIL". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark.
+[영어 영상 프롬프트] Static shot on the split cutaway. The two red X marks pop in one after the other with an elastic bounce as dust settles in both halves. Clean 3D diorama render, monochrome and warning-red tones, technical documentary mood.
 
 [장면 15]
 [챕터] Ch4   [줌인] L3   [컷타입] CUTAWAY
@@ -133,8 +133,8 @@
 [실측 TTS] 5.34초  →  [옴니 생성] 6초  (캡컷 배속 1.12x)
 [카메라 & 단면 무빙] 통로 벽 단면에 석궁들이 박힌 것이 드러남
 [색톤] 청동+적색
-[영어 이미지 프롬프트] (2b 미작성)
-[영어 영상 프롬프트] (2b 미작성)
+[영어 이미지 프롬프트] High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a vertical cross-section cutaway of a long stone tomb corridor, the side wall sliced open to reveal a row of bronze crossbows mounted inside recessed niches along its whole length, each aimed down the passage, the crossbows in warm bronze full color while the corridor stonework stays grayscale, thin taut trip cords running along the floor, clinical even lighting so every niche is legible, a small dark label plate reading "CROSSBOWS IN THE WALL". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.
+[영어 영상 프롬프트] Static cutaway with a very slow push in along the corridor. Dust drifts through the niches while the mounted crossbows stay perfectly still. Clean 3D diorama render, bronze and gray tones, technical documentary mood.
 
 [장면 16]
 [챕터] Ch4   [줌인] L2   [컷타입] FAILURE
@@ -142,8 +142,8 @@
 [실측 TTS] 4.97초  →  [옴니 생성] 6초  (캡컷 배속 1.21x)
 [카메라 & 단면 무빙] 구덩이 함정에 붉은 X. 침입자가 돌아감
 [색톤] 무채색+적색X
-[영어 이미지 프롬프트] (2b 미작성)
-[영어 영상 프롬프트] (2b 미작성)
+[영어 이미지 프롬프트] High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a cross-section cutaway of a simple deep pit trap dug under a tomb corridor floor, the pit already sprung and standing open with broken planks, a second intruder figure calmly stepping around its edge and walking on, the whole scene desaturated to near monochrome, a large bold red X mark over the open pit, a small dark label plate reading "ONE USE ONLY". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark.
+[영어 영상 프롬프트] Static cutaway. The red X mark pops in over the open pit with an elastic bounce while loose soil trickles from the broken planks. Clean 3D diorama render, monochrome and warning-red tones, technical documentary mood.
 
 [장면 17]
 [챕터] Ch4   [줌인] L2   [컷타입] ARTIFACT
@@ -151,8 +151,8 @@
 [실측 TTS] 3.20초  →  [옴니 생성] 4초  (캡컷 배속 1.25x)
 [카메라 & 단면 무빙] 벽면에 늘어선 청동 석궁 열. 측면 트래킹
 [색톤] 청동녹청
-[영어 이미지 프롬프트] (2b 미작성)
-[영어 영상 프롬프트] (2b 미작성)
+[영어 이미지 프롬프트] High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a medium side-tracking shot along a row of ancient bronze Qin dynasty crossbows mounted in wall niches, their lacquered wooden stocks and green verdigris bronze fittings in rich full color, the stone wall behind them completely grayscale, taut bowstrings catching a hard rim light, shallow depth of field falling off down the row. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground. No text, no letters, no numbers.
+[영어 영상 프롬프트] Slow lateral tracking move along the row of mounted crossbows. The weapons stay perfectly still as the light sweeps across their bronze fittings. Clean 3D diorama render, verdigris and gray tones, technical documentary mood.
 
 [장면 18]
 [챕터] Ch4   [줌인] L4   [컷타입] EXPLODED
@@ -160,8 +160,8 @@
 [실측 TTS] 6.13초  →  [옴니 생성] 8초  (캡컷 배속 1.31x)
 [카메라 & 단면 무빙] 노기가 걸쇠·방아쇠·지렛대 세 부품으로 공중 분해
 [색톤] 스튜디오회+청동
-[영어 이미지 프롬프트] (2b 미작성)
-[영어 영상 프롬프트] (2b 미작성)
+[영어 이미지 프롬프트] High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an exploded technical view of an ancient Chinese bronze crossbow trigger mechanism, exactly three cast bronze components floating apart in mid-air with wide visible gaps between them, arranged in assembly order from top to bottom: the string catch that holds the bowstring, the trigger lever, and the pivot link between them, thin white assembly axis lines connecting the three parts through their pivot holes, a plain neutral grayscale studio backdrop with no environment at all, even soft light from all directions with no strong shadows, the bronze parts in rich warm full color, a small dark label plate reading "THREE PARTS ONLY". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.
+[영어 영상 프롬프트] Slow orbit around the three floating bronze parts. Each component hovers in place and rotates almost imperceptibly while the thin white axis lines stay fixed. Clean 3D diorama render, bronze and neutral gray tones, technical documentary mood.
 
 [장면 19]
 [챕터] Ch4   [줌인] L5   [컷타입] MECHANISM
@@ -169,8 +169,8 @@
 [실측 TTS] 7.57초  →  [옴니 생성] 10초  (캡컷 배속 1.32x)
 [카메라 & 단면 무빙] 장력 화살표가 시위→걸쇠로. HUD 200KG
 [색톤] 청동+적색화살표
-[영어 이미지 프롬프트] (2b 미작성)
-[영어 영상 프롬프트] (2b 미작성)
+[영어 이미지 프롬프트] High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an extreme close-up on the assembled bronze crossbow trigger mechanism seen in cross section, the taut bowstring hooked over the string catch, thick bold red 3D directional arrows tracing the tension load from the drawn bowstring into the catch and down through the pivot link into the locked trigger lever, a glowing red digital HUD readout showing "200 KG DRAW" floating beside it, the bronze parts and red arrows in full color, everything else grayscale, clinical high-key lighting so every contact surface is legible. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.
+[영어 영상 프롬프트] Static extreme close-up. The bowstring creaks under load and the bronze parts hold absolutely still while the steady red arrows remain in place. Clean 3D diorama render, bronze and signal-red tones, technical documentary mood.
 
 [장면 20]
 [챕터] Ch4   [줌인] L4   [컷타입] EXPLODED
@@ -178,8 +178,8 @@
 [실측 TTS] 5.90초  →  [옴니 생성] 8초  (캡컷 배속 1.36x)
 [카메라 & 단면 무빙] 바닥 줄→방아쇠 연결이 분해되어 경로가 보임
 [색톤] 스튜디오회+적색선
-[영어 이미지 프롬프트] (2b 미작성)
-[영어 영상 프롬프트] (2b 미작성)
+[영어 이미지 프롬프트] High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an exploded technical view showing the link between a tomb floor and a mounted crossbow, a thin taut trip cord running along the stone floor, rising through a drilled channel in the wall, and hooking onto the crossbow trigger lever, the whole linkage pulled apart in mid-air with visible gaps between the floor slab, the cord, the wall channel and the trigger, a continuous thin red line tracing the cord path through all the separated pieces, plain neutral grayscale studio backdrop, even soft light from all directions, a small dark label plate reading "TRIP CORD PATH". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.
+[영어 영상 프롬프트] Slow orbit around the separated linkage pieces. They hover in place while the thin red cord line stays fixed through the gaps. Clean 3D diorama render, neutral gray and signal-red tones, technical documentary mood.
 
 [장면 21]
 [챕터] Ch4   [줌인] L5   [컷타입] MECHANISM
@@ -187,8 +187,8 @@
 [실측 TTS] 5.29초  →  [옴니 생성] 6초  (캡컷 배속 1.13x)
 [카메라 & 단면 무빙] 걸쇠 해제 순간. 힘의 경로가 화살로 폭발
 [색톤] 청동+섬광적색
-[영어 이미지 프롬프트] (2b 미작성)
-[영어 영상 프롬프트] (2b 미작성)
+[영어 이미지 프롬프트] High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an extreme close-up at the instant the bronze crossbow trigger releases, the string catch snapping over and the bowstring driving forward, a bronze bolt already blurring out of the frame, thick bold red 3D directional arrows exploding outward along the release path from the catch through the string to the bolt, a bright flash of stored energy at the catch, the bronze and red arrows in vivid full color against a fully grayscale stone background, clinical high-key lighting. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground. No text, no letters.
+[영어 영상 프롬프트] Static extreme close-up. The catch snaps over and the bowstring drives forward once while the steady red arrows remain in place and dust bursts from the niche. Clean 3D diorama render, bronze and flash-red tones, technical documentary mood.
 
 [장면 22]
 [챕터] Ch4   [줌인] L3   [컷타입] CUTAWAY
@@ -196,8 +196,8 @@
 [실측 TTS] 7.11초  →  [옴니 생성] 8초  (캡컷 배속 1.13x)
 [카메라 & 단면 무빙] 수은 강 단면 + 증기층이 갱도를 채움
 [색톤] 은빛수은+독성녹
-[영어 이미지 프롬프트] (2b 미작성)
-[영어 영상 프롬프트] (2b 미작성)
+[영어 이미지 프롬프트] High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a vertical cross-section cutaway of the underground palace floor, shallow channels and basins cut into the stone and filled with dense mirror-like liquid mercury forming miniature rivers and a sea, a pale toxic vapour layer rising from the surface and filling the chamber and the corridor above it, the mercury in bright metallic silver and the vapour in a faint sickly green, everything else grayscale, clinical even lighting, a small dark label plate reading "MERCURY VAPOUR". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.
+[영어 영상 프롬프트] Static cutaway. The mirror-like mercury surface ripples very slightly while the pale vapour layer drifts upward and thickens in the corridor. Clean 3D diorama render, silver and sickly-green tones, technical documentary mood.
 
 [장면 23]
 [챕터] Ch5   [줌인] L4   [컷타입] EXPLODED
@@ -205,8 +205,8 @@
 [실측 TTS] 7.06초  →  [옴니 생성] 8초  (캡컷 배속 1.13x)
 [카메라 & 단면 무빙] 3중 방어(돌문·석궁·수은)가 분해되어 떠 있음
 [색톤] 무채색+요소별컬러
-[영어 이미지 프롬프트] (2b 미작성)
-[영어 영상 프롬프트] (2b 미작성)
+[영어 이미지 프롬프트] High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an exploded technical view of the tomb's three defence layers pulled apart vertically in mid-air with wide visible gaps between them, from top to bottom: the multi-ton stone portcullis slab, the row of wall-mounted bronze crossbows with their trip cords, and the mercury-filled floor channels with rising vapour, thin white assembly axis lines connecting the three layers, plain neutral grayscale studio backdrop with no environment, even soft light from all directions, each layer picked out in its own color while the backdrop stays gray, a small dark label plate reading "THREE LAYERS". Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground.
+[영어 영상 프롬프트] Slow orbit around the three separated defence layers. Each layer hovers in place and turns almost imperceptibly while the white axis lines stay fixed. Clean 3D diorama render, neutral gray with stone, bronze and silver accents, technical documentary mood.
 
 [장면 24]
 [챕터] Ch5   [줌인] L1   [컷타입] DIORAMA
@@ -214,8 +214,8 @@
 [실측 TTS] 3.85초  →  [옴니 생성] 6초  (캡컷 배속 1.56x)
 [카메라 & 단면 무빙] 현재 봉분으로 pull back. 관측 장비만
 [색톤] 차분한 회록
-[영어 이미지 프롬프트] (2b 미작성)
-[영어 영상 프롬프트] (2b 미작성)
+[영어 이미지 프롬프트] High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, a wide pull-back shot of the present-day burial mound covered in grass and scrub, modern survey equipment and a small remote sensing station standing quietly at its base, no excavation anywhere, the mound and equipment in muted full color, the surrounding farmland in grayscale, flat even overcast light, calm settled atmosphere. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground. No text, no letters, no numbers.
+[영어 영상 프롬프트] Slow pull back away from the mound. Grass moves faintly in the wind and a thin cloud shadow crosses the slope. Clean 3D diorama render, muted green-gray tones, technical documentary mood.
 
 [장면 25]
 [챕터] Ch5   [줌인] L1   [컷타입] DIORAMA
@@ -223,5 +223,5 @@
 [실측 TTS] 5.90초  →  [옴니 생성] 8초  (캡컷 배속 1.36x)
 [카메라 & 단면 무빙] 봉분 원경 + 채널 시그니처 아웃트로
 [색톤] 차분한 회록
-[영어 이미지 프롬프트] (2b 미작성)
-[영어 영상 프롬프트] (2b 미작성)
+[영어 이미지 프롬프트] High-angle isometric 3D rendering, intricate miniature diorama style, photorealistic construction and mechanical simulation aesthetic, cinematic volumetric lighting, 8k resolution, vibrant full-color subject against a desaturated grayscale ambient background so the eye locks onto the artifact, 9:16 vertical composition with the subject in the upper two-thirds, an extreme wide final shot of the burial mound at rest on the plain seen from a distance, the whole landscape softly desaturated with only the mound holding a faint warm tone, a vast quiet sky above, low haze along the horizon, calm settled closing atmosphere. Rendered as a clean technical 3D visualization, not a painting and not a photograph of a real site. No voiceover, no narrator, no music, no watermark, no people in the foreground. No text, no letters, no numbers.
+[영어 영상 프롬프트] Very slow pull back and slight crane up away from the distant mound as low haze drifts across the plain. Clean 3D diorama render, muted earth and pale sky tones, technical documentary mood.
