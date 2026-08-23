@@ -265,33 +265,23 @@ def main() -> int:
     total = cursor
 
     # ── 자막 ────────────────────────────────────────────────
-    # 장면별 나레이션 길이 안에서 큐를 글자수 비율로 배분한다.
-    by_scene: dict[int, list[dict]] = {}
-    sent_to_scene: dict[int, int] = {}
-    # 자막 큐의 문장 번호를 장면 순서에 비례해 배분(대본 문장 → 장면 매핑이 없을 때의 근사)
-    tl_by_scene = {t["scene"]: t for t in timeline}
-    per = max(1, len(cues) // max(1, len(timeline)))
-    for i, c in enumerate(cues):
-        sc = timeline[min(i // per, len(timeline) - 1)]["scene"]
-        by_scene.setdefault(sc, []).append(c)
-
-    for sc, group in by_scene.items():
-        t = tl_by_scene[sc]
-        chars = sum(max(1, len(c["text"])) for c in group)
-        pos = t["start"]
-        for j, c in enumerate(group):
-            share = max(1, len(c["text"])) / chars
-            d = snap(int(t["dur"] * share))
-            if j == len(group) - 1:
-                d = t["start"] + t["dur"] - pos
-            if d < FRAME * 6:          # 0.2초 미만은 붙인다
-                d = FRAME * 6
-
+    # 자막_싱크.json 이 있으면 실측 타임스탬프를 그대로 쓴다(권장).
+    # 없으면 장면 길이 안에서 글자수 비율로 배분한다(근사치).
+    sync_p = ep / "자막_싱크.json"
+    if sync_p.exists():
+        synced = json.loads(sync_p.read_text(encoding="utf-8"))["cues"]
+        print(f"자막     : 실측 싱크 {len(synced)}개 (자막_싱크.json)")
+        for c in synced:
+            st = snap(int(c["start"] * US))
+            en = snap(int(c["end"] * US))
+            d = max(en - st, FRAME * 5)
+            if st + d > total:
+                d = max(total - st, FRAME * 3)
             tm = copy.deepcopy(tpl["materials"]["texts"][0])
             content = json.loads(tm["content"])
             content["text"] = c["text"]
-            for st in content.get("styles", []):
-                st["range"] = [0, len(c["text"])]
+            for stl in content.get("styles", []):
+                stl["range"] = [0, len(c["text"])]
             tm["id"] = uid()
             tm["content"] = json.dumps(content, ensure_ascii=False)
             tm["base_content"] = c["text"]
@@ -300,9 +290,41 @@ def main() -> int:
             ts = copy.deepcopy(t_proto)
             ts["id"] = uid(); ts["material_id"] = tm["id"]
             ts["extra_material_refs"] = cl.clone_extras(t_proto)
-            ts["target_timerange"] = {"start": pos, "duration": d}
+            ts["target_timerange"] = {"start": st, "duration": d}
             t_track["segments"].append(ts)
-            pos += d
+    else:
+        print("자막     : ★ 실측 싱크 없음 — 글자수 비율 근사. "
+              "tools/align_subtitles.py 를 먼저 돌리세요.")
+        by_scene: dict[int, list[dict]] = {}
+        tl_by_scene = {t["scene"]: t for t in timeline}
+        per = max(1, len(cues) // max(1, len(timeline)))
+        for i, c in enumerate(cues):
+            sc = timeline[min(i // per, len(timeline) - 1)]["scene"]
+            by_scene.setdefault(sc, []).append(c)
+        for sc, group in by_scene.items():
+            tl = tl_by_scene[sc]
+            chars = sum(max(1, len(c["text"])) for c in group)
+            pos = tl["start"]
+            for j, c in enumerate(group):
+                d = snap(int(tl["dur"] * max(1, len(c["text"])) / chars))
+                if j == len(group) - 1:
+                    d = tl["start"] + tl["dur"] - pos
+                d = max(d, FRAME * 6)
+                tm = copy.deepcopy(tpl["materials"]["texts"][0])
+                content = json.loads(tm["content"])
+                content["text"] = c["text"]
+                for stl in content.get("styles", []):
+                    stl["range"] = [0, len(c["text"])]
+                tm["id"] = uid()
+                tm["content"] = json.dumps(content, ensure_ascii=False)
+                tm["base_content"] = c["text"]
+                cl.out["texts"].append(tm)
+                ts = copy.deepcopy(t_proto)
+                ts["id"] = uid(); ts["material_id"] = tm["id"]
+                ts["extra_material_refs"] = cl.clone_extras(t_proto)
+                ts["target_timerange"] = {"start": pos, "duration": d}
+                t_track["segments"].append(ts)
+                pos += d
 
     # ── 워터마크 (템플릿 그대로, 경로와 길이만) ─────────────
     wseg = wm_track["segments"][0]

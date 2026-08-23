@@ -62,6 +62,7 @@ L5 MECHANISM★ 부품 하나에 초근접. 힘이 붉은 화살표로 흐른다
 │  ├─ tts_generate.py    3단계 — 장면별 TTS + 길이표
 │  ├─ speed_table.py     5단계 — 캡컷 배속 계산
 │  ├─ subtitle_split.py  5단계 — 자막 한 줄 분할(어절 보존)
+│  ├─ align_subtitles.py  5단계 — 자막 실측 싱크(ElevenLabs 강제정렬)
 │  └─ capcut_build.py     5단계 — 캡컷 드래프트 자동 생성
 └─ 산출물/
    └─ EP01_진시황릉/
@@ -91,6 +92,9 @@ python tools/speed_table.py "산출물/EP01_진시황릉"
 ```
 ```bash
 python tools/subtitle_split.py "산출물/EP01_진시황릉/01.대본.txt" --srt
+```
+```bash
+python tools/align_subtitles.py "산출물/EP01_진시황릉"
 ```
 ```bash
 python tools/capcut_build.py "산출물/EP01_진시황릉" --check
