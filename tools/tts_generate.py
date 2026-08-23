@@ -88,11 +88,11 @@ class Config:
             api_key=api_key,
             voice_id=voice_id,
             model=get("ARTIFACT_MODEL", "eleven_multilingual_v2"),
-            stability=float(get("ARTIFACT_STABILITY", "0.38")),
+            stability=float(get("ARTIFACT_STABILITY", "0.4")),
             similarity=float(get("ARTIFACT_SIMILARITY", "0.85")),
             style=float(get("ARTIFACT_STYLE", "0.50")),
             speaker_boost=get("ARTIFACT_SPEAKER_BOOST", "true").lower() == "true",
-            speed=float(get("ARTIFACT_SPEED", "1.0")),
+            speed=float(get("ARTIFACT_SPEED", "1.05")),
             language=get("ARTIFACT_LANGUAGE", "ko"),
             output_format=get("ARTIFACT_OUTPUT_FORMAT", "mp3_44100_128"),
         )
