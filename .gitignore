@@ -1,0 +1,24 @@
+# ═══ 비밀 (절대 커밋 금지) ═══
+.env
+.env.*
+!.env.example
+*api*key*.txt
+*API*key*.txt
+
+# ═══ 산출물 (용량) ═══
+산출물/
+*.mp3
+*.mp4
+*.mov
+*.wav
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# ═══ 기타 ═══
+__pycache__/
+*.pyc
+.venv/
+Thumbs.db
+desktop.ini
