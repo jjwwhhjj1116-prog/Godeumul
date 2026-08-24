@@ -75,7 +75,7 @@ python tools/youtube_upload.py --auth
 | **3** | **TTS 실측 (먼저!)** | 장면 구분 | `audio/*.mp3` + `durations.json` | [03](./03.TTS생성지침.md) | `tts_generate` → `audio_normalize` |
 | **2b** | 프롬프트 생성 | 실측 길이 | 컷별 6대 항목 + 옴니 규격 | [02](./02.시각화+영상화프롬프트(고대유물).txt) | `speed_table.py` |
 | **4** | 이미지·영상 생성 | 프롬프트 txt | `images/` `clips/` | [04](./04.FLOW+옴니_생성지침.md) | — |
-| **5** | 캡컷 편집 | 위 전부 | 완성본 mp4 | [05](./05.캡컷_편집지침.md) | `subtitle_split` → `align_subtitles` → `capcut_build` → `verify_draft` |
+| **5** | 편집·렌더 | 위 전부 | 완성본 mp4 | [05](./05.캡컷_편집지침.md) | `subtitle_split` → `align_subtitles` → `capcut_build` → `verify_draft` → `render_final` |
 | **6** | 제목·설명·썸네일 | 완성 영상 | `06.메타.json` + `썸네일.jpg` | [06](./06.제목_설명_썸네일지침.md) | `thumbnail_build.py` |
 | **7** | 업로드 | 전부 | 공개 쇼츠 | [07](./07.업로드지침.md) | `youtube_upload.py` |
 
@@ -113,6 +113,9 @@ python tools/capcut_build.py    산출물/EP01_진시황릉
 ```
 ```bash
 python tools/verify_draft.py    산출물/EP01_진시황릉
+```
+```bash
+python tools/render_final.py    산출물/EP01_진시황릉 --run
 ```
 ```bash
 python tools/thumbnail_build.py 산출물/EP01_진시황릉 --title "진시황릉" --bg 배경.png
@@ -174,6 +177,7 @@ L5 MECHANISM★ 부품 하나에 초근접. 힘이 붉은 화살표로 흐른다
 │   ├─ align_subtitles.py 5단계 — 자막 실측 싱크(ElevenLabs 강제정렬)
 │   ├─ capcut_build.py    5단계 — 캡컷 드래프트 생성
 │   ├─ verify_draft.py    5단계 — ★ 내보내기 전 자가 검수 41항목
+│   ├─ render_final.py    5단계 — 캡컷 없이 완성본 렌더 (ffmpeg)
 │   ├─ thumbnail_build.py 6단계 — 썸네일 한글 합성
 │   └─ youtube_upload.py  7단계 — 업로드 (Data API v3)
 │
@@ -186,6 +190,7 @@ L5 MECHANISM★ 부품 하나에 초근접. 힘이 붉은 화살표로 흐른다
     ├─ 06.메타.json        업로더가 읽는다
     ├─ 자막.json / 자막_싱크.json / speed_table.json
     ├─ audio/  images/  clips/     ← 무거워서 커밋 안 함
+    ├─ 완성본_EP01_진시황릉.mp4    업로더가 찾는 파일
     └─ 썸네일.jpg
 ```
 

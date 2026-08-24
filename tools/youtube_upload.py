@@ -44,8 +44,9 @@ SCOPES = ["https://www.googleapis.com/auth/youtube.upload",
           "https://www.googleapis.com/auth/youtube.readonly"]
 KST = timezone(timedelta(hours=9))
 
-# 업로드 1,600 · 썸네일 50 (공식 쿼터표)
-Q_UPLOAD, Q_THUMB = 1600, 50
+# 공식 쿼터표
+Q_UPLOAD, Q_THUMB, Q_PLAYLIST = 1600, 50, 50
+THUMB_MAX = 2 * 1024 * 1024          # 유튜브 썸네일 상한 2MB
 
 
 def _need_libs() -> None:
@@ -139,6 +140,51 @@ def check_meta(m: dict, ep: Path) -> list[str]:
     return bad
 
 
+def check_thumb(p: Path | None) -> list[str]:
+    """썸네일이 유튜브 규격에 맞는가."""
+    if p is None:
+        return []
+    bad = []
+    kb = p.stat().st_size / 1024
+    if p.stat().st_size > THUMB_MAX:
+        bad.append(f"썸네일이 {kb:.0f}KB — 상한 2,048KB 초과")
+    try:
+        from PIL import Image
+        with Image.open(p) as im:
+            w, h = im.size
+        want_w, want_h = CFG.get("출력.해상도", [1080, 1920])
+        if (w, h) != (want_w, want_h):
+            bad.append(f"썸네일이 {w}x{h} — 기대 {want_w}x{want_h}")
+    except ImportError:
+        pass
+    return bad
+
+
+def find_playlist(yt, name: str) -> str | None:
+    """내 채널에서 이름이 정확히 일치하는 재생목록의 id."""
+    tok = None
+    while True:
+        r = yt.playlists().list(part="snippet", mine=True,
+                                maxResults=50, pageToken=tok).execute()
+        for it in r.get("items", []):
+            if it["snippet"]["title"].strip() == name.strip():
+                return it["id"]
+        tok = r.get("nextPageToken")
+        if not tok:
+            return None
+
+
+def add_to_playlist(yt, vid: str, name: str) -> None:
+    pid = find_playlist(yt, name)
+    if not pid:
+        print(f"  재생목록 : ★ '{name}' 을 못 찾았습니다. 스튜디오에서 직접 추가하세요.")
+        return
+    yt.playlistItems().insert(part="snippet", body={"snippet": {
+        "playlistId": pid,
+        "resourceId": {"kind": "youtube#video", "videoId": vid}}}).execute()
+    print(f"  재생목록 : '{name}' 에 추가")
+
+
 def build_body(m: dict, privacy: str, publish_at: str | None) -> dict:
     lang = CFG.get("업로드.언어", "ko")
     body = {
@@ -209,6 +255,8 @@ def main() -> int:
                     help='예약 시각 KST. "2026-08-25 19:00"')
     ap.add_argument("--영상", dest="video", type=Path, default=None)
     ap.add_argument("--썸네일", dest="thumb", type=Path, default=None)
+    ap.add_argument("--재생목록", dest="playlist", default=None,
+                    help="기본값은 채널설정.json 의 업로드.재생목록")
     args = ap.parse_args()
 
     if args.auth:
@@ -237,6 +285,7 @@ def main() -> int:
     video = args.video or find_video(ep)
     thumb = args.thumb or next((p for p in (ep / "썸네일.jpg", ep / "썸네일.png")
                                 if p.exists()), None)
+    playlist = args.playlist or CFG.get("업로드.재생목록", "")
 
     privacy = {"비공개": "private", "일부공개": "unlisted",
                "공개": "public", "예약": "private"}[args.privacy]
@@ -263,9 +312,11 @@ def main() -> int:
     print(f"썸네일   : {thumb.name if thumb else '없음 (자동 프레임 사용)'}")
     print(f"공개     : {args.privacy}{sched}")
     print(f"카테고리 : {CFG.get('업로드.카테고리ID')} · 아동용 {CFG.get('업로드.아동용')}")
-    print(f"쿼터     : {Q_UPLOAD + (Q_THUMB if thumb else 0)} / 10,000")
+    print(f"재생목록 : {playlist or '없음'}")
+    q = Q_UPLOAD + (Q_THUMB if thumb else 0) + (Q_PLAYLIST if playlist else 0)
+    print(f"쿼터     : {q} / 10,000")
 
-    bad = check_meta(m, ep)
+    bad = check_meta(m, ep) + check_thumb(thumb)
     if not video:
         bad.append("완성본 mp4 를 못 찾았습니다. --영상 으로 지정하세요.")
     if bad:
@@ -296,10 +347,13 @@ def main() -> int:
         return 1
 
     vid = upload(yt, video, build_body(m, privacy, publish_at), thumb)
+    if playlist:
+        add_to_playlist(yt, vid, playlist)
 
     (ep / "07.업로드결과.json").write_text(json.dumps(
         {"video_id": vid, "url": f"https://youtu.be/{vid}",
          "제목": m["제목"], "공개": args.privacy, "예약": args.when,
+         "재생목록": playlist,
          "올린시각": datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"),
          "남은일": ["스튜디오에서 합성 콘텐츠 고지 켜기", "첫 댓글 고정"]},
         ensure_ascii=False, indent=1), encoding="utf-8")
