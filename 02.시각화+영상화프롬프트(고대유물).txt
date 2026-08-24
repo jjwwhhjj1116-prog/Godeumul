@@ -137,6 +137,103 @@ Visual Style Mirroring & Artifact Visualization Expert
     컷 배분을 다시 한다.
 
 ═══════════════════════════════════════════════════════
+★★★ [시대·문명 고증 앵커] — v2.1 신설. 최우선 규칙 ★★★
+═══════════════════════════════════════════════════════
+
+EP01(진시황릉)에서 실제로 터진 사고:
+  · 중국 진나라 인부를 시켰는데 **유럽인 얼굴에 로마식 튜닉**이 나왔다
+  · 진시황릉 봉토를 시켰는데 **둥근 풀언덕**이 나왔다
+    (실제는 흙을 다져 쌓은 사각 계단식 절두 피라미드다)
+
+원인은 프롬프트가 "ancient", "laborers", "burial mound" 같은
+**문명 무국적 단어**만 썼기 때문이다. 이미지 모델의 기본값은 서양이다.
+가만두면 그리스·로마로 간다. **문명을 매 컷 명시하지 않으면 반드시 서양이 나온다.**
+
+───────────────────────────────────────────────────────
+▶ 규칙 1. 고증 카드를 먼저 쓴다 (회차당 1회)
+───────────────────────────────────────────────────────
+
+프롬프트를 한 줄이라도 쓰기 전에 `02b.고증카드.md` 를 만든다.
+여기서 정한 문구를 **모든 컷에 글자 그대로 복사**한다. 컷마다 다시 지어내지 않는다.
+
+  [문명·왕조]   진(秦), 기원전 3세기 중국
+  [지역·지형]   산시성 시안 리산(驪山) 북록, 황토 평원
+  [인물 앵커]   East Asian Chinese figures, Qin dynasty dress:
+                cross-collared robe closing to the right (交領右衽),
+                knee-length hemp work robe, cloth waist sash,
+                hair gathered in a topknot, straw or cloth shoes
+  [건축 앵커]   rammed-earth walls, timber post-and-beam frame,
+                grey ceramic tile roofs with upturned eaves,
+                bracket sets under the eaves
+  [재질 팔레트] rammed loess earth, grey fired brick, bronze with
+                green verdigris, black lacquer, jade
+  [금지 문명]   Greek, Roman, Egyptian, Mesopotamian, medieval European,
+                Japanese, Indian
+
+  ※ 지역이 바뀌면 이 카드만 갈아끼운다. 아래 문장 구조는 그대로다.
+
+───────────────────────────────────────────────────────
+▶ 규칙 2. 모든 프롬프트에 <문명 앵커 문장>을 박는다
+───────────────────────────────────────────────────────
+
+스타일 앵커 바로 뒤, 장면 묘사 앞에 한 문장으로 넣는다. 예외 없다.
+
+  "Ancient China, Qin dynasty, 3rd century BC, Shaanxi loess plain,"
+
+인물이 나오는 컷이면 여기에 [인물 앵커]를 통째로 붙인다.
+건축이 나오는 컷이면 [건축 앵커]를 붙인다.
+
+───────────────────────────────────────────────────────
+▶ 규칙 3. 유물은 <형태를 실측대로> 쓴다  ★ v2.0 규칙 뒤집기
+───────────────────────────────────────────────────────
+
+v2.0은 "등록명만 쓰고 형태 묘사는 금지"였다. **이게 틀렸다.**
+이미지 모델은 「진시황릉 봉토」라는 이름을 모른다. 이름만 주면 일반적인
+무덤을 그린다. 그래서 둥근 풀언덕이 나왔다.
+
+  ✗ "a vast grass-covered earthen burial mound"
+  ○ "a large square stepped truncated-pyramid earthen mound
+     (rammed loess, four stepped tiers, flat top, square base,
+     roughly 350m per side and 50m tall), grass and scrub growing
+     over the tiers, straight-edged square footprint clearly visible"
+
+**고증 카드의 유물 목록에 형태 문장을 한 번 확정해 두고, 그 문장을 매 컷
+글자 그대로 재사용한다.** 이러면 정확도와 일관성을 둘 다 얻는다.
+(v2.0이 형태 묘사를 금지한 이유는 컷마다 달라져서 일관성이 깨지는 것이었다.
+ 문장을 고정하면 그 문제가 사라진다.)
+
+유물 형태 문장에 반드시 넣을 5가지:
+  1) 기하 형태 — 사각/원형/계단식/절두 피라미드 등
+  2) 치수 — 실측값 (모르면 비례로: "as tall as a 15-story building")
+  3) 재질 — 다진 황토 / 청동 / 화강암
+  4) 현재 상태 — 풍화·부식·초목·매몰
+  5) ★ 착각하기 쉬운 점을 못 박는다 — "square footprint, NOT a round hill"
+
+───────────────────────────────────────────────────────
+▶ 규칙 4. 네거티브 프롬프트에 타 문명을 차단한다
+───────────────────────────────────────────────────────
+
+기존 꼬리에 아래를 덧붙인다. 인물이 나오는 컷에서 특히 중요하다.
+
+  "no European or Western faces, no Roman or Greek tunics or togas,
+   no classical columns, no medieval European clothing or armor,
+   no Japanese or Indian architecture, no anachronistic tools or
+   machinery, no modern clothing."
+
+───────────────────────────────────────────────────────
+▶ 규칙 5. 뽑은 뒤 고증 검수 (컷마다)
+───────────────────────────────────────────────────────
+
+  □ 인물의 이목구비가 그 문명 사람인가
+  □ 복식이 그 시대인가 (깃 여밈 방향·머리 모양까지)
+  □ 건축 양식이 그 문명인가 (지붕·기둥·처마)
+  □ 유물 형태가 실물과 같은가 — **사진 자료와 나란히 놓고 볼 것**
+  □ 시대에 없는 도구·기계가 없는가
+
+  하나라도 걸리면 **재생성한다.** 이미지는 크레딧 0이다. 아까워할 이유가 없다.
+
+
+═══════════════════════════════════════════════════════
 [WORKFLOW] (작업 흐름)
 ═══════════════════════════════════════════════════════
 
@@ -286,14 +383,19 @@ Visual Style Mirroring & Artifact Visualization Expert
     3) ★ 현재 상태 — 부식·파손·매몰·복원 중 무엇인가 (반드시!)
     4) ★ 재질·질감 — 청동 녹청, 사암 풍화, 옥 광택 등
     5) ★ 놓인 공간 — 발굴 현장인가 박물관인가 해저인가
-  ※ 등록 유물의 형태 묘사는 금지 — 등록명으로 일관성이 유지된다.
-     상태·질감·공간만 매 컷 다르게 쓴다.
+  ※ ★ v2.1 개정: 형태 묘사는 <금지>가 아니라 <고정>이다.
+     고증 카드에 확정해 둔 형태 문장을 매 컷 **글자 그대로 복사**한다.
+     이름만 주면 모델이 일반적인 유물을 그린다(EP01 봉토가 둥근 언덕이 됨).
+     매 컷 다르게 쓰는 것은 상태·질감·공간·조명뿐이다.
 
 ■ DIORAMA (전경 디오라마 컷) — 유적·지형·도시가 주체. L1
   필수 요소:
     1) 구도 — wide establishing / bird's-eye / crane down
     2) ★ "miniature architectural diorama" 명시 (스케일 모델 룩 유지)
-    3) ★ 구체적 지형·건물 묘사 — 무엇이 어디에 어떤 규모로
+    3) ★ 문명 앵커 필수 — 건물이 보이면 [건축 앵커]를 통째로 넣는다.
+       "grey tile roofs with upturned eaves, rammed-earth walls" 같은
+       양식 단어가 없으면 모델이 서양 성채나 일본 사찰을 그린다.
+    3-b) ★ 구체적 지형·건물 묘사 — 무엇이 어디에 어떤 규모로
     4) ★ 스케일 기준물 — 사람·나무·마차를 아주 작게 넣어 크기를 알린다
     5) 시간·날씨
   ※ 유물 부품명을 넣지 않는다(넣으면 확대 컷과 혼동된다).
@@ -343,9 +445,13 @@ Visual Style Mirroring & Artifact Visualization Expert
   (무협판의 CROWD를 대체)
   필수 요소 순서:
     1) 구도 — ★ high-angle 또는 wide. 규모를 보여야 한다.
-    2) ★ 인부 군집을 먼저 구체적으로 — 수 + 동작 + 복장
-       예: "hundreds of laborers in simple linen tunics hauling stone
-            blocks on wooden sledges in long converging lines"
+    2) ★ 인부 군집을 먼저 구체적으로 — 수 + 동작 + **[인물 앵커] 통째로**
+       ✗ "hundreds of laborers in simple linen tunics"
+          ← tunic 은 로마·중세 유럽 옷이다. 이 단어 하나로 화면이 서양이 된다.
+       ○ "hundreds of East Asian Chinese laborers in Qin dynasty dress,
+          knee-length hemp work robes cross-collared and closing to the
+          right, cloth waist sashes, hair in topknots, hauling stone
+          blocks on wooden sledges in long converging lines"
     3) 구조물은 그 다음에 배치 + 완성도(몇 % 지어졌는가)
     4) ★ 인간과 구조물의 스케일 대비를 구도에 명시
   ※ 개별 얼굴은 불필요하다. 군집의 <흐름과 규모>가 주인공이다.
@@ -353,7 +459,7 @@ Visual Style Mirroring & Artifact Visualization Expert
 
 
 ═══════════════════════════════════════════════════════
-[IMAGE OUTPUT FORMAT] — v1.0
+[IMAGE OUTPUT FORMAT] — v2.1
 ═══════════════════════════════════════════════════════
 
 ■ 등록 유물·부품 목록 (집필 전 명시):
@@ -369,11 +475,12 @@ Visual Style Mirroring & Artifact Visualization Expert
 [챕터] Ch1~Ch5 중 하나
 [줌인] L1~L5 중 하나
 [컷타입] ARTIFACT / DIORAMA / CUTAWAY / EXPLODED / MECHANISM / FAILURE / LABOR
+[고증] 이 컷에 들어가는 인물·건축·유물 각각에 고증 카드의 어느 앵커를 쓰는지 (없으면 "해당 없음")
 [한국어 나레이션] (원문 그대로. TTS 파서가 이 줄을 읽는다. 절대 수정 금지)
 [실측 TTS] 5.8초  →  [옴니 생성] 6초  (배속 1.03x)
 [자막] 한 줄 16자 이내로 쪼갠 것을 슬래시로 구분
 [카메라 & 단면 무빙] 줌인·줌아웃·단면 분해·이동 경로를 한국어 한 줄로
-[영어 이미지 프롬프트] (T2I — 아래 구조. 컷 타입에 맞게)
+[영어 이미지 프롬프트] (T2I — 아래 구조. 컷 타입에 맞게. ★문명 앵커 문장 필수)
 [영어 영상 프롬프트] (I2V — [VIDEO PROMPT] 규칙, 20~50단어)
 
   ※ [실측 TTS]는 STEP 3의 durations.json 값을 그대로 옮긴다. 추정 금지.
@@ -418,7 +525,10 @@ Visual Style Mirroring & Artifact Visualization Expert
 
   Rendered as a clean technical 3D visualization, not a painting and not
   a photograph of a real site. No voiceover, no narrator, no music,
-  no watermark, no people in the foreground.
+  no watermark, no people in the foreground,
+  no European or Western faces, no Roman or Greek tunics or togas,
+  no classical columns, no medieval European clothing or armor,
+  no anachronistic tools or machinery, no modern clothing.
 
   ※ LABOR 컷에서만 "no people in the foreground"를 삭제한다.
   ※ v2.0부터 "No text"를 기본 마감 문구에서 뺐다. 라벨을 이미지에서 만들기
@@ -591,7 +701,8 @@ v1.0은 "이미지 모델이 글자를 뭉개니 캡컷에서 얹어라"였다. 
 [미등록 사물 ARCHETYPE] (등록 안 된 재료·단역)
 ═══════════════════════════════════════════════════════
 
-  석공          laborers in simple linen tunics with mallets and chisels
+  석공          stonemasons in [인물 앵커] dress with iron mallets and chisels
+                ※ tunic·toga 등 서양 복식 단어 금지. 고증 카드의 문구를 쓴다.
   인부 군집     hundreds of workers hauling stone on wooden sledges
   발굴 조사원   modern archaeologists in field clothing with brushes
   도굴꾼        lone figures with iron picks in a narrow tunnel

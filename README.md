@@ -15,6 +15,16 @@
 ```bash
 git clone https://github.com/jjwwhhjj1116-prog/Godeumul.git
 ```
+
+> ★ **PowerShell 주의**: 폴더 이름의 `[채널]` 을 PowerShell 이 와일드카드로
+> 해석해서 평범한 `cd` 가 실패한다. 반드시 `-LiteralPath` 를 쓴다.
+> ```powershell
+> Set-Location -LiteralPath "C:\...\[채널]고대유물의 비밀"
+> ```
+> 또는 스크립트를 절대 경로로 직접 실행한다.
+> ```powershell
+> python "C:\...\[채널]고대유물의 비밀	ools\youtube_upload.py" --auth
+> ```
 ```bash
 pip install requests pillow google-api-python-client google-auth-oauthlib google-auth-httplib2
 ```
