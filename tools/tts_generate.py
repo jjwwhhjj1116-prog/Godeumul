@@ -31,6 +31,8 @@ from pathlib import Path
 
 import requests
 
+from _config import load, load_env
+
 # 한국어 Windows 콘솔은 기본이 cp949라 한글·기호 출력에서 죽는다. 먼저 막아둔다.
 for _stream in (sys.stdout, sys.stderr):
     try:
@@ -41,9 +43,9 @@ for _stream in (sys.stdout, sys.stderr):
 ROOT = Path(__file__).resolve().parent.parent
 API_URL = "https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
 
-# 투탕카멘 편 캡컷 프로젝트 실측: 자막 1,016자 / 125.9초 = 8.07 자/초
-CPS_MEASURED = 8.07
-CPS_PLANNING = 8.0      # 편집 후 간격 감안 (순수 TTS는 9.35, 캡컷 자막 기준 8.07)
+CFG = load()
+CPS_MEASURED = CFG.get("tts.실측_자당초", 9.35)
+CPS_PLANNING = CFG.get("tts.기획_자당초", 8.0)
 
 
 # ──────────────────────────────────────────────────────────────
@@ -82,7 +84,7 @@ class Config:
             return os.environ.get(key) or env.get(key) or default
 
         api_key = get("ELEVENLABS_API_KEY", "")
-        voice_id = get("ARTIFACT_VOICE_ID", "")
+        voice_id = get("ARTIFACT_VOICE_ID", CFG.get("tts.voice_id", ""))
         if not api_key or not voice_id:
             sys.exit(
                 "[에러] ELEVENLABS_API_KEY 또는 ARTIFACT_VOICE_ID 가 없습니다.\n"
@@ -91,14 +93,14 @@ class Config:
         return cls(
             api_key=api_key,
             voice_id=voice_id,
-            model=get("ARTIFACT_MODEL", "eleven_multilingual_v2"),
-            stability=float(get("ARTIFACT_STABILITY", "0.4")),
-            similarity=float(get("ARTIFACT_SIMILARITY", "0.85")),
-            style=float(get("ARTIFACT_STYLE", "0.50")),
-            speaker_boost=get("ARTIFACT_SPEAKER_BOOST", "true").lower() == "true",
-            speed=float(get("ARTIFACT_SPEED", "1.05")),
-            language=get("ARTIFACT_LANGUAGE", "ko"),
-            output_format=get("ARTIFACT_OUTPUT_FORMAT", "mp3_44100_128"),
+            model=get("ARTIFACT_MODEL", CFG.get("tts.model", "eleven_multilingual_v2")),
+            stability=float(get("ARTIFACT_STABILITY", str(CFG.get("tts.stability", 0.4)))),
+            similarity=float(get("ARTIFACT_SIMILARITY", str(CFG.get("tts.similarity", 0.85)))),
+            style=float(get("ARTIFACT_STYLE", str(CFG.get("tts.style", 0.5)))),
+            speaker_boost=get("ARTIFACT_SPEAKER_BOOST", str(CFG.get("tts.speaker_boost", True))).lower() in ("true","1"),
+            speed=float(get("ARTIFACT_SPEED", str(CFG.get("tts.speed", 1.05)))),
+            language=get("ARTIFACT_LANGUAGE", CFG.get("tts.language", "ko")),
+            output_format=get("ARTIFACT_OUTPUT_FORMAT", CFG.get("tts.output_format", "mp3_44100_128")),
         )
 
     def signature(self) -> str:

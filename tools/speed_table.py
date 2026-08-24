@@ -27,6 +27,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from _config import load
+
 for _stream in (sys.stdout, sys.stderr):
     try:
         _stream.reconfigure(encoding="utf-8", errors="replace")
@@ -35,8 +37,9 @@ for _stream in (sys.stdout, sys.stderr):
 
 # 실제 프로젝트("투탕카멘_고대유물의 비밀") 실측 배속은 0.78x~3.80x였다.
 # 생성 클립이 대부분 느린 카메라 무빙이라 3배속도 티가 안 난다.
-SPEED_OK = (0.75, 3.00)
-SPEED_WARN = (0.50, 4.50)
+CFG = load()
+SPEED_OK = tuple(CFG.get("영상.배속_안전", [0.75, 3.0]))
+SPEED_WARN = tuple(CFG.get("영상.배속_경고", [0.5, 4.5]))
 
 VIDEO_EXTS = (".mp4", ".mov", ".webm", ".mkv", ".m4v")
 IMAGE_EXTS = (".png", ".jpg", ".jpeg", ".webp")

@@ -29,6 +29,8 @@ from pathlib import Path
 
 import requests
 
+from _config import load_env as _cfg_env
+
 for _s in (sys.stdout, sys.stderr):
     try:
         _s.reconfigure(encoding="utf-8", errors="replace")
@@ -40,13 +42,10 @@ API = "https://api.elevenlabs.io/v1/forced-alignment"
 
 
 def load_key() -> str:
-    for line in (ROOT / ".env").read_text(encoding="utf-8").splitlines():
-        if line.strip().startswith("#") or "=" not in line:
-            continue
-        k, _, v = line.partition("=")
-        if k.strip() == "ELEVENLABS_API_KEY":
-            return v.strip()
-    sys.exit("[에러] .env 에 ELEVENLABS_API_KEY 가 없습니다.")
+    k = _cfg_env().get("ELEVENLABS_API_KEY", "")
+    if not k:
+        sys.exit("[에러] .env 에 ELEVENLABS_API_KEY 가 없습니다.")
+    return k
 
 
 def align(key: str, audio: Path, text: str) -> list[dict]:

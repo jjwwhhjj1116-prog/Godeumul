@@ -27,14 +27,17 @@ import re
 import sys
 from pathlib import Path
 
+from _config import load
+
 for _s in (sys.stdout, sys.stderr):
     try:
         _s.reconfigure(encoding="utf-8", errors="replace")
     except (AttributeError, ValueError):
         pass
 
-MAX_CHARS = 16      # 한 줄 상한 (실측 17자에서 1자 여유)
-TARGET = 9          # 목표 길이 (실측 중앙값)
+CFG = load()
+MAX_CHARS = CFG.get("자막.최대글자수", 16)
+TARGET = CFG.get("자막.목표글자수", 9)
 MIN_TAIL = 3        # 이보다 짧은 꼬리는 앞과 재분배
 
 # 홀로 줄 앞에 오면 어색한 것들 — 앞 어절에 붙여야 한다

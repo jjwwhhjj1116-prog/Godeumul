@@ -35,19 +35,22 @@ import time
 import uuid
 from pathlib import Path
 
+from _config import load
+
 for _s in (sys.stdout, sys.stderr):
     try:
         _s.reconfigure(encoding="utf-8", errors="replace")
     except (AttributeError, ValueError):
         pass
 
+CFG = load()
 ROOT = Path(__file__).resolve().parent.parent
 DRAFT_ROOT = Path.home() / "AppData/Local/CapCut/User Data/Projects/com.lveditor.draft"
-TEMPLATE = DRAFT_ROOT / "투탕카멘_고대유물의 비밀"
-WATERMARK = ROOT / "자산워터마크.png"
+TEMPLATE = DRAFT_ROOT / CFG.get("캡컷.템플릿드래프트", "투탕카멘_고대유물의 비밀")
+WATERMARK = ROOT / CFG.get("워터마크.파일", "자산워터마크.png")
 
 US = 1_000_000            # 캡컷 시간 단위는 마이크로초
-FPS = 30
+FPS = CFG.get("출력.fps", 30)
 FRAME = US // FPS         # 33333
 
 
@@ -227,7 +230,9 @@ def main() -> int:
                   material_name=media.name, local_material_id=uid(),
                   duration=int((src if src > 0 else tts) * US),
                   type="photo" if is_img else "video",
-                  has_audio=False, width=1080, height=1920)
+                  has_audio=False,
+                  width=CFG.get("출력.해상도",[1080,1920])[0],
+                  height=CFG.get("출력.해상도",[1080,1920])[1])
         cl.out["videos"].append(vm)
 
         vs = copy.deepcopy(v_proto)
@@ -384,8 +389,8 @@ def main() -> int:
         e.update({"id": uid(), "file_Path": str(path).replace("\\", "/"),
                   "metetype": mtype, "duration": int(dur_us),
                   "extra_info": path.name,
-                  "width": 1080 if mtype == "video" else 0,
-                  "height": 1920 if mtype == "video" else 0,
+                  "width": CFG.get("출력.해상도",[1080,1920])[0] if mtype == "video" else 0,
+                  "height": CFG.get("출력.해상도",[1080,1920])[1] if mtype == "video" else 0,
                   "create_time": -1, "import_time": int(time.time()),
                   "import_time_ms": now, "md5": ""})
         reg.append(e)

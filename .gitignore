@@ -4,6 +4,9 @@
 !.env.example
 *api*key*.txt
 *API*key*.txt
+client_secrets.json
+token.json
+*client_secret*.json
 
 # ═══ 무거운 산출물 (텍스트 산출물은 커밋한다) ═══
 산출물/**/audio/
