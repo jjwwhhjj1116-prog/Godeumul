@@ -259,6 +259,11 @@ def main() -> int:
         as_["target_timerange"] = {"start": cursor, "duration": dur}
         as_["source_timerange"] = {"start": 0, "duration": dur}
         as_["speed"] = 1.0
+        # ★ 템플릿 볼륨(1.778 = +5dB)을 물려받으면 안 된다. 캡컷에는 리미터가
+        #   없어 그대로 하드 클리핑이 난다(EP01에서 트루피크 +4.2dBFS).
+        #   게인은 audio_normalize 가 파일에 구웠으므로 여기서는 1.0 이다.
+        as_["volume"] = float(CFG.get("오디오.캡컷볼륨", 1.0))
+        as_["last_nonzero_volume"] = as_["volume"]
         a_track["segments"].append(as_)
         media_registry.append((amedia.resolve(), "music", int(tts * US)))
         used_media.append(amedia.resolve())

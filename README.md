@@ -72,10 +72,10 @@ python tools/youtube_upload.py --auth
 |---|---|---|---|---|---|
 | **1** | 대본 작성 | 유물 주제 1개 | 5챕터 나레이션 | [01](./%23%20%5B고대유물의%20비밀%5D%20대본%20작성%20전용%20시스템%20지침.txt) | — |
 | **2a** | 장면 구분표 | 대본 | 컷 배분 + 쿼터 검증 | [02](./02.시각화+영상화프롬프트(고대유물).txt) | — |
-| **3** | **TTS 실측 (먼저!)** | 장면 구분 | `audio/*.mp3` + `durations.json` | [03](./03.TTS생성지침.md) | `tts_generate.py` |
+| **3** | **TTS 실측 (먼저!)** | 장면 구분 | `audio/*.mp3` + `durations.json` | [03](./03.TTS생성지침.md) | `tts_generate` → `audio_normalize` |
 | **2b** | 프롬프트 생성 | 실측 길이 | 컷별 6대 항목 + 옴니 규격 | [02](./02.시각화+영상화프롬프트(고대유물).txt) | `speed_table.py` |
 | **4** | 이미지·영상 생성 | 프롬프트 txt | `images/` `clips/` | [04](./04.FLOW+옴니_생성지침.md) | — |
-| **5** | 캡컷 편집 | 위 전부 | 완성본 mp4 | [05](./05.캡컷_편집지침.md) | `subtitle_split` → `align_subtitles` → `capcut_build` |
+| **5** | 캡컷 편집 | 위 전부 | 완성본 mp4 | [05](./05.캡컷_편집지침.md) | `subtitle_split` → `align_subtitles` → `capcut_build` → `verify_draft` |
 | **6** | 제목·설명·썸네일 | 완성 영상 | `06.메타.json` + `썸네일.jpg` | [06](./06.제목_설명_썸네일지침.md) | `thumbnail_build.py` |
 | **7** | 업로드 | 전부 | 공개 쇼츠 | [07](./07.업로드지침.md) | `youtube_upload.py` |
 
@@ -94,6 +94,9 @@ python tools/tts_generate.py    산출물/EP01_진시황릉
 python tools/tts_generate.py    산출물/EP01_진시황릉 --run
 ```
 ```bash
+python tools/audio_normalize.py 산출물/EP01_진시황릉 --run
+```
+```bash
 python tools/speed_table.py     산출물/EP01_진시황릉
 ```
 ```bash
@@ -107,6 +110,9 @@ python tools/capcut_build.py    산출물/EP01_진시황릉 --check
 ```
 ```bash
 python tools/capcut_build.py    산출물/EP01_진시황릉
+```
+```bash
+python tools/verify_draft.py    산출물/EP01_진시황릉
 ```
 ```bash
 python tools/thumbnail_build.py 산출물/EP01_진시황릉 --title "진시황릉" --bg 배경.png
@@ -162,10 +168,12 @@ L5 MECHANISM★ 부품 하나에 초근접. 힘이 붉은 화살표로 흐른다
 ├─ tools/
 │   ├─ _config.py         채널설정.json 로더 (전 도구가 여기를 거친다)
 │   ├─ tts_generate.py    3단계 — 장면별 TTS + 길이표
+│   ├─ audio_normalize.py 3단계 — 라우드니스 정규화(클리핑 방지)
 │   ├─ speed_table.py     5단계 — 캡컷 배속 계산
 │   ├─ subtitle_split.py  5단계 — 자막 한 줄 분할(어절 보존)
 │   ├─ align_subtitles.py 5단계 — 자막 실측 싱크(ElevenLabs 강제정렬)
 │   ├─ capcut_build.py    5단계 — 캡컷 드래프트 생성
+│   ├─ verify_draft.py    5단계 — ★ 내보내기 전 자가 검수 41항목
 │   ├─ thumbnail_build.py 6단계 — 썸네일 한글 합성
 │   └─ youtube_upload.py  7단계 — 업로드 (Data API v3)
 │
@@ -202,7 +210,8 @@ L5 MECHANISM★ 부품 하나에 초근접. 힘이 붉은 화살표로 흐른다
 | 워터마크 | 우하단 x=0.6772 y=−0.8164 · 스케일 0.2304 · 크로마키 #fcfcfc |
 | 이미지 | Nano Banana 2 · 9:16 · x2 · 크레딧 0 |
 | 영상 | Omni Flash · 720p · x1 · 8초 = 12크레딧 |
-| 사운드 | 나레이션 −16 LUFS / BGM −26 LUFS |
+| 사운드 | 나레이션 **−16 LUFS · 트루피크 −1.5 dBFS** / BGM −26 LUFS |
+| 캡컷 오디오 볼륨 | **1.0 고정.** 캡컷엔 리미터가 없어 게인을 걸면 클리핑이 난다 |
 | 안전 영역 | 하단 18%를 비운다 (쇼츠 UI) |
 | 업로드 쿼터 | 영상 1,600 + 썸네일 50 / 하루 10,000 (≈ 6편) |
 
@@ -216,7 +225,10 @@ L5 MECHANISM★ 부품 하나에 초근접. 힘이 붉은 화살표로 흐른다
 3. **출처를 댈 수 없는 내용은 대본에 넣지 않는다.** 회차마다 `00.팩트체크.md` 를
    쓰고, C등급(문헌만·실물 미확인)이 있으면 설명란에 재현 고지를 넣는다.
    업로더가 이걸 검사해서 없으면 막는다.
-4. **새로 걸린 함정은 [00.함정목록.md](./00.함정목록.md) 에 한 줄 추가하고,
+4. **내보내기 전에 `verify_draft.py` 를 돌린다.** 영상·나레이션·자막이 같은
+   시간축에 놓였는지, 소리가 클리핑하지 않는지 41개 항목을 전수 검사한다.
+   실패가 하나라도 있으면 올리지 않는다.
+5. **새로 걸린 함정은 [00.함정목록.md](./00.함정목록.md) 에 한 줄 추가하고,
    반드시 코드나 지침에도 박는다.** 표에만 적으면 다음에 또 걸린다.
 
 ---

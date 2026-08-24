@@ -11,7 +11,8 @@
   · 목표 9자 안팎                          (실측 중앙값 9자)
   · 어절(공백) 경계에서만 자른다
   · 조사·의존명사만 다음 줄로 넘어가지 않게 막는다
-  · 너무 짧은 꼬리(3자 미만)는 앞 큐와 재분배한다
+  · ★ 문장 전체를 보고 줄 길이를 고르게 나눈다(DP). 앞에서부터 욕심껏 채우면
+    문장 끝에 「보죠.」 같은 3자짜리 꼬리가 남아 0.26초 만에 사라진다
 
 사용법
   python tools/subtitle_split.py 산출물/EP01_진시황릉/01.대본.txt
@@ -38,7 +39,7 @@ for _s in (sys.stdout, sys.stderr):
 CFG = load()
 MAX_CHARS = CFG.get("자막.최대글자수", 16)
 TARGET = CFG.get("자막.목표글자수", 9)
-MIN_TAIL = 3        # 이보다 짧은 꼬리는 앞과 재분배
+MIN_TAIL = CFG.get("자막.최소표시초", 0.35)   # 검수용 기준. 분할은 DP 가 균등하게 처리한다
 
 # 홀로 줄 앞에 오면 어색한 것들 — 앞 어절에 붙여야 한다
 DEPENDENT_HEAD = (
@@ -98,48 +99,54 @@ def bad_head(word: str) -> bool:
 
 
 def pack(words: list[str], max_chars: int, target: int) -> list[str]:
-    """어절을 줄 단위로 담는다. 경계는 항상 어절 사이."""
-    lines: list[str] = []
-    cur: list[str] = []
+    """한 문장을 줄 단위로 나눈다. 경계는 항상 어절 사이.
 
-    def cur_len(extra: str | None = None) -> int:
-        parts = cur + ([extra] if extra else [])
-        return len(" ".join(parts))
+    앞에서부터 욕심껏 채우면(greedy) 문장 끝에 「보죠.」 같은 3자짜리 꼬리가
+    남는다. 0.26초 떴다 사라져서 읽히지 않는다. 그래서 문장 전체를 보고
+    **모든 줄이 목표 길이에 고르게 가깝도록** 나눈다(DP).
 
+      비용 = Σ(줄길이 − 목표)²   ← 마지막 줄도 똑같이 물린다
+
+    제곱이라 한 줄만 유난히 짧거나 긴 배치가 강하게 걸러진다.
+    """
+    n = len(words)
+    if n == 0:
+        return []
+
+    cum = [0]
     for w in words:
-        if not cur:
-            cur = [w]
-            continue
-        if cur_len(w) <= max_chars:
-            # 목표를 넘었고, 다음 어절을 앞으로 보내도 어색하지 않으면 여기서 끊는다
-            if cur_len() >= target and not bad_head(w) and cur_len(w) > target + 3:
-                lines.append(" ".join(cur))
-                cur = [w]
-            else:
-                cur.append(w)
-        else:
-            if bad_head(w) and len(cur) > 1:
-                # 의존 어절은 홀로 못 넘어간다 → 앞 어절을 함께 내린다
-                moved = cur.pop()
-                lines.append(" ".join(cur))
-                cur = [moved, w]
-            else:
-                lines.append(" ".join(cur))
-                cur = [w]
+        cum.append(cum[-1] + len(w))
 
-    if cur:
-        lines.append(" ".join(cur))
+    def line_len(i: int, j: int) -> int:
+        return cum[j] - cum[i] + (j - i - 1)      # 어절 사이 공백
 
-    # 짧은 꼬리 재분배
-    if len(lines) >= 2 and len(lines[-1]) < MIN_TAIL:
-        merged = lines[-2] + " " + lines[-1]
-        if len(merged) <= max_chars:
-            lines[-2:] = [merged]
-        else:
-            ws = merged.split()
-            half = len(ws) // 2
-            lines[-2:] = [" ".join(ws[:half]), " ".join(ws[half:])]
-    return lines
+    INF = float("inf")
+    cost = [INF] * (n + 1)
+    prev = [0] * (n + 1)
+    cost[0] = 0.0
+
+    for j in range(1, n + 1):
+        for i in range(j - 1, -1, -1):
+            L = line_len(i, j)
+            if L > max_chars and j - i > 1:
+                break                              # 더 늘려봐야 넘치기만 한다
+            if cost[i] == INF:
+                continue
+            c = float((L - target) ** 2)
+            if L > max_chars:                      # 어절 하나가 상한보다 길 때만
+                c += 10_000 * (L - max_chars)
+            if i > 0 and bad_head(words[i]):       # 의존 어절로 줄을 시작하지 않는다
+                c += 400
+            if cost[i] + c < cost[j]:
+                cost[j] = cost[i] + c
+                prev[j] = i
+
+    lines, j = [], n
+    while j > 0:
+        i = prev[j]
+        lines.append(" ".join(words[i:j]))
+        j = i
+    return lines[::-1]
 
 
 def main() -> int:
@@ -148,7 +155,7 @@ def main() -> int:
     ap.add_argument("--max", type=int, default=MAX_CHARS)
     ap.add_argument("--target", type=int, default=TARGET)
     ap.add_argument("--srt", action="store_true", help="SRT도 저장(길이 균등 배분)")
-    ap.add_argument("--cps", type=float, default=8.07, help="SRT 타이밍용 자/초 (실측 8.07)")
+    ap.add_argument("--cps", type=float, default=CFG.get("출력.발화속도_실측", 9.35), help="SRT 타이밍용 자/초")
     args = ap.parse_args()
 
     if not args.script.exists():

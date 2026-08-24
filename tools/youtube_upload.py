@@ -82,6 +82,15 @@ def service():
     return build("youtube", "v3", credentials=creds, cache_discovery=False)
 
 
+def whoami(yt) -> str:
+    """토큰이 물고 있는 채널 이름."""
+    r = yt.channels().list(part="snippet", mine=True).execute()
+    items = r.get("items") or []
+    if not items:
+        sys.exit("[에러] 이 계정에 유튜브 채널이 없습니다. 채널을 먼저 만드세요.")
+    return items[0]["snippet"]["title"]
+
+
 def find_video(ep: Path) -> Path | None:
     """캡컷에서 내보낸 완성본을 찾는다. clips/ 의 소재는 제외."""
     for pat in ("완성본*.mp4", "*_완성.mp4", "export*.mp4", "*.mp4"):
@@ -204,10 +213,18 @@ def main() -> int:
 
     if args.auth:
         yt = service()
-        it = yt.channels().list(part="snippet,statistics", mine=True).execute()["items"][0]
-        print(f"\n  채널   : {it['snippet']['title']}")
+        title = whoami(yt)
+        it = yt.channels().list(part="statistics", mine=True).execute()["items"][0]
+        print(f"\n  채널   : {title}")
         print(f"  구독자 : {it['statistics'].get('subscriberCount', '비공개')}")
-        print(f"  영상   : {it['statistics'].get('videoCount', 0)}편\n")
+        print(f"  영상   : {it['statistics'].get('videoCount', 0)}편")
+
+        want = CFG.get("업로드.채널명", "") or CFG.get("채널.이름", "")
+        if want and title.strip() != want.strip():
+            print(f"\n  ★ 기대한 채널은 '{want}' 입니다. 계정을 잘못 고른 것 같습니다.")
+            print(f"     token.json 을 지우고 --auth 를 다시 하세요:\n       {TOKEN}\n")
+            return 1
+        print(f"\n  '{want}' 확인. 이제 업로드할 수 있습니다.\n" if want else "")
         return 0
 
     if not args.episode:
@@ -268,6 +285,16 @@ def main() -> int:
     print("     업로드 후 스튜디오에서 한 번 켜야 합니다. (07-3)")
 
     yt = service()
+
+    # ★ 계정이 여러 개면 엉뚱한 채널에 올라가는 게 최악이다. 올리기 직전에 확인한다.
+    title = whoami(yt)
+    want = CFG.get("업로드.채널명", "") or CFG.get("채널.이름", "")
+    print(f"\n  대상 채널 : {title}")
+    if want and title.strip() != want.strip():
+        print(f"\n  ★ 중단합니다. 기대한 채널은 '{want}' 인데 토큰은 '{title}' 을 물고 있습니다.")
+        print(f"     token.json 을 지우고 --auth 를 다시 하세요:\n       {TOKEN}\n")
+        return 1
+
     vid = upload(yt, video, build_body(m, privacy, publish_at), thumb)
 
     (ep / "07.업로드결과.json").write_text(json.dumps(
