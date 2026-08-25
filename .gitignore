@@ -4,6 +4,7 @@
 !.env.example
 *api*key*.txt
 *API*key*.txt
+client_secret*.json
 client_secrets.json
 token.json
 *client_secret*.json

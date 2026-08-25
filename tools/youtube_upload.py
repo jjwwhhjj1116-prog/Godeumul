@@ -38,7 +38,19 @@ from _config import load
 
 CFG = load()
 ROOT = Path(__file__).resolve().parent.parent
-SECRETS = ROOT / "client_secrets.json"
+def _find_secrets() -> Path:
+    """구글이 내려주는 파일명이 제각각이라(client_secret.json,
+    client_secret_326341392012-xxxx.apps.googleusercontent.com.json …)
+    이름을 하나로 강요하지 않고 폴더에서 찾는다."""
+    exact = [ROOT / "client_secrets.json", ROOT / "client_secret.json"]
+    for p in exact:
+        if p.exists():
+            return p
+    hits = sorted(ROOT.glob("client_secret*.json"))
+    return hits[0] if hits else exact[0]
+
+
+SECRETS = _find_secrets()
 TOKEN = ROOT / "token.json"
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload",
           "https://www.googleapis.com/auth/youtube.readonly"]
