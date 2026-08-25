@@ -129,7 +129,7 @@ def main() -> int:
         acc += scenes[k]["duration"]
 
     for cue in cues:
-        cn = norm(cue["text"])
+        cn = norm(cue.get("raw") or cue["text"])   # 정렬은 원문(한글 수사)으로
         # 현재 장면에 안 들어가면 다음 장면으로
         while si < len(scene_keys) and pos + len(cn) > len(scene_norm):
             si += 1
@@ -147,6 +147,7 @@ def main() -> int:
         st = starts[k] + chars[s_idx]["s"]
         en = starts[k] + chars[e_idx]["e"]
         out.append({"n": len(out) + 1, "scene": int(k), "text": cue["text"],
+                    "raw": cue.get("raw", cue["text"]),
                     "len": len(cue["text"]),
                     "start": round(st, 3), "end": round(en, 3),
                     "dur": round(en - st, 3)})

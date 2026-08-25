@@ -61,6 +61,56 @@ UNITS = ("년", "월", "일", "시", "분", "초", "명", "개", "톤", "미터"
 AUX_VERB = ("넣", "버리", "놓", "두", "주", "대", "내", "치")
 
 
+# ── 한글 수사 → 아라비아 숫자 ────────────────────────────
+# TTS 는 "천구백칠십이년" 으로 읽어야 자연스럽지만, **자막은 숫자로 보여야 한다.**
+# 정렬(align_subtitles)은 원문으로 하고 화면 표시만 바꾸므로 큐에 둘 다 남긴다.
+_DIG = {"영":0,"공":0,"일":1,"이":2,"삼":3,"사":4,"오":5,"육":6,"륙":6,
+        "칠":7,"팔":8,"구":9}
+_MUL = {"십":10, "백":100, "천":1000}
+_BIG = {"만":10**4, "억":10**8, "조":10**12}
+_NUMCH = set(_DIG) | set(_MUL) | set(_BIG)
+# 수사 뒤에 이게 오면 "수"로 확정한다. 조사·대명사 오탐을 막는 장치.
+_UNIT = ("년","월","일","시","분","초","명","개","톤","미터","킬로","센티","도",
+         "배","번","원","살","층","권","장","대","척","마리","겹","자루","%","위","차")
+
+def _k2n(s: str) -> int | None:
+    """순수 한글 수사 한 덩어리를 정수로."""
+    total = cur = 0
+    for ch in s:
+        if ch in _DIG:
+            cur = cur * 10 + _DIG[ch] if cur and cur < 10 else _DIG[ch]
+        elif ch in _MUL:
+            cur = (cur or 1) * _MUL[ch]
+            total += cur
+            cur = 0
+        elif ch in _BIG:
+            total = (total + cur or 1) * _BIG[ch]
+            cur = 0
+        else:
+            return None
+    return total + cur
+
+
+_NUMRUN = re.compile("[" + "".join(_NUMCH) + "]{2,}")
+
+
+def to_digits(text: str) -> str:
+    """자막 표시용. 단위가 뒤따르거나 3자 이상인 수사만 바꾼다."""
+    def rep(m):
+        s, end = m.group(), m.end()
+        tail = text[end:end + 3]
+        if len(s) < 3 and not tail.startswith(_UNIT):
+            return s                      # "이", "일" 같은 오탐 방지
+        v = _k2n(s)
+        if v is None:
+            return s
+        # 연도에 쉼표를 찍으면 어색하다 ("1,972년" → "1972년")
+        if tail.startswith("년") and 1000 <= v <= 2999:
+            return str(v)
+        return f"{v:,}" if v >= 10000 else str(v)
+    return _NUMRUN.sub(rep, text)
+
+
 def no_break(prev: str, nxt: str) -> bool:
     """이 두 어절 사이는 자르면 안 된다."""
     p = prev.rstrip(".,!?")
@@ -165,7 +215,9 @@ def main() -> int:
     cues: list[dict] = []
     for si, sent in enumerate(sentences(text), 1):
         for line in pack(atoms(sent.split()), args.max, args.target):
-            cues.append({"n": len(cues) + 1, "sent": si, "text": line, "len": len(line)})
+            shown = to_digits(line)
+            cues.append({"n": len(cues) + 1, "sent": si,
+                         "text": shown, "raw": line, "len": len(shown)})
 
     over = [c for c in cues if c["len"] > args.max]
     lens = [c["len"] for c in cues]
