@@ -1,0 +1,58 @@
+{
+  "status": "TOPIC_APPROVED",
+  "target": "창사 마왕퇴 한묘",
+  "one_sentence_promise": "마왕퇴 한묘에서 나온 채색 관, 칠기, 비단, 문서와 보존된 인체를 따라 전한대 귀족의 현실 생활과 사후 세계를 함께 추적한다.",
+  "discovery_action": "1972~1974년 창사 마왕퇴의 세 기 무덤 발굴 과정에서 확인된 무덤 구조와 출토품을 묘별로 따라간다.",
+  "representative_artifacts": [
+    "신추 묘의 채색 칠관",
+    "신추 묘의 T자형 백화",
+    "마왕퇴 출토 칠기 식기와 생활용품",
+    "마왕퇴 출토 비단 의복과 직물",
+    "3호묘 출토 백서와 도인도",
+    "보존된 신추의 유해"
+  ],
+  "historical_context": "전한대 장사국 귀족의 식생활, 복식, 지식, 장례 의례와 사후관을 묘별 출토 맥락으로 복원한다.",
+  "central_question": "서로 다른 생활용품과 장례 유물, 인체가 함께 남았다는 사실은 전한대 귀족의 삶과 죽음을 어떻게 보여주며 그 보존에 어떤 조건들이 작용했을까?",
+  "confirmed_answer_scope": "공식 발굴과 박물관 소장품으로 확인된 무덤 구조, 묘별 출토 위치, 유물의 재료·형태와 보존 상태까지만 사실로 잠근다.",
+  "unknowns": "여러 보존 조건의 상대적 기여, 일부 도상의 구체적 의미와 묘역 전체 해석에서 학계 합의가 끝나지 않은 부분을 조사한다.",
+  "claims_to_avoid": [
+    "한 가지 진공 기술이 모든 것을 보존했다는 단정",
+    "1호묘와 3호묘 유물을 한 관에서 나온 것처럼 합치기",
+    "신추의 생활과 사망 원인을 자극적으로 단정하기"
+  ],
+  "official_sources": [
+    {
+      "institution": "Hunan Museum",
+      "title": "Changsha Mawangdui Han Dynasty Tombs Exhibition",
+      "url": "https://web.hnmuseum.com/en/content/changsha-mawangdui-han-dynasty-tombs-exhibition"
+    },
+    {
+      "institution": "Hunan Museum",
+      "title": "붉은색 채색 칠관",
+      "url": "https://www.hnmuseum.com/ko/content/%EB%B6%89%EC%9D%80%EC%83%89-%EC%B1%84%EC%83%89-%EC%B9%A0%EA%B4%80"
+    },
+    {
+      "institution": "Hunan Museum",
+      "title": "Physical Exercise Chart on Silk",
+      "url": "https://web.hnmuseum.com/en/zuixintuijie/physical-exercise-chart-silk"
+    }
+  ],
+  "visual_route": [
+    "지상 발굴 시작점",
+    "묘광의 확인된 층위를 따라가는 단면 하강",
+    "목곽과 겹관의 묘별 구조 분리",
+    "채색 칠관과 T자형 백화의 재질 매크로",
+    "칠기·비단·문서의 묘별 출토 위치",
+    "보존 환경 단면과 확인된 증거 경계"
+  ],
+  "routing": "롱폼 우선, 핵심 질문 하나로 줄이면 2~3분 숏폼 가능",
+  "scores": {
+    "artifact_context": 20,
+    "historical_density": 20,
+    "question_ladder": 18,
+    "reference_quality": 14,
+    "visual_journey": 15,
+    "title_interest": 8,
+    "total": 95
+  }
+}

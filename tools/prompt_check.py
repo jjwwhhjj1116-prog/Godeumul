@@ -8,6 +8,7 @@
   C 고증            고증 카드의 문명·인물·건축·금지어·네거티브
   D I2V 잠금        3D 디오라마·대상 고유 지문·금지 문화권·TTS 비트
   E 생성 안정성     9:16, 이미지 문자 금지, I2V 연속 촬영·시작 이미지 보존
+  F 카메라 경로     디오라마 스케일, 진입점·경로·도착점, 속도 곡선, 깊이 전환
 
 사용법
   python tools/prompt_check.py 산출물/EP01_진시황릉
@@ -44,6 +45,27 @@ VISUAL_LOCK_FIELDS = {
     "material_fidelity",
 }
 TTS_BEAT_FIELDS = {"start", "end", "narration", "camera", "action", "graphic"}
+CAMERA_PATH_FIELDS = {
+    "entry_anchor", "route", "destination", "speed_profile", "operator_style",
+    "depth_transition", "pattern_interrupts", "settle_point",
+}
+SPEED_PROFILES = {
+    "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE", "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+    "CONTROLLED_ORBIT_REVEAL", "MACRO_PROBE_SETTLE", "EVIDENCE_HOLD",
+    "BOUNDARY_APPROACH_STOP", "SLOW_OBSERVATIONAL_EXCEPTION",
+}
+OPERATOR_STYLES = {
+    "CONTROLLED_DOCUMENTARY_HANDHELD_GIMBAL", "IMMERSIVE_POV_DOLLY",
+    "MACRO_PROBE", "CRANE_ORBIT_REVEAL", "LOCKED_EVIDENCE_CAMERA",
+}
+DEPTH_TRANSITIONS = {
+    "DOOR_ENTRY", "SECTION_DIVE", "SURFACE_TO_INTERIOR", "ORBIT_REVEAL",
+    "BOUNDARY_STOP", "NONE",
+}
+DYNAMIC_SCENE_TYPES = {
+    "DISCOVERY_ACTION", "DISCOVERY_REVEAL", "EXCAVATION",
+    "HISTORICAL_RECONSTRUCTION", "SPATIAL_MAP", "CUTAWAY", "EXPLODED", "MECHANISM",
+}
 SCENE_TYPES = {
     "DISCOVERY_ACTION", "DISCOVERY_REVEAL", "SITE_ESTABLISH", "EXCAVATION",
     "ARTIFACT_MACRO", "INVENTORY_TABLEAU", "HISTORICAL_RECONSTRUCTION",
@@ -151,6 +173,9 @@ def main() -> int:
     args = parser.parse_args()
 
     episode = args.episode.resolve()
+    # 공개 완료 회차는 당시 프롬프트를 감사 기록으로 보존한다. 카메라 경로 v5 정책은
+    # 아직 업로드되지 않은 신규 회차에 강제한다.
+    released_episode = (episode / "07.업로드결과.json").exists()
     card = load_card(episode)
     scene_path = episode / "02a.장면구분.json"
     if not scene_path.exists():
@@ -247,6 +272,53 @@ def main() -> int:
         report.add(scene_type in SCENE_TYPES, n, "장면 유형",
                    "" if scene_type in SCENE_TYPES else f"'{scene_type or '없음'}'")
 
+        # A-1. 신규 회차 카메라 경로 잠금
+        camera_path = scene_data.get("camera_path") or scene_data.get("카메라경로") or {}
+        camera_path_required = not released_episode
+        camera_path_is_dict = isinstance(camera_path, dict) and bool(camera_path)
+        if camera_path_required:
+            report.add(camera_path_is_dict, n, "카메라 경로", "camera_path 객체 필요")
+        if camera_path_is_dict:
+            missing_camera = sorted(CAMERA_PATH_FIELDS - set(camera_path))
+            report.add(not missing_camera, n, "카메라 경로 필수 필드",
+                       "" if not missing_camera else f"누락: {', '.join(missing_camera)}")
+            speed_profile = str(camera_path.get("speed_profile") or "").strip().upper()
+            operator_style = str(camera_path.get("operator_style") or "").strip().upper()
+            depth_transition = str(camera_path.get("depth_transition") or "").strip().upper()
+            report.add(speed_profile in SPEED_PROFILES, n, "카메라 속도 곡선",
+                       "" if speed_profile in SPEED_PROFILES else speed_profile or "없음")
+            report.add(operator_style in OPERATOR_STYLES, n, "카메라 운용 방식",
+                       "" if operator_style in OPERATOR_STYLES else operator_style or "없음")
+            report.add(depth_transition in DEPTH_TRANSITIONS, n, "깊이 전환",
+                       "" if depth_transition in DEPTH_TRANSITIONS else depth_transition or "없음")
+            for field in ("entry_anchor", "route", "destination", "settle_point"):
+                report.add(bool(str(camera_path.get(field) or "").strip()), n,
+                           f"카메라 {field}", f"{field}가 비어 있음")
+            interrupts = camera_path.get("pattern_interrupts")
+            minimum_interrupts = 2 if int(scene_data.get("omni") or 0) >= 10 else 1
+            exception = speed_profile in {"EVIDENCE_HOLD", "SLOW_OBSERVATIONAL_EXCEPTION"}
+            interrupts_ok = (
+                isinstance(interrupts, list)
+                and (exception or len(interrupts) >= minimum_interrupts)
+            )
+            report.add(interrupts_ok, n, "패턴 인터럽트",
+                       f"동적 {scene_data.get('omni')}초 장면은 최소 {minimum_interrupts}개 필요")
+
+            if scene_type in DYNAMIC_SCENE_TYPES:
+                dynamic_speed_ok = speed_profile not in {
+                    "EVIDENCE_HOLD", "SLOW_OBSERVATIONAL_EXCEPTION"
+                }
+                report.add(dynamic_speed_ok, n, "동적 장면 즉시 이동",
+                           "발견·진입·단면 장면은 느린 관찰 예외를 사용할 수 없음")
+            if scene_type in {"DISCOVERY_REVEAL", "CUTAWAY"}:
+                report.add(depth_transition in {"SECTION_DIVE", "SURFACE_TO_INTERIOR"}, n,
+                           "단면 깊이 전환",
+                           "DISCOVERY_REVEAL/CUTAWAY는 SECTION_DIVE 또는 SURFACE_TO_INTERIOR 필요")
+            if scene_type == "SEALED_UNKNOWN":
+                report.add(depth_transition in {"BOUNDARY_STOP", "NONE"}, n,
+                           "미확인 경계 보존",
+                           "SEALED_UNKNOWN은 문 개방·단면 진입 금지")
+
         # A-2. 본편 I2V·시각 고증 잠금·TTS 비트
         generation_mode = str(
             scene_data.get("generation_mode") or scene_data.get("생성방식") or ""
@@ -284,6 +356,16 @@ def main() -> int:
         report.add(sum(term in low for term in pbr_terms) >= 2, n,
                    "이미지 미세 재질 지시",
                    "PBR/physically based + microtexture/high fidelity 계열 표현 2개 이상 필요")
+        if camera_path_required:
+            miniature_terms = (
+                "museum-scale", "crafted miniature", "miniature world", "macro-lens",
+                "tilt-shift", "handcrafted terrain", "crafted physical",
+            )
+            report.add(sum(term in low for term in miniature_terms) >= 2, n,
+                       "디오라마 축소모형 단서",
+                       "museum-scale/매크로 렌즈/선택적 틸트시프트/제작 가장자리 중 2개 이상 필요")
+            report.add("not live-action" in low or "rather than live-action" in low, n,
+                       "실사 오인 방지", "image prompt에 not live-action 필요")
 
         tts_beats = scene_data.get("tts_beats") or scene_data.get("TTS비트") or []
         beats_are_list = isinstance(tts_beats, list) and bool(tts_beats)
@@ -406,6 +488,27 @@ def main() -> int:
         )
         report.add(locked_start, n, "I2V 시작 이미지 보존",
                    "start image/supplied locked + preserve 지시 필요")
+        if camera_path_required:
+            report.add("vlog" not in video_low and "influencer" not in video_low
+                       and "selfie" not in video_low, n,
+                       "현대 브이로그 구도 금지", "vlog/influencer/selfie 표현 제거")
+        if camera_path_is_dict:
+            depth_transition = str(camera_path.get("depth_transition") or "").strip().upper()
+            if depth_transition == "DOOR_ENTRY":
+                image_has_door_path = (
+                    any(term in low for term in ("door", "gate", "doorway"))
+                    and any(term in low for term in ("hinge", "threshold", "opening", "empty passage"))
+                )
+                report.add(image_has_door_path, n, "문 진입 시작 이미지",
+                           "문·문틀과 hinge/threshold/opening/empty passage 중 하나가 이미지에 필요")
+                report.add(any(term in video_low for term in ("opens", "swings", "rotates")), n,
+                           "문 개방 물리", "문짝의 회전·개방 동작 필요")
+            if depth_transition in {"SECTION_DIVE", "SURFACE_TO_INTERIOR"}:
+                section_ready = any(term in low for term in (
+                    "cutaway", "section", "strata", "cut face", "section seam",
+                ))
+                report.add(section_ready, n, "단면 진입 시작 이미지",
+                           "cutaway/section/strata/cut face/section seam 중 하나가 이미지에 필요")
 
         if args.verbose:
             rows = [row for row in report.rows if row[1] == n]

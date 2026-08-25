@@ -9,6 +9,19 @@
     "generation_mode": "I2V_LOCKED",
     "motion_owner": "VEO_INTEGRATED_3D",
     "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "outer survey marker",
+      "route": "documented outer route around the foreground earth ridge",
+      "destination": "sealed central boundary",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "BOUNDARY_STOP",
+      "pattern_interrupts": [
+        "0.25s immediate push",
+        "3.2s direction change around the ridge"
+      ],
+      "settle_point": "sealed central boundary for the final 0.5 seconds"
+    },
     "visual_lock": {
       "civilization": "Ancient China, Qin dynasty",
       "era": "3rd century BC",
@@ -59,7 +72,7 @@
       "camera_relation": "fixed to the terrain during the forward dolly",
       "arrival_reaction": "one faint dust lift at the boundary"
     },
-    "img": "Ancient China, Qin dynasty, museum-quality cinematic archaeological 3D diorama reconstruction with physically based materials and high-frequency microtexture, Qin rammed-earth architecture, a square rammed-earth mound, the documented outer route and a sealed central boundary visible as a precise site-scale reconstruction, 9:16 vertical composition, no European faces, no classical columns, no text, no labels, no letters.",
+    "img": "Ancient China, Qin dynasty, premium museum-scale cinematic archaeological 3D diorama, unmistakably a crafted miniature world and not live-action, macro-lens depth cues and selective tilt-shift focal falloff, physically based materials and high-frequency microtexture, Qin rammed-earth architecture, a square rammed-earth mound, the documented outer route and a sealed central boundary visible as a precise site-scale reconstruction, 9:16 vertical composition, no European faces, no classical columns, no text, no labels, no letters.",
     "vid": "Single continuous 8-second I2V shot from the supplied locked diorama start image. Preserve all objects, site geometry, materials, and lighting. The camera makes a slow forward dolly. One warm ivory stone-dust 3D route ribbon emerges from the outer survey marker, follows the measured path around the rammed-earth corner, passes behind the foreground earth ridge, and ends at the sealed central boundary. Keep it anchored in the physical world with correct parallax and one faint dust reaction on arrival. No new objects, no floating HUD, no text, no hard cut."
   }
 ]

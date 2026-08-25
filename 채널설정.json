@@ -3,7 +3,8 @@
  "채널": {
   "이름": "고대유물의 비밀",
   "슬러그": "ancient-relics",
-  "주제목록": "기획/주제100선.md"
+  "주제목록": "기획/주제큐_v2.md",
+  "주제선정지침": "기획/주제선정_지침.md"
  },
  "출력": {
   "해상도": [
@@ -101,6 +102,7 @@
   "본편생성방식": "I2V_LOCKED",
   "T2V용도": "프리비즈만_최종납품금지",
   "기본시각스타일": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+  "디오라마표현": "MUSEUM_SCALE_CRAFTED_MINIATURE_NOT_LIVE_ACTION",
   "이미지재질품질": "PBR_MICROTEXTURE_HIGH_FIDELITY",
   "이미지승인본권장해상도": "4K",
   "장면결정기준": [
@@ -155,6 +157,22 @@
   ],
   "대상고유지문최소개수": 3,
   "TTS비트필수": true,
+  "신규회차카메라경로필수": true,
+  "카메라경로필수필드": [
+   "entry_anchor",
+   "route",
+   "destination",
+   "speed_profile",
+   "operator_style",
+   "depth_transition",
+   "pattern_interrupts",
+   "settle_point"
+  ],
+  "동적장면이동시작상한초": 0.35,
+  "동적장면패턴인터럽트간격초": [
+   2,
+   4
+  ],
   "이미지문자금지": true,
   "모션그래픽도구": "flow_veo_omni"
  },

@@ -1,9 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""EP01 v5 대본에서 고증 잠금 이미지·I2V 프롬프트를 빌드한다.
+"""EP01 v5 공개본의 고증 잠금 이미지·I2V 프롬프트를 재현하는 보관용 빌더.
 
 장면 수는 이 파일에서 정하지 않는다. audio_v5/durations.json의 잠긴 TTS 장면을
 입력으로 사용하고, 각 장면의 의미·행동 명세(SPECS)와 1:1인지 검증한 뒤 산출한다.
+
+주의: 이 파일의 full-scale/slow 카메라 문법은 공개된 EP01 감사 기록이라 유지한다.
+신규 회차에 복사하지 말고 02 지침 v5와 prompt_check.py의 camera_path 정책을 사용한다.
 """
 
 from __future__ import annotations
