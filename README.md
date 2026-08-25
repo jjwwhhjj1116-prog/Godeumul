@@ -106,7 +106,7 @@ python tools/youtube_upload.py --auth
 | **3** | **TTS 실측 (먼저!)** | 장면 구분 | `audio/*.mp3` + `durations.json` | [03](./03.TTS생성지침.md) | `tts_generate` → `audio_normalize` |
 | **2b** | 프롬프트 생성 | 실측 길이 | 컷별 6대 항목 + 옴니 규격 | [02](./02.시각화+영상화프롬프트(고대유물).txt) | `speed_table.py` |
 | **4** | 이미지·영상 생성 | 프롬프트 txt | `images/` `clips/` | [04](./04.FLOW+옴니_생성지침.md) | — |
-| **5** | 편집·렌더 | 위 전부 | 완성본 mp4 | [05](./05.캡컷_편집지침.md) | `subtitle_split` → `align_subtitles` → `capcut_build` → `verify_draft` → `render_final` |
+| **5** | 편집·기술 모션·렌더 | 위 전부 | 완성본 mp4 | [05](./05.캡컷_편집지침.md) | `subtitle_split` → `align_subtitles` → `render_final` → `Remotion` → 키프레임 QA |
 | **6** | 제목·설명·썸네일 | 완성 영상 | `06.메타.json` + `썸네일.jpg` | [06](./06.제목_설명_썸네일지침.md) | `thumbnail_build.py` |
 | **7** | 업로드 | 전부 | 공개 쇼츠 | [07](./07.업로드지침.md) | `youtube_upload.py` |
 
@@ -217,6 +217,10 @@ L5 MECHANISM★ 부품 하나에 초근접. 힘이 붉은 화살표로 흐른다
 │   ├─ thumbnail_build.py 6단계 — 썸네일 한글 합성
 │   └─ youtube_upload.py  7단계 — 업로드 (Data API v3)
 │
+├─ motion-graphics/       5단계 — Remotion 기술 모션그래픽 프로젝트
+│   ├─ src/scene-data.ts  TTS 실측 기반 장면 프레임
+│   └─ src/AncientArtifactFilm.tsx  치수·단면·작동 원리 오버레이
+│
 └─ 산출물/EP01_진시황릉/
     ├─ 00.팩트체크.md      근거 등급 A/B/C. C가 있으면 설명란 고지 필수
     ├─ 01.대본.txt
@@ -226,7 +230,8 @@ L5 MECHANISM★ 부품 하나에 초근접. 힘이 붉은 화살표로 흐른다
     ├─ 06.메타.json        업로더가 읽는다
     ├─ 자막.json / 자막_싱크.json / speed_table.json
     ├─ audio/  images/  clips/     ← 무거워서 커밋 안 함
-    ├─ 완성본_EP01_진시황릉.mp4    업로더가 찾는 파일
+    ├─ 완성본_EP01_진시황릉.mp4    자막·TTS 기준 베이스
+    ├─ 완성본_EP01_진시황릉_모션그래픽.mp4  최종 마스터
     └─ 썸네일.jpg
 ```
 

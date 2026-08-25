@@ -23,6 +23,10 @@ token.json
 *.jpg
 *.jpeg
 *.webp
+motion-graphics/node_modules/
+motion-graphics/public/base.mp4
+motion-graphics/public/fonts/
+motion-graphics/render/
 
 # 브랜드 자산은 예외 (버전 관리 대상)
 !자산워터마크.png
