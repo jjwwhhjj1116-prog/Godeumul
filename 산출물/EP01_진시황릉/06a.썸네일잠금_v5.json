@@ -1,0 +1,11 @@
+{
+  "status": "LOCKED",
+  "approved_source": "C:\\Users\\7500F\\OneDrive\\바탕 화면\\유투브\\[채널]고대유물의 비밀\\20260824(진시황릉)\\고대유물의비밀_진시황릉_숏폼썸네일_1080x19201.png",
+  "approved_source_sha256": "08CE47B8024DCF959C71EA6F896B69771C122D37E73143AB921001CE24200CEE",
+  "approved_source_actual_size": [941, 1672],
+  "upload_copy": "C:\\Users\\7500F\\OneDrive\\바탕 화면\\유투브\\[채널]고대유물의 비밀\\20260824(진시황릉)\\고대유물의비밀_진시황릉_썸네일_업로드용_1080x1920.jpg",
+  "upload_copy_sha256": "4DE6BDED891938164F89568337794F1F60F9D82E48D31EA1B2793201EC360004",
+  "upload_copy_size": [1080, 1920],
+  "upload_copy_bytes": 803321,
+  "normalization": "Lanczos resize only; same composition and text, JPEG upload copy under YouTube 2 MB limit"
+}

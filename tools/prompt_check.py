@@ -315,8 +315,10 @@ def main() -> int:
             report.add(tts_number <= duration_number, n, "TTS≤생성 길이",
                        "" if tts_number <= duration_number
                        else f"TTS {tts_number:.2f}초 > 생성 {duration_number}초")
-            report.add(tts_number <= 9.0, n, "장면 분할 검토",
-                       "" if tts_number <= 9.0 else f"TTS {tts_number:.2f}초 — 장면 분할 필요")
+            long_review = str(scene_data.get("long_scene_review") or "").strip()
+            report.add(tts_number <= 9.0 or bool(long_review), n, "장면 분할 검토",
+                       "" if tts_number <= 9.0 or long_review
+                       else f"TTS {tts_number:.2f}초 — 10초 연속 장면 유지 근거 필요")
         if beats_are_list:
             beat_ranges: list[tuple[float, float]] = []
             for beat in tts_beats:

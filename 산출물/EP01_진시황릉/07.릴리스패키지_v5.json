@@ -1,0 +1,26 @@
+{
+  "status": "VISUAL_PROMPTS_LOCKED_MEDIA_PENDING",
+  "episode": "EP01_진시황릉",
+  "target_channel": "고대유물의 비밀",
+  "title": "중국 최초 황제의 무덤, 진시황릉을 아직 열지 않는 진짜 이유",
+  "scheduled_public_at": "2026-08-26T08:00:00+09:00",
+  "privacy_flow": "PRIVATE_FIRST_THEN_SCHEDULED",
+  "category_id": 27,
+  "language": "ko",
+  "made_for_kids": false,
+  "synthetic_content_disclosure_required": true,
+  "rights": "User-owned narration, user-approved thumbnail, AI-generated archaeological visualizations; cited research sources in description",
+  "script_lock": "01.대본잠금.md",
+  "prompt_gate": {
+    "prompt_check": "960/960 PASS",
+    "semantic_self_audit": "PASS",
+    "image_prompts": 27,
+    "video_prompts": 27
+  },
+  "thumbnail_lock": "06a.썸네일잠금_v5.json",
+  "video_sha256": null,
+  "final_qa_lock": null,
+  "idempotency_key": null,
+  "youtube_video_id": null,
+  "canonical_url": null
+}
