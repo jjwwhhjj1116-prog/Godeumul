@@ -41,6 +41,7 @@ VEO_GRAPHIC_FIELDS = {
 VISUAL_LOCK_FIELDS = {
     "civilization", "era", "region", "source_reference", "site_artifact_fingerprint",
     "people_lock", "forbidden_culture", "diorama_style",
+    "material_fidelity",
 }
 TTS_BEAT_FIELDS = {"start", "end", "narration", "camera", "action", "graphic"}
 SCENE_TYPES = {
@@ -270,10 +271,19 @@ def main() -> int:
             report.add(style == "CINEMATIC_ARCHAEOLOGICAL_DIORAMA", n,
                        "3D 디오라마 스타일",
                        "diorama_style은 CINEMATIC_ARCHAEOLOGICAL_DIORAMA여야 함")
+            material_fidelity = str(visual_lock.get("material_fidelity") or "").strip().upper()
+            report.add(material_fidelity == "PBR_MICROTEXTURE_HIGH_FIDELITY", n,
+                       "PBR 미세 재질 품질",
+                       "material_fidelity는 PBR_MICROTEXTURE_HIGH_FIDELITY여야 함")
 
         report.add("diorama" in low and "archaeological" in low, n,
                    "이미지 3D 디오라마",
                    "image prompt에 archaeological + diorama 필요")
+        pbr_terms = ("physically based", "pbr", "microtexture", "micro-texture",
+                     "micro-displacement", "high-frequency texture", "high fidelity")
+        report.add(sum(term in low for term in pbr_terms) >= 2, n,
+                   "이미지 미세 재질 지시",
+                   "PBR/physically based + microtexture/high fidelity 계열 표현 2개 이상 필요")
 
         tts_beats = scene_data.get("tts_beats") or scene_data.get("TTS비트") or []
         beats_are_list = isinstance(tts_beats, list) and bool(tts_beats)

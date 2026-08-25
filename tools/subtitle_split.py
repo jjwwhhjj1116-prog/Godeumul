@@ -204,6 +204,8 @@ def main() -> int:
     ap.add_argument("script", type=Path)
     ap.add_argument("--max", type=int, default=MAX_CHARS)
     ap.add_argument("--target", type=int, default=TARGET)
+    ap.add_argument("--out", type=Path, default=None,
+                    help="출력 JSON(기본: 대본 폴더/자막.json)")
     ap.add_argument("--srt", action="store_true", help="SRT도 저장(길이 균등 배분)")
     ap.add_argument("--cps", type=float, default=CFG.get("출력.발화속도_실측", 9.35), help="SRT 타이밍용 자/초")
     args = ap.parse_args()
@@ -237,7 +239,9 @@ def main() -> int:
         for c in over:
             print(f"    {c['n']}. [{c['len']}] {c['text']}")
 
-    out = args.script.parent / "자막.json"
+    out = args.out or args.script.parent / "자막.json"
+    if not out.is_absolute():
+        out = args.script.parent / out
     out.write_text(json.dumps(
         {"source": str(args.script), "max_chars": args.max, "count": len(cues),
          "cues": cues}, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -252,7 +256,7 @@ def main() -> int:
             dur = max(0.30, c["len"] / args.cps)
             srt.append(f"{c['n']}\n{ts(t)} --> {ts(t+dur)}\n{c['text']}\n")
             t += dur + 0.02          # 실측 간격 중앙값 0.017초
-        p = args.script.parent / "자막.srt"
+        p = out.with_suffix(".srt")
         p.write_text("\n".join(srt), encoding="utf-8-sig")
         print(f"  SRT     → {p}  (총 {t/60:.2f}분 — 실제 싱크는 TTS에 맞춰 캡컷에서 조정)")
 

@@ -29,6 +29,9 @@
   "speaker_boost": true,
   "language": "ko",
   "output_format": "mp3_44100_128",
+  "발음사전파일": "tts_pronunciation.json",
+  "원문자막_음성치환분리": true,
+  "TTS미리듣기승인필수": true,
   "실측_자당초": 9.35,
   "기획_자당초": 8.0
  },
@@ -98,6 +101,8 @@
   "본편생성방식": "I2V_LOCKED",
   "T2V용도": "프리비즈만_최종납품금지",
   "기본시각스타일": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+  "이미지재질품질": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+  "이미지승인본권장해상도": "4K",
   "장면결정기준": [
    "시간",
    "장소",
@@ -145,7 +150,8 @@
    "site_artifact_fingerprint",
    "people_lock",
    "forbidden_culture",
-   "diorama_style"
+   "diorama_style",
+   "material_fidelity"
   ],
   "대상고유지문최소개수": 3,
   "TTS비트필수": true,

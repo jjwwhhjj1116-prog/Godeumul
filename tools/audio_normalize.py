@@ -21,6 +21,7 @@
 사용법
   python tools/audio_normalize.py 산출물/EP01_진시황릉            # 측정만
   python tools/audio_normalize.py 산출물/EP01_진시황릉 --run      # 실제로 다시 씀
+  python tools/audio_normalize.py 산출물/EP01_진시황릉 --audio-dir audio_v4 --run
   python tools/audio_normalize.py 산출물/EP01_진시황릉 --복구     # 백업에서 되돌림
 """
 
@@ -38,6 +39,8 @@ from _config import load
 
 CFG = load()
 BACKUP = "_원본"
+SCENE_AUDIO_RE = re.compile(r"^\d{3}\.mp3$")
+MP3_TRUE_PEAK_MARGIN_DB = 0.5
 
 
 def run(cmd: list[str]) -> str:
@@ -79,6 +82,8 @@ def measure(files: list[Path], gain_db: float = 0.0) -> tuple[float, float]:
 def main() -> int:
     ap = argparse.ArgumentParser(description="나레이션 라우드니스 정규화")
     ap.add_argument("episode", type=Path)
+    ap.add_argument("--audio-dir", default="audio",
+                    help="에피소드 아래 오디오 폴더(기본: audio)")
     ap.add_argument("--run", action="store_true", help="실제로 파일을 다시 쓴다")
     ap.add_argument("--복구", dest="restore", action="store_true")
     args = ap.parse_args()
@@ -87,9 +92,11 @@ def main() -> int:
         sys.exit("[에러] ffmpeg / ffprobe 가 PATH 에 없습니다.")
 
     ep = args.episode.resolve()
-    adir = ep / "audio"
+    adir = ep / args.audio_dir
     bdir = adir / BACKUP
-    files = sorted(p for p in adir.glob("*.mp3"))
+    # 장면 원본만 처리한다. 합본·미리듣기 mp3를 포함하면
+    # 프로그램 길이와 라우드니스가 이중 계산된다.
+    files = sorted(p for p in adir.glob("*.mp3") if SCENE_AUDIO_RE.match(p.name))
     if not files:
         sys.exit(f"[에러] mp3 가 없습니다: {adir}")
 
@@ -115,7 +122,10 @@ def main() -> int:
     # ★ 게인은 <변환의 입력이 될 파일> 기준으로 재야 한다.
     #   백업이 있으면 변환은 백업(원본)에서 하므로, 측정도 백업에서 한다.
     #   현재 파일에서 재면 두 번째 실행부터 게인이 틀어진다.
-    src_files = sorted(bdir.glob("*.mp3")) if bdir.exists() else files
+    backup_files = sorted(
+        p for p in bdir.glob("*.mp3") if SCENE_AUDIO_RE.match(p.name)
+    ) if bdir.exists() else []
+    src_files = backup_files or files
     src_label = "원본(백업)" if bdir.exists() else "현재"
 
     print(f"  {src_label} 측정 중…")
@@ -140,7 +150,10 @@ def main() -> int:
         return 0
 
     # volume → alimiter(트루피크 상한) 순서. alimiter 는 선형 진폭을 받는다.
-    limit = 10 ** (tp_max / 20)
+    # MP3 인코딩 후 인터샘플 피크가 약간 다시 오를 수 있다.
+    # 채널 상한보다 0.5dB 낮게 리미트해 재인코딩 후에도 상한을 지킨다.
+    limit_db = tp_max - MP3_TRUE_PEAK_MARGIN_DB
+    limit = 10 ** (limit_db / 20)
 
     if not args.run:
         print(f"\n  적용할 필터: volume={gain}dB,"

@@ -26,12 +26,14 @@ import os
 import re
 import subprocess
 import sys
+import urllib.error
+import urllib.parse
+import urllib.request
 from dataclasses import dataclass, asdict
 from pathlib import Path
 
-import requests
-
 from _config import load, load_env
+from tts_pronunciation import DEFAULT_DICTIONARY, PronunciationDictionary
 
 # 한국어 Windows 콘솔은 기본이 cp949라 한글·기호 출력에서 죽는다. 먼저 막아둔다.
 for _stream in (sys.stdout, sys.stderr):
@@ -79,13 +81,13 @@ class Config:
     output_format: str
 
     @classmethod
-    def from_env(cls, env: dict[str, str]) -> "Config":
+    def from_env(cls, env: dict[str, str], *, require_api_key: bool = True) -> "Config":
         def get(key: str, default: str) -> str:
             return os.environ.get(key) or env.get(key) or default
 
         api_key = get("ELEVENLABS_API_KEY", "")
         voice_id = get("ARTIFACT_VOICE_ID", CFG.get("tts.voice_id", ""))
-        if not api_key or not voice_id:
+        if not voice_id or (require_api_key and not api_key):
             sys.exit(
                 "[에러] ELEVENLABS_API_KEY 또는 ARTIFACT_VOICE_ID 가 없습니다.\n"
                 f"       확인할 파일: {ROOT / '.env'}"
@@ -128,8 +130,8 @@ class Scene:
     seq: int
     text: str
 
-    def hash(self, sig: str) -> str:
-        return hashlib.sha256(f"{sig}::{self.text}".encode("utf-8")).hexdigest()[:16]
+    def hash(self, sig: str, tts_text: str) -> str:
+        return hashlib.sha256(f"{sig}::{tts_text}".encode("utf-8")).hexdigest()[:16]
 
 
 def parse_script(path: Path) -> list[Scene]:
@@ -187,26 +189,38 @@ def synth(cfg: Config, text: str, out: Path) -> None:
     if cfg.language:
         payload["language_code"] = cfg.language
 
-    def post(body: dict):
-        return requests.post(
-            API_URL.format(voice_id=cfg.voice_id),
-            headers={"xi-api-key": cfg.api_key, "Content-Type": "application/json"},
-            params={"output_format": cfg.output_format} if cfg.output_format else None,
-            json=body,
-            timeout=180,
+    def post(body: dict) -> tuple[int, bytes, str]:
+        query = urllib.parse.urlencode(
+            {"output_format": cfg.output_format} if cfg.output_format else {}
         )
+        url = API_URL.format(voice_id=cfg.voice_id)
+        if query:
+            url = f"{url}?{query}"
+        request = urllib.request.Request(
+            url,
+            data=json.dumps(body, ensure_ascii=False).encode("utf-8"),
+            headers={"xi-api-key": cfg.api_key, "Content-Type": "application/json"},
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=180) as response:
+                response_body = response.read()
+                return response.status, response_body, ""
+        except urllib.error.HTTPError as exc:
+            error_body = exc.read()
+            error_text = error_body.decode("utf-8", errors="replace")
+            return exc.code, error_body, error_text
 
-    resp = post(payload)
-    if resp.status_code != 200 and "language_code" in payload and \
-            "language" in resp.text.lower():
+    status, body, error_text = post(payload)
+    if status != 200 and "language_code" in payload and \
+            "language" in error_text.lower():
         payload.pop("language_code")
         print("    (이 모델은 language_code를 받지 않아 생략하고 재시도)")
-        resp = post(payload)
+        status, body, error_text = post(payload)
 
-    if resp.status_code != 200:
-        raise RuntimeError(f"HTTP {resp.status_code}: {resp.text[:400]}")
+    if status != 200:
+        raise RuntimeError(f"HTTP {status}: {error_text[:400]}")
 
-    body = resp.content
     # 무협 파이프라인에서 겪은 0바이트 mp3 사고를 여기서 차단한다.
     if len(body) < 1024:
         raise RuntimeError(f"응답이 너무 작습니다({len(body)}바이트). 키/보이스 확인 필요.")
@@ -234,17 +248,21 @@ def main() -> int:
     ap.add_argument("--force", action="store_true", help="캐시를 무시하고 전부 재생성")
     ap.add_argument("--only", type=str, default="", help="특정 장면만 (예: 3,7,12)")
     ap.add_argument("--outdir", type=Path, default=None, help="출력 폴더 (기본: 대본 옆 audio/)")
+    ap.add_argument("--pronunciation-dictionary", type=Path, default=DEFAULT_DICTIONARY,
+                    help="ElevenLabs 전송 전용 발음 치환 사전")
     args = ap.parse_args()
 
     if not args.script.exists():
         sys.exit(f"[에러] 대본 파일이 없습니다: {args.script}")
 
-    cfg = Config.from_env(load_env(ROOT / ".env"))
-    scenes = parse_script(args.script)
+    cfg = Config.from_env(load_env(ROOT / ".env"), require_api_key=args.run)
+    all_scenes = parse_script(args.script)
+    pronunciation = PronunciationDictionary(args.pronunciation_dictionary)
 
+    wanted: set[int] = set()
     if args.only:
         wanted = {int(x) for x in args.only.replace(" ", "").split(",") if x}
-        scenes = [s for s in scenes if s.seq in wanted]
+    scenes = [s for s in all_scenes if not wanted or s.seq in wanted]
 
     outdir = args.outdir or args.script.parent / "audio"
     outdir.mkdir(parents=True, exist_ok=True)
@@ -253,28 +271,36 @@ def main() -> int:
     manifest: dict = {}
     if manifest_path.exists():
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    cache: dict = {} if args.force else manifest.get("scenes", {})
+    previous_scenes: dict = manifest.get("scenes", {})
+    cache: dict = {} if args.force else previous_scenes
 
-    sig = cfg.signature()
+    sig = cfg.signature() + "|pron:" + pronunciation.signature
+    prepared = {s.seq: pronunciation.apply(s.text) for s in scenes}
     total_chars = sum(len(s.text) for s in scenes)
+    total_tts_chars = sum(len(prepared[s.seq][0]) for s in scenes)
 
     print(f"\n대본      : {args.script}")
     print(f"출력      : {outdir}")
     print(f"보이스    : {cfg.voice_id}  ({cfg.model}, speed {cfg.speed})")
+    print(f"발음사전  : {pronunciation.path.name}  (서명 {pronunciation.signature})")
     est = total_chars / CPS_PLANNING
     warn = "  ← ★ 3분 초과" if est >= 180 else ""
-    print(f"장면      : {len(scenes)}개 / 총 {total_chars:,}자")
+    print(f"장면      : {len(scenes)}개 / 원문 {total_chars:,}자 / TTS 입력 {total_tts_chars:,}자")
     print(f"예상 길이 : {int(est)//60}:{int(est)%60:02d}  (실측 {CPS_MEASURED}자/초, 보수 {CPS_PLANNING}){warn}")
     print(f"모드      : {'실제 생성' if args.run else '드라이런 (크레딧 0)'}\n")
 
-    results: dict[str, dict] = {}
+    # --only는 선택 장면만 재생성하되, 기존 길이표의 나머지 장면을
+    # 보존해야 한다. 그렇지 않으면 25장면 매니페스트가 1장면으로 축소된다.
+    results: dict[str, dict] = dict(previous_scenes) if wanted else {}
     made = skipped = failed = 0
     billed_chars = 0
 
     for s in scenes:
         name = f"{s.seq:03d}.mp3"
         dest = outdir / name
-        digest = s.hash(sig)
+        tts_text, pronunciation_changes = prepared[s.seq]
+        changes_json = [asdict(change) for change in pronunciation_changes]
+        digest = s.hash(sig, tts_text)
         cached = cache.get(str(s.seq))
 
         if not args.force and cached and cached.get("hash") == digest and dest.exists():
@@ -284,21 +310,32 @@ def main() -> int:
             continue
 
         preview = s.text[:44] + ("…" if len(s.text) > 44 else "")
+        tts_preview = tts_text[:44] + ("…" if len(tts_text) > 44 else "")
         if not args.run:
             print(f"  [예정]   {name}  {len(s.text):>4}자  {preview}")
+            if pronunciation_changes:
+                print(f"           TTS 치환 → {tts_preview}")
             results[str(s.seq)] = {"hash": digest, "chars": len(s.text),
-                                   "file": name, "duration": None, "text": s.text}
-            billed_chars += len(s.text)
+                                   "tts_chars": len(tts_text), "file": name,
+                                   "duration": None, "text": s.text,
+                                   "tts_text": tts_text,
+                                   "pronunciation_changes": changes_json}
+            billed_chars += len(tts_text)
             continue
 
         try:
-            synth(cfg, s.text, dest)
+            synth(cfg, tts_text, dest)
             dur = probe_duration(dest)
             results[str(s.seq)] = {"hash": digest, "chars": len(s.text),
-                                   "file": name, "duration": dur, "text": s.text}
-            billed_chars += len(s.text)
+                                   "tts_chars": len(tts_text), "file": name,
+                                   "duration": dur, "text": s.text,
+                                   "tts_text": tts_text,
+                                   "pronunciation_changes": changes_json}
+            billed_chars += len(tts_text)
             made += 1
             print(f"  [생성]   {name}  {dur:>6.2f}s  {len(s.text):>4}자  {preview}")
+            if pronunciation_changes:
+                print(f"           TTS 치환 → {tts_preview}")
         except Exception as exc:
             failed += 1
             print(f"  [실패]   {name}  {exc}")
@@ -308,7 +345,9 @@ def main() -> int:
         "voice_id": cfg.voice_id,
         "model": cfg.model,
         "speed": cfg.speed,
-        "scene_count": len(scenes),
+        "pronunciation_dictionary": str(pronunciation.path),
+        "pronunciation_signature": pronunciation.signature,
+        "scene_count": len(results),
         "total_duration": round(sum(v["duration"] or 0 for v in results.values()), 3),
         "scenes": dict(sorted(results.items(), key=lambda kv: int(kv[0]))),
     }

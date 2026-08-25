@@ -21,15 +21,19 @@ Whisper 받아쓰기와 달리 <내가 가진 정확한 원문>을 오디오에 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import os
 import re
 import sys
 import time
+import urllib.error
+import urllib.request
+import uuid
 from pathlib import Path
 
-import requests
-
 from _config import load_env as _cfg_env
+from tts_pronunciation import original_to_spoken_map
 
 for _s in (sys.stdout, sys.stderr):
     try:
@@ -42,7 +46,7 @@ API = "https://api.elevenlabs.io/v1/forced-alignment"
 
 
 def load_key() -> str:
-    k = _cfg_env().get("ELEVENLABS_API_KEY", "")
+    k = os.environ.get("ELEVENLABS_API_KEY") or _cfg_env().get("ELEVENLABS_API_KEY", "")
     if not k:
         sys.exit("[에러] .env 에 ELEVENLABS_API_KEY 가 없습니다.")
     return k
@@ -50,13 +54,39 @@ def load_key() -> str:
 
 def align(key: str, audio: Path, text: str) -> list[dict]:
     """문자 단위 [{char,start,end}] 를 돌려준다."""
-    with audio.open("rb") as fh:
-        r = requests.post(API, headers={"xi-api-key": key},
-                          files={"file": (audio.name, fh, "audio/mpeg")},
-                          data={"text": text}, timeout=180)
-    if r.status_code != 200:
-        raise RuntimeError(f"HTTP {r.status_code}: {r.text[:300]}")
-    d = r.json()
+    boundary = f"----CodexAlignment{uuid.uuid4().hex}"
+    body = bytearray()
+
+    def field(name: str, value: str) -> None:
+        body.extend(f"--{boundary}\r\n".encode())
+        body.extend(f'Content-Disposition: form-data; name="{name}"\r\n\r\n'.encode())
+        body.extend(value.encode("utf-8"))
+        body.extend(b"\r\n")
+
+    field("text", text)
+    body.extend(f"--{boundary}\r\n".encode())
+    body.extend(
+        f'Content-Disposition: form-data; name="file"; filename="{audio.name}"\r\n'
+        'Content-Type: audio/mpeg\r\n\r\n'.encode("utf-8")
+    )
+    body.extend(audio.read_bytes())
+    body.extend(f"\r\n--{boundary}--\r\n".encode())
+
+    request = urllib.request.Request(
+        API,
+        data=bytes(body),
+        headers={
+            "xi-api-key": key,
+            "Content-Type": f"multipart/form-data; boundary={boundary}",
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=180) as response:
+            d = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        error_text = exc.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"HTTP {exc.code}: {error_text[:300]}") from exc
     chars = d.get("characters") or []
     if chars:
         return [{"c": c.get("text", ""), "s": c["start"], "e": c["end"]} for c in chars]
@@ -80,13 +110,20 @@ def norm(s: str) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser(description="자막 실측 싱크")
     ap.add_argument("episode", type=Path)
+    ap.add_argument("--audio-dir", default="audio",
+                    help="에피소드 아래 TTS 폴더(기본: audio)")
+    ap.add_argument("--cue-file", default="자막.json",
+                    help="에피소드 아래 분할 자막 JSON(기본: 자막.json)")
+    ap.add_argument("--out", default="자막_싱크.json",
+                    help="에피소드 아래 실측 싱크 출력(기본: 자막_싱크.json)")
     ap.add_argument("--force", action="store_true", help="정렬 캐시 무시")
     args = ap.parse_args()
 
     ep = args.episode.resolve()
-    man_p = ep / "audio" / "durations.json"
-    cue_p = ep / "자막.json"
-    cache_p = ep / "audio" / "alignment.json"
+    audio_dir = ep / args.audio_dir
+    man_p = audio_dir / "durations.json"
+    cue_p = ep / args.cue_file
+    cache_p = audio_dir / "alignment.json"
     if not man_p.exists() or not cue_p.exists():
         sys.exit("[에러] durations.json 또는 자막.json 이 없습니다. 3단계·자막분할을 먼저.")
 
@@ -94,26 +131,34 @@ def main() -> int:
     scenes = json.loads(man_p.read_text(encoding="utf-8"))["scenes"]
     cues = json.loads(cue_p.read_text(encoding="utf-8"))["cues"]
 
-    cache = {}
+    cache: dict[str, list[dict]] = {}
+    cache_signatures: dict[str, str] = {}
     if cache_p.exists() and not args.force:
-        cache = json.loads(cache_p.read_text(encoding="utf-8"))
+        cache_doc = json.loads(cache_p.read_text(encoding="utf-8"))
+        if isinstance(cache_doc, dict) and "scenes" in cache_doc:
+            cache = cache_doc.get("scenes") or {}
+            cache_signatures = cache_doc.get("signatures") or {}
 
     # ── 장면별 정렬 ─────────────────────────────────────
     print(f"\n에피소드 : {ep.name}")
     print(f"장면 {len(scenes)}개 · 자막 큐 {len(cues)}개\n")
     for k in sorted(scenes, key=int):
-        if k in cache and not args.force:
+        spoken_text = scenes[k].get("tts_text") or scenes[k]["text"]
+        align_signature = hashlib.sha256(spoken_text.encode("utf-8")).hexdigest()[:16]
+        if k in cache and cache_signatures.get(k) == align_signature and not args.force:
             print(f"  [건너뜀] 장면 {k}")
             continue
-        audio = ep / "audio" / scenes[k]["file"]
+        audio = audio_dir / scenes[k]["file"]
         try:
-            cache[k] = align(key, audio, scenes[k]["text"])
+            cache[k] = align(key, audio, spoken_text)
+            cache_signatures[k] = align_signature
             print(f"  [정렬]   장면 {k:>2}  문자 {len(cache[k]):>3}개")
         except Exception as exc:
             print(f"  [실패]   장면 {k:>2}  {exc}")
             return 1
         time.sleep(0.4)
-    cache_p.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+    cache_p.write_text(json.dumps({"signatures": cache_signatures, "scenes": cache},
+                                  ensure_ascii=False), encoding="utf-8")
 
     # ── 큐를 장면에 배정하고 실측 시각 부여 ──────────────
     # 큐 텍스트를 장면 원문에 순서대로 이어붙여 소비하며 문자 인덱스를 따라간다.
@@ -141,7 +186,12 @@ def main() -> int:
             break
         k = scene_keys[si]
         chars = [c for c in cache[k] if norm(c["c"])]      # 공백 제외
-        s_idx, e_idx = pos, min(pos + len(cn) - 1, len(chars) - 1)
+        spoken_text = scenes[k].get("tts_text") or scenes[k]["text"]
+        index_map = original_to_spoken_map(scenes[k]["text"], spoken_text)
+        original_start = min(pos, len(index_map) - 1)
+        original_end = min(pos + len(cn) - 1, len(index_map) - 1)
+        s_idx = min(index_map[original_start][0], len(chars) - 1)
+        e_idx = min(index_map[original_end][1], len(chars) - 1)
         if s_idx >= len(chars):
             break
         st = starts[k] + chars[s_idx]["s"]
@@ -164,7 +214,7 @@ def main() -> int:
     print(f"  표시속도 {min(cps):.1f}~{max(cps):.1f} 자/초 (중앙 {sorted(cps)[len(cps)//2]:.1f})")
     print(f"  첫 큐 {out[0]['start']:.2f}s  끝 큐 {out[-1]['end']:.2f}s")
 
-    p = ep / "자막_싱크.json"
+    p = ep / args.out
     p.write_text(json.dumps({"source": "elevenlabs-forced-alignment",
                              "count": len(out), "cues": out},
                             ensure_ascii=False, indent=1), encoding="utf-8")

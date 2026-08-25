@@ -88,6 +88,7 @@
 - `people_lock`: 등장 인물의 지역적 외형·머리·복식·도구. 인물이 없으면 `none`
 - `forbidden_culture`: 유럽·이집트·중세 등 섞이면 안 되는 문화권과 시대착오 요소
 - `diorama_style`: `CINEMATIC_ARCHAEOLOGICAL_DIORAMA`
+- `material_fidelity`: `PBR_MICROTEXTURE_HIGH_FIDELITY`
 
 예를 들어 진시황릉 장면은 “오래된 둥근 봉분 하나”가 아니라 진시황릉 유적을 식별하게
 하는 확인된 지형·봉토 형상·부속 갱·병마용 배치 관계를 레퍼런스 범위 안에서 고정해야
@@ -322,6 +323,47 @@ not a generic fantasy tomb, not a toy model
 `3D diorama`는 등각 탑뷰 한 종류를 뜻하지 않는다. 농부의 손을 따라가는 저각 매크로,
 유적을 내려다보는 크레인 뷰, 유물 표면 매크로, 지층 단면도 모두 같은 고고학 디오라마
 세계 안에서 렌즈와 구도만 달라질 수 있다.
+
+디오라마는 큐브 모양을 뜻하지 않는다. 장면 목적에 따라 구도만 선택한다.
+
+| 모드 | 형태 | 사용 장면 |
+|---|---|---|
+| 절단 지형 블록 — 선택 | 독립된 지형 절단면, 3/4 카메라, 실제 지층이 보이는 수직 면 | 봉토·묘역·지층·수로처럼 단면 자체가 설명일 때만 |
+| 몰입형 고고학 디오라마 — 기본 | 카메라가 장면 안으로 들어갈 수 있는 전경·중경·후경, 실물 크기처럼 느껴지는 공간 | 발견 행동·역사 재현·병마용 대열·유물 매크로·보존 현장 |
+
+절단 블록을 선택한 장면에서만 다음 구도 골격을 쓴다.
+
+```text
+a museum-grade hyperrealistic 3D sectional terrain block, freestanding rectangular
+cutaway base with clean vertical cut faces, physically based soil, stone, vegetation
+and artifact materials, precise 3/4 isometric camera, deep readable strata, soft
+studio contact shadow on a seamless warm-white background, documentary visualization,
+not a toy, not a low-poly game asset, not a generic fantasy landscape
+```
+
+첨부한 스타일 레퍼런스가 있어도 대상 형태는 실물·공식 도면 레퍼런스를 우선한다.
+스타일 이미지는 절단 베이스·재질·조명만 참조하고, 산·폭포·수로 등 그 이미지의 실제
+내용을 진시황릉에 복사하지 않는다.
+
+### 7.1a Nano Banana 2 재질·화질 잠금
+
+첨부 이미지에서 가져올 핵심은 큐브가 아니라 **표면의 고주파 디테일**이다. 모든 3D
+디오라마 프롬프트에는 대상에 맞춰 다음을 구체적으로 적는다.
+
+1. **기초 재질** — 황토, 다진 흙, 석재, 도기, 청동, 칠기 등 실제 재료
+2. **미세 형상** — 흙 알갱이, 층리, 균열, 섬유, 주조 자국, 부식 피막, 식생의 개별 잎
+3. **풍화 상태** — 마모·박리·침식·건조·습윤이 어디에 얼마나 있는지
+4. **광학 반응** — 거칠기, 젖은 면의 제한된 반사, 금속 산화층, 물의 굴절
+5. **크기 변화** — 이끼·풀·자갈을 똑같은 패턴으로 반복하지 않고 밀도·길이·색을 변화
+6. **렌더 품질** — `physically based materials, high-frequency microtexture, micro-
+   displacement, global illumination, sharp material separation, high fidelity`
+
+이미지 도구에서 해상도 설정을 고를 수 있으면 초안은 낮은 해상도로 구도를 확인하고,
+승인본은 사용 가능한 최고 해상도(권장 4K)로 다시 생성한다. 프롬프트에 `4K`라고 쓰는
+것만으로 실제 출력 해상도가 올라간다고 가정하지 않는다.
+
+이끼·물기·식생은 실제 장소와 장면에 있을 때만 쓴다. 진시황릉 황토 봉토를 아이슬란드식
+젖은 현무암과 이끼산으로 바꾸면 화질이 좋아도 고증 실패다.
 
 각 이미지 프롬프트에는 아래 네 묶음을 앞쪽에 명시한다.
 
@@ -570,7 +612,7 @@ SCENE 001
 I2V_LOCKED
 [시각 잠금]
 civilization / era / region / source_reference / site_artifact_fingerprint(3개 이상) /
-people_lock / forbidden_culture / diorama_style
+people_lock / forbidden_culture / diorama_style / material_fidelity
 [TTS 비트]
 0.0~1.8초 나레이션 / 카메라 / 주 행동 / 3D 그래픽
 [장면 유형]
