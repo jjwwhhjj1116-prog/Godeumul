@@ -167,6 +167,17 @@ def check_meta(m: dict, ep: Path) -> list[str]:
     return bad
 
 
+def check_release_status(ep: Path) -> list[str]:
+    """진행표에 명시된 배포 차단을 업로드보다 우선한다."""
+    status = ep / "00.진행상황.md"
+    if not status.exists():
+        return []
+    text = status.read_text(encoding="utf-8")
+    if "배포 차단" in text or "업로드 금지" in text:
+        return ["00.진행상황.md가 배포 차단 상태입니다. 새 대본·최종본 승인 전 업로드 금지"]
+    return []
+
+
 def check_thumb(p: Path | None) -> list[str]:
     """썸네일이 유튜브 규격에 맞는가."""
     if p is None:
@@ -343,7 +354,7 @@ def main() -> int:
     q = Q_UPLOAD + (Q_THUMB if thumb else 0) + (Q_PLAYLIST if playlist else 0)
     print(f"쿼터     : {q} / 10,000")
 
-    bad = check_meta(m, ep) + check_thumb(thumb)
+    bad = check_release_status(ep) + check_meta(m, ep) + check_thumb(thumb)
     if not video:
         bad.append("완성본 mp4 를 못 찾았습니다. --영상 으로 지정하세요.")
     if bad:
