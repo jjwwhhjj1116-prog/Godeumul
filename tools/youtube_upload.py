@@ -77,9 +77,22 @@ def service():
             sys.exit(f"[에러] client_secrets.json 이 없습니다: {SECRETS}\n"
                      "       07.업로드지침.md 의 '최초 1회 설정'을 보세요.")
         flow = InstalledAppFlow.from_client_secrets_file(str(SECRETS), SCOPES)
-        creds = flow.run_local_server(port=0, prompt="consent")
+        # ★ 구글이 인증 후 http://localhost:<포트> 로 돌려보낸다. 그때까지 이 프로세스가
+        #   살아 있어야 한다. 죽어 있으면 브라우저에 ERR_CONNECTION_REFUSED 가 뜨고
+        #   토큰이 안 생긴다. 포트는 실행마다 바뀌므로 **이번 실행의 URL**을 써야 한다.
+        print("\n" + "=" * 62)
+        print("  브라우저가 열립니다. 안 열리면 아래 URL 을 직접 붙여넣으세요.")
+        print("  ★ 동의를 마칠 때까지 이 창을 닫지 마세요 (Ctrl+C 금지).")
+        print("  ★ 이전에 나왔던 URL 은 죽어 있습니다. 이번 것만 씁니다.")
+        print("  계정이 여러 개면 시크릿 창에 붙여넣는 쪽이 확실합니다.")
+        print("=" * 62 + "\n")
+        creds = flow.run_local_server(
+            port=0, prompt="consent", open_browser=True,
+            authorization_prompt_message="여기로 접속하세요:\n\n{url}\n",
+            success_message="인증 완료. 이 창을 닫고 PowerShell 로 돌아가세요.",
+            timeout_seconds=600)
         TOKEN.write_text(creds.to_json(), encoding="utf-8")
-        print(f"  토큰 저장 -> {TOKEN}  (이제 브라우저는 다시 안 열립니다)")
+        print(f"\n  토큰 저장 -> {TOKEN}  (이제 브라우저는 다시 안 열립니다)")
     return build("youtube", "v3", credentials=creds, cache_discovery=False)
 
 
