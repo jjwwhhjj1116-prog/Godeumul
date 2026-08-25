@@ -59,6 +59,8 @@ UNITS = ("년", "월", "일", "시", "분", "초", "명", "개", "톤", "미터"
          "퍼센트", "%", "만", "천", "억", "미리", "그램")
 # 앞 어절이 연결어미 -아/-어 로 끝나고 뒤가 보조용언  →  "갈아 / 넣었죠" 방지
 AUX_VERB = ("넣", "버리", "놓", "두", "주", "대", "내", "치")
+# 구어체 강조구는 화면에서도 한 호흡으로 읽혀야 한다.
+FIXED_PHRASE_PAIRS = {("싹", "다")}
 
 
 # ── 한글 수사 → 아라비아 숫자 ────────────────────────────
@@ -118,6 +120,8 @@ def no_break(prev: str, nxt: str) -> bool:
     if NUM_END.search(p) and n.startswith(UNITS):
         return True
     if p.endswith(("아", "어")) and n.startswith(AUX_VERB):
+        return True
+    if (p, n) in FIXED_PHRASE_PAIRS:
         return True
     return False
 

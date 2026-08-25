@@ -1,0 +1,349 @@
+{
+  "script": "산출물\\EP01_진시황릉\\02.시각화.txt",
+  "voice_id": "wTGzPmtwk7nDNybbk0OL",
+  "model": "eleven_multilingual_v2",
+  "speed": 1.05,
+  "pronunciation_dictionary": "C:\\Users\\7500F\\Documents\\Codex\\2026-08-25\\https-github-com-jjwwhhjj1116-prog-godeumul\\work\\Godeumul-source\\tts_pronunciation.json",
+  "pronunciation_signature": "09bd5f1f3c3d9ad1",
+  "scene_count": 27,
+  "total_duration": 170.109,
+  "scenes": {
+    "1": {
+      "hash": "32edf43a127152f3",
+      "chars": 67,
+      "tts_chars": 67,
+      "file": "001.mp3",
+      "duration": 7.059,
+      "text": "여기, 2천2백 년 동안 중앙 묘실을 직접 확인하지 못한 황제의 무덤이 있습니다. 중국 최초의 황제, 진시황의 무덤이죠.",
+      "tts_text": "여기, 이천이백 년 동안 중앙 묘실을 직접 확인하지 못한 황제의 무덤이 있습니다. 중국 최초의 황제, 진시황의 무덤이죠.",
+      "pronunciation_changes": [
+        {
+          "kind": "number",
+          "source": "2",
+          "target": "이"
+        },
+        {
+          "kind": "number",
+          "source": "2",
+          "target": "이"
+        }
+      ]
+    },
+    "2": {
+      "hash": "2e1dcfe444885202",
+      "chars": 64,
+      "tts_chars": 66,
+      "file": "002.mp3",
+      "duration": 7.616,
+      "text": "이야기는 1974년 3월, 중국 시안 외곽에서 시작됩니다. 우물을 파던 농부의 곡괭이가 단단한 도기 조각에 걸렸죠.",
+      "tts_text": "이야기는 천구백칠십사년 삼월, 중국 시안 외곽에서 시작됩니다. 우물을 파던 농부의 곡괭이가 단단한 도기 조각에 걸렸죠.",
+      "pronunciation_changes": [
+        {
+          "kind": "number",
+          "source": "1974",
+          "target": "천구백칠십사"
+        },
+        {
+          "kind": "number",
+          "source": "3",
+          "target": "삼"
+        }
+      ]
+    },
+    "3": {
+      "hash": "d1cba98675924ef5",
+      "chars": 69,
+      "tts_chars": 69,
+      "file": "003.mp3",
+      "duration": 7.152,
+      "text": "처음 나온 건 도기 조각 하나였고요. 그런데 땅을 더 파자 사람 얼굴이 나왔고, 수천 명의 병사와 말이 줄지어 드러났습니다.",
+      "tts_text": "처음 나온 건 도기 조각 하나였고요. 그런데 땅을 더 파자 사람 얼굴이 나왔고, 수천 명의 병사와 말이 줄지어 드러났습니다.",
+      "pronunciation_changes": []
+    },
+    "4": {
+      "hash": "eda7fff0962a0324",
+      "chars": 66,
+      "tts_chars": 68,
+      "file": "004.mp3",
+      "duration": 7.895,
+      "text": "바로 병마용이었습니다. 첫 갱만 동서 230미터, 남북 62미터. 병사와 말, 전차가 군대처럼 대열을 이루고 있었고요.",
+      "tts_text": "바로 병마용이었습니다. 첫 갱만 동서 이백삼십미터, 남북 육십이미터. 병사와 말, 전차가 군대처럼 대열을 이루고 있었고요.",
+      "pronunciation_changes": [
+        {
+          "kind": "number",
+          "source": "230",
+          "target": "이백삼십"
+        },
+        {
+          "kind": "number",
+          "source": "62",
+          "target": "육십이"
+        }
+      ]
+    },
+    "5": {
+      "hash": "950056864fc7897e",
+      "chars": 85,
+      "tts_chars": 85,
+      "file": "005.mp3",
+      "duration": 9.474,
+      "text": "그런데 위치가 이상합니다. 이 군대는 중앙 묘실이 아니라, 봉토에서 동쪽으로 약 1.5킬로미터 떨어져 있었거든요. 그렇다면 진짜 중심에는 뭐가 있을까요?",
+      "tts_text": "그런데 위치가 이상합니다. 이 군대는 중앙 묘실이 아니라, 봉토에서 동쪽으로 약 일쩜오킬로미터 떨어져 있었거든요. 그렇다면 진짜 중심에는 뭐가 있을까요?",
+      "pronunciation_changes": [
+        {
+          "kind": "number",
+          "source": "1.5",
+          "target": "일쩜오"
+        }
+      ]
+    },
+    "6": {
+      "hash": "77c529f58455f60e",
+      "chars": 64,
+      "tts_chars": 64,
+      "file": "006.mp3",
+      "duration": 7.523,
+      "text": "조사가 넓어지자 무덤 하나가 아니었습니다. 능원은 56제곱킬로미터를 넘고, 확인된 유적 요소만 600곳이 넘거든요.",
+      "tts_text": "조사가 넓어지자 무덤 하나가 아니었습니다. 능원은 오십육제곱킬로미터를 넘고, 확인된 유적 요소만 육백곳이 넘거든요.",
+      "pronunciation_changes": [
+        {
+          "kind": "number",
+          "source": "56",
+          "target": "오십육"
+        },
+        {
+          "kind": "number",
+          "source": "600",
+          "target": "육백"
+        }
+      ]
+    },
+    "7": {
+      "hash": "864645ebc3950748",
+      "chars": 61,
+      "tts_chars": 61,
+      "file": "007.mp3",
+      "duration": 6.92,
+      "text": "봉토 서쪽에서는 금과 은으로 장식한 청동 수레와 말 두 벌이 나왔습니다. 황제의 이동 행렬까지 마련한 셈이죠.",
+      "tts_text": "봉토 서쪽에서는 금과 은으로 장식한 청동 수레와 말 두 벌이 나왔습니다. 황제의 이동 행렬까지 마련한 셈이죠.",
+      "pronunciation_changes": []
+    },
+    "8": {
+      "hash": "b84a244cb25ce715",
+      "chars": 55,
+      "tts_chars": 55,
+      "file": "008.mp3",
+      "duration": 6.037,
+      "text": "그걸로 끝이 아니었습니다. 다른 갱에서는 곡예를 펼치는 백희용과 문관으로 해석되는 도용이 나타났죠.",
+      "tts_text": "그걸로 끝이 아니었습니다. 다른 갱에서는 곡예를 펼치는 백희용과 문관으로 해석되는 도용이 나타났죠.",
+      "pronunciation_changes": []
+    },
+    "9": {
+      "hash": "651e5ac3e3767bcf",
+      "chars": 22,
+      "tts_chars": 22,
+      "file": "009.mp3",
+      "duration": 2.694,
+      "text": "청동 물새가 놓인 별도의 갱도 있었고요.",
+      "tts_text": "청동 물새가 놓인 별도의 갱도 있었고요.",
+      "pronunciation_changes": []
+    },
+    "10": {
+      "hash": "0a28abeedc3e9f2d",
+      "chars": 27,
+      "tts_chars": 27,
+      "file": "010.mp3",
+      "duration": 3.204,
+      "text": "심지어 돌 조각을 엮어 만든 갑옷까지 나왔습니다.",
+      "tts_text": "심지어 돌 조각을 엮어 만든 갑옷까지 나왔습니다.",
+      "pronunciation_changes": []
+    },
+    "11": {
+      "hash": "ae97b85f6efdcdb3",
+      "chars": 44,
+      "tts_chars": 44,
+      "file": "011.mp3",
+      "duration": 4.876,
+      "text": "이쯤 되면 보물 창고처럼 보이죠. 하지만 물건마다 맡은 역할이 따로 있었습니다.",
+      "tts_text": "이쯤 되면 보물 창고처럼 보이죠. 하지만 물건마다 맡은 역할이 따로 있었습니다.",
+      "pronunciation_changes": []
+    },
+    "12": {
+      "hash": "465fa8bf4b4ceeeb",
+      "chars": 53,
+      "tts_chars": 53,
+      "file": "012.mp3",
+      "duration": 6.084,
+      "text": "병사는 군대를, 수레는 황제의 이동을, 문관은 행정을, 백희용은 궁정의 오락을 보여주는 식이죠.",
+      "tts_text": "병사는 군대를, 수레는 황제의 이동을, 문관은 행정을, 백희용은 궁정의 오락을 보여주는 식이죠.",
+      "pronunciation_changes": []
+    },
+    "13": {
+      "hash": "88d0389a4fcbfa75",
+      "chars": 49,
+      "tts_chars": 49,
+      "file": "013.mp3",
+      "duration": 5.201,
+      "text": "그러니까 호위병만 묻은 게 아닙니다. 살아서 거느리던 나라를 땅속에 통째로 세운 겁니다.",
+      "tts_text": "그러니까 호위병만 묻은 게 아닙니다. 살아서 거느리던 나라를 땅속에 통째로 세운 겁니다.",
+      "pronunciation_changes": []
+    },
+    "14": {
+      "hash": "9ca6ee795e734edb",
+      "chars": 69,
+      "tts_chars": 69,
+      "file": "014.mp3",
+      "duration": 7.384,
+      "text": "유네스코도 이 능원이 진의 수도 함양과 제국의 질서를 반영한다고 봅니다. 황제가 죽어서도 다스릴 또 하나의 세계였던 셈이죠.",
+      "tts_text": "유네스코도 이 능원이 진의 수도 함양과 제국의 질서를 반영한다고 봅니다. 황제가 죽어서도 다스릴 또 하나의 세계였던 셈이죠.",
+      "pronunciation_changes": []
+    },
+    "15": {
+      "hash": "cfa2532d669f3858",
+      "chars": 61,
+      "tts_chars": 61,
+      "file": "015.mp3",
+      "duration": 6.409,
+      "text": "그렇다면 정작 진시황이 잠든 중앙에는 뭐가 있을까요? 자, 여기서부터는 확인된 것과 기록을 갈라 봐야 합니다.",
+      "tts_text": "그렇다면 정작 진시황이 잠든 중앙에는 뭐가 있을까요? 자, 여기서부터는 확인된 것과 기록을 갈라 봐야 합니다.",
+      "pronunciation_changes": []
+    },
+    "16": {
+      "hash": "f58d8703b64efa00",
+      "chars": 56,
+      "tts_chars": 56,
+      "file": "016.mp3",
+      "duration": 5.851,
+      "text": "사마천의 《사기》에는 지하 궁전과 기이한 보물, 침입자를 향해 화살을 쏘는 기계식 쇠뇌가 등장합니다.",
+      "tts_text": "사마천의 《사기》에는 지하 궁전과 기이한 보물, 침입자를 향해 화살을 쏘는 기계식 쇠뇌가 등장합니다.",
+      "pronunciation_changes": []
+    },
+    "17": {
+      "hash": "29384671b0ec7759",
+      "chars": 71,
+      "tts_chars": 71,
+      "file": "017.mp3",
+      "duration": 7.616,
+      "text": "천장에는 별이, 바닥에는 수은의 강과 바다가 펼쳐졌다고 하죠. 문제는 이 기록이 진시황 사후 약 한 세기 뒤에 쓰였다는 겁니다.",
+      "tts_text": "천장에는 별이, 바닥에는 수은의 강과 바다가 펼쳐졌다고 하죠. 문제는 이 기록이 진시황 사후 약 한 세기 뒤에 쓰였다는 겁니다.",
+      "pronunciation_changes": []
+    },
+    "18": {
+      "hash": "69589b4ef5ea42c5",
+      "chars": 51,
+      "tts_chars": 51,
+      "file": "018.mp3",
+      "duration": 5.805,
+      "text": "중앙 묘실에서 꺼내 확인한 물건은 아직 없습니다. 기록은 기록이고, 실물은 미확인인 셈이죠.",
+      "tts_text": "중앙 묘실에서 꺼내 확인한 물건은 아직 없습니다. 기록은 기록이고, 실물은 미확인인 셈이죠.",
+      "pronunciation_changes": []
+    },
+    "19": {
+      "hash": "00a42fe6df914fac",
+      "chars": 60,
+      "tts_chars": 62,
+      "file": "019.mp3",
+      "duration": 6.873,
+      "text": "그런데 과학은 문 앞까지 갔습니다. 1985년, 봉토 중앙부의 흙에서 수은 수치가 유난히 높게 나온 겁니다.",
+      "tts_text": "그런데 과학은 문 앞까지 갔습니다. 천구백팔십오년, 봉토 중앙부의 흙에서 수은 수치가 유난히 높게 나온 겁니다.",
+      "pronunciation_changes": [
+        {
+          "kind": "number",
+          "source": "1985",
+          "target": "천구백팔십오"
+        }
+      ]
+    },
+    "20": {
+      "hash": "cd51c37a3ed20c66",
+      "chars": 54,
+      "tts_chars": 54,
+      "file": "020.mp3",
+      "duration": 5.944,
+      "text": "《사기》 기록과 묘하게 겹치죠. 다만 정말 강과 바다 모양인지, 양이 얼마인지는 여전히 모릅니다.",
+      "tts_text": "《사기》 기록과 묘하게 겹치죠. 다만 정말 강과 바다 모양인지, 양이 얼마인지는 여전히 모릅니다.",
+      "pronunciation_changes": []
+    },
+    "21": {
+      "hash": "e3161150f35b063e",
+      "chars": 52,
+      "tts_chars": 52,
+      "file": "021.mp3",
+      "duration": 5.294,
+      "text": "그럼 그냥 열면 되지 않냐고요? 바로 그게 문제입니다. 답은 이미 병마용 발굴에서 나왔거든요.",
+      "tts_text": "그럼 그냥 열면 되지 않냐고요? 바로 그게 문제입니다. 답은 이미 병마용 발굴에서 나왔거든요.",
+      "pronunciation_changes": []
+    },
+    "22": {
+      "hash": "c637cb002c050da3",
+      "chars": 42,
+      "tts_chars": 42,
+      "file": "022.mp3",
+      "duration": 4.83,
+      "text": "지금은 흙빛인 도용들, 원래는 갑옷과 옷자락까지 화려하게 칠해져 있었습니다.",
+      "tts_text": "지금은 흙빛인 도용들, 원래는 갑옷과 옷자락까지 화려하게 칠해져 있었습니다.",
+      "pronunciation_changes": []
+    },
+    "23": {
+      "hash": "d7e81567042eb8b6",
+      "chars": 51,
+      "tts_chars": 51,
+      "file": "023.mp3",
+      "duration": 5.944,
+      "text": "그런데 공기와 닿자 칠 바탕층이 마르고 뒤틀렸죠. 색은 들뜨고, 일부는 눈앞에서 떨어졌고요.",
+      "tts_text": "그런데 공기와 닿자 칠 바탕층이 마르고 뒤틀렸죠. 색은 들뜨고, 일부는 눈앞에서 떨어졌고요.",
+      "pronunciation_changes": []
+    },
+    "24": {
+      "hash": "6f5795df3e905ddf",
+      "chars": 67,
+      "tts_chars": 67,
+      "file": "024.mp3",
+      "duration": 7.523,
+      "text": "발굴은 2천2백 년을 버틴 환경을 끝내는 일이기도 합니다. 잘못 열었다가는 보려던 증거를 싹 다 망가뜨릴 수 있는 거죠.",
+      "tts_text": "발굴은 이천이백 년을 버틴 환경을 끝내는 일이기도 합니다. 잘못 열었다가는 보려던 증거를 싹 다 망가뜨릴 수 있는 거죠.",
+      "pronunciation_changes": [
+        {
+          "kind": "number",
+          "source": "2",
+          "target": "이"
+        },
+        {
+          "kind": "number",
+          "source": "2",
+          "target": "이"
+        }
+      ]
+    },
+    "25": {
+      "hash": "702559567c197a88",
+      "chars": 61,
+      "tts_chars": 61,
+      "file": "025.mp3",
+      "duration": 6.362,
+      "text": "그래서 함정이 무서워 못 여는 게 아닙니다. 수은과 구조 안전, 유물 보존까지 감당할 방법을 찾는 중이거든요.",
+      "tts_text": "그래서 함정이 무서워 못 여는 게 아닙니다. 수은과 구조 안전, 유물 보존까지 감당할 방법을 찾는 중이거든요.",
+      "pronunciation_changes": []
+    },
+    "26": {
+      "hash": "b6197623be1da2ff",
+      "chars": 77,
+      "tts_chars": 77,
+      "file": "026.mp3",
+      "duration": 7.802,
+      "text": "그러니까 마지막 비밀은 그 안에 무엇이 있느냐만이 아닙니다. 망가뜨리지 않고 어떻게 확인할 것인가. 그게 고고학이 풀어야 할 숙제인 거죠.",
+      "tts_text": "그러니까 마지막 비밀은 그 안에 무엇이 있느냐만이 아닙니다. 망가뜨리지 않고 어떻게 확인할 것인가. 그게 고고학이 풀어야 할 숙제인 거죠.",
+      "pronunciation_changes": []
+    },
+    "27": {
+      "hash": "bef40c373043ce87",
+      "chars": 40,
+      "tts_chars": 40,
+      "file": "027.mp3",
+      "duration": 4.737,
+      "text": "시간 속에 잠든 세계유산, 땅속에 묻힌 역사. 진시황릉의 비밀이었습니다.",
+      "tts_text": "시간 속에 잠든 세계유산, 땅속에 묻힌 역사. 진시황릉의 비밀이었습니다.",
+      "pronunciation_changes": []
+    }
+  }
+}

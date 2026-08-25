@@ -283,14 +283,18 @@ def main() -> int:
     print(f"출력      : {outdir}")
     print(f"보이스    : {cfg.voice_id}  ({cfg.model}, speed {cfg.speed})")
     print(f"발음사전  : {pronunciation.path.name}  (서명 {pronunciation.signature})")
-    est = total_chars / CPS_PLANNING
-    warn = "  ← ★ 3분 초과" if est >= 180 else ""
+    est_measured = total_tts_chars / CPS_MEASURED
+    est_conservative = total_tts_chars / CPS_PLANNING
+    warn = "  ← ★ 이전 실측 속도 기준 3분 초과" if est_measured >= 180 else ""
     print(f"장면      : {len(scenes)}개 / 원문 {total_chars:,}자 / TTS 입력 {total_tts_chars:,}자")
-    print(f"예상 길이 : {int(est)//60}:{int(est)%60:02d}  (실측 {CPS_MEASURED}자/초, 보수 {CPS_PLANNING}){warn}")
+    print(f"예상 길이 : {int(est_measured)//60}:{int(est_measured)%60:02d}  "
+          f"(이전 실측 {CPS_MEASURED}자/초){warn}")
+    print(f"보수 상한 : {int(est_conservative)//60}:{int(est_conservative)%60:02d}  "
+          f"({CPS_PLANNING}자/초)")
     print(f"모드      : {'실제 생성' if args.run else '드라이런 (크레딧 0)'}\n")
 
     # --only는 선택 장면만 재생성하되, 기존 길이표의 나머지 장면을
-    # 보존해야 한다. 그렇지 않으면 25장면 매니페스트가 1장면으로 축소된다.
+    # 보존해야 한다. 그렇지 않으면 전체 장면 매니페스트가 선택 장면만 남도록 축소된다.
     results: dict[str, dict] = dict(previous_scenes) if wanted else {}
     made = skipped = failed = 0
     billed_chars = 0
