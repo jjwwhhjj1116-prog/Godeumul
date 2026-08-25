@@ -95,6 +95,9 @@
   "한장면_이미지수": 1,
   "한장면_영상프롬프트수": 1,
   "고정컷수사용": false,
+  "본편생성방식": "I2V_LOCKED",
+  "T2V용도": "프리비즈만_최종납품금지",
+  "기본시각스타일": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
   "장면결정기준": [
    "시간",
    "장소",
@@ -112,7 +115,7 @@
   ],
   "모션소유권": [
    "GENERATED_PHYSICS",
-   "TRACKED_COMPOSITE",
+   "VEO_INTEGRATED_3D",
    "INFO_OVERLAY",
    "NONE"
   ],
@@ -122,8 +125,32 @@
    "SCREEN_INFO",
    "NONE"
   ],
+  "VEO통합3D필수필드": [
+   "function",
+   "evidence_relation",
+   "visual_language",
+   "start",
+   "via",
+   "end",
+   "occlusion",
+   "timing",
+   "camera_relation",
+   "arrival_reaction"
+  ],
+  "시각잠금필수필드": [
+   "civilization",
+   "era",
+   "region",
+   "source_reference",
+   "site_artifact_fingerprint",
+   "people_lock",
+   "forbidden_culture",
+   "diorama_style"
+  ],
+  "대상고유지문최소개수": 3,
+  "TTS비트필수": true,
   "이미지문자금지": true,
-  "모션그래픽도구": "remotion"
+  "모션그래픽도구": "flow_veo_omni"
  },
  "썸네일": {
   "상단문구": "고대유물의 비밀",

@@ -1,11 +1,10 @@
-# Remotion 피사체 결합형 모션그래픽
+# Remotion 감사용 프로토타입 — 배포 사용 금지
 
-기존 `render_final.py`가 만든 베이스 영상을 입력으로 받아, 장면 속 피사체를 추적하는
-흐름·치수·지도 경로·증거 배지를 합성한다. 깊이 이동과 앞뒤 가림이 있는 장면은
-`@remotion/three`와 Three.js로 실제 3D 합성한다. 큰 제목판과 검은 카드가 화면 위에
-떠 있는 HUD 방식은 사용하지 않는다.
+이 폴더는 과거 후합성 방식을 재현하고 비교하기 위한 감사용 프로토타입이다.
+새 회차와 배포 영상에는 사용하지 않는다. 설명 그래픽은
+`02V.VEO_통합3D_설명모션.md`에 따라 Flow/Veo/Omni 영상 안에 직접 생성한다.
 
-기본 `npm run render`는 실제 영상에 들어갈 모션 언어를 확인하는 6초 미리보기를 만든다.
+`npm run render:prototype`는 과거 모션 언어를 확인하는 6초 미리보기를 만든다.
 3D 바람길 튜브와 펄스가 통로의 깊이축을 따라 이동하고 실제 메시 뒤로 가려지며,
 원근 카메라가 전진한 뒤 3D 치수선이 나타난다. 저음의 바람 SFX도 함께 렌더한다.
 
@@ -23,19 +22,17 @@
 ```powershell
 npm install
 npm run studio
-npm run render
+npm run render:prototype
 ```
 
 출력: `render/motion-language-preview.mp4` (1080×1920, 30fps, H.264 CRF 16)
 
-`LegacyEP01Blocked` 구성은 폐기된 자동 석궁 대본과 화면 고정 HUD를 보존한 감사용이다.
-배포용으로 렌더하지 않는다. 새 회차는 `audio/durations.json`과 장면표의 모션 소유권,
-추적 키프레임, 전경 마스크를 사용해 새 구성으로 만든다.
+`LegacyEP01Blocked`와 `Legacy3DPrototype` 모두 감사용이다. 배포용으로 렌더하지 않는다.
 
 ## 새 모션 원칙
 
 - 바람·흙·물·빛처럼 공간과 반응하는 현상은 I2V `GENERATED_PHYSICS`
-- 정확한 흐름선·스캔파·지도 경로는 Remotion `TRACKED_COMPOSITE`
+- 정확한 흐름선·스캔파·지도 경로는 Veo `VEO_INTEGRATED_3D`
 - 문자·치수·증거 배지만 `INFO_OVERLAY`
 - 흐름은 발생점→경로→가림→도착 반응을 가진다
 - 치수선 양 끝은 화면이 아니라 피사체 좌표를 추적한다

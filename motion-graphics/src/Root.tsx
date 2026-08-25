@@ -6,7 +6,7 @@ import {ThreeDMotionPreview} from './ThreeDMotionPreview';
 export const Root: React.FC = () => (
   <>
     <Composition
-      id="MotionLanguagePreview"
+      id="Legacy3DPrototype"
       component={ThreeDMotionPreview}
       durationInFrames={180}
       fps={30}

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "studio": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts MotionLanguagePreview render/motion-language-preview.mp4 --codec h264 --crf 16 --overwrite",
+    "render:prototype": "remotion render src/index.ts Legacy3DPrototype render/motion-language-preview.mp4 --codec h264 --crf 16 --overwrite",
     "render:legacy-blocked": "remotion render src/index.ts LegacyEP01Blocked render/EP01_legacy_blocked.mp4 --codec h264 --crf 16 --overwrite"
   },
   "dependencies": {

@@ -6,7 +6,8 @@
   A 장면 구조      번호 연속, 대본·이미지·영상 1:1, 증거 상태
   B 시간            생성 길이 4/6/8/10초, TTS보다 짧지 않음
   C 고증            고증 카드의 문명·인물·건축·금지어·네거티브
-  D 생성 안정성     9:16, 이미지 문자 금지, I2V 연속 촬영 지시
+  D I2V 잠금        3D 디오라마·대상 고유 지문·금지 문화권·TTS 비트
+  E 생성 안정성     9:16, 이미지 문자 금지, I2V 연속 촬영·시작 이미지 보존
 
 사용법
   python tools/prompt_check.py 산출물/EP01_진시황릉
@@ -21,11 +22,27 @@ import re
 import sys
 from pathlib import Path
 
+import _config  # noqa: F401  # Windows 콘솔 UTF-8 설정
+
 
 ALLOWED_SECONDS = {4, 6, 8, 10}
 EVIDENCE_STATES = {"발굴확인", "측정확인", "문헌기록", "학술해석", "미확인"}
-MOTION_OWNERS = {"GENERATED_PHYSICS", "TRACKED_COMPOSITE", "INFO_OVERLAY", "NONE"}
+MOTION_OWNERS = {"GENERATED_PHYSICS", "VEO_INTEGRATED_3D", "INFO_OVERLAY", "NONE"}
 MOTION_SPACES = {"WORLD_3D", "SURFACE_2_5D", "SCREEN_INFO", "NONE"}
+VEO_GRAPHIC_FUNCTIONS = {
+    "ROUTE_PATH", "AIRFLOW_STREAM", "MATERIAL_FLOW", "FORCE_PATH",
+    "DIMENSION_LINE", "SCAN_WAVE", "SECTION_REVEAL", "EXPLODED_SEQUENCE",
+    "DANGER_ZONE",
+}
+VEO_GRAPHIC_FIELDS = {
+    "function", "evidence_relation", "visual_language", "start", "via", "end",
+    "occlusion", "timing", "camera_relation", "arrival_reaction",
+}
+VISUAL_LOCK_FIELDS = {
+    "civilization", "era", "region", "source_reference", "site_artifact_fingerprint",
+    "people_lock", "forbidden_culture", "diorama_style",
+}
+TTS_BEAT_FIELDS = {"start", "end", "narration", "camera", "action", "graphic"}
 SCENE_TYPES = {
     "DISCOVERY_ACTION", "DISCOVERY_REVEAL", "SITE_ESTABLISH", "EXCAVATION",
     "ARTIFACT_MACRO", "INVENTORY_TABLEAU", "HISTORICAL_RECONSTRUCTION",
@@ -182,15 +199,92 @@ def main() -> int:
         motion_space_ok = bool(motion_spaces) and all(value in MOTION_SPACES for value in motion_spaces)
         report.add(motion_space_ok, n, "모션 공간",
                    "" if motion_space_ok else f"'{motion_space_raw or '없음'}'")
-        if "TRACKED_COMPOSITE" in motion_owners:
-            tracked_space_ok = any(value in {"WORLD_3D", "SURFACE_2_5D"} for value in motion_spaces)
-            report.add(tracked_space_ok, n, "추적 합성 공간",
-                       "TRACKED_COMPOSITE는 WORLD_3D 또는 SURFACE_2_5D 필요")
+        if "VEO_INTEGRATED_3D" in motion_owners:
+            veo_space_ok = any(value in {"WORLD_3D", "SURFACE_2_5D"} for value in motion_spaces)
+            report.add(veo_space_ok, n, "Veo 통합 3D 공간",
+                       "VEO_INTEGRATED_3D는 WORLD_3D 또는 SURFACE_2_5D 필요")
+            veo_graphic = scene_data.get("veo_graphic") or scene_data.get("Veo통합그래픽") or {}
+            graphic_is_dict = isinstance(veo_graphic, dict)
+            report.add(graphic_is_dict, n, "Veo 그래픽 분석", "veo_graphic 객체 필요")
+            if graphic_is_dict:
+                missing = sorted(VEO_GRAPHIC_FIELDS - set(veo_graphic))
+                report.add(not missing, n, "Veo 그래픽 필수 필드",
+                           "" if not missing else f"누락: {', '.join(missing)}")
+                function = str(veo_graphic.get("function") or "").strip().upper()
+                report.add(function in VEO_GRAPHIC_FUNCTIONS, n, "Veo 그래픽 기능",
+                           "" if function in VEO_GRAPHIC_FUNCTIONS else function or "없음")
+                via = veo_graphic.get("via")
+                report.add(isinstance(via, list) and bool(via), n, "Veo 경유 앵커",
+                           "via는 1개 이상의 배열이어야 함")
+                evidence_relation = str(veo_graphic.get("evidence_relation") or "").strip()
+                visual_language = str(veo_graphic.get("visual_language") or "").strip()
+                report.add(bool(evidence_relation), n, "Veo 증거 관계",
+                           "evidence_relation에 시각화 근거·범위 필요")
+                report.add(bool(visual_language), n, "Veo 시각 언어",
+                           "visual_language에 장면 맞춤 형태·재질·색 필요")
+                if function == "ROUTE_PATH":
+                    report.add(any(word in video.lower() for word in ("route", "path", "ribbon")),
+                               n, "3D 경로 프롬프트",
+                               "video prompt에 route/path/ribbon 중 하나 필요")
+                if function == "DANGER_ZONE":
+                    report.add(any(word in video.lower() for word in ("danger", "warning", "hazard")),
+                               n, "위험 그래픽 의미",
+                               "DANGER_ZONE은 danger/warning/hazard 의미가 필요")
+            video_low = video.lower()
+            report.add("single continuous" in video_low, n, "Veo 연속 촬영",
+                       "single continuous shot 필요")
+            world_anchor_ok = any(term in video_low for term in (
+                "physical world", "world space", "anchored to", "anchored in",
+            ))
+            report.add(world_anchor_ok, n, "Veo 월드 고정",
+                       "physical world/world space/anchored 표현 필요")
+            report.add("no floating hud" in video_low and "no text" in video_low, n,
+                       "Veo HUD·문자 금지", "no floating HUD + no text 필요")
         if motion_owners == ["NONE"]:
             report.add(motion_spaces == ["NONE"], n, "무모션 공간",
                        "모션 소유권 NONE이면 모션 공간도 NONE")
         report.add(scene_type in SCENE_TYPES, n, "장면 유형",
                    "" if scene_type in SCENE_TYPES else f"'{scene_type or '없음'}'")
+
+        # A-2. 본편 I2V·시각 고증 잠금·TTS 비트
+        generation_mode = str(
+            scene_data.get("generation_mode") or scene_data.get("생성방식") or ""
+        ).strip().upper()
+        report.add(generation_mode == "I2V_LOCKED", n, "본편 I2V 잠금",
+                   "generation_mode은 I2V_LOCKED여야 함")
+
+        visual_lock = scene_data.get("visual_lock") or scene_data.get("시각잠금") or {}
+        visual_lock_is_dict = isinstance(visual_lock, dict)
+        report.add(visual_lock_is_dict, n, "시각 고증 잠금", "visual_lock 객체 필요")
+        if visual_lock_is_dict:
+            missing_lock = sorted(VISUAL_LOCK_FIELDS - set(visual_lock))
+            report.add(not missing_lock, n, "시각 잠금 필수 필드",
+                       "" if not missing_lock else f"누락: {', '.join(missing_lock)}")
+            fingerprints = visual_lock.get("site_artifact_fingerprint")
+            report.add(isinstance(fingerprints, list) and len(fingerprints) >= 3, n,
+                       "대상 고유 지문", "site_artifact_fingerprint는 3개 이상의 배열이어야 함")
+            forbidden = visual_lock.get("forbidden_culture")
+            report.add(isinstance(forbidden, list) and bool(forbidden), n,
+                       "금지 문화권", "forbidden_culture는 1개 이상의 배열이어야 함")
+            style = str(visual_lock.get("diorama_style") or "").strip().upper()
+            report.add(style == "CINEMATIC_ARCHAEOLOGICAL_DIORAMA", n,
+                       "3D 디오라마 스타일",
+                       "diorama_style은 CINEMATIC_ARCHAEOLOGICAL_DIORAMA여야 함")
+
+        report.add("diorama" in low and "archaeological" in low, n,
+                   "이미지 3D 디오라마",
+                   "image prompt에 archaeological + diorama 필요")
+
+        tts_beats = scene_data.get("tts_beats") or scene_data.get("TTS비트") or []
+        beats_are_list = isinstance(tts_beats, list) and bool(tts_beats)
+        report.add(beats_are_list, n, "TTS 비트", "tts_beats는 1개 이상의 배열이어야 함")
+        if beats_are_list:
+            malformed_beats = [
+                beat_index for beat_index, beat in enumerate(tts_beats, 1)
+                if not isinstance(beat, dict) or TTS_BEAT_FIELDS - set(beat)
+            ]
+            report.add(not malformed_beats, n, "TTS 비트 필수 필드",
+                       "" if not malformed_beats else f"형식 오류 비트: {malformed_beats}")
 
         # B. TTS와 생성 길이
         duration = scene_data.get("omni")
@@ -213,6 +307,25 @@ def main() -> int:
                        else f"TTS {tts_number:.2f}초 > 생성 {duration_number}초")
             report.add(tts_number <= 9.0, n, "장면 분할 검토",
                        "" if tts_number <= 9.0 else f"TTS {tts_number:.2f}초 — 장면 분할 필요")
+        if beats_are_list:
+            beat_ranges: list[tuple[float, float]] = []
+            for beat in tts_beats:
+                try:
+                    beat_ranges.append((float(beat["start"]), float(beat["end"])))
+                except (KeyError, TypeError, ValueError):
+                    beat_ranges = []
+                    break
+            ranges_ok = bool(beat_ranges) and all(
+                start >= 0 and end > start
+                and (beat_index == 0 or abs(start - beat_ranges[beat_index - 1][1]) <= 0.15)
+                for beat_index, (start, end) in enumerate(beat_ranges)
+            )
+            report.add(ranges_ok, n, "TTS 비트 시간 연속",
+                       "비트는 0초부터 순서대로 이어지고 겹침·공백이 없어야 함")
+            if beat_ranges and tts_number > 0:
+                coverage_ok = abs(beat_ranges[0][0]) <= 0.05 and abs(beat_ranges[-1][1] - tts_number) <= 0.15
+                report.add(coverage_ok, n, "TTS 비트 전체 구간",
+                           "첫 비트 0초부터 마지막 비트가 실제 TTS 끝까지 덮어야 함")
 
         if not image:
             continue
@@ -260,6 +373,12 @@ def main() -> int:
         preserve = "no new object" in video_low or "preserve all object" in video_low
         report.add(preserve, n, "I2V 새 물체 금지",
                    "" if preserve else "no new objects 또는 preserve all objects 지시 필요")
+        locked_start = (
+            ("start image" in video_low or "supplied locked" in video_low)
+            and "preserve" in video_low
+        )
+        report.add(locked_start, n, "I2V 시작 이미지 보존",
+                   "start image/supplied locked + preserve 지시 필요")
 
         if args.verbose:
             rows = [row for row in report.rows if row[1] == n]

@@ -1,6 +1,6 @@
 # 고대유물의 비밀 — 시각화·영상화 프롬프트 지침
 
-버전: 3.0 — 증거 중심 고고학 다큐 시각화
+버전: 4.0 — 고증 잠금 3D 디오라마 I2V·TTS 동기화
 적용: 숏폼·롱폼 공통
 
 ---
@@ -53,6 +53,19 @@
 
 두 장면은 색·빛·조각 위치를 일치시켜 연결한다. 한 프롬프트에 “농부→충돌→줌→단면 변환→유물 전체 공개”를 모두 넣지 않는다.
 
+### 1.4 본편 생성 방식은 고증 잠금 I2V
+
+- 본편의 기본 시각은 **박물관급 시네마틱 고고학 3D 디오라마**다. 장난감 미니어처나
+  무국적 판타지가 아니라 실물·유적·도면을 근거로 한 디지털 복원 디오라마여야 한다.
+- 인물·유물·유적·건축·공간 관계를 전달하는 모든 장면은 먼저 고증된 시작 이미지를
+  승인한 뒤 `I2V_LOCKED`로 만든다.
+- T2V는 아이디어 탐색용 프리비즈에만 허용한다. 역사 정보를 전달하는 최종 클립,
+  특정 유물의 형태, 특정 유적의 배치, 특정 문화권 인물이 나오는 장면에는 쓰지 않는다.
+- 시작 이미지가 시대·지역·인종·복식·건축·유물 형태 중 하나라도 틀리면 영상 프롬프트로
+  고치려 하지 말고 이미지를 폐기하고 다시 생성한다.
+- I2V는 시작 이미지의 형태를 움직이는 단계이지, 잘못된 이미지를 올바른 유적으로
+  바꾸는 단계가 아니다.
+
 ---
 
 ## 2. 입력 잠금
@@ -62,9 +75,23 @@
 1. 승인된 `01.대본.txt`
 2. `00.조사노트.md` 또는 `00.팩트체크.md`
 3. 시대·지역·인물·건축 앵커가 있는 `02b.고증카드.md`
-4. 가능하면 문장별 실제 TTS 길이
+4. 문장별 실제 TTS 길이와 음성 파일
+5. 유적·유물의 실물 사진, 공식 도면, 발굴 배치도 등 시각 레퍼런스
 
 대본이 잠기지 않았거나 핵심 주장 상태가 비어 있으면 장면 생성에 들어가지 않는다.
+
+각 주요 대상은 `visual_lock`을 먼저 만든다. 최소 필드는 다음과 같다.
+
+- `civilization`, `era`, `region`: 문명·시대·지역
+- `source_reference`: 형태를 판단한 실물·공식 도면·발굴 자료
+- `site_artifact_fingerprint`: 다른 무덤·유물과 바꿔치기되지 않게 하는 고유 특징 3개 이상
+- `people_lock`: 등장 인물의 지역적 외형·머리·복식·도구. 인물이 없으면 `none`
+- `forbidden_culture`: 유럽·이집트·중세 등 섞이면 안 되는 문화권과 시대착오 요소
+- `diorama_style`: `CINEMATIC_ARCHAEOLOGICAL_DIORAMA`
+
+예를 들어 진시황릉 장면은 “오래된 둥근 봉분 하나”가 아니라 진시황릉 유적을 식별하게
+하는 확인된 지형·봉토 형상·부속 갱·병마용 배치 관계를 레퍼런스 범위 안에서 고정해야
+한다. 중국 진대 장면에 유럽인 얼굴·서양식 석조 아치·중세 복식이 나오면 즉시 폐기한다.
 
 ### 증거 상태
 
@@ -90,6 +117,7 @@
 - `행동`: 실제로 화면에서 일어날 한 가지 일
 - `증거상태`: 발굴확인 / 측정확인 / 문헌기록 / 학술해석 / 미확인
 - `TTS`: 실제 길이
+- `TTS 비트`: 나레이션 구절별 시작·끝 시각과 그때의 카메라·행동·그래픽
 
 ### STEP 2 — 연속성 판정
 
@@ -118,9 +146,9 @@
 
 모든 프롬프트보다 먼저 장면표를 승인한다.
 
-| 장면 | 대본 문장 | TTS | 생성 길이 | 장면 유형 | 증거 상태 | 주 행동 | 카메라 목적 | 모션 소유권 | 모션 공간 | 연결 대상 |
-|---:|---|---:|---:|---|---|---|---|---|---|---|
-| 001 |  |  |  |  |  |  |  |  |  | 002 |
+| 장면 | 대본 문장 | TTS | TTS 비트 | 생성 길이 | 생성 방식 | 장면 유형 | 증거 상태 | 주 행동 | 카메라 목적 | 모션 소유권 | 모션 공간 | 연결 대상 |
+|---:|---|---:|---|---:|---|---|---|---|---|---|---|---|
+| 001 |  |  |  |  | I2V_LOCKED |  |  |  |  |  |  | 002 |
 
 장면표가 잠긴 뒤에만 이미지와 영상 프롬프트를 쓴다. 프롬프트 작성 중 장면 수를 임의로 늘리거나 줄이지 않는다.
 
@@ -151,10 +179,10 @@
 
 ---
 
-## 5. 모션 소유권 — 무엇을 영상에서 움직일 것인가
+## 5. 모션 소유권 — 무엇을 Veo 영상 안에서 움직일 것인가
 
-장면마다 모션을 아래 세 층으로 분리한다. 같은 정보를 영상 생성과 Remotion에 중복
-지시하지 않는다.
+장면마다 모션을 아래 층으로 분리한다. 설명 모션은 원칙적으로 Veo/Omni 생성 영상의
+3D 공간에 통합한다. 자세한 규격은 `02V.VEO_통합3D_설명모션.md`를 따른다.
 
 ### A. `GENERATED_PHYSICS` — 영상 생성 단계
 
@@ -180,9 +208,9 @@ the architecture while the camera tracks forward. Single continuous shot, no har
 documentary streamlines integrated into the air`라고 쓴다. 화면 고정 화살표, 네온 HUD,
 텍스트 라벨을 영상 모델에 만들게 하지 않는다.
 
-### B. `TRACKED_COMPOSITE` — 피사체 결합형 Remotion
+### B. `VEO_INTEGRATED_3D` — Veo 통합형 설명 모션
 
-정확한 경로·타이밍·색을 통제해야 하지만 화면 안의 공간에 붙어 있어야 하는 모션이다.
+정확한 경로·타이밍·색을 통제하면서 영상 안의 3D 공간에 붙어 있어야 하는 설명 모션이다.
 
 - 통로를 따라 반복적으로 이동하는 흐름 입자와 짧은 꼬리
 - 발굴 지점을 훑는 스캔파
@@ -190,44 +218,43 @@ documentary streamlines integrated into the air`라고 쓴다. 화면 고정 화
 - 물체의 축을 따라 움직이는 힘·회전·조립 순서
 - 영상 모델이 자꾸 깨뜨리는 얇은 기술선
 
-필수 조건:
+프롬프트를 쓰기 전에 `veo_graphic` 분석 필드를 잠근다.
 
-1. 경로의 시작·중간·끝을 영상 속 실제 좌표에 잡는다.
-2. 카메라가 움직이면 최소 3개 시점의 추적 키프레임을 기록한다.
-3. 구조물 앞·뒤를 지날 때 전경 마스크로 가려 깊이를 만든다.
-4. 한 번 선을 긋고 끝내지 않고 3~6프레임 간격의 펄스가 경로를 이동한다.
-5. 흐름이 도착한 지점에서 먼지·광량·강조점 등 작은 반응이 생긴다.
-6. 큰 제목판·유리 카드·화면 고정 HUD를 함께 띄우지 않는다.
+1. 시작·경유·도착을 화면 좌표가 아니라 실제 구조물 이름으로 적는다.
+2. 앞→뒤→앞의 가림 순서를 적는다.
+3. 그래픽이 월드 공간에 고정되고 카메라 시차를 받는다고 명시한다.
+4. 초 단위 발생·이동·도착·퇴장 순서를 적는다.
+5. 도착점의 먼지·반사광·초점 이동 중 한 반응만 지정한다.
+6. `no floating HUD, no screen-space graphics, no text`를 넣는다.
 
-### C. `INFO_OVERLAY` — 최소 정보 Remotion
+### C. `INFO_OVERLAY` — 정확한 문자만 편집 단계
 
 정확한 문자와 수치가 필요한 요소만 맡긴다.
 
-- 치수선과 숫자
+- 치수의 정확한 숫자
 - 유물명·지명
 - `발굴 확인 / 과학 측정 / 문헌 기록 / 학술 재구성 / 내부 미확인` 배지
 
-정보 오버레이는 화면이 0.3~0.6초 안정된 뒤 대상에서 자라나며, 나레이션이 해당 정보를
-읽은 직후 빠르게 사라진다. 검은 카드에 텍스트를 박아 두지 않는다. 치수선 양 끝과
-지시선 끝은 움직이는 피사체를 추적해야 한다.
+Veo가 깨뜨리기 쉬운 한글·숫자만 기존 자막·제목 렌더 단계에서 처리한다. 3D 선·틱·화살표
+자체는 `VEO_INTEGRATED_3D`가 맡고, 수치는 나레이션과 자막으로 전달한다.
 
 ### 선택 순서
 
 1. 화면 속 물리 현상인가? → `GENERATED_PHYSICS`
-2. 정확한 그래픽 경로가 공간에 붙어 움직여야 하는가? → `TRACKED_COMPOSITE`
+2. 정확한 설명 경로가 공간에 붙어 움직여야 하는가? → `VEO_INTEGRATED_3D`
 3. 정확한 문자·숫자만 필요한가? → `INFO_OVERLAY`
 4. 어느 쪽도 아니면 모션을 넣지 않는다.
 
-장면 하나가 A+B 또는 B+C를 함께 쓸 수는 있지만, 같은 바람길을 영상과 합성에서 두
-번 그리지 않는다. 생성 결과가 충분히 자연스러우면 합성 모션은 생략한다.
+장면 하나가 A+B 또는 B+C를 함께 쓸 수는 있지만, 한 장면의 영웅 설명 그래픽은 한
+종류만 쓴다.
 
 ### 모션 공간 — 합성 그래픽이 어느 깊이에 존재하는가
 
 `모션 소유권`과 별도로 장면마다 아래 공간 모드도 기록한다.
 
 - `WORLD_3D`: 카메라가 움직이거나, 흐름·힘·치수선이 구조물 앞뒤를 통과하거나,
-  단면·통로·분해도에 실제 깊이가 필요한 장면. `@remotion/three`의 원근 카메라,
-  3D 메시·튜브·입자, 조명·그림자, depth test를 사용한다.
+  단면·통로·분해도에 실제 깊이가 필요한 장면. Veo 프롬프트에서 월드 고정·카메라
+  시차·구조물 가림·표면 반응을 함께 생성한다.
 - `SURFACE_2_5D`: 벽면·지도·평평한 유물 표면처럼 한 평면에 붙는 선. 최소 3개
   키프레임 또는 평면 추적으로 원근을 맞춘다.
 - `SCREEN_INFO`: 정확한 한글·숫자·증거 배지. 3D 기준점을 화면에 투영한 위치에만
@@ -241,9 +268,8 @@ documentary streamlines integrated into the air`라고 쓴다. 화면 고정 화
 3. 공기·물·힘의 경로가 화면 평면이 아니라 깊이 방향으로 휜다.
 4. 치수의 두 기준점이 서로 다른 깊이에 있거나 카메라 시차가 보인다.
 
-`WORLD_3D`를 CSS `translateZ`, SVG 마스크 두 장, 두꺼운 2D 선으로 흉내 내지 않는다.
-치수의 선·틱·화살촉은 3D 공간에 두고, 숫자만 그 3D 앵커를 화면에 투영해 또렷하게
-표시한다. 이렇게 해야 영상과 카메라가 움직일 때 그래픽도 같은 공간 안에서 움직인다.
+`WORLD_3D`는 후합성 선으로 흉내 내지 않는다. 치수의 선·틱·화살촉은 Veo 영상의 3D
+공간에서 움직이게 하고, 숫자만 나레이션·자막으로 전달한다.
 
 ---
 
@@ -279,7 +305,34 @@ documentary streamlines integrated into the air`라고 쓴다. 화면 고정 화
 
 ## 7. 이미지 프롬프트 작성
 
-이미지는 영상의 **첫 프레임**이다. 장면 끝의 결과까지 한 장에 동시에 넣지 않는다.
+이미지는 영상의 **고증·형태·공간을 잠그는 첫 프레임**이다. 장면 끝의 결과까지 한 장에
+동시에 넣지 않는다. 영상보다 이미지 승인에 더 엄격한 기준을 적용한다.
+
+### 7.1 고증 잠금 3D 디오라마
+
+공간·유적·유물 설명 장면의 기본 스타일 문장은 다음과 같다.
+
+```text
+museum-quality cinematic archaeological 3D diorama reconstruction, physically
+based earth, stone, bronze and terracotta materials, historically specific site
+geometry, full-scale immersive camera perspective with subtle diorama depth cues,
+not a generic fantasy tomb, not a toy model
+```
+
+`3D diorama`는 등각 탑뷰 한 종류를 뜻하지 않는다. 농부의 손을 따라가는 저각 매크로,
+유적을 내려다보는 크레인 뷰, 유물 표면 매크로, 지층 단면도 모두 같은 고고학 디오라마
+세계 안에서 렌즈와 구도만 달라질 수 있다.
+
+각 이미지 프롬프트에는 아래 네 묶음을 앞쪽에 명시한다.
+
+1. **문화권 잠금** — 시대·왕조·지역·인물 외형·복식·도구
+2. **대상 지문** — 해당 유물·유적을 식별하는 특징 최소 3개
+3. **공간 지문** — 지형, 방향, 봉토·갱·성벽·묘역 등 확인된 배치 관계
+4. **배제 잠금** — 섞이면 안 되는 인종·문화권·건축·시대·유물 형태
+
+특정 유적의 레퍼런스가 있는데도 `an ancient tomb`, `mysterious ruins`, `old mound`처럼
+보편명사만 쓰면 실패다. 실물 사진이나 공식 도면을 레퍼런스로 넣을 수 있는 경우에는
+텍스트 설명만 믿지 말고 반드시 레퍼런스를 사용한다.
 
 ### 필수 순서
 
@@ -295,25 +348,41 @@ documentary streamlines integrated into the air`라고 쓴다. 화면 고정 화
 ### 공통 형식
 
 ```text
-[era, region, culture]. [scene type], [evidence status].
+[era, region, culture], museum-quality cinematic archaeological 3D diorama.
+[source reference and at least three site/artifact fingerprints].
+[scene type], [evidence status].
 [one central subject] at the beginning of [one action].
 [historically verified clothing, tools, architecture, terrain, material].
 [camera height, composition, lens behavior].
 [lighting and restrained documentary color grade].
 Continuity anchors: [object position, light direction, palette, costume].
 Vertical 9:16, subject inside center safe area, no text, no labels, no letters,
-no watermark, no logo, no anachronistic objects, no fantasy ornament.
+no watermark, no logo, no anachronistic objects, no fantasy ornament,
+no [forbidden cultures, ethnic appearances, architecture, burial forms].
 ```
+
+### 7.2 이미지 승인 게이트
+
+아래 중 하나라도 실패하면 영상 생성으로 넘기지 않는다.
+
+- 실물·도면 레퍼런스와 대상의 윤곽·재료·손상·배치가 다르다.
+- 중국 장면에 유럽인, 유럽식 석조 건축, 서양 갑옷·복식이 섞인다.
+- 특정 유적이 아니라 어디에나 있을 법한 둥근 무덤·피라미드·동굴로 바뀐다.
+- 인물 손·도구·유물 접촉점이 영상의 첫 동작을 수행할 수 없는 위치다.
+- 카메라가 이동할 앞·중간·뒤 깊이층과 가림 물체가 없다.
+- 단면 장면인데 절단 평면, 지층 순서, 공개될 확인 범위가 준비되지 않았다.
+- 3D 그래픽이 붙을 시작·경유·도착 표면이 보이지 않는다.
+- 미확인 내부를 구체적인 방·보물·함정으로 확정한다.
 
 ### 이미지 내부 문자 금지
 
-생성 이미지에 제목, 숫자, 치수선, 지도 라벨, 설명 문구를 직접 넣지 않는다. 이미지 모델의 깨진 글자를 방지하고 후편집에서 통제하기 위해 다음은 Remotion에서 추가한다.
+생성 이미지에 제목, 숫자, 치수선, 지도 라벨, 설명 문구를 직접 넣지 않는다. 이미지 모델의
+깨진 글자를 막되, 입체 설명선은 Veo 영상 프롬프트에서 움직임으로 발생시킨다.
 
-- 치수선과 숫자
-- 지도 지명과 이동 경로
+- 치수선·지도 경로·강조선·화살표·스캔 효과: `VEO_INTEGRATED_3D`
+- 정확한 숫자·지도 지명
 - `발굴 확인`, `문헌 기록`, `학술 재구성`, `미확인` 배지
 - 유물명과 연도
-- 강조선·화살표·스캔 효과
 
 따라서 모든 이미지 프롬프트 끝에는 `no text, no labels, no letters`를 포함한다.
 
@@ -321,24 +390,46 @@ no watermark, no logo, no anachronistic objects, no fantasy ornament.
 
 ## 8. 영상(I2V) 프롬프트 작성
 
-영상 프롬프트는 25~60단어의 명확한 동작 지시로 쓴다.
+본편 영상은 승인된 이미지에서 출발하는 `I2V_LOCKED`다. T2V로 같은 장면을 새로
+추측하게 하지 않는다. 영상 프롬프트 길이는 고정하지 않고 TTS 비트를 정확히 전달하는 데
+필요한 만큼 쓰되, 한 장면 한 질문·한 연속 촬영을 유지한다.
+
+### TTS 동기화가 먼저다
+
+영상 프롬프트를 쓰기 전에 실제 음성의 구절을 초 단위 비트로 나눈다.
+
+```text
+0.0-1.8s  "농부의 곡괭이가"  카메라: 손과 곡괭이를 따라 하강
+1.8-3.2s  "단단한 것에 걸렸습니다"  행동: 한 번 충돌, 먼지 낙하, 충돌점 랙포커스
+3.2-6.0s  "흙 아래에는…"  카메라: 노출된 조각으로 느린 매크로 줌인, 다음 단면 장면 인계
+```
+
+- 카메라 움직임은 나레이션의 핵심 명사가 발화될 때 그 대상을 보여 줘야 한다.
+- 줌인·줌아웃·돌리·오비트·크레인·단면 전환을 장식처럼 나열하지 않는다.
+- 질문을 던질 때 접근하고, 규모를 밝힐 때 빠지며, 내부 관계를 설명할 때 단면으로
+  이동하는 식으로 TTS의 의미와 카메라 목적을 1:1로 맞춘다.
+- 3D 그래픽은 그것을 설명하는 단어보다 먼저 답을 보여 주지 않는다.
 
 ### 구성
 
 1. 카메라 경로
 2. 주 행동 하나
 3. `GENERATED_PHYSICS`가 있으면 발생점→경로→상호작용→도착점
-4. 보조 환경 움직임 하나(필요할 때만)
-5. 마지막 초점 또는 연결점
-6. 금지 조건
+4. `VEO_INTEGRATED_3D`가 있으면 재질·색→시작→경유→도착→가림→반응
+5. 보조 환경 움직임 하나(필요할 때만)
+6. 마지막 초점 또는 연결점
+7. 시작 이미지의 고증·형태·개수·위치 보존
+8. 금지 조건
 
 ```text
-Camera [precise path and speed].
+Single continuous [duration]-second I2V shot from the supplied locked diorama image.
+[time-coded camera path matching narration].
 The subject [one primary continuous action].
-[One subtle environmental motion].
-End with focus on [handoff object or spatial target].
-Single continuous shot, preserve all objects and historical details,
-no new objects, no morphing, no hard cut, no text.
+[One generated physical motion]. [One scene-specific integrated 3D graphic, if needed].
+End with focus on [handoff object or spatial target]. Preserve the exact civilization,
+people, artifact shape, site geometry, material, object count and lighting of the
+start image; no new ethnicity, costume, architecture, tomb form or object, no
+morphing, no hard cut, no text, no floating HUD.
 ```
 
 ### 좋은 예 — 발견 행동 6초
@@ -353,7 +444,16 @@ Track closely beside the farmer's hands as the iron pick descends once into comp
 Begin in extreme macro on the same terracotta fragment and push forward along its surface. Continue smoothly through the soil as the surrounding earth opens into a clean archaeological cutaway, revealing ordered buried figures below without changing their positions. End on the depth relationship. No labels, no morphing, no hard cut.
 ```
 
-두 번째 장면의 시작 이미지에는 이미 단면 전환이 가능한 구성과 지층이 준비되어 있어야 한다. I2V가 완전히 새로운 지하 도시를 발명하게 두지 않는다.
+두 번째 장면의 시작 이미지에는 이미 단면 전환이 가능한 구성과 지층이 준비되어 있어야
+한다. I2V가 완전히 새로운 지하 도시를 발명하게 두지 않는다. 단면 이동이 큰 경우에는
+단면이 준비된 별도 시작 이미지를 새 장면으로 만들거나, 도구에서 지원하면 승인된 끝
+프레임까지 잠근다.
+
+### I2V와 T2V 선택 결론
+
+`고대유물의 비밀`처럼 특정 유적·유물·문명과 TTS 설명을 정확히 맞춰야 하는 채널은
+**I2V가 본편 기본값**이다. T2V는 구조와 인물의 정체성이 매 생성마다 흔들릴 가능성을
+감수하는 탐색 방식이므로 최종 역사 장면에 사용하지 않는다.
 
 ---
 
@@ -429,7 +529,9 @@ Begin in extreme macro on the same terracotta fragment and push forward along it
 
 ## 11. 스타일
 
-기본은 고급 고고학 다큐멘터리다.
+기본은 **신비한 건축사전 계열의 박물관급 시네마틱 고고학 3D 디오라마 다큐멘터리**다.
+표면 재질과 고증은 사실적이고, 공간은 단면·분해·카메라 침투가 가능한 하나의 일관된
+디지털 디오라마 세계로 설계한다.
 
 - 실물과 발굴: 자연스러운 재료색, 절제된 대비, 관찰 가능한 디테일
 - 역사 재현: 과장된 판타지보다 생활감과 물성
@@ -437,7 +539,9 @@ Begin in extreme macro on the same terracotta fragment and push forward along it
 - 과학 분석: 깨끗한 계측 그래픽, 결과보다 측정 범위 강조
 - 미지: 과도한 공포 연출보다 닫힌 경계와 침묵
 
-모든 장면을 등각 3D 디오라마로 통일하지 않는다. 서로 다른 표현 방식을 쓰되 팔레트, 재료 질감, 광원 방향, 자막 체계를 통일한다.
+모든 장면을 똑같은 등각 탑뷰로 만들지는 않는다. 디오라마 세계는 유지하되 대본에 따라
+매크로·저각·오비트·크레인·줌인·줌아웃·단면 침투로 카메라 문법을 바꾼다. 팔레트,
+재료 질감, 광원 방향, 유물 형태, 인물 고증은 장면 사이에 고정한다.
 
 ### 9:16 안전 영역
 
@@ -462,6 +566,13 @@ SCENE 001
 발굴확인 | 측정확인 | 문헌기록 | 학술해석 | 미확인
 [TTS / 생성 길이]
 5.2초 / 6초
+[생성 방식]
+I2V_LOCKED
+[시각 잠금]
+civilization / era / region / source_reference / site_artifact_fingerprint(3개 이상) /
+people_lock / forbidden_culture / diorama_style
+[TTS 비트]
+0.0~1.8초 나레이션 / 카메라 / 주 행동 / 3D 그래픽
 [장면 유형]
 DISCOVERY_ACTION
 [주 행동]
@@ -469,9 +580,12 @@ DISCOVERY_ACTION
 [카메라 목적]
 ...
 [모션 소유권]
-GENERATED_PHYSICS | TRACKED_COMPOSITE | INFO_OVERLAY | NONE
+GENERATED_PHYSICS | VEO_INTEGRATED_3D | INFO_OVERLAY | NONE
 [모션 공간]
 WORLD_3D | SURFACE_2_5D | SCREEN_INFO | NONE
+[Veo 통합 그래픽 분석]
+function / evidence_relation / visual_language / start / via / end / occlusion /
+timing / camera_relation / arrival_reaction
 [모션 경로]
 3D 발생점 → 중간 앵커 → 도착점 / 피사체 반응 / 전경 가림 대상 / 카메라 기준점
 [연속성]
@@ -497,16 +611,16 @@ SCENE 001 — 6s
 
 [MOTION OWNERSHIP]
 - generated physics:
-- tracked composite:
+- Veo integrated 3D:
 - information overlay:
 
-[REMOTION OVERLAY]
-- 증거 배지:
-- 치수·지도·강조선:
-- 추적 키프레임:
-- 앞을 가리는 전경 마스크:
-- 등장 시점:
-- 퇴장 시점:
+[VEO INTEGRATED 3D]
+- function / evidence relation:
+- material / colour / transparency:
+- start / via / end anchors:
+- occlusion / parallax:
+- narration-synced timing:
+- arrival reaction / fade:
 
 [CONTINUITY LOCK]
 ...
@@ -525,6 +639,8 @@ SCENE 001 — 6s
 - [ ] 25컷 등 목표 숫자에 맞추려고 장면을 쪼개거나 합치지 않았는가
 - [ ] 생성 길이가 4·6·8·10초 중 하나이며 TTS보다 짧지 않은가
 - [ ] 한 장면이 한 시작 이미지로 가능한 연속 행동인가
+- [ ] 모든 본편 장면이 `I2V_LOCKED`이며 T2V 최종 클립이 섞이지 않았는가
+- [ ] 실제 TTS 구절별 카메라·행동·그래픽 비트가 잠겼는가
 
 ### 서사
 
@@ -533,6 +649,7 @@ SCENE 001 — 6s
 - [ ] 물리 현상과 정확한 합성 그래픽의 담당 단계가 분리됐는가
 - [ ] 흐름이 발생점→경로→반응→도착점을 가지는가
 - [ ] 합성 경로가 피사체를 추적하고 구조물 앞뒤로 가려지는가
+- [ ] 장면 질문에 맞는 3D 기능·재질·색을 골랐는가
 - [ ] 큰 제목판·유리 카드·고정 HUD가 영상을 덮지 않는가
 - [ ] 출토품이 단순 나열이 아니라 관찰과 의미로 이어지는가
 - [ ] 실제 유물, 재현, 기록, 복원안, 미확인이 구분되는가
@@ -540,13 +657,17 @@ SCENE 001 — 6s
 ### 고증
 
 - [ ] 시대·지역·인물·건축 앵커를 지켰는가
+- [ ] 실물·도면 근거와 대상 고유 지문 3개 이상이 시작 이미지에 보이는가
+- [ ] 다른 인종·문화권·건축·무덤 형태가 섞이지 않았는가
+- [ ] 시작 이미지가 박물관급 3D 디오라마이며 카메라 이동·단면·가림 깊이가 준비됐는가
 - [ ] 열리지 않은 내부를 사실처럼 만들지 않았는가
 - [ ] 영상 단계가 이미지에 없는 물체를 새로 발명하지 않는가
 - [ ] 이미지에 생성형 문자·치수·라벨을 요구하지 않았는가
 
 ### 편집 인계
 
-- [ ] 치수선·지도선·증거 배지를 Remotion 오버레이로 분리했는가
+- [ ] 치수선·지도선·화살표는 `VEO_INTEGRATED_3D`, 정확한 글자는 `INFO_OVERLAY`로 분리했는가
+- [ ] `VEO_INTEGRATED_3D` 장면에 10개 필수 분석 필드와 시간 순서가 있는가
 - [ ] 연결 장면의 물체 위치·광원·카메라 축이 맞는가
 - [ ] 각 장면의 마지막 초점이 다음 장면의 시작점을 준비하는가
 
