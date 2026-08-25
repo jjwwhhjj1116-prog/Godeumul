@@ -52,8 +52,10 @@ def _find_secrets() -> Path:
 
 SECRETS = _find_secrets()
 TOKEN = ROOT / "token.json"
+# force-ssl 은 댓글 읽기·답글에 필요하다. readonly 로는 commentThreads 가 403 난다.
+# ★ 스코프를 바꾸면 기존 token.json 은 무효다. --auth 를 다시 한 번 돌려야 한다.
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload",
-          "https://www.googleapis.com/auth/youtube.readonly"]
+          "https://www.googleapis.com/auth/youtube.force-ssl"]
 KST = timezone(timedelta(hours=9))
 
 # 공식 쿼터표
