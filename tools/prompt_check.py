@@ -24,6 +24,7 @@ from pathlib import Path
 
 ALLOWED_SECONDS = {4, 6, 8, 10}
 EVIDENCE_STATES = {"발굴확인", "측정확인", "문헌기록", "학술해석", "미확인"}
+MOTION_OWNERS = {"GENERATED_PHYSICS", "TRACKED_COMPOSITE", "INFO_OVERLAY", "NONE"}
 SCENE_TYPES = {
     "DISCOVERY_ACTION", "DISCOVERY_REVEAL", "SITE_ESTABLISH", "EXCAVATION",
     "ARTIFACT_MACRO", "INVENTORY_TABLEAU", "HISTORICAL_RECONSTRUCTION",
@@ -155,6 +156,11 @@ def main() -> int:
         video = str(scene_data.get("vid") or "")
         narration = str(scene_data.get("txt") or "").strip()
         evidence = str(scene_data.get("evidence") or scene_data.get("증거상태") or "").strip()
+        motion_raw = scene_data.get("motion_owner") or scene_data.get("모션소유권") or ""
+        if isinstance(motion_raw, list):
+            motion_owners = [str(value).strip().upper() for value in motion_raw if str(value).strip()]
+        else:
+            motion_owners = [value.strip().upper() for value in re.split(r"[+,|]", str(motion_raw)) if value.strip()]
         scene_type = str(scene_data.get("ct") or scene_data.get("type") or "").strip()
         low = image.lower()
 
@@ -164,6 +170,9 @@ def main() -> int:
         report.add(bool(video), n, "영상 프롬프트 1개", "" if video else "vid 없음")
         report.add(evidence in EVIDENCE_STATES, n, "증거 상태",
                    "" if evidence in EVIDENCE_STATES else f"'{evidence or '없음'}'")
+        motion_ok = bool(motion_owners) and all(value in MOTION_OWNERS for value in motion_owners)
+        report.add(motion_ok, n, "모션 소유권",
+                   "" if motion_ok else f"'{motion_raw or '없음'}'")
         report.add(scene_type in SCENE_TYPES, n, "장면 유형",
                    "" if scene_type in SCENE_TYPES else f"'{scene_type or '없음'}'")
 

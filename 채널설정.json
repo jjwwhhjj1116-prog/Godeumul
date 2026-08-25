@@ -110,6 +110,12 @@
    "학술해석",
    "미확인"
   ],
+  "모션소유권": [
+   "GENERATED_PHYSICS",
+   "TRACKED_COMPOSITE",
+   "INFO_OVERLAY",
+   "NONE"
+  ],
   "이미지문자금지": true,
   "모션그래픽도구": "remotion"
  },
