@@ -60,8 +60,13 @@ def main() -> int:
         image_prompts.add(image)
         video_prompts.add(video)
 
+        civilization_lock = (
+            "Present-day Qin Shi Huang Mausoleum"
+            if scene.get("modern_scene")
+            else "Ancient China, Qin dynasty, 3rd century BC"
+        )
         for required in (
-            "Ancient China, Qin dynasty, 3rd century BC",
+            civilization_lock,
             "9:16 vertical composition",
             "no European or Western faces",
             "no text, no labels, no letters",

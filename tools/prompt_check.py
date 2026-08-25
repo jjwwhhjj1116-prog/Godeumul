@@ -346,16 +346,27 @@ def main() -> int:
         positive_scene = re.sub(r"\bno\s+[a-z ,'-]+", "", image, flags=re.I)
 
         # C. 고증 카드 앵커
-        civ_head = str(card["civ_head"])
+        modern_scene = bool(scene_data.get("modern_scene"))
+        civ_head = "present-day qin shi huang mausoleum" if modern_scene else str(card["civ_head"])
         report.add(bool(civ_head and civ_head in low), n, "문명 앵커",
                    "" if civ_head and civ_head in low else f"'{civ_head}' 없음")
 
         if PEOPLE_HINT.search(positive_scene):
-            people_head = str(card["people_head"])
+            people_head = (
+                "east asian chinese archaeologists and scientists"
+                if modern_scene else str(card["people_head"])
+            )
             report.add(bool(people_head and people_head in low), n, "인물 앵커",
                        "" if people_head and people_head in low else f"'{people_head}' 없음")
 
-        if ARCH_HINT.search(positive_scene):
+        # Modern site-establishing shots may mention a mausoleum or explicitly
+        # forbid reconstructed buildings.  For newly built storyboards, trust
+        # the explicit scene flag instead of inferring ancient architecture
+        # from those words.  Legacy storyboards keep the heuristic fallback.
+        architecture_required = scene_data.get("architecture_anchor_required")
+        if architecture_required is None:
+            architecture_required = bool(ARCH_HINT.search(positive_scene))
+        if architecture_required:
             architecture_head = str(card["architecture_head"])
             report.add(bool(architecture_head and architecture_head in low), n, "건축 앵커",
                        "" if architecture_head and architecture_head in low
@@ -365,7 +376,11 @@ def main() -> int:
             if re.search(r"\b" + re.escape(str(banned_word)) + r"\b", low):
                 report.add(False, n, "고증 금지어", f"'{banned_word}'")
 
-        missing_negative = [clause for clause in card["negative_heads"] if clause not in low]
+        required_negatives = list(card["negative_heads"])
+        if modern_scene:
+            required_negatives = [clause for clause in required_negatives if clause != "no modern clothing"]
+            required_negatives.append("no ancient costume on modern researchers")
+        missing_negative = [clause for clause in required_negatives if clause not in low]
         report.add(not missing_negative, n, "고증 네거티브",
                    "" if not missing_negative else f"누락: {missing_negative}")
 

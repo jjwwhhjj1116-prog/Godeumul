@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-08-26T05:49:19+09:00",
+  "video": {
+    "file": "EP01_진시황릉_최종_v5.mp4",
+    "sha256": "8A63070EE292AE8B50FE8FBF93C9065471E02BACB2195813673855A7C28D3BF1",
+    "bytes": 326116449,
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1",
+    "duration_seconds": 170.154667,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_lufs": -16.71,
+    "audio_true_peak_dbfs": -5.55
+  },
+  "thumbnail": {
+    "file": "고대유물의비밀_진시황릉_썸네일_업로드용_1080x1920.jpg",
+    "sha256": "4DE6BDED891938164F89568337794F1F60F9D82E48D31EA1B2793201EC360004",
+    "bytes": 803321
+  },
+  "gates": {
+    "flow_project_exact": "PASS: 8월 23일 오후 10:57",
+    "prompt_self_audit": "PASS: 957/957",
+    "semantic_visual_audit": "PASS: 27 image / 27 video",
+    "download_integrity": "PASS: 27 files, H.264 720x1280 24fps",
+    "playback_frames": "PASS: start/mid/end for all 27 clips",
+    "final_contact_sheet": "PASS: six timeline samples",
+    "black_frame_detection": "PASS: none >= 0.2s",
+    "audio_silence_detection": "PASS: none >= 0.7s at -50dB",
+    "shorts_spec": "PASS: 1080x1920, 30fps, under 180s",
+    "old_clips_excluded": "PASS: clips_v5 only"
+  }
+}

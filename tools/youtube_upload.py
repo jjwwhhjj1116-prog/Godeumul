@@ -72,7 +72,7 @@ def _need_libs() -> None:
                  "  pip install google-api-python-client google-auth-oauthlib google-auth-httplib2")
 
 
-def service():
+def service(token_path: Path = TOKEN, secrets_path: Path = SECRETS):
     """인증된 youtube 서비스를 돌려준다. 토큰이 없으면 브라우저를 한 번 연다."""
     _need_libs()
     from google.auth.transport.requests import Request
@@ -81,16 +81,16 @@ def service():
     from googleapiclient.discovery import build
 
     creds = None
-    if TOKEN.exists():
-        creds = Credentials.from_authorized_user_file(str(TOKEN), SCOPES)
+    if token_path.exists():
+        creds = Credentials.from_authorized_user_file(str(token_path), SCOPES)
     if creds and creds.expired and creds.refresh_token:
         creds.refresh(Request())              # 만료돼도 조용히 갱신된다
-        TOKEN.write_text(creds.to_json(), encoding="utf-8")
+        token_path.write_text(creds.to_json(), encoding="utf-8")
     if not creds or not creds.valid:
-        if not SECRETS.exists():
-            sys.exit(f"[에러] client_secrets.json 이 없습니다: {SECRETS}\n"
+        if not secrets_path.exists():
+            sys.exit(f"[에러] client_secrets.json 이 없습니다: {secrets_path}\n"
                      "       07.업로드지침.md 의 '최초 1회 설정'을 보세요.")
-        flow = InstalledAppFlow.from_client_secrets_file(str(SECRETS), SCOPES)
+        flow = InstalledAppFlow.from_client_secrets_file(str(secrets_path), SCOPES)
         # ★ 구글이 인증 후 http://localhost:<포트> 로 돌려보낸다. 그때까지 이 프로세스가
         #   살아 있어야 한다. 죽어 있으면 브라우저에 ERR_CONNECTION_REFUSED 가 뜨고
         #   토큰이 안 생긴다. 포트는 실행마다 바뀌므로 **이번 실행의 URL**을 써야 한다.
@@ -105,8 +105,8 @@ def service():
             authorization_prompt_message="여기로 접속하세요:\n\n{url}\n",
             success_message="인증 완료. 이 창을 닫고 PowerShell 로 돌아가세요.",
             timeout_seconds=600)
-        TOKEN.write_text(creds.to_json(), encoding="utf-8")
-        print(f"\n  토큰 저장 -> {TOKEN}  (이제 브라우저는 다시 안 열립니다)")
+        token_path.write_text(creds.to_json(), encoding="utf-8")
+        print(f"\n  토큰 저장 -> {token_path}  (이제 브라우저는 다시 안 열립니다)")
     return build("youtube", "v3", credentials=creds, cache_discovery=False)
 
 
@@ -287,6 +287,10 @@ def main() -> int:
     ap.add_argument("episode", nargs="?", type=Path)
     ap.add_argument("--run", action="store_true", help="실제로 올린다 (없으면 점검만)")
     ap.add_argument("--auth", action="store_true", help="최초 1회 로그인만 하고 끝낸다")
+    ap.add_argument("--token", type=Path, default=TOKEN,
+                    help="기존 OAuth token.json 경로 (기본: 저장소 루트)")
+    ap.add_argument("--client-secret", dest="client_secret", type=Path, default=SECRETS,
+                    help="OAuth client_secret JSON 경로 (기본: 저장소 루트에서 자동 검색)")
     ap.add_argument("--공개", dest="privacy", default="비공개",
                     choices=["비공개", "일부공개", "공개", "예약"])
     ap.add_argument("--시각", dest="when", default=None,
@@ -298,7 +302,7 @@ def main() -> int:
     args = ap.parse_args()
 
     if args.auth:
-        yt = service()
+        yt = service(args.token, args.client_secret)
         title = whoami(yt)
         it = yt.channels().list(part="statistics", mine=True).execute()["items"][0]
         print(f"\n  채널   : {title}")
@@ -308,7 +312,7 @@ def main() -> int:
         want = CFG.get("업로드.채널명", "") or CFG.get("채널.이름", "")
         if want and title.strip() != want.strip():
             print(f"\n  ★ 기대한 채널은 '{want}' 입니다. 계정을 잘못 고른 것 같습니다.")
-            print(f"     token.json 을 지우고 --auth 를 다시 하세요:\n       {TOKEN}\n")
+            print(f"     token.json 을 지우고 --auth 를 다시 하세요:\n       {args.token}\n")
             return 1
         print(f"\n  '{want}' 확인. 이제 업로드할 수 있습니다.\n" if want else "")
         return 0
@@ -373,7 +377,7 @@ def main() -> int:
     print("\n  ※ '변형·합성 콘텐츠' 고지는 API 에 필드가 없습니다.")
     print("     업로드 후 스튜디오에서 한 번 켜야 합니다. (07-3)")
 
-    yt = service()
+    yt = service(args.token, args.client_secret)
 
     # ★ 계정이 여러 개면 엉뚱한 채널에 올라가는 게 최악이다. 올리기 직전에 확인한다.
     title = whoami(yt)
@@ -381,7 +385,7 @@ def main() -> int:
     print(f"\n  대상 채널 : {title}")
     if want and title.strip() != want.strip():
         print(f"\n  ★ 중단합니다. 기대한 채널은 '{want}' 인데 토큰은 '{title}' 을 물고 있습니다.")
-        print(f"     token.json 을 지우고 --auth 를 다시 하세요:\n       {TOKEN}\n")
+        print(f"     token.json 을 지우고 --auth 를 다시 하세요:\n       {args.token}\n")
         return 1
 
     vid = upload(yt, video, build_body(m, privacy, publish_at), thumb)

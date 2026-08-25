@@ -13,6 +13,8 @@ token.json
 산출물/**/audio/
 산출물/**/images/
 산출물/**/clips/
+산출물/**/qa_v5/
+산출물/**/NotoSansKR-VF.ttf
 *.mp3
 *.wav
 !motion-graphics/public/sfx/wind-bed.wav

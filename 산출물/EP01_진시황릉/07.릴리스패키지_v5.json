@@ -1,5 +1,5 @@
 {
-  "status": "VISUAL_PROMPTS_LOCKED_MEDIA_PENDING",
+  "status": "YOUTUBE_PROCESSED_SCHEDULED",
   "episode": "EP01_진시황릉",
   "target_channel": "고대유물의 비밀",
   "title": "중국 최초 황제의 무덤, 진시황릉을 아직 열지 않는 진짜 이유",
@@ -12,15 +12,17 @@
   "rights": "User-owned narration, user-approved thumbnail, AI-generated archaeological visualizations; cited research sources in description",
   "script_lock": "01.대본잠금.md",
   "prompt_gate": {
-    "prompt_check": "960/960 PASS",
+    "prompt_check": "957/957 PASS",
     "semantic_self_audit": "PASS",
     "image_prompts": 27,
     "video_prompts": 27
   },
   "thumbnail_lock": "06a.썸네일잠금_v5.json",
-  "video_sha256": null,
-  "final_qa_lock": null,
-  "idempotency_key": null,
-  "youtube_video_id": null,
-  "canonical_url": null
+  "video_file": "EP01_진시황릉_최종_v5.mp4",
+  "video_sha256": "8A63070EE292AE8B50FE8FBF93C9065471E02BACB2195813673855A7C28D3BF1",
+  "final_qa_lock": "08.최종QA_v5.json",
+  "idempotency_key": "sha256:8A63070EE292AE8B50FE8FBF93C9065471E02BACB2195813673855A7C28D3BF1",
+  "youtube_video_id": "Fplyvujf1e4",
+  "canonical_url": "https://youtube.com/shorts/Fplyvujf1e4",
+  "publication_receipt": "09.게시검증_v5.json"
 }

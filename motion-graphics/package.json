@@ -5,7 +5,8 @@
   "scripts": {
     "studio": "remotion studio src/index.ts",
     "render:prototype": "remotion render src/index.ts Legacy3DPrototype render/motion-language-preview.mp4 --codec h264 --crf 16 --overwrite",
-    "render:legacy-blocked": "remotion render src/index.ts LegacyEP01Blocked render/EP01_legacy_blocked.mp4 --codec h264 --crf 16 --overwrite"
+    "render:legacy-blocked": "remotion render src/index.ts LegacyEP01Blocked render/EP01_legacy_blocked.mp4 --codec h264 --crf 16 --overwrite",
+    "render:v5": "remotion render src/index.ts V5Final --codec h264 --crf 16 --pixel-format yuv420p --overwrite"
   },
   "dependencies": {
     "@react-three/fiber": "8.18.0",

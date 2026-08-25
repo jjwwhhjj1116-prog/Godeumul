@@ -26,20 +26,34 @@ STYLE = (
     "documentary realism rather than a toy miniature, 4K source detail, 9:16 vertical composition"
 )
 CIV = "Ancient China, Qin dynasty, 3rd century BC, Shaanxi loess plain below the Li mountain ridge"
+MODERN_CIV = (
+    "Present-day Qin Shi Huang Mausoleum landscape at Lintong, Xi'an, Shaanxi, on the loess plain "
+    "north of Mount Li; archaeological documentary reconstruction, not an ancient reenactment"
+)
 PEOPLE = (
     "East Asian Chinese figures with East Asian facial features, Qin dynasty dress: knee-length hemp "
     "work robes, cross-collared and closing to the right, cloth waist sashes, hair gathered into a "
     "topknot, straw or cloth shoes, bare-headed or with simple cloth caps"
 )
+MODERN_PEOPLE = (
+    "East Asian Chinese archaeologists and scientists only, wearing practical period-correct modern "
+    "field clothing and protective equipment appropriate to the stated research date; no Qin costume "
+    "on researchers, no historical reenactment"
+)
 ARCH = (
     "Qin architecture: rammed-earth walls, timber post-and-beam frames, grey ceramic tile roofs with "
     "gently upturned eaves, bracket sets under the eaves, no curved Japanese gables, no classical columns"
 )
-NEGATIVE = (
+NEGATIVE_SHARED = (
     "no European or Western faces, no Roman or Greek tunics or togas, no classical columns, no medieval "
     "European clothing or armor, no Japanese or Indian architecture, no anachronistic tools or machinery, "
-    "no modern clothing, no round natural-looking hill for the mound, no fantasy pyramid, no generic tomb, "
+    "no round natural-looking hill for the mound, no fantasy pyramid, no generic tomb, "
     "no toy-like plastic surface, no low-poly game asset, no watermark, no text, no labels, no letters"
+)
+NEGATIVE_ANCIENT = NEGATIVE_SHARED + ", no modern clothing"
+NEGATIVE_MODERN = (
+    NEGATIVE_SHARED
+    + ", no ancient costume on modern researchers, no exposed entrance unless archaeologically documented"
 )
 
 VISUAL_LOCK_BASE = {
@@ -65,6 +79,7 @@ def spec(
     *,
     people: bool = False,
     architecture: bool = False,
+    modern: bool = False,
     motion_owner: str = "GENERATED_PHYSICS",
     motion_space: str = "WORLD_3D",
     veo_graphic: dict[str, object] | None = None,
@@ -75,12 +90,12 @@ def spec(
 SPECS = [
     spec(
         "1. 진시황릉과 우물 아래 군대", "SITE_ESTABLISH", "미확인",
-        "Present-day wide aerial three-quarter view of the real Qin Shi Huang mausoleum landscape: a large squared, stepped, truncated-pyramid rammed-loess mound with straight ridges and a flat rectangular summit, broad archaeological zone and Mount Li ridge beyond; the mound exterior is verified while the central chamber remains a completely opaque sealed earth volume, early-morning haze, restrained ochre and jade palette",
+        "Present-day wide aerial three-quarter view of the real Qin Shi Huang mausoleum landscape at Lintong: a broad low square-trapezoidal rammed-loess burial mound softened by two millennia of erosion, its four sloping sides and broad flat summit fully covered in mature green grass and low vegetation, straight footprint still legible from the air, open archaeological landscape and the Mount Li ridge beyond. Show the protected mound exactly as it appears today, not a reconstruction: no ancient palace buildings, no perimeter walls, no exposed stair terraces, no excavated entrance, no terracotta figures at the mound, and no geometric ziggurat. The documented exterior is visible while the central chamber remains a completely opaque sealed earth volume, early-morning haze, restrained ochre and jade palette",
         "UNESCO Mausoleum of the First Qin Emperor site description and published site photography",
-        ["square stepped rammed-loess mound", "flat rectangular summit and straight ridges", "sealed opaque central earth volume"],
+        ["present-day vegetated square-trapezoidal rammed-loess mound", "broad flat summit and legible straight footprint", "sealed opaque central earth volume"],
         ["Begin already close enough to read the square mound; hold the sealed center as the visual question.", "Ease upward just enough to reveal the full mausoleum landscape without exposing any interior."],
         "A slow descending crane settles toward the squared mound, then makes a restrained half-orbit that reveals its straight corners. Thin ground mist drifts across the loess plain; grass moves lightly. The camera stops at the sealed center and never crosses the ground surface.",
-        architecture=True,
+        architecture=False, modern=True,
     ),
     spec(
         "1. 진시황릉과 우물 아래 군대", "DISCOVERY_ACTION", "발굴확인",
@@ -281,12 +296,12 @@ SPECS = [
     ),
     spec(
         "3. 봉토 아래의 문헌과 측정", "TEXT_RECORD", "문헌기록",
-        "The same Shiji manuscript supports a deliberately translucent miniature textual reconstruction, explicitly not excavated evidence: sparse star points under a dark roof plane and mirror-silver branching channels across a floor map, all enclosed in a sepia glass-like evidence vignette; beside it, a second older empty time-layer plinth makes the century-later authorship gap visually explicit without numbers or labels",
+        "A large aged bamboo-slip manuscript of Sima Qian's Shiji dominates the foreground as the unmistakable evidence source. Directly above the slips, one deliberately translucent sepia glass-like textual vignette contains only a dark conceptual ceiling filled with sparse star points and a floor map crossed by branching mirror-silver waterways; it is explicitly record-based and not excavated evidence, not an excavated chamber. Behind the main manuscript, a second isolated weathered manuscript plinth sits farther away and slightly out of focus to express the century-later authorship gap without numbers or labels. No palace exterior, no city, no construction site, no workers, no monumental building, no mountain dominating the frame",
         "Shiji textual description of constellations and mercury rivers; chronology of the text",
         ["star points on a conceptual ceiling", "branching silver conceptual waterways", "separate later textual time-layer plinth"],
         ["Move from the star points down to the silver channels inside the textual vignette.", "Pull back to reveal the separate later manuscript time layer and weaken the reconstruction."],
         "Inside the bounded textual vignette, dim star points brighten in sequence and restrained silver streams travel along pre-existing channels. The camera tilts down from ceiling to floor, then pulls back to reveal the later manuscript plinth. The reconstruction fades to a weaker translucency but does not disappear.",
-        architecture=True,
+        architecture=False,
         motion_owner="VEO_INTEGRATED_3D",
         motion_space="WORLD_3D",
         veo_graphic={
@@ -306,6 +321,7 @@ SPECS = [
         ["unbroken mound strata", "opaque central unknown", "empty tray and zero central-chamber artifacts"],
         ["Track from the empty tray toward the mound section.", "Stop at the opaque chamber boundary and hold long enough to register that nothing came out."],
         "The camera passes over the empty tray and pushes slowly into the mound section. Soil layers show slight parallax, but the black central volume absorbs the light and reveals nothing. The camera comes to a complete stop at the boundary.",
+        modern=True,
     ),
     spec(
         "3. 봉토 아래의 문헌과 측정", "SCIENTIFIC_EVIDENCE", "측정확인",
@@ -314,7 +330,7 @@ SPECS = [
         ["surface soil-core sampling grid", "scientists outside the sealed mound", "denser measured central sample response without interior claim"],
         ["Follow a soil core being lifted from the mound surface.", "Transition to the wider sampling grid as a scan wave converges on the anomalous central cluster."],
         "A scientist lifts one shallow soil core; loose grains fall back into the sampling hole. The camera cranes upward to the full grid. A restrained amber scan wave travels from outer sample points toward the denser central cluster, each physical marker pulsing once. Nothing penetrates or opens the chamber.",
-        people=True,
+        people=True, modern=True,
         motion_owner="GENERATED_PHYSICS+VEO_INTEGRATED_3D",
         motion_space="WORLD_3D",
         veo_graphic={
@@ -370,12 +386,12 @@ SPECS = [
     ),
     spec(
         "4. 왜 열지 않는가", "SCIENTIFIC_EVIDENCE", "미확인",
-        "Present-day non-invasive research diorama around the sealed squared mound: Chinese conservators, structural engineers and environmental scientists work only outside it with ground sensors, vapor-safe sampling tubes, surveying tripods and conservation mock-ups; three restrained physical pathways—silver for mercury risk, ochre for structural load and pale blue for preservation climate—stop at the sealed boundary, no excavation trench",
+        "Present-day non-invasive research diorama around the fully sealed real mausoleum mound: a broad low grass-covered square-trapezoidal earthen mass with a broad flat summit and four continuous unbroken slopes. Chinese conservators, structural engineers and environmental scientists work only at the outside perimeter with ground sensors, vapor-safe sampling tubes, surveying tripods and conservation mock-ups. Three restrained physical pathways—silver for mercury risk, ochre for structural load and pale blue for preservation climate—stop at the intact earth boundary. No excavation trench, no doorway, no portal, no stairs, no ramp, no tunnel, no path piercing the mound, no cutaway and no exposed chamber",
         "Current rationale: mercury, structural safety and artifact conservation constraints",
         ["sealed mound with no excavation", "three external research disciplines", "three risk pathways stopping at the boundary"],
         ["Negate the trap myth by showing an undisturbed, quiet mound.", "Orbit through mercury sampling, structural monitoring and conservation tests, all stopping outside the center."],
         "The camera makes one calm orbit around the sealed mound. A silver sampling path reaches an external soil probe, an ochre structural hazard load path travels through a test section, and pale-blue preservation hazard particles circulate inside a conservation mock-up. Each path remains anchored to its physical apparatus and stops before the mound center.",
-        people=True,
+        people=True, modern=True,
         motion_owner="VEO_INTEGRATED_3D",
         motion_space="WORLD_3D",
         veo_graphic={
@@ -390,11 +406,12 @@ SPECS = [
     ),
     spec(
         "4. 왜 열지 않는가", "SCIENTIFIC_EVIDENCE", "미확인",
-        "A premium scientific sectional diorama of the sealed mound surrounded by non-invasive methods: low-frequency survey waves skim through outer soil, tiny environmental probes remain at the surface, and conservation test replicas sit outside; the center stays an opaque black volume. A thin warm scan envelope maps only the boundary and returns outward, visually answering how to learn without opening",
+        "Present-day premium scientific archaeological diorama with the research apparatus as the foreground subject: on flat continuous undisturbed ground outside the protected perimeter, a modern Chinese non-invasive survey team has arranged one ground-penetrating radar cart, a low-frequency sensor tripod, shallow environmental probes and a sealed climate-controlled conservation test case containing pigment replicas. Each instrument is physically separate and museum-clear at camera height. Far behind them, the real mausoleum mound rises positively above the plain as one intact broad low grass-covered square-trapezoidal earthwork with a broad flat rectangular summit and continuous unbroken vegetated slopes; it is softly focused but unmistakably solid and sealed. No pit, no depression, no sunken square, no negative landform, no doorway, no portal, no black hole, no stairs, no ramp, no tunnel, no excavation trench, no exposed chamber, no cutaway and no cross-section. The source frame is quiet and static so a thin warm scan path can leave the foreground sensors, travel only across the exterior ground, touch the mound perimeter and return during I2V",
         "Current archaeological and conservation problem: investigation without destructive excavation",
         ["opaque central unknown", "non-invasive survey wave returning from boundaries", "external conservation test replicas"],
         ["State the remaining mystery by approaching the dark center.", "Send a non-invasive scan envelope around the boundary and receive it back without opening anything.", "Pull out to place the scientific method, not a treasure reveal, as the ending answer."],
         "The camera advances toward the opaque central volume, slows, and stops. A thin warm scan envelope travels from surface sensors around the outer boundary, bends with the mound geometry, and returns to the instruments. The camera then pulls back to include conservation mock-ups; no door opens and no interior appears.",
+        modern=True,
         motion_owner="VEO_INTEGRATED_3D",
         motion_space="WORLD_3D",
         veo_graphic={
@@ -409,12 +426,12 @@ SPECS = [
     ),
     spec(
         "4. 왜 열지 않는가", "SITE_ESTABLISH", "미확인",
-        "Final blue-hour wide view of the real squared Qin Shi Huang mausoleum mound and its vast surrounding archaeological landscape beneath Mount Li, warm light grazing the straight earthen ridges while the center remains quiet and sealed; faint distant museum and conservation lights at the perimeter, dignified world-heritage documentary atmosphere, no interior reveal",
+        "Final dignified late-golden-hour high oblique aerial of the real present-day Qin Shi Huang mausoleum landscape beneath Mount Li. The actual mound must read unmistakably as a broad low square-trapezoidal rammed-loess earthwork: its complete straight four-sided rectangular footprint and all four squared corners are visible, each long side slopes continuously toward a broad flat rectangular summit that is much wider than the mound is tall, mature grass and low vegetation soften but do not erase the geometry. The foreground perspective emphasizes one crisp straight corner and the distant opposite corner. No round hill, no conical mound, no bell-shaped silhouette, no natural mountain shape, no reconstructed Qin palace, no perimeter wall, no exposed terraces, no excavated entrance, no stairs and no ziggurat. Warm side light grazes the vegetated earthen planes while the center remains quiet and sealed; faint distant modern conservation lights stay only outside the mound perimeter, restrained world-heritage documentary atmosphere, no interior reveal",
         "UNESCO World Heritage site and present archaeological status",
-        ["squared stepped mound silhouette", "Mount Li and loess landscape", "quiet sealed center with conservation presence only at perimeter"],
+        ["present-day vegetated square-trapezoidal mound silhouette", "Mount Li and loess landscape", "quiet sealed center with conservation presence only at perimeter"],
         ["Begin with the wide world-heritage landscape.", "Make one slow pullback as the last warm light leaves the mound, ending on stillness."],
         "A slow, almost imperceptible pullback reveals more of the loess plain and Mount Li. Grass moves in a light evening wind, distant perimeter lights warm gently, and the mound stays sealed. Motion settles to complete stillness for the closing beat.",
-        architecture=True,
+        architecture=False, modern=True,
     ),
 ]
 
@@ -459,12 +476,12 @@ def choose_duration(tts: float) -> int:
 
 
 def image_prompt(item: dict[str, object]) -> str:
-    anchors = [STYLE, CIV]
+    anchors = [STYLE, MODERN_CIV if item["modern"] else CIV]
     if item["people"]:
-        anchors.append(PEOPLE)
+        anchors.append(MODERN_PEOPLE if item["modern"] else PEOPLE)
     if item["architecture"]:
         anchors.append(ARCH)
-    anchors.extend([str(item["image"]), NEGATIVE])
+    anchors.extend([str(item["image"]), NEGATIVE_MODERN if item["modern"] else NEGATIVE_ANCIENT])
     return ". ".join(anchor.rstrip(". ") for anchor in anchors) + "."
 
 
@@ -513,6 +530,8 @@ def build() -> None:
             "omni": choose_duration(tts),
             "evidence": item["evidence"],
             "generation_mode": "I2V_LOCKED",
+            "architecture_anchor_required": bool(item["architecture"]),
+            "modern_scene": bool(item["modern"]),
             "motion_owner": item["motion_owner"],
             "motion_space": item["motion_space"],
             "visual_lock": lock,

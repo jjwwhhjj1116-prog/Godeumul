@@ -1,0 +1,31 @@
+{
+  "status": "SCHEDULED_VERIFIED",
+  "checked_at": "2026-08-26T06:06:29+09:00",
+  "channel": {
+    "title": "고대유물의 비밀",
+    "channel_id": "UCjgXauHJ8z2Kbbl9O9hu4eA"
+  },
+  "video": {
+    "video_id": "Fplyvujf1e4",
+    "shorts_url": "https://youtube.com/shorts/Fplyvujf1e4",
+    "title": "중국 최초 황제의 무덤, 진시황릉을 아직 열지 않는 진짜 이유",
+    "upload_status": "processed",
+    "processing_status": "succeeded",
+    "privacy_status": "private",
+    "publish_at_utc": "2026-08-25T23:00:00Z",
+    "publish_at_kst": "2026-08-26T08:00:00+09:00",
+    "definition": "hd",
+    "duration": "PT2M51S",
+    "has_custom_thumbnail": true,
+    "made_for_kids": false,
+    "category_id": 27,
+    "synthetic_content_disclosure": "YES_STUDIO_SAVED_AND_RELOADED"
+  },
+  "playlist": {
+    "requested": "고대유물의 비밀",
+    "result": "NOT_FOUND_NOT_CREATED"
+  },
+  "comments": {
+    "result": "NOT_POSTED_REQUIRES_SEPARATE_USER_APPROVAL"
+  }
+}
