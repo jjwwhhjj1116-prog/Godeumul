@@ -25,6 +25,7 @@ from pathlib import Path
 ALLOWED_SECONDS = {4, 6, 8, 10}
 EVIDENCE_STATES = {"발굴확인", "측정확인", "문헌기록", "학술해석", "미확인"}
 MOTION_OWNERS = {"GENERATED_PHYSICS", "TRACKED_COMPOSITE", "INFO_OVERLAY", "NONE"}
+MOTION_SPACES = {"WORLD_3D", "SURFACE_2_5D", "SCREEN_INFO", "NONE"}
 SCENE_TYPES = {
     "DISCOVERY_ACTION", "DISCOVERY_REVEAL", "SITE_ESTABLISH", "EXCAVATION",
     "ARTIFACT_MACRO", "INVENTORY_TABLEAU", "HISTORICAL_RECONSTRUCTION",
@@ -161,6 +162,11 @@ def main() -> int:
             motion_owners = [str(value).strip().upper() for value in motion_raw if str(value).strip()]
         else:
             motion_owners = [value.strip().upper() for value in re.split(r"[+,|]", str(motion_raw)) if value.strip()]
+        motion_space_raw = scene_data.get("motion_space") or scene_data.get("모션공간") or ""
+        if isinstance(motion_space_raw, list):
+            motion_spaces = [str(value).strip().upper() for value in motion_space_raw if str(value).strip()]
+        else:
+            motion_spaces = [value.strip().upper() for value in re.split(r"[+,|]", str(motion_space_raw)) if value.strip()]
         scene_type = str(scene_data.get("ct") or scene_data.get("type") or "").strip()
         low = image.lower()
 
@@ -173,6 +179,16 @@ def main() -> int:
         motion_ok = bool(motion_owners) and all(value in MOTION_OWNERS for value in motion_owners)
         report.add(motion_ok, n, "모션 소유권",
                    "" if motion_ok else f"'{motion_raw or '없음'}'")
+        motion_space_ok = bool(motion_spaces) and all(value in MOTION_SPACES for value in motion_spaces)
+        report.add(motion_space_ok, n, "모션 공간",
+                   "" if motion_space_ok else f"'{motion_space_raw or '없음'}'")
+        if "TRACKED_COMPOSITE" in motion_owners:
+            tracked_space_ok = any(value in {"WORLD_3D", "SURFACE_2_5D"} for value in motion_spaces)
+            report.add(tracked_space_ok, n, "추적 합성 공간",
+                       "TRACKED_COMPOSITE는 WORLD_3D 또는 SURFACE_2_5D 필요")
+        if motion_owners == ["NONE"]:
+            report.add(motion_spaces == ["NONE"], n, "무모션 공간",
+                       "모션 소유권 NONE이면 모션 공간도 NONE")
         report.add(scene_type in SCENE_TYPES, n, "장면 유형",
                    "" if scene_type in SCENE_TYPES else f"'{scene_type or '없음'}'")
 

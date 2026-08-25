@@ -116,6 +116,12 @@
    "INFO_OVERLAY",
    "NONE"
   ],
+  "모션공간": [
+   "WORLD_3D",
+   "SURFACE_2_5D",
+   "SCREEN_INFO",
+   "NONE"
+  ],
   "이미지문자금지": true,
   "모션그래픽도구": "remotion"
  },

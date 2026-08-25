@@ -1,13 +1,13 @@
 import React from 'react';
 import {Composition} from 'remotion';
 import {AncientArtifactFilm} from './AncientArtifactFilm';
-import {MotionLanguagePreview} from './MotionLanguagePreview';
+import {ThreeDMotionPreview} from './ThreeDMotionPreview';
 
 export const Root: React.FC = () => (
   <>
     <Composition
       id="MotionLanguagePreview"
-      component={MotionLanguagePreview}
+      component={ThreeDMotionPreview}
       durationInFrames={180}
       fps={30}
       width={1080}
