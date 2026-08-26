@@ -22,10 +22,11 @@
 from __future__ import annotations
 
 import argparse
+import random
 import sys
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 from _config import load
 
@@ -66,6 +67,138 @@ def gold_gradient(size: tuple[int, int], top: str, bottom: str) -> Image.Image:
         r = y / max(1, h - 1)
         g.putpixel((0, y), tuple(int(t[i] + (b[i] - t[i]) * r) for i in range(3)))
     return g.resize(size)
+
+
+def multistop_gradient(size: tuple[int, int], stops: list[tuple[float, str]]) -> Image.Image:
+    """채널 레퍼런스처럼 밝고 어두운 금속 띠가 반복되는 세로 그라데이션."""
+    w, h = size
+    stops = sorted(stops)
+    strip = Image.new("RGB", (1, h))
+    for y in range(h):
+        p = y / max(1, h - 1)
+        left, right = stops[0], stops[-1]
+        for idx in range(len(stops) - 1):
+            if stops[idx][0] <= p <= stops[idx + 1][0]:
+                left, right = stops[idx], stops[idx + 1]
+                break
+        span = max(1e-6, right[0] - left[0])
+        r = (p - left[0]) / span
+        a, b = hex2rgb(left[1]), hex2rgb(right[1])
+        strip.putpixel((0, y), tuple(int(a[i] + (b[i] - a[i]) * r) for i in range(3)))
+    return strip.resize((w, h))
+
+
+def shifted(mask: Image.Image, dx: int, dy: int) -> Image.Image:
+    out = Image.new("L", mask.size, 0)
+    out.paste(mask, (dx, dy))
+    return out
+
+
+def procedural_gold_texture(size: tuple[int, int]) -> Image.Image:
+    """작은 화면에서도 금박/양각으로 읽히는 결정론적 미세 문양."""
+    w, h = size
+    tex = Image.new("RGBA", size, (0, 0, 0, 0))
+    td = ImageDraw.Draw(tex)
+    rng = random.Random(240826)
+
+    # 미세한 금박 입자
+    for _ in range(max(1500, (w * h) // 900)):
+        x, y = rng.randrange(w), rng.randrange(h)
+        if rng.random() < 0.55:
+            c = (255, 249, 188, rng.randrange(18, 46))
+        else:
+            c = (118, 65, 4, rng.randrange(12, 34))
+        td.point((x, y), fill=c)
+
+    # 레퍼런스의 금속 표면처럼 보이는 옅은 곡선 문양
+    step = 72
+    for y in range(-step, h + step, step):
+        for x in range(-step, w + step, step):
+            box = (x, y, x + 58, y + 42)
+            td.arc(box, 190, 350, fill=(255, 247, 166, 38), width=2)
+            td.arc((x + 22, y + 17, x + 80, y + 59), 10, 170,
+                   fill=(111, 59, 2, 28), width=2)
+    return tex
+
+
+def draw_reference_gold_title(base: Image.Image, title: str, font_path: str,
+                              max_w: int, start_size: int, y: int) -> tuple[int, int]:
+    """금속 양각 + 검은 외곽선 + 아래로 깊은 3D 돌출 제목을 그린다."""
+    W, H = base.size
+    font = fit_font(font_path, title, max_w, start_size)
+    bb = font.getbbox(title, stroke_width=0)
+    tw, th = bb[2] - bb[0], bb[3] - bb[1]
+    tx = (W - tw) // 2 - bb[0]
+    ty = y - bb[1]
+
+    face = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(face).text((tx, ty), title, font=font, fill=255)
+
+    outer = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(outer).text(
+        (tx, ty), title, font=font, fill=255, stroke_width=11, stroke_fill=255
+    )
+
+    # 깊고 단단한 투영 그림자
+    shadow = shifted(outer, 9, 28).filter(ImageFilter.GaussianBlur(11))
+    base.paste((0, 0, 0), mask=shadow.point(lambda v: int(v * 0.78)))
+
+    # 아래쪽으로 쌓이는 3D 돌출부: 먼 층부터 가까운 층 순서
+    for depth in range(24, 0, -1):
+        r = depth / 24
+        color = (
+            int(18 + (70 - 18) * (1 - r)),
+            int(12 + (42 - 12) * (1 - r)),
+            int(3 + (5 - 3) * (1 - r)),
+        )
+        base.paste(color, mask=shifted(outer, max(2, depth // 3), depth))
+
+    # 두꺼운 먹색 테두리와 얇은 금색 림
+    base.paste((5, 5, 3), mask=outer)
+    gold_rim = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(gold_rim).text(
+        (tx, ty), title, font=font, fill=255, stroke_width=5, stroke_fill=255
+    )
+    base.paste((181, 113, 10), mask=gold_rim)
+
+    # 하이라이트가 여러 번 꺾이는 금속 면
+    local_grad = multistop_gradient(
+        (W, max(1, th)),
+        [
+            (0.00, "#FFF5B0"),
+            (0.14, "#E5A019"),
+            (0.31, "#FFF2A0"),
+            (0.49, "#D78B09"),
+            (0.67, "#FFD04B"),
+            (0.84, "#A85B02"),
+            (1.00, "#E6A218"),
+        ],
+    )
+    grad = Image.new("RGB", (W, H), (0, 0, 0))
+    grad.paste(local_grad, (0, y))
+    base.paste(grad, mask=face)
+
+    # 금박 입자와 얕은 고대 문양
+    texture = procedural_gold_texture((W, H))
+    texture.putalpha(ImageChops.multiply(texture.getchannel("A"), face))
+    base.alpha_composite(texture) if base.mode == "RGBA" else base.paste(texture, mask=texture.getchannel("A"))
+
+    # 위·왼쪽 밝은 날과 아래·오른쪽 내측 그림자로 양각을 완성
+    hi = ImageChops.subtract(face, shifted(face, 0, 3)).filter(ImageFilter.GaussianBlur(0.7))
+    lo = ImageChops.subtract(face, shifted(face, 0, -4)).filter(ImageFilter.GaussianBlur(1.0))
+    base.paste((255, 255, 218), mask=hi.point(lambda v: int(v * 0.82)))
+    base.paste((106, 55, 0), mask=lo.point(lambda v: int(v * 0.62)))
+    return font.size, tw
+
+
+def save_youtube_jpeg(image: Image.Image, out: Path, max_bytes: int = 1_950_000) -> None:
+    """유튜브 썸네일 2MB 제한 아래가 될 때까지 품질을 안전하게 낮춘다."""
+    out.parent.mkdir(parents=True, exist_ok=True)
+    for quality in range(94, 79, -2):
+        image.convert("RGB").save(out, quality=quality, subsampling=0, optimize=True)
+        if out.stat().st_size <= max_bytes:
+            return
+    image.convert("RGB").save(out, quality=80, subsampling=2, optimize=True)
 
 
 def main() -> int:
@@ -124,38 +257,24 @@ def main() -> int:
     by = int(H * 0.035)
     draw_outlined(d, ((W - bw) // 2, by), brand, bf, (255, 255, 255), (0, 0, 0), 5)
 
-    # ── 초대형 유물명 (골드 그라데이션) ──────────────────
+    # ── 초대형 유물명 (레퍼런스형 금속 양각) ─────────────
     title = args.title
-    tf = fit_font(T.get("제목폰트"), title, int(W * 0.90), int(H * 0.13))
-    bb = tf.getbbox(title)
-    tw, th = bb[2] - bb[0], bb[3] - bb[1]
-    tx, ty = (W - tw) // 2 - bb[0], by + int(H * 0.055)
-
-    # 글자 마스크 → 그라데이션을 채운다
-    mask = Image.new("L", (W, H), 0)
-    ImageDraw.Draw(mask).text((tx, ty), title, font=tf, fill=255)
-    grad = gold_gradient((W, H), T.get("제목색_위", "#FFF275"), T.get("제목색_아래", "#D4AF37"))
-
-    # 외곽선 + 그림자 먼저
-    ol = Image.new("L", (W, H), 0)
-    od = ImageDraw.Draw(ol)
-    for dx in range(-9, 10, 3):
-        for dy in range(-9, 10, 3):
-            od.text((tx + dx, ty + dy), title, font=tf, fill=255)
-    sh = ol.filter(ImageFilter.GaussianBlur(10))
-    base = Image.composite(Image.new("RGB", (W, H), (0, 0, 0)), base,
-                           sh.point(lambda v: int(v * 0.75)))
-    base = Image.composite(Image.new("RGB", (W, H), hex2rgb(T.get("제목외곽선", "#1A1206"))),
-                           base, ol)
-    base = Image.composite(grad, base, mask)
+    tf_size, tw = draw_reference_gold_title(
+        base,
+        title,
+        T.get("제목폰트"),
+        int(W * 0.94),
+        int(H * 0.145),
+        by + int(H * 0.075),
+    )
 
     out = args.out or (ep / "썸네일.jpg")
-    base.save(out, quality=94, subsampling=0)
+    save_youtube_jpeg(base, out)
 
     print(f"\n제목   : {title}")
     print(f"채널명 : {brand}")
     print(f"크기   : {W}x{H}  ({out.stat().st_size // 1024} KB)")
-    print(f"글자   : 제목 {tf.size}px / 채널명 {bf.size}px")
+    print(f"글자   : 제목 {tf_size}px / 채널명 {bf.size}px")
     if tw > W * 0.92:
         print("★ 제목이 화면 폭에 꽉 찹니다. 더 짧은 유물명을 권합니다.")
     print(f"\n  썸네일 → {out}\n")
