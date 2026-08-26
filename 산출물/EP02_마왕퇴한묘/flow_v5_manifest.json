@@ -1,0 +1,169 @@
+{
+  "episode": "EP02_마왕퇴한묘",
+  "scene_count": 26,
+  "generation_mode": "I2V_LOCKED",
+  "image_model": "Nano Banana 2",
+  "video_model": "Veo Flow Omni",
+  "aspect_ratio": "9:16",
+  "image_count_per_scene": 1,
+  "video_count_per_scene": 1,
+  "status": "PROMPTS_BUILT_AWAITING_PROMPT_CHECK",
+  "scenes": [
+    {
+      "n": 1,
+      "tts": 9.706,
+      "omni": 10,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 2,
+      "tts": 7.57,
+      "omni": 8,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 3,
+      "tts": 8.824,
+      "omni": 10,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 4,
+      "tts": 2.554,
+      "omni": 4,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 5,
+      "tts": 7.43,
+      "omni": 8,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 6,
+      "tts": 5.248,
+      "omni": 6,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 7,
+      "tts": 6.78,
+      "omni": 8,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 8,
+      "tts": 3.669,
+      "omni": 4,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 9,
+      "tts": 6.734,
+      "omni": 8,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 10,
+      "tts": 9.66,
+      "omni": 10,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 11,
+      "tts": 8.034,
+      "omni": 10,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 12,
+      "tts": 3.344,
+      "omni": 4,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 13,
+      "tts": 3.483,
+      "omni": 4,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 14,
+      "tts": 4.598,
+      "omni": 6,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 15,
+      "tts": 7.57,
+      "omni": 8,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 16,
+      "tts": 8.963,
+      "omni": 10,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 17,
+      "tts": 4.923,
+      "omni": 6,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 18,
+      "tts": 4.923,
+      "omni": 6,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 19,
+      "tts": 6.78,
+      "omni": 8,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 20,
+      "tts": 4.412,
+      "omni": 6,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 21,
+      "tts": 7.384,
+      "omni": 8,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 22,
+      "tts": 8.591,
+      "omni": 10,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 23,
+      "tts": 4.458,
+      "omni": 6,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 24,
+      "tts": 6.548,
+      "omni": 8,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 25,
+      "tts": 7.988,
+      "omni": 8,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    },
+    {
+      "n": 26,
+      "tts": 4.969,
+      "omni": 6,
+      "status": "PROMPT_LOCKED_IMAGE_PENDING"
+    }
+  ]
+}

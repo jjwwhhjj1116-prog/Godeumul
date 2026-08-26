@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "policy": "Veo owns spatial motion; Remotion adds only brief editorial impact.",
+  "cues": [
+    {"scene": 2, "at": 5.45, "kind": "punch-shake", "strength": 0.9},
+    {"scene": 4, "at": 0.45, "kind": "punch", "strength": 0.85},
+    {"scene": 8, "at": 0.35, "kind": "punch", "strength": 0.5},
+    {"scene": 13, "at": 0.45, "kind": "punch", "strength": 0.65},
+    {"scene": 20, "at": 0.4, "kind": "punch-shake", "strength": 0.45},
+    {"scene": 25, "at": 4.5, "kind": "punch", "strength": 0.4}
+  ]
+}

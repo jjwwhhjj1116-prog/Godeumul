@@ -1,0 +1,210 @@
+[
+  {
+    "n": 1,
+    "duration": 10,
+    "tts_beats": 2,
+    "chars": 1101,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 2,
+    "duration": 8,
+    "tts_beats": 2,
+    "chars": 779,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 3,
+    "duration": 10,
+    "tts_beats": 2,
+    "chars": 1057,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 4,
+    "duration": 4,
+    "tts_beats": 2,
+    "chars": 819,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 5,
+    "duration": 8,
+    "tts_beats": 2,
+    "chars": 810,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 6,
+    "duration": 6,
+    "tts_beats": 2,
+    "chars": 776,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 7,
+    "duration": 8,
+    "tts_beats": 2,
+    "chars": 1027,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 8,
+    "duration": 4,
+    "tts_beats": 2,
+    "chars": 743,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 9,
+    "duration": 8,
+    "tts_beats": 2,
+    "chars": 1039,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 10,
+    "duration": 10,
+    "tts_beats": 2,
+    "chars": 834,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 11,
+    "duration": 10,
+    "tts_beats": 2,
+    "chars": 1023,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 12,
+    "duration": 4,
+    "tts_beats": 2,
+    "chars": 972,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 13,
+    "duration": 4,
+    "tts_beats": 2,
+    "chars": 816,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 14,
+    "duration": 6,
+    "tts_beats": 2,
+    "chars": 995,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 15,
+    "duration": 8,
+    "tts_beats": 2,
+    "chars": 978,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 16,
+    "duration": 10,
+    "tts_beats": 2,
+    "chars": 1026,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 17,
+    "duration": 6,
+    "tts_beats": 2,
+    "chars": 810,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 18,
+    "duration": 6,
+    "tts_beats": 2,
+    "chars": 1072,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 19,
+    "duration": 8,
+    "tts_beats": 2,
+    "chars": 1066,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 20,
+    "duration": 6,
+    "tts_beats": 2,
+    "chars": 759,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 21,
+    "duration": 8,
+    "tts_beats": 2,
+    "chars": 1024,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 22,
+    "duration": 10,
+    "tts_beats": 2,
+    "chars": 998,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 23,
+    "duration": 6,
+    "tts_beats": 2,
+    "chars": 968,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 24,
+    "duration": 8,
+    "tts_beats": 2,
+    "chars": 1014,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 25,
+    "duration": 8,
+    "tts_beats": 2,
+    "chars": 965,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "n": 26,
+    "duration": 6,
+    "tts_beats": 2,
+    "chars": 772,
+    "status": "PASS",
+    "errors": []
+  }
+]

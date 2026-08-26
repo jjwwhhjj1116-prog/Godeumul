@@ -55,37 +55,51 @@ def main() -> int:
     args = parser.parse_args()
 
     episode = args.episode.resolve()
-    clips_dir = episode / "clips_v5"
-    audio_dir = episode / "audio_v5"
+    use_v5_layout = (episode / "clips_v5").is_dir() and (episode / "audio_v5").is_dir()
+    clips_dir = episode / ("clips_v5" if use_v5_layout else "clips")
+    audio_dir = episode / ("audio_v5" if use_v5_layout else "audio")
     duration_file = audio_dir / "durations.json"
-    caption_file = episode / "자막_싱크_v5.json"
-    audio_name = f"{episode.name}_TTS검수본_v5.mp3"
+    caption_file = episode / ("자막_싱크_v5.json" if use_v5_layout else "자막_싱크.json")
+    audio_name = f"{episode.name}_TTS검수본_v5.mp3" if use_v5_layout else "narration_remotion.m4a"
     audio_file = audio_dir / audio_name
-    output = (args.out or (episode / f"{episode.name}_최종_v5.mp4")).resolve()
+    default_name = f"{episode.name}_최종_v5.mp4" if use_v5_layout else f"완성본_{episode.name}_remotion.mp4"
+    output = (args.out or (episode / default_name)).resolve()
 
-    required = [duration_file, caption_file, audio_file, ROOT / "자산워터마크.png", FONT]
+    required = [duration_file, caption_file, ROOT / "자산워터마크.png", FONT]
+    if use_v5_layout:
+        required.append(audio_file)
     missing = [str(path) for path in required if not path.exists()]
     clips = sorted(clips_dir.glob("*.mp4"))
-    if len(clips) != 27:
-        missing.append(f"clips_v5 MP4 count: {len(clips)} (expected 27)")
+    duration_doc = json.loads(duration_file.read_text(encoding="utf-8")) if duration_file.exists() else {}
+    scene_doc = duration_doc.get("scenes") or {}
+    scene_ids = sorted((int(key) for key in scene_doc), key=int)
+    expected_count = len(scene_ids)
+    if len(clips) != expected_count:
+        missing.append(f"{clips_dir.name} MP4 count: {len(clips)} (expected {expected_count})")
+    expected_names = {f"{scene:03d}.mp4" for scene in scene_ids}
+    if {path.name for path in clips} != expected_names:
+        missing.append(f"{clips_dir.name} numbered clip set does not match durations.json")
+    scene_audio_files = [audio_dir / f"{scene:03d}.mp3" for scene in scene_ids]
+    if not use_v5_layout:
+        missing.extend(str(path) for path in scene_audio_files if not path.exists())
     if missing:
-        sys.exit("[ERROR] Missing V5 inputs:\n" + "\n".join(missing))
+        sys.exit("[ERROR] Missing Remotion inputs:\n" + "\n".join(missing))
 
-    durations = json.loads(duration_file.read_text(encoding="utf-8"))
-    scene_durations = [float(durations["scenes"][str(i)]["duration"]) for i in range(1, 28)]
+    durations = duration_doc
+    scene_durations = [float(scene_doc[str(i)]["duration"]) for i in scene_ids]
     clip_durations = [float(probe(path)["format"]["duration"]) for path in clips]
     captions = json.loads(caption_file.read_text(encoding="utf-8"))["cues"]
     total = sum(scene_durations)
+    impact_file = episode / "remotion_impacts.json"
+    impact_cues = json.loads(impact_file.read_text(encoding="utf-8")).get("cues", []) if impact_file.exists() else []
 
-    if abs(total - float(durations["total_duration"])) > 0.05:
+    manifest_total = float(durations.get("total_duration", total))
+    if abs(total - manifest_total) > 0.05:
         sys.exit("[ERROR] Scene duration total does not match durations.json")
-    if any(cue["scene"] < 1 or cue["scene"] > 27 for cue in captions):
+    if any(cue["scene"] not in scene_ids for cue in captions):
         sys.exit("[ERROR] Caption scene index is out of range")
     if captions[-1]["end"] > total + 0.05:
         sys.exit("[ERROR] Last caption exceeds the narration duration")
-
-    shutil.copyfile(FONT, episode / "NotoSansKR-VF.ttf")
-    shutil.copyfile(ROOT / "자산워터마크.png", episode / "watermark.png")
 
     qa_dir = episode / "qa_v5"
     qa_dir.mkdir(exist_ok=True)
@@ -94,9 +108,11 @@ def main() -> int:
         "sceneDurations": scene_durations,
         "clipDurations": clip_durations,
         "captions": captions,
-        "audioFile": f"audio_v5/{audio_name}",
+        "audioFile": f"{audio_dir.name}/{audio_name}",
         "fontFile": "NotoSansKR-VF.ttf",
         "watermarkFile": "watermark.png",
+        "clipDirectory": clips_dir.name,
+        "impactCues": impact_cues,
     }
     props_file.write_text(json.dumps(props, ensure_ascii=False), encoding="utf-8")
 
@@ -104,11 +120,26 @@ def main() -> int:
     print(f"Episode : {episode.name}")
     print(f"Scenes  : {len(clips)}")
     print(f"Captions: {len(captions)}")
+    print(f"Impacts : {len(impact_cues)}")
     print(f"Duration: {total:.3f}s / {frames} frames")
     print(f"Output  : {output}")
     if not args.run:
         print("Plan only. Add --run to render.")
         return 0
+
+    shutil.copyfile(FONT, episode / "NotoSansKR-VF.ttf")
+    shutil.copyfile(ROOT / "자산워터마크.png", episode / "watermark.png")
+    if not use_v5_layout:
+        concat_file = qa_dir / "audio_concat.txt"
+        concat_file.write_text(
+            "".join(f"file '{path.as_posix()}'\n" for path in scene_audio_files),
+            encoding="utf-8",
+        )
+        run([
+            "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+            "-f", "concat", "-safe", "0", "-i", str(concat_file),
+            "-c:a", "aac", "-b:a", "192k", "-ar", "44100", str(audio_file),
+        ])
 
     npx = shutil.which("npx")
     if not npx:
@@ -141,4 +172,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -124,7 +124,9 @@ def load_card(episode: Path) -> dict[str, object]:
 
     text = path.read_text(encoding="utf-8")
     civ = first_code_block(section(text, "문명"))
+    modern_civ = first_code_block(section(text, "현대 현장"))
     people = first_code_block(section(text, "인물"))
+    modern_people = first_code_block(section(text, "현대 인물"))
     architecture = first_code_block(section(text, "건축"))
     negative = first_code_block(section(text, "네거티브"))
     if not civ:
@@ -141,8 +143,12 @@ def load_card(episode: Path) -> dict[str, object]:
     return {
         "civ": civ,
         "civ_head": anchor_head(civ.split(",")[0], 2),
+        "modern_civ": modern_civ,
+        "modern_civ_head": anchor_head(modern_civ, 5) if modern_civ else "",
         "people": people,
         "people_head": anchor_head(people, 3),
+        "modern_people": modern_people,
+        "modern_people_head": anchor_head(modern_people, 6) if modern_people else "",
         "architecture": architecture,
         "architecture_head": anchor_head(architecture, 2),
         "banned": banned,
@@ -425,17 +431,21 @@ def main() -> int:
             continue
 
         # 네거티브 문구에 들어간 사람 단어는 인물 탐지에서 제외한다.
-        positive_scene = re.sub(r"\bno\s+[a-z ,'-]+", "", image, flags=re.I)
+        positive_scene = re.sub(r"\bno\s+[^,.;]+", "", image, flags=re.I)
+        positive_low = positive_scene.lower()
 
         # C. 고증 카드 앵커
         modern_scene = bool(scene_data.get("modern_scene"))
-        civ_head = "present-day qin shi huang mausoleum" if modern_scene else str(card["civ_head"])
+        civ_head = (
+            str(card["modern_civ_head"] or "present-day")
+            if modern_scene else str(card["civ_head"])
+        )
         report.add(bool(civ_head and civ_head in low), n, "문명 앵커",
                    "" if civ_head and civ_head in low else f"'{civ_head}' 없음")
 
         if PEOPLE_HINT.search(positive_scene):
             people_head = (
-                "east asian chinese archaeologists and scientists"
+                str(card["modern_people_head"] or "east asian chinese")
                 if modern_scene else str(card["people_head"])
             )
             report.add(bool(people_head and people_head in low), n, "인물 앵커",
@@ -455,7 +465,7 @@ def main() -> int:
                        else f"'{architecture_head}' 없음")
 
         for banned_word in card["banned"]:
-            if re.search(r"\b" + re.escape(str(banned_word)) + r"\b", low):
+            if re.search(r"\b" + re.escape(str(banned_word)) + r"\b", positive_low):
                 report.add(False, n, "고증 금지어", f"'{banned_word}'")
 
         required_negatives = list(card["negative_heads"])

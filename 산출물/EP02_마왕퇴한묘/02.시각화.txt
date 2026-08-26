@@ -1,0 +1,426 @@
+# EP02 마왕퇴 한묘 — 고증 잠금 I2V 시각화 v2
+
+scene_count: 26
+scene_count_basis: SCRIPT_TTS_MEANING_ACTION_EVIDENCE_DERIVED
+generation_mode: I2V_LOCKED
+image_model: Nano Banana 2
+video_model: Veo/Flow Omni
+aspect_ratio: 9:16
+image_count_per_scene: 1
+video_count_per_scene: 1
+
+## 장면 001 — SITE_ESTABLISH / 발굴확인
+
+- TTS: 9.706s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 여기, 2천 년 전 한 여인의 몸뿐 아니라 식사와 옷, 음악, 사후세계까지 함께 남은 무덤이 있습니다. 중국 전한 시대의 가족묘, 마왕퇴 한묘죠.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. Western Han timber tomb architecture, deep vertical earthen burial shaft, heavy wooden outer chamber, central four nested lacquered coffins, four rectangular side compartments, compact rammed earth and sealing layers. Exploded overview of Mawangdui Tomb 1 as a coherent evidence tableau: a deep rectangular earthen tomb cutaway with four nested black-and-red lacquer coffins at center, four side compartments holding lacquer dishes, silk clothing and musical objects, a dignified non-graphic suggestion of Lady Xin Zhui within the innermost coffin, and the T-shaped silk banner suspended above; all verified elements remain spatially distinct. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at upper grave rim; travel down the visible cut face and around the nested coffins; arrive at T-shaped banner above the innermost coffin; settle on wide tableau holding body, life and afterlife together. Integrate one section reveal anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The camera immediately dives from the grave rim through the section seam, threads past the nested coffins, then curves around the preserved daily-life objects and rises toward the T-shaped banner without a cut. TTS-locked timing: 0.00-6.79s: Dive through the tomb section and reveal the preserved body context. 6.79-9.71s: Sweep past food, dress and music objects, then rise toward the afterlife banner. No voice, no music, no subtitles.
+
+## 장면 002 — DISCOVERY_ACTION / 발굴확인
+
+- TTS: 7.570s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 이야기는 1971년 말, 중국 창사의 한 병원이 방공호를 파던 현장에서 시작됩니다. 땅속에서 낯선 고분이 드러났고,
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at Mawangdui in Changsha, Hunan; the stated 1971 or 1972 date is reconstructed with period-correct Chinese field equipment and documentary restraint. East Asian Chinese archaeologists and scientists, with Chinese hospital construction workers where stated, wearing period-correct early-1970s work clothes and field protection, no historical reenactment. Late 1971 at a Chinese hospital construction site in Changsha: East Asian Chinese hospital workers excavate a narrow bomb-shelter shaft with hand tools, one shovel striking unusually compact white-clay sealing material below reddish Hunan soil while archaeologists lean toward the fresh edge; period-correct work lamps, ropes and wooden shoring only. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at shovel blade above the shaft; travel down the tool arc to the compact clay edge; arrive at newly exposed sealing layer; settle on macro hold on the unusual clay. Begin on the descending shovel, snap focus at the compact clay impact, then follow the workers' lamp down the newly exposed edge as loose Hunan soil falls. TTS-locked timing: 0.00-5.45s: Track the shovel into the bomb-shelter shaft. 5.45-7.57s: Snap to the compact sealing layer and follow the discovery edge downward. No voice, no music, no subtitles.
+
+## 장면 003 — DISCOVERY_REVEAL / 발굴확인
+
+- TTS: 8.824s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 이듬해 발굴팀이 십수 미터 아래까지 내려가자 거대한 목곽과 네 겹의 칠관이 모습을 드러냈습니다. 그런데 진짜 놀라운 건 가장 안쪽에 있었죠.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at Mawangdui in Changsha, Hunan; the stated 1971 or 1972 date is reconstructed with period-correct Chinese field equipment and documentary restraint. East Asian Chinese archaeologists and scientists, with Chinese hospital construction workers where stated, wearing period-correct early-1970s work clothes and field protection, no historical reenactment. Western Han timber tomb architecture, deep vertical earthen burial shaft, heavy wooden outer chamber, central four nested lacquered coffins, four rectangular side compartments, compact rammed earth and sealing layers. 1972 excavation of Mawangdui Tomb 1 shown as a clean archaeological cutaway with compact soil strata, a visible physical cut face and section seam: a deep vertical burial shaft drops to a massive wooden outer chamber, then four nested lacquered coffins become visible inside under controlled excavation lights, ropes and timber access platforms. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at excavation platform at the shaft mouth; travel straight down the cut face then through the timber chamber opening; arrive at innermost lacquer coffin lid; settle on tight hold on the innermost lid. Integrate one section reveal anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The camera drops rapidly with the excavation cage along the vertical shaft, passes the clean section seam into the timber chamber, then circles the four lacquer coffins and stops at the innermost lid. TTS-locked timing: 0.00-6.13s: Descend the deep shaft with the excavation team. 6.13-8.82s: Cross the timber threshold and orbit the four nested lacquer coffins. No voice, no music, no subtitles.
+
+## 장면 004 — EXCAVATION / 발굴확인
+
+- TTS: 2.554s
+- 생성 길이: 4s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 관을 열자 한 여성의 몸이 나타났습니다.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at Mawangdui in Changsha, Hunan; the stated 1971 or 1972 date is reconstructed with period-correct Chinese field equipment and documentary restraint. East Asian Chinese archaeologists and scientists, with Chinese hospital construction workers where stated, wearing period-correct early-1970s work clothes and field protection, no historical reenactment. Western Han timber tomb architecture, deep vertical earthen burial shaft, heavy wooden outer chamber, central four nested lacquered coffins, four rectangular side compartments, compact rammed earth and sealing layers. Respectful 1972 archaeological view of the innermost lacquer coffin inside the wooden chamber, black-and-red lacquer lid already loosened with its wooden rim and opening clearly visible; Chinese conservators' gloved hands and lifting straps surround it, the preserved female body kept mostly in shadow and never shown as gore. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 4-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at black lacquer lid corner; travel over the opening rim under the lifting straps; arrive at shadowed face and hands of Xin Zhui; settle on respectful still frame of the preserved woman. The lacquer lid rises once on lifting straps, the camera slips over the opening rim, and a narrow conservation light reveals the dignified outline of the woman before settling. TTS-locked timing: 0.00-1.20s: Lift the innermost lacquer lid with controlled physical weight. 1.20-2.55s: Move over the rim and reveal the woman respectfully. No voice, no music, no subtitles.
+
+## 장면 005 — HISTORICAL_RECONSTRUCTION / 발굴확인
+
+- TTS: 7.430s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 이름은 신추. 전한 초기 창사국의 재상이자 대후였던 이창의 부인으로, 당시 지방 최고 권력층에 속한 귀족 여성이었습니다.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. East Asian Chinese figures with East Asian facial features, Western Han cross-collared robes closing to the right, layered silk or hemp garments, cloth belts, period hair buns and simple caps. Dignified historical reconstruction of Lady Xin Zhui in an elite Western Han residence: a mature noblewoman in layered dark-red and black silk robes stands beside her husband Li Cang, the chancellor and Marquis of Dai, with restrained lacquer furnishings and attendants placed deeper in the room; no imperial crown and no fantasy palace. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at embroidered silk sleeve; travel short clockwise orbit across lacquer furnishings; arrive at Xin Zhui's composed face; settle on Xin Zhui centered with Li Cang behind. Start close on Xin Zhui's silk sleeve and lacquer ornament, orbit quickly to reveal her full rank-bearing setting and Li Cang, then settle on her as the central historical subject. TTS-locked timing: 0.00-0.86s: Reveal Xin Zhui through the textures of elite Western Han life. 0.86-7.43s: Orbit to include Li Cang, then return focus to Xin Zhui. No voice, no music, no subtitles.
+
+## 장면 006 — CONSERVATION / 측정확인
+
+- TTS: 5.248s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 그런데 2천 년 넘게 지난 몸이 흔히 떠올리는 바싹 마른 미라와는 전혀 달랐어요.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at Mawangdui in Changsha, Hunan; the stated 1971 or 1972 date is reconstructed with period-correct Chinese field equipment and documentary restraint. Single-room conservation comparison on one continuous table: on one side a conventionally dried wrapped mummy reference shown only as a neutral teaching maquette, on the other the respectfully covered moist preserved body of Xin Zhui from Mawangdui with surviving soft-tissue volume and a clearly deceased dark amber-brown preserved face; no excavation vignette, no split-screen collage, no living glamour portrait, no horror and no sensational decay. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at dry teaching reference; travel lateral conservation-table slide; arrive at covered Xin Zhui body; settle on material contrast under raking light. A fast lateral camera slide leaves the dry teaching reference and lands on Xin Zhui; raking light moves across the two surfaces to make the preservation contrast immediate. TTS-locked timing: 0.00-2.38s: Show the familiar dry-mummy expectation briefly. 2.38-5.25s: Slide decisively to Xin Zhui's very different preserved condition. No voice, no music, no subtitles.
+
+## 장면 007 — SCIENTIFIC_EVIDENCE / 측정확인
+
+- TTS: 6.780s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 관 속 액체에 놓인 습윤형 유해였고, 일부 조직이 남아 있어 엑스선 촬영과 해부, 조직 검사까지 가능했거든요.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at Mawangdui in Changsha, Hunan; the stated 1971 or 1972 date is reconstructed with period-correct Chinese field equipment and documentary restraint. East Asian Chinese archaeologists and scientists, with Chinese hospital construction workers where stated, wearing period-correct early-1970s work clothes and field protection, no historical reenactment. Early-1970s Chinese medical examination diorama: the respectfully covered body of Xin Zhui rests on a clinical table while East Asian Chinese archaeologists and scientists operate period-correct X-ray equipment; beside it sit sealed tissue sample slides and anatomical study materials, with no gore and no modern digital screens. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at X-ray tube housing; travel parallel to the examination table then down to the microscope slide; arrive at surviving tissue sample; settle on microscope slide in sharp focus. Integrate one scan wave anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The camera follows the X-ray head as it glides over the body; a pale scan plane remains physically anchored to the machine, then narrows into a microscope slide as focus snaps to surviving tissue structure. TTS-locked timing: 0.00-2.21s: Track the X-ray apparatus over the preserved body. 2.21-6.78s: Follow the evidence path from scan plane to the tissue slide. No voice, no music, no subtitles.
+
+## 장면 008 — SEALED_UNKNOWN / 미확인
+
+- TTS: 3.669s
+- 생성 길이: 4s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 대체 이 무덤은 어떻게 사람의 몸을 이토록 오래 붙잡아 둔 걸까요?
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. Western Han timber tomb architecture, deep vertical earthen burial shaft, heavy wooden outer chamber, central four nested lacquered coffins, four rectangular side compartments, compact rammed earth and sealing layers. Dark conservation-room tableau centered on the closed black-and-red innermost coffin, compact sealing materials and nested coffin walls visible around it; multiple plausible preservation layers are present but no single glowing answer, no magic liquid and no vacuum machine. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 4-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at outer sealing material; travel between nested coffin walls; arrive at closed innermost coffin; settle on opaque lacquer surface. The camera advances toward the closed coffin, slows sharply at its lacquered boundary, and stops without opening it while condensation and tiny dust motion settle. TTS-locked timing: 0.00-1.77s: Approach the physical evidence layers. 1.77-3.67s: Stop at the closed coffin boundary without revealing a single answer. No voice, no music, no subtitles.
+
+## 장면 009 — CUTAWAY / 발굴확인
+
+- TTS: 6.734s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 그런데 말이죠. 신추가 누구인지 알고 나면 관 주변의 물건들도 다르게 보입니다. 중앙의 겹관을 둘러싼 네 공간에는
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. Western Han timber tomb architecture, deep vertical earthen burial shaft, heavy wooden outer chamber, central four nested lacquered coffins, four rectangular side compartments, compact rammed earth and sealing layers. High oblique clean archaeological cutaway of Tomb 1 with compact soil strata, a visible cut face and section seam: four nested black-and-red lacquer coffins occupy the central wooden chamber, with the innermost lid fully closed, while four rectangular side compartments surround them like rooms, their verified object groups separated and readable; no exposed body, no mummy wrapping, no bandages. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at upper soil section seam; travel down to the coffin core and outward around four compartments; arrive at complete Tomb 1 plan; settle on oblique plan with all five zones. Integrate one exploded sequence anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The camera dives through the section seam, makes a fast half-orbit around the central coffins, and the four side compartments physically slide outward just enough to expose their relationship before returning to place. TTS-locked timing: 0.00-0.98s: Dive to the central four-coffin core. 0.98-6.73s: Orbit as the four side compartments reveal their spatial relationship. No voice, no music, no subtitles.
+
+## 장면 010 — INVENTORY_TABLEAU / 발굴확인
+
+- TTS: 9.660s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 칠기 식기와 음식, 화장함과 빗, 악기와 목제 시종이 따로 놓여 있었거든요. 죽은 사람을 눕혀 둔 게 아니라, 최고위 귀족 여성이 누리던 생활을 땅속에 통째로 옮긴 셈이죠.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. One coherent Tomb 1 side-compartment inventory tableau: red-and-black lacquer bowls and cups with surviving food remains, a cosmetic box with combs, musical instruments, and five kneeling painted wooden musician-attendants are arranged in their separate excavated groups, with wet wood grain, lacquer microcracks and soil residue. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at lacquer bowl rim; travel through compartment objects and instrument frame; arrive at five kneeling musician figures; settle on wide inventory tableau. The camera moves immediately from a lacquer bowl past food and combs, passes through the frame of a musical instrument, then swings around the five wooden musicians to show an entire elite life reconstructed from objects. TTS-locked timing: 0.00-4.35s: Travel through food and grooming objects. 4.35-9.66s: Pass the instruments and orbit the five wooden attendants as one life-world. No voice, no music, no subtitles.
+
+## 장면 011 — ARTIFACT_MACRO / 발굴확인
+
+- TTS: 8.034s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 옷은 더 기가 막힙니다. 1호묘에서 나온 홑겹 비단옷 한 벌은 길이가 128센티미터인데도 무게가 고작 49그램이었어요.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. The plain gauze silk robe from Tomb 1 displayed as the sole hero artifact on a dark museum form, nearly transparent unlined silk floating lightly above a conservation plinth; an elegant unnumbered aged-gold vertical dimension line is physically anchored from shoulder to hem and a tiny brass balance pan supports the folded edge, no generated numerals. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at robe shoulder; travel down the garment edge then into the weave; arrive at transparent silk threads; settle on individual silk filaments. Integrate one dimension line anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The camera crashes from the full garment into the transparent weave, then pulls back as the gold dimension line grows shoulder to hem and the balance pan dips almost imperceptibly under the forty-nine-gram weight. TTS-locked timing: 0.00-1.54s: Reveal the full robe and its extreme lightness. 1.54-8.03s: Use a world-anchored dimension line and balance response, then dive into the weave. No voice, no music, no subtitles.
+
+## 장면 012 — ARTIFACT_MACRO / 학술해석
+
+- TTS: 3.344s
+- 생성 길이: 4s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 얇은 비단실을 놀라울 만큼 고르게 짜냈다는 뜻입니다.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. Extreme macro archaeological material study of the same plain gauze silk: exceptionally fine pale silk filaments cross in a remarkably even open weave, with tiny natural irregularities and aged fibre fuzz visible under raking museum light; the robe silhouette remains softly recognizable behind the macro plane. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 4-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at one silk filament; travel between warp and weft intersections; arrive at recognizable gauze robe surface; settle on weave-to-garment connection. Integrate one scan wave anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The camera becomes a macro probe moving between real silk filaments; a warm scan wave travels along warp and weft intersections, then the camera pulls back just enough to reconnect the weave to the robe. TTS-locked timing: 0.00-1.60s: Move through the gauze at fibre scale. 1.60-3.34s: Trace the even weave and pull back to the garment. No voice, no music, no subtitles.
+
+## 장면 013 — EXCAVATION / 발굴확인
+
+- TTS: 3.483s
+- 생성 길이: 4s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 가장 안쪽 관 위에는 T자형 백화도 펼쳐져 있었죠.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at Mawangdui in Changsha, Hunan; the stated 1971 or 1972 date is reconstructed with period-correct Chinese field equipment and documentary restraint. Western Han timber tomb architecture, deep vertical earthen burial shaft, heavy wooden outer chamber, central four nested lacquered coffins, four rectangular side compartments, compact rammed earth and sealing layers. The T-shaped painted silk funerary banner exactly above the innermost coffin during excavation, its broad upper bar and long vertical body fully visible, red-black-ochre pigments aged but legible, supported by conservators without flattening its delicate textile texture. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 4-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at innermost coffin lid; travel vertical rise along the hanging silk; arrive at broad upper bar of the T-shaped banner; settle on full banner and coffin relationship. The camera rises from the lacquer coffin lid as the silk banner carefully unfolds upward into its full T shape, then executes a quick restrained orbit to establish its location over the coffin. TTS-locked timing: 0.00-1.66s: Rise from the innermost coffin to the folded silk. 1.66-3.48s: Follow the banner opening into its full T shape above the coffin. No voice, no music, no subtitles.
+
+## 장면 014 — ARTIFACT_MACRO / 발굴확인
+
+- TTS: 4.598s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 그 그림에는 지하와 인간 세계, 하늘로 이어지는 장면이 한 폭에 담겨 있습니다.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. Faithful Xin Zhui Tomb 1 T-shaped silk banner relief on aged brown-red silk. Upper register: red sun with black crow, crescent moon with toad and hare, and paired dragons. Middle: elderly East Asian Chinese Xin Zhui in profile leaning on a cane with attendants above funeral offerings. Lower: an earth-supporting giant and aquatic serpents. Preserve the crowded asymmetric Western Han composition and pigment loss. No palace gate, later deity portrait, Buddhist or Daoist temple, generic banquet, invented motif or text. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at lower tip of the banner; travel up the central painted axis; arrive at upper celestial register; settle on upper T bar. Integrate one physical route path ribbon anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The camera starts at the banner's lower point and climbs quickly across the human scene to the upper celestial bar while a muted silk-gold route path follows only the painted composition and bends behind raised pigment details. TTS-locked timing: 0.00-1.81s: Enter at the lower register. 1.81-4.60s: Climb through the human world and arrive at the celestial register. No voice, no music, no subtitles.
+
+## 장면 015 — DIAGRAM / 학술해석
+
+- TTS: 7.570s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 정확히 어떤 의식에 썼는지는 아직 논쟁 중이지만, 학자들은 신추의 죽음과 혼의 여정을 보여주는 장례 그림으로 해석합니다.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. Artifact-only oblique close-up of the faithful Xin Zhui Tomb 1 T-shaped banner above its lacquer coffin. Preserve the red sun with black crow, crescent moon with toad and hare, paired dragons, elderly East Asian Chinese Xin Zhui leaning on a cane, funeral offerings and lower earth-supporting figure. Show aged silk, pigment loss and folds as the only evidence. No interpretation panel, translucent plane, acrylic sheet, diagram card, plaque, palace gate, later deity portrait, temple, generic banquet or invented motif. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at central funeral motif; travel low arc across the actual painted figures then upward along the banner axis; arrive at complete unaltered banner; settle on clean full banner with both readings unresolved. Integrate one physical route path ribbon anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. A fast shallow orbit travels across the real painted funeral figures, snaps upward along the ascending motifs, and ends on the complete unaltered banner. Two restrained silk-light paths briefly travel inside the painted surface with depth and occlusion, then both fade without choosing a final interpretation. TTS-locked timing: 0.00-3.06s: Follow the funeral reading across the real motifs. 3.06-7.57s: Redirect upward along the soul-journey reading and end without choosing one as final. No voice, no music, no subtitles.
+
+## 장면 016 — SPATIAL_MAP / 발굴확인
+
+- TTS: 8.963s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 여기서 끝이 아닙니다. 마왕퇴는 신추 혼자의 무덤이 아니라 남편 이창과 아들로 추정되는 젊은 남성의 무덤까지 모인 세 기의 가족 묘역이었거든요.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. Western Han timber tomb architecture, deep vertical earthen burial shaft, heavy wooden outer chamber, central four nested lacquered coffins, four rectangular side compartments, compact rammed earth and sealing layers. Oblique archaeological terrain diorama of the Mawangdui family cemetery with three separate tomb ground plans set into the same Changsha hillside: Tomb 1 for Xin Zhui, Tomb 2 for Li Cang, and Tomb 3 for a younger man, each represented by distinct excavated footprints and never merged; no generated labels or numerals. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at Tomb 1 footprint; travel crane backward across the hillside between three ground anchors; arrive at three-tomb family plan; settle on all three tombs separated in one frame. Integrate one physical route path ribbon anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. Pull back rapidly from Tomb 1 to reveal all three tombs; a bronze route path travels between the separate ground anchors while the camera makes one continuous crane orbit and ends with all three visible. TTS-locked timing: 0.00-1.47s: Start at Xin Zhui's Tomb 1. 1.47-8.96s: Reveal the other two family tombs and connect the separate contexts. No voice, no music, no subtitles.
+
+## 장면 017 — TEXT_RECORD / 발굴확인
+
+- TTS: 4.923s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 특히 3호묘에서는 의학과 천문, 운동법을 기록한 백서와 도인도가 나왔습니다.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at Mawangdui in Changsha, Hunan; the stated 1971 or 1972 date is reconstructed with period-correct Chinese field equipment and documentary restraint. Artifact-only conservation worktable in an early-1970s Chinese archaeology laboratory, physically separated from Tomb 1 and with no people or reenactment: Western Han Tomb 3 silk manuscripts on medicine and astronomy lie beside the Daoyin exercise chart showing rows of small painted exercise silhouettes in varied poses; silk creases, pigment loss and fibre edges are sharply visible, no modern labels. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at edge of medical silk manuscript; travel across astronomical silk to the Daoyin rows; arrive at final exercise figure; settle on wide Tomb 3 evidence table. The camera skims across a medical silk manuscript, pivots over an astronomical diagram, then follows one row of Daoyin figures as if walking along the silk surface, preserving the separate Tomb 3 plinth. TTS-locked timing: 0.00-2.03s: Move from medical to astronomical records. 2.03-4.92s: Track along the Daoyin exercise figures on the same Tomb 3 table. No voice, no music, no subtitles.
+
+## 장면 018 — DIAGRAM / 학술해석
+
+- TTS: 4.923s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 몸과 생활을 넘어, 한나라 사람들이 세상을 이해한 방식까지 땅속에 남은 겁니다.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. An evidence-led miniature knowledge world grows only from the real Tomb 3 silk manuscripts: anatomical channels emerge as faint ink-like paths from medical text, measured star points rise from the astronomy silk, and articulated pose silhouettes lift slightly from the Daoyin chart, all still tethered to the original fabrics. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at medical manuscript ink line; travel through raised star points and Daoyin pose sequence; arrive at original folded silk edges; settle on all explanation returned to source artifacts. Integrate one scan wave anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The camera follows a single ink path from medical silk, arcs through star points, then descends along a sequence of exercise poses; all 3D explanation remains anchored to the manuscripts and folds back into them. TTS-locked timing: 0.00-1.16s: Lift the medical and astronomical knowledge from its source silk. 1.16-4.92s: Travel through the exercise sequence and return everything to the documents. No voice, no music, no subtitles.
+
+## 장면 019 — SPATIAL_MAP / 발굴확인
+
+- TTS: 6.780s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 다만 이 문서들은 신추의 1호묘가 아니라 3호묘 출토품입니다. 한 관에서 싹 다 나온 것처럼 섞어선 안 되겠죠.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. Western Han timber tomb architecture, deep vertical earthen burial shaft, heavy wooden outer chamber, central four nested lacquered coffins, four rectangular side compartments, compact rammed earth and sealing layers. Two separate museum-scale excavation bays divided by a visible strip of untouched earth: Tomb 1 at left contains Xin Zhui's nested lacquer coffins, robe, lacquerware and banner; Tomb 3 at right contains the medical and astronomical silk manuscripts and Daoyin chart; no object crosses the context boundary. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at overlapping foreground artifact edges; travel lateral slide across the untouched-earth divider; arrive at two clearly separated excavation bays; settle on wide provenance-correct comparison. Integrate one physical route path ribbon anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The camera begins compressed so both bays almost overlap, then makes a decisive lateral move that opens the earth boundary; two short physical route paths retreat to their correct tomb anchors and stop. TTS-locked timing: 0.00-3.98s: Begin with the tempting but wrong visual mixture. 3.98-6.78s: Separate Tomb 1 and Tomb 3 and return every object to its real context. No voice, no music, no subtitles.
+
+## 장면 020 — SCIENTIFIC_EVIDENCE / 미확인
+
+- TTS: 4.412s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 자, 이제 처음 질문으로 돌아가 보겠습니다. 신추의 몸은 어떻게 남았을까요?
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at Mawangdui in Changsha, Hunan; the stated 1971 or 1972 date is reconstructed with period-correct Chinese field equipment and documentary restraint. The covered preserved body of Xin Zhui in a quiet conservation space with four nested coffin silhouettes and compact sealing layers receding behind it; the image is structured as a question, with all evidence visible but no glowing answer, no magic fluid and no vacuum icon. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at wide conservation tableau; travel fast push to the coffin then short orbit; arrive at covered preserved body; settle on unresolved evidence tableau. Crash from the wide evidence room to the coffin boundary, then make a short orbit around the preserved body and stop as the candidate layers remain equally visible. TTS-locked timing: 0.00-2.54s: Return rapidly from the wider tomb story to Xin Zhui. 2.54-4.41s: Orbit the evidence and ask how the body remained. No voice, no music, no subtitles.
+
+## 장면 021 — CUTAWAY / 학술해석
+
+- TTS: 7.384s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 깊은 매장, 겹겹의 관, 외부와 차단된 구조, 관 안의 습윤하고 산소가 적은 환경이 함께 작용했을 가능성이 큽니다.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. Western Han timber tomb architecture, deep vertical earthen burial shaft, heavy wooden outer chamber, central four nested lacquered coffins, four rectangular side compartments, compact rammed earth and sealing layers. Scientific archaeological cutaway with compact soil strata, a visible physical cut face and section seam around Tomb 1: deep burial depth, thick sealing layers, four nested coffins, humid inner space and low-oxygen stillness are shown as distinct verified or plausible conditions, with no single condition exaggerated into a proven cause. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at surface soil section; travel through sealing strata and four coffin shells; arrive at humid inner coffin space; settle on all conditions visible together. Integrate one section reveal anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The camera dives through the soil section, penetrates each verified layer in order, and a muted environmental scan follows the same physical route to the humid inner coffin before settling without declaring a winner. TTS-locked timing: 0.00-2.92s: Descend through depth and sealing layers. 2.92-7.38s: Pass the nested coffins and arrive at the humid low-oxygen inner space. No voice, no music, no subtitles.
+
+## 장면 022 — SEALED_UNKNOWN / 미확인
+
+- TTS: 8.591s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 하지만 흔히 말하는 하나의 방부액이나 ‘진공 보존술’이 확인된 건 아니에요. 각 조건이 얼마나 영향을 미쳤는지, 연구진도 아직 완전히 풀지 못했습니다.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at Mawangdui in Changsha, Hunan; the stated 1971 or 1972 date is reconstructed with period-correct Chinese field equipment and documentary restraint. Controlled scientific comparison around a closed lacquer coffin: a single jar of hypothetical embalming liquid and a modern vacuum chamber appear only as dim rejected test models outside the evidence boundary, while the actual deep burial, sealing earth and nested coffins remain central; no ancient technology is depicted as proven. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at single-liquid test jar; travel across vacuum test chamber to actual coffin; arrive at closed lacquer boundary; settle on actual evidence layers without a winner. Integrate one scan wave anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. A physical scan wave tests the liquid model, then the vacuum model, and both fade; the camera approaches the real coffin boundary and stops while the layered conditions remain unresolved. TTS-locked timing: 0.00-4.36s: Test and reject the two oversimplified explanations. 4.36-8.59s: Return to the real layered evidence and stop at uncertainty. No voice, no music, no subtitles.
+
+## 장면 023 — DIAGRAM / 학술해석
+
+- TTS: 4.458s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 그러니까 마왕퇴 한묘가 확실히 보여준 건 하나의 신비한 보존 비법이 아닙니다.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. Western Han timber tomb architecture, deep vertical earthen burial shaft, heavy wooden outer chamber, central four nested lacquered coffins, four rectangular side compartments, compact rammed earth and sealing layers. Exploded evidence stack of Tomb 1's real preservation environment: compact burial earth, sealing materials, heavy wooden chamber and four lacquer coffins separate along one vertical axis while the covered body remains central; no fantasy mechanism, no magic bottle, and no single component glows as the answer. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at outer burial earth; travel through separated sealing, timber and lacquer layers; arrive at central preserved body; settle on reassembled multi-layer system. Integrate one exploded sequence anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The layers separate rapidly in an exploded sequence, the camera threads between them in one continuous path, then every layer closes around the body as a complex system. TTS-locked timing: 0.00-2.16s: Separate the verified environmental layers. 2.16-4.46s: Move through them and close the system around the body. No voice, no music, no subtitles.
+
+## 장면 024 — INVENTORY_TABLEAU / 학술해석
+
+- TTS: 6.548s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 2천 년 전 한나라 최고위 귀족의 몸과 일상, 기술과 사후세계가 하나의 무덤 안에 겹겹이 남았다는 사실이죠.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. Final integrated Mawangdui evidence tableau: the respectfully covered body, lacquer dining set and cosmetic box, plain gauze robe, T-shaped banner, and separate Tomb 3 medical and Daoyin manuscripts occupy clearly separated concentric museum plinths around the three-tomb family terrain model. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at covered body plinth; travel spiral through artifact zones; arrive at wide three-tomb evidence tableau; settle on all evidence contexts readable. Integrate one scan wave anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The camera makes a fast continuous spiral from the body through daily-life objects and silk technology to the banner and Tomb 3 manuscripts, widening to show how many worlds survived together. TTS-locked timing: 0.00-2.62s: Spiral through body, daily life and textile technology. 2.62-6.55s: Rise past the afterlife banner and separate knowledge records into one wide synthesis. No voice, no music, no subtitles.
+
+## 장면 025 — SEALED_UNKNOWN / 미확인
+
+- TTS: 7.988s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 하지만 세 무덤 가운데 왜 신추의 몸만 유독 이런 상태로 보존됐는가. 그 답은 여전히 고고학과 보존 과학이 풀어야 할 미스터리입니다.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. Western Han timber tomb architecture, deep vertical earthen burial shaft, heavy wooden outer chamber, central four nested lacquered coffins, four rectangular side compartments, compact rammed earth and sealing layers. Three separate Mawangdui tomb silhouettes at dusk in an archaeological terrain diorama; Tomb 1 contains only a respectful soft outline of Xin Zhui's preserved body, while Tombs 2 and 3 remain distinct and do not show equivalent preservation, with the difference presented as an unresolved evidence gap rather than a dramatic answer. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at Tomb 2 and Tomb 3 ground silhouettes; travel low terrain path toward Tomb 1; arrive at sealed Tomb 1 boundary; settle on three-tomb comparison held in silence. Integrate one scan wave anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The camera travels from Tombs 2 and 3 toward Tomb 1, slows at the boundary, and stops; a faint scan reaches all three but returns differently without revealing a cause. TTS-locked timing: 0.00-4.07s: Compare the three tombs without merging them. 4.07-7.99s: Arrive at Tomb 1 and preserve the unanswered difference. No voice, no music, no subtitles.
+
+## 장면 026 — SITE_ESTABLISH / 학술해석
+
+- TTS: 4.969s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 시간 속에 잠든 세계유산, 땅속에 묻힌 역사. 마왕퇴 한묘의 비밀이었습니다.
+
+### IMAGE
+
+premium full-frame archaeological 3D diorama world, immersive cutaway scale illusion with no visible model boundary, macro-lens depth cues with restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture and micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction with the camera physically inside the miniature world rather than looking at a display case, 4K source detail, 9:16 vertical composition. Western Han China, early second century BCE, Changsha Kingdom in present-day Hunan, southern Chinese Chu-influenced lacquer and silk culture. Western Han timber tomb architecture, deep vertical earthen burial shaft, heavy wooden outer chamber, central four nested lacquered coffins, four rectangular side compartments, compact rammed earth and sealing layers. Dignified closing museum-scale archaeological diorama of the Mawangdui site and its three tombs under warm dawn light, with a subtle inset of the T-shaped banner and lacquer coffin materials integrated into the terrain edges; the tombs remain quiet, historically grounded and free of a treasure reveal. no European or Western faces, no Roman or Greek clothing, no medieval European armor, no Japanese or Korean architecture, no Egyptian sarcophagus, no fantasy tomb, no modern object in ancient scenes, no ancient costume on modern researchers, no glass display case, no acrylic box, no museum room, no pedestal, no exhibit plaque, no shelf, no cabinet, no tabletop, no exterior frame around the diorama, no gore, no horror spectacle, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at lacquer-and-silk material edge; travel rapid pullback across the terrain; arrive at three-tomb site at dawn; settle on still wide closing frame. Begin close on lacquer and silk texture, pull back rapidly into the full three-tomb landscape, then let the camera settle to complete stillness for the channel closing line. TTS-locked timing: 0.00-2.86s: Move from preserved material detail back into the site. 2.86-4.97s: End on the full Mawangdui landscape in quiet stillness. No voice, no music, no subtitles.

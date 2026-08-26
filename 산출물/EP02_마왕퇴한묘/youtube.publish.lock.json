@@ -1,0 +1,29 @@
+{
+  "status": "private_verified",
+  "submitted_at": "2026-08-26T16:34:49+09:00",
+  "processing_verified_at": "2026-08-26T16:44:08+09:00",
+  "copyright_verified_at": "2026-08-26T16:43:00+09:00",
+  "scheduled_public_at": null,
+  "published_at": null,
+  "youtube_video_id": "CMCMULWrlyU",
+  "canonical_url": "https://youtube.com/shorts/CMCMULWrlyU",
+  "channel_id": "UCjgXauHJ8z2Kbbl9O9hu4eA",
+  "channel_name": "고대유물의 비밀",
+  "privacy_status": "private",
+  "processing_status": "succeeded",
+  "definition": "hd",
+  "copyright_claims": 0,
+  "synthetic_content_disclosure": true,
+  "playlist": "▶고대유물의 비밀",
+  "title": "마왕퇴 한묘, 2천 년 전 신추의 몸이 남은 이유",
+  "hashes": {
+    "video_sha256": "deaec9204dc327b5a978d3897600fcd7b2013989bd823a4b13c133fa20f26d3f",
+    "thumbnail_sha256": "770ea4e257e26c6ee31769196d4260f77a949c44fc271c285c9db63fd3ec800d",
+    "metadata_sha256": "2ba22be11007dd9a08fcabedb9555ffc0ab0682fdc92229b82cfe6125830ef35",
+    "script_sha256": "b4e61c58db44fcaa907c00af5e3f0ddb9f06d6b78f31943881fc824260da80e0"
+  },
+  "notes": [
+    "The previously requested 2026-08-26 08:00 KST schedule was already in the past at upload time, so the release remains private.",
+    "Pinned comment is deferred until a valid public schedule is approved."
+  ]
+}

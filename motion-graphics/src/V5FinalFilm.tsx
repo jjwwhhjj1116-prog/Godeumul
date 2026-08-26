@@ -26,6 +26,15 @@ export type V5FinalFilmProps = {
   audioFile: string;
   fontFile: string;
   watermarkFile: string;
+  clipDirectory?: string;
+  impactCues?: ImpactCue[];
+};
+
+export type ImpactCue = {
+  scene: number;
+  at: number;
+  kind: 'punch' | 'shake' | 'punch-shake';
+  strength?: number;
 };
 
 const clamp = {
@@ -37,10 +46,29 @@ const SceneVideo: React.FC<{
   scene: number;
   targetSeconds: number;
   sourceSeconds: number;
-}> = ({scene, targetSeconds, sourceSeconds}) => {
+  clipDirectory: string;
+  impactCues: ImpactCue[];
+}> = ({scene, targetSeconds, sourceSeconds, clipDirectory, impactCues}) => {
   const {fps} = useVideoConfig();
+  const frame = useCurrentFrame();
   const durationInFrames = Math.max(1, Math.round(targetSeconds * fps));
-  const file = `clips_v5/${String(scene).padStart(3, '0')}.mp4`;
+  const file = `${clipDirectory}/${String(scene).padStart(3, '0')}.mp4`;
+  let punch = 0;
+  let shakeX = 0;
+  let shakeY = 0;
+  for (const cue of impactCues) {
+    const distance = Math.abs(frame - cue.at * fps);
+    const envelope = interpolate(distance, [0, 2, 10], [1, 0.62, 0], clamp);
+    const strength = cue.strength ?? 1;
+    if (cue.kind === 'punch' || cue.kind === 'punch-shake') {
+      punch += envelope * strength;
+    }
+    if (cue.kind === 'shake' || cue.kind === 'punch-shake') {
+      shakeX += Math.sin(frame * 2.35) * 8 * envelope * strength;
+      shakeY += Math.sin(frame * 3.15 + 1.3) * 4 * envelope * strength;
+    }
+  }
+  const scale = 1.015 + Math.min(0.055, punch * 0.045);
 
   return (
     <AbsoluteFill style={{backgroundColor: '#080604'}}>
@@ -48,7 +76,13 @@ const SceneVideo: React.FC<{
         src={staticFile(file)}
         muted
         playbackRate={sourceSeconds / targetSeconds}
-        style={{width: '100%', height: '100%', objectFit: 'cover'}}
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          transform: `translate3d(${shakeX}px, ${shakeY}px, 0) scale(${scale})`,
+          transformOrigin: 'center center',
+        }}
       />
       <AbsoluteFill
         style={{
@@ -142,6 +176,8 @@ export const V5FinalFilm: React.FC<V5FinalFilmProps> = ({
   audioFile,
   fontFile,
   watermarkFile,
+  clipDirectory = 'clips_v5',
+  impactCues = [],
 }) => {
   const {fps} = useVideoConfig();
   let cursor = 0;
@@ -165,7 +201,13 @@ export const V5FinalFilm: React.FC<V5FinalFilmProps> = ({
         cursor = next;
         return (
           <Sequence key={scene} from={from} durationInFrames={durationInFrames} premountFor={fps}>
-            <SceneVideo scene={scene} targetSeconds={seconds} sourceSeconds={clipDurations[index]} />
+            <SceneVideo
+              scene={scene}
+              targetSeconds={seconds}
+              sourceSeconds={clipDurations[index]}
+              clipDirectory={clipDirectory}
+              impactCues={impactCues.filter((cue) => cue.scene === scene)}
+            />
           </Sequence>
         );
       })}
@@ -189,4 +231,3 @@ export const V5FinalFilm: React.FC<V5FinalFilmProps> = ({
     </AbsoluteFill>
   );
 };
-
