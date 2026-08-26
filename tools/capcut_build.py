@@ -8,7 +8,7 @@ draft_content.json 을 다시 쓴다. 무협 파이프라인의 capcut_export.py
 그쪽 코드는 건드리지 않는다.
 
 템플릿: "투탕카멘_고대유물의 비밀" (주인님이 직접 편집·검증한 프로젝트)
-  → 자막 스타일(KCC간판체 12 / 획 0.08 / y=-0.206 / 하나씩 33ms),
+  → 자막 스타일(KCC간판체 12 / 획 0.08 / y=-0.206 / 페이드 인 0.25초),
     워터마크(우하단 크로마키), 캔버스(1080x1920 30fps)를 그대로 물려받는다.
 
 바꾸는 것만 바꾼다:
@@ -28,6 +28,7 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+import math
 import shutil
 import subprocess
 import sys
@@ -36,6 +37,7 @@ import uuid
 from pathlib import Path
 
 from _config import load
+from script_context_gate import validate_context_review
 
 for _s in (sys.stdout, sys.stderr):
     try:
@@ -52,6 +54,29 @@ WATERMARK = ROOT / CFG.get("워터마크.파일", "자산워터마크.png")
 US = 1_000_000            # 캡컷 시간 단위는 마이크로초
 FPS = CFG.get("출력.fps", 30)
 FRAME = US // FPS         # 33333
+CAPTION_FADE_DURATION_US = int(float(CFG.get("자막.애니메이션.지속ms", 250)) * 1_000)
+CAPTION_FADE_RESOURCE_ID = "7646371244257955092"
+CAPTION_FADE_RESOURCE_PATH = (
+    Path.home()
+    / "AppData/Local/CapCut/User Data/Cache/effect"
+    / CAPTION_FADE_RESOURCE_ID
+    / "e6884981e7717e8d2951063ad1eadbdb"
+)
+
+# 템플릿의 음성 AI 소재는 실제 미디어와 무관한 이전 프로젝트 상태다.
+# 이를 복제하면 CapCut이 열기/내보내기 때 음성 보정·노멀라이제이션 작업을
+# 자동으로 다시 예약한다. 원본 ElevenLabs TTS와 Omni/Veo 현장음은 그대로 두고
+# CapCut의 후처리 소재만 절대 상속하지 않는다.
+FORBIDDEN_AUDIO_PROCESSING_BUCKETS = frozenset({
+    "audio_effects",
+    "realtime_denoises",
+    "vocal_beautifys",
+    "vocal_separations",
+})
+NO_AUDIO_PROCESSING_BUCKETS = frozenset({
+    *FORBIDDEN_AUDIO_PROCESSING_BUCKETS,
+    "loudnesses",
+})
 
 
 def uid() -> str:
@@ -74,6 +99,23 @@ def probe(path: Path) -> float:
         return 0.0
 
 
+def has_audio_stream(path: Path) -> bool:
+    """영상에 Omni/Veo가 만든 원본 효과음 스트림이 있는지 확인한다."""
+    try:
+        result = subprocess.run(
+            ["ffprobe", "-v", "error", "-select_streams", "a:0",
+             "-show_entries", "stream=index", "-of", "csv=p=0", str(path)],
+            capture_output=True, text=True, check=True,
+        )
+        return bool(result.stdout.strip())
+    except Exception:
+        return False
+
+
+def db_to_linear(db: float) -> float:
+    return math.pow(10.0, db / 20.0)
+
+
 # ──────────────────────────────────────────────────────────────
 # 템플릿에서 세그먼트를 복제한다.
 # 세그먼트는 extra_material_refs 로 speed·canvas·sound_channel_mapping 등을
@@ -90,13 +132,20 @@ class Cloner:
                         self.by_id[m["id"]] = (bucket, m)
         self.out: dict[str, list] = {k: [] for k in tpl["materials"] if isinstance(tpl["materials"][k], list)}
 
-    def clone_extras(self, seg: dict) -> list[str]:
+    def clone_extras(
+        self,
+        seg: dict,
+        *,
+        exclude_buckets: frozenset[str] = frozenset(),
+    ) -> list[str]:
         new_refs = []
         for ref in seg.get("extra_material_refs", []):
             found = self.by_id.get(ref)
             if not found:
                 continue
             bucket, m = found
+            if bucket in exclude_buckets:
+                continue
             m2 = copy.deepcopy(m)
             m2["id"] = uid()
             self.out.setdefault(bucket, []).append(m2)
@@ -112,6 +161,57 @@ class Cloner:
                     m["speed"] = speed
                     if "curve_speed" in m:
                         m["curve_speed"] = None
+
+
+def set_caption_fade_in(cloner: Cloner, refs: list[str]) -> None:
+    """캡션 프로토타입이 물려준 등장 애니메이션을 채널 표준 페이드 인으로 고정한다.
+
+    템플릿의 `하나씩` 33ms를 그대로 복제하지 않는다. 모든 캡션이 동일한
+    CapCut 원생 페이드 인 리소스와 짧은 길이를 사용하므로 GUI에서도
+    `페이드 인`으로 표시된다.
+    """
+    resource_path = str(CAPTION_FADE_RESOURCE_PATH).replace("\\", "/")
+    for material in cloner.out.get("material_animations", []):
+        if material.get("id") not in refs:
+            continue
+        material["type"] = "sticker_animation"
+        material["animations"] = [{
+            "id": CAPTION_FADE_RESOURCE_ID,
+            "type": "in",
+            "start": 0,
+            "duration": CAPTION_FADE_DURATION_US,
+            "path": resource_path,
+            "platform": "all",
+            "resource_id": CAPTION_FADE_RESOURCE_ID,
+            "third_resource_id": "0",
+            "source_platform": 1,
+            "name": "페이드 인",
+            "category_id": "ruchang",
+            "category_name": "text",
+            "panel": "",
+            "material_type": "sticker",
+            "anim_adjust_params": None,
+            "request_id": "",
+        }]
+        material["multi_language_current"] = "none"
+
+
+def set_loudness_normalization(
+    cloner: Cloner,
+    refs: list[str],
+    *,
+    duration_us: int,
+    target_lufs: float,
+) -> None:
+    """원본 오디오에 CapCut 음량 노멀라이제이션만 켜고 새 분석을 요청한다."""
+    for material in cloner.out.get("loudnesses", []):
+        if material.get("id") not in refs:
+            continue
+        material["enable"] = True
+        material["target_loudness"] = target_lufs
+        material["time_range"] = {"start": 0, "duration": duration_us}
+        material["file_id"] = ""
+        material["loudness_param"] = None
 
 
 def proto(tpl: dict, ttype: str, flag: int | None = None) -> dict:
@@ -153,6 +253,8 @@ def main() -> int:
 
     # ── 준비물 점검 ─────────────────────────────────────────
     problems: list[str] = []
+    context = validate_context_review(ep / "01.대본.txt", ep / "01.문맥검수.json")
+    problems.extend(f"문맥 QA: {failure}" for failure in context.failures)
     if not args.template.exists():
         problems.append(f"템플릿 없음: {args.template}")
     if not dur_path.exists():
@@ -183,6 +285,8 @@ def main() -> int:
     print(f"\n에피소드 : {ep}")
     print(f"장면     : {len(scenes)}개   자막 : {len(cues)}개")
     print(f"템플릿   : {args.template.name}")
+    if context.passed:
+        print(f"문맥 QA  : PASS ({context.paragraphs}문단/{context.sentences}문장)")
     if problems:
         print("\n준비 안 된 항목:")
         for p in problems:
@@ -221,6 +325,7 @@ def main() -> int:
         dur = snap(int(tts * US))
         media = find_media(clip_dir, n, (".mp4", ".mov", ".webm", ".mkv", ".jpg", ".png"))
         is_img = media.suffix.lower() in (".jpg", ".png")
+        native_audio = False if is_img else has_audio_stream(media)
         src = probe(media) if not is_img else tts
         speed = round(src / tts, 4) if (src > 0 and not is_img) else 1.0
 
@@ -230,17 +335,35 @@ def main() -> int:
                   material_name=media.name, local_material_id=uid(),
                   duration=int((src if src > 0 else tts) * US),
                   type="photo" if is_img else "video",
-                  has_audio=False,
+                  has_audio=native_audio,
                   width=CFG.get("출력.해상도",[1080,1920])[0],
                   height=CFG.get("출력.해상도",[1080,1920])[1])
         cl.out["videos"].append(vm)
 
         vs = copy.deepcopy(v_proto)
         vs["id"] = uid(); vs["material_id"] = vm["id"]
-        vs["extra_material_refs"] = cl.clone_extras(v_proto)
+        vs["extra_material_refs"] = cl.clone_extras(
+            v_proto,
+            exclude_buckets=(
+                FORBIDDEN_AUDIO_PROCESSING_BUCKETS
+                if native_audio else NO_AUDIO_PROCESSING_BUCKETS
+            ),
+        )
         vs["target_timerange"] = {"start": cursor, "duration": dur}
         vs["source_timerange"] = {"start": 0, "duration": snap(int(dur * speed))}
-        vs["volume"] = 0.0
+        # Omni/Veo가 장면과 함께 만든 문·발걸음·바람·충격음은 버리지 않는다.
+        # 나레이션을 가리지 않는 낮은 베드로 유지하고, 캡컷 AI 음성 처리는 금지한다.
+        sfx_db = float(CFG.get("오디오.영상원음dB", -15.0))
+        sfx_volume = db_to_linear(sfx_db) if native_audio else 0.0
+        vs["volume"] = sfx_volume
+        vs["last_nonzero_volume"] = sfx_volume
+        if native_audio:
+            set_loudness_normalization(
+                cl,
+                vs["extra_material_refs"],
+                duration_us=vs["source_timerange"]["duration"],
+                target_lufs=float(CFG.get("오디오.캡컷노멀라이즈LUFS", -23.0)),
+            )
         cl.set_speed(vs, speed)
         v_track["segments"].append(vs)
         media_registry.append((media.resolve(), "video", int((src if src > 0 else tts) * US)))
@@ -255,15 +378,22 @@ def main() -> int:
 
         as_ = copy.deepcopy(a_proto)
         as_["id"] = uid(); as_["material_id"] = am["id"]
-        as_["extra_material_refs"] = cl.clone_extras(a_proto)
+        as_["extra_material_refs"] = cl.clone_extras(
+            a_proto, exclude_buckets=FORBIDDEN_AUDIO_PROCESSING_BUCKETS)
         as_["target_timerange"] = {"start": cursor, "duration": dur}
         as_["source_timerange"] = {"start": 0, "duration": dur}
         as_["speed"] = 1.0
-        # ★ 템플릿 볼륨(1.778 = +5dB)을 물려받으면 안 된다. 캡컷에는 리미터가
-        #   없어 그대로 하드 클리핑이 난다(EP01에서 트루피크 +4.2dBFS).
-        #   게인은 audio_normalize 가 파일에 구웠으므로 여기서는 1.0 이다.
-        as_["volume"] = float(CFG.get("오디오.캡컷볼륨", 1.0))
+        # 채널 수동 편집 표준: 음성 +5dB, 영상 원음 -15dB. 음성 보정은 쓰지 않고
+        # TTS 트랙의 음량 노멀라이제이션만 -23 LUFS로 적용한다.
+        narration_db = float(CFG.get("오디오.음성dB", 5.0))
+        as_["volume"] = db_to_linear(narration_db)
         as_["last_nonzero_volume"] = as_["volume"]
+        set_loudness_normalization(
+            cl,
+            as_["extra_material_refs"],
+            duration_us=dur,
+            target_lufs=float(CFG.get("오디오.캡컷노멀라이즈LUFS", -23.0)),
+        )
         a_track["segments"].append(as_)
         media_registry.append((amedia.resolve(), "music", int(tts * US)))
         used_media.append(amedia.resolve())
@@ -300,6 +430,7 @@ def main() -> int:
             ts = copy.deepcopy(t_proto)
             ts["id"] = uid(); ts["material_id"] = tm["id"]
             ts["extra_material_refs"] = cl.clone_extras(t_proto)
+            set_caption_fade_in(cl, ts["extra_material_refs"])
             ts["target_timerange"] = {"start": st, "duration": d}
             t_track["segments"].append(ts)
     else:
@@ -332,6 +463,7 @@ def main() -> int:
                 ts = copy.deepcopy(t_proto)
                 ts["id"] = uid(); ts["material_id"] = tm["id"]
                 ts["extra_material_refs"] = cl.clone_extras(t_proto)
+                set_caption_fade_in(cl, ts["extra_material_refs"])
                 ts["target_timerange"] = {"start": pos, "duration": d}
                 t_track["segments"].append(ts)
                 pos += d
@@ -347,7 +479,8 @@ def main() -> int:
                       material_name=WATERMARK.name, local_material_id=uid())
         cl.out["videos"].append(wm_mat)
         wseg["id"] = uid(); wseg["material_id"] = wm_mat["id"]
-        wseg["extra_material_refs"] = cl.clone_extras(wseg)
+        wseg["extra_material_refs"] = cl.clone_extras(
+            wseg, exclude_buckets=NO_AUDIO_PROCESSING_BUCKETS)
         wseg["target_timerange"] = {"start": 0, "duration": total}
         wseg["source_timerange"] = None
 

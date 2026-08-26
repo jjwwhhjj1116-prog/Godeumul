@@ -8,6 +8,11 @@
 과학 조사, 아직 남은 미지까지 추적하는 **고증형 역사 미스터리 다큐**다. 단면·치수·
 분해도는 유물을 이해하는 데 필요할 때 쓰는 시각 언어이지, 모든 이야기의 결론이 아니다.
 
+> ★ 사용자가 **“제작 시작”, “다음 주제”, “계속”**이라고 말하면 파일 생성이나
+> 브라우저 조작보다 먼저 [00.제작 시작 워크플로](./00.제작_시작_워크플로우.md)와
+> [함정 목록](./00.함정목록.md)을 읽고, `git status`, 현재 브랜치·HEAD·`origin`을
+> 확인한다. 기억으로 단계를 건너뛰지 않는다.
+
 ---
 
 ## 새 PC에서 시작하기
@@ -102,13 +107,14 @@ python tools/youtube_upload.py --auth
 |---|---|---|---|---|---|
 | **0** | 주제 승인 | 리뉴얼 제작 큐 | `00.주제카드.json` | [주제 선정 지침](./기획/주제선정_지침.md) | `topic_check.py` |
 | **1** | 조사·대본 | 유물 주제 1개 | 조사노트 + 증거지도 + 승인 대본 | [01](./%23%20%5B고대유물의%20비밀%5D%20대본%20작성%20전용%20시스템%20지침.txt) · [01L](./01L.롱폼_대본작성지침.md) | — |
+| **1Q** | **한국어 문맥 QA** | 승인 대본 | `01.문맥검수.json` + 대본 SHA 잠금 | [시작 워크플로 §C](./00.제작_시작_워크플로우.md) | `script_tone_check.py` → `script_context_gate.py` |
 | **2a** | 장면 구분표 | 승인 대본 | 의미 단위 장면 + 증거 상태 + TTS | [02](./02.시각화+영상화프롬프트(고대유물).txt) | — |
 | **2c** | **고증 카드** | 유물·시대 | `02b.고증카드.md` | [02 §고증앵커](./02.시각화+영상화프롬프트(고대유물).txt) | `prompt_check.py` |
 | **3** | **TTS 실측 (먼저!)** | 장면 구분 | `audio/*.mp3` + `durations.json` | [03](./03.TTS생성지침.md) | `tts_generate` → `audio_normalize` |
 | **2b** | 프롬프트 생성 | 실측 길이 | 컷별 6대 항목 + 옴니 규격 | [02](./02.시각화+영상화프롬프트(고대유물).txt) | `speed_table.py` |
 | **2v** | 통합 3D 모션 분석 | 장면표 | Veo 월드 앵커·가림·시간 단계 | [02V](./02V.VEO_통합3D_설명모션.md) | `prompt_check.py` |
 | **4** | 이미지·영상 생성 | 프롬프트 txt | `images/` `clips/` | [04](./04.FLOW+옴니_생성지침.md) | — |
-| **5** | 편집·렌더 | Veo 통합형 클립 | 완성본 mp4 | [05](./05.캡컷_편집지침.md) | 키프레임 QA → `subtitle_split` → `align_subtitles` → `render_final` |
+| **5** | **CapCut 최종 마감** | Veo 통합형 클립 | `*_capcut.mp4` + `05.캡컷마감잠금.json` | [05](./05.캡컷_편집지침.md) | 키프레임 QA → `subtitle_split` → `align_subtitles` → `capcut_build` → GUI 검수·내보내기 → `capcut_final_lock` |
 | **6** | 제목·설명·썸네일 | 완성 영상 | `06.메타.json` + `썸네일.jpg` | [06](./06.제목_설명_썸네일지침.md) | `thumbnail_build.py` |
 | **7** | 업로드 | 전부 | 공개 쇼츠 | [07](./07.업로드지침.md) | `youtube_upload.py` |
 
@@ -124,10 +130,16 @@ python tools/youtube_upload.py --auth
 python tools/topic_check.py  산출물/EP02_마왕퇴한묘
 ```
 ```bash
-python tools/tts_generate.py    산출물/EP01_진시황릉
+python tools/script_tone_check.py    산출물/EP01_진시황릉/01.대본.txt
 ```
 ```bash
-python tools/tts_generate.py    산출물/EP01_진시황릉 --run
+python tools/script_context_gate.py  산출물/EP01_진시황릉/01.대본.txt
+```
+```bash
+python tools/tts_generate.py    산출물/EP01_진시황릉/02.시각화.txt
+```
+```bash
+python tools/tts_generate.py    산출물/EP01_진시황릉/02.시각화.txt --run
 ```
 ```bash
 python tools/audio_normalize.py 산출물/EP01_진시황릉 --run
@@ -154,7 +166,16 @@ python tools/capcut_build.py    산출물/EP01_진시황릉
 python tools/verify_draft.py    산출물/EP01_진시황릉
 ```
 ```bash
-python tools/render_final.py    산출물/EP01_진시황릉 --run
+python tools/render_final.py    산출물/EP01_진시황릉 --run  # 프리뷰·비상복구 전용
+```
+```powershell
+python tools/capcut_final_lock.py 산출물/EP01_진시황릉 --write `
+  --video 산출물/EP01_진시황릉/완성본_EP01_진시황릉_capcut.mp4 `
+  --project-name "EP01 진시황릉" `
+  --draft-content "<CapCut 프로젝트>/draft_content.json" `
+  --caption-style-verified --caption-sync-verified `
+  --motion-finish-verified --full-playback-verified `
+  --audio-policy-verified
 ```
 ```bash
 python tools/thumbnail_build.py 산출물/EP01_진시황릉 --title "진시황릉" --bg 배경.png
@@ -212,6 +233,8 @@ python tools/youtube_upload.py  산출물/EP01_진시황릉 --run --공개 예�
 ├─ token.json             ★ 비밀. 커밋 금지 (자동 생성)
 │
 ├─ 00.함정목록.md         ★ 새 회차 전에 한 번 읽는다
+├─ 00.제작_시작_워크플로우.md  ★ 제작 명령을 받으면 가장 먼저 읽는다
+├─ AGENTS.md              ★ 에이전트가 시작 게이트를 생략하지 못하게 한다
 ├─ 01~07 단계 지침
 ├─ 01L.롱폼_대본작성지침.md  ★ 롱폼 전용 조사·질문 장부
 ├─ 기획/주제큐_v2.md       ★ 현재 사용 중인 유물 우선 제작 큐
@@ -223,6 +246,7 @@ python tools/youtube_upload.py  산출물/EP01_진시황릉 --run --공개 예�
 ├─ tools/
 │   ├─ _config.py         채널설정.json 로더 (전 도구가 여기를 거친다)
 │   ├─ topic_check.py     0단계 — ★ 유물 우선 주제 카드·85점 게이트
+│   ├─ script_context_gate.py 1Q — ★ 문단·전환·접속어·중복 문맥 잠금
 │   ├─ tts_generate.py    3단계 — 장면별 TTS + 길이표
 │   ├─ audio_normalize.py 3단계 — 라우드니스 정규화(클리핑 방지)
 │   ├─ prompt_check.py    2단계 — ★ 시각화 프롬프트 고증 검증
@@ -230,8 +254,9 @@ python tools/youtube_upload.py  산출물/EP01_진시황릉 --run --공개 예�
 │   ├─ subtitle_split.py  5단계 — 자막 한 줄 분할(어절 보존)
 │   ├─ align_subtitles.py 5단계 — 자막 실측 싱크(ElevenLabs 강제정렬)
 │   ├─ capcut_build.py    5단계 — 캡컷 드래프트 생성
+│   ├─ capcut_final_lock.py 5단계 — ★ GUI 검수한 CapCut 마스터 해시 잠금
 │   ├─ verify_draft.py    5단계 — ★ 내보내기 전 자가 검수 41항목
-│   ├─ render_final.py    5단계 — 캡컷 없이 완성본 렌더 (ffmpeg)
+│   ├─ render_final.py    5단계 — 프리뷰·비상복구용 렌더 (게시 마스터 아님)
 │   ├─ thumbnail_build.py 6단계 — 썸네일 한글 합성
 │   └─ youtube_upload.py  7단계 — 업로드 (Data API v3)
 │
@@ -240,14 +265,16 @@ python tools/youtube_upload.py  산출물/EP01_진시황릉 --run --공개 예�
 └─ 산출물/EP01_진시황릉/
     ├─ 00.팩트체크.md      근거 등급 A/B/C. C가 있으면 설명란 고지 필수
     ├─ 01.대본.txt
+    ├─ 01.문맥검수.json    ★ 현재 대본 SHA + 다섯 검문 PASS
     ├─ 02.시각화.txt
     ├─ 02a.장면구분.json / .md
     ├─ 02c.이미지선택.md
     ├─ 06.메타.json        업로더가 읽는다
     ├─ 자막.json / 자막_싱크.json / speed_table.json
     ├─ audio/  images/  clips/     ← 무거워서 커밋 안 함
-    ├─ 완성본_EP01_진시황릉.mp4    자막·TTS 기준 베이스
-    ├─ 완성본_EP01_진시황릉_모션그래픽.mp4  최종 마스터
+    ├─ 완성본_EP01_진시황릉_remotion.mp4  프리뷰·복구용
+    ├─ 완성본_EP01_진시황릉_capcut.mp4  게시 마스터
+    ├─ 05.캡컷마감잠금.json  ★ 게시 마스터 해시·GUI 검수 잠금
     └─ 썸네일.jpg
 ```
 
@@ -261,7 +288,8 @@ python tools/youtube_upload.py  산출물/EP01_진시황릉 --run --공개 예�
 
 | 항목 | 값 |
 |---|---|
-| 출력 | 1080×1920 · 9:16 · 30fps · 3분 미만 |
+| 작업 캔버스 | 1080×1920 · 9:16 · 30fps · 3분 미만 |
+| CapCut 게시본 | **2160×3840 · 9:16 · H.264 MP4 · 30fps** |
 | 나레이션 보이스 | `채널설정.json` → `tts.voice_id` |
 | TTS 모델 | `eleven_multilingual_v2` · speed 1.05 · stability 0.4 · similarity 0.85 · style 0.50 · ko |
 | 발화속도 실측 | **9.35자/초** (기획은 보수적으로 8.0 → 대본 상한 1,400자) |
@@ -273,7 +301,7 @@ python tools/youtube_upload.py  산출물/EP01_진시황릉 --run --공개 예�
 | 이미지 | Nano Banana 2 · 9:16 · x2 · 크레딧 0 |
 | 영상 | Omni Flash · 720p · x1 · 8초 = 12크레딧 |
 | 사운드 | 나레이션 **−16 LUFS · 트루피크 −1.5 dBFS** / BGM −26 LUFS |
-| 캡컷 오디오 볼륨 | **1.0 고정.** 캡컷엔 리미터가 없어 게인을 걸면 클리핑이 난다 |
+| 캡컷 오디오 | 모든 음원 노멀라이즈만 ON(−23 LUFS), 음성 보정 OFF, 영상 원음 −15dB, TTS +5dB |
 | 안전 영역 | 하단 18%를 비운다 (쇼츠 UI) |
 | 업로드 쿼터 | 영상 1,600 + 썸네일 50 / 하루 10,000 (≈ 6편) |
 
@@ -290,9 +318,10 @@ python tools/youtube_upload.py  산출물/EP01_진시황릉 --run --공개 예�
 4. **출처를 댈 수 없는 내용은 대본에 넣지 않는다.** 회차마다 `00.팩트체크.md` 를
    쓰고, C등급(문헌만·실물 미확인)이 있으면 설명란에 재현 고지를 넣는다.
    업로더가 이걸 검사해서 없으면 막는다.
-5. **내보내기 전에 `verify_draft.py` 를 돌린다.** 영상·나레이션·자막이 같은
+5. **내보내기 전에 `verify_draft.py` 를 돌리고 CapCut GUI에서 전편을 확인한다.** 영상·나레이션·자막이 같은
    시간축에 놓였는지, 소리가 클리핑하지 않는지 41개 항목을 전수 검사한다.
-   실패가 하나라도 있으면 올리지 않는다.
+   실패가 하나라도 있으면 올리지 않는다. Remotion/ffmpeg 렌더는 프리뷰이지
+   게시 마스터가 아니다. `05.캡컷마감잠금.json`이 현재 영상 해시와 일치해야 업로더가 돈다.
 6. **새로 걸린 함정은 [00.함정목록.md](./00.함정목록.md) 에 한 줄 추가하고,
    반드시 코드나 지침에도 박는다.** 표에만 적으면 다음에 또 걸린다.
 

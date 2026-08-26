@@ -35,6 +35,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from _config import load
+from capcut_final_lock import validate_capcut_lock
 
 CFG = load()
 ROOT = Path(__file__).resolve().parent.parent
@@ -121,10 +122,18 @@ def whoami(yt) -> str:
 
 def find_video(ep: Path) -> Path | None:
     """캡컷에서 내보낸 완성본을 찾는다. clips/ 의 소재는 제외."""
-    for pat in ("완성본*.mp4", "*_완성.mp4", "export*.mp4", "*.mp4"):
+    lock = ep / "05.캡컷마감잠금.json"
+    if lock.exists():
+        try:
+            name = json.loads(lock.read_text(encoding="utf-8")).get("video")
+            if name and (ep / name).exists():
+                return ep / name
+        except (OSError, json.JSONDecodeError):
+            pass
+    for pat in ("*_capcut.mp4", "*CapCut*.mp4"):
         hits = [h for h in ep.glob(pat) if h.parent.name != "clips"]
         if hits:
-            return max(hits, key=lambda p: p.stat().st_size)
+            return max(hits, key=lambda p: p.stat().st_mtime)
     return None
 
 
@@ -341,8 +350,10 @@ def main() -> int:
         publish_at = dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     # ── 점검 ────────────────────────────────────────────
-    if video:
+    if video and video.exists():
         vtxt = f"{video.name}  ({video.stat().st_size / 1048576:.1f}MB)"
+    elif video:
+        vtxt = f"★ 없음: {video}"
     else:
         vtxt = "★ 없음"
     sched = f"  -> {args.when} KST 예약" if publish_at else ""
@@ -359,8 +370,11 @@ def main() -> int:
     print(f"쿼터     : {q} / 10,000")
 
     bad = check_release_status(ep) + check_meta(m, ep) + check_thumb(thumb)
-    if not video:
-        bad.append("완성본 mp4 를 못 찾았습니다. --영상 으로 지정하세요.")
+    if not video or not video.exists():
+        bad.append("CapCut 게시 마스터를 못 찾았습니다. *_capcut.mp4로 내보내고 마감 잠금을 만드세요.")
+    else:
+        final_lock = validate_capcut_lock(ep, video)
+        bad.extend(f"CapCut 마감: {failure}" for failure in final_lock.failures)
     if bad:
         print("\n  ★ 게이트 위반")
         for b in bad:

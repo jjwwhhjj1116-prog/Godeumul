@@ -1,13 +1,13 @@
 {
  "before": {
-  "lufs": -19.2,
+  "lufs": -19.3,
   "true_peak": -0.6
  },
  "after": {
   "lufs": -16.2,
-  "true_peak": -1.6
+  "true_peak": -1.8
  },
- "gain_db": 4.9,
- "filter": "volume=4.9dB,alimiter=limit=0.7943:level=disabled",
+ "gain_db": 5.0,
+ "filter": "volume=5.0dB,alimiter=limit=0.7943:level=disabled",
  "capcut_volume": 1.0
 }

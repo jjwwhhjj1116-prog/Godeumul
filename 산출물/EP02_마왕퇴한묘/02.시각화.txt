@@ -139,11 +139,11 @@ Use the supplied locked start image and preserve all objects, identities, proven
 
 ## 장면 009 — CUTAWAY / 발굴확인
 
-- TTS: 6.734s
+- TTS: 5.805s
 - 생성 길이: 8s
 - 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
 - 모션 공간: WORLD_3D
-- 나레이션: 그런데 말이죠. 신추가 누구인지 알고 나면 관 주변의 물건들도 다르게 보입니다. 중앙의 겹관을 둘러싼 네 공간에는
+- 나레이션: 그 답은 잠시 뒤에 보겠습니다. 먼저 관 주변부터 살펴보죠. 중앙의 겹관을 둘러싼 네 공간에는
 
 ### IMAGE
 
@@ -151,15 +151,15 @@ premium full-frame archaeological 3D diorama world, immersive cutaway scale illu
 
 ### I2V
 
-Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at upper soil section seam; travel down to the coffin core and outward around four compartments; arrive at complete Tomb 1 plan; settle on oblique plan with all five zones. Integrate one exploded sequence anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The camera dives through the section seam, makes a fast half-orbit around the central coffins, and the four side compartments physically slide outward just enough to expose their relationship before returning to place. TTS-locked timing: 0.00-0.98s: Dive to the central four-coffin core. 0.98-6.73s: Orbit as the four side compartments reveal their spatial relationship. No voice, no music, no subtitles.
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at upper soil section seam; travel down to the coffin core and outward around four compartments; arrive at complete Tomb 1 plan; settle on oblique plan with all five zones. Integrate one exploded sequence anchored in the physical world space. It receives camera parallax, correct surface perspective, material contact and natural occlusion. No floating HUD, no screen-space graphic, no text. The camera dives through the section seam, makes a fast half-orbit around the central coffins, and the four side compartments physically slide outward just enough to expose their relationship before returning to place. TTS-locked timing: 0.00-1.74s: Hold the unanswered preservation question while diving to the central four-coffin core. 1.74-5.81s: Orbit as the four side compartments reveal their spatial relationship. No voice, no music, no subtitles.
 
 ## 장면 010 — INVENTORY_TABLEAU / 발굴확인
 
-- TTS: 9.660s
+- TTS: 10.542s
 - 생성 길이: 10s
 - 모션 소유권: GENERATED_PHYSICS
 - 모션 공간: WORLD_3D
-- 나레이션: 칠기 식기와 음식, 화장함과 빗, 악기와 목제 시종이 따로 놓여 있었거든요. 죽은 사람을 눕혀 둔 게 아니라, 최고위 귀족 여성이 누리던 생활을 땅속에 통째로 옮긴 셈이죠.
+- 나레이션: 칠기 식기와 음식, 화장함과 빗, 악기와 목제 시종이 따로 놓여 있었습니다. 죽은 사람을 눕혀 둔 게 아니라, 최고위 귀족 여성이 누리던 생활을 땅속에 통째로 옮긴 셈이죠.
 
 ### IMAGE
 
@@ -167,7 +167,7 @@ premium full-frame archaeological 3D diorama world, immersive cutaway scale illu
 
 ### I2V
 
-Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at lacquer bowl rim; travel through compartment objects and instrument frame; arrive at five kneeling musician figures; settle on wide inventory tableau. The camera moves immediately from a lacquer bowl past food and combs, passes through the frame of a musical instrument, then swings around the five wooden musicians to show an entire elite life reconstructed from objects. TTS-locked timing: 0.00-4.35s: Travel through food and grooming objects. 4.35-9.66s: Pass the instruments and orbit the five wooden attendants as one life-world. No voice, no music, no subtitles.
+Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture and lighting. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at lacquer bowl rim; travel through compartment objects and instrument frame; arrive at five kneeling musician figures; settle on wide inventory tableau. The camera moves immediately from a lacquer bowl past food and combs, passes through the frame of a musical instrument, then swings around the five wooden musicians to show an entire elite life reconstructed from objects. TTS-locked timing: 0.00-4.51s: Travel through food and grooming objects. 4.51-10.54s: Pass the instruments and orbit the five wooden attendants as one life-world. No voice, no music, no subtitles.
 
 ## 장면 011 — ARTIFACT_MACRO / 발굴확인
 

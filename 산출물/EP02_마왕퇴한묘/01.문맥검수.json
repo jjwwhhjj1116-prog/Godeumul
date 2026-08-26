@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "script": "01.대본.txt",
+  "script_sha256": "4b014f6ef48c5ac133f46986cd6897b4e71f017b3e42c8aa0065a5c938a1910d",
+  "reviewer": "humanizer-ko + godeumul-context-qa",
+  "status": "PASS",
+  "checks": {
+    "paragraph_roles_and_flow": "PASS",
+    "adjacent_sentence_relations": "PASS",
+    "connector_deletion_test": "PASS",
+    "duplicate_information": "PASS",
+    "tts_release_gate": "PASS"
+  },
+  "paragraphs": [
+    {
+      "n": 1,
+      "role": "HOOK_AND_DISCOVERY",
+      "summary": "마왕퇴 한묘를 먼저 밝히고 방공호 공사에서 겹관 발견까지 진입한다."
+    },
+    {
+      "n": 2,
+      "role": "PERSON_AND_CENTRAL_QUESTION",
+      "summary": "신추의 지위와 습윤형 유해의 특이성을 설명하고 보존 원인을 질문한다."
+    },
+    {
+      "n": 3,
+      "role": "DEFER_AND_GRAVE_GOODS",
+      "summary": "보존 답을 의도적으로 유예하고 관 주변 생활 유물로 조사 범위를 넓힌다."
+    },
+    {
+      "n": 4,
+      "role": "TEXTILE_AND_AFTERLIFE",
+      "summary": "49그램 비단옷과 T자형 백화로 기술과 사후세계 인식을 보여준다."
+    },
+    {
+      "n": 5,
+      "role": "FAMILY_CEMETERY_AND_PROVENANCE",
+      "summary": "세 무덤의 가족 묘역과 3호묘 문서를 구분해 출토 맥락을 바로잡는다."
+    },
+    {
+      "n": 6,
+      "role": "PRESERVATION_EVIDENCE_AND_LIMIT",
+      "summary": "보존 조건 후보를 제시하되 단일 방부 비법으로 단정하지 않는다."
+    },
+    {
+      "n": 7,
+      "role": "SYNTHESIS_AND_UNRESOLVED_MYSTERY",
+      "summary": "확인된 역사적 의미를 회수하고 신추만 유독 보존된 이유를 미해결로 남긴다."
+    }
+  ],
+  "transitions": [
+    {
+      "from": 1,
+      "to": 2,
+      "relation": "발견 결과에서 관 내부 인물 공개",
+      "reason": "가장 안쪽 관이라는 공간 약속을 신추의 등장으로 즉시 회수한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "relation": "중심 질문의 의도적 유예 후 조사 범위 확장",
+      "reason": "보존 원인을 묻고 잠시 뒤 답하겠다고 밝힌 다음 관 주변 유물로 이동한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "relation": "생활 유물에서 최고 수준 섬유 기술로 점층",
+      "reason": "귀족 생활을 옮긴 무덤이라는 중심 생각을 비단옷과 백화가 구체화한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 4,
+      "to": 5,
+      "relation": "개인 장례 세계에서 가족 묘역과 지식 체계로 확장",
+      "reason": "신추 1호묘에 머물지 않고 3호묘 자료까지 범위를 넓히되 출처를 구분한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 5,
+      "to": 6,
+      "relation": "출토품 조사에서 도입부 보존 질문으로 복귀",
+      "reason": "처음 질문으로 돌아간다고 명시해 이야기의 우회가 끝났음을 알린다.",
+      "status": "PASS"
+    },
+    {
+      "from": 6,
+      "to": 7,
+      "relation": "조건 후보와 한계에서 역사적 의미와 미스터리 결론",
+      "reason": "단일 비법을 부정한 뒤 무덤이 실제로 보존한 세계와 남은 질문을 회수한다.",
+      "status": "PASS"
+    }
+  ],
+  "connectors": [
+    {
+      "sentence": 5,
+      "text": "그런데",
+      "relation": "공간 반전",
+      "decision": "KEEP",
+      "reason": "겉의 목곽과 칠관보다 가장 안쪽의 발견이 핵심이라는 반전을 강조한다."
+    },
+    {
+      "sentence": 9,
+      "text": "그런데",
+      "relation": "통념 대비",
+      "decision": "KEEP",
+      "reason": "2천 년 된 몸을 바싹 마른 미라로 예상하는 통념과 습윤형 유해를 대비한다."
+    },
+    {
+      "sentence": 12,
+      "text": "그 답은 잠시 뒤에 보겠습니다",
+      "relation": "질문 유예",
+      "decision": "KEEP",
+      "reason": "보존 원인 질문을 버리지 않고 뒤에서 회수하겠다는 이야기 표지다."
+    },
+    {
+      "sentence": 13,
+      "text": "먼저",
+      "relation": "조사 순서",
+      "decision": "KEEP",
+      "reason": "보존 답에 앞서 부장 공간을 확인한다는 조사 순서를 분명하게 만든다."
+    },
+    {
+      "sentence": 16,
+      "text": "옷은 더",
+      "relation": "점층",
+      "decision": "KEEP",
+      "reason": "생활 유물에서 49그램 비단옷으로 놀라움과 정보 밀도를 한 단계 높인다."
+    },
+    {
+      "sentence": 22,
+      "text": "여기서 끝이 아닙니다",
+      "relation": "범위 확장",
+      "decision": "KEEP",
+      "reason": "신추 1호묘에서 가족 묘역과 3호묘 기록으로 범위를 넓히는 표지다."
+    },
+    {
+      "sentence": 26,
+      "text": "다만",
+      "relation": "출처 제한",
+      "decision": "KEEP",
+      "reason": "의학·천문 문서를 신추 1호묘 출토품으로 오해하지 않도록 출처를 제한한다."
+    },
+    {
+      "sentence": 28,
+      "text": "자, 이제",
+      "relation": "중심 질문 복귀",
+      "decision": "KEEP",
+      "reason": "부장품과 가족 묘역 설명을 끝내고 보존 원인 질문으로 돌아간다."
+    },
+    {
+      "sentence": 31,
+      "text": "하지만",
+      "relation": "단정 제한",
+      "decision": "KEEP",
+      "reason": "복합 보존 조건 후보와 단일 방부 비법 단정을 명확히 대조한다."
+    },
+    {
+      "sentence": 33,
+      "text": "그러니까",
+      "relation": "증거 종합",
+      "decision": "KEEP",
+      "reason": "앞에서 제시한 복합 조건과 불확실성을 역사적 의미로 종합한다."
+    },
+    {
+      "sentence": 35,
+      "text": "하지만",
+      "relation": "확인과 미지 대비",
+      "decision": "KEEP",
+      "reason": "확인된 한나라 생활 세계와 신추만 유독 보존된 미해결 문제를 대비한다."
+    }
+  ],
+  "duplicate_review": {
+    "status": "PASS",
+    "acknowledged_pairs": [],
+    "note": "신추의 지위는 2문단에서 한 번 설명하고 3문단에서는 반복하지 않도록 교정했다."
+  },
+  "findings": [
+    {
+      "id": "EP02-CONTEXT-001",
+      "category": "접속어와 정보 흐름",
+      "before": "그런데 말이죠. 신추가 누구인지 알고 나면 관 주변의 물건들도 다르게 보입니다.",
+      "after": "그 답은 잠시 뒤에 보겠습니다. 먼저 관 주변부터 살펴보죠.",
+      "reason": "앞 문장의 보존 질문과 대조 관계가 없었고 이미 설명한 신추의 지위를 반복했다.",
+      "status": "RESOLVED"
+    }
+  ]
+}

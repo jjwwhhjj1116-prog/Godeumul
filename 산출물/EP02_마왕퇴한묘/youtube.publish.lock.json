@@ -3,7 +3,7 @@
   "submitted_at": "2026-08-26T16:34:49+09:00",
   "processing_verified_at": "2026-08-26T16:44:08+09:00",
   "copyright_verified_at": "2026-08-26T16:43:00+09:00",
-  "thumbnail_verified_at": "2026-08-26T20:45:04+09:00",
+  "thumbnail_verified_at": "2026-08-26T21:41:26+09:00",
   "scheduled_public_at": null,
   "published_at": null,
   "youtube_video_id": "CMCMULWrlyU",
@@ -20,8 +20,8 @@
   "title": "마왕퇴 한묘, 2천 년 전 신추의 몸이 남은 이유",
   "hashes": {
     "video_sha256": "deaec9204dc327b5a978d3897600fcd7b2013989bd823a4b13c133fa20f26d3f",
-    "thumbnail_sha256": "7ce62516e3ce8993802fc262a19a251dbd55d2922f792d8bb8c11c3f42719579",
-    "previous_thumbnail_sha256": "8a3d4ce661adb7dbb3e6be9d7b413a2dad0f4965520aa7d9ccd23c8eb8fdf1ed",
+    "thumbnail_sha256": "0d0f4227bbd1722015ad9c9bc707a588b4cb5242b4e2ebd41a8eb794236dba7b",
+    "previous_thumbnail_sha256": "7ce62516e3ce8993802fc262a19a251dbd55d2922f792d8bb8c11c3f42719579",
     "metadata_sha256": "2ba22be11007dd9a08fcabedb9555ffc0ab0682fdc92229b82cfe6125830ef35",
     "script_sha256": "b4e61c58db44fcaa907c00af5e3f0ddb9f06d6b78f31943881fc824260da80e0"
   },
@@ -30,6 +30,7 @@
     "Pinned comment is deferred until a valid public schedule is approved.",
     "At 2026-08-26 17:20 KST, the exposed-remains thumbnail was replaced locally and on YouTube with a closed-lacquer-coffin and silk-cover version.",
     "At 2026-08-26 20:29 KST, the thumbnail was replaced locally and on YouTube with a clearly interpretive living reconstruction of Lady Xin Zhui in Western Han noble dress; typography was rendered separately with the channel's metallic-gold 3D style.",
-    "At 2026-08-26 20:45 KST, the final 1080x1920 thumbnail was applied with a closer portrait, compact Gmarket Sans Bold metallic-gold title treatment, and the fact-based mystery kicker '2천 년을 견딘 여인'."
+    "At 2026-08-26 20:45 KST, the final 1080x1920 thumbnail was applied with a closer portrait, compact Gmarket Sans Bold metallic-gold title treatment, and the fact-based mystery kicker '2천 년을 견딘 여인'.",
+    "At 2026-08-26 21:41 KST, the thumbnail was replaced with the plain-language hierarchy '마왕퇴 한나라 무덤의 / 미 이 라'. The title surface now uses gold texture extracted from the approved Qin reference; Gmarket Sans Bold is recorded only as a glyph-mask base, not the reference's exact font."
   ]
 }

@@ -33,6 +33,7 @@ from dataclasses import dataclass, asdict
 from pathlib import Path
 
 from _config import load, load_env
+from script_context_gate import validate_context_review
 from tts_pronunciation import DEFAULT_DICTIONARY, PronunciationDictionary
 
 # 한국어 Windows 콘솔은 기본이 cp949라 한글·기호 출력에서 죽는다. 먼저 막아둔다.
@@ -118,10 +119,11 @@ class Config:
 # ──────────────────────────────────────────────────────────────
 # 대본 파서
 # ──────────────────────────────────────────────────────────────
-SCENE_RE = re.compile(r"^\[장면\s*(\d+)\]", re.M)
+SCENE_RE = re.compile(r"^(?:\[장면\s*(\d+)\]|##\s*장면\s*(\d+)(?:\s*—.*)?)", re.M)
 # 무협 파이프라인이 [한국어 번역]/[한국어 원문] 둘 다 받는 것과 같은 이유로
 # 이 채널도 표기 흔들림을 흡수한다.
 NARR_RE = re.compile(r"^\[한국어\s*(?:나레이션|내레이션|번역|원문)\]\s*(.*)$")
+MD_NARR_RE = re.compile(r"^-\s*(?:나레이션|내레이션):\s*(.*)$")
 TAG_RE = re.compile(r"^\[[^\]]+\]")
 
 
@@ -142,13 +144,13 @@ def parse_script(path: Path) -> list[Scene]:
 
     scenes: list[Scene] = []
     for i, m in enumerate(marks):
-        seq = int(m.group(1))
+        seq = int(m.group(1) or m.group(2))
         block = raw[m.end(): marks[i + 1].start() if i + 1 < len(marks) else len(raw)]
 
         lines: list[str] = []
         collecting = False
         for line in block.splitlines():
-            hit = NARR_RE.match(line.strip())
+            hit = NARR_RE.match(line.strip()) or MD_NARR_RE.match(line.strip())
             if hit:
                 collecting = True
                 if hit.group(1).strip():
@@ -250,10 +252,28 @@ def main() -> int:
     ap.add_argument("--outdir", type=Path, default=None, help="출력 폴더 (기본: 대본 옆 audio/)")
     ap.add_argument("--pronunciation-dictionary", type=Path, default=DEFAULT_DICTIONARY,
                     help="ElevenLabs 전송 전용 발음 치환 사전")
+    ap.add_argument("--context-script", type=Path, default=None,
+                    help="문맥 검수를 받은 원문 대본(기본: 입력 파일 옆 01.대본.txt)")
+    ap.add_argument("--context-review", type=Path, default=None,
+                    help="문맥 검수 잠금(기본: 원문 대본 옆 01.문맥검수.json)")
     args = ap.parse_args()
 
     if not args.script.exists():
         sys.exit(f"[에러] 대본 파일이 없습니다: {args.script}")
+
+    context_script = args.context_script or args.script.parent / "01.대본.txt"
+    context_review = args.context_review or context_script.parent / "01.문맥검수.json"
+    context_report = validate_context_review(context_script, context_review)
+    if not context_report.passed:
+        details = "\n".join(f"  - {failure}" for failure in context_report.failures)
+        sys.exit(
+            "[에러] 한국어 문맥 QA를 통과하지 않아 TTS를 생성하지 않습니다.\n"
+            f"대본: {context_script}\n검수: {context_review}\n{details}"
+        )
+    print(
+        f"[문맥 QA 통과] 문단 {context_report.paragraphs} · "
+        f"문장 {context_report.sentences} · 접속 표지 {context_report.marker_count}"
+    )
 
     cfg = Config.from_env(load_env(ROOT / ".env"), require_api_key=args.run)
     all_scenes = parse_script(args.script)
@@ -355,9 +375,10 @@ def main() -> int:
         "total_duration": round(sum(v["duration"] or 0 for v in results.values()), 3),
         "scenes": dict(sorted(results.items(), key=lambda kv: int(kv[0]))),
     }
-    manifest_path.write_text(
-        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    if args.run:
+        manifest_path.write_text(
+            json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
 
     print(f"\n  생성 {made} · 건너뜀 {skipped} · 실패 {failed}")
     if args.run:
@@ -366,7 +387,10 @@ def main() -> int:
         print(f"  과금 문자 {billed_chars:,}자")
     else:
         print(f"  예상 과금 {billed_chars:,}자 — 실제로 만들려면 --run 을 붙이세요.")
-    print(f"  길이표 → {manifest_path}\n")
+        print("  드라이런이므로 기존 길이표는 변경하지 않았습니다.")
+    if args.run:
+        print(f"  길이표 → {manifest_path}")
+    print()
 
     return 1 if failed else 0
 

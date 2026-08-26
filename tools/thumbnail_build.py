@@ -15,7 +15,7 @@
 
 사용법
   python tools/thumbnail_build.py 산출물/EP01_진시황릉 --title "진시황릉"
-  python tools/thumbnail_build.py ... --title "마왕퇴 한묘" --kicker "2천 년을 견딘 여인"
+  python tools/thumbnail_build.py ... --title "미 이 라" --kicker "마왕퇴 한나라 무덤의"
   python tools/thumbnail_build.py ... --bg 산출물/EP01_진시황릉/images/001.jpg
   python tools/thumbnail_build.py ... --title "진시황릉" --dry     # 배경 없이 미리보기
 """
@@ -27,7 +27,7 @@ import random
 import sys
 from pathlib import Path
 
-from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
 
 from _config import load
 
@@ -122,6 +122,34 @@ def procedural_gold_texture(size: tuple[int, int]) -> Image.Image:
     return tex
 
 
+def reference_gold_face(size: tuple[int, int], target_y: int, target_h: int,
+                        texture_path: Path | None) -> Image.Image:
+    """샘플 제목에서 추출한 금박 표면을 반복·반전해 글자 면 전체에 채운다."""
+    W, H = size
+    if not texture_path or not texture_path.exists():
+        local = multistop_gradient(
+            (W, max(1, target_h)),
+            [(0.0, "#FFF48E"), (0.45, "#F8CE47"), (1.0, "#D69B16")],
+        )
+    else:
+        src = Image.open(texture_path).convert("RGB")
+        ratio = target_h / max(1, src.height)
+        tile_w = max(24, int(src.width * ratio))
+        tile = src.resize((tile_w, max(1, target_h)), Image.LANCZOS)
+        local = Image.new("RGB", (W, max(1, target_h)))
+        x, n = 0, 0
+        while x < W:
+            part = ImageOps.mirror(tile) if n % 2 else tile
+            local.paste(part, (x, 0))
+            x += tile_w
+            n += 1
+        # 타일 경계만 아주 약하게 누르고 샘플의 금속 대비는 유지한다.
+        local = ImageEnhance.Contrast(local.filter(ImageFilter.GaussianBlur(0.25))).enhance(1.08)
+    out = Image.new("RGB", (W, H), (0, 0, 0))
+    out.paste(local, (0, target_y))
+    return out
+
+
 def draw_reference_gold_title(base: Image.Image, title: str, font_path: str,
                               max_w: int, start_size: int, y: int,
                               style: dict) -> tuple[int, int]:
@@ -171,29 +199,17 @@ def draw_reference_gold_title(base: Image.Image, title: str, font_path: str,
     )
     base.paste(hex2rgb(style.get("제목금테두리", "#A96908")), mask=gold_rim)
 
-    # 하이라이트가 여러 번 꺾이는 금속 면
-    local_grad = multistop_gradient(
-        (W, max(1, th)),
-        [(float(p), c) for p, c in style.get(
-            "제목금속색_스톱",
-            [[0.0, "#FFF7C8"], [0.18, "#F5C74A"], [0.48, "#E3A51C"],
-             [0.72, "#F7CF5A"], [1.0, "#C47A08"]],
-        )],
-    )
-    grad = Image.new("RGB", (W, H), (0, 0, 0))
-    grad.paste(local_grad, (0, y))
-    base.paste(grad, mask=face)
-
-    # 금박 입자와 얕은 고대 문양
-    texture = procedural_gold_texture((W, H))
-    texture.putalpha(ImageChops.multiply(texture.getchannel("A"), face))
-    base.alpha_composite(texture) if base.mode == "RGBA" else base.paste(texture, mask=texture.getchannel("A"))
+    # 샘플에서 직접 추출한 금박 문양·색·세로 명암을 글자 면에 적용한다.
+    texture_setting = style.get("제목금박텍스처")
+    texture_path = (ROOT / texture_setting).resolve() if texture_setting else None
+    gold_face = reference_gold_face((W, H), y, th, texture_path)
+    base.paste(gold_face, mask=face)
 
     # 위·왼쪽 밝은 날과 아래·오른쪽 내측 그림자로 양각을 완성
     hi = ImageChops.subtract(face, shifted(face, 0, 3)).filter(ImageFilter.GaussianBlur(0.7))
     lo = ImageChops.subtract(face, shifted(face, 0, -4)).filter(ImageFilter.GaussianBlur(1.0))
-    base.paste((255, 255, 218), mask=hi.point(lambda v: int(v * 0.82)))
-    base.paste((106, 55, 0), mask=lo.point(lambda v: int(v * 0.62)))
+    base.paste((255, 250, 185), mask=hi.point(lambda v: int(v * 0.88)))
+    base.paste((121, 67, 2), mask=lo.point(lambda v: int(v * 0.58)))
     return font.size, tw
 
 

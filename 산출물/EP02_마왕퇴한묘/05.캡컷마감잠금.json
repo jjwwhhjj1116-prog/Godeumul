@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "editor": "CapCut",
+  "project_name": "EP02 마왕퇴 한나라 무덤 - CapCut 최종",
+  "video": "완성본_EP02_마왕퇴한나라무덤_capcut_4K.mp4",
+  "video_sha256": "3bd6010a8a2516d077e3914706858d38ed5c956e99fb937fffdb662584fd1a3d",
+  "locked_at": "2026-08-27T00:42:42+09:00",
+  "checks": {
+    "caption_style_verified": true,
+    "caption_sync_verified": true,
+    "motion_finish_verified": true,
+    "full_playback_verified": true,
+    "audio_policy_verified": true
+  },
+  "media": {
+    "width": 2160,
+    "height": 3840,
+    "fps": 30.0,
+    "duration": 165.071,
+    "video_codec": "h264",
+    "audio_codec": "aac"
+  },
+  "context_review": "01.문맥검수.json",
+  "draft_audio_guard": {
+    "path": "C:\\Users\\7500F\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\EP02 마왕퇴 한나라 무덤 - CapCut 최종\\draft_content.json",
+    "sha256": "fd4fda1a97247ada22217b83ba8d5ad885e0d730ba398521164b6673cac56f6b",
+    "passed": true,
+    "forbidden_materials": {
+      "audio_effects": 0,
+      "realtime_denoises": 0,
+      "vocal_beautifys": 0,
+      "vocal_separations": 0
+    },
+    "forbidden_refs": {
+      "audio_effects": 0,
+      "realtime_denoises": 0,
+      "vocal_beautifys": 0,
+      "vocal_separations": 0
+    },
+    "queued_tasks": {
+      "enhance_voice_segid_list": 0,
+      "normalize_loudness_segid_list": 0,
+      "normalize_loudness_audio_denoise_segid_list": 0
+    },
+    "normalization_mismatches": 0,
+    "narration_volume_mismatches": 0,
+    "video_volume_mismatches": 0
+  }
+}
