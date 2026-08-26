@@ -15,6 +15,7 @@
 
 사용법
   python tools/thumbnail_build.py 산출물/EP01_진시황릉 --title "진시황릉"
+  python tools/thumbnail_build.py ... --title "마왕퇴 한묘" --kicker "2천 년을 견딘 여인"
   python tools/thumbnail_build.py ... --bg 산출물/EP01_진시황릉/images/001.jpg
   python tools/thumbnail_build.py ... --title "진시황릉" --dry     # 배경 없이 미리보기
 """
@@ -122,7 +123,8 @@ def procedural_gold_texture(size: tuple[int, int]) -> Image.Image:
 
 
 def draw_reference_gold_title(base: Image.Image, title: str, font_path: str,
-                              max_w: int, start_size: int, y: int) -> tuple[int, int]:
+                              max_w: int, start_size: int, y: int,
+                              style: dict) -> tuple[int, int]:
     """금속 양각 + 검은 외곽선 + 아래로 깊은 3D 돌출 제목을 그린다."""
     W, H = base.size
     font = fit_font(font_path, title, max_w, start_size)
@@ -134,45 +136,49 @@ def draw_reference_gold_title(base: Image.Image, title: str, font_path: str,
     face = Image.new("L", (W, H), 0)
     ImageDraw.Draw(face).text((tx, ty), title, font=font, fill=255)
 
+    outline_width = int(style.get("제목외곽선폭", 8))
+    rim_width = int(style.get("제목금테두리폭", 3))
+    depth_max = int(style.get("제목돌출깊이", 14))
+    shadow_xy = style.get("제목그림자오프셋", [6, 17])
+    shadow_blur = int(style.get("제목그림자블러", 7))
+
     outer = Image.new("L", (W, H), 0)
     ImageDraw.Draw(outer).text(
-        (tx, ty), title, font=font, fill=255, stroke_width=11, stroke_fill=255
+        (tx, ty), title, font=font, fill=255,
+        stroke_width=outline_width, stroke_fill=255
     )
 
-    # 깊고 단단한 투영 그림자
-    shadow = shifted(outer, 9, 28).filter(ImageFilter.GaussianBlur(11))
-    base.paste((0, 0, 0), mask=shadow.point(lambda v: int(v * 0.78)))
+    # 샘플처럼 제목 바로 아래에 붙는 짧고 단단한 투영 그림자
+    shadow = shifted(outer, int(shadow_xy[0]), int(shadow_xy[1])).filter(
+        ImageFilter.GaussianBlur(shadow_blur)
+    )
+    base.paste((0, 0, 0), mask=shadow.point(lambda v: int(v * 0.72)))
 
     # 아래쪽으로 쌓이는 3D 돌출부: 먼 층부터 가까운 층 순서
-    for depth in range(24, 0, -1):
-        r = depth / 24
-        color = (
-            int(18 + (70 - 18) * (1 - r)),
-            int(12 + (42 - 12) * (1 - r)),
-            int(3 + (5 - 3) * (1 - r)),
-        )
+    far = hex2rgb(style.get("제목돌출색_먼쪽", "#090704"))
+    near = hex2rgb(style.get("제목돌출색_가까운쪽", "#3A2506"))
+    for depth in range(depth_max, 0, -1):
+        r = depth / max(1, depth_max)
+        color = tuple(int(far[i] + (near[i] - far[i]) * (1 - r)) for i in range(3))
         base.paste(color, mask=shifted(outer, max(2, depth // 3), depth))
 
     # 두꺼운 먹색 테두리와 얇은 금색 림
-    base.paste((5, 5, 3), mask=outer)
+    base.paste(hex2rgb(style.get("제목외곽선", "#080603")), mask=outer)
     gold_rim = Image.new("L", (W, H), 0)
     ImageDraw.Draw(gold_rim).text(
-        (tx, ty), title, font=font, fill=255, stroke_width=5, stroke_fill=255
+        (tx, ty), title, font=font, fill=255,
+        stroke_width=rim_width, stroke_fill=255
     )
-    base.paste((181, 113, 10), mask=gold_rim)
+    base.paste(hex2rgb(style.get("제목금테두리", "#A96908")), mask=gold_rim)
 
     # 하이라이트가 여러 번 꺾이는 금속 면
     local_grad = multistop_gradient(
         (W, max(1, th)),
-        [
-            (0.00, "#FFF5B0"),
-            (0.14, "#E5A019"),
-            (0.31, "#FFF2A0"),
-            (0.49, "#D78B09"),
-            (0.67, "#FFD04B"),
-            (0.84, "#A85B02"),
-            (1.00, "#E6A218"),
-        ],
+        [(float(p), c) for p, c in style.get(
+            "제목금속색_스톱",
+            [[0.0, "#FFF7C8"], [0.18, "#F5C74A"], [0.48, "#E3A51C"],
+             [0.72, "#F7CF5A"], [1.0, "#C47A08"]],
+        )],
     )
     grad = Image.new("RGB", (W, H), (0, 0, 0))
     grad.paste(local_grad, (0, y))
@@ -205,6 +211,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="썸네일 합성기")
     ap.add_argument("episode", type=Path)
     ap.add_argument("--title", required=True, help="유물명 (초대형 골드 텍스트)")
+    ap.add_argument("--kicker", default=None,
+                    help="상단 미스터리 한 줄 (없으면 채널 기본 문구)")
     ap.add_argument("--bg", type=Path, default=None, help="배경 이미지 (기본: 자산/썸네일배경.png → images/001.jpg)")
     ap.add_argument("--out", type=Path, default=None)
     ap.add_argument("--dry", action="store_true", help="배경 없이 단색으로 미리보기")
@@ -213,7 +221,7 @@ def main() -> int:
     ep = args.episode.resolve()
     W, H = CFG.get("출력.해상도", [1080, 1920])
     T = CFG.get("썸네일", {})
-    brand = T.get("상단문구", CFG.get("채널.이름", ""))
+    brand = args.kicker or T.get("상단문구", CFG.get("채널.이름", ""))
 
     # ── 배경 ────────────────────────────────────────────
     if args.dry:
@@ -241,20 +249,23 @@ def main() -> int:
         base = base.resize((W, H), Image.LANCZOS)
 
     # 상단을 어둡게 깔아 글자가 뜨게 한다
-    band_h = int(H * T.get("텍스트영역_상단비율", 0.28))
+    band_h = int(H * T.get("텍스트영역_상단비율", 0.22))
+    shade_strength = int(T.get("텍스트영역_암도", 180))
     shade = Image.new("L", (W, H), 0)
     sd = ImageDraw.Draw(shade)
     for y in range(band_h):
-        sd.line([(0, y), (W, y)], fill=int(215 * (1 - y / band_h) ** 0.8))
+        sd.line([(0, y), (W, y)],
+                fill=int(shade_strength * (1 - y / band_h) ** 0.8))
     base = Image.composite(Image.new("RGB", (W, H), (0, 0, 0)), base, shade)
 
     d = ImageDraw.Draw(base)
     margin = int(W * 0.06)
 
     # ── 상단 채널명 ─────────────────────────────────────
-    bf = fit_font(T.get("상단폰트"), brand, W - margin * 2, int(H * 0.032))
+    bf = fit_font(T.get("상단폰트"), brand, W - margin * 2,
+                  int(H * T.get("상단문구크기비율", 0.033)))
     bw = bf.getbbox(brand)[2] - bf.getbbox(brand)[0]
-    by = int(H * 0.035)
+    by = int(H * T.get("상단문구Y비율", 0.03))
     draw_outlined(d, ((W - bw) // 2, by), brand, bf, (255, 255, 255), (0, 0, 0), 5)
 
     # ── 초대형 유물명 (레퍼런스형 금속 양각) ─────────────
@@ -263,9 +274,10 @@ def main() -> int:
         base,
         title,
         T.get("제목폰트"),
-        int(W * 0.94),
-        int(H * 0.145),
-        by + int(H * 0.075),
+        int(W * T.get("제목최대폭비율", 0.9)),
+        int(H * T.get("제목시작크기비율", 0.14)),
+        int(H * T.get("제목Y비율", 0.075)),
+        T,
     )
 
     out = args.out or (ep / "썸네일.jpg")
