@@ -246,6 +246,7 @@ def build_body(m: dict, privacy: str, publish_at: str | None) -> dict:
         "status": {
             "privacyStatus": privacy,
             "selfDeclaredMadeForKids": bool(CFG.get("업로드.아동용", False)),
+            "containsSyntheticMedia": bool(CFG.get("업로드.합성콘텐츠고지", True)),
             "license": "youtube",
             "embeddable": True,
         },
@@ -255,7 +256,36 @@ def build_body(m: dict, privacy: str, publish_at: str | None) -> dict:
     return body
 
 
-def upload(yt, video: Path, body: dict, thumb: Path | None) -> str:
+def set_and_verify_thumbnail(yt, vid: str, thumb: Path) -> dict:
+    """맞춤 썸네일을 설정하고 유튜브가 돌려준 원격 썸네일까지 확인한다."""
+    from googleapiclient.http import MediaFileUpload
+
+    result = yt.thumbnails().set(
+        videoId=vid,
+        media_body=MediaFileUpload(str(thumb), mimetype="image/jpeg"),
+    ).execute()
+    response_items = result.get("items") or []
+    if not response_items:
+        raise RuntimeError("유튜브가 맞춤 썸네일 등록 결과를 반환하지 않았습니다.")
+
+    videos = yt.videos().list(part="snippet", id=vid).execute().get("items") or []
+    if not videos:
+        raise RuntimeError("썸네일 등록 후 영상을 다시 조회하지 못했습니다.")
+    remote = videos[0]["snippet"].get("thumbnails") or {}
+    if not remote:
+        raise RuntimeError("썸네일 등록 후 원격 썸네일 주소가 없습니다.")
+
+    urls = {name: data.get("url", "") for name, data in remote.items() if data.get("url")}
+    print(f"  썸네일   : {thumb.name} 적용 및 원격 조회 확인")
+    return {
+        "applied": True,
+        "verified": True,
+        "source": str(thumb),
+        "remote_urls": urls,
+    }
+
+
+def upload(yt, video: Path, body: dict, thumb: Path | None) -> tuple[str, dict | None]:
     from googleapiclient.errors import HttpError
     from googleapiclient.http import MediaFileUpload
 
@@ -284,11 +314,10 @@ def upload(yt, video: Path, body: dict, thumb: Path | None) -> str:
     print(f"    100%\n\n  영상 ID : {vid}")
     print(f"  주소     : https://youtu.be/{vid}")
 
+    thumbnail_result = None
     if thumb and thumb.exists():
-        yt.thumbnails().set(videoId=vid,
-                            media_body=MediaFileUpload(str(thumb))).execute()
-        print(f"  썸네일   : {thumb.name} 적용")
-    return vid
+        thumbnail_result = set_and_verify_thumbnail(yt, vid, thumb)
+    return vid, thumbnail_result
 
 
 def main() -> int:
@@ -387,9 +416,7 @@ def main() -> int:
         print("  (점검만 했습니다. 실제로 올리려면 --run)\n")
         return 0
 
-    # 합성 콘텐츠 고지는 API 에 필드가 없다 — 스튜디오에서 켜야 한다.
-    print("\n  ※ '변형·합성 콘텐츠' 고지는 API 에 필드가 없습니다.")
-    print("     업로드 후 스튜디오에서 한 번 켜야 합니다. (07-3)")
+    print("\n  변형·합성 콘텐츠 고지 : API로 자동 적용")
 
     yt = service(args.token, args.client_secret)
 
@@ -402,7 +429,7 @@ def main() -> int:
         print(f"     token.json 을 지우고 --auth 를 다시 하세요:\n       {args.token}\n")
         return 1
 
-    vid = upload(yt, video, build_body(m, privacy, publish_at), thumb)
+    vid, thumbnail_result = upload(yt, video, build_body(m, privacy, publish_at), thumb)
     if playlist:
         add_to_playlist(yt, vid, playlist)
 
@@ -410,11 +437,13 @@ def main() -> int:
         {"video_id": vid, "url": f"https://youtu.be/{vid}",
          "제목": m["제목"], "공개": args.privacy, "예약": args.when,
          "재생목록": playlist,
+         "합성콘텐츠고지": bool(CFG.get("업로드.합성콘텐츠고지", True)),
+         "썸네일": thumbnail_result,
          "올린시각": datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"),
-         "남은일": ["스튜디오에서 합성 콘텐츠 고지 켜기", "첫 댓글 고정"]},
+         "남은일": ["첫 댓글 고정"]},
         ensure_ascii=False, indent=1), encoding="utf-8")
 
-    print("\n  남은 일 : (1) 합성 콘텐츠 고지  (2) 첫 댓글 고정 (07-2)")
+    print("\n  남은 일 : 첫 댓글 고정 (07-2)")
     print(f"  스튜디오 : https://studio.youtube.com/video/{vid}/edit\n")
     return 0
 

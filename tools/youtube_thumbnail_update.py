@@ -11,7 +11,9 @@ from pathlib import Path
 
 from PIL import Image
 
-from youtube_upload import CFG, SECRETS, THUMB_MAX, TOKEN, service, whoami
+from youtube_upload import (
+    CFG, SECRETS, THUMB_MAX, TOKEN, service, set_and_verify_thumbnail, whoami,
+)
 
 
 def sha256(path: Path) -> str:
@@ -48,8 +50,6 @@ def main() -> int:
         print("\n점검만 완료. 실제 교체는 --run 을 붙이세요.")
         return 0
 
-    from googleapiclient.http import MediaFileUpload
-
     yt = service(args.token.resolve(), args.client_secret.resolve())
     channel = whoami(yt)
     expected = CFG.get("업로드.채널명", "") or CFG.get("채널.이름", "")
@@ -64,11 +64,9 @@ def main() -> int:
     if videos[0]["snippet"].get("channelId") != owner:
         sys.exit("[에러] 이 토큰이 소유한 영상이 아닙니다.")
 
-    yt.thumbnails().set(
-        videoId=args.video_id,
-        media_body=MediaFileUpload(str(thumb), mimetype="image/jpeg"),
-    ).execute()
-    print(f"\n교체 완료 : {channel} / https://youtube.com/shorts/{args.video_id}")
+    result = set_and_verify_thumbnail(yt, args.video_id, thumb)
+    print(f"\n교체·검증 완료 : {channel} / https://youtube.com/shorts/{args.video_id}")
+    print(f"원격 썸네일 : {result['remote_urls'].get('maxres') or result['remote_urls'].get('high')}")
     return 0
 
 
