@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "script": "01.대본검토본.txt",
+  "script": "01.대본.txt",
   "script_sha256": "b847b7aa1a299b92ba170950c63c135835f15fa4e89a6e557da992895d7b8f67",
   "reviewer": "korean-proofreader + godeumul-context-qa",
   "status": "PASS",
-  "approval_state": "USER_REVIEW_PENDING",
-  "tts_authorization": "HOLD_UNTIL_USER_APPROVAL",
+  "approval_state": "USER_APPROVED",
+  "tts_authorization": "AUTHORIZED",
   "checks": {
     "paragraph_roles_and_flow": "PASS",
     "adjacent_sentence_relations": "PASS",

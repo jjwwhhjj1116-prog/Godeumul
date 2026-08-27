@@ -1,0 +1,1663 @@
+[
+  {
+    "n": 1,
+    "chapter": "1. 거대한 얼굴",
+    "ct": "DISCOVERY_REVEAL",
+    "txt": "여기 중국 쓰촨의 땅속에서, 폭이 무려 1미터 38센티미터나 되는 거대한 청동 얼굴이 발견됐습니다.",
+    "tts": 6.734,
+    "omni": 8,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "fresh earth section above the left ear",
+      "route": "through the visible section seam and across the projecting pupils",
+      "destination": "outer edge of the right wing-like ear",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "SURFACE_TO_INTERIOR",
+      "pattern_interrupts": [
+        "earth face opens within the first beat"
+      ],
+      "settle_point": "full frontal mask with both ear anchors readable"
+    },
+    "visual_lock": {
+      "civilization": "Bronze Age ancient Shu civilization",
+      "era": "late second millennium BCE, with key deposits approximately 1300-1100 BCE; modern scenes explicitly dated",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian ancient Shu people only in ancient scenes; East Asian Chinese people only in modern scenes",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Sanxingdui Museum object dimensions and 1986 Pit 2 context",
+      "site_artifact_fingerprint": [
+        "1986 Pit 2 protruding-pupil mask",
+        "138-centimetre wing-to-wing width",
+        "tubular pupils projecting about 16 centimetres"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 1.879,
+        "narration": "여기 중국 쓰촨의 땅속에서,",
+        "camera": "Open the earth section and accelerate toward the buried bronze face.",
+        "action": "Open the earth section and accelerate toward the buried bronze face.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 1.879,
+        "end": 6.734,
+        "narration": "폭이 무려 1미터 38센티미터나 되는 거대한 청동 얼굴이 발견됐습니다.",
+        "camera": "Race across the real mask width and settle on its complete frontal form.",
+        "action": "Race across the real mask width and settle on its complete frontal form.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Bronze Age ancient Shu civilization, late second millennium BCE, Sanxingdui at Guanghan in the Sichuan Basin, southwest China. A section-ready subterranean discovery tableau: compact Sichuan earth opens along a clean physical cut face around the documented 1986 Pit 2 bronze mask with protruding pupils, the full 138-centimetre wing-to-wing width readable in one frontal composition; huge angular face, tubular eyes projecting about 16 centimetres, wing-like ears, dark green patina and soil residue, two unnumbered warm-bronze dimension ticks anchored to the true outer ear edges. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at fresh earth section above the left ear; travel through the visible section seam and across the projecting pupils; arrive at outer edge of the right wing-like ear; settle on full frontal mask with both ear anchors readable. Integrate one restrained dimension line anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Earth grains break away along the pre-existing section seam as the camera dives to the mask, then a thin dimension line grows only between the real ear edges and remains behind projecting bronze details. TTS-locked timing: 0.00-1.88s: Open the earth section and accelerate toward the buried bronze face. 1.88-6.73s: Race across the real mask width and settle on its complete frontal form. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "veo_graphic": {
+      "function": "DIMENSION_LINE",
+      "evidence_relation": "Published 138 cm mask width; exact number stays in narration and captions",
+      "visual_language": "slender aged-bronze 3D survey line with short perpendicular end ticks and no numerals",
+      "start": "outer edge of the left ear",
+      "via": [
+        "lower edge of the left pupil",
+        "bridge of the nose"
+      ],
+      "end": "outer edge of the right ear",
+      "occlusion": "the graphic passes behind foreground earth, timber, ivory or bronze and reappears with correct world-space parallax",
+      "timing": "emerge only after the first camera movement, travel during its exact narration beat, settle, then fade before the end",
+      "camera_relation": "anchored in the physical world and to named surfaces with correct perspective, depth, lighting, reflections and occlusion",
+      "arrival_reaction": "a restrained warm glint touches both ear-edge ticks"
+    }
+  },
+  {
+    "n": 2,
+    "chapter": "1. 거대한 얼굴",
+    "ct": "ARTIFACT_MACRO",
+    "txt": "바로 3천 2백 년 전 고대 촉나라의 유적, 산싱두이였죠. 눈은 16센티미터나 튀어나왔고, 귀는 날개처럼 벌어져 있습니다.",
+    "tts": 7.848,
+    "omni": 8,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "tip of the left tubular pupil",
+      "route": "back along the pupil axis then laterally across the cheek",
+      "destination": "outer tip of the left wing-like ear",
+      "speed_profile": "MACRO_PROBE_SETTLE",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "NONE",
+      "pattern_interrupts": [
+        "focus snap from pupil tip to socket"
+      ],
+      "settle_point": "three-quarter profile holding pupil and ear together"
+    },
+    "visual_lock": {
+      "civilization": "Bronze Age ancient Shu civilization",
+      "era": "late second millennium BCE, with key deposits approximately 1300-1100 BCE; modern scenes explicitly dated",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian ancient Shu people only in ancient scenes; East Asian Chinese people only in modern scenes",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Sanxingdui Museum protruding-pupil mask measurements",
+      "site_artifact_fingerprint": [
+        "same 1986 Pit 2 mask",
+        "16-centimetre pupil projection",
+        "wing-like ears and angular cast face"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.554,
+        "narration": "바로 3천 2백 년 전 고대 촉나라의 유적, 산싱두이였죠.",
+        "camera": "Probe from the eye tip back to the socket.",
+        "action": "Probe from the eye tip back to the socket.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 3.554,
+        "end": 7.848,
+        "narration": "눈은 16센티미터나 튀어나왔고, 귀는 날개처럼 벌어져 있습니다.",
+        "camera": "Change direction and run laterally to the wing-like ear.",
+        "action": "Change direction and run laterally to the wing-like ear.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Bronze Age ancient Shu civilization, late second millennium BCE, Sanxingdui at Guanghan in the Sichuan Basin, southwest China. Three-quarter macro portrait of the same documented 1986 protruding-pupil bronze mask, showing the 16-centimetre tubular pupils in true profile, flared wing-like ears, broad angular nose, cast seams, pitted green patina, compact soil in recesses and no human body; one unnumbered neutral-bronze depth line is physically anchored from the eye socket to the pupil tip. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at tip of the left tubular pupil; travel back along the pupil axis then laterally across the cheek; arrive at outer tip of the left wing-like ear; settle on three-quarter profile holding pupil and ear together. Integrate one restrained dimension line anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. The camera starts at the pupil tip, snaps backward to the socket, then strafes rapidly toward the ear while the world-anchored depth line grows between the two true bronze surfaces. TTS-locked timing: 0.00-3.55s: Probe from the eye tip back to the socket. 3.55-7.85s: Change direction and run laterally to the wing-like ear. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "veo_graphic": {
+      "function": "DIMENSION_LINE",
+      "evidence_relation": "Published approximately 16 cm projection of the pupils; no generated number",
+      "visual_language": "thin neutral aged-bronze depth line with two tiny physical end ticks",
+      "start": "left eye socket rim",
+      "via": [
+        "midpoint of the tubular pupil"
+      ],
+      "end": "tip of the tubular pupil",
+      "occlusion": "the graphic passes behind foreground earth, timber, ivory or bronze and reappears with correct world-space parallax",
+      "timing": "emerge only after the first camera movement, travel during its exact narration beat, settle, then fade before the end",
+      "camera_relation": "anchored in the physical world and to named surfaces with correct perspective, depth, lighting, reflections and occlusion",
+      "arrival_reaction": "one small bronze reflection runs to the pupil tip"
+    }
+  },
+  {
+    "n": 3,
+    "chapter": "1. 거대한 얼굴",
+    "ct": "ARTIFACT_MACRO",
+    "txt": "사람이 쓰기에는 터무니없이 컸어요. 대체 누구의 얼굴을 이렇게까지 키워 놓은 걸까요?",
+    "tts": 4.969,
+    "omni": 6,
+    "evidence": "미확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "patina crater beside the left eye",
+      "route": "fast macro pullback into a shallow half-orbit",
+      "destination": "dark opening inside the left pupil",
+      "speed_profile": "CONTROLLED_ORBIT_REVEAL",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "scale reference enters after the pullback"
+      ],
+      "settle_point": "empty pupil held as the unresolved question"
+    },
+    "visual_lock": {
+      "civilization": "Bronze Age ancient Shu civilization",
+      "era": "late second millennium BCE, with key deposits approximately 1300-1100 BCE; modern scenes explicitly dated",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian ancient Shu people only in ancient scenes; East Asian Chinese people only in modern scenes",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Measured mask size; identity and represented being remain unknown",
+      "site_artifact_fingerprint": [
+        "giant 138-centimetre mask",
+        "plain human-head-sized comparison form",
+        "empty undocumented identity"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 2.149,
+        "narration": "사람이 쓰기에는 터무니없이 컸어요.",
+        "camera": "Pull back from bronze microtexture to reveal the impossible wearable scale.",
+        "action": "Pull back from bronze microtexture to reveal the impossible wearable scale.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 2.149,
+        "end": 4.969,
+        "narration": "대체 누구의 얼굴을 이렇게까지 키워 놓은 걸까요?",
+        "camera": "Orbit just enough to end on the unanswered empty eye.",
+        "action": "Orbit just enough to end on the unanswered empty eye.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Bronze Age ancient Shu civilization, late second millennium BCE, Sanxingdui at Guanghan in the Sichuan Basin, southwest China. The documented giant protruding-pupil mask stands vertically on a restrained conservation support within an artifact-scale archaeological diorama; beside it a plain unlabelled human-head-sized wooden reference form makes the impossible wearable scale obvious, while the mask's empty dark eyes remain the final visual question, no invented deity and no person wearing it. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at patina crater beside the left eye; travel fast macro pullback into a shallow half-orbit; arrive at dark opening inside the left pupil; settle on empty pupil held as the unresolved question. The camera pulls back quickly from patina pores to reveal the human-scale reference, performs a short half-orbit and stops inside the empty eye without assigning an identity. TTS-locked timing: 0.00-2.15s: Pull back from bronze microtexture to reveal the impossible wearable scale. 2.15-4.97s: Orbit just enough to end on the unanswered empty eye. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 4,
+    "chapter": "2. 발견",
+    "ct": "DISCOVERY_ACTION",
+    "txt": "첫 단서는 1929년, 한 농부 가족이 밭에 물을 대려고 땅을 파다가 옥기를 발견하면서 나왔습니다.",
+    "tts": 6.316,
+    "omni": 8,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "iron hoe head above the wet channel",
+      "route": "down the tool arc through loose soil",
+      "destination": "newly exposed jade edge",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "CONTROLLED_DOCUMENTARY_HANDHELD_GIMBAL",
+      "depth_transition": "NONE",
+      "pattern_interrupts": [
+        "impact focus snap reveals green stone"
+      ],
+      "settle_point": "macro hold on jade and wet soil"
+    },
+    "visual_lock": {
+      "civilization": "Present-day Chinese archaeology at Sanxingdui",
+      "era": "the stated 1929, 1986 or 2021 Chinese discovery, excavation or conservation context",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian Chinese farmers, workers, archaeologists and conservators only",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Guanghan Municipal Government discovery history",
+      "site_artifact_fingerprint": [
+        "1929 irrigation-pit discovery",
+        "period-correct Chinese farmer family",
+        "jade objects in wet Sichuan soil"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 1.504,
+        "narration": "첫 단서는 1929년,",
+        "camera": "Follow the farmer's tool into the irrigation soil.",
+        "action": "Follow the farmer's tool into the irrigation soil.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 1.504,
+        "end": 6.316,
+        "narration": "한 농부 가족이 밭에 물을 대려고 땅을 파다가 옥기를 발견하면서 나왔습니다.",
+        "camera": "Snap to the first jade edge as wet dirt drops away.",
+        "action": "Snap to the first jade edge as wet dirt drops away.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at the Sanxingdui site in Guanghan, Sichuan, reconstructed specifically as the stated 1929, 1986 or 2021 discovery and excavation context. East Asian Chinese farmers workers archaeologists and conservators wearing period-correct clothing and equipment for the stated 1929, 1986 or 2021 context. 1929 rural Guanghan, Sichuan: an East Asian Chinese farmer and a family member in period-correct plain work clothes dig a small irrigation pit at the field edge; the wooden-handled iron hoe has just caught a smooth jade object beneath wet brown soil, water glistens in the shallow channel, no bronze mask and no modern machine. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at iron hoe head above the wet channel; travel down the tool arc through loose soil; arrive at newly exposed jade edge; settle on macro hold on jade and wet soil. The hoe completes one believable stroke, catches hard jade and recoils; the camera follows the tool, crash-focuses to the green stone and lowers with falling wet soil. TTS-locked timing: 0.00-1.50s: Follow the farmer's tool into the irrigation soil. 1.50-6.32s: Snap to the first jade edge as wet dirt drops away. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 5,
+    "chapter": "2. 발견",
+    "ct": "DISCOVERY_REVEAL",
+    "txt": "하지만 진짜 규모가 드러난 건 1986년이었죠. 벽돌용 흙을 파던 노동자들이 두 사각 구덩이를 열자, 청동과 금, 옥, 상아가 무더기로 모습을 드러냈거든요.",
+    "tts": 9.985,
+    "omni": 10,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "shovel blade at the first pit rim",
+      "route": "down the first cut face then through the exposed divider seam",
+      "destination": "deep artifact layer of the second rectangular pit",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "rapid vertical descent",
+        "hard bank across the earth divider"
+      ],
+      "settle_point": "wide two-pit section with categories still separated"
+    },
+    "visual_lock": {
+      "civilization": "Present-day Chinese archaeology at Sanxingdui",
+      "era": "the stated 1929, 1986 or 2021 Chinese discovery, excavation or conservation context",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian Chinese farmers, workers, archaeologists and conservators only",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Metropolitan Museum and National Science Review accounts of the 1986 pits",
+      "site_artifact_fingerprint": [
+        "1986 brick-earth work site",
+        "two adjacent rectangular pits",
+        "bronze, gold, jade and ivory deposit layers"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.13,
+        "narration": "하지만 진짜 규모가 드러난 건 1986년이었죠.",
+        "camera": "Track the shovel from brick-earth work into the first rectangular pit.",
+        "action": "Track the shovel from brick-earth work into the first rectangular pit.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 3.13,
+        "end": 9.985,
+        "narration": "벽돌용 흙을 파던 노동자들이 두 사각 구덩이를 열자, 청동과 금, 옥, 상아가 무더기로 모습을 드러냈거든요.",
+        "camera": "Cross the earth divider and reveal the second pit's layered bronze, gold, jade and ivory.",
+        "action": "Cross the earth divider and reveal the second pit's layered bronze, gold, jade and ivory.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at the Sanxingdui site in Guanghan, Sichuan, reconstructed specifically as the stated 1929, 1986 or 2021 discovery and excavation context. East Asian Chinese farmers workers archaeologists and conservators wearing period-correct clothing and equipment for the stated 1929, 1986 or 2021 context. Summer 1986 at the Sanxingdui brick-earth works: East Asian Chinese laborers in period-correct 1980s work clothes stand beside two adjacent rectangular sacrificial-pit cutaways; one shovel edge has exposed layered bronze heads, gold foil, jade, elephant tusks and broken ritual objects in dense earthen sections, all categories spatially distinct and no intact fantasy treasure room. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at shovel blade at the first pit rim; travel down the first cut face then through the exposed divider seam; arrive at deep artifact layer of the second rectangular pit; settle on wide two-pit section with categories still separated. Integrate one restrained section reveal anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Begin on the shovel edge, dive down the open section of the first pit, bank sharply through the narrow earth divider and enter the second pit as the already-present artifact layers catch the work light. TTS-locked timing: 0.00-3.13s: Track the shovel from brick-earth work into the first rectangular pit. 3.13-9.98s: Cross the earth divider and reveal the second pit's layered bronze, gold, jade and ivory. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "long_scene_review": "CONTINUOUS_SPATIAL_ACTION_REVIEWED_AND_FITS_10S",
+    "veo_graphic": {
+      "function": "SECTION_REVEAL",
+      "evidence_relation": "Documented adjacent Pits 1 and 2 and their excavated material categories",
+      "visual_language": "thin ochre earthen section seam with physically falling soil and restrained warm edges",
+      "start": "first rectangular pit rim",
+      "via": [
+        "first pit bronze layer",
+        "intact earth divider"
+      ],
+      "end": "second pit ivory-and-bronze layer",
+      "occlusion": "the graphic passes behind foreground earth, timber, ivory or bronze and reappears with correct world-space parallax",
+      "timing": "emerge only after the first camera movement, travel during its exact narration beat, settle, then fade before the end",
+      "camera_relation": "anchored in the physical world and to named surfaces with correct perspective, depth, lighting, reflections and occlusion",
+      "arrival_reaction": "a small fall of dry soil exposes one existing bronze edge"
+    }
+  },
+  {
+    "n": 6,
+    "chapter": "2. 발견",
+    "ct": "ARTIFACT_MACRO",
+    "txt": "그 안에 이 거대한 가면도 있었습니다. 가면 옆에는 고정용으로 보이는 구멍이 있습니다.",
+    "tts": 5.062,
+    "omni": 6,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "outer rim of the protruding pupil",
+      "route": "along the cheek casting edge toward the side",
+      "destination": "square attachment hole",
+      "speed_profile": "MACRO_PROBE_SETTLE",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "NONE",
+      "pattern_interrupts": [
+        "rack focus enters the attachment hole"
+      ],
+      "settle_point": "worked inner surface of the hole"
+    },
+    "visual_lock": {
+      "civilization": "Bronze Age ancient Shu civilization",
+      "era": "late second millennium BCE, with key deposits approximately 1300-1100 BCE; modern scenes explicitly dated",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian ancient Shu people only in ancient scenes; East Asian Chinese people only in modern scenes",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Sanxingdui Museum and HKPM attachment-hole observations",
+      "site_artifact_fingerprint": [
+        "1986 protruding-pupil mask continuity",
+        "square attachment hole at the side",
+        "U-shaped rear bronze edge"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 2.189,
+        "narration": "그 안에 이 거대한 가면도 있었습니다.",
+        "camera": "Connect the giant mask to its side edge.",
+        "action": "Connect the giant mask to its side edge.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 2.189,
+        "end": 5.062,
+        "narration": "가면 옆에는 고정용으로 보이는 구멍이 있습니다.",
+        "camera": "Probe the square attachment hole and hold its worked surface.",
+        "action": "Probe the square attachment hole and hold its worked surface.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Bronze Age ancient Shu civilization, late second millennium BCE, Sanxingdui at Guanghan in the Sichuan Basin, southwest China. Extreme three-quarter macro of the documented 1986 protruding-pupil mask resting in its excavated Pit 2 context; the camera-facing side clearly shows one square attachment hole and U-shaped rear edge, pitted dark green bronze, compact earth and casting thickness, with the rest of the mask still visible enough to prevent confusion with the 2021 non-protruding large mask. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at outer rim of the protruding pupil; travel along the cheek casting edge toward the side; arrive at square attachment hole; settle on worked inner surface of the hole. A fast lateral macro glide starts at the eye tube, follows the cheek edge and rack-focuses into the square attachment hole; one dust grain drops through the opening. TTS-locked timing: 0.00-2.19s: Connect the giant mask to its side edge. 2.19-5.06s: Probe the square attachment hole and hold its worked surface. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 7,
+    "chapter": "3. 의식 세계",
+    "ct": "HISTORICAL_RECONSTRUCTION",
+    "txt": "학자들은 나무 기둥 같은 구조물에 달아 제사 공간에 세웠을 가능성을 살피고 있죠. 그런데 가면은 시작일 뿐이었습니다.",
+    "tts": 6.966,
+    "omni": 8,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "square hole at the mask edge",
+      "route": "through the mask-to-post gap then outward around the timber",
+      "destination": "open ritual artifact field beyond the post",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "orbit exposes the physical gap"
+      ],
+      "settle_point": "wide frame where the mask is one element among many"
+    },
+    "visual_lock": {
+      "civilization": "Bronze Age ancient Shu civilization",
+      "era": "late second millennium BCE, with key deposits approximately 1300-1100 BCE; modern scenes explicitly dated",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian ancient Shu people only in ancient scenes; East Asian Chinese people only in modern scenes",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "HKPM interpretation of holes and U-shaped back as possible timber mounting",
+      "site_artifact_fingerprint": [
+        "same giant mask with attachment holes",
+        "plain timber post aligned to the holes",
+        "reconstruction kept visibly provisional"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.737,
+        "narration": "학자들은 나무 기둥 같은 구조물에 달아 제사 공간에 세웠을 가능성을 살피고 있죠.",
+        "camera": "Test the possible post-mounting relationship without locking it as fact.",
+        "action": "Test the possible post-mounting relationship without locking it as fact.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 4.737,
+        "end": 6.966,
+        "narration": "그런데 가면은 시작일 뿐이었습니다.",
+        "camera": "Pull out fast to reveal that the mask is only the first artifact.",
+        "action": "Pull out fast to reveal that the mask is only the first artifact.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Bronze Age ancient Shu civilization, late second millennium BCE, Sanxingdui at Guanghan in the Sichuan Basin, southwest China. Ancient Shu rammed-earth walled settlement, timber post-and-beam ritual structures, packed-earth courtyards, timber platforms and restrained thatch or wooden roofing in the Sanxingdui urban and sacrificial zone. A restrained evidence-labelled-by-layout reconstruction without written labels: the same giant bronze mask stands detached a few centimetres before a thick timber ritual post, its real square attachment holes aligned with two plain wooden pegs but not yet connected; behind it only a partial Ancient Shu timber ritual platform and rammed-earth courtyard are visible, clearly a hypothesis bay rather than a confirmed complete temple. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at square hole at the mask edge; travel through the mask-to-post gap then outward around the timber; arrive at open ritual artifact field beyond the post; settle on wide frame where the mask is one element among many. Integrate one restrained exploded sequence anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. The mask and two pegs separate slightly along their real axes, the camera orbits through the gap, then the pieces ease toward alignment without completing an asserted installation; it immediately pulls beyond the post toward the larger artifact field. TTS-locked timing: 0.00-4.74s: Test the possible post-mounting relationship without locking it as fact. 4.74-6.97s: Pull out fast to reveal that the mask is only the first artifact. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "veo_graphic": {
+      "function": "EXPLODED_SEQUENCE",
+      "evidence_relation": "Academic mounting hypothesis based on worked holes; the connection remains provisional",
+      "visual_language": "original bronze and timber materials moving only along the proposed peg axes, no glow",
+      "start": "square mask attachment hole",
+      "via": [
+        "plain wooden peg",
+        "timber post face"
+      ],
+      "end": "unclosed alignment gap",
+      "occlusion": "the graphic passes behind foreground earth, timber, ivory or bronze and reappears with correct world-space parallax",
+      "timing": "emerge only after the first camera movement, travel during its exact narration beat, settle, then fade before the end",
+      "camera_relation": "anchored in the physical world and to named surfaces with correct perspective, depth, lighting, reflections and occlusion",
+      "arrival_reaction": "a faint dust mote lifts from the timber face while the gap remains visible"
+    }
+  },
+  {
+    "n": 8,
+    "chapter": "3. 의식 세계",
+    "ct": "INVENTORY_TABLEAU",
+    "txt": "높이 2미터 62센티미터의 청동 인물상, 거의 4미터에 이르는 청동 나무, 금으로 감싼 얼굴과 상아까지 함께 나왔거든요.",
+    "tts": 8.99,
+    "omni": 10,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "robe hem above the bronze pedestal",
+      "route": "up through the empty hands, across the tree crown and down its dragon",
+      "destination": "gold-faced bronze heads beside the ivory layer",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "fast vertical crane up the figure",
+        "whip-bank from hands to tree crown"
+      ],
+      "settle_point": "artifact group with correct relative scale"
+    },
+    "visual_lock": {
+      "civilization": "Bronze Age ancient Shu civilization",
+      "era": "late second millennium BCE, with key deposits approximately 1300-1100 BCE; modern scenes explicitly dated",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian ancient Shu people only in ancient scenes; East Asian Chinese people only in modern scenes",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "National Science Review, Met and Sanxingdui Museum representative artifact dimensions",
+      "site_artifact_fingerprint": [
+        "262-centimetre standing bronze figure with empty hands",
+        "approximately 395-centimetre reconstructed bronze sacred tree",
+        "separate gold-faced heads and ivory"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 5.532,
+        "narration": "높이 2미터 62센티미터의 청동 인물상, 거의 4미터에 이르는 청동 나무,",
+        "camera": "Rise the full scale of the bronze standing figure.",
+        "action": "Rise the full scale of the bronze standing figure.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 5.532,
+        "end": 8.99,
+        "narration": "금으로 감싼 얼굴과 상아까지 함께 나왔거든요.",
+        "camera": "Change direction across the sacred tree and finish on gold-faced heads and ivory.",
+        "action": "Change direction across the sacred tree and finish on gold-faced heads and ivory.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Bronze Age ancient Shu civilization, late second millennium BCE, Sanxingdui at Guanghan in the Sichuan Basin, southwest China. One coherent high-fidelity ritual-artifact diorama grounded in East Asian ancient Shu bronze-casting iconography: the documented 262-centimetre standing bronze statue on its pedestal with oversized empty hands and layered robe stands in the foreground; behind it rises the reconstructed 395-centimetre segmented bronze sacred tree with birds and a descending dragon; gold-faced bronze heads and layered elephant tusks remain on separate lower plinth-like excavation zones, every artifact at correct relative scale and provenance visually separated. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at robe hem above the bronze pedestal; travel up through the empty hands, across the tree crown and down its dragon; arrive at gold-faced bronze heads beside the ivory layer; settle on artifact group with correct relative scale. Crane rapidly up the standing figure from robe hem to empty hands, whip-bank toward the sacred tree crown, descend along the dragon and land on the gold-faced heads and ivory without making any object move. TTS-locked timing: 0.00-5.53s: Rise the full scale of the bronze standing figure. 5.53-8.99s: Change direction across the sacred tree and finish on gold-faced heads and ivory. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 9,
+    "chapter": "3. 의식 세계",
+    "ct": "HISTORICAL_RECONSTRUCTION",
+    "txt": "사람과 신, 나무와 새를 엮어 거대한 의식 세계를 만든 겁니다.",
+    "tts": 3.038,
+    "omni": 4,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "gap between the standing figure's empty hands",
+      "route": "curved push around the sacred-tree trunk",
+      "destination": "bird at the upper branch",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "tight curve around the tree trunk"
+      ],
+      "settle_point": "whole documented ensemble in one frame"
+    },
+    "visual_lock": {
+      "civilization": "Bronze Age ancient Shu civilization",
+      "era": "late second millennium BCE, with key deposits approximately 1300-1100 BCE; modern scenes explicitly dated",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian ancient Shu people only in ancient scenes; East Asian Chinese people only in modern scenes",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Scholarly interpretation of Sanxingdui ritual imagery and artifact ensemble",
+      "site_artifact_fingerprint": [
+        "documented standing figure",
+        "documented tree, birds and dragon",
+        "gold, bronze and ivory artifact relationship"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.038,
+        "narration": "사람과 신, 나무와 새를 엮어 거대한 의식 세계를 만든 겁니다.",
+        "camera": "Bind person, tree, bird and sacred material into one readable ritual world.",
+        "action": "Bind person, tree, bird and sacred material into one readable ritual world.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Bronze Age ancient Shu civilization, late second millennium BCE, Sanxingdui at Guanghan in the Sichuan Basin, southwest China. Ancient Shu rammed-earth walled settlement, timber post-and-beam ritual structures, packed-earth courtyards, timber platforms and restrained thatch or wooden roofing in the Sanxingdui urban and sacrificial zone. A compact Ancient Shu ritual-world synthesis built only from documented forms: the tall bronze statue, segmented sacred tree, branch birds, descending dragon, gold-faced heads and ivory create one connected spatial composition inside a partial timber-and-rammed-earth ritual zone; no performed ceremony, no invented deity and no complete fantasy temple. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 4-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at gap between the standing figure's empty hands; travel curved push around the sacred-tree trunk; arrive at bird at the upper branch; settle on whole documented ensemble in one frame. A rapid curved push threads between the figure's empty hands, circles the tree trunk and rises past one bird; controlled light briefly connects the documented materials, then the camera settles on the whole ritual-world composition. TTS-locked timing: 0.00-3.04s: Bind person, tree, bird and sacred material into one readable ritual world. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 10,
+    "chapter": "4. 파괴와 매납",
+    "ct": "CUTAWAY",
+    "txt": "정작 가장 이상한 건 그다음입니다. 귀한 물건 상당수가 부서지거나 불에 그을린 채, 여러 구덩이에 층층이 묻혀 있었어요.",
+    "tts": 7.059,
+    "omni": 8,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "intact comparison reflection on a bronze edge",
+      "route": "down the fracture into the first cut face then across a second pit slice",
+      "destination": "deep broken-bronze layer",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "focus snaps from intact reflection to fracture"
+      ],
+      "settle_point": "two separate documented deposition patterns"
+    },
+    "visual_lock": {
+      "civilization": "Bronze Age ancient Shu civilization",
+      "era": "late second millennium BCE, with key deposits approximately 1300-1100 BCE; modern scenes explicitly dated",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian ancient Shu people only in ancient scenes; East Asian Chinese people only in modern scenes",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Metropolitan Museum, HKPM and Antiquity reports on broken, heat-affected and layered deposits",
+      "site_artifact_fingerprint": [
+        "broken ritual bronze fragments",
+        "heat-marked material and charred residue",
+        "separate rectangular pit layers with varied ordering"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 2.076,
+        "narration": "정작 가장 이상한 건 그다음입니다.",
+        "camera": "Reverse the intact ritual image into broken and heat-marked evidence.",
+        "action": "Reverse the intact ritual image into broken and heat-marked evidence.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 2.076,
+        "end": 7.059,
+        "narration": "귀한 물건 상당수가 부서지거나 불에 그을린 채, 여러 구덩이에 층층이 묻혀 있었어요.",
+        "camera": "Dive through separate pit layers without making every pit identical.",
+        "action": "Dive through separate pit layers without making every pit identical.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Bronze Age ancient Shu civilization, late second millennium BCE, Sanxingdui at Guanghan in the Sichuan Basin, southwest China. A verified sacrificial-pit cutaway rather than a dramatic destruction scene: broken and heat-marked bronze ritual fragments lie in compact layered earth across several distinct rectangular pit slices, with ivory above bronze only where documented; charred residues, bent gold foil, jade and bronze remain materially separate, and an intact ritual tableau is visible only as a faint upper comparison zone, not as a historical event reconstruction. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at intact comparison reflection on a bronze edge; travel down the fracture into the first cut face then across a second pit slice; arrive at deep broken-bronze layer; settle on two separate documented deposition patterns. Integrate one restrained section reveal anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. The camera snaps away from the intact comparison zone, follows one broken bronze edge downward, then the earth opens only along verified pit sections and carries the viewer across two distinct layered deposits. TTS-locked timing: 0.00-2.08s: Reverse the intact ritual image into broken and heat-marked evidence. 2.08-7.06s: Dive through separate pit layers without making every pit identical. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "veo_graphic": {
+      "function": "SECTION_REVEAL",
+      "evidence_relation": "Excavated layered deposits; ivory-over-bronze ordering is shown only in documented slices",
+      "visual_language": "real earth, ash and artifact materials divided by a thin warm-grey section seam",
+      "start": "fractured bronze edge",
+      "via": [
+        "first pit ivory layer",
+        "earthen divider"
+      ],
+      "end": "second pit bronze layer",
+      "occlusion": "the graphic passes behind foreground earth, timber, ivory or bronze and reappears with correct world-space parallax",
+      "timing": "emerge only after the first camera movement, travel during its exact narration beat, settle, then fade before the end",
+      "camera_relation": "anchored in the physical world and to named surfaces with correct perspective, depth, lighting, reflections and occlusion",
+      "arrival_reaction": "two small soil falls mark the distinct section depths"
+    }
+  },
+  {
+    "n": 11,
+    "chapter": "4. 파괴와 매납",
+    "ct": "EXCAVATION",
+    "txt": "2021년에 나온 폭 1미터 31센티미터의 대형 가면은 얼굴을 아래로 향하고 있었고, 그 위에는 상아가 10개 넘게 포개져 있었죠.",
+    "tts": 8.452,
+    "omni": 10,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "left outer edge of the face-down mask",
+      "route": "across the buried mask then vertically through the ivory stack",
+      "destination": "topmost elephant tusk",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "width-line growth under the ivory",
+        "bank around the middle tusk"
+      ],
+      "settle_point": "top-down frame proving ivory above face-down bronze"
+    },
+    "visual_lock": {
+      "civilization": "Present-day Chinese archaeology at Sanxingdui",
+      "era": "the stated 1929, 1986 or 2021 Chinese discovery, excavation or conservation context",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian Chinese farmers, workers, archaeologists and conservators only",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "HKPM and Sanxingdui Museum 2021 Pit 3 large-mask context",
+      "site_artifact_fingerprint": [
+        "2021 Pit 3 non-protruding large mask",
+        "face-down orientation",
+        "more than ten stacked elephant tusks above"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 5.584,
+        "narration": "2021년에 나온 폭 1미터 31센티미터의 대형 가면은 얼굴을 아래로 향하고 있었고,",
+        "camera": "Read the large mask's face-down position and true width.",
+        "action": "Read the large mask's face-down position and true width.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 5.584,
+        "end": 8.452,
+        "narration": "그 위에는 상아가 10개 넘게 포개져 있었죠.",
+        "camera": "Climb through the more-than-ten-tusk layer stacked above it.",
+        "action": "Climb through the more-than-ten-tusk layer stacked above it.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at the Sanxingdui site in Guanghan, Sichuan, reconstructed specifically as the stated 1929, 1986 or 2021 discovery and excavation context. 2021 climate-controlled Sanxingdui Pit 3 excavation diorama with no people obscuring the evidence: the documented large non-protruding bronze mask, 131 centimetres wide and made from separately cast face, eyes and ears, lies face-down in compact soil; more than ten real elephant tusks are carefully stacked above it, modern conservation rails and soft work lights remain peripheral; do not give this mask tubular projecting pupils. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at left outer edge of the face-down mask; travel across the buried mask then vertically through the ivory stack; arrive at topmost elephant tusk; settle on top-down frame proving ivory above face-down bronze. Integrate one restrained dimension line anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Start at the true lower mask edges, grow one unnumbered world-space width line between them under the ivory, then crane vertically through the tusk stack; bank once around a tusk and look down to prove the face-down ordering. TTS-locked timing: 0.00-5.58s: Read the large mask's face-down position and true width. 5.58-8.45s: Climb through the more-than-ten-tusk layer stacked above it. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "veo_graphic": {
+      "function": "DIMENSION_LINE",
+      "evidence_relation": "Published 131 cm width of the 2021 Pit 3 mask; exact number remains in captions",
+      "visual_language": "thin warm-grey 3D survey line and end ticks lying in the mask plane beneath the ivory",
+      "start": "left outer mask edge",
+      "via": [
+        "forehead casting below the tusks"
+      ],
+      "end": "right outer mask edge",
+      "occlusion": "the graphic passes behind foreground earth, timber, ivory or bronze and reappears with correct world-space parallax",
+      "timing": "emerge only after the first camera movement, travel during its exact narration beat, settle, then fade before the end",
+      "camera_relation": "anchored in the physical world and to named surfaces with correct perspective, depth, lighting, reflections and occlusion",
+      "arrival_reaction": "a soft bronze reflection touches the right end tick"
+    }
+  },
+  {
+    "n": 12,
+    "chapter": "4. 파괴와 매납",
+    "ct": "SEALED_UNKNOWN",
+    "txt": "숨기다 만 모습이라기에는 배치가 너무 치밀했습니다. 왜 자신들이 섬기던 세계를 싹 다 해체한 걸까요?",
+    "tts": 5.851,
+    "omni": 6,
+    "evidence": "미확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "first ivory crossing",
+      "route": "along the stacked tusks then down to the mask fracture",
+      "destination": "opaque undisturbed soil boundary",
+      "speed_profile": "BOUNDARY_APPROACH_STOP",
+      "operator_style": "LOCKED_EVIDENCE_CAMERA",
+      "depth_transition": "BOUNDARY_STOP",
+      "pattern_interrupts": [
+        "vertical drop from ivory to bronze fracture"
+      ],
+      "settle_point": "fracture and sealed soil held together"
+    },
+    "visual_lock": {
+      "civilization": "Bronze Age ancient Shu civilization",
+      "era": "late second millennium BCE, with key deposits approximately 1300-1100 BCE; modern scenes explicitly dated",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian ancient Shu people only in ancient scenes; East Asian Chinese people only in modern scenes",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Antiquity stratigraphic publication; motive for deposition remains unknown",
+      "site_artifact_fingerprint": [
+        "same Pit 3 face-down large mask",
+        "ordered crossing ivory layers",
+        "opaque evidence boundary beyond broken fragments"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.13,
+        "narration": "숨기다 만 모습이라기에는 배치가 너무 치밀했습니다.",
+        "camera": "Follow the deliberate order of the deposit.",
+        "action": "Follow the deliberate order of the deposit.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 3.13,
+        "end": 5.851,
+        "narration": "왜 자신들이 섬기던 세계를 싹 다 해체한 걸까요?",
+        "camera": "Stop at the broken edge where the reason remains unknown.",
+        "action": "Stop at the broken edge where the reason remains unknown.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Bronze Age ancient Shu civilization, late second millennium BCE, Sanxingdui at Guanghan in the Sichuan Basin, southwest China. Tight oblique evidence view of the same Pit 3 arrangement: more than ten elephant tusks form deliberate crossing layers above the face-down non-protruding large bronze mask, broken ritual fragments align in controlled rows nearby, while one fractured mask edge leads into opaque undisturbed soil; the orderly placement is clear but no cause, attacker or ceremony is invented. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at first ivory crossing; travel along the stacked tusks then down to the mask fracture; arrive at opaque undisturbed soil boundary; settle on fracture and sealed soil held together. The camera glides quickly along three tusk crossings, drops to the bronze fracture and stops hard at intact soil; loose dust settles, but the unknown space never opens. TTS-locked timing: 0.00-3.13s: Follow the deliberate order of the deposit. 3.13-5.85s: Stop at the broken edge where the reason remains unknown. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 13,
+    "chapter": "5. 과학 단서",
+    "ct": "SCIENTIFIC_EVIDENCE",
+    "txt": "최근 연구가 중요한 단서를 내놓았습니다. 4호 구덩이의 흙과 재를 분석했더니, 불은 그 안에서 난 게 아니었어요.",
+    "tts": 6.502,
+    "omni": 8,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "Pit 4 sample clod",
+      "route": "through the polished thin-section edge along real grains",
+      "destination": "unheated pit-wall comparison sample",
+      "speed_profile": "MACRO_PROBE_SETTLE",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "SURFACE_TO_INTERIOR",
+      "pattern_interrupts": [
+        "focus snaps into the thin section"
+      ],
+      "settle_point": "side-by-side residue and wall evidence"
+    },
+    "visual_lock": {
+      "civilization": "Present-day Chinese archaeology at Sanxingdui",
+      "era": "the stated 1929, 1986 or 2021 Chinese discovery, excavation or conservation context",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian Chinese farmers, workers, archaeologists and conservators only",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Zhang et al., Journal of Archaeological Science 185, multi-proxy Pit 4 sediment analysis",
+      "site_artifact_fingerprint": [
+        "Pit 4 soil-and-ash sample",
+        "micromorphology thin section",
+        "unheated pit-wall comparison"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 2.438,
+        "narration": "최근 연구가 중요한 단서를 내놓았습니다.",
+        "camera": "Enter the Pit 4 soil and ash sample as the new evidence.",
+        "action": "Enter the Pit 4 soil and ash sample as the new evidence.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 2.438,
+        "end": 6.502,
+        "narration": "4호 구덩이의 흙과 재를 분석했더니, 불은 그 안에서 난 게 아니었어요.",
+        "camera": "Compare the residues with the unheated pit wall and reject an in-pit fire.",
+        "action": "Compare the residues with the unheated pit wall and reject an in-pit fire.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at the Sanxingdui site in Guanghan, Sichuan, reconstructed specifically as the stated 1929, 1986 or 2021 discovery and excavation context. Present-day Chinese archaeology at the Sanxingdui Pit 4 conservation laboratory: a documented soil-and-ash sample sits beside a polished micromorphology thin section and an unheated pit-wall sample; restrained physical instrument light reveals mineral grains, ash particles and the absence of in-situ heat alteration, with no invented charts, letters or readable screens. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at Pit 4 sample clod; travel through the polished thin-section edge along real grains; arrive at unheated pit-wall comparison sample; settle on side-by-side residue and wall evidence. Integrate one restrained scan wave anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. The camera macro-probes from the sampled earth into the thin section; one restrained teal scan wave follows real grain boundaries, passes behind a dark mineral and returns at the unheated wall sample. TTS-locked timing: 0.00-2.44s: Enter the Pit 4 soil and ash sample as the new evidence. 2.44-6.50s: Compare the residues with the unheated pit wall and reject an in-pit fire. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "veo_graphic": {
+      "function": "SCAN_WAVE",
+      "evidence_relation": "Multi-proxy analysis supports externally derived combustion residue and no in-situ Pit 4 burning",
+      "visual_language": "restrained teal-white micro-scan sheet conforming to real mineral and ash surfaces",
+      "start": "Pit 4 sample clod",
+      "via": [
+        "ash-rich thin-section zone",
+        "occluding dark mineral grain"
+      ],
+      "end": "unheated wall sample",
+      "occlusion": "the graphic passes behind foreground earth, timber, ivory or bronze and reappears with correct world-space parallax",
+      "timing": "emerge only after the first camera movement, travel during its exact narration beat, settle, then fade before the end",
+      "camera_relation": "anchored in the physical world and to named surfaces with correct perspective, depth, lighting, reflections and occlusion",
+      "arrival_reaction": "one faint cool reflection returns from the unheated sample"
+    }
+  },
+  {
+    "n": 14,
+    "chapter": "5. 과학 단서",
+    "ct": "CUTAWAY",
+    "txt": "의례물을 넣고, 다른 곳에서 생긴 재와 흙을 가져와 덮은 정황이 확인된 겁니다.",
+    "tts": 4.96,
+    "omni": 6,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "external ash-and-earth source",
+      "route": "along the open carrying route then down the pit cut face",
+      "destination": "top of the ritual-object layer",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "route bends at the pit rim"
+      ],
+      "settle_point": "new cover layer settling over the objects"
+    },
+    "visual_lock": {
+      "civilization": "Bronze Age ancient Shu civilization",
+      "era": "late second millennium BCE, with key deposits approximately 1300-1100 BCE; modern scenes explicitly dated",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian ancient Shu people only in ancient scenes; East Asian Chinese people only in modern scenes",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Journal of Archaeological Science 185 conclusion for Pit 4 external combustion residues",
+      "site_artifact_fingerprint": [
+        "Pit 4 ritual objects already placed",
+        "external ash-and-earth source",
+        "no in-situ burn layer on the pit walls"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 1.052,
+        "narration": "의례물을 넣고,",
+        "camera": "Follow externally produced ash and earth toward Pit 4.",
+        "action": "Follow externally produced ash and earth toward Pit 4.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 1.052,
+        "end": 4.96,
+        "narration": "다른 곳에서 생긴 재와 흙을 가져와 덮은 정황이 확인된 겁니다.",
+        "camera": "Dive into the section as the material covers the ritual deposit.",
+        "action": "Dive into the section as the material covers the ritual deposit.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Bronze Age ancient Shu civilization, late second millennium BCE, Sanxingdui at Guanghan in the Sichuan Basin, southwest China. Bronze Age Pit 4 deposition cutaway grounded in measured evidence: already-placed broken ritual objects occupy the rectangular pit floor; a separate external ash-and-earth source sits visibly outside the pit, and the same dull grey-brown material is midway along an open basket-to-pit route above the section; no fire burns inside the pit and no other pit is shown. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at external ash-and-earth source; travel along the open carrying route then down the pit cut face; arrive at top of the ritual-object layer; settle on new cover layer settling over the objects. Integrate one restrained material flow anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. The camera follows the actual grey-brown material from the external source along the open route, dives through the section seam and watches it settle over the existing ritual objects; no flame appears in the pit. TTS-locked timing: 0.00-1.05s: Follow externally produced ash and earth toward Pit 4. 1.05-4.96s: Dive into the section as the material covers the ritual deposit. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "veo_graphic": {
+      "function": "MATERIAL_FLOW",
+      "evidence_relation": "Measured Pit 4 residues were moved from an external combustion context; this is not generalized to other pits",
+      "visual_language": "heavy dull grey-brown granular ash-and-earth flow with real gravity and no glow",
+      "start": "external ash-and-earth source",
+      "via": [
+        "basket lip",
+        "Pit 4 rim"
+      ],
+      "end": "ritual-object layer",
+      "occlusion": "the graphic passes behind foreground earth, timber, ivory or bronze and reappears with correct world-space parallax",
+      "timing": "emerge only after the first camera movement, travel during its exact narration beat, settle, then fade before the end",
+      "camera_relation": "anchored in the physical world and to named surfaces with correct perspective, depth, lighting, reflections and occlusion",
+      "arrival_reaction": "a small realistic dust lift settles inside Pit 4"
+    }
+  },
+  {
+    "n": 15,
+    "chapter": "5. 과학 단서",
+    "ct": "SCIENTIFIC_EVIDENCE",
+    "txt": "적어도 4호 구덩이는 우연한 화재 현장이 아니라, 의례물을 따로 묻은 마지막 단계였던 셈이죠.",
+    "tts": 5.722,
+    "omni": 6,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "lower ritual-object layer",
+      "route": "shallow orbit around the exposed pit section",
+      "destination": "upper sealing soil",
+      "speed_profile": "CONTROLLED_ORBIT_REVEAL",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "tilt changes from lower artifacts to upper cover"
+      ],
+      "settle_point": "complete Pit 4 sequence with unburned wall"
+    },
+    "visual_lock": {
+      "civilization": "Bronze Age ancient Shu civilization",
+      "era": "late second millennium BCE, with key deposits approximately 1300-1100 BCE; modern scenes explicitly dated",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian ancient Shu people only in ancient scenes; East Asian Chinese people only in modern scenes",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Published Pit 4 depositional sequence and sediment results",
+      "site_artifact_fingerprint": [
+        "lower ritual-object layer",
+        "separate externally derived ash-and-earth cap",
+        "unburned pit wall and final sealing soil"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.004,
+        "narration": "적어도 4호 구덩이는 우연한 화재 현장이 아니라,",
+        "camera": "Read the complete burial sequence as the final depositional stage.",
+        "action": "Read the complete burial sequence as the final depositional stage.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 3.004,
+        "end": 5.722,
+        "narration": "의례물을 따로 묻은 마지막 단계였던 셈이죠.",
+        "camera": "Close the upper soil while keeping the unburned wall visible.",
+        "action": "Close the upper soil while keeping the unburned wall visible.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Bronze Age ancient Shu civilization, late second millennium BCE, Sanxingdui at Guanghan in the Sichuan Basin, southwest China. Completed Pit 4 archaeological section after deposition: ritual-object fragments form the lower layer, externally derived ash and earth cap them in a separate upper layer, pit walls show no in-situ burn front, and the top sealing soil closes the sequence; the three material boundaries are clear through PBR microtexture rather than labels. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at lower ritual-object layer; travel shallow orbit around the exposed pit section; arrive at upper sealing soil; settle on complete Pit 4 sequence with unburned wall. The camera makes a fast low orbit around the completed section, pauses at the clean wall boundary and tilts upward as sealing soil closes the top, ending on the finished deposit rather than a fire scene. TTS-locked timing: 0.00-3.00s: Read the complete burial sequence as the final depositional stage. 3.00-5.72s: Close the upper soil while keeping the unburned wall visible. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 16,
+    "chapter": "6. 남은 학설",
+    "ct": "HISTORICAL_RECONSTRUCTION",
+    "txt": "그렇다면 거대한 제사의 마무리였을까요? 낡은 신전의 물건을 정리한 걸까요? 아니면 전쟁이나 중심지 이동을 앞두고 묻은 걸까요?",
+    "tts": 7.802,
+    "omni": 8,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "shared excavated pit evidence",
+      "route": "curved path through three separated interpretation bays",
+      "destination": "high point above all three bays",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "bank from ritual bay to timber-platform bay"
+      ],
+      "settle_point": "balanced three-hypothesis overview"
+    },
+    "visual_lock": {
+      "civilization": "Bronze Age ancient Shu civilization",
+      "era": "late second millennium BCE, with key deposits approximately 1300-1100 BCE; modern scenes explicitly dated",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian ancient Shu people only in ancient scenes; East Asian Chinese people only in modern scenes",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Competing scholarly interpretations: ritual closure, temple-object retirement, conflict or center movement",
+      "site_artifact_fingerprint": [
+        "same excavated pit evidence at center",
+        "three spatially separated hypothesis bays",
+        "no hypothesis shown as confirmed"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 2.553,
+        "narration": "그렇다면 거대한 제사의 마무리였을까요?",
+        "camera": "Test the ritual-ending possibility.",
+        "action": "Test the ritual-ending possibility.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 2.553,
+        "end": 4.681,
+        "narration": "낡은 신전의 물건을 정리한 걸까요?",
+        "camera": "Redirect to retired temple objects.",
+        "action": "Redirect to retired temple objects.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 4.681,
+        "end": 7.802,
+        "narration": "아니면 전쟁이나 중심지 이동을 앞두고 묻은 걸까요?",
+        "camera": "Open the third possibility of conflict or center movement without choosing it.",
+        "action": "Open the third possibility of conflict or center movement without choosing it.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Bronze Age ancient Shu civilization, late second millennium BCE, Sanxingdui at Guanghan in the Sichuan Basin, southwest China. Ancient Shu rammed-earth walled settlement, timber post-and-beam ritual structures, packed-earth courtyards, timber platforms and restrained thatch or wooden roofing in the Sanxingdui urban and sacrificial zone. Three physically separated, equally desaturated Ancient Shu interpretation bays share the same central excavated pit evidence: one bay suggests the quiet close of a large ritual, one shows aged ritual objects beside an incomplete timber-platform outline, and one shows a packed departure route beside a distant rammed-earth city edge; all remain translucent at their far edges, no battle, no confirmed temple destruction and no chosen answer. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at shared excavated pit evidence; travel curved path through three separated interpretation bays; arrive at high point above all three bays; settle on balanced three-hypothesis overview. The camera launches from the common pit, banks through the ritual-closure bay, whip-pans to the incomplete timber-platform bay, then accelerates toward the departure route and pulls upward so all three remain equally unresolved. TTS-locked timing: 0.00-2.55s: Test the ritual-ending possibility. 2.55-4.68s: Redirect to retired temple objects. 4.68-7.80s: Open the third possibility of conflict or center movement without choosing it. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 17,
+    "chapter": "6. 남은 학설",
+    "ct": "TEXT_RECORD",
+    "txt": "학설은 여럿이지만 정답은 고를 수 없습니다. 산싱두이 시대의 문장형 문자 기록이 아직 확인되지 않아, 이 얼굴의 이름도 의식의 이유도 직접 들을 수 없기 때문이죠.",
+    "tts": 9.938,
+    "omni": 10,
+    "evidence": "미확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "three separated fragment groupings",
+      "route": "across the empty archival tray then toward the mask",
+      "destination": "dark opening of the mask pupil",
+      "speed_profile": "BOUNDARY_APPROACH_STOP",
+      "operator_style": "LOCKED_EVIDENCE_CAMERA",
+      "depth_transition": "BOUNDARY_STOP",
+      "pattern_interrupts": [
+        "direction change from empty tray to mask",
+        "hard stop before the pupil"
+      ],
+      "settle_point": "empty record space and unnamed face together"
+    },
+    "visual_lock": {
+      "civilization": "Present-day Chinese archaeology at Sanxingdui",
+      "era": "the stated 1929, 1986 or 2021 Chinese discovery, excavation or conservation context",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian Chinese farmers, workers, archaeologists and conservators only",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Current scholarly status: no contemporaneous sentence-form Ancient Shu record identified",
+      "site_artifact_fingerprint": [
+        "documented protruding-pupil mask",
+        "empty contemporaneous-text evidence tray",
+        "unidentified ritual fragments without readable writing"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 2.777,
+        "narration": "학설은 여럿이지만 정답은 고를 수 없습니다.",
+        "camera": "Move past several hypotheses without selecting one.",
+        "action": "Move past several hypotheses without selecting one.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 2.777,
+        "end": 9.938,
+        "narration": "산싱두이 시대의 문장형 문자 기록이 아직 확인되지 않아, 이 얼굴의 이름도 의식의 이유도 직접 들을 수 없기 때문이죠.",
+        "camera": "Reach the empty record evidence and end at the unnamed face.",
+        "action": "Reach the empty record evidence and end at the unnamed face.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at the Sanxingdui site in Guanghan, Sichuan, reconstructed specifically as the stated 1929, 1986 or 2021 discovery and excavation context. Present-day Chinese archaeology evidence table with the real protruding-pupil mask on one side and an intentionally empty neutral archival tray on the other, surrounded only by excavated fragments and unmarked conservation materials; no contemporaneous sentence-bearing record, bamboo text, calligraphy or readable display exists, and the mask's empty pupils dominate the far background. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at three separated fragment groupings; travel across the empty archival tray then toward the mask; arrive at dark opening of the mask pupil; settle on empty record space and unnamed face together. The camera moves from several competing fragment groupings to the empty archival tray, makes a sharp direction change toward the mask and stops before entering its dark pupil; no writing appears. TTS-locked timing: 0.00-2.78s: Move past several hypotheses without selecting one. 2.78-9.94s: Reach the empty record evidence and end at the unnamed face. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "long_scene_review": "CONTINUOUS_SPATIAL_ACTION_REVIEWED_AND_FITS_10S"
+  },
+  {
+    "n": 18,
+    "chapter": "7. 결론",
+    "ct": "ARTIFACT_MACRO",
+    "txt": "그러니까 산싱두이가 보여준 건 정체불명의 괴물 얼굴이 아닙니다.",
+    "tts": 4.07,
+    "omni": 6,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "shadowed rim of the left pupil",
+      "route": "short lateral move across the nose and casting seams",
+      "destination": "complete frontal bronze face",
+      "speed_profile": "MACRO_PROBE_SETTLE",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "NONE",
+      "pattern_interrupts": [
+        "raking light exposes the casting seam"
+      ],
+      "settle_point": "documented mask in neutral full light"
+    },
+    "visual_lock": {
+      "civilization": "Bronze Age ancient Shu civilization",
+      "era": "late second millennium BCE, with key deposits approximately 1300-1100 BCE; modern scenes explicitly dated",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian ancient Shu people only in ancient scenes; East Asian Chinese people only in modern scenes",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Documented object form, rejecting unsupported monster or alien framing",
+      "site_artifact_fingerprint": [
+        "real protruding-pupil mask geometry",
+        "human-made casting seams and attachment features",
+        "no fantasy alteration"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.07,
+        "narration": "그러니까 산싱두이가 보여준 건 정체불명의 괴물 얼굴이 아닙니다.",
+        "camera": "Remove the monster framing by revealing the actual made object.",
+        "action": "Remove the monster framing by revealing the actual made object.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Bronze Age ancient Shu civilization, late second millennium BCE, Sanxingdui at Guanghan in the Sichuan Basin, southwest China. Dignified frontal macro of the real 1986 protruding-pupil bronze mask against a quiet archaeological earth background; hard raking light first leaves only the strange eye geometry in shadow, while the broad nose, cast seams, wing-like ears, patina pores and attachment features remain visibly human-made and materially specific, no monstrous silhouette and no fantasy distortion. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at shadowed rim of the left pupil; travel short lateral move across the nose and casting seams; arrive at complete frontal bronze face; settle on documented mask in neutral full light. A narrow light sweeps rapidly from the strange eye shadow across the cast seams and attachment edge; the camera rotates only a few degrees and settles on the complete documented face. TTS-locked timing: 0.00-4.07s: Remove the monster framing by revealing the actual made object. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 19,
+    "chapter": "7. 결론",
+    "ct": "EXPLODED",
+    "txt": "고대 촉 사람들이 금과 상아, 거대한 청동상으로 자신들만의 신성한 세계를 만들고, 어느 순간 그 세계를 의도적으로 해체해 묻었다는 사실이죠.",
+    "tts": 8.376,
+    "omni": 10,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "gold-faced bronze head",
+      "route": "through the assembled artifact axes then down the section seam",
+      "destination": "layered rectangular deposit",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "orbit through assembled relationship",
+        "rapid downward fold into the cutaway"
+      ],
+      "settle_point": "separated materials settled in the pit"
+    },
+    "visual_lock": {
+      "civilization": "Bronze Age ancient Shu civilization",
+      "era": "late second millennium BCE, with key deposits approximately 1300-1100 BCE; modern scenes explicitly dated",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian ancient Shu people only in ancient scenes; East Asian Chinese people only in modern scenes",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Excavated artifact ensemble and scholarly interpretation of a deliberately dismantled sacred world",
+      "site_artifact_fingerprint": [
+        "documented gold, ivory and bronze ensemble",
+        "standing figure and sacred-tree segments",
+        "rectangular layered deposit cutaway"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.886,
+        "narration": "고대 촉 사람들이 금과 상아, 거대한 청동상으로 자신들만의 신성한 세계를 만들고,",
+        "camera": "Assemble the documented materials into one sacred-world relationship.",
+        "action": "Assemble the documented materials into one sacred-world relationship.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 4.886,
+        "end": 8.376,
+        "narration": "어느 순간 그 세계를 의도적으로 해체해 묻었다는 사실이죠.",
+        "camera": "Reverse the motion and fold the separated objects into the excavated deposit.",
+        "action": "Reverse the motion and fold the separated objects into the excavated deposit.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Bronze Age ancient Shu civilization, late second millennium BCE, Sanxingdui at Guanghan in the Sichuan Basin, southwest China. A section-ready evidence synthesis with only documented Sanxingdui forms: gold-faced bronze heads, elephant tusks, the 262-centimetre standing bronze statue, reconstructed sacred-tree segments and the protruding-pupil mask occupy their own physical axes above a rectangular deposit cutaway; original bronze, gold, ivory and earth colours remain distinct, with no invented god or completed ceremony. start frame is section-ready with a visible archaeological cutaway, compact strata, physical cut face and section seam. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at gold-faced bronze head; travel through the assembled artifact axes then down the section seam; arrive at layered rectangular deposit; settle on separated materials settled in the pit. Integrate one restrained exploded sequence anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. The documented pieces move only a short distance along their real assembly axes to form one readable ritual world, then reverse, separate and descend through the open section into the deposit in the same material groups. TTS-locked timing: 0.00-4.89s: Assemble the documented materials into one sacred-world relationship. 4.89-8.38s: Reverse the motion and fold the separated objects into the excavated deposit. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "veo_graphic": {
+      "function": "EXPLODED_SEQUENCE",
+      "evidence_relation": "Documented artifact categories and deliberate deposition; exact ritual meaning remains interpretive",
+      "visual_language": "original bronze, gold and ivory pieces moving on restrained real axes with no neon",
+      "start": "gold-faced bronze head",
+      "via": [
+        "standing-figure hand axis",
+        "sacred-tree joint"
+      ],
+      "end": "rectangular deposit layer",
+      "occlusion": "the graphic passes behind foreground earth, timber, ivory or bronze and reappears with correct world-space parallax",
+      "timing": "emerge only after the first camera movement, travel during its exact narration beat, settle, then fade before the end",
+      "camera_relation": "anchored in the physical world and to named surfaces with correct perspective, depth, lighting, reflections and occlusion",
+      "arrival_reaction": "a small earth-and-patina dust response marks final placement"
+    }
+  },
+  {
+    "n": 20,
+    "chapter": "7. 결론",
+    "ct": "SEALED_UNKNOWN",
+    "txt": "하지만 누굴 본뜬 얼굴인지, 왜 귀한 물건을 통째로 묻어야 했는지는 풀리지 않았습니다. 그 답은 흩어진 파편의 접합 관계와 주변 제사 공간에서 찾아야 할 미스터리입니다.",
+    "tts": 9.799,
+    "omni": 10,
+    "evidence": "미확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "first matching bronze fracture edge",
+      "route": "across separated comparison trays and faint postholes",
+      "destination": "opaque undisturbed soil boundary",
+      "speed_profile": "BOUNDARY_APPROACH_STOP",
+      "operator_style": "LOCKED_EVIDENCE_CAMERA",
+      "depth_transition": "BOUNDARY_STOP",
+      "pattern_interrupts": [
+        "fragment pair rotates to compare edges",
+        "camera accelerates from tray to postholes"
+      ],
+      "settle_point": "possible join and unexcavated area held together"
+    },
+    "visual_lock": {
+      "civilization": "Present-day Chinese archaeology at Sanxingdui",
+      "era": "the stated 1929, 1986 or 2021 Chinese discovery, excavation or conservation context",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian Chinese farmers, workers, archaeologists and conservators only",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Future evidence boundary: cross-pit joins and surrounding ritual-space archaeology",
+      "site_artifact_fingerprint": [
+        "separated bronze and gold fragments",
+        "possible matching fracture edges left visibly unjoined",
+        "opaque surrounding ritual-zone soil boundary"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 5.107,
+        "narration": "하지만 누굴 본뜬 얼굴인지, 왜 귀한 물건을 통째로 묻어야 했는지는 풀리지 않았습니다.",
+        "camera": "Test fragment joins without claiming a completed answer.",
+        "action": "Test fragment joins without claiming a completed answer.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 5.107,
+        "end": 9.799,
+        "narration": "그 답은 흩어진 파편의 접합 관계와 주변 제사 공간에서 찾아야 할 미스터리입니다.",
+        "camera": "Move toward the surrounding ritual space and stop at the unexcavated boundary.",
+        "action": "Move toward the surrounding ritual space and stop at the unexcavated boundary.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at the Sanxingdui site in Guanghan, Sichuan, reconstructed specifically as the stated 1929, 1986 or 2021 discovery and excavation context. A present-day Sanxingdui conservation-and-excavation grid: several real bronze and gold fragments from separated contexts hover only millimetres apart at plausible matching edges above their labelled-by-position but text-free trays, while the documented sacrificial area continues toward an opaque undisturbed rammed-earth boundary and faint posthole outlines; no completed object, hidden chamber or answer is generated. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at first matching bronze fracture edge; travel across separated comparison trays and faint postholes; arrive at opaque undisturbed soil boundary; settle on possible join and unexcavated area held together. Integrate one restrained exploded sequence anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Fragments approach along plausible fracture axes, rotate once for comparison and stop with a visible gap; the camera then races across the grid toward faint postholes and brakes at intact soil without opening it. TTS-locked timing: 0.00-5.11s: Test fragment joins without claiming a completed answer. 5.11-9.80s: Move toward the surrounding ritual space and stop at the unexcavated boundary. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "long_scene_review": "CONTINUOUS_SPATIAL_ACTION_REVIEWED_AND_FITS_10S",
+    "veo_graphic": {
+      "function": "EXPLODED_SEQUENCE",
+      "evidence_relation": "Conceptual future fragment matching; no join is asserted until edges and provenance agree",
+      "visual_language": "original patinated fragment materials moving millimetres along plausible fracture axes",
+      "start": "first bronze fracture edge",
+      "via": [
+        "second separated fracture edge",
+        "text-free context tray"
+      ],
+      "end": "visible unclosed join gap",
+      "occlusion": "the graphic passes behind foreground earth, timber, ivory or bronze and reappears with correct world-space parallax",
+      "timing": "emerge only after the first camera movement, travel during its exact narration beat, settle, then fade before the end",
+      "camera_relation": "anchored in the physical world and to named surfaces with correct perspective, depth, lighting, reflections and occlusion",
+      "arrival_reaction": "one tiny dust grain falls through the deliberately unclosed gap"
+    }
+  },
+  {
+    "n": 21,
+    "chapter": "7. 결론",
+    "ct": "SITE_ESTABLISH",
+    "txt": "시간 속에 잠든 세계유산, 땅속에 묻힌 역사. 산싱두이 청동 가면의 비밀이었습니다.",
+    "tts": 5.294,
+    "omni": 6,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "patina ridge above the mask eye",
+      "route": "rapid pullback across the excavation perimeter then upward",
+      "destination": "wide Sanxingdui landscape",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "macro-to-landscape scale change"
+      ],
+      "settle_point": "quiet wide closing frame"
+    },
+    "visual_lock": {
+      "civilization": "Present-day Chinese archaeology at Sanxingdui",
+      "era": "the stated 1929, 1986 or 2021 Chinese discovery, excavation or conservation context",
+      "region": "Sanxingdui, Guanghan, Sichuan Basin, southwest China",
+      "people_lock": "East Asian Chinese farmers, workers, archaeologists and conservators only",
+      "forbidden_culture": [
+        "European",
+        "Roman",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Egyptian",
+        "Mesoamerican",
+        "alien",
+        "later imperial Chinese"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Sanxingdui archaeological site and museum stewardship",
+      "site_artifact_fingerprint": [
+        "present-day Sanxingdui archaeological landscape",
+        "protruding-pupil mask foreground memory",
+        "quiet opaque unexplored ground"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 2.794,
+        "narration": "시간 속에 잠든 세계유산, 땅속에 묻힌 역사.",
+        "camera": "Leave the bronze face and return to the whole buried landscape.",
+        "action": "Leave the bronze face and return to the whole buried landscape.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 2.794,
+        "end": 5.294,
+        "narration": "산싱두이 청동 가면의 비밀이었습니다.",
+        "camera": "Settle into stillness on the unresolved site.",
+        "action": "Settle into stillness on the unresolved site.",
+        "graphic": "scene-integrated evidence graphics only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame archaeological 3D diorama world, museum-scale crafted miniature with selective handcrafted edges, immersive macro-lens depth cues and restrained tilt-shift, not live-action, physically based PBR materials, high-frequency microtexture, micro-displacement, high fidelity material separation, global illumination, cinematic archaeological reconstruction, 4K source detail, 9:16 vertical composition. Present-day Chinese archaeology at the Sanxingdui site in Guanghan, Sichuan, reconstructed specifically as the stated 1929, 1986 or 2021 discovery and excavation context. Dignified closing diorama of the present-day Sanxingdui archaeological landscape at warm dawn: protected rectangular excavation zones, restrained rammed-earth settlement traces and the modern conservation perimeter occupy the Sichuan plain; the real protruding-pupil mask is integrated as a foreground artifact memory rather than a giant monument, while the unexplored ground remains opaque and quiet, no UNESCO logo or invented palace. no European or Western faces, no Roman or Greek clothing, no Japanese or Korean architecture, no Egyptian or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve all objects, identities, provenance, site geometry, artifact fingerprints, materials, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at patina ridge above the mask eye; travel rapid pullback across the excavation perimeter then upward; arrive at wide Sanxingdui landscape; settle on quiet wide closing frame. Begin close on the mask's patina, pull back rapidly through the excavation perimeter, then rise into the full Sichuan landscape and decelerate to complete stillness for the channel close. TTS-locked timing: 0.00-2.79s: Leave the bronze face and return to the whole buried landscape. 2.79-5.29s: Settle into stillness on the unresolved site. Preserve all objects from the start image. No voice, no music, no subtitles."
+  }
+]
