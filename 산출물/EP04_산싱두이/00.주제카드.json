@@ -1,0 +1,65 @@
+{
+  "status": "TOPIC_APPROVED",
+  "target": "산싱두이 청동 가면",
+  "one_sentence_promise": "고대 촉 사람들이 거대한 청동 얼굴과 신목, 황금, 상아를 만든 뒤 부수고 불태워 층층이 묻은 행위를 따라가며 확인된 의식과 아직 풀리지 않은 이유를 추적한다.",
+  "discovery_action": "1929년 농부 가족의 옥기 발견에서 1986년 벽돌용 흙을 파던 노동자들의 두 구덩이 발견, 2019년 이후 여섯 구덩이의 재발굴까지 이어 간다.",
+  "representative_artifacts": [
+    "1986년 2호 구덩이 출토 폭 138센티미터 청동 종목 가면",
+    "높이 262센티미터의 청동 대립인상",
+    "복원 높이 약 395센티미터의 청동 신수",
+    "2021년 3호 구덩이 출토 폭 131센티미터 대형 청동 가면",
+    "금가면·금장·옥기와 여러 층의 상아"
+  ],
+  "historical_context": "기원전 2천년기 후반 쓰촨 분지의 고대 촉 사회가 청동·금·옥·상아를 동원해 구성한 제사 공간과, 중원·장강 유역 문화와 교류하면서도 독자적인 형상을 만든 배경을 살핀다.",
+  "central_question": "고대 촉 사람들은 왜 신성한 청동 얼굴과 제사 도구를 일부러 부수고 불에 노출시킨 뒤 여러 구덩이에 층층이 묻었을까?",
+  "confirmed_answer_scope": "발견 경위, 유물의 치수·재료·출토 위치, 일부 유물의 파손·화재 흔적, 구덩이별 층위, 4호 구덩이 연소 잔류물이 외부에서 옮겨졌다는 분석까지만 사실로 잠근다.",
+  "unknowns": "청동 얼굴이 나타낸 정확한 존재, 각 유물의 실제 사용법, 구덩이의 의식 명칭, 파괴와 매납을 실행한 구체적 사건과 이유는 확정되지 않았다.",
+  "claims_to_avoid": [
+    "청동 가면을 외계인이나 초고대 문명의 증거라고 부르기",
+    "후대 기록의 잠총을 가면의 주인공으로 확정하기",
+    "모든 유물이 구덩이 안에서 불탔다고 단정하기",
+    "전쟁 또는 천도 때문에 급히 묻었다는 한 학설을 결론으로 확정하기",
+    "산싱두이가 중원과 단절된 문명 또는 중원보다 우월한 문명이었다고 과장하기"
+  ],
+  "official_sources": [
+    {
+      "institution": "Hong Kong Palace Museum·Sanxingdui Museum",
+      "title": "Gazing at Sanxingdui: New Archaeological Discoveries in Sichuan",
+      "url": "https://www.hkpm.org.hk/en/exhibition/gazing-at-sanxingdui-new-archaeological-discoveries-in-sichuan"
+    },
+    {
+      "institution": "National Museum of China",
+      "title": "Twin Stars Illuminating the World: The Ancient Shu Civilization of the Sanxingdui and Jinsha Sites",
+      "url": "https://en.chnmuseum.cn/exhibition/exhibition_series/temporary_exhibitions/archaeological_discovery_exhibition/202602/t20260203_278447.html"
+    },
+    {
+      "institution": "The Metropolitan Museum of Art",
+      "title": "Treasures from a Lost Civilization: Ancient Chinese Art from Sichuan",
+      "url": "https://www.metmuseum.org/exhibitions/listings/2002/sichuan"
+    },
+    {
+      "institution": "Antiquity·Cambridge University Press",
+      "title": "New discoveries at the Sanxingdui Bronze Age site in south-west China",
+      "url": "https://www.cambridge.org/core/journals/antiquity/article/new-discoveries-at-the-sanxingdui-bronze-age-site-in-southwest-china/D96494368471CF7CBA817690CDCA5A75"
+    }
+  ],
+  "visual_route": [
+    "1929년 농부 가족의 수로 굴착과 옥기 발견",
+    "1986년 벽돌용 흙 채취 현장에서 두 사각 구덩이 공개",
+    "폭 138센티미터 종목 가면의 돌출 눈과 고정 구멍 관찰",
+    "청동 대립인상과 신수를 따라 고대 촉의 제사 공간 복원",
+    "상아·청동·금·옥이 쌓인 구덩이 층위 단면",
+    "4호 구덩이의 외부 연소 잔류물 분석과 확인 범위",
+    "신전 의식·폐기·전쟁 가설을 갈라 놓고 동시대 문자 기록의 부재에서 멈춤"
+  ],
+  "routing": "공개 순서 4편 2~3분 숏다큐. 의식 공간과 구덩이별 접합 관계는 롱폼 확장 가능",
+  "scores": {
+    "artifact_context": 20,
+    "historical_density": 19,
+    "question_ladder": 20,
+    "reference_quality": 15,
+    "visual_journey": 15,
+    "title_interest": 10,
+    "total": 99
+  }
+}

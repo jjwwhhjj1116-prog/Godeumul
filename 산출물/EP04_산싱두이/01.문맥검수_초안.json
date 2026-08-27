@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "script": "01.대본검토본.txt",
+  "script_sha256": "b847b7aa1a299b92ba170950c63c135835f15fa4e89a6e557da992895d7b8f67",
+  "reviewer": "korean-proofreader + godeumul-context-qa",
+  "status": "PASS",
+  "approval_state": "USER_REVIEW_PENDING",
+  "tts_authorization": "HOLD_UNTIL_USER_APPROVAL",
+  "checks": {
+    "paragraph_roles_and_flow": "PASS",
+    "adjacent_sentence_relations": "PASS",
+    "connector_deletion_test": "PASS",
+    "duplicate_information": "PASS",
+    "tts_release_gate": "PASS"
+  },
+  "paragraphs": [
+    {
+      "n": 1,
+      "role": "ARTIFACT_FIRST_HOOK",
+      "summary": "산싱두이와 거대한 청동 얼굴을 즉시 밝히고 얼굴의 정체를 첫 질문으로 연다."
+    },
+    {
+      "n": 2,
+      "role": "DISCOVERY_ESCALATION",
+      "summary": "1929년 첫 단서와 1986년 결정적 구덩이 발견을 분리해 규모를 키운다."
+    },
+    {
+      "n": 3,
+      "role": "RITUAL_WORLD_RECONSTRUCTION",
+      "summary": "가면의 설치 가능성에서 인물상·신수·금·상아로 이동해 고대 촉의 의식 세계를 보여준다."
+    },
+    {
+      "n": 4,
+      "role": "DEPOSITION_REVERSAL",
+      "summary": "귀중품이 보존된 것이 아니라 파손·화재 노출·층위 매납됐다는 중심 반전을 공개한다."
+    },
+    {
+      "n": 5,
+      "role": "SCIENTIFIC_EVIDENCE",
+      "summary": "4호 구덩이 연소 잔류물의 외부 유입 분석으로 우연한 화재설을 좁힌다."
+    },
+    {
+      "n": 6,
+      "role": "COMPETING_HYPOTHESES_AND_LIMIT",
+      "summary": "제사 종료·신전 정리·전쟁과 이동 가설을 제시하고 문자 기록의 부재에서 멈춘다."
+    },
+    {
+      "n": 7,
+      "role": "SYNTHESIS_AND_UNRESOLVED_MYSTERY",
+      "summary": "확인된 의도적 매납과 미확인 얼굴·이유를 분리한 뒤 필요한 다음 증거와 고정 멘트로 닫는다."
+    }
+  ],
+  "transitions": [
+    {
+      "from": 1,
+      "to": 2,
+      "relation": "유물의 정체 질문에서 발견 연혁으로 이동",
+      "reason": "누가 만들었는지 묻기 전에 그 유물이 어떻게 세상에 드러났는지 증거 순서로 되짚는다.",
+      "status": "PASS"
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "relation": "발견된 가면에서 실제 사용 공간으로 확장",
+      "reason": "구덩이에서 나온 가면의 고정 흔적을 관찰한 뒤 주변 유물로 의식 세계를 복원한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "relation": "의식 세계의 규모에서 파괴·매납 반전",
+      "reason": "정교하고 거대한 제사 도구라는 가치를 먼저 세운 뒤 그것이 파괴됐다는 모순을 강화한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 4,
+      "to": 5,
+      "relation": "왜 해체했는가라는 질문에서 최신 측정 증거로 진입",
+      "reason": "중심 질문을 던진 직후 4호 구덩이의 연소 잔류물 분석으로 답의 범위를 좁힌다.",
+      "status": "PASS"
+    },
+    {
+      "from": 5,
+      "to": 6,
+      "relation": "확인된 매납 과정에서 사건의 이유에 대한 경쟁 가설로 이동",
+      "reason": "외부 연소와 매납은 확인됐지만 왜 했는지는 밝히지 못하므로 가능한 해석을 질문형으로 분리한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 6,
+      "to": 7,
+      "relation": "알 수 없는 이유와 기록 한계에서 확인된 역사적 의미로 종합",
+      "reason": "모르는 이유를 설명한 뒤 확실히 아는 행위와 앞으로 필요한 증거를 회수한다.",
+      "status": "PASS"
+    }
+  ],
+  "connectors": [
+    {
+      "sentence": 7,
+      "text": "하지만",
+      "relation": "발견 규모의 점층",
+      "decision": "KEEP",
+      "reason": "1929년의 옥기 단서와 1986년에 확인된 대형 구덩이의 규모를 대비한다."
+    },
+    {
+      "sentence": 12,
+      "text": "그런데",
+      "relation": "단일 유물에서 의식 세계로 확장",
+      "decision": "KEEP",
+      "reason": "가면의 설치 방식만 설명하고 끝날 것이라는 예상을 뒤집어 전체 유물군으로 넓힌다."
+    },
+    {
+      "sentence": 29,
+      "text": "그러니까",
+      "relation": "증거 종합",
+      "decision": "KEEP",
+      "reason": "발견·층위·연소 분석과 기록의 한계를 모아 산싱두이가 확실히 보여준 사실로 정리한다."
+    },
+    {
+      "sentence": 31,
+      "text": "하지만",
+      "relation": "확인과 미확인 대비",
+      "decision": "KEEP",
+      "reason": "의도적인 해체·매납이라는 확인 범위와 얼굴·의식의 정확한 이유라는 미확인 범위를 가른다."
+    }
+  ],
+  "duplicate_review": {
+    "status": "PASS",
+    "acknowledged_pairs": [],
+    "note": "가면의 치수는 1986년 종목 가면 138센티미터와 2021년 대형 가면 131센티미터를 서로 다른 발견으로 명시해 중복이 아니라 대비 기능을 갖는다."
+  },
+  "findings": [
+    {
+      "id": "EP04-CONTEXT-001",
+      "category": "과학 증거의 범위",
+      "before": "다른 곳에서 탄 재와 의례물이 이곳으로 옮겨져 묻힌 정황",
+      "after": "의례물을 넣고, 다른 곳에서 생긴 재와 흙을 가져와 덮은 정황",
+      "reason": "4호 구덩이 연구가 직접 확인한 것은 외부 연소 잔류물의 유입이므로 의례물과 재가 함께 이동했다고 확대하지 않았다.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "EP04-CONTEXT-002",
+      "category": "어색한 접속어",
+      "before": "무관한 대조 접속어를 관습적으로 추가",
+      "after": "발견 점층·범위 확장·증거 종합·확인과 미확인의 네 기능에만 접속어 사용",
+      "reason": "각 접속어를 삭제했을 때 문단 관계의 방향이 약해지는 경우에만 유지했다.",
+      "status": "RESOLVED"
+    }
+  ]
+}
