@@ -32,7 +32,7 @@ import urllib.request
 import uuid
 from pathlib import Path
 
-from _config import load_env as _cfg_env
+from tts_generate import load_env as _read_env
 from tts_pronunciation import original_to_spoken_map
 
 for _s in (sys.stdout, sys.stderr):
@@ -45,8 +45,8 @@ ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.elevenlabs.io/v1/forced-alignment"
 
 
-def load_key() -> str:
-    k = os.environ.get("ELEVENLABS_API_KEY") or _cfg_env().get("ELEVENLABS_API_KEY", "")
+def load_key(env_file: Path) -> str:
+    k = os.environ.get("ELEVENLABS_API_KEY") or _read_env(env_file).get("ELEVENLABS_API_KEY", "")
     if not k:
         sys.exit("[에러] .env 에 ELEVENLABS_API_KEY 가 없습니다.")
     return k
@@ -116,6 +116,12 @@ def main() -> int:
                     help="에피소드 아래 분할 자막 JSON(기본: 자막.json)")
     ap.add_argument("--out", default="자막_싱크.json",
                     help="에피소드 아래 실측 싱크 출력(기본: 자막_싱크.json)")
+    ap.add_argument(
+        "--env-file",
+        type=Path,
+        default=ROOT / ".env",
+        help="ElevenLabs 키를 읽을 .env 경로(기본: 저장소 .env)",
+    )
     ap.add_argument("--force", action="store_true", help="정렬 캐시 무시")
     args = ap.parse_args()
 
@@ -127,7 +133,7 @@ def main() -> int:
     if not man_p.exists() or not cue_p.exists():
         sys.exit("[에러] durations.json 또는 자막.json 이 없습니다. 3단계·자막분할을 먼저.")
 
-    key = load_key()
+    key = load_key(args.env_file)
     scenes = json.loads(man_p.read_text(encoding="utf-8"))["scenes"]
     cues = json.loads(cue_p.read_text(encoding="utf-8"))["cues"]
 
@@ -208,11 +214,34 @@ def main() -> int:
     overlap = sum(1 for a, b in zip(out, out[1:]) if b["start"] < a["end"] - 0.001)
     short = [c["n"] for c in out if c["dur"] < 0.15]
     cps = [c["len"] / c["dur"] for c in out if c["dur"] > 0]
+    text_mismatches = []
+    boundary_violations = []
+    for k in scene_keys:
+        scene_number = int(k)
+        group = [cue for cue in out if cue["scene"] == scene_number]
+        cue_text = "".join(norm(cue.get("raw") or cue["text"]) for cue in group)
+        if cue_text != norm(scenes[k]["text"]):
+            text_mismatches.append(scene_number)
+        scene_start = starts[k]
+        scene_end = scene_start + float(scenes[k]["duration"])
+        for cue in group:
+            if cue["start"] < scene_start - 0.001 or cue["end"] > scene_end + 0.001:
+                boundary_violations.append(cue["n"])
 
     print(f"\n큐 {len(out)}/{len(cues)}개 배치")
     print(f"  순서 역전 {bad_order} · 겹침 {overlap} · 0.15초 미만 {len(short)}")
+    print(f"  대본 동일성 오류 {len(text_mismatches)} · 장면 경계 이탈 {len(boundary_violations)}")
     print(f"  표시속도 {min(cps):.1f}~{max(cps):.1f} 자/초 (중앙 {sorted(cps)[len(cps)//2]:.1f})")
     print(f"  첫 큐 {out[0]['start']:.2f}s  끝 큐 {out[-1]['end']:.2f}s")
+
+    if (len(out) != len(cues) or bad_order or overlap or short
+            or text_mismatches or boundary_violations):
+        print("\n[실패] 실측 자막 검증을 통과하지 못했습니다.")
+        if text_mismatches:
+            print(f"  대본 동일성 오류 장면: {text_mismatches}")
+        if boundary_violations:
+            print(f"  장면 경계 이탈 큐: {boundary_violations}")
+        return 1
 
     p = ep / args.out
     p.write_text(json.dumps({"source": "elevenlabs-forced-alignment",

@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "editor": "CapCut",
+  "project_name": "EP04 산싱두이 청동가면 - 싱크수정",
+  "video": "EP04_산싱두이_청동가면_최종_capcut_4K.mp4",
+  "video_sha256": "2c93a78453bacc0d18b49d02dd0529bab6047b3962749fae6b8b01007c48dc8b",
+  "locked_at": "2026-08-28T08:25:46+09:00",
+  "checks": {
+    "caption_style_verified": true,
+    "caption_sync_verified": true,
+    "motion_finish_verified": true,
+    "full_playback_verified": true,
+    "audio_policy_verified": true
+  },
+  "media": {
+    "width": 2160,
+    "height": 3840,
+    "fps": 30.0,
+    "duration": 144.01,
+    "video_codec": "h264",
+    "audio_codec": "aac"
+  },
+  "context_review": "01.문맥검수.json",
+  "draft_audio_guard": {
+    "path": "C:\\Users\\7500F\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\EP04 산싱두이 청동가면 - 싱크수정\\draft_content.json",
+    "sha256": "61eb7183fc35c7fd464170570ddc27a74ceae8bc8bcdf6cccafe3aac05dcbdca",
+    "passed": true,
+    "forbidden_materials": {
+      "audio_effects": 0,
+      "realtime_denoises": 0,
+      "vocal_beautifys": 0,
+      "vocal_separations": 0
+    },
+    "forbidden_refs": {
+      "audio_effects": 0,
+      "realtime_denoises": 0,
+      "vocal_beautifys": 0,
+      "vocal_separations": 0
+    },
+    "queued_tasks": {
+      "enhance_voice_segid_list": 0,
+      "normalize_loudness_segid_list": 0,
+      "normalize_loudness_audio_denoise_segid_list": 0
+    },
+    "normalization_mismatches": 0,
+    "narration_volume_mismatches": 0,
+    "video_volume_mismatches": 0
+  }
+}

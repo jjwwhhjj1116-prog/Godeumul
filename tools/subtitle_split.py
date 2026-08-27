@@ -243,9 +243,10 @@ def main() -> int:
         for c in over:
             print(f"    {c['n']}. [{c['len']}] {c['text']}")
 
-    out = args.out or args.script.parent / "자막.json"
-    if not out.is_absolute():
-        out = args.script.parent / out
+    if args.out is None:
+        out = args.script.parent / "자막.json"
+    else:
+        out = args.out if args.out.is_absolute() else args.script.parent / args.out
     out.write_text(json.dumps(
         {"source": str(args.script), "max_chars": args.max, "count": len(cues),
          "cues": cues}, ensure_ascii=False, indent=2), encoding="utf-8")

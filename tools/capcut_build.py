@@ -29,6 +29,7 @@ import argparse
 import copy
 import json
 import math
+import re
 import shutil
 import subprocess
 import sys
@@ -237,6 +238,80 @@ def find_media(folder: Path, seq: int, exts: tuple[str, ...]) -> Path | None:
     return None
 
 
+def normalize_caption_text(value: str) -> str:
+    """대본·자막 동일성 비교용으로 공백과 문장부호만 제거한다."""
+    return re.sub(r"[\s.,!?·…\"'“”‘’()]", "", value or "")
+
+
+def validate_sync_document(document: dict, cues: list[dict], scenes: dict) -> list[str]:
+    """CapCut에 넣기 전 forced-alignment 산출물을 다시 엄격하게 검증한다."""
+    failures: list[str] = []
+    synced = document.get("cues")
+    if document.get("source") != "elevenlabs-forced-alignment":
+        failures.append("자막_싱크.json source가 ElevenLabs forced alignment가 아님")
+    if not isinstance(synced, list):
+        return [*failures, "자막_싱크.json cues가 배열이 아님"]
+    if document.get("count") != len(synced):
+        failures.append("자막_싱크.json count와 실제 cues 개수가 다름")
+    if len(synced) != len(cues):
+        failures.append(f"실측 자막 {len(synced)}개 / 분할 자막 {len(cues)}개 — 전부 다시 정렬 필요")
+
+    scene_keys = sorted(scenes, key=int)
+    scene_ranges: dict[int, tuple[float, float]] = {}
+    cursor = 0.0
+    for key in scene_keys:
+        duration = float(scenes[key].get("duration") or 0.0)
+        scene_ranges[int(key)] = (cursor, cursor + duration)
+        cursor += duration
+
+    previous_start = -1.0
+    previous_end = -1.0
+    per_scene: dict[int, list[dict]] = {}
+    for index, cue in enumerate(synced, 1):
+        try:
+            number = int(cue.get("n"))
+            scene = int(cue.get("scene"))
+            start = float(cue.get("start"))
+            end = float(cue.get("end"))
+        except (TypeError, ValueError):
+            failures.append(f"실측 자막 {index}번의 번호·장면·시각 형식 오류")
+            continue
+        if number != index:
+            failures.append(f"실측 자막 번호 불연속: 위치 {index}, n={number}")
+        if start < previous_start - 0.001:
+            failures.append(f"실측 자막 순서 역전: {number}번")
+        if start < previous_end - 0.001:
+            failures.append(f"실측 자막 겹침: {number}번")
+        if end - start < 0.15:
+            failures.append(f"실측 자막이 0.15초 미만: {number}번")
+        previous_start, previous_end = start, end
+
+        if scene not in scene_ranges:
+            failures.append(f"실측 자막의 장면 번호가 TTS 길이표에 없음: {number}번/장면 {scene}")
+        else:
+            scene_start, scene_end = scene_ranges[scene]
+            if start < scene_start - 0.001 or end > scene_end + 0.001:
+                failures.append(f"실측 자막이 장면 경계를 이탈: {number}번/장면 {scene}")
+            per_scene.setdefault(scene, []).append(cue)
+
+        if index <= len(cues):
+            expected = normalize_caption_text(cues[index - 1].get("raw") or cues[index - 1].get("text"))
+            actual = normalize_caption_text(cue.get("raw") or cue.get("text"))
+            if expected != actual:
+                failures.append(f"분할 자막과 실측 자막 텍스트 불일치: {number}번")
+
+    for key in scene_keys:
+        scene = int(key)
+        actual = "".join(
+            normalize_caption_text(cue.get("raw") or cue.get("text"))
+            for cue in per_scene.get(scene, [])
+        )
+        expected = normalize_caption_text(scenes[key].get("text"))
+        if actual != expected:
+            failures.append(f"실측 자막이 TTS 장면 원문과 다름: 장면 {scene}")
+    return failures
+
+
 # ──────────────────────────────────────────────────────────────
 def main() -> int:
     ap = argparse.ArgumentParser(description="캡컷 드래프트 생성기")
@@ -244,12 +319,19 @@ def main() -> int:
     ap.add_argument("--name", default=None, help="캡컷에 보일 프로젝트 이름")
     ap.add_argument("--check", action="store_true", help="준비물 점검만 하고 끝")
     ap.add_argument("--template", type=Path, default=TEMPLATE)
+    ap.add_argument(
+        "--draft-root",
+        type=Path,
+        default=DRAFT_ROOT,
+        help="드래프트를 만들 루트. 실제 CapCut 폴더가 아닌 검수용 스테이징에도 생성 가능",
+    )
     args = ap.parse_args()
 
     ep = args.episode.resolve()          # 캡컷은 절대경로만 인식한다
     name = args.name or f"{ep.name}_자동"
     audio_dir, clip_dir = ep / "audio", ep / "clips"
     dur_path, cue_path = audio_dir / "durations.json", ep / "자막.json"
+    sync_path = ep / "자막_싱크.json"
 
     # ── 준비물 점검 ─────────────────────────────────────────
     problems: list[str] = []
@@ -261,14 +343,22 @@ def main() -> int:
         problems.append(f"durations.json 없음 — 3단계를 먼저 (경로 {dur_path})")
     if not cue_path.exists():
         problems.append(f"자막.json 없음 — tools/subtitle_split.py 를 먼저")
+    if not sync_path.exists():
+        problems.append("자막_싱크.json 없음 — tools/align_subtitles.py 강제 정렬을 먼저")
     if not WATERMARK.exists():
         problems.append(f"워터마크 없음: {WATERMARK}")
 
-    scenes, cues = {}, []
+    scenes, cues, sync_document = {}, [], {}
     if dur_path.exists():
         scenes = json.loads(dur_path.read_text(encoding="utf-8"))["scenes"]
     if cue_path.exists():
         cues = json.loads(cue_path.read_text(encoding="utf-8"))["cues"]
+    if sync_path.exists():
+        try:
+            sync_document = json.loads(sync_path.read_text(encoding="utf-8"))
+            problems.extend(validate_sync_document(sync_document, cues, scenes))
+        except (OSError, json.JSONDecodeError) as exc:
+            problems.append(f"자막_싱크.json 오류: {exc}")
 
     missing_audio, missing_clip = [], []
     for k in sorted(scenes, key=int):
@@ -405,68 +495,32 @@ def main() -> int:
     total = cursor
 
     # ── 자막 ────────────────────────────────────────────────
-    # 자막_싱크.json 이 있으면 실측 타임스탬프를 그대로 쓴다(권장).
-    # 없으면 장면 길이 안에서 글자수 비율로 배분한다(근사치).
-    sync_p = ep / "자막_싱크.json"
-    if sync_p.exists():
-        synced = json.loads(sync_p.read_text(encoding="utf-8"))["cues"]
-        print(f"자막     : 실측 싱크 {len(synced)}개 (자막_싱크.json)")
-        for c in synced:
-            st = snap(int(c["start"] * US))
-            en = snap(int(c["end"] * US))
-            d = max(en - st, FRAME * 5)
-            if st + d > total:
-                d = max(total - st, FRAME * 3)
-            tm = copy.deepcopy(tpl["materials"]["texts"][0])
-            content = json.loads(tm["content"])
-            content["text"] = c["text"]
-            for stl in content.get("styles", []):
-                stl["range"] = [0, len(c["text"])]
-            tm["id"] = uid()
-            tm["content"] = json.dumps(content, ensure_ascii=False)
-            tm["base_content"] = c["text"]
-            cl.out["texts"].append(tm)
+    # 검증을 통과한 ElevenLabs 실측 타임스탬프만 허용한다.
+    # 글자수 비율 근사는 긴 영상에서 누적 드리프트를 만들므로 게시용 드래프트에서 금지한다.
+    synced = sync_document["cues"]
+    print(f"자막     : 실측 싱크 {len(synced)}개 (자막_싱크.json / strict PASS)")
+    for c in synced:
+        st = snap(int(c["start"] * US))
+        en = snap(int(c["end"] * US))
+        d = max(en - st, FRAME * 5)
+        if st + d > total:
+            d = max(total - st, FRAME * 3)
+        tm = copy.deepcopy(tpl["materials"]["texts"][0])
+        content = json.loads(tm["content"])
+        content["text"] = c["text"]
+        for stl in content.get("styles", []):
+            stl["range"] = [0, len(c["text"])]
+        tm["id"] = uid()
+        tm["content"] = json.dumps(content, ensure_ascii=False)
+        tm["base_content"] = c["text"]
+        cl.out["texts"].append(tm)
 
-            ts = copy.deepcopy(t_proto)
-            ts["id"] = uid(); ts["material_id"] = tm["id"]
-            ts["extra_material_refs"] = cl.clone_extras(t_proto)
-            set_caption_fade_in(cl, ts["extra_material_refs"])
-            ts["target_timerange"] = {"start": st, "duration": d}
-            t_track["segments"].append(ts)
-    else:
-        print("자막     : ★ 실측 싱크 없음 — 글자수 비율 근사. "
-              "tools/align_subtitles.py 를 먼저 돌리세요.")
-        by_scene: dict[int, list[dict]] = {}
-        tl_by_scene = {t["scene"]: t for t in timeline}
-        per = max(1, len(cues) // max(1, len(timeline)))
-        for i, c in enumerate(cues):
-            sc = timeline[min(i // per, len(timeline) - 1)]["scene"]
-            by_scene.setdefault(sc, []).append(c)
-        for sc, group in by_scene.items():
-            tl = tl_by_scene[sc]
-            chars = sum(max(1, len(c["text"])) for c in group)
-            pos = tl["start"]
-            for j, c in enumerate(group):
-                d = snap(int(tl["dur"] * max(1, len(c["text"])) / chars))
-                if j == len(group) - 1:
-                    d = tl["start"] + tl["dur"] - pos
-                d = max(d, FRAME * 6)
-                tm = copy.deepcopy(tpl["materials"]["texts"][0])
-                content = json.loads(tm["content"])
-                content["text"] = c["text"]
-                for stl in content.get("styles", []):
-                    stl["range"] = [0, len(c["text"])]
-                tm["id"] = uid()
-                tm["content"] = json.dumps(content, ensure_ascii=False)
-                tm["base_content"] = c["text"]
-                cl.out["texts"].append(tm)
-                ts = copy.deepcopy(t_proto)
-                ts["id"] = uid(); ts["material_id"] = tm["id"]
-                ts["extra_material_refs"] = cl.clone_extras(t_proto)
-                set_caption_fade_in(cl, ts["extra_material_refs"])
-                ts["target_timerange"] = {"start": pos, "duration": d}
-                t_track["segments"].append(ts)
-                pos += d
+        ts = copy.deepcopy(t_proto)
+        ts["id"] = uid(); ts["material_id"] = tm["id"]
+        ts["extra_material_refs"] = cl.clone_extras(t_proto)
+        set_caption_fade_in(cl, ts["extra_material_refs"])
+        ts["target_timerange"] = {"start": st, "duration": d}
+        t_track["segments"].append(ts)
 
     # ── 워터마크 (템플릿 그대로, 경로와 길이만) ─────────────
     wseg = wm_track["segments"][0]
@@ -496,7 +550,8 @@ def main() -> int:
     # ★ 템플릿 폴더를 통째로 복사하면 안 된다.
     #   draft.extra / key_value.json / Timelines/ 등 옛 프로젝트 상태가 남아
     #   캡컷이 프로젝트를 열지 못한다. 깨끗한 폴더에 3개 파일만 쓴다.
-    dest = DRAFT_ROOT / name
+    draft_root = args.draft_root.resolve()
+    dest = draft_root / name
     if dest.exists():
         shutil.rmtree(dest)
     dest.mkdir(parents=True)
@@ -508,7 +563,7 @@ def main() -> int:
     now = int(time.time() * US)
     meta.update(draft_id=uid(), draft_name=name,
                 draft_fold_path=str(dest).replace("\\", "/"),
-                draft_root_path=str(DRAFT_ROOT).replace("\\", "/"),
+                draft_root_path=str(draft_root).replace("\\", "/"),
                 draft_cover="draft_cover.jpg",
                 tm_draft_create=now, tm_draft_modified=now,
                 tm_duration=total)

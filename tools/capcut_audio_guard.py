@@ -241,10 +241,23 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+LIVE_DRAFT_ROOT = (
+    Path.home() / "AppData/Local/CapCut/User Data/Projects/com.lveditor.draft"
+).resolve()
+
+
+def is_live_draft(path: Path) -> bool:
+    try:
+        path.resolve().relative_to(LIVE_DRAFT_ROOT)
+        return True
+    except ValueError:
+        return False
+
+
 def write_guarded_files(primary: Path, *, narration_db: float = DEFAULT_NARRATION_DB,
                         video_db: float = DEFAULT_VIDEO_DB,
                         target_lufs: float = DEFAULT_TARGET_LUFS) -> list[tuple[Path, AudioGuardAudit]]:
-    if capcut_editor_open():
+    if capcut_editor_open() and is_live_draft(primary):
         raise RuntimeError("CapCut 본체가 열려 있습니다. 완전히 종료한 뒤 다시 실행하세요.")
     paths = [primary]
     paths.extend(primary.parent / name for name in COMPANION_NAMES if (primary.parent / name).exists())
