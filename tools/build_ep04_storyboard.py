@@ -49,7 +49,8 @@ NEGATIVE = (
     "or Mesoamerican imagery, no alien or science-fiction interpretation, no later imperial Chinese palace, "
     "no modern clothing in ancient scenes, no ancient costume on modern researchers, no wearable mask, no fantasy "
     "monster, no generic tomb, no plastic toy surface, no low-poly game asset, no glass display case, no museum "
-    "pedestal, no exterior box frame, no gore, no watermark, no text, no labels, no letters"
+    "pedestal, no exterior box frame, no measuring ruler, no arrows, no graphic overlay, no fake script or pseudo-writing, "
+    "no gore, no watermark, no text, no labels, no letters"
 )
 
 LOCK_BASE = {
@@ -98,14 +99,14 @@ def graphic(function: str, evidence: str, language: str, start: str, via: list[s
 def spec(chapter: str, scene_type: str, evidence: str, image: str, source: str,
          fingerprints: list[str], action: str, beat_actions: list[str], camera_path: dict[str, object],
          *, people: bool = False, architecture: bool = False, modern: bool = False,
-         veo: dict[str, object] | None = None) -> dict[str, object]:
+         veo: dict[str, object] | None = None, i2v_guard: str = "") -> dict[str, object]:
     return locals()
 
 
 SPECS = [
     spec(
         "1. 거대한 얼굴", "DISCOVERY_REVEAL", "측정확인",
-        "A section-ready subterranean discovery tableau: compact Sichuan earth opens along a clean physical cut face around the documented 1986 Pit 2 bronze mask with protruding pupils, the full 138-centimetre wing-to-wing width readable in one frontal composition; huge angular face, tubular eyes projecting about 16 centimetres, wing-like ears, dark green patina and soil residue, two unnumbered warm-bronze dimension ticks anchored to the true outer ear edges",
+        "A section-ready subterranean discovery tableau: compact Sichuan earth opens along a clean physical cut face around the documented 1986 Pit 2 bronze mask with protruding pupils, the full 138-centimetre wing-to-wing width readable in one frontal composition; huge angular face, tubular eyes projecting about 16 centimetres, wing-like ears, dark green patina and soil residue; pure archaeological start frame with no dimension mark or overlay",
         "Sanxingdui Museum object dimensions and 1986 Pit 2 context",
         ["1986 Pit 2 protruding-pupil mask", "138-centimetre wing-to-wing width", "tubular pupils projecting about 16 centimetres"],
         "Earth grains break away along the pre-existing section seam as the camera dives to the mask, then a thin dimension line grows only between the real ear edges and remains behind projecting bronze details.",
@@ -115,7 +116,7 @@ SPECS = [
     ),
     spec(
         "1. 거대한 얼굴", "ARTIFACT_MACRO", "측정확인",
-        "Three-quarter macro portrait of the same documented 1986 protruding-pupil bronze mask, showing the 16-centimetre tubular pupils in true profile, flared wing-like ears, broad angular nose, cast seams, pitted green patina, compact soil in recesses and no human body; one unnumbered neutral-bronze depth line is physically anchored from the eye socket to the pupil tip",
+        "Three-quarter macro portrait of the same documented 1986 protruding-pupil bronze mask, showing the 16-centimetre tubular pupils in true profile, flared wing-like ears, broad angular nose, cast seams, pitted green patina, compact soil in recesses and no human body; pure artifact image with no depth line, ruler or overlay",
         "Sanxingdui Museum protruding-pupil mask measurements",
         ["same 1986 Pit 2 mask", "16-centimetre pupil projection", "wing-like ears and angular cast face"],
         "The camera starts at the pupil tip, snaps backward to the socket, then strafes rapidly toward the ear while the world-anchored depth line grows between the two true bronze surfaces.",
@@ -125,7 +126,7 @@ SPECS = [
     ),
     spec(
         "1. 거대한 얼굴", "ARTIFACT_MACRO", "미확인",
-        "The documented giant protruding-pupil mask stands vertically on a restrained conservation support within an artifact-scale archaeological diorama; beside it a plain unlabelled human-head-sized wooden reference form makes the impossible wearable scale obvious, while the mask's empty dark eyes remain the final visual question, no invented deity and no person wearing it",
+        "The documented giant protruding-pupil mask rises vertically from a compact excavated-earth cradle inside an artifact-scale archaeological diorama; beside it sits one plain undecorated human-head-sized clay scale form, making the impossible wearable scale obvious, while the mask's empty dark eyes remain the final visual question; no conservation stand, shelf, paper, ruler, invented deity or person wearing it",
         "Measured mask size; identity and represented being remain unknown",
         ["giant 138-centimetre mask", "plain human-head-sized comparison form", "empty undocumented identity"],
         "The camera pulls back quickly from patina pores to reveal the human-scale reference, performs a short half-orbit and stops inside the empty eye without assigning an identity.",
@@ -164,7 +165,7 @@ SPECS = [
     ),
     spec(
         "3. 의식 세계", "HISTORICAL_RECONSTRUCTION", "학술해석",
-        "A restrained evidence-labelled-by-layout reconstruction without written labels: the same giant bronze mask stands detached a few centimetres before a thick timber ritual post, its real square attachment holes aligned with two plain wooden pegs but not yet connected; behind it only a partial Ancient Shu timber ritual platform and rammed-earth courtyard are visible, clearly a hypothesis bay rather than a confirmed complete temple",
+        "A restrained provisional reconstruction: the same broad flat wing-eared protruding-pupil bronze mask, with no body, crown or horns, floats only a few centimetres before a thick plain timber ritual post; its real square side attachment holes align with two plain wooden pegs but remain visibly unconnected; behind it only a partial Ancient Shu timber platform and rammed-earth courtyard are visible, never a confirmed complete temple",
         "HKPM interpretation of holes and U-shaped back as possible timber mounting",
         ["same giant mask with attachment holes", "plain timber post aligned to the holes", "reconstruction kept visibly provisional"],
         "The mask and two pegs separate slightly along their real axes, the camera orbits through the gap, then the pieces ease toward alignment without completing an asserted installation; it immediately pulls beyond the post toward the larger artifact field.",
@@ -175,7 +176,7 @@ SPECS = [
     ),
     spec(
         "3. 의식 세계", "INVENTORY_TABLEAU", "발굴확인",
-        "One coherent high-fidelity ritual-artifact diorama grounded in East Asian ancient Shu bronze-casting iconography: the documented 262-centimetre standing bronze statue on its pedestal with oversized empty hands and layered robe stands in the foreground; behind it rises the reconstructed 395-centimetre segmented bronze sacred tree with birds and a descending dragon; gold-faced bronze heads and layered elephant tusks remain on separate lower plinth-like excavation zones, every artifact at correct relative scale and provenance visually separated",
+        "One high-fidelity vertical excavation cutaway with four physically separated evidence zones, never an assembled shrine: the documented 262-centimetre standing bronze statue with oversized empty hands and layered robe occupies the lower foreground; reconstructed segments of the documented 395-centimetre bronze sacred tree with its real branch birds and descending dragon occupy a separate deep rear zone; gold-faced bronze heads and layered elephant tusks remain in two additional earthen deposit zones, every category at correct relative scale and provenance visibly separated; all heads and statues are excavated bronze artifacts in East Asian ancient Shu iconography, not living people",
         "National Science Review, Met and Sanxingdui Museum representative artifact dimensions",
         ["262-centimetre standing bronze figure with empty hands", "approximately 395-centimetre reconstructed bronze sacred tree", "separate gold-faced heads and ivory"],
         "Crane rapidly up the standing figure from robe hem to empty hands, whip-bank toward the sacred tree crown, descend along the dragon and land on the gold-faced heads and ivory without making any object move.",
@@ -184,7 +185,7 @@ SPECS = [
     ),
     spec(
         "3. 의식 세계", "HISTORICAL_RECONSTRUCTION", "학술해석",
-        "A compact Ancient Shu ritual-world synthesis built only from documented forms: the tall bronze statue, segmented sacred tree, branch birds, descending dragon, gold-faced heads and ivory create one connected spatial composition inside a partial timber-and-rammed-earth ritual zone; no performed ceremony, no invented deity and no complete fantasy temple",
+        "A restrained conceptual Ancient Shu ritual-world synthesis built only from documented artifacts: the tall bronze statue, segmented sacred tree, branch birds, descending dragon, gold-faced bronze heads and ivory remain separated on distinct physical axes while the camera can visually connect their repeated human, tree, bird and material motifs; no living ritual performers, no assembled altar, no invented deity and no complete fantasy temple",
         "Scholarly interpretation of Sanxingdui ritual imagery and artifact ensemble",
         ["documented standing figure", "documented tree, birds and dragon", "gold, bronze and ivory artifact relationship"],
         "A rapid curved push threads between the figure's empty hands, circles the tree trunk and rises past one bird; controlled light briefly connects the documented materials, then the camera settles on the whole ritual-world composition.",
@@ -204,23 +205,24 @@ SPECS = [
     ),
     spec(
         "4. 파괴와 매납", "EXCAVATION", "발굴확인",
-        "2021 climate-controlled Sanxingdui Pit 3 excavation diorama with no people obscuring the evidence: the documented large non-protruding bronze mask, 131 centimetres wide and made from separately cast face, eyes and ears, lies face-down in compact soil; more than ten real elephant tusks are carefully stacked above it, modern conservation rails and soft work lights remain peripheral; do not give this mask tubular projecting pupils",
+        "2021 climate-controlled Sanxingdui Pit 3 excavation diorama seen from directly above: the documented large non-protruding bronze casting lies reverse-side-up in compact soil, showing only its plain concave green-bronze back, broad structural ribs, ancient seams, square attachment openings and wide broken outer-ear silhouette; absolutely no facial front, eyes, eyelids, pupils, eyebrows, nose, nostrils, mouth, lips or cheeks are visible anywhere; more than ten natural elephant tusks are carefully stacked beside and above its lower edge; empty excavation rails and soft work lights remain peripheral, with no person or visible hand",
         "HKPM and Sanxingdui Museum 2021 Pit 3 large-mask context",
-        ["2021 Pit 3 non-protruding large mask", "face-down orientation", "more than ten stacked elephant tusks above"],
-        "Start at the true lower mask edges, grow one unnumbered world-space width line between them under the ivory, then crane vertically through the tusk stack; bank once around a tusk and look down to prove the face-down ordering.",
+        ["2021 Pit 3 non-protruding large mask", "reverse side proving face-down orientation", "more than ten stacked elephant tusks above"],
+        "Begin macro at the left broken outer edge, make one fast lateral sweep across the full reverse-side bronze width, pull back to prove its scale, then travel only once toward the natural ivory stack and finish top-down on the highest tusks; never return to the bronze.",
         ["Read the large mask's face-down position and true width.", "Climb through the more-than-ten-tusk layer stacked above it."],
-        cam("left outer edge of the face-down mask", "across the buried mask then vertically through the ivory stack", "topmost elephant tusk", "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE", "CRANE_ORBIT_REVEAL", "ORBIT_REVEAL", "top-down frame proving ivory above face-down bronze", "width-line growth under the ivory", "bank around the middle tusk"),
+        cam("left broken outer edge of the reverse-side bronze casting", "across the full concave back then only once toward the natural ivory stack", "highest elephant tusks", "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE", "CRANE_ORBIT_REVEAL", "ORBIT_REVEAL", "top-down frame proving ivory above face-down bronze", "fast lateral sweep across the structural ribs", "single pullback before the ivory travel"),
         modern=True,
-        veo=graphic("DIMENSION_LINE", "Published 131 cm width of the 2021 Pit 3 mask; exact number remains in captions", "thin warm-grey 3D survey line and end ticks lying in the mask plane beneath the ivory", "left outer mask edge", ["forehead casting below the tusks"], "right outer mask edge", "a soft bronze reflection touches the right end tick"),
+        i2v_guard="The giant bronze casting must remain reverse-side-up with only its plain concave back, structural ribs, seams, attachment holes and broken outer rim visible. Never create a facial front, eyes, nose or mouth. Keep every tusk and soil layer unchanged. Never use a ruler, dimension line or graphic. Move only once toward the ivory and never return to the bronze.",
     ),
     spec(
         "4. 파괴와 매납", "SEALED_UNKNOWN", "미확인",
-        "Tight oblique evidence view of the same Pit 3 arrangement: more than ten elephant tusks form deliberate crossing layers above the face-down non-protruding large bronze mask, broken ritual fragments align in controlled rows nearby, while one fractured mask edge leads into opaque undisturbed soil; the orderly placement is clear but no cause, attacker or ceremony is invented",
+        "Tight top-down evidence view of the same Pit 3 arrangement: more than ten natural elephant tusks form deliberate crossing layers beside the documented large non-protruding bronze casting, which remains reverse-side-up and shows only its plain concave green-bronze back, broad structural ribs, ancient seams, square attachment openings and broken outer rim; absolutely no facial front, eyes, nose or mouth are visible; one fractured bronze edge leads into opaque undisturbed soil, with no invented cause, attacker or ceremony",
         "Antiquity stratigraphic publication; motive for deposition remains unknown",
-        ["same Pit 3 face-down large mask", "ordered crossing ivory layers", "opaque evidence boundary beyond broken fragments"],
+        ["same Pit 3 reverse-side-up casting", "ordered crossing ivory layers", "opaque evidence boundary beyond broken fragments"],
         "The camera glides quickly along three tusk crossings, drops to the bronze fracture and stops hard at intact soil; loose dust settles, but the unknown space never opens.",
         ["Follow the deliberate order of the deposit.", "Stop at the broken edge where the reason remains unknown."],
-        cam("first ivory crossing", "along the stacked tusks then down to the mask fracture", "opaque undisturbed soil boundary", "BOUNDARY_APPROACH_STOP", "LOCKED_EVIDENCE_CAMERA", "BOUNDARY_STOP", "fracture and sealed soil held together", "vertical drop from ivory to bronze fracture"),
+        cam("first natural ivory crossing", "quickly along the existing tusk stack then once toward the broken reverse-side outer rim", "adjacent opaque undisturbed soil boundary", "BOUNDARY_APPROACH_STOP", "LOCKED_EVIDENCE_CAMERA", "BOUNDARY_STOP", "fracture and sealed soil held together", "single curve from ivory to bronze fracture"),
+        i2v_guard="The giant bronze casting must remain reverse-side-up with only its plain concave back, structural ribs, seams, attachment holes and broken outer rim visible. Never create a facial front, eyes, nose or mouth. Keep every tusk and soil boundary unchanged. Never use a ruler or graphic. Never reverse direction.",
     ),
     spec(
         "5. 과학 단서", "SCIENTIFIC_EVIDENCE", "측정확인",
@@ -371,6 +373,30 @@ def image_prompt(item: dict[str, object]) -> str:
     return ". ".join(anchor.rstrip(". ") for anchor in anchors) + "."
 
 
+def ui_image_prompt(item: dict[str, object]) -> str:
+    style = (
+        "9:16 cinematic archaeological 3D diorama; museum-scale miniature, macro lens, "
+        "not live-action, PBR microtexture, high fidelity."
+    )
+    context = (
+        "Sanxingdui archaeology, Guanghan, China; use the stated 1929, 1986 or 2021 context."
+        if item["modern"] else
+        "Bronze Age ancient Shu, Sanxingdui, Sichuan, approximately 1300-1100 BCE."
+    )
+    negative = (
+        "No European or Western people, later Chinese, Japanese, Korean, Egyptian, Mesoamerican or alien forms; "
+        "no anachronisms, wearable mask, fantasy or gore; no text, no labels, no letters, no watermark."
+    )
+    prompt = " ".join((style, context, str(item["image"]), negative))
+    if len(prompt) > 1100:
+        raise ValueError(f"Flow 이미지 프롬프트 1100자 초과: {len(prompt)}")
+    required = ("9:16", "3D diorama", "Sanxingdui", "not live-action", "PBR microtexture", "no text", "no labels", "no letters")
+    missing = [token for token in required if token.lower() not in prompt.lower()]
+    if missing:
+        raise ValueError(f"Flow 이미지 프롬프트 필수 잠금 누락: {missing}")
+    return prompt
+
+
 def video_prompt(item: dict[str, object], beats: list[dict[str, object]], seconds: int) -> str:
     schedule = " ".join(f"{beat['start']:.2f}-{beat['end']:.2f}s: {beat['action']}" for beat in beats)
     path = item["camera_path"]
@@ -380,6 +406,8 @@ def video_prompt(item: dict[str, object], beats: list[dict[str, object]], second
         f"I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. "
         f"Enter at {path['entry_anchor']}; travel {path['route']}; arrive at {path['destination']}; settle on {path['settle_point']}. "
     )
+    if item["i2v_guard"]:
+        prompt += str(item["i2v_guard"]) + " "
     if item["veo"] is not None:
         function = str(item["veo"]["function"])
         name = "physical route path ribbon" if function == "ROUTE_PATH" else function.lower().replace("_", " ")
@@ -390,6 +418,39 @@ def video_prompt(item: dict[str, object], beats: list[dict[str, object]], second
         )
     prompt += str(item["action"]) + " TTS-locked timing: " + schedule
     prompt += " Preserve all objects from the start image. No voice, no music, no subtitles."
+    return prompt
+
+
+def ui_video_prompt(item: dict[str, object], beats: list[dict[str, object]], seconds: int) -> str:
+    path = item["camera_path"]
+    schedule = " ".join(
+        f"{beat['start']:.2f}-{beat['end']:.2f}s {beat['action']}" for beat in beats
+    )
+    parts = [
+        f"Preserve the locked start image exactly: objects, geometry, artifact identity, materials, era and lighting. "
+        f"One continuous {seconds}s I2V shot; no hard cut, teleport, morph or new object. Start camera by 0.35s.",
+        f"Start at {path['entry_anchor']}; move {path['route']}; end at {path['destination']}; "
+        f"settle on {path['settle_point']}.",
+    ]
+    if item["i2v_guard"]:
+        parts.append(str(item["i2v_guard"]))
+    if item["veo"] is not None:
+        function = str(item["veo"]["function"]).lower().replace("_", " ")
+        parts.append(
+            f"Use one restrained {function} anchored in the physical world with real perspective, parallax, "
+            "surface contact, lighting and natural occlusion; no floating HUD, screen graphic, text, number or label."
+        )
+    parts.extend((f"TTS timing: {schedule}", "No voice, music or subtitles."))
+    prompt = " ".join(parts)
+    if len(prompt) > 1250:
+        raise ValueError(f"Flow 영상 프롬프트 1250자 초과: {len(prompt)}")
+    required = (
+        "locked start image", f"continuous {seconds}s", "no hard cut", "0.35s",
+        str(path["entry_anchor"]), str(path["destination"]), "TTS timing", "No voice", "subtitles",
+    )
+    missing = [token for token in required if token.lower() not in prompt.lower()]
+    if missing:
+        raise ValueError(f"Flow 영상 프롬프트 필수 잠금 누락: {missing}")
     return prompt
 
 
@@ -458,6 +519,8 @@ def build() -> None:
     ]
     image_lines: list[str] = []
     video_lines: list[str] = []
+    ui_image_lines: list[str] = []
+    ui_video_lines: list[str] = []
     for row, item in zip(rows, SPECS):
         core = str(item["image"]).split(":", 1)[0][:76].replace("|", "/")
         table.append(
@@ -473,11 +536,17 @@ def build() -> None:
         ])
         image_lines.append(f"[SCENE {row['n']:03d}]\n{row['img_v2']}")
         video_lines.append(f"[SCENE {row['n']:03d} / {row['omni']}s]\n{row['vid']}")
+        ui_image_lines.append(f"[SCENE {row['n']:03d}]\n{ui_image_prompt(item)}")
+        ui_video_lines.append(
+            f"[SCENE {row['n']:03d} / {row['omni']}s]\n{ui_video_prompt(item, row['tts_beats'], int(row['omni']))}"
+        )
 
     (EPISODE / "02a.장면구분표.md").write_text("\n".join(table) + "\n", encoding="utf-8")
     (EPISODE / "02.시각화.txt").write_text("\n".join(visual), encoding="utf-8")
     (EPISODE / "flow_images_ep04.txt").write_text("\n\n".join(image_lines) + "\n", encoding="utf-8")
     (EPISODE / "flow_videos_ep04.txt").write_text("\n\n".join(video_lines) + "\n", encoding="utf-8")
+    (EPISODE / "flow_images_ep04_ui.txt").write_text("\n\n".join(ui_image_lines) + "\n", encoding="utf-8")
+    (EPISODE / "flow_videos_ep04_ui.txt").write_text("\n\n".join(ui_video_lines) + "\n", encoding="utf-8")
     print(f"EP04 시각화 빌드 완료: {len(rows)}장면")
 
 
