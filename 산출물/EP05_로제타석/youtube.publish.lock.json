@@ -1,0 +1,43 @@
+{
+  "status": "scheduled_verified",
+  "idempotency_key": "04dfd861-c901-4b76-b3d1-777508da0756",
+  "submitted_at": "2026-08-28T19:39:37+09:00",
+  "processing_verified_at": "2026-08-28T19:44:00+09:00",
+  "copyright_verified_at": "2026-08-28T19:47:00+09:00",
+  "thumbnail_verified_at": "2026-08-28T19:39:37+09:00",
+  "scheduled_public_at": "2026-08-28T20:39:00+09:00",
+  "published_at": null,
+  "youtube_video_id": "Ir-EyBEYR4c",
+  "canonical_url": "https://youtube.com/shorts/Ir-EyBEYR4c",
+  "studio_url": "https://studio.youtube.com/video/Ir-EyBEYR4c/edit",
+  "channel_id": "UCjgXauHJ8z2Kbbl9O9hu4eA",
+  "channel_name": "고대유물의 비밀",
+  "channel_handle": "@ancient_artifacts_kr",
+  "privacy_status": "private",
+  "upload_status": "processed",
+  "processing_status": "succeeded",
+  "definition": "hd",
+  "copyright_claims": 0,
+  "thumbnail_applied": true,
+  "thumbnail_remote_verified": true,
+  "synthetic_content_disclosure": true,
+  "made_for_kids": false,
+  "category_id": 27,
+  "language": "ko",
+  "playlist": "▶고대유물의 비밀",
+  "title": "깨진 돌 하나가 고대 이집트를 다시 읽게 한 이유, 로제타석",
+  "hashes": {
+    "video_sha256": "8abcd9c534096cbc524c27d472362a1dc814b8aee254faaec6e636245c9d6896",
+    "thumbnail_sha256": "0bcb986279e0f159e7d199582a6c99a7795eb25fd2a179aef13f63f03a986418",
+    "metadata_sha256": "745b18b54547e7daefbd47c61103a3aa8c1a5942b94ccd21b1081768a877bd5e",
+    "title_sha256": "afb966e4d914a802734fbaa5caaecb1a7a22063d89781d1132996f99b47e1e61",
+    "description_sha256": "21d5e7fe01161fedc414c9784fd1dcaec85bab85950beb76de35ac9fc8a433e6"
+  },
+  "notes": [
+    "Uploaded private-first to the verified channel 고대유물의 비밀.",
+    "YouTube Data API reported uploadStatus=processed and processingStatus=succeeded.",
+    "YouTube Studio reported no Content ID claim and no copyrighted content detected.",
+    "The custom 1080x1920 thumbnail was applied and its remote YouTube URLs were re-read.",
+    "Scheduled for public release exactly 60 minutes after the private upload action."
+  ]
+}

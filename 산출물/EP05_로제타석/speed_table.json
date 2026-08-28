@@ -1,0 +1,247 @@
+{
+  "episode": "산출물\\EP05_로제타석",
+  "total_tts": 134.953,
+  "rows": [
+    {
+      "seq": 1,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 6.316,
+      "ratio": 1.267,
+      "state": "OK",
+      "note": "",
+      "file": "001.mp4"
+    },
+    {
+      "seq": 2,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.991,
+      "ratio": 1.004,
+      "state": "OK",
+      "note": "",
+      "file": "002.mp4"
+    },
+    {
+      "seq": 3,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 4.505,
+      "ratio": 1.335,
+      "state": "OK",
+      "note": "",
+      "file": "003.mp4"
+    },
+    {
+      "seq": 4,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 4.598,
+      "ratio": 1.308,
+      "state": "OK",
+      "note": "",
+      "file": "004.mp4"
+    },
+    {
+      "seq": 5,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.062,
+      "ratio": 1.188,
+      "state": "OK",
+      "note": "",
+      "file": "005.mp4"
+    },
+    {
+      "seq": 6,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.294,
+      "ratio": 1.136,
+      "state": "OK",
+      "note": "",
+      "file": "006.mp4"
+    },
+    {
+      "seq": 7,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.108,
+      "ratio": 1.178,
+      "state": "OK",
+      "note": "",
+      "file": "007.mp4"
+    },
+    {
+      "seq": 8,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 7.616,
+      "ratio": 1.05,
+      "state": "OK",
+      "note": "",
+      "file": "008.mp4"
+    },
+    {
+      "seq": 9,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 7.012,
+      "ratio": 1.141,
+      "state": "OK",
+      "note": "",
+      "file": "009.mp4"
+    },
+    {
+      "seq": 10,
+      "kind": "영상",
+      "clip": 4.01,
+      "tts": 3.622,
+      "ratio": 1.107,
+      "state": "OK",
+      "note": "",
+      "file": "010.mp4"
+    },
+    {
+      "seq": 11,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 7.755,
+      "ratio": 1.032,
+      "state": "OK",
+      "note": "",
+      "file": "011.mp4"
+    },
+    {
+      "seq": 12,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 7.57,
+      "ratio": 1.057,
+      "state": "OK",
+      "note": "",
+      "file": "012.mp4"
+    },
+    {
+      "seq": 13,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.805,
+      "ratio": 1.036,
+      "state": "OK",
+      "note": "",
+      "file": "013.mp4"
+    },
+    {
+      "seq": 14,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.944,
+      "ratio": 1.012,
+      "state": "OK",
+      "note": "",
+      "file": "014.mp4"
+    },
+    {
+      "seq": 15,
+      "kind": "영상",
+      "clip": 10.005,
+      "tts": 8.313,
+      "ratio": 1.204,
+      "state": "OK",
+      "note": "",
+      "file": "015.mp4"
+    },
+    {
+      "seq": 16,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.619,
+      "ratio": 1.071,
+      "state": "OK",
+      "note": "",
+      "file": "016.mp4"
+    },
+    {
+      "seq": 17,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.666,
+      "ratio": 1.062,
+      "state": "OK",
+      "note": "",
+      "file": "017.mp4"
+    },
+    {
+      "seq": 18,
+      "kind": "영상",
+      "clip": 8.0,
+      "tts": 7.709,
+      "ratio": 1.038,
+      "state": "OK",
+      "note": "",
+      "file": "018.mp4"
+    },
+    {
+      "seq": 19,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 4.69,
+      "ratio": 1.283,
+      "state": "OK",
+      "note": "",
+      "file": "019.mp4"
+    },
+    {
+      "seq": 20,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.387,
+      "ratio": 1.117,
+      "state": "OK",
+      "note": "",
+      "file": "020.mp4"
+    },
+    {
+      "seq": 21,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 5.433,
+      "ratio": 1.107,
+      "state": "OK",
+      "note": "",
+      "file": "021.mp4"
+    },
+    {
+      "seq": 22,
+      "kind": "영상",
+      "clip": 6.016,
+      "tts": 4.876,
+      "ratio": 1.234,
+      "state": "OK",
+      "note": "",
+      "file": "022.mp4"
+    },
+    {
+      "seq": 23,
+      "kind": "영상",
+      "clip": 4.01,
+      "tts": 3.251,
+      "ratio": 1.233,
+      "state": "OK",
+      "note": "",
+      "file": "023.mp4"
+    },
+    {
+      "seq": 24,
+      "kind": "영상",
+      "clip": 1.833,
+      "tts": 1.811,
+      "ratio": 1.012,
+      "state": "OK",
+      "note": "",
+      "file": "024.mp4"
+    }
+  ],
+  "missing": []
+}

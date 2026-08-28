@@ -1,0 +1,46 @@
+{
+  "status": "APPROVED_PRIVATE_UPLOAD",
+  "created_at": "2026-08-28T19:34:10+09:00",
+  "idempotency_key": "04dfd861-c901-4b76-b3d1-777508da0756",
+  "target": {
+    "platform": "youtube",
+    "channel_id": "UCjgXauHJ8z2Kbbl9O9hu4eA",
+    "channel_name": "고대유물의 비밀",
+    "visibility": "private",
+    "category_id": 27,
+    "language": "ko",
+    "made_for_kids": false,
+    "contains_synthetic_media": true,
+    "playlist": "▶고대유물의 비밀"
+  },
+  "assets": {
+    "video": "EP05_로제타석_최종_capcut_4K.mp4",
+    "video_sha256": "8abcd9c534096cbc524c27d472362a1dc814b8aee254faaec6e636245c9d6896",
+    "thumbnail": "썸네일.jpg",
+    "thumbnail_sha256": "0bcb986279e0f159e7d199582a6c99a7795eb25fd2a179aef13f63f03a986418",
+    "metadata": "06.메타.json",
+    "metadata_sha256": "745b18b54547e7daefbd47c61103a3aa8c1a5942b94ccd21b1081768a877bd5e",
+    "title_sha256": "afb966e4d914a802734fbaa5caaecb1a7a22063d89781d1132996f99b47e1e61",
+    "description_sha256": "21d5e7fe01161fedc414c9784fd1dcaec85bab85950beb76de35ac9fc8a433e6",
+    "capcut_lock": "05.캡컷마감잠금.json",
+    "capcut_lock_sha256": "a17b3895ea502f52d237c3ed03d777068d64556b344986008012091ad7e7547a"
+  },
+  "rights_and_disclosure": {
+    "third_party_music": false,
+    "visuals": "AI-generated 3D archaeological reconstructions based on cited sources",
+    "narration": "ElevenLabs generated narration under the channel workflow",
+    "synthetic_media_disclosure_in_description": true,
+    "youtube_contains_synthetic_media": true
+  },
+  "source_ids": [
+    "BRITISH_MUSEUM_EA24",
+    "BRITISH_MUSEUM_ROSETTA_STONE_GUIDE",
+    "BRITISH_MUSEUM_DECIPHERMENT_TIMELINE",
+    "UCL_DIGITAL_EGYPT_PTOLEMY_V"
+  ],
+  "duplicate_check": {
+    "query": "로제타석",
+    "exact_title_matches": 0,
+    "checked_at": "2026-08-28T19:33:00+09:00"
+  }
+}

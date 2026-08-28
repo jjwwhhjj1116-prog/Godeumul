@@ -1,0 +1,44 @@
+{
+  "project_url": "https://labs.google/fx/ko/tools/flow/project/ab209400-6576-41d4-94da-ff273e465a7f",
+  "project_name": "EP05 로제타석",
+  "status": "VIDEO_LOCKED_DOWNLOAD_PENDING",
+  "scene_count": 24,
+  "generation_mode": "I2V_LOCKED",
+  "generated_model": "Omni 1.1 Flash",
+  "approved": {
+    "001": "3f17b344-44d6-4b59-9962-c8cee013e672",
+    "002": "ef755c08-cf77-499c-a8f5-a598078f363f",
+    "003": "a6eb21a1-0932-4a2c-8b42-6f26e5289cdb",
+    "004": "1ae3e0e2-5c4c-4de1-9fec-fa15b87c633c",
+    "005": "927da2c6-8cca-4a38-89f4-be4ebc425e62",
+    "006": "2250fe5a-d4d9-4a3b-81eb-a04473a868e6",
+    "007": "9ee75e20-096f-4c17-b8e1-81e1c381c23d",
+    "008": "a1f69c16-20b4-45d5-87ef-323821401931",
+    "009": "1b6549d2-c258-410d-8c1b-1691267b1f89",
+    "010": "48906ffb-ea8a-43cc-81ff-7175fc448f9b",
+    "011": "edb10d34-5538-44da-8580-61a15bd072a6",
+    "012": "d09842c1-d7bd-4e1e-899d-a8790e135bda",
+    "013": "56f90277-4098-470f-97f5-83f96e0d17a0",
+    "014": "8d81430a-ae95-40ff-98fe-df08a81e4760",
+    "015": "7256cba6-10e9-4b50-87d0-8eb71453d521",
+    "016": "7c273836-b0af-41f3-815c-9c53fab04bb0",
+    "017": "c7c05dff-0683-4f36-be8a-42d2357fdf54",
+    "018": "5da4f93f-2d39-4c6d-a15d-58d75be38c78",
+    "019": "763dbeec-a925-4148-827f-33431f4b27bd",
+    "020": "dfcd31ff-bd81-49a9-9cfd-4ba64c7af150",
+    "021": "92047473-4ee9-48e8-9294-60ad9610229d",
+    "022": "d82c91ed-9f66-4e36-bc6d-07230f6e7f4a",
+    "023": "894233de-5dfc-4cdb-828a-9e1e1baf9d4c",
+    "024": "d6e04825-339f-455c-aeb4-043a9d186527"
+  },
+  "rejected": {
+    "024_inscription_and_silhouette_morph": "95df8bb0-1b6d-4b44-a04d-fe898cc95963"
+  },
+  "qa": {
+    "001": "PASS_CAMERA_AND_ARTIFACT",
+    "006": "PASS_SCENE_INTEGRATED_MEASUREMENT",
+    "018": "PASS_TRANSLATION_NETWORK_GRAPHIC",
+    "024": "PASS_START_MID_END_SHAPE_LOCK"
+  },
+  "note": "Scene 024 replacement rendered as 8 seconds in Flow and must be trimmed to the 1.81-second TTS-owned scene during assembly. The player reports Omni 1.1 Flash."
+}

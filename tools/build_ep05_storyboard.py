@@ -336,6 +336,7 @@ SPECS = [
         "A short controlled half-orbit starts immediately, raking light travels across the face, and the camera settles into complete stillness on the whole stone for the final channel line.",
         ["Name the Rosetta Stone one last time.", "Finish in stillness on the artifact itself."],
         cam("lower-left granodiorite edge", "short half-orbit across the carved face", "complete Rosetta Stone silhouette", "EVIDENCE_HOLD", "LOCKED_EVIDENCE_CAMERA", "NONE", "full artifact closing portrait", "light sweep changes the visible material at 1.2s"),
+        i2v_guard="Treat the start-frame artifact as an immutable photographed object: do not redraw, translate, simplify, enlarge, sharpen, replace or animate any carved mark; do not alter the jagged fracture, silhouette, thickness, cracks, chips or base. Camera-only motion: at most a three-degree parallax arc created by background movement, followed by a full still hold. If fidelity conflicts with motion, keep the artifact perfectly frozen and move only the raking light and background parallax.",
     ),
 ]
 
