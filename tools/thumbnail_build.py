@@ -233,6 +233,8 @@ def main() -> int:
     ap.add_argument("--out", type=Path, default=None)
     ap.add_argument("--kicker-y", type=float, default=None,
                     help="상단 문구 Y 비율 (예: 0.045)")
+    ap.add_argument("--kicker-size", type=float, default=None,
+                    help="상단 문구 크기 비율 (예: 0.038)")
     ap.add_argument("--title-y", type=float, default=None,
                     help="금색 제목 Y 비율 (예: 0.12)")
     ap.add_argument("--title-max-width", type=float, default=None,
@@ -286,8 +288,13 @@ def main() -> int:
     margin = int(W * 0.06)
 
     # ── 상단 채널명 ─────────────────────────────────────
-    bf = fit_font(T.get("상단폰트"), brand, W - margin * 2,
-                  int(H * T.get("상단문구크기비율", 0.033)))
+    bf = fit_font(
+        T.get("상단폰트"),
+        brand,
+        W - margin * 2,
+        int(H * (args.kicker_size if args.kicker_size is not None
+                 else T.get("상단문구크기비율", 0.033))),
+    )
     bw = bf.getbbox(brand)[2] - bf.getbbox(brand)[0]
     by = int(H * (args.kicker_y if args.kicker_y is not None
                   else T.get("상단문구Y비율", 0.03)))
