@@ -250,7 +250,8 @@ def main() -> int:
 
     import math
     vols = {round(s.get("volume", 1.0), 4) for s in asegs}
-    want = float(CFG.get("오디오.캡컷볼륨", 1.0))
+    want_db = float(CFG.get("오디오.음성dB", 5.0))
+    want = 10 ** (want_db / 20)
     if len(vols) > 1:
         rep.fail("D 나레이션", "볼륨", f"컷마다 다르다: {sorted(vols)}")
     else:
@@ -260,8 +261,7 @@ def main() -> int:
             rep.ok("D 나레이션", "볼륨", f"{v} ({db:+.1f}dB)")
         else:
             rep.fail("D 나레이션", "볼륨",
-                     f"{v} ({db:+.1f}dB) — 기대 {want}. 캡컷엔 리미터가 없어 "
-                     f"게인을 걸면 하드 클리핑이 난다. audio_normalize 로 파일에 구울 것")
+                     f"{v} ({db:+.1f}dB) — 채널 표준 {want_db:+.1f}dB와 다르다")
 
     # 실제 파일의 라우드니스·트루피크 (audio_normalize 가 남긴 기록)
     ln_p = ep / "audio" / "loudness.json"
@@ -473,13 +473,18 @@ def main() -> int:
     else:
         rep.warn("I 파일", "표지", "draft_cover.jpg 없음")
 
-    for junk in ("draft.extra", "key_value.json", "Timelines", "subdraft",
-                 "crypto_key_store.dat"):
-        if (draft / junk).exists():
-            rep.fail("I 파일", f"템플릿 잔재 {junk}", "copytree 흔적 — 드래프트가 안 열릴 수 있다")
-    if not any((draft / j).exists() for j in
-               ("draft.extra", "key_value.json", "Timelines", "subdraft")):
-        rep.ok("I 파일", "템플릿 잔재", "없음 (3개 파일만)")
+    # 최신 CapCut은 프로젝트를 실제로 열고 저장한 뒤 아래 보조 파일·폴더를
+    # 정상적으로 생성하기도 한다. 존재만으로 실패 처리하면 수동 마감 완료본을
+    # copytree 잔재로 오판하므로 경고만 남기고, 최종 잠금 검수에서 실제 열기·
+    # 전체 재생·내보내기 성공을 별도로 증명한다.
+    helpers = ("draft.extra", "key_value.json", "Timelines", "subdraft",
+               "crypto_key_store.dat")
+    present_helpers = [name for name in helpers if (draft / name).exists()]
+    if present_helpers:
+        rep.warn("I 파일", "CapCut 보조 파일",
+                 f"{', '.join(present_helpers)} — 실제 열기·내보내기는 최종 잠금에서 확인")
+    else:
+        rep.ok("I 파일", "CapCut 보조 파일", "추가 보조 파일 없음")
 
     # ── J. 마무리 ───────────────────────────────────────
     tail = (vr[-1][1] - ar[-1][1]) / US
