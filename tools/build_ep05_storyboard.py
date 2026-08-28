@@ -149,7 +149,7 @@ SPECS = [
     ),
     spec(
         "2. 물성과 치수", "ARTIFACT_MACRO", "측정확인",
-        "Three-quarter artifact-scale view of the same surviving Rosetta Stone on a neutral conservation support, with its true 112.3-by-75.7-by-28.4-centimetre proportions readable through depth: broad carved front plane, thick right side, jagged missing top and granular dark grey granodiorite; clean open space beside the two real outer edges for world-space dimension ticks, no ruler and no numerals",
+        "Three-quarter artifact-scale view of the same surviving Rosetta Stone on a plain matte neutral conservation support, with its true 112.3-by-75.7-by-28.4-centimetre proportions readable through depth: broad carved front plane, thick right side, jagged missing top and granular dark grey granodiorite; completely empty, unoccupied background and floor with clean open space beside the two real outer edges for world-space dimension ticks, absolutely no papers, scrolls, statues, tools, miniatures, ruler or numerals",
         "British Museum object EA24 measurements and material identification",
         ["112.3 cm surviving height", "75.7 cm width and 28.4 cm thickness", "granodiorite rather than basalt"],
         "Orbit rapidly from the thick right edge to the front plane while one warm-grey dimension line grows between the surviving top and bottom edges, then a shorter line snaps between the side faces.",
