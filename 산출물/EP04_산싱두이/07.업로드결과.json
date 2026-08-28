@@ -10,14 +10,19 @@
   "applied": true,
   "verified": true,
   "source": "산출물\\EP04_산싱두이\\썸네일.jpg",
+  "sha256": "647eb137ad0711cd83383b244b52b0cfd714485469e8e17f13462e66f9fbe332",
+  "replaced_at": "2026-08-28 14:01 KST",
   "remote_urls": {
-   "default": "https://i9.ytimg.com/vi/UugCEGL6Bo8/default.jpg?sqp=CKyhw9QG&rs=AOn4CLC8QOCHnDZVAcIvXIzxNINtuOSXSQ",
-   "medium": "https://i9.ytimg.com/vi/UugCEGL6Bo8/mqdefault.jpg?sqp=CKyhw9QG&rs=AOn4CLCL7WbHHQHk9ystWBDVRifvs7nbpg",
-   "high": "https://i9.ytimg.com/vi/UugCEGL6Bo8/hqdefault.jpg?sqp=CKyhw9QG&rs=AOn4CLCW3ca1q7egCbHR0V3kwRiwGATCbw"
+   "default": "https://i9.ytimg.com/vi/UugCEGL6Bo8/default.jpg?sqp=CNCrxNQG&rs=AOn4CLCFCpa6roT3J4Q0kXPJQ6ZSHuwpIA",
+   "medium": "https://i9.ytimg.com/vi/UugCEGL6Bo8/mqdefault.jpg?sqp=CNCrxNQG&rs=AOn4CLAOPuN5AKMndCyJ1QgNMOKu_2dIQQ",
+   "high": "https://i9.ytimg.com/vi/UugCEGL6Bo8/hqdefault.jpg?sqp=CNCrxNQG&rs=AOn4CLDsupcc0rRBbPVwSt-tfGZ6a6BmPw",
+   "standard": "https://i9.ytimg.com/vi/UugCEGL6Bo8/sddefault.jpg?sqp=CNCrxNQG&rs=AOn4CLBmq8HrRrOz2oLtRQ9wZpx9KaNuUg",
+   "maxres": "https://i9.ytimg.com/vi/UugCEGL6Bo8/maxresdefault.jpg?sqp=CNCrxNQG&rs=AOn4CLBfNdz4ygw0MExAhZ2b1bifSe8rTQ"
   }
  },
  "올린시각": "2026-08-28 09:09 KST",
  "남은일": [
+  "공개 시각 확정",
   "첫 댓글 고정"
  ]
 }

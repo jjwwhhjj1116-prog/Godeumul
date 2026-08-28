@@ -231,6 +231,14 @@ def main() -> int:
                     help="상단 미스터리 한 줄 (없으면 채널 기본 문구)")
     ap.add_argument("--bg", type=Path, default=None, help="배경 이미지 (기본: 자산/썸네일배경.png → images/001.jpg)")
     ap.add_argument("--out", type=Path, default=None)
+    ap.add_argument("--kicker-y", type=float, default=None,
+                    help="상단 문구 Y 비율 (예: 0.045)")
+    ap.add_argument("--title-y", type=float, default=None,
+                    help="금색 제목 Y 비율 (예: 0.12)")
+    ap.add_argument("--title-max-width", type=float, default=None,
+                    help="금색 제목 최대 폭 비율 (예: 0.96)")
+    ap.add_argument("--title-size", type=float, default=None,
+                    help="금색 제목 시작 크기 비율 (예: 0.16)")
     ap.add_argument("--dry", action="store_true", help="배경 없이 단색으로 미리보기")
     args = ap.parse_args()
 
@@ -281,7 +289,8 @@ def main() -> int:
     bf = fit_font(T.get("상단폰트"), brand, W - margin * 2,
                   int(H * T.get("상단문구크기비율", 0.033)))
     bw = bf.getbbox(brand)[2] - bf.getbbox(brand)[0]
-    by = int(H * T.get("상단문구Y비율", 0.03))
+    by = int(H * (args.kicker_y if args.kicker_y is not None
+                  else T.get("상단문구Y비율", 0.03)))
     draw_outlined(d, ((W - bw) // 2, by), brand, bf, (255, 255, 255), (0, 0, 0), 5)
 
     # ── 초대형 유물명 (레퍼런스형 금속 양각) ─────────────
@@ -290,9 +299,12 @@ def main() -> int:
         base,
         title,
         T.get("제목폰트"),
-        int(W * T.get("제목최대폭비율", 0.9)),
-        int(H * T.get("제목시작크기비율", 0.14)),
-        int(H * T.get("제목Y비율", 0.075)),
+        int(W * (args.title_max_width if args.title_max_width is not None
+                 else T.get("제목최대폭비율", 0.9))),
+        int(H * (args.title_size if args.title_size is not None
+                 else T.get("제목시작크기비율", 0.14))),
+        int(H * (args.title_y if args.title_y is not None
+                 else T.get("제목Y비율", 0.075))),
         T,
     )
 
