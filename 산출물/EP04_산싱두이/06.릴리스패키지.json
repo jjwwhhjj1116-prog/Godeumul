@@ -1,0 +1,45 @@
+{
+  "status": "APPROVED_PRIVATE_UPLOAD",
+  "created_at": "2026-08-28T09:04:19+09:00",
+  "idempotency_key": "79a6c320-8086-4c1e-9073-1514faffe8ed",
+  "target": {
+    "platform": "youtube",
+    "channel_id": "UCjgXauHJ8z2Kbbl9O9hu4eA",
+    "channel_name": "고대유물의 비밀",
+    "handle": "@ancient_artifacts_kr",
+    "visibility": "private",
+    "category_id": 27,
+    "language": "ko",
+    "made_for_kids": false,
+    "contains_synthetic_media": true,
+    "playlist": "▶고대유물의 비밀"
+  },
+  "assets": {
+    "video": "EP04_산싱두이_청동가면_최종_capcut_4K.mp4",
+    "video_sha256": "2c93a78453bacc0d18b49d02dd0529bab6047b3962749fae6b8b01007c48dc8b",
+    "thumbnail": "썸네일.jpg",
+    "thumbnail_sha256": "9be30d54847d1bb33b720b0292211373f96b5f65749bab0f2dcbdcd63fac52a3",
+    "metadata": "06.메타.json",
+    "metadata_sha256": "df3cd4ca56fb993e150ac3a294fefa3a92b31083b9982f050a4c355eb3491f7c",
+    "title_sha256": "895baeab5202e04b4409ecd55183347acbd91df1426ec9b8ad078360de90ee15",
+    "description_sha256": "8dd1d3acee5c912e1da37b518d51b4888b0e20cade83703b2465b7b3d068869e",
+    "capcut_lock": "05.캡컷마감잠금.json"
+  },
+  "rights_and_disclosure": {
+    "third_party_music": false,
+    "visuals": "AI-generated 3D archaeological reconstructions based on cited sources",
+    "narration": "ElevenLabs generated narration under the channel workflow",
+    "synthetic_media_disclosure_in_description": true,
+    "youtube_contains_synthetic_media": true
+  },
+  "source_ids": [
+    "HKPM_SANXINGDUI_EXHIBITION",
+    "ANTIQUITY_D96494368471CF7CBA817690CDCA5A75",
+    "JAS_S0305440325002407"
+  ],
+  "duplicate_check": {
+    "query": "산싱두이",
+    "exact_title_matches": 0,
+    "checked_at": "2026-08-28T09:04:19+09:00"
+  }
+}
