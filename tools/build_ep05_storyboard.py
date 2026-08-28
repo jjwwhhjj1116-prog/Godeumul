@@ -429,27 +429,18 @@ def video_prompt(item: dict[str, object], beats: list[dict[str, object]], second
 
 
 def compact_image_prompt(item: dict[str, object]) -> str:
+    # Flow의 contenteditable 프롬프트 창은 자동 붙여넣기를 내부 생성 값으로
+    # 반영하지 않는 경우가 있어 실제 키 입력으로 전송한다. 따라서 장면 고증
+    # 문장은 보존하고, 모든 장면에 중복되던 스타일/금지어만 짧게 고정한다.
     context = (
-        "1799-1822 Mediterranean archaeology; period-correct French engineering or European scholarship."
+        "Period-correct 1799-1822 Egypt and European scholarship."
         if item["modern"] else
-        "Ptolemaic Egypt, 196 BCE, Memphis decree and Rosetta Stone context."
-    )
-    people = ""
-    if item["people"]:
-        people = (
-            " Period-correct late-18th or early-19th-century European people."
-            if item["modern"] else
-            " Ptolemaic Egyptian priests and scribes with Egyptian features and white linen; restrained Macedonian Greek court dress only where stated."
-        )
-    architecture = " Ptolemaic sandstone temple architecture only where stated." if item["architecture"] else ""
-    negative = (
-        " No East Asian, medieval, Roman-legionary, Tutankhamun, fantasy, alien, pyramid, modern tool, "
-        "pseudo-writing or complete invented stela. No text, no labels, no letters, no watermark or live-action look."
+        "Ptolemaic Egypt, 196 BCE."
     )
     return (
-        "9:16 premium museum-scale archaeological 3D diorama, crafted miniature, macro lens, restrained "
-        "tilt-shift, PBR high-frequency microtexture, high fidelity, not live-action. "
-        + context + people + architecture + " " + str(item["image"]) + negative
+        "9:16 archaeological 3D diorama miniature, macro PBR microtexture, not live-action. "
+        + context + " " + str(item["image"])
+        + " No text. No labels. No letters, pseudo-writing, fantasy, pyramids, modern tools or watermark."
     )
 
 
@@ -481,7 +472,7 @@ def validate_compact(row: dict[str, object], image: str, video: str) -> list[str
     for token in ("9:16", "3d diorama", "not live-action", "pbr", "no text", "no labels", "no letters"):
         if token not in image_low:
             errors.append(f"image missing {token}")
-    if len(image) > 1350:
+    if len(image) > 720:
         errors.append(f"image too long {len(image)}")
     for token in ("locked start image", f"continuous {row['omni']}s", "0.35s", "no hard cut", "tts-locked timing", "no voice", "subtitles"):
         if token not in video_low:
