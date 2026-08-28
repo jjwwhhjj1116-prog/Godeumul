@@ -1,0 +1,66 @@
+{
+  "status": "TOPIC_APPROVED",
+  "target": "로제타석",
+  "one_sentence_promise": "같은 포고문을 세 문자로 새긴 깨진 석비가 어떻게 1400년 동안 읽지 못한 고대 이집트 문자를 되살렸는지 추적한다.",
+  "discovery_action": "1799년 프랑스군이 이집트 라시드의 생쥘리앵 요새를 보강하려고 기초를 파다가 오래된 벽에 재사용된 석비 조각을 발견한 사건에서 시작한다.",
+  "representative_artifacts": [
+    "높이 112.3센티미터·폭 75.7센티미터의 화강섬록암 석비 조각",
+    "상단에 남은 상형문자 14행",
+    "가운데 민중문자 32행",
+    "하단 고대 그리스문자 54행",
+    "프톨레마이오스 왕명을 둘러싼 카르투슈와 초기 탁본·복제본"
+  ],
+  "historical_context": "기원전 196년 그리스계 프톨레마이오스 왕조가 다스리던 이집트에서 멤피스 사제단이 어린 프톨레마이오스 5세의 왕권과 신성한 지위를 공표한 정치·종교적 배경을 살핀다.",
+  "central_question": "깨진 포고문 한 조각은 어떻게 고대 이집트 상형문자를 읽는 열쇠가 되었을까?",
+  "confirmed_answer_scope": "석비의 재질·치수·세 문자 배열, 포고문의 성격, 1799년 발견, 토머스 영과 샹폴리옹의 단계별 해독 기여, 1822년 돌파구까지만 사실로 잠근다.",
+  "unknowns": "석비가 원래 설치됐던 정확한 신전과 완전한 원형, 언제 어떤 경로로 요새의 오래된 벽에 재사용됐는지는 확정되지 않았다.",
+  "claims_to_avoid": [
+    "로제타석에 피라미드 건설법이나 왕의 비밀이 직접 적혀 있다고 말하기",
+    "세 문자 체계를 세 언어라고 단정하기",
+    "샹폴리옹 혼자 돌을 보는 즉시 모든 상형문자를 풀었다고 말하기",
+    "토머스 영의 음가 연구와 다른 비문·콥트어의 역할을 지우기",
+    "로제타석이 유일한 멤피스 칙령 석비라고 말하기"
+  ],
+  "official_sources": [
+    {
+      "institution": "The British Museum",
+      "title": "The Rosetta Stone, EA24",
+      "url": "https://www.britishmuseum.org/collection/object/Y_EA24"
+    },
+    {
+      "institution": "The British Museum",
+      "title": "The Rosetta Stone: everything you need to know",
+      "url": "https://www.britishmuseum.org/blog/everything-you-ever-wanted-know-about-rosetta-stone"
+    },
+    {
+      "institution": "The British Museum",
+      "title": "How Egyptian hieroglyphs were decoded",
+      "url": "https://www.britishmuseum.org/exhibitions/hieroglyphs-unlocking-ancient-egypt/egyptian-hieroglyphs-decipherment-timeline"
+    },
+    {
+      "institution": "University College London, Digital Egypt",
+      "title": "Ptolemy V Epiphanes",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/chronology/ptolemyv.html"
+    }
+  ],
+  "visual_route": [
+    "고대 이집트 신전 벽의 상형문자가 읽히지 않던 상태에서 로제타석으로 급접근",
+    "1799년 라시드 생쥘리앵 요새 기초 굴착과 오래된 벽에서 석비 조각 발견",
+    "깨진 화강섬록암 석비를 완전한 신전용 석비 형태로 복원",
+    "상형문자·민중문자·고대 그리스문자의 세 구역을 카메라가 순서대로 훑음",
+    "같은 포고문이 세 문자로 반복되는 구조를 3D 정합 그래픽으로 비교",
+    "프톨레마이오스 카르투슈에서 음가가 하나씩 살아나는 해독 과정",
+    "토머스 영의 표와 샹폴리옹의 콥트어·다른 왕명 비교가 합쳐지는 장면",
+    "읽히지 않던 신전·파피루스·왕명이 다시 의미를 얻는 고대 이집트 지식의 확장"
+  ],
+  "routing": "공개 순서 5편. 투탕카멘 성과를 기준으로 125~140초 내외 숏다큐로 압축한다.",
+  "scores": {
+    "artifact_context": 20,
+    "historical_density": 19,
+    "question_ladder": 20,
+    "reference_quality": 15,
+    "visual_journey": 15,
+    "title_interest": 10,
+    "total": 99
+  }
+}

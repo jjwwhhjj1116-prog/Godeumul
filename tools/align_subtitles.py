@@ -209,9 +209,28 @@ def main() -> int:
                     "dur": round(en - st, 3)})
         pos += len(cn)
 
+    # ElevenLabs가 같은 장면의 인접 문자 경계를 수십~수백 ms 겹쳐 돌려주는 경우가
+    # 있다. 두 자막을 동시에 띄우지 말고 실측 경계의 중간점에서 한 번만 전환한다.
+    # 장면을 넘는 겹침이나 0.5초가 넘는 값은 자동 보정하지 않고 아래 검증에서 막는다.
+    reconciled_overlaps = []
+    for previous, current in zip(out, out[1:]):
+        overlap_seconds = previous["end"] - current["start"]
+        if (overlap_seconds > 0.001 and overlap_seconds <= 0.5
+                and previous["scene"] == current["scene"]):
+            boundary = round((previous["end"] + current["start"]) / 2, 3)
+            previous["end"] = boundary
+            previous["dur"] = round(previous["end"] - previous["start"], 3)
+            current["start"] = boundary
+            current["dur"] = round(current["end"] - current["start"], 3)
+            reconciled_overlaps.append((previous["n"], current["n"], overlap_seconds))
+
     # ── 검증 ────────────────────────────────────────────
     bad_order = sum(1 for a, b in zip(out, out[1:]) if b["start"] < a["start"])
-    overlap = sum(1 for a, b in zip(out, out[1:]) if b["start"] < a["end"] - 0.001)
+    overlap_pairs = [
+        (a, b) for a, b in zip(out, out[1:])
+        if b["start"] < a["end"] - 0.001
+    ]
+    overlap = len(overlap_pairs)
     short = [c["n"] for c in out if c["dur"] < 0.15]
     cps = [c["len"] / c["dur"] for c in out if c["dur"] > 0]
     text_mismatches = []
@@ -233,6 +252,14 @@ def main() -> int:
     print(f"  대본 동일성 오류 {len(text_mismatches)} · 장면 경계 이탈 {len(boundary_violations)}")
     print(f"  표시속도 {min(cps):.1f}~{max(cps):.1f} 자/초 (중앙 {sorted(cps)[len(cps)//2]:.1f})")
     print(f"  첫 큐 {out[0]['start']:.2f}s  끝 큐 {out[-1]['end']:.2f}s")
+    for previous_n, current_n, seconds in reconciled_overlaps:
+        print(f"  실측 경계 중간점 보정 {previous_n}→{current_n}: {seconds:.3f}s")
+    for previous, current in overlap_pairs:
+        print(
+            f"  겹침 큐 {previous['n']}→{current['n']}: "
+            f"{previous['end'] - current['start']:.3f}s · "
+            f"{previous['text']} / {current['text']}"
+        )
 
     if (len(out) != len(cues) or bad_order or overlap or short
             or text_mismatches or boundary_violations):

@@ -1,0 +1,394 @@
+# EP05 로제타석 — 고증 잠금 I2V 시각화
+
+scene_count: 24
+scene_count_basis: SCRIPT_TTS_MEANING_ACTION_EVIDENCE_DERIVED
+generation_mode: I2V_LOCKED
+image_model: Nano Banana
+video_model: Veo/Flow Omni
+aspect_ratio: 9:16
+image_count_per_scene: 1
+video_count_per_scene: 1
+
+## 장면 001 — ARTIFACT_MACRO / 측정확인
+
+- TTS: 6.316s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 여기, 고대 이집트가 1천 4백 년 동안 잃어버렸던 목소리를 되살린 돌이 있습니다. 바로 로제타석이죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Hero front view of the real surviving Rosetta Stone fragment, a broad dark grey granodiorite slab 112.3 centimetres high and 75.7 centimetres wide, irregular jagged missing upper portion, thick mineral-grained edges, weathered flat face and three visibly different horizontal densities of shallow carved texture copied from the museum object reference but kept unreadable; freestanding within a dark archaeological gallery diorama, warm raking light, no glass case and no title card. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at left mineral-grained broken edge; travel rapid macro push across the shallow carved face; arrive at complete surviving slab; settle on full artifact hero frame. The camera starts moving immediately across the mineral edge, snaps to the carved face and widens to the whole broken slab while raking light travels from upper fracture to lower register. TTS-locked timing: 0.00-3.83s: Reveal the stone and its recovered voice immediately. 3.83-6.32s: Widen to identify the whole Rosetta Stone fragment. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 002 — HISTORICAL_RECONSTRUCTION / 학술해석
+
+- TTS: 5.991s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 이 돌이 발견되기 전까지 신전과 무덤 벽을 빼곡히 채운 상형문자는 학자들도 읽지 못했습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Ptolemaic Egyptian temple architecture with sandstone pylons, columned courts, carved relief registers, mudbrick service walls and stone stela bases, without pyramids or New Kingdom royal tomb interiors. Immersive Ptolemaic Egyptian temple-wall diorama filled with dense authentic-looking carved relief registers and column shafts based on surviving Egyptian temple surfaces, all marks treated as unreadable physical carving rather than generated writing; a lone early scholar-scale silhouette at the threshold cannot interpret them, dust and shadow filling the corridor. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at raking-lit carved sandstone register; travel along the wall then around the nearest column; arrive at observer at the dark threshold; settle on wall and observer held together. Begin already beside the carved wall, rush along its unreadable registers, change direction past one column and settle behind the powerless observer at the dark threshold. TTS-locked timing: 0.00-2.49s: Track the unreadable temple and tomb inscriptions. 2.49-5.99s: End on the historical inability to read them. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 003 — ARTIFACT_MACRO / 미확인
+
+- TTS: 4.505s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 대체 깨진 돌 한 조각이 어떻게 3천 년의 역사를 다시 말하게 만든 걸까요?
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Extreme macro on the Rosetta Stone's real jagged upper fracture, chipped granodiorite crystals and incomplete carved lines disappearing into the missing portion; behind it, a deep miniature field of Egyptian temple relief fragments recedes softly out of focus, making one broken object appear impossibly small against a lost written civilization. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at fresh-looking crystal pocket in the ancient fracture; travel along an interrupted carved groove then backward through relief depth; arrive at small full fragment against the relief field; settle on broken stone held as the unanswered key. Crash-push into the fracture, skim along one interrupted carved line, then pull back fast enough to reveal the deep field of unreadable reliefs without inventing the missing top. TTS-locked timing: 0.00-1.96s: Approach the broken fragment as the question. 1.96-4.50s: Reveal the much larger historical world it unlocked. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 004 — SITE_ESTABLISH / 문헌기록
+
+- TTS: 4.598s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 이야기는 1799년, 이집트의 항구도시 라시드에서 시작됩니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Late eighteenth and early nineteenth century Mediterranean archaeology, specifically French military engineering near Rashid in 1799 and scholarly study in Britain and France through 1822. Late eighteenth and early nineteenth century European French military engineers and scholars in historically accurate 1799 campaign uniforms or sober 1800s study clothing, with no modern equipment. 1799 western Nile Delta near Rashid: a historically restrained French military-engineering camp beside the later Fort Julien masonry, Nile-side flat terrain, sun-baked brick and reused stone walls, canvas work shelters, period surveying tools and French campaign uniforms, no pyramids and no modern excavation equipment; crafted archaeological reconstruction rather than exact discovery claim. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at wooden survey stake in Nile-delta soil; travel through the engineering camp toward reused fort masonry; arrive at wall section under repair; settle on reused wall stones ready for the next scene. Begin low beside a survey stake, accelerate through the work area, bank toward the reused masonry wall and settle on the exact wall section about to be dismantled. TTS-locked timing: 0.00-3.03s: Enter the 1799 Rashid setting. 3.03-4.60s: Arrive at the fortification work area. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 005 — DISCOVERY_ACTION / 문헌기록
+
+- TTS: 5.062s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 프랑스군 병사들이 요새 기초를 파다가 오래된 벽 속에서 석비 조각을 꺼낸 겁니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Late eighteenth and early nineteenth century Mediterranean archaeology, specifically French military engineering near Rashid in 1799 and scholarly study in Britain and France through 1822. Late eighteenth and early nineteenth century European French military engineers and scholars in historically accurate 1799 campaign uniforms or sober 1800s study clothing, with no modern equipment. Close low-angle reconstruction of late-eighteenth-century French military engineers removing one heavy dark granodiorite slab from a fort foundation wall near Rashid; gloved and bare hands grip period iron pry bars and rope, the slab's jagged edge and shallow carved texture just becoming visible between ordinary reused blocks, action paused immediately before the stone tips free. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at iron pry-bar tip under the dark slab; travel along the lever and falling mortar to the opening seam; arrive at first exposed carved face; settle on exposed stone texture at the wall seam. Do not assert one named discoverer; show a restrained documented fort-work reconstruction only. Two engineers complete one careful lever action; mortar dust falls, the slab pivots only a few centimetres on the real support edge, and the camera follows the pry bar to rack-focus on the first exposed carved texture. TTS-locked timing: 0.00-2.33s: Follow the fort work into the old wall. 2.33-5.06s: Reveal the stone fragment within the reused masonry. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 006 — ARTIFACT_MACRO / 측정확인
+
+- TTS: 5.294s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 높이 1미터 12센티미터, 폭 76센티미터쯤 되는 화강섬록암이었죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Three-quarter artifact-scale view of the same surviving Rosetta Stone on a neutral conservation support, with its true 112.3-by-75.7-by-28.4-centimetre proportions readable through depth: broad carved front plane, thick right side, jagged missing top and granular dark grey granodiorite; clean open space beside the two real outer edges for world-space dimension ticks, no ruler and no numerals. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at thick right granodiorite edge; travel short three-quarter orbit across the front plane; arrive at lower-left surviving corner; settle on front and side thickness in one frame. Integrate one restrained dimension line anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Orbit rapidly from the thick right edge to the front plane while one warm-grey dimension line grows between the surviving top and bottom edges, then a shorter line snaps between the side faces. TTS-locked timing: 0.00-2.42s: Measure the surviving height and width. 2.42-5.29s: Land on the granular material and thickness. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 007 — ARTIFACT_MACRO / 발굴확인
+
+- TTS: 5.108s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 윗부분은 통째로 깨졌는데도 표면에는 글자가 세 덩어리로 빼곡히 남아 있었습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Macro-to-medium view of the Rosetta Stone face beginning at the irregular broken top where surviving carved rows are abruptly cut, with the middle and lower register textures already visible beneath in one continuous deep composition; genuine dark grey granodiorite pores, chips, worn grooves and compact residue, no reconstructed missing crown. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at uppermost interrupted carved row; travel straight downward over the two physical register boundaries; arrive at dense lower register texture; settle on three register zones readable at once. Race down from the jagged fracture along the physical face, change focus at each real register boundary and settle at the dense lower carved field. TTS-locked timing: 0.00-2.78s: Show the missing upper portion. 2.78-5.11s: Follow the three surviving carved zones down the face. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 008 — TEXT_RECORD / 발굴확인
+
+- TTS: 7.616s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 맨 위에는 신전의 상형문자, 가운데에는 일상용 민중문자, 아래에는 당시 읽을 수 있던 고대 그리스문자가 새겨져 있었어요.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Front-facing Rosetta Stone surface divided only by its authentic physical layout into three horizontal inscription-density zones: sparse larger hieroglyphic forms in the surviving top band, flowing compact Demotic texture in the middle, and tightly ruled Greek-line texture below, all copied as shallow unreadable relief texture from the museum reference and never rendered as new legible writing; open side depth for parallax. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at surviving upper hieroglyphic band; travel down the stone face through middle and lower bands during a shallow orbit; arrive at lower Greek register; settle on whole face with three zones. Integrate one restrained scan wave anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. A restrained blue-white scan wave begins only after the camera moves, travels down the real stone face band by band, slips behind the protruding left edge during a shallow orbit and ends at the lower register. TTS-locked timing: 0.00-4.13s: Identify the upper and middle script zones. 4.13-7.62s: Continue to the lower Greek zone that could still be read. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 009 — DIAGRAM / 학술해석
+
+- TTS: 7.012s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 흔히 세 언어라고 부르지만, 정확히는 두 언어를 세 문자로 적은 겁니다. 더 놀라운 건 셋 모두 같은 내용이었다는 점이죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Oblique artifact diorama of the same Rosetta Stone with its three physical carved registers visible as stacked planes that remain attached to the slab; three restrained matching sample tiles hover only millimetres from their source zones with visible gaps, showing two languages carried by three scripts without producing any readable translation or invented symbols. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at upper register surface edge; travel laterally across all three attached register planes; arrive at aligned three-zone comparison; settle on whole stone and three source zones. Integrate one restrained exploded sequence anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. The camera strafes across the stacked registers while one scan pulse samples each zone in order; the three sample tiles separate slightly on real surface normals and stop with visible gaps. TTS-locked timing: 0.00-3.06s: Correct the common three-language misconception. 3.06-7.01s: Reveal that all three registers carry the same decree. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 010 — TEXT_RECORD / 문헌기록
+
+- TTS: 3.622s
+- 생성 길이: 4s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 그렇다면 엄청난 비밀 문서였을까요? 정반대였습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Ptolemaic Egyptian priests and scribes with North African Egyptian features, shaved or close-cropped priestly heads, clean white linen temple garments, alongside restrained Macedonian Greek royal court dress appropriate to second-century BCE Egypt. Ptolemaic Egyptian temple architecture with sandstone pylons, columned courts, carved relief registers, mudbrick service walls and stone stela bases, without pyramids or New Kingdom royal tomb interiors. Ptolemaic temple-court diorama at the moment before a public decree is installed: an ordinary dark stone stela fragment and a plain full stela support stand in an open sandstone court while Egyptian priests and scribes prepare a formal proclamation, no sealed chamber, no treasure, no magical glow; the camera can move from dramatic shadow on the carving into the visibly public courtyard. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 4-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at shadowed shallow carving on the stela; travel fast pullback through the open court axis; arrive at priests beside the public stela support; settle on ordinary public decree scene. Start in dramatic macro shadow on the carved surface, crash-pull into the sunlit public court and settle on priests preparing an ordinary proclamation rather than a hidden secret. TTS-locked timing: 0.00-1.21s: Hold the expectation of a secret document. 1.21-3.62s: Reverse it into a public administrative decree. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 011 — HISTORICAL_RECONSTRUCTION / 문헌기록
+
+- TTS: 7.755s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 기원전 196년, 멤피스 사제들이 13살 왕 프톨레마이오스 5세를 치켜세우고 신성한 지위를 인정한다는 포고문이었어요.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Ptolemaic Egyptian priests and scribes with North African Egyptian features, shaved or close-cropped priestly heads, clean white linen temple garments, alongside restrained Macedonian Greek royal court dress appropriate to second-century BCE Egypt. Ptolemaic Egyptian temple architecture with sandstone pylons, columned courts, carved relief registers, mudbrick service walls and stone stela bases, without pyramids or New Kingdom royal tomb interiors. Memphis priestly decree scene in 196 BCE: Ptolemaic Egyptian priests and scribes with North African Egyptian features in white linen occupy the foreground around a stone decree, while a restrained 13-year-old Ptolemy V appears at a respectful distance in Macedonian Greek royal court dress, youthful scale and posture clear but exact facial likeness unclaimed; no crown fantasy and no adult conqueror physique. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at scribe hand beside the stone decree; travel across the priest assembly then toward the royal dais; arrive at youthful Ptolemy V at a distance; settle on decree, priests and young king in one depth axis. Follow a scribe's hand from the decree surface to the assembled priests, then change direction toward the distant young king and settle without turning the scene into a triumphal spectacle. TTS-locked timing: 0.00-4.13s: Show the priests issuing the 196 BCE decree. 4.13-7.75s: Reveal the young king being praised and affirmed. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 012 — SPATIAL_MAP / 문헌기록
+
+- TTS: 7.570s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 심지어 같은 칙령을 여러 신전에 세우라는 지시도 있었습니다. 내용은 평범했지만, 그 반복이 암호를 푸는 자막이 된 셈이죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Ptolemaic Egyptian temple architecture with sandstone pylons, columned courts, carved relief registers, mudbrick service walls and stone stela bases, without pyramids or New Kingdom royal tomb interiors. Museum-scale Ptolemaic Egypt terrain-and-temple diorama beginning at Memphis with several physically separate verified-style temple stela silhouettes distributed along the Nile valley, each copy retaining the same three-register layout but no legible generated writing; the terrain is dry ochre and river green, no city labels and no pyramids. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at Memphis temple stela base; travel north and south along the Nile terrain past temple anchors; arrive at wide view of repeated stela copies; settle on copies distributed across the terrain. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. A warm ivory route ribbon leaves the Memphis temple base, follows the Nile terrain behind one foreground pylon and branches only at visible temple anchors; the camera tracks the first branch then pulls up to reveal the repeated copies. TTS-locked timing: 0.00-3.77s: Follow the instruction to place the decree in temples. 3.77-7.57s: Reveal repetition as the comparison key. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 013 — TEXT_RECORD / 학술해석
+
+- TTS: 5.805s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 그래도 곧장 읽힌 건 아닙니다. 상형문자는 그림 하나가 뜻 하나를 나타내는 단순한 암호가 아니었거든요.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Extreme archaeological-study macro of one authentic cartouche-shaped carved enclosure and adjacent hieroglyphic relief forms on a reference-accurate stone or rubbing surface, surrounded by plain comparison weights and unmarked study strips; the signs remain physical unreadable marks with no invented alphabet equivalents, while the composition makes clear that one picture cannot simply equal one meaning. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at carved cartouche boundary; travel around the enclosure then across adjacent sign forms; arrive at cluster of unlike carved signs; settle on cartouche and mixed signs in one frame. Integrate one restrained scan wave anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Probe along the cartouche edge, change direction across several sign forms and let a restrained scan wave stop at different carved elements without translating them. TTS-locked timing: 0.00-2.68s: Show why the scripts were not read immediately. 2.68-5.80s: Reject the simple picture-equals-meaning model. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 014 — TEXT_RECORD / 문헌기록
+
+- TTS: 5.944s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 영국의 토머스 영은 프톨레마이오스라는 왕명을 찾아 일부 기호가 소리를 낸다는 단서를 잡았습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Late eighteenth and early nineteenth century Mediterranean archaeology, specifically French military engineering near Rashid in 1799 and scholarly study in Britain and France through 1822. Late eighteenth and early nineteenth century European French military engineers and scholars in historically accurate 1799 campaign uniforms or sober 1800s study clothing, with no modern equipment. Early-nineteenth-century British study-room diorama with Thomas Young represented as a sober scholar at a wooden desk, comparing a high-quality Rosetta Stone copy, a cartouche rubbing and unmarked phonetic comparison slips; period coat, candle and daylight, brass instruments and paper fibres, no readable generated English or Greek text. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at Young's fingertip at the cartouche edge; travel around the rubbing then across comparison slips; arrive at repeated royal-name enclosure; settle on partial comparison evidence on the desk. Track from Young's fingertip around the cartouche, snap across the arranged comparison slips and settle on the repeated royal-name shape as he records a partial sound clue. TTS-locked timing: 0.00-3.61s: Follow Thomas Young to the royal name. 3.61-5.94s: Reveal the partial phonetic clue rather than a complete decipherment. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 015 — TEXT_RECORD / 문헌기록
+
+- TTS: 8.313s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 프랑스의 샹폴리옹은 다른 왕명과 고대 이집트어의 후손인 콥트어를 맞춰 보며, 상형문자가 소리와 뜻을 섞어 쓰는 체계라는 걸 밝혀냈죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Late eighteenth and early nineteenth century Mediterranean archaeology, specifically French military engineering near Rashid in 1799 and scholarly study in Britain and France through 1822. Late eighteenth and early nineteenth century European French military engineers and scholars in historically accurate 1799 campaign uniforms or sober 1800s study clothing, with no modern equipment. Early-1820s French study-room diorama with Jean-Francois Champollion represented in sober period clothing at a crowded wooden desk, comparing several royal-name cartouche reproductions, Coptic reference pages shown only as unreadable physical print texture and Egyptian inscription copies; layered paper fibres, ink, wax seals and daylight, no magical revelation and no modern tools. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at first royal-name cartouche; travel across other cartouches then toward Coptic reference pages; arrive at whole comparison desk before Champollion; settle on scholar and multi-source evidence. Begin on one cartouche, accelerate laterally through the other royal names, bank toward the Coptic reference pages and settle on Champollion linking sound and meaning across the whole desk. TTS-locked timing: 0.00-4.31s: Compare other royal names and Coptic evidence. 4.31-8.31s: Arrive at the mixed sound-and-meaning system. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 016 — DIAGRAM / 문헌기록
+
+- TTS: 5.619s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 결정적 발표가 나온 건 1822년, 돌이 발견되고 20년이 훌쩍 지나서였어요.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Late eighteenth and early nineteenth century Mediterranean archaeology, specifically French military engineering near Rashid in 1799 and scholarly study in Britain and France through 1822. A physical early-nineteenth-century research-desk timeline diorama: the 1799 stone discovery sketch and wall fragment occupy the near-left end, successive unlabelled copies and comparison sheets form a long path across the desk, and an 1822 scholarly letter and assembled cartouche studies occupy the far-right end; no readable dates or writing generated in the image. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at 1799 discovery sketch edge; travel along the full physical desk and document sequence; arrive at 1822 announcement letter and comparison sheets; settle on end of the long evidence chain. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. One restrained bronze-gold route path grows from the discovery sketch across the actual stack of study materials, passes behind a raised book and arrives at the 1822 letter while the camera races beside it then brakes. TTS-locked timing: 0.00-2.98s: Travel from discovery through more than twenty years of study. 2.98-5.62s: Arrive at the 1822 announcement. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 017 — INVENTORY_TABLEAU / 학술해석
+
+- TTS: 5.666s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 그러니까 로제타석이 혼자 문자를 번역해 준 것도, 한 천재가 단숨에 정답을 낸 것도 아닙니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Late eighteenth and early nineteenth century Mediterranean archaeology, specifically French military engineering near Rashid in 1799 and scholarly study in Britain and France through 1822. Late eighteenth and early nineteenth century European French military engineers and scholars in historically accurate 1799 campaign uniforms or sober 1800s study clothing, with no modern equipment. Circular research-room diorama that begins tight on one scholar's hands but already contains several separate period worktables in depth, each holding different Rosetta copies, royal-name cartouches, language references and correspondence; Thomas Young and Champollion occupy different documented study contexts rather than sharing one fictional meeting, linked only by copied materials. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at one scholar's hands over a rubbing; travel backward through separate worktables in a short orbit; arrive at wide network of study stations; settle on all evidence tables visible but separate. Pull away fast from one pair of hands, orbit across the separate worktables and settle on the full network of copied evidence without merging the scholars into one meeting. TTS-locked timing: 0.00-2.49s: Reject the stone solving itself or one genius solving it instantly. 2.49-5.67s: Reveal the wider scholarly network. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 018 — DIAGRAM / 학술해석
+
+- TTS: 7.709s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 같은 문장을 세 문자로 남긴 고대의 포고문과, 여러 학자가 왕명과 언어를 끈질기게 대조한 시간이 함께 열쇠를 만든 거죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Layered museum-scale evidence diorama with an ancient three-register decree fragment at the center, several physically separate temple-copy fragments around the lower ring and early-nineteenth-century comparison desks around the upper ring, every layer retaining its own era and material; no literal giant key object and no mixed-costume crowd. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at outer temple-copy fragment; travel through the lower ancient ring and upper study ring; arrive at three central Rosetta registers; settle on all evidence converging without mixing eras. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Three warm ivory route segments begin at the ancient copies and study desks only during their narration beats, pass behind the central stone and converge on its three real registers; the camera dives through the layered evidence and settles on the combined comparison. TTS-locked timing: 0.00-4.48s: Follow the repeated ancient sentence into the comparison process. 4.48-7.71s: Converge the evidence and time into the decipherment key. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 019 — TEXT_RECORD / 학술해석
+
+- TTS: 4.690s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 그 순간부터 왕명과 신전 기록, 파피루스 속 일상이 다시 읽히기 시작했습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Ptolemaic Egyptian temple architecture with sandstone pylons, columned courts, carved relief registers, mudbrick service walls and stone stela bases, without pyramids or New Kingdom royal tomb interiors. Deep archive-and-temple diorama containing three evidence planes: royal-name cartouches carved on stone in the foreground, temple relief records on sandstone columns in the middle, and papyrus household records on a conservation table in the rear; all physical inscriptions remain reference-textured and unreadable to the image model, but their objects and contexts are distinct. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at royal cartouche on foreground stone; travel past the temple column toward the rear papyrus table; arrive at papyrus household records; settle on all three evidence planes legible as objects. Integrate one restrained scan wave anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. A restrained blue-white scan wave begins at a royal cartouche, turns around a column with full occlusion and travels to the papyrus table while the camera follows from stone to daily life. TTS-locked timing: 0.00-2.58s: Reopen royal names and temple records. 2.58-4.69s: Continue into everyday life on papyrus. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 020 — DIAGRAM / 학술해석
+
+- TTS: 5.387s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 로제타석에 고대 이집트의 비밀이 적혀 있던 게 아니라, 그 비밀을 읽는 방법이 숨어 있었던 겁니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. The same Rosetta Stone in three-quarter view with its three physical registers and thick mineral edge visible; a restrained comparison arrangement places three shallow reference rubbings beside their exact source zones, emphasizing method rather than secret content, with no treasure imagery and no generated readable translation. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at lower Greek register edge; travel around the thick stone side toward three aligned rubbings; arrive at whole comparison method tableau; settle on stone and comparison surfaces in one frame. Integrate one restrained scan wave anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Orbit from the face to the three aligned rubbings as one scan wave samples corresponding physical lines, then pull back to show that the method—not the decree's subject—is the discovery. TTS-locked timing: 0.00-3.10s: Reverse the idea of a secret written on the stone. 3.10-5.39s: Reveal the comparison method as the real secret. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 021 — SEALED_UNKNOWN / 미확인
+
+- TTS: 5.433s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 다만 이 석비가 원래 어느 신전에 서 있었고 언제 요새의 벽으로 옮겨졌는지는 알 수 없습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Oblique Nile Delta archaeological terrain diorama with a documented Rashid fort-wall fragment location at one end and several deliberately incomplete, unlabelled Ptolemaic temple-foundation possibilities fading into opaque negative space at the other; between them lies an intact blank terrain gap with no invented route, no treasure and no asserted original temple. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at dark reused slab in the Rashid fort wall; travel out over the blank Delta terrain toward incomplete foundations; arrive at opaque untraced gap; settle on empty evidence boundary. Approach quickly from the fort-wall stone toward the blank terrain gap, let the camera change height to search the incomplete temple foundations and stop completely at the opaque missing route. TTS-locked timing: 0.00-1.99s: Ask which temple originally held the stela. 1.99-5.43s: Stop where the route into the fort wall disappears. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 022 — SEALED_UNKNOWN / 미확인
+
+- TTS: 4.876s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 문명의 목소리는 되찾았지만, 정작 열쇠 자신의 첫 자리는 사라진 셈이죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Ptolemaic Egyptian temple architecture with sandstone pylons, columned courts, carved relief registers, mudbrick service walls and stone stela bases, without pyramids or New Kingdom royal tomb interiors. Quiet paradox diorama: the surviving Rosetta Stone stands sharply lit in the foreground, while behind it an empty weathered Ptolemaic stela base and incomplete temple foundation recede into darkness, separated by a broad untouched gap; the artifact is fully present but its first physical place remains absent, no speculative complete temple. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at shallow carving on the recovered stone; travel backward around the thick edge toward the empty base; arrive at dark gap before the incomplete foundation; settle on stone and absent origin held together. Pull back from the recovered carved face toward the empty stela base, pass behind the stone edge for natural occlusion and stop before the dark gap that cannot be crossed. TTS-locked timing: 0.00-2.79s: Hold the recovered voice of the civilization. 2.79-4.88s: Reveal the lost first place of the key itself. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 023 — SITE_ESTABLISH / 학술해석
+
+- TTS: 3.251s
+- 생성 길이: 4s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 시간 속에 잠든 세계유산, 땅속에 묻힌 역사.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Ptolemaic Egyptian temple architecture with sandstone pylons, columned courts, carved relief registers, mudbrick service walls and stone stela bases, without pyramids or New Kingdom royal tomb interiors. Wide closing archaeological diorama linking only verified stages without blending them: a Ptolemaic temple-stela foundation occupies one distant plane, the 1799 Rashid fort masonry occupies the middle plane, and the surviving Rosetta Stone occupies the near plane under restrained museum light; the unknown transitions remain dark physical gaps, warm dawn-to-gallery palette. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 4-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at Rosetta Stone lower carved edge; travel backward through the fort masonry plane then upward; arrive at wide three-stage archaeological landscape; settle on wide quiet closing world. Begin close on the stone, pull back rapidly through the fort plane and rise to reveal the older temple plane, preserving dark gaps between stages rather than drawing a false route. TTS-locked timing: 0.00-1.14s: Expand from the artifact into time and buried history. 1.14-3.25s: Hold the verified stages and their missing links together. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 024 — ARTIFACT_MACRO / 발굴확인
+
+- TTS: 1.811s
+- 생성 길이: 4s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 로제타석의 비밀이었습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture, micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Ptolemaic Egypt, 196 BCE, Memphis priestly decree under Ptolemy V, with the surviving fragment found near Rashid in the western Nile Delta. Final dignified hero portrait of the real surviving Rosetta Stone fragment, unmistakable dark grey granodiorite mineral grain, irregular jagged top, broad lower body and three physical inscription-density zones, isolated in a deep black-brown archaeological gallery diorama with a single warm raking beam and faint dust, no title or logo. no East Asian people or architecture, no medieval European armor, no Roman legionaries, no Tutankhamun mask, no pyramids, no fantasy treasure chamber, no occult magic, no alien glyphs, no basalt-black glass, no invented complete stela top, no modern equipment in historical scenes, no pseudo-writing, no generated readable inscription, no ancient costume on modern researchers, no plastic toy surface, no low-poly game asset, no exterior cube frame, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 4-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at lower-left granodiorite edge; travel short half-orbit across the carved face; arrive at complete Rosetta Stone silhouette; settle on full artifact closing portrait. A short controlled half-orbit starts immediately, raking light travels across the face, and the camera settles into complete stillness on the whole stone for the final channel line. TTS-locked timing: 0.00-0.85s: Name the Rosetta Stone one last time. 0.85-1.81s: Finish in stillness on the artifact itself. Preserve all objects from the start image. No voice, no music, no subtitles.

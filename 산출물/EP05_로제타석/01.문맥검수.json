@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "script": "01.대본.txt",
+  "script_sha256": "739287aee8da0a149a34d9695c3e93d0b8fd1fa1725ff6ba1415b2545c0a1942",
+  "reviewer": "korean-proofreader + godeumul-context-qa",
+  "status": "PASS",
+  "approval_state": "USER_APPROVED",
+  "tts_authorization": "AUTHORIZED",
+  "checks": {
+    "paragraph_roles_and_flow": "PASS",
+    "adjacent_sentence_relations": "PASS",
+    "connector_deletion_test": "PASS",
+    "duplicate_information": "PASS",
+    "tts_release_gate": "PASS"
+  },
+  "paragraphs": [
+    {
+      "n": 1,
+      "role": "ARTIFACT_FIRST_HOOK",
+      "summary": "로제타석의 이름과 고대 이집트 문자를 되살린 역할을 즉시 밝히고 깨진 돌이 어떻게 문명을 읽게 했는지 묻는다."
+    },
+    {
+      "n": 2,
+      "role": "DISCOVERY_AND_PHYSICAL_EVIDENCE",
+      "summary": "1799년 라시드 요새 공사에서 발견된 행동과 석비의 재질·치수·파손 상태를 보여준다."
+    },
+    {
+      "n": 3,
+      "role": "THREE_SCRIPT_REVEAL",
+      "summary": "세 언어라는 통념을 두 언어·세 문자로 바로잡고 같은 내용이 반복됐다는 핵심 구조를 공개한다."
+    },
+    {
+      "n": 4,
+      "role": "MUNDANE_TEXT_REVERSAL",
+      "summary": "비밀 문서라는 기대를 뒤집어 어린 왕을 기리는 평범한 포고문이었으며 반복 자체가 해독 열쇠였음을 설명한다."
+    },
+    {
+      "n": 5,
+      "role": "DECIPHERMENT_MECHANISM",
+      "summary": "토머스 영의 왕명 음가 단서에서 샹폴리옹의 다른 왕명·콥트어 비교로 이어지는 해독 단계를 보여준다."
+    },
+    {
+      "n": 6,
+      "role": "GENIUS_MYTH_CORRECTION",
+      "summary": "1822년 돌파구를 한 천재의 즉석 해독이 아닌 반복 문장과 여러 학자의 교차 검증 결과로 회수한다."
+    },
+    {
+      "n": 7,
+      "role": "IMPACT_AND_REMAINING_CONTEXT",
+      "summary": "고대 이집트 문헌이 다시 읽힌 결과와 로제타석 자신의 잃어버린 원 설치 맥락을 분리해 결론과 고정 멘트로 닫는다."
+    }
+  ],
+  "transitions": [
+    {
+      "from": 1,
+      "to": 2,
+      "relation": "문명을 읽게 한 돌이라는 결과에서 실제 발견 순간으로 이동",
+      "reason": "첫 질문에 답하기 전에 유물이 언제 어디에서 어떤 상태로 발견됐는지 물리적 증거부터 세운다.",
+      "status": "PASS"
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "relation": "석비의 외형 관찰에서 표면의 세 문자 구조로 확대",
+      "reason": "파손 상태에서도 남은 글자 세 덩어리를 앞 문단에서 예고했기 때문에 다음 문단의 문자별 관찰이 자연스럽다.",
+      "status": "PASS"
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "relation": "같은 내용이라는 발견에서 실제 내용에 대한 기대 반전",
+      "reason": "세 문자가 같은 내용을 담았다는 단서 직후 비밀 문서인지 묻고 평범한 왕권 포고문으로 뒤집는다.",
+      "status": "PASS"
+    },
+    {
+      "from": 4,
+      "to": 5,
+      "relation": "반복이 자막이 됐다는 원리에서 실제 해독 과정으로 진입",
+      "reason": "비교 기준이 생겼다는 설명만으로는 즉시 해독되지 않은 이유를 답할 수 없어 문자 체계와 학자들의 단계로 이어 간다.",
+      "status": "PASS"
+    },
+    {
+      "from": 5,
+      "to": 6,
+      "relation": "영과 샹폴리옹의 단서에서 1822년 돌파구와 천재 신화 교정으로 종합",
+      "reason": "누가 무엇을 발견했는지 제시한 뒤 시간의 축적과 다수 자료의 역할을 결론으로 묶는다.",
+      "status": "PASS"
+    },
+    {
+      "from": 6,
+      "to": 7,
+      "relation": "해독 열쇠가 만들어진 과정에서 그 결과와 남은 미확인 맥락으로 이동",
+      "reason": "읽는 법을 알아낸 결과 무엇이 달라졌는지 보여준 뒤, 해독된 문자와 별개로 석비 자신의 원 장소는 모른다는 마지막 경계를 세운다.",
+      "status": "PASS"
+    }
+  ],
+  "connectors": [
+    {
+      "sentence": 22,
+      "text": "그러니까",
+      "relation": "앞선 해독 단계의 증거 종합",
+      "decision": "KEEP",
+      "reason": "영과 샹폴리옹의 연속된 연구를 한 천재의 즉석 해독과 대비하는 결론 신호이므로 삭제하면 회수의 힘이 약해진다."
+    },
+    {
+      "sentence": 26,
+      "text": "다만",
+      "relation": "해독 성공과 석비 원 맥락의 미확인 대비",
+      "decision": "KEEP",
+      "reason": "문명의 문헌을 읽게 된 확인 사실과 석비 자체의 원 설치 장소를 모른다는 한계를 명확히 가른다."
+    }
+  ],
+  "duplicate_review": {
+    "status": "PASS",
+    "acknowledged_pairs": [],
+    "note": "로제타석이 문명을 다시 읽게 했다는 도입과 결론은 각각 질문 약속과 사실 회수 역할을 하며, 자동 유사 문장 후보는 없다."
+  },
+  "findings": [
+    {
+      "id": "EP05-CONTEXT-001",
+      "category": "통념 교정",
+      "before": "세 언어가 적힌 돌",
+      "after": "이집트어와 그리스어 두 언어를 세 문자 체계로 적은 돌",
+      "reason": "상형문자와 민중문자는 서로 다른 언어가 아니라 이집트어를 적는 서로 다른 문자 체계다.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "EP05-CONTEXT-002",
+      "category": "해독 천재 신화",
+      "before": "샹폴리옹이 로제타석을 보고 상형문자를 풀었다",
+      "after": "영의 왕명 음가 단서와 샹폴리옹의 다른 왕명·콥트어 비교가 1822년 돌파구로 이어졌다",
+      "reason": "로제타석 단독·한 사람 단독·즉시 해독이라는 세 가지 과장을 피했다.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "EP05-CONTEXT-003",
+      "category": "결말 회수",
+      "before": "상형문자는 풀렸지만 비밀은 남았다",
+      "after": "문명의 목소리는 되찾았지만 석비 자신의 원 설치 장소와 재사용 경로는 남았다",
+      "reason": "이미 해독된 문자를 억지 미스터리로 만들지 않고 유물 자체의 유실된 고고학 맥락만 미확인으로 남겼다.",
+      "status": "RESOLVED"
+    }
+  ]
+}
