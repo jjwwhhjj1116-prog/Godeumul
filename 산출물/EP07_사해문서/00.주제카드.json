@@ -1,0 +1,44 @@
+{
+  "status": "TOPIC_APPROVED",
+  "target": "사해문서 — 쿰란 동굴 문서군",
+  "one_sentence_promise": "사해 북서쪽 쿰란 동굴에서 발견된 2천 년 전 문서들이 단일 성서 원본이 아니라 성서 사본·주석·규칙·달력·기도문이 뒤섞인 고대 유대 문헌 도서관이었음을 밝히고, 누가 왜 동굴에 나눠 두었는지 남은 경계를 추적한다.",
+  "discovery_action": "1947년 타아미레족 베두인 목동이 잃어버린 가축을 찾다가 쿰란 인근 동굴을 발견했다는 공식 기관의 발견 전승에서 시작하고, 1949년 고고학 조사가 Cave 1의 출처를 확인한 뒤 1956년까지 11개 동굴로 확장된 과정을 따른다.",
+  "representative_artifacts": [
+    "길이 7.34미터·54열에 이사야서 66장 전체를 담은 대이사야서 두루마리",
+    "공동생활의 가입·규율·처벌을 적은 공동체 규칙서",
+    "364일 태양력과 축일을 정리한 달력 문서",
+    "동굴 3에서 나온 구리 재질의 보물 목록 두루마리",
+    "성서 주석·기도문·종말 전쟁 문서·테필린과 메주자"
+  ],
+  "historical_context": "기원전 3세기부터 서기 1세기까지 제2성전기 유대 사회의 성서 전승, 여러 종교 공동체, 로마 지배와 서기 68년 무렵 쿰란 정착지의 폐기를 함께 살핀다.",
+  "central_question": "사해 동굴의 문서들은 정확히 무엇이었으며, 누가 이 거대한 도서관을 여러 동굴에 두고 사라졌는가?",
+  "confirmed_answer_scope": "1947년 첫 발견, 11개 쿰란 동굴, 900개가 넘는 문서의 잔편, 히브리어·아람어·그리스어, 성서 및 비성서 문헌의 공존, 대이사야서·공동체 규칙서·구리 두루마리의 실물 내용까지만 사실로 잠근다.",
+  "unknowns": "전체 문서의 정확한 소유자와 수집 경로, 모든 문서를 한 집단이 작성했는지, 각 동굴에 둔 시점과 이유, 쿰란 정착지와 모든 문서의 관계는 확정되지 않았다.",
+  "claims_to_avoid": [
+    "예수가 직접 쓴 문서 또는 초기 기독교의 비밀 문서라고 말하기",
+    "현대 성경과 글자 하나까지 완전히 같다고 말하기",
+    "에세네파 한 집단이 900개 문서를 전부 현지에서 썼다고 단정하기",
+    "구리 두루마리의 보물이 실제로 발견됐다고 말하기",
+    "목동의 이름·돌 투척·항아리 파손 세부를 확정된 발굴 기록처럼 말하기"
+  ],
+  "official_sources": [
+    {"institution": "Israel Antiquities Authority", "title": "Discovery and Publication", "url": "https://www.deadseascrolls.org.il/learn-about-the-scrolls/discovery-and-publication"},
+    {"institution": "Israel Antiquities Authority", "title": "Discovery Sites", "url": "https://www.deadseascrolls.org.il/learn-about-the-scrolls/discovery-sites"},
+    {"institution": "Israel Antiquities Authority", "title": "Scrolls Content", "url": "https://www.deadseascrolls.org.il/learn-about-the-scrolls/scrolls-content"},
+    {"institution": "Israel Museum", "title": "The Great Isaiah Scroll", "url": "https://dss.collections.imj.org.il/isaiah"},
+    {"institution": "Library of Congress", "title": "The Qumran Library", "url": "https://www.loc.gov/exhibits/scrolls/libr.html"},
+    {"institution": "Library of Congress", "title": "The Qumran Community", "url": "https://www.loc.gov/exhibits/scrolls/comm.html"}
+  ],
+  "visual_route": [
+    "사해 수면에서 북서쪽 유대 광야 절벽과 쿰란 동굴 입구로 급상승",
+    "베두인 목동의 손과 돌을 따라 어두운 Cave 1 항아리 안으로 진입",
+    "일곱 두루마리에서 11개 동굴·수만 조각으로 지형 단면을 확장",
+    "대이사야서 7.34미터를 54열을 따라 빠르게 횡단",
+    "성서 사본이 공동체 규칙서·달력·기도문·구리 두루마리로 갈라지는 문서 도서관",
+    "공동체 규칙서의 가입·처벌 문장을 따라 쿰란 정착지의 공동생활 재현으로 이동",
+    "잉크병과 필사 공간 후보에서 서로 다른 필체·언어의 문서 조각으로 분해",
+    "서기 68년 로마군 접근 지도와 여러 동굴의 분산 배치를 겹친 뒤 소유자 미상으로 닫음"
+  ],
+  "routing": "초기 공개 순서 7편. 140~170초 9:16 숏다큐이며 장면 수는 대본 승인과 TTS 실측 뒤 의미 전환에서 파생한다.",
+  "scores": {"artifact_context": 20, "historical_density": 20, "question_ladder": 20, "reference_quality": 15, "visual_journey": 15, "title_interest": 10, "total": 100}
+}

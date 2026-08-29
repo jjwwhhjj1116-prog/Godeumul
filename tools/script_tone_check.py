@@ -24,7 +24,9 @@ for _stream in (sys.stdout, sys.stderr):
 
 
 NARRATION_RE = re.compile(r"^\[한국어\s*(?:나레이션|내레이션|번역|원문)\]\s*(.*)$")
-SENTENCE_RE = re.compile(r"[^.!?]+[.!?]?")
+# 소수점(`7.34미터`)의 마침표는 문장 끝이 아니다. 문맥 검수의 문장 번호가
+# 여기서 밀리면 접속어 삭제 비교가 엉뚱한 문장을 가리키므로 숫자 양옆의 점을 보존한다.
+SENTENCE_RE = re.compile(r".+?(?:[!?]+|(?<!\d)\.(?!\d)|$)", re.DOTALL)
 FORMAL_END_RE = re.compile(r"(?:습니다|입니다)$")
 CONVERSATIONAL_END_RE = re.compile(
     r"(?:죠|거든요|고요|어요|예요|인데요|하고요|냐고요|까요|셈이죠|겁니다|거예요)$"

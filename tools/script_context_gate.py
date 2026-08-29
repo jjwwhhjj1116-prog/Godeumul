@@ -4,7 +4,7 @@
 
 이 도구는 LLM 흉내를 내는 맞춤법 검사기가 아니다. Humanizer KO와 채널
 편집 기준으로 사람이/에이전트가 수행한 문서·문단·문장 검수가 현재 대본과
-동일한지, 필요한 다섯 검문이 빠짐없이 PASS인지 결정적으로 확인한다.
+동일한지, 해당 잠금 버전에 필요한 검문이 빠짐없이 PASS인지 결정적으로 확인한다.
 """
 
 from __future__ import annotations
@@ -39,6 +39,15 @@ REQUIRED_CHECKS_V2 = (
     "conclusion_answer_and_boundary",
 )
 
+REQUIRED_CHECKS_V3 = (
+    "korean_three_layer_review",
+    "all_adjacent_sentence_pairs",
+    "major_fact_reveal_ladders",
+    "information_prerequisites",
+    "hook_compactness_and_payload",
+    "script_editorial_separation",
+)
+
 CONCLUSION_FIELDS = (
     "opening_question",
     "confirmed_answer",
@@ -46,6 +55,34 @@ CONCLUSION_FIELDS = (
     "unresolved_core",
     "why_unresolved",
     "fixed_closing",
+)
+
+KOREAN_REVIEW_LEVELS = (
+    "document",
+    "paragraph",
+    "sentence",
+)
+
+HOOK_REVIEW_FIELDS = (
+    "artifact",
+    "visual_action",
+    "scale_or_contradiction",
+    "open_question",
+)
+
+REVEAL_FIELDS = (
+    "setup",
+    "reveal",
+    "meaning",
+    "next_question",
+)
+
+EDITORIAL_PHRASES = (
+    "이렇게 가면 충격이",
+    "충격이 단계적으로",
+    "수정 이유는",
+    "수정 설명입니다",
+    "이 문장은 대본이",
 )
 
 # 길이가 긴 표지를 먼저 검사해 `그런데 말이죠`를 `그런데`와 중복 집계하지 않는다.
@@ -158,7 +195,8 @@ def validate_context_review(script: Path, review: Path) -> ContextGateReport:
     # v1 잠금은 이미 게시된 회차의 재현성을 위해 그대로 인정한다. 새 회차(v2+)부터는
     # "아직 모른다"는 분위기만 남기는 결말을 막고, 도입 질문의 답과 미해결 경계를
     # 검수 문서에 각각 명시해야 한다.
-    if int(doc.get("version") or 1) >= 2:
+    version = int(doc.get("version") or 1)
+    if version >= 2:
         for key in REQUIRED_CHECKS_V2:
             if checks.get(key) != "PASS":
                 failures.append(f"결론 필수 검문 미통과: {key}")
@@ -174,6 +212,105 @@ def validate_context_review(script: Path, review: Path) -> ContextGateReport:
         fixed_closing = str(conclusion.get("fixed_closing") or "").strip()
         if fixed_closing and not fixed_closing.endswith("의 비밀이었습니다."):
             failures.append("채널 고정 마무리가 `[대상]의 비밀이었습니다.`로 끝나지 않음")
+
+    # v3부터는 'adjacent_sentence_relations: PASS'라는 선언만 믿지 않는다.
+    # 실제 모든 인접 문장 쌍과 주요 사실 공개 사다리를 검수 문서에 기록해야 한다.
+    if version >= 3:
+        for key in REQUIRED_CHECKS_V3:
+            if checks.get(key) != "PASS":
+                failures.append(f"v3 필수 검문 미통과: {key}")
+
+        narration = narration_text(raw)
+        editorial_hits = [phrase for phrase in EDITORIAL_PHRASES if phrase in narration]
+        if editorial_hits:
+            failures.append(f"대본에 편집자 설명 문구가 섞임: {editorial_hits}")
+
+        korean_review = doc.get("korean_review") or {}
+        if korean_review.get("status") != "PASS":
+            failures.append("한국어 3층 교정 검수가 PASS가 아님")
+        reviewer = str(korean_review.get("reviewer") or "").lower()
+        if "korean-proofreader" not in reviewer:
+            failures.append("한국어 교정 reviewer에 korean-proofreader가 기록되지 않음")
+        missing_levels = [
+            level for level in KOREAN_REVIEW_LEVELS
+            if korean_review.get(level) != "PASS"
+        ]
+        if missing_levels:
+            failures.append(f"한국어 교정 층위 미통과: {missing_levels}")
+
+        sentence_links = doc.get("sentence_links") or []
+        reviewed_sentence_links = {
+            (item.get("from"), item.get("to"))
+            for item in sentence_links
+            if item.get("status") == "PASS"
+            and len(str(item.get("relation") or "").strip()) >= 2
+            and len(str(item.get("reason") or "").strip()) >= 8
+        }
+        expected_sentence_links = {
+            (n, n + 1) for n in range(1, len(tone.sentences))
+        }
+        if reviewed_sentence_links != expected_sentence_links:
+            missing = sorted(expected_sentence_links - reviewed_sentence_links)
+            extra = sorted(reviewed_sentence_links - expected_sentence_links)
+            failures.append(
+                f"인접 문장 전수 검수 불일치: 누락 {missing} / 초과 {extra}"
+            )
+
+        hook = doc.get("hook_review") or {}
+        if hook.get("status") != "PASS":
+            failures.append("훅 압축·정보량 검수가 PASS가 아님")
+        missing_hook = [
+            key for key in HOOK_REVIEW_FIELDS
+            if len(str(hook.get(key) or "").strip()) < 2
+        ]
+        if missing_hook:
+            failures.append(f"훅 검수 필드 누락: {missing_hook}")
+        try:
+            hook_start = int(hook.get("sentence_start"))
+            hook_end = int(hook.get("sentence_end"))
+        except (TypeError, ValueError):
+            hook_start = hook_end = 0
+        if hook_start != 1 or not (1 <= hook_end <= 5):
+            failures.append("훅은 문장 1에서 시작해 5문장 안에 끝나야 함")
+        else:
+            hook_text = " ".join(tone.sentences[hook_start - 1:hook_end])
+            artifact = str(hook.get("artifact") or "").strip()
+            if artifact and artifact not in hook_text:
+                failures.append(f"훅 5문장 안에 중심 대상 `{artifact}`가 없음")
+            if "?" not in hook_text:
+                failures.append("훅 5문장 안에 다음 내용을 여는 질문이 없음")
+
+        prerequisite = doc.get("prerequisite_review") or {}
+        if prerequisite.get("status") != "PASS":
+            failures.append("정보 선행조건 검수가 PASS가 아님")
+        unintroduced = prerequisite.get("unintroduced_terms")
+        if not isinstance(unintroduced, list):
+            failures.append("정보 선행조건의 unintroduced_terms가 목록이 아님")
+        elif unintroduced:
+            failures.append(f"설명 전에 사용된 정보가 남음: {unintroduced}")
+        if prerequisite.get("pronoun_referents") != "PASS":
+            failures.append("지시어·대명사 선행 대상 검수가 PASS가 아님")
+
+        fact_inventory = {
+            str(item).strip() for item in (doc.get("major_fact_inventory") or [])
+            if str(item).strip()
+        }
+        if not fact_inventory:
+            failures.append("주요 사실 인벤토리가 비어 있음")
+        reveal_blocks = doc.get("reveal_blocks") or []
+        reviewed_reveals: set[str] = set()
+        for item in reveal_blocks:
+            fact_id = str(item.get("id") or "").strip()
+            if not fact_id or item.get("status") != "PASS":
+                continue
+            if all(len(str(item.get(key) or "").strip()) >= 2 for key in REVEAL_FIELDS):
+                reviewed_reveals.add(fact_id)
+        if reviewed_reveals != fact_inventory:
+            failures.append(
+                "주요 사실 미니후킹 검수 불일치: "
+                f"누락 {sorted(fact_inventory - reviewed_reveals)} / "
+                f"초과 {sorted(reviewed_reveals - fact_inventory)}"
+            )
 
     reviewed_paragraphs = doc.get("paragraphs") or []
     paragraph_numbers = {item.get("n") for item in reviewed_paragraphs if item.get("role") and item.get("summary")}

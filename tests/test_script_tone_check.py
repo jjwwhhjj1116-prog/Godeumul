@@ -32,6 +32,13 @@ class ScriptToneCheckTests(unittest.TestCase):
         self.assertEqual(atoms(["증거를", "싹", "다", "망가뜨립니다."]),
                          ["증거를", "싹 다", "망가뜨립니다."])
 
+    def test_decimal_does_not_create_fake_sentence_boundary(self):
+        report = analyze("길이 7.34미터입니다. 그런데 훨씬 긴 두루마리였죠.")
+        self.assertEqual(report.sentences, [
+            "길이 7.34미터입니다.",
+            "그런데 훨씬 긴 두루마리였죠.",
+        ])
+
 
 if __name__ == "__main__":
     unittest.main()

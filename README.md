@@ -107,7 +107,7 @@ python tools/youtube_upload.py --auth
 |---|---|---|---|---|---|
 | **0** | 주제 승인 | 리뉴얼 제작 큐 | `00.주제카드.json` | [주제 선정 지침](./기획/주제선정_지침.md) | `topic_check.py` |
 | **1** | 조사·대본 | 유물 주제 1개 | 조사노트 + 증거지도 + 승인 대본 | [01](./%23%20%5B고대유물의%20비밀%5D%20대본%20작성%20전용%20시스템%20지침.txt) · [01L](./01L.롱폼_대본작성지침.md) | — |
-| **1Q** | **한국어 문맥 QA** | 승인 대본 | `01.문맥검수.json` + 대본 SHA 잠금 | [시작 워크플로 §C](./00.제작_시작_워크플로우.md) | `script_tone_check.py` → `script_context_gate.py` |
+| **1Q** | **한국어 3층·문맥 QA** | 승인 대본 | v3 인접 문장·미니후킹 검수 + 대본 SHA 잠금 | [시작 워크플로 §C](./00.제작_시작_워크플로우.md) | `korean-proofreader` → `script_tone_check.py` → `script_context_gate.py` |
 | **2a** | 장면 구분표 | 승인 대본 | 의미 단위 장면 + 증거 상태 + TTS | [02](./02.시각화+영상화프롬프트(고대유물).txt) | — |
 | **2c** | **고증 카드** | 유물·시대 | `02b.고증카드.md` | [02 §고증앵커](./02.시각화+영상화프롬프트(고대유물).txt) | `prompt_check.py` |
 | **3** | **TTS 실측 (먼저!)** | 장면 구분 | `audio/*.mp3` + `durations.json` | [03](./03.TTS생성지침.md) | `tts_generate` → `audio_normalize` |
@@ -246,7 +246,7 @@ python tools/youtube_upload.py  산출물/EP01_진시황릉 --run --공개 예�
 ├─ tools/
 │   ├─ _config.py         채널설정.json 로더 (전 도구가 여기를 거친다)
 │   ├─ topic_check.py     0단계 — ★ 유물 우선 주제 카드·85점 게이트
-│   ├─ script_context_gate.py 1Q — ★ 문단·전환·접속어·중복 문맥 잠금
+│   ├─ script_context_gate.py 1Q — ★ 모든 인접 문장·정보 선행조건·미니후킹·결론 잠금
 │   ├─ tts_generate.py    3단계 — 장면별 TTS + 길이표
 │   ├─ audio_normalize.py 3단계 — 라우드니스 정규화(클리핑 방지)
 │   ├─ prompt_check.py    2단계 — ★ 시각화 프롬프트 고증 검증
@@ -265,7 +265,7 @@ python tools/youtube_upload.py  산출물/EP01_진시황릉 --run --공개 예�
 └─ 산출물/EP01_진시황릉/
     ├─ 00.팩트체크.md      근거 등급 A/B/C. C가 있으면 설명란 고지 필수
     ├─ 01.대본.txt
-    ├─ 01.문맥검수.json    ★ 현재 대본 SHA + 다섯 검문 PASS
+    ├─ 01.문맥검수.json    ★ 현재 대본 SHA + v3 한국어·문맥 전수 검문 PASS
     ├─ 02.시각화.txt
     ├─ 02a.장면구분.json / .md
     ├─ 02c.이미지선택.md

@@ -75,6 +75,75 @@ def review_v2_for(script: Path) -> dict:
     return doc
 
 
+def review_v3_for(script: Path) -> dict:
+    doc = review_v2_for(script)
+    doc["version"] = 3
+    doc["checks"].update({
+        "korean_three_layer_review": "PASS",
+        "all_adjacent_sentence_pairs": "PASS",
+        "major_fact_reveal_ladders": "PASS",
+        "information_prerequisites": "PASS",
+        "hook_compactness_and_payload": "PASS",
+        "script_editorial_separation": "PASS",
+    })
+    doc["korean_review"] = {
+        "status": "PASS",
+        "reviewer": "korean-proofreader + godeumul-context-qa",
+        "document": "PASS",
+        "paragraph": "PASS",
+        "sentence": "PASS",
+    }
+    doc["sentence_links"] = [
+        {
+            "from": 1,
+            "to": 2,
+            "relation": "발견에서 질문",
+            "reason": "발견된 몸을 곧바로 보존 원인 질문으로 확장한다.",
+            "status": "PASS",
+        },
+        {
+            "from": 2,
+            "to": 3,
+            "relation": "질문에서 추가 증거",
+            "reason": "몸의 보존 질문을 관 주변 생활용품이라는 추가 증거로 잇는다.",
+            "status": "PASS",
+        },
+        {
+            "from": 3,
+            "to": 4,
+            "relation": "증거에서 조사 순서",
+            "reason": "새로 공개한 생활용품을 다음 조사 대상으로 바로 회수한다.",
+            "status": "PASS",
+        },
+    ]
+    doc["hook_review"] = {
+        "status": "PASS",
+        "sentence_start": 1,
+        "sentence_end": 2,
+        "artifact": "여성",
+        "visual_action": "무덤에서 여성의 몸이 발견된다",
+        "scale_or_contradiction": "몸이 예외적으로 남았다",
+        "open_question": "왜 이 몸만 남았을까",
+    }
+    doc["prerequisite_review"] = {
+        "status": "PASS",
+        "unintroduced_terms": [],
+        "pronoun_referents": "PASS",
+    }
+    doc["major_fact_inventory"] = ["F01"]
+    doc["reveal_blocks"] = [
+        {
+            "id": "F01",
+            "setup": "몸만 남았다는 첫 질문",
+            "reveal": "관 주변 생활용품도 함께 남았다",
+            "meaning": "보존 원인과 장례 맥락을 함께 봐야 한다",
+            "next_question": "관 주변에는 무엇이 놓였는가",
+            "status": "PASS",
+        }
+    ]
+    return doc
+
+
 class ScriptContextGateTests(unittest.TestCase):
     def test_passes_complete_review_lock(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -133,6 +202,75 @@ class ScriptContextGateTests(unittest.TestCase):
             review.write_text(json.dumps(review_v2_for(script), ensure_ascii=False), encoding="utf-8")
             report = validate_context_review(script, review)
             self.assertTrue(report.passed, report.failures)
+
+    def test_v3_accepts_full_sentence_and_reveal_review(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            script = root / "01.대본.txt"
+            review = root / "01.문맥검수.json"
+            script.write_text(SCRIPT, encoding="utf-8")
+            review.write_text(json.dumps(review_v3_for(script), ensure_ascii=False), encoding="utf-8")
+            report = validate_context_review(script, review)
+            self.assertTrue(report.passed, report.failures)
+
+    def test_v3_rejects_one_missing_adjacent_sentence_pair(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            script = root / "01.대본.txt"
+            review = root / "01.문맥검수.json"
+            script.write_text(SCRIPT, encoding="utf-8")
+            doc = review_v3_for(script)
+            doc["sentence_links"] = doc["sentence_links"][:-1]
+            review.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
+            report = validate_context_review(script, review)
+            self.assertFalse(report.passed)
+            self.assertTrue(any("인접 문장 전수 검수" in failure for failure in report.failures))
+
+    def test_v3_rejects_flat_major_fact_without_full_reveal_ladder(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            script = root / "01.대본.txt"
+            review = root / "01.문맥검수.json"
+            script.write_text(SCRIPT, encoding="utf-8")
+            doc = review_v3_for(script)
+            del doc["reveal_blocks"][0]["meaning"]
+            review.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
+            report = validate_context_review(script, review)
+            self.assertFalse(report.passed)
+            self.assertTrue(any("미니후킹 검수" in failure for failure in report.failures))
+
+    def test_v3_rejects_unintroduced_information(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            script = root / "01.대본.txt"
+            review = root / "01.문맥검수.json"
+            script.write_text(SCRIPT, encoding="utf-8")
+            doc = review_v3_for(script)
+            doc["prerequisite_review"]["unintroduced_terms"] = ["성경만 보관했다"]
+            review.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
+            report = validate_context_review(script, review)
+            self.assertFalse(report.passed)
+            self.assertTrue(any("설명 전에 사용된 정보" in failure for failure in report.failures))
+
+    def test_v3_rejects_editorial_explanation_inside_script(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            script = root / "01.대본.txt"
+            review = root / "01.문맥검수.json"
+            contaminated = SCRIPT + " 이렇게 가면 충격이 단계적으로 커집니다."
+            script.write_text(contaminated, encoding="utf-8")
+            doc = review_v3_for(script)
+            doc["sentence_links"].append({
+                "from": 4,
+                "to": 5,
+                "relation": "편집 설명 혼입",
+                "reason": "검출 테스트를 위해 편집자 설명을 일부러 대본에 넣었다.",
+                "status": "PASS",
+            })
+            review.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
+            report = validate_context_review(script, review)
+            self.assertFalse(report.passed)
+            self.assertTrue(any("편집자 설명 문구" in failure for failure in report.failures))
 
     def test_tts_parser_accepts_markdown_storyboard_format(self):
         with tempfile.TemporaryDirectory() as folder:
