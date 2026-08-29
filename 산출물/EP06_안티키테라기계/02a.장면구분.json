@@ -1328,11 +1328,11 @@
   },
   {
     "n": 18,
-    "chapter": "7. 제작자 미상",
+    "chapter": "7. 제작자와 정체",
     "ct": "SEALED_UNKNOWN",
-    "txt": "누가 만들었는지도 아직 모릅니다. 코린토스계 달 이름 때문에 시칠리아나 아르키메데스의 기술 전통이 거론되지만, 제작자를 찍어 주는 서명은 없어요.",
-    "tts": 9.66,
-    "omni": 10,
+    "txt": "누가 만들었는지는 여전히 모릅니다. 하지만 이 기계의 정체는 분명하죠. 단순한 달력도, 별자리판도 아니었습니다.",
+    "tts": 6.827,
+    "omni": 8,
     "evidence": "미확인",
     "generation_mode": "I2V_LOCKED",
     "architecture_anchor_required": true,
@@ -1378,32 +1378,31 @@
     "tts_beats": [
       {
         "start": 0.0,
-        "end": 5.225,
-        "narration": "누가 만들었는지도 아직 모릅니다. 코린토스계 달 이름 때문에 시칠리아나",
-        "camera": "Raise the question of maker and workshop.",
-        "action": "Raise the question of maker and workshop.",
+        "end": 3.164,
+        "narration": "누가 만들었는지는 여전히 모릅니다. 하지만 이 기계의",
+        "camera": "State that the maker remains unknown.",
+        "action": "State that the maker remains unknown.",
         "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
       },
       {
-        "start": 5.225,
-        "end": 9.66,
-        "narration": "아르키메데스의 기술 전통이 거론되지만, 제작자를 찍어 주는 서명은 없어요.",
-        "camera": "Stop at the missing signature despite proposed traditions.",
-        "action": "Stop at the missing signature despite proposed traditions.",
+        "start": 3.164,
+        "end": 6.827,
+        "narration": "정체는 분명하죠. 단순한 달력도, 별자리판도 아니었습니다.",
+        "camera": "Turn from the blank signature to the mechanism's confirmed identity.",
+        "action": "Turn from the blank signature to the mechanism's confirmed identity.",
         "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
       }
     ],
     "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. Hellenistic Greek limestone-and-timber bronze instrument workshop, Roman-era Mediterranean timber merchant ship, rocky Antikythera seabed, and restrained Athens museum or CT laboratory spaces only as the scene requires. Unclaimed Hellenistic bronze workshop diorama with an unfinished gear sheet, dividers, files, a wooden geometry board and a blank unsigned bronze cover plate on the bench; no identifiable city monument, no portrait, no maker name, with faint distant silhouettes of Syracuse and Corinthian maritime routes kept abstract and secondary. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
     "status": "PROMPT_LOCKED_IMAGE_PENDING",
-    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset.",
-    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at blank bronze cover corner; travel around dividers, files and gear sheet; arrive at empty signature area; settle on unsigned plate and tools. Approach the blank cover plate, orbit the period tools and stop at the untouched signature area; never enter a named city or reveal a maker's face. TTS-locked timing: 0.00-5.22s: Raise the question of maker and workshop. 5.22-9.66s: Stop at the missing signature despite proposed traditions. Preserve all objects from the start image. No voice, no music, no subtitles."
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at blank bronze cover corner; travel around dividers, files and gear sheet; arrive at empty signature area; settle on unsigned plate and tools. Approach the blank cover plate, orbit the period tools and stop at the untouched signature area; never enter a named city or reveal a maker's face. TTS-locked timing: 0.00-3.16s: State that the maker remains unknown. 3.16-6.83s: Turn from the blank signature to the mechanism's confirmed identity. Preserve all objects from the start image. No voice, no music, no subtitles."
   },
   {
     "n": 19,
-    "chapter": "7. 확인된 의미",
+    "chapter": "7. 고대 컴퓨터의 결론",
     "ct": "HISTORICAL_RECONSTRUCTION",
-    "txt": "우리가 확실히 아는 건, 2천 년 전 고대 그리스인이 하늘을 바라보기만 한 게 아니라 톱니바퀴 안에 넣고 실제로 돌렸다는 사실입니다.",
-    "tts": 7.709,
+    "txt": "태양과 달, 다섯 행성, 일식과 월식, 경기 일정까지. 고대 그리스인은 하늘의 시간을 톱니바퀴 안에 통째로 넣었습니다.",
+    "tts": 7.245,
     "omni": 8,
     "evidence": "학술해석",
     "generation_mode": "I2V_LOCKED",
@@ -1450,32 +1449,32 @@
     "tts_beats": [
       {
         "start": 0.0,
-        "end": 3.629,
-        "narration": "우리가 확실히 아는 건, 2천 년 전 고대 그리스인이 하늘을",
-        "camera": "Show ancient Greeks turning the sky in gears.",
-        "action": "Show ancient Greeks turning the sky in gears.",
+        "end": 3.582,
+        "narration": "태양과 달, 다섯 행성, 일식과 월식, 경기 일정까지.",
+        "camera": "Gather Sun, Moon, five planets, eclipses and games into one mechanical idea.",
+        "action": "Gather Sun, Moon, five planets, eclipses and games into one mechanical idea.",
         "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
       },
       {
-        "start": 3.629,
-        "end": 7.709,
-        "narration": "바라보기만 한 게 아니라 톱니바퀴 안에 넣고 실제로 돌렸다는 사실입니다.",
-        "camera": "Connect observed heavens, mathematics and craft.",
-        "action": "Connect observed heavens, mathematics and craft.",
+        "start": 3.582,
+        "end": 7.245,
+        "narration": "고대 그리스인은 하늘의 시간을 톱니바퀴 안에 통째로 넣었습니다.",
+        "camera": "Conclude that ancient Greeks placed celestial time inside gears.",
+        "action": "Conclude that ancient Greeks placed celestial time inside gears.",
         "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
       }
     ],
     "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. Hellenistic Greek astronomers and bronze instrument makers with eastern Mediterranean features, short curled dark hair or trimmed beards, undyed linen chitons, wool himatia or practical leather aprons. Hellenistic Greek limestone-and-timber bronze instrument workshop, Roman-era Mediterranean timber merchant ship, rocky Antikythera seabed, and restrained Athens museum or CT laboratory spaces only as the scene requires. Hellenistic Greek astronomer and bronze instrument maker together at a limestone workshop bench, turning a restrained research reconstruction while a physical armillary sky model and Moon-phase sphere move in exact mechanical relation; eastern Mediterranean features, linen chitons and leather apron, no named historical portrait. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
     "status": "PROMPT_LOCKED_IMAGE_PENDING",
-    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at craftsperson hand on drive axis; travel through the case gears toward the armillary model; arrive at moving Moon and Sun against the workshop opening; settle on people, mechanism and sky model aligned. Follow the craftsperson's hand into the turning gear train, pass through the case and surge outward to the moving Moon and Sun model as the astronomer checks the sky. TTS-locked timing: 0.00-3.63s: Show ancient Greeks turning the sky in gears. 3.63-7.71s: Connect observed heavens, mathematics and craft. Preserve all objects from the start image. No voice, no music, no subtitles."
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at craftsperson hand on drive axis; travel through the case gears toward the armillary model; arrive at moving Moon and Sun against the workshop opening; settle on people, mechanism and sky model aligned. Follow the craftsperson's hand into the turning gear train, pass through the case and surge outward to the moving Moon and Sun model as the astronomer checks the sky. TTS-locked timing: 0.00-3.58s: Gather Sun, Moon, five planets, eclipses and games into one mechanical idea. 3.58-7.25s: Conclude that ancient Greeks placed celestial time inside gears. Preserve all objects from the start image. No voice, no music, no subtitles."
   },
   {
     "n": 20,
-    "chapter": "7. 끊긴 전통",
+    "chapter": "7. 사라진 핵심",
     "ct": "SPATIAL_MAP",
-    "txt": "그리고 그 기술이 어느 공방에서 태어나 어디로 이어졌는지는, 난파선과 함께 끊겨 버렸죠.",
-    "tts": 5.48,
-    "omni": 6,
+    "txt": "그런데 핵심인 앞쪽 장치와 제작자의 이름은 사라졌습니다. 대체 그들은 어디까지 알고 있었던 걸까요? 82개 파편은 답보다 큰 질문을 남겼죠.",
+    "tts": 8.684,
+    "omni": 10,
     "evidence": "미확인",
     "generation_mode": "I2V_LOCKED",
     "architecture_anchor_required": true,
@@ -1521,24 +1520,24 @@
     "tts_beats": [
       {
         "start": 0.0,
-        "end": 2.171,
-        "narration": "그리고 그 기술이 어느 공방에서 태어나",
-        "camera": "Follow the unknown route of the technology.",
-        "action": "Follow the unknown route of the technology.",
+        "end": 4.807,
+        "narration": "그런데 핵심인 앞쪽 장치와 제작자의 이름은 사라졌습니다. 대체 그들은 어디까지",
+        "camera": "Return to the lost front assembly and absent maker identity.",
+        "action": "Return to the lost front assembly and absent maker identity.",
         "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
       },
       {
-        "start": 2.171,
-        "end": 5.48,
-        "narration": "어디로 이어졌는지는, 난파선과 함께 끊겨 버렸죠.",
-        "camera": "Break the route at the wreck rather than invent descendants.",
-        "action": "Break the route at the wreck rather than invent descendants.",
+        "start": 4.807,
+        "end": 8.684,
+        "narration": "알고 있었던 걸까요? 82개 파편은 답보다 큰 질문을 남겼죠.",
+        "camera": "Leave the 82 fragments as a larger unanswered question.",
+        "action": "Leave the 82 fragments as a larger unanswered question.",
         "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
       }
     ],
     "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. Hellenistic Greek limestone-and-timber bronze instrument workshop, Roman-era Mediterranean timber merchant ship, rocky Antikythera seabed, and restrained Athens museum or CT laboratory spaces only as the scene requires. Deep historical continuity diorama beginning with a Hellenistic workshop bench, following one restrained chain of bronze gear silhouettes toward a Roman merchant ship, then descending with the wreck into dark seawater where the chain physically breaks; beyond the break is empty darkness, not a claim that all knowledge vanished. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
     "status": "PROMPT_LOCKED_IMAGE_PENDING",
-    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at unfinished workshop gear; travel along the cargo deck then down through water; arrive at broken route beside Fragment A; settle on fragment at the end of documented evidence. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Track a bronze route from the workshop through the ship's cargo deck, dive with it into the water and stop exactly where the evidence chain breaks beside the corroded fragment. TTS-locked timing: 0.00-2.17s: Follow the unknown route of the technology. 2.17-5.48s: Break the route at the wreck rather than invent descendants. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at unfinished workshop gear; travel along the cargo deck then down through water; arrive at broken route beside Fragment A; settle on fragment at the end of documented evidence. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Track a bronze route from the workshop through the ship's cargo deck, dive with it into the water and stop exactly where the evidence chain breaks beside the corroded fragment. TTS-locked timing: 0.00-4.81s: Return to the lost front assembly and absent maker identity. 4.81-8.68s: Leave the 82 fragments as a larger unanswered question. Preserve all objects from the start image. No voice, no music, no subtitles.",
     "veo_graphic": {
       "function": "ROUTE_PATH",
       "evidence_relation": "The route represents the known artifact journey only and stops where documentary and archaeological continuity is absent",
@@ -1557,11 +1556,11 @@
   },
   {
     "n": 21,
-    "chapter": "8. 고정 결말",
+    "chapter": "8. 남은 미스터리",
     "ct": "ARTIFACT_MACRO",
-    "txt": "시간 속에 잠든 세계유산, 땅속에 묻힌 역사. 안티키테라 기계의 비밀이었습니다.",
-    "tts": 5.294,
-    "omni": 6,
+    "txt": "그래서 앞쪽 장치의 원형과 제작자는 아직 풀리지 않은 고대 기술사의 미스터리입니다. 시간 속에 잠든 유물, 바닷속에 묻힌 역사. 안티키테라 기계의 비밀이었습니다.",
+    "tts": 9.938,
+    "omni": 10,
     "evidence": "발굴확인",
     "generation_mode": "I2V_LOCKED",
     "architecture_anchor_required": false,
@@ -1607,23 +1606,24 @@
     "tts_beats": [
       {
         "start": 0.0,
-        "end": 2.259,
-        "narration": "시간 속에 잠든 세계유산, 땅속에",
-        "camera": "Return to the real surviving artifact.",
-        "action": "Return to the real surviving artifact.",
+        "end": 5.131,
+        "narration": "그래서 앞쪽 장치의 원형과 제작자는 아직 풀리지 않은 고대 기술사의 미스터리입니다.",
+        "camera": "Name the missing front design and maker as the bounded mystery.",
+        "action": "Name the missing front design and maker as the bounded mystery.",
         "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
       },
       {
-        "start": 2.259,
-        "end": 5.294,
-        "narration": "묻힌 역사. 안티키테라 기계의 비밀이었습니다.",
-        "camera": "Hold still for the channel closing line.",
-        "action": "Hold still for the channel closing line.",
+        "start": 5.131,
+        "end": 9.938,
+        "narration": "시간 속에 잠든 유물, 바닷속에 묻힌 역사. 안티키테라 기계의 비밀이었습니다.",
+        "camera": "Return to the real fragments and hold for the channel closing line.",
+        "action": "Return to the real fragments and hold for the channel closing line.",
         "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
       }
     ],
     "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Greek Antikythera recovery and research history: Symi sponge divers in 1900-1901, Athens museum examination from 1902, X-ray study in the 1970s and Anglo-Greek microfocus CT in 2005. Final high-contrast museum hero portrait of real Antikythera Fragment A and two smaller gear-bearing fragments on matte black conservation supports, warm pin light revealing copper-green patina and triangular teeth, cool rim light cleanly separating every artifact edge from a deep background hint of the ancient Aegean seabed, extremely sharp surface detail and no glass reflection. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
     "status": "PROMPT_LOCKED_IMAGE_PENDING",
-    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at lower copper-green Fragment A edge; travel three-degree parallax arc across the supports; arrive at full surviving-fragment hero grouping; settle on complete artifact closing portrait. Treat every supplied start-frame fragment as immutable: never redraw, clean, complete, sharpen, replace, rotate or animate any tooth, plate, crack, accretion or silhouette. Move only the camera by a tiny parallax arc and the raking light; if fidelity conflicts with motion, keep all artifacts frozen. Begin a restrained three-degree parallax arc, let warm pin light travel across the real teeth, then hold perfectly still on the surviving fragments for the final channel line. TTS-locked timing: 0.00-2.26s: Return to the real surviving artifact. 2.26-5.29s: Hold still for the channel closing line. Preserve all objects from the start image. No voice, no music, no subtitles."
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at lower copper-green Fragment A edge; travel three-degree parallax arc across the supports; arrive at full surviving-fragment hero grouping; settle on complete artifact closing portrait. Treat every supplied start-frame fragment as immutable: never redraw, clean, complete, sharpen, replace, rotate or animate any tooth, plate, crack, accretion or silhouette. Move only the camera by a tiny parallax arc and the raking light; if fidelity conflicts with motion, keep all artifacts frozen. Begin a restrained three-degree parallax arc, let warm pin light travel across the real teeth, then hold perfectly still on the surviving fragments for the final channel line. TTS-locked timing: 0.00-5.13s: Name the missing front design and maker as the bounded mystery. 5.13-9.94s: Return to the real fragments and hold for the channel closing line. Preserve all objects from the start image. No voice, no music, no subtitles."
   }
 ]

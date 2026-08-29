@@ -80,13 +80,19 @@ def configured_publish_datetime(now: datetime | None = None) -> datetime:
     )
 
 
-def resolve_publish_datetime(value: str | None, now: datetime | None = None) -> datetime:
-    """`auto` 또는 생략값은 고정 정책으로, 명시값은 정책 위반 여부까지 확인한다."""
+def resolve_publish_datetime(
+    value: str | None,
+    now: datetime | None = None,
+    *,
+    allow_policy_override: bool = False,
+) -> datetime:
+    """`auto`는 고정 정책을 적용하고, 명시 예약은 승인된 예외만 허용한다."""
     expected = configured_publish_datetime(now)
     if not value or value.strip().lower() == "auto":
         return expected
     dt = datetime.strptime(value, "%Y-%m-%d %H:%M").replace(tzinfo=KST)
-    if CFG.get("업로드.예약정책.시각고정", True) and dt != expected:
+    if (CFG.get("업로드.예약정책.시각고정", True)
+            and dt != expected and not allow_policy_override):
         sys.exit(
             "[에러] 예약 정책 위반: 항상 예약 실행일 기준 다음날 "
             f"{expected:%H:%M} KST만 허용합니다. 이번 허용 시각: {expected:%Y-%m-%d %H:%M}"
@@ -315,7 +321,24 @@ def set_and_verify_thumbnail(yt, vid: str, thumb: Path) -> dict:
     }
 
 
-def upload(yt, video: Path, body: dict, thumb: Path | None) -> tuple[str, dict | None]:
+def _write_upload_checkpoint(path: Path | None, **fields) -> None:
+    """영상 생성 후 후속 단계가 끊겨도 같은 영상 ID로 복구할 수 있게 남긴다."""
+    if path is None:
+        return
+    payload = {
+        "updated_at": datetime.now(KST).isoformat(timespec="seconds"),
+        **fields,
+    }
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def upload(
+    yt,
+    video: Path,
+    body: dict,
+    thumb: Path | None,
+    checkpoint_path: Path | None = None,
+) -> tuple[str, dict | None]:
     from googleapiclient.errors import HttpError
     from googleapiclient.http import MediaFileUpload
 
@@ -343,10 +366,25 @@ def upload(yt, video: Path, body: dict, thumb: Path | None) -> tuple[str, dict |
     vid = resp["id"]
     print(f"    100%\n\n  영상 ID : {vid}")
     print(f"  주소     : https://youtu.be/{vid}")
+    _write_upload_checkpoint(
+        checkpoint_path,
+        status="VIDEO_UPLOADED_THUMBNAIL_PENDING",
+        video_id=vid,
+        video=str(video),
+        thumbnail=str(thumb) if thumb else None,
+    )
 
     thumbnail_result = None
     if thumb and thumb.exists():
         thumbnail_result = set_and_verify_thumbnail(yt, vid, thumb)
+        _write_upload_checkpoint(
+            checkpoint_path,
+            status="THUMBNAIL_APPLIED_VERIFIED",
+            video_id=vid,
+            video=str(video),
+            thumbnail=str(thumb),
+            thumbnail_result=thumbnail_result,
+        )
     return vid, thumbnail_result
 
 
@@ -364,6 +402,8 @@ def main() -> int:
                     choices=["비공개", "일부공개", "공개", "예약"])
     ap.add_argument("--시각", dest="when", default=None,
                     help='예약 시각 KST. 생략 또는 auto면 채널 고정 정책(다음날 16:00)')
+    ap.add_argument("--예약정책예외", action="store_true",
+                    help="사용자가 명시적으로 다른 예약 시각을 승인한 경우에만 사용")
     ap.add_argument("--영상", dest="video", type=Path, default=None)
     ap.add_argument("--썸네일", dest="thumb", type=Path, default=None)
     ap.add_argument("--재생목록", dest="playlist", default=None,
@@ -404,7 +444,9 @@ def main() -> int:
         sys.exit("[에러] 채널 정책상 즉시 공개는 금지됩니다. 비공개 업로드 뒤 다음날 16:00로 예약하세요.")
     publish_at = None
     if args.privacy == "예약":
-        dt = resolve_publish_datetime(args.when)
+        dt = resolve_publish_datetime(
+            args.when, allow_policy_override=args.예약정책예외,
+        )
         args.when = dt.strftime("%Y-%m-%d %H:%M")
         if dt <= datetime.now(KST):
             sys.exit(f"[에러] 예약 시각이 과거입니다: {dt:%Y-%m-%d %H:%M} KST")
@@ -461,7 +503,10 @@ def main() -> int:
         print(f"     token.json 을 지우고 --auth 를 다시 하세요:\n       {args.token}\n")
         return 1
 
-    vid, thumbnail_result = upload(yt, video, build_body(m, privacy, publish_at), thumb)
+    checkpoint = ep / "youtube.upload.checkpoint.json"
+    vid, thumbnail_result = upload(
+        yt, video, build_body(m, privacy, publish_at), thumb, checkpoint,
+    )
     if playlist:
         add_to_playlist(yt, vid, playlist)
 
@@ -474,6 +519,16 @@ def main() -> int:
          "올린시각": datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"),
          "남은일": ["첫 댓글 고정"]},
         ensure_ascii=False, indent=1), encoding="utf-8")
+    _write_upload_checkpoint(
+        checkpoint,
+        status="PACKAGING_COMPLETE",
+        video_id=vid,
+        video=str(video),
+        thumbnail=str(thumb) if thumb else None,
+        thumbnail_result=thumbnail_result,
+        playlist=playlist,
+        publish_at=publish_at,
+    )
 
     print("\n  남은 일 : 첫 댓글 고정 (07-2)")
     print(f"  스튜디오 : https://studio.youtube.com/video/{vid}/edit\n")

@@ -121,28 +121,28 @@
   {
     "n": 18,
     "image_chars": 589,
-    "video_chars": 674,
+    "video_chars": 679,
     "status": "PASS",
     "errors": []
   },
   {
     "n": 19,
     "image_chars": 586,
-    "video_chars": 747,
+    "video_chars": 794,
     "status": "PASS",
     "errors": []
   },
   {
     "n": 20,
     "image_chars": 585,
-    "video_chars": 1106,
+    "video_chars": 1119,
     "status": "PASS",
     "errors": []
   },
   {
     "n": 21,
     "image_chars": 628,
-    "video_chars": 1025,
+    "video_chars": 1078,
     "status": "PASS",
     "errors": []
   }

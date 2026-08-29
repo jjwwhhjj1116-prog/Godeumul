@@ -1,10 +1,10 @@
 {
   "status": "PASS",
   "editor": "CapCut",
-  "project_name": "EP06 안티키테라 기계",
-  "video": "완성본_EP06_안티키테라기계_capcut.mp4",
-  "video_sha256": "87aacdc460632c2e263f2bac808e731984d65ad75ca3cb5a8009fa5fdcab9af1",
-  "locked_at": "2026-08-29T13:38:11+09:00",
+  "project_name": "EP06 안티키테라 기계 수정본",
+  "video": "완성본_EP06_안티키테라기계_capcut_v2.mp4",
+  "video_sha256": "6014683147a045c90828efd666a92fbc8e411f5b8ad8a26f6423d147b476c55d",
+  "locked_at": "2026-08-29T23:54:19+09:00",
   "checks": {
     "caption_style_verified": true,
     "caption_sync_verified": true,
@@ -16,14 +16,14 @@
     "width": 2160,
     "height": 3840,
     "fps": 30.0,
-    "duration": 137.276,
+    "duration": 141.851,
     "video_codec": "h264",
     "audio_codec": "aac"
   },
   "context_review": "01.문맥검수.json",
   "draft_audio_guard": {
-    "path": "C:\\Users\\7500F\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\EP06 안티키테라 기계\\draft_content.json",
-    "sha256": "545e779c1c5fac51efb9b9fc02ec847d4782ebc388a5bde64cef629a9c1bc1a3",
+    "path": "C:\\Users\\7500F\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\EP06 안티키테라 기계 수정본\\draft_content.json",
+    "sha256": "6e91c3f93d412ec242a2b85635151fa63d6bef4c5e9b75850047a24dadc84d7b",
     "passed": true,
     "forbidden_materials": {
       "audio_effects": 0,

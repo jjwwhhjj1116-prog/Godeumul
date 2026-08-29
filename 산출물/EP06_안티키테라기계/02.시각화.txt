@@ -283,11 +283,11 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 장면 018 — SEALED_UNKNOWN / 미확인
 
-- TTS: 9.660s
-- 생성 길이: 10s
+- TTS: 6.827s
+- 생성 길이: 8s
 - 모션 소유권: GENERATED_PHYSICS
 - 모션 공간: WORLD_3D
-- 나레이션: 누가 만들었는지도 아직 모릅니다. 코린토스계 달 이름 때문에 시칠리아나 아르키메데스의 기술 전통이 거론되지만, 제작자를 찍어 주는 서명은 없어요.
+- 나레이션: 누가 만들었는지는 여전히 모릅니다. 하지만 이 기계의 정체는 분명하죠. 단순한 달력도, 별자리판도 아니었습니다.
 
 ### IMAGE
 
@@ -295,15 +295,15 @@ premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-sc
 
 ### I2V
 
-Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at blank bronze cover corner; travel around dividers, files and gear sheet; arrive at empty signature area; settle on unsigned plate and tools. Approach the blank cover plate, orbit the period tools and stop at the untouched signature area; never enter a named city or reveal a maker's face. TTS-locked timing: 0.00-5.22s: Raise the question of maker and workshop. 5.22-9.66s: Stop at the missing signature despite proposed traditions. Preserve all objects from the start image. No voice, no music, no subtitles.
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at blank bronze cover corner; travel around dividers, files and gear sheet; arrive at empty signature area; settle on unsigned plate and tools. Approach the blank cover plate, orbit the period tools and stop at the untouched signature area; never enter a named city or reveal a maker's face. TTS-locked timing: 0.00-3.16s: State that the maker remains unknown. 3.16-6.83s: Turn from the blank signature to the mechanism's confirmed identity. Preserve all objects from the start image. No voice, no music, no subtitles.
 
 ## 장면 019 — HISTORICAL_RECONSTRUCTION / 학술해석
 
-- TTS: 7.709s
+- TTS: 7.245s
 - 생성 길이: 8s
 - 모션 소유권: GENERATED_PHYSICS
 - 모션 공간: WORLD_3D
-- 나레이션: 우리가 확실히 아는 건, 2천 년 전 고대 그리스인이 하늘을 바라보기만 한 게 아니라 톱니바퀴 안에 넣고 실제로 돌렸다는 사실입니다.
+- 나레이션: 태양과 달, 다섯 행성, 일식과 월식, 경기 일정까지. 고대 그리스인은 하늘의 시간을 톱니바퀴 안에 통째로 넣었습니다.
 
 ### IMAGE
 
@@ -311,15 +311,15 @@ premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-sc
 
 ### I2V
 
-Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at craftsperson hand on drive axis; travel through the case gears toward the armillary model; arrive at moving Moon and Sun against the workshop opening; settle on people, mechanism and sky model aligned. Follow the craftsperson's hand into the turning gear train, pass through the case and surge outward to the moving Moon and Sun model as the astronomer checks the sky. TTS-locked timing: 0.00-3.63s: Show ancient Greeks turning the sky in gears. 3.63-7.71s: Connect observed heavens, mathematics and craft. Preserve all objects from the start image. No voice, no music, no subtitles.
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at craftsperson hand on drive axis; travel through the case gears toward the armillary model; arrive at moving Moon and Sun against the workshop opening; settle on people, mechanism and sky model aligned. Follow the craftsperson's hand into the turning gear train, pass through the case and surge outward to the moving Moon and Sun model as the astronomer checks the sky. TTS-locked timing: 0.00-3.58s: Gather Sun, Moon, five planets, eclipses and games into one mechanical idea. 3.58-7.25s: Conclude that ancient Greeks placed celestial time inside gears. Preserve all objects from the start image. No voice, no music, no subtitles.
 
 ## 장면 020 — SPATIAL_MAP / 미확인
 
-- TTS: 5.480s
-- 생성 길이: 6s
+- TTS: 8.684s
+- 생성 길이: 10s
 - 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
 - 모션 공간: WORLD_3D
-- 나레이션: 그리고 그 기술이 어느 공방에서 태어나 어디로 이어졌는지는, 난파선과 함께 끊겨 버렸죠.
+- 나레이션: 그런데 핵심인 앞쪽 장치와 제작자의 이름은 사라졌습니다. 대체 그들은 어디까지 알고 있었던 걸까요? 82개 파편은 답보다 큰 질문을 남겼죠.
 
 ### IMAGE
 
@@ -327,15 +327,15 @@ premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-sc
 
 ### I2V
 
-Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at unfinished workshop gear; travel along the cargo deck then down through water; arrive at broken route beside Fragment A; settle on fragment at the end of documented evidence. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Track a bronze route from the workshop through the ship's cargo deck, dive with it into the water and stop exactly where the evidence chain breaks beside the corroded fragment. TTS-locked timing: 0.00-2.17s: Follow the unknown route of the technology. 2.17-5.48s: Break the route at the wreck rather than invent descendants. Preserve all objects from the start image. No voice, no music, no subtitles.
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at unfinished workshop gear; travel along the cargo deck then down through water; arrive at broken route beside Fragment A; settle on fragment at the end of documented evidence. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Track a bronze route from the workshop through the ship's cargo deck, dive with it into the water and stop exactly where the evidence chain breaks beside the corroded fragment. TTS-locked timing: 0.00-4.81s: Return to the lost front assembly and absent maker identity. 4.81-8.68s: Leave the 82 fragments as a larger unanswered question. Preserve all objects from the start image. No voice, no music, no subtitles.
 
 ## 장면 021 — ARTIFACT_MACRO / 발굴확인
 
-- TTS: 5.294s
-- 생성 길이: 6s
+- TTS: 9.938s
+- 생성 길이: 10s
 - 모션 소유권: GENERATED_PHYSICS
 - 모션 공간: WORLD_3D
-- 나레이션: 시간 속에 잠든 세계유산, 땅속에 묻힌 역사. 안티키테라 기계의 비밀이었습니다.
+- 나레이션: 그래서 앞쪽 장치의 원형과 제작자는 아직 풀리지 않은 고대 기술사의 미스터리입니다. 시간 속에 잠든 유물, 바닷속에 묻힌 역사. 안티키테라 기계의 비밀이었습니다.
 
 ### IMAGE
 
@@ -343,4 +343,4 @@ premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-sc
 
 ### I2V
 
-Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at lower copper-green Fragment A edge; travel three-degree parallax arc across the supports; arrive at full surviving-fragment hero grouping; settle on complete artifact closing portrait. Treat every supplied start-frame fragment as immutable: never redraw, clean, complete, sharpen, replace, rotate or animate any tooth, plate, crack, accretion or silhouette. Move only the camera by a tiny parallax arc and the raking light; if fidelity conflicts with motion, keep all artifacts frozen. Begin a restrained three-degree parallax arc, let warm pin light travel across the real teeth, then hold perfectly still on the surviving fragments for the final channel line. TTS-locked timing: 0.00-2.26s: Return to the real surviving artifact. 2.26-5.29s: Hold still for the channel closing line. Preserve all objects from the start image. No voice, no music, no subtitles.
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at lower copper-green Fragment A edge; travel three-degree parallax arc across the supports; arrive at full surviving-fragment hero grouping; settle on complete artifact closing portrait. Treat every supplied start-frame fragment as immutable: never redraw, clean, complete, sharpen, replace, rotate or animate any tooth, plate, crack, accretion or silhouette. Move only the camera by a tiny parallax arc and the raking light; if fidelity conflicts with motion, keep all artifacts frozen. Begin a restrained three-degree parallax arc, let warm pin light travel across the real teeth, then hold perfectly still on the surviving fragments for the final channel line. TTS-locked timing: 0.00-5.13s: Name the missing front design and maker as the bounded mystery. 5.13-9.94s: Return to the real fragments and hold for the channel closing line. Preserve all objects from the start image. No voice, no music, no subtitles.

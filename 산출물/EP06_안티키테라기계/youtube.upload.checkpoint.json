@@ -1,0 +1,18 @@
+{
+  "updated_at": "2026-08-30T00:19:28+09:00",
+  "status": "THUMBNAIL_APPLIED_VERIFIED_PROCESSING",
+  "video_id": "PLKxQYopmFI",
+  "video": "완성본_EP06_안티키테라기계_capcut_v2.mp4",
+  "video_sha256": "6014683147a045c90828efd666a92fbc8e411f5b8ad8a26f6423d147b476c55d",
+  "thumbnail": "썸네일.jpg",
+  "thumbnail_sha256": "bbe91bdeede8a23784067fd2f104c02e2543fbe8cfa8fcb606f1979fc1edb3b7",
+  "thumbnail_result": {
+    "applied": true,
+    "verified": true,
+    "remote_sizes": ["default", "medium", "high", "standard", "maxres"]
+  },
+  "playlist": "▶고대유물의 비밀",
+  "publish_at": "2026-08-30T01:00:00Z",
+  "processing_status": "processing",
+  "copyright_review": "pending"
+}

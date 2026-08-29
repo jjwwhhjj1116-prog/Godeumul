@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""CapCut 원생 애니메이션·전환을 선택 장면에 재사용한다.
+"""CapCut 원생 애니메이션·전환을 채널 고정 순서로 재사용한다.
 
-사용자가 직접 마감한 CapCut 기준 프로젝트에서 ``줌 1``, ``반동 1``,
-``왼쪽으로 밀기``, ``페이크 줌`` 소재만 복제한다. 영상·오디오·자막의
-타이밍과 볼륨은 건드리지 않는다. CapCut 본체를 완전히 닫은 상태에서만
-``--write``가 허용된다.
+영상 애니메이션은 ``줌 1``만 먼저 적용하고, 모든 애니메이션 처리가 끝난 뒤
+장면 전환 ``왼쪽으로 밀기``만 적용한다. CapCut이 같은 클립의 전환 참조를
+애니메이션 앞으로 다시 저장해 애니메이션을 씹는 문제가 있으므로 한 클립에
+애니메이션과 전환을 함께 붙이지 않는다. ``반동 1``과 ``페이크 줌`` 등 기존
+비허용 효과는 제거한다. 영상·오디오·자막 타이밍과 볼륨은 건드리지 않는다.
+CapCut 본체를 완전히 닫은 상태에서만 ``--write``가 허용된다.
 """
 
 from __future__ import annotations
@@ -21,8 +23,9 @@ from pathlib import Path
 from capcut_audio_guard import COMPANION_NAMES, capcut_editor_open
 
 
-ANIMATION_NAMES = {"zoom": "줌 1", "bounce": "반동 1"}
-TRANSITION_NAMES = {"left": "왼쪽으로 밀기", "fake_zoom": "페이크 줌"}
+ANIMATION_NAMES = {"zoom": "줌 1"}
+TRANSITION_NAMES = {"left": "왼쪽으로 밀기"}
+DISALLOWED_VIDEO_EFFECTS = {"반동 1", "페이크 줌"}
 LIVE_DRAFT_ROOT = (
     Path.home() / "AppData/Local/CapCut/User Data/Projects/com.lveditor.draft"
 ).resolve()
@@ -90,17 +93,12 @@ def material_name_index(document: dict) -> dict[str, str]:
     return names
 
 
-def clone_animation(source: dict, *, segment_duration: int, bounce: bool) -> dict:
+def clone_animation(source: dict, *, segment_duration: int) -> dict:
     material = copy.deepcopy(source)
     material["id"] = new_id()
     animation = material["animations"][0]
-    if bounce:
-        start = min(633_333, max(0, segment_duration // 8))
-        animation["start"] = start
-        animation["duration"] = max(1, segment_duration - start)
-    else:
-        animation["start"] = 0
-        animation["duration"] = max(1, segment_duration)
+    animation["start"] = 0
+    animation["duration"] = max(1, segment_duration)
     return material
 
 
@@ -111,14 +109,34 @@ def clone_transition(source: dict, *, segment_duration: int) -> dict:
     return material
 
 
-def attach(document: dict, source: dict, *, zoom_scenes: list[int], bounce_scenes: list[int],
-           left_joins: list[int], fake_zoom_joins: list[int]) -> dict:
+def attach(document: dict, source: dict, *, zoom_scenes: list[int], left_joins: list[int]) -> dict:
+    overlapping = sorted(set(zoom_scenes) & set(left_joins))
+    if overlapping:
+        joined = ", ".join(map(str, overlapping))
+        raise RuntimeError(
+            "CapCut 애니메이션 씹힘 방지 실패: 같은 클립에 줌 1과 전환을 "
+            f"함께 붙일 수 없습니다. 겹친 장면: {joined}"
+        )
+
     result = copy.deepcopy(document)
     segments = main_video_segments(result)
     buckets = result.setdefault("materials", {})
     animation_bucket = buckets.setdefault("material_animations", [])
     transition_bucket = buckets.setdefault("transitions", [])
     existing_names = material_name_index(result)
+
+    # 이전 실행의 관리 대상 효과와 비허용 효과를 먼저 걷어낸다. 이렇게 해야
+    # 장면 목록을 바꿔 재실행해도 요청한 배치만 남는다. 텍스트 페이드는 제외한다.
+    managed_names = {
+        *ANIMATION_NAMES.values(),
+        *TRANSITION_NAMES.values(),
+        *DISALLOWED_VIDEO_EFFECTS,
+    }
+    for seg in segments:
+        seg["extra_material_refs"] = [
+            ref for ref in seg.get("extra_material_refs", [])
+            if existing_names.get(ref) not in managed_names
+        ]
 
     def segment(scene: int) -> dict:
         if scene > len(segments):
@@ -128,47 +146,84 @@ def attach(document: dict, source: dict, *, zoom_scenes: list[int], bounce_scene
     def has_name(seg: dict, name: str) -> bool:
         return any(existing_names.get(ref) == name for ref in seg.get("extra_material_refs", []))
 
-    for scenes, key in ((zoom_scenes, "zoom"), (bounce_scenes, "bounce")):
-        name = ANIMATION_NAMES[key]
-        prototype = source_material(source, "material_animations", name)
-        for scene_number in scenes:
-            seg = segment(scene_number)
-            if has_name(seg, name):
-                continue
-            duration = int(seg["target_timerange"]["duration"])
-            material = clone_animation(prototype, segment_duration=duration, bounce=key == "bounce")
-            animation_bucket.append(material)
-            seg.setdefault("extra_material_refs", []).append(material["id"])
-            existing_names[material["id"]] = name
+    # 1단계: 모든 줌 1 애니메이션을 먼저 적용한다.
+    animation_name_value = ANIMATION_NAMES["zoom"]
+    animation_prototype = source_material(source, "material_animations", animation_name_value)
+    for scene_number in zoom_scenes:
+        seg = segment(scene_number)
+        if has_name(seg, animation_name_value):
+            continue
+        duration = int(seg["target_timerange"]["duration"])
+        material = clone_animation(animation_prototype, segment_duration=duration)
+        animation_bucket.append(material)
+        seg.setdefault("extra_material_refs", []).append(material["id"])
+        existing_names[material["id"]] = animation_name_value
 
-    for joins, key in ((left_joins, "left"), (fake_zoom_joins, "fake_zoom")):
-        name = TRANSITION_NAMES[key]
-        prototype = source_material(source, "transitions", name)
-        for scene_number in joins:
-            if scene_number >= len(segments):
-                raise RuntimeError(f"전환은 마지막 장면 뒤에 붙일 수 없습니다: {scene_number}")
-            seg = segment(scene_number)
-            if has_name(seg, name):
-                continue
-            duration = int(seg["target_timerange"]["duration"])
-            material = clone_transition(prototype, segment_duration=duration)
-            transition_bucket.append(material)
-            seg.setdefault("extra_material_refs", []).append(material["id"])
-            existing_names[material["id"]] = name
+    # 2단계: 애니메이션이 모두 끝난 뒤 왼쪽으로 밀기 전환만 적용한다.
+    transition_name_value = TRANSITION_NAMES["left"]
+    transition_prototype = source_material(source, "transitions", transition_name_value)
+    for scene_number in left_joins:
+        if scene_number >= len(segments):
+            raise RuntimeError(f"전환은 마지막 장면 뒤에 붙일 수 없습니다: {scene_number}")
+        seg = segment(scene_number)
+        if has_name(seg, transition_name_value):
+            continue
+        duration = int(seg["target_timerange"]["duration"])
+        material = clone_transition(transition_prototype, segment_duration=duration)
+        transition_bucket.append(material)
+        seg.setdefault("extra_material_refs", []).append(material["id"])
+        existing_names[material["id"]] = transition_name_value
     return result
 
 
 def report(document: dict) -> dict[str, int]:
     counts = {name: 0 for name in (*ANIMATION_NAMES.values(), *TRANSITION_NAMES.values())}
-    for material in document.get("materials", {}).get("material_animations", []):
-        name = animation_name(material)
-        if name in counts:
-            counts[name] += 1
-    for material in document.get("materials", {}).get("transitions", []):
-        name = material.get("name", "")
-        if name in counts:
-            counts[name] += 1
+    names = material_name_index(document)
+    for segment in main_video_segments(document):
+        for ref in segment.get("extra_material_refs", []):
+            name = names.get(ref, "")
+            if name in counts:
+                counts[name] += 1
     return counts
+
+
+def validate_policy(document: dict) -> None:
+    """주 영상에는 허용 효과 한 종류만 붙고 같은 클립에는 겹치지 않아야 한다."""
+    materials = document.get("materials", {})
+    animations = {
+        item.get("id", ""): animation_name(item)
+        for item in materials.get("material_animations", [])
+    }
+    transitions = {
+        item.get("id", ""): item.get("name", "")
+        for item in materials.get("transitions", [])
+    }
+    failures: list[str] = []
+    for scene_number, segment in enumerate(main_video_segments(document), 1):
+        phase = "animation"
+        attached_animations = 0
+        attached_transitions = 0
+        for ref in segment.get("extra_material_refs", []):
+            if ref in animations:
+                attached_animations += 1
+                name = animations[ref]
+                if name != ANIMATION_NAMES["zoom"]:
+                    failures.append(f"장면 {scene_number}: 비허용 영상 애니메이션 {name!r}")
+                if phase == "transition":
+                    failures.append(f"장면 {scene_number}: 전환 뒤에 애니메이션 참조가 있음")
+            elif ref in transitions:
+                attached_transitions += 1
+                phase = "transition"
+                name = transitions[ref]
+                if name != TRANSITION_NAMES["left"]:
+                    failures.append(f"장면 {scene_number}: 비허용 전환 {name!r}")
+        if attached_animations and attached_transitions:
+            failures.append(
+                f"장면 {scene_number}: 애니메이션과 전환이 같은 클립에 겹침 "
+                "(CapCut 자동 재정렬로 애니메이션이 씹힐 수 있음)"
+            )
+    if failures:
+        raise RuntimeError("CapCut 효과 정책 실패:\n- " + "\n- ".join(failures))
 
 
 def main() -> int:
@@ -176,9 +231,7 @@ def main() -> int:
     parser.add_argument("draft", type=Path)
     parser.add_argument("--source", type=Path, required=True, help="사용자가 마감한 기준 draft_content.json")
     parser.add_argument("--zoom-scenes", type=parse_scene_list, default=[])
-    parser.add_argument("--bounce-scenes", type=parse_scene_list, default=[])
     parser.add_argument("--left-joins", type=parse_scene_list, default=[])
-    parser.add_argument("--fake-zoom-joins", type=parse_scene_list, default=[])
     parser.add_argument("--write", action="store_true")
     args = parser.parse_args()
 
@@ -192,10 +245,9 @@ def main() -> int:
         current,
         source,
         zoom_scenes=args.zoom_scenes,
-        bounce_scenes=args.bounce_scenes,
         left_joins=args.left_joins,
-        fake_zoom_joins=args.fake_zoom_joins,
     )
+    validate_policy(finished)
     print(json.dumps(report(finished), ensure_ascii=False, indent=2))
     if not args.write:
         print("\n점검만 수행했습니다. 저장하려면 --write를 붙이세요.")
@@ -212,10 +264,9 @@ def main() -> int:
             load(target),
             source,
             zoom_scenes=args.zoom_scenes,
-            bounce_scenes=args.bounce_scenes,
             left_joins=args.left_joins,
-            fake_zoom_joins=args.fake_zoom_joins,
         )
+        validate_policy(target_finished)
         backup = target.with_name(f"{target.name}.before-motion-finish-{stamp}.bak")
         shutil.copy2(target, backup)
         temp = target.with_name(f"{target.name}.motion-finish.tmp")

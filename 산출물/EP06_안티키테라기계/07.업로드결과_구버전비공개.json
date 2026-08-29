@@ -1,29 +1,28 @@
 {
-  "status": "PROCESSING_SCHEDULED",
-  "video_id": "PLKxQYopmFI",
-  "url": "https://youtube.com/shorts/PLKxQYopmFI",
-  "studio_url": "https://studio.youtube.com/video/PLKxQYopmFI/edit",
+  "status": "PRIVATE_SUPERSEDED_PRESERVED",
+  "video_id": "_or3Apz21kI",
+  "url": "https://youtube.com/shorts/_or3Apz21kI",
+  "studio_url": "https://studio.youtube.com/video/_or3Apz21kI/edit",
   "채널": {
     "name": "고대유물의 비밀",
     "id": "UCjgXauHJ8z2Kbbl9O9hu4eA",
     "verified": true
   },
   "제목": "2천 년 전 바닷속에서 발견된 고대 컴퓨터, 안티키테라 기계",
-  "공개": "예약",
-  "예약": "2026-08-30 10:00 KST",
+  "공개": "비공개 유지",
+  "예약": null,
   "privacy_status": "private",
-  "publish_at_utc": "2026-08-30T01:00:00Z",
-  "upload_status": "uploaded",
-  "processing_status": "processing",
-  "copyright_claims": null,
-  "copyright_status": "YouTube Studio 검토 대기",
+  "publish_at_utc": "2026-08-30T07:00:00Z",
+  "upload_status": "processed",
+  "processing_status": "succeeded",
+  "copyright_claims": 0,
+  "copyright_status": "YouTube Studio에서 저작권 보호 콘텐츠 없음 확인",
   "source_video": {
     "width": 2160,
     "height": 3840,
     "fps": 30,
     "codec": "h264",
-    "duration_ms": 141851,
-    "file_size": 405398320
+    "duration_ms": 137266
   },
   "재생목록": "▶고대유물의 비밀",
   "합성콘텐츠고지": true,
@@ -36,13 +35,13 @@
     "bytes": 694885,
     "remote_sizes": ["default", "medium", "high", "standard", "maxres"]
   },
-  "uploaded_at": "2026-08-30T00:00:56+09:00",
-  "verified_at": null,
+  "uploaded_at": "2026-08-29T13:51:00+09:00",
+  "verified_at": "2026-08-29T13:59:21+09:00",
   "first_comment": {
     "text": "2천 년 전 고대 그리스인은 하늘을 톱니바퀴 안에 넣었습니다. 사라진 앞면 기어와 제작자의 서명이 발견된다면, 이 기계의 원래 모습을 어디까지 되살릴 수 있을까요?",
     "posted": false,
     "pinned": false,
     "reason": "예약 공개 전이므로 공개 후 한 번만 게시·고정"
   },
-  "남은일": ["처리·저작권 검토 완료 확인", "2026-08-30 10:00 공개 후 첫 댓글 1회 게시·고정 및 공개 페이지 최종 검증"]
+  "남은일": ["삭제하거나 공개하지 않고 비공개 상태로 보존"]
 }
