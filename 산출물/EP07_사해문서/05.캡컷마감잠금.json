@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "editor": "CapCut",
+  "project_name": "EP07 사해문서",
+  "video": "EP07_사해문서_최종_capcut_4K.mp4",
+  "video_sha256": "2422c19c92656d6bf4206a204c66f1bbbf8752751b046f2687262d196a31f6a4",
+  "locked_at": "2026-08-30T05:34:53+09:00",
+  "checks": {
+    "caption_style_verified": true,
+    "caption_sync_verified": true,
+    "motion_finish_verified": true,
+    "full_playback_verified": true,
+    "audio_policy_verified": true
+  },
+  "media": {
+    "width": 2160,
+    "height": 3840,
+    "fps": 30.0,
+    "duration": 179.235,
+    "video_codec": "h264",
+    "audio_codec": "aac"
+  },
+  "context_review": "01.문맥검수.json",
+  "draft_audio_guard": {
+    "path": "C:\\Users\\7500F\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\EP07 사해문서\\draft_content.json",
+    "sha256": "1339d0ca1d705b5b3bd9fe723f4c9007f945f83b5a0254827aaac9760c97c450",
+    "passed": true,
+    "forbidden_materials": {
+      "audio_effects": 0,
+      "realtime_denoises": 0,
+      "vocal_beautifys": 0,
+      "vocal_separations": 0
+    },
+    "forbidden_refs": {
+      "audio_effects": 0,
+      "realtime_denoises": 0,
+      "vocal_beautifys": 0,
+      "vocal_separations": 0
+    },
+    "queued_tasks": {
+      "enhance_voice_segid_list": 0,
+      "normalize_loudness_segid_list": 0,
+      "normalize_loudness_audio_denoise_segid_list": 0
+    },
+    "normalization_mismatches": 0,
+    "narration_volume_mismatches": 0,
+    "video_volume_mismatches": 0
+  }
+}

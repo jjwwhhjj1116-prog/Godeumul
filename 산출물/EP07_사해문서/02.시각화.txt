@@ -1,0 +1,378 @@
+# EP07 사해문서 — 고증 잠금 I2V 시각화
+
+scene_count: 23
+scene_count_basis: SCRIPT_TTS_MEANING_ACTION_EVIDENCE_DERIVED
+generation_mode: I2V_LOCKED
+image_model: Nano Banana
+video_model: Veo/Flow Omni
+aspect_ratio: 9:16
+image_count_per_scene: 1
+video_count_per_scene: 1
+
+## 장면 001 — DISCOVERY_ACTION / 문헌기록
+
+- TTS: 9.427s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 어두컴컴한 절벽 동굴 속, 무려 2천 년 동안 먼지를 뒤집어쓴 항아리 하나가 깨집니다. 그 틈에서 쏟아져 나온 건 검게 말라붙은 낡은 두루마리들이었습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Inside a dark Cave 1-style Qumran cavity, a tall cylindrical buff-clay storage jar with a fitted bowl lid has just cracked along one existing seam on the limestone floor; dry clay shards separate only slightly and several compact dark-brown ancient parchment rolls and wrapped fragments become visible among limestone dust, dramatic raking torchlike light but no person, no explosion and no readable writing. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at fresh clay fracture edge; travel through the widening real seam between two shards; arrive at first dark parchment roll; settle on jar fracture and scroll together. Crash toward the existing crack as one shard tips outward, pass through the real opening beside falling limestone dust and settle inches above the first dark parchment roll; no object appears from nowhere. TTS-locked timing: 0.00-4.34s: Break open the 2,000-year-old jar. 4.34-9.43s: Reveal the blackened scrolls inside. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 002 — ARTIFACT_MACRO / 측정확인
+
+- TTS: 11.053s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 당시 알려진 가장 오래된 히브리 성서 사본보다 무려 천 년이나 앞선 기록. 바로 사해문서입니다. 그런데 이 엄청난 발견의 시작이, 잃어버린 염소 한 마리였다는 걸 아시나요?
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Hero macro of a genuine-style Dead Sea Scroll parchment fragment: irregular torn beige-to-dark-brown animal-skin edge, stitched sheet seam, dense but fully unreadable carbon-ink line texture and curled dry fibres, resting on a neutral conservation support; in deep background a 1947 Bedouin goat silhouette searches a Qumran cliff ledge, artifact remains dominant, no modern printed page. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at split parchment fibre; travel along the stitched seam then backward through cave depth; arrive at goat silhouette at cliff ledge; settle on scroll foreground and goat background. Race along the torn fibre edge, widen to the full fragment, then pull focus through the cave mouth to the distant goat and stop on the contradiction between monumental manuscript and accidental discovery. TTS-locked timing: 0.00-4.14s: Identify the thousand-year-older manuscript evidence. 4.14-10.00s: Turn the reveal toward the lost-goat discovery question. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 003 — SITE_ESTABLISH / 발굴확인
+
+- TTS: 7.477s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 가만 보면 이상하지 않나요? 사람이 살기조차 버거운 사해의 메마른 절벽. 대체 누가 이곳에 수백 권의 문서를 가져다 숨겼을까요?
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Second Temple period Judea from the third century BCE to the first century CE, Qumran settlement and marl-limestone caves beside the Dead Sea. Qumran low pale-stone and mud-plaster communal rooms, stepped water installations, simple timber shelves and tables, and the steep eroded marl cliffs and natural caves above the Dead Sea. Sweeping museum-scale diorama of the northwest Dead Sea shore at Qumran: pale eroded marl cliffs, steep ravines, tiny natural cave mouths, salt-blue water far below and almost no vegetation; one narrow ancient footpath climbs toward several separate caves, no giant fantasy cavern and no modern road. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at salt crystal on the shoreline; travel up one ravine then laterally across the cliff face; arrive at narrow cave storage ledge; settle on cliff and distant Dead Sea aligned. Start at the salt-crusted shoreline, accelerate up the ravine in a low flying handheld-gimbal move, bank across three cave mouths and end deep at one impossible storage ledge. TTS-locked timing: 0.00-3.25s: Establish the hostile Dead Sea cliff. 3.25-7.48s: Ask how hundreds of manuscripts reached the caves. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 004 — TEXT_RECORD / 학술해석
+
+- TTS: 8.963s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 문서를 펼치자, 학계가 발칵 뒤집힙니다. 에스더서를 제외한 히브리 성서 전체가 나왔거든요. 당시 가장 오래된 사본보다 천 년이나 앞선 기록이었죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Dark museum conservation-table diorama with several genuine-style Qumran biblical fragments arranged around one long Isaiah-scroll section, each parchment piece bearing physically carved-looking but unreadable carbon-ink line texture; a much later medieval codex silhouette remains far behind and softly out of focus only for age comparison, no legible letters and no modern Bible cover. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at carbon-ink line beside a torn edge; travel across fragment field to Isaiah seam then upward; arrive at ancient-scroll plane above later codex; settle on ancient and later material separated by depth. Slide rapidly over several fragments, snap to the Isaiah stitched seam, then crane backward so the ancient scroll plane dominates while the later codex recedes by physical depth. TTS-locked timing: 0.00-4.84s: Open the scrolls and trigger the scholarly shock. 4.84-8.96s: Reveal the corpus as roughly a millennium earlier than the known medieval witnesses. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 005 — DISCOVERY_REVEAL / 문헌기록
+
+- TTS: 5.108s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 그런데 진짜 이상한 건 그다음이었습니다. 동굴에 들어 있던 건 성서만이 아니었어요.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. A central biblical parchment fragment on a matte dark support rotates only a few degrees while surrounding verified-style categories emerge from existing shadow: a rule-scroll fragment, a calendrical table fragment and a war-scroll fragment, all on distinct parchment shades with no readable generated writing; restrained forensic lighting and real material depth. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at biblical fragment torn corner; travel short whip-orbit into the surrounding evidence ring; arrive at rule-calendar-war fragment group; settle on all document classes visible together. Begin close on the biblical fragment, whip-orbit around its torn edge and settle on the wider ring of non-biblical texts already present in the darkness. TTS-locked timing: 0.00-2.52s: Hold the biblical explanation. 2.52-5.11s: Reverse it by revealing the non-biblical manuscripts. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 006 — INVENTORY_TABLEAU / 문헌기록
+
+- TTS: 6.827s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 공동체의 생활 규칙과 달력, 종말 전쟁에 관한 기록, 심지어 금과 은을 숨긴 장소로 보이는 목록까지 섞여 있었습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Archaeological inventory diorama with four separate evidence stations: a community-rule parchment, a 364-day calendar-style ruled fragment, a darker war-scroll fragment, and the real-form Copper Scroll as two heavily oxidized green copper cylinders and opened thin copper sheet fragments; tiny sealed containers suggest treasure locations without showing treasure, no gold piles and no readable text. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at community-rule torn edge; travel across four physical evidence stations; arrive at oxidized copper-sheet opening; settle on four categories in one evidence field. Crane fast from the rule fragment to the calendar, descend across the war fragment, then arc around the oxidized copper sheet and stop before the empty space where treasure would have been. TTS-locked timing: 0.00-4.06s: Inventory rules, calendar and war texts. 4.06-6.83s: End on the Copper Scroll's unverified treasure list. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 007 — CUTAWAY / 학술해석
+
+- TTS: 7.895s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 이쯤 되면 단순한 성서 보관소라고 볼 수 없겠죠. 대체 누가, 무엇을 지키기 위해 이 거대한 고대 도서관을 동굴 깊숙이 감춰버린 걸까요?
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Second Temple period Judea from the third century BCE to the first century CE, Qumran settlement and marl-limestone caves beside the Dead Sea. Qumran low pale-stone and mud-plaster communal rooms, stepped water installations, simple timber shelves and tables, and the steep eroded marl cliffs and natural caves above the Dead Sea. Vertical cliff cutaway diorama of several separate small Qumran cave chambers, each containing only a few clay jars, wrapped scroll bundles or scattered fragments appropriate to different archaeological contexts; limestone strata and narrow connecting exterior paths are physically visible, no single gigantic library hall, no shelves full of perfect books. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at outer marl stratum seam; travel through first cave then along cliff to a second chamber; arrive at separate deposit network; settle on multiple caves aligned in cutaway. Dive through the exposed cliff section, enter one cave, exit through the real mouth, traverse the rock face to another chamber and end on the unresolved network of deposits. TTS-locked timing: 0.00-3.62s: Question the simple storage-room explanation. 3.62-7.89s: Expand the question to the person and motive behind the distributed library. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 008 — HISTORICAL_RECONSTRUCTION / 문헌기록
+
+- TTS: 9.938s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 전해지는 이야기로는 1947년, 염소를 찾던 베두인 목동이 동굴에 돌을 던집니다. 곧 항아리 깨지는 소리가 들렸다고 하죠. 처음 나온 건 일곱 두루마리였습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Taamireh Bedouin youths in historically restrained 1940s desert clothing, mid-twentieth-century archaeologists in period field wear, or modern conservators in neutral laboratory clothing only as the scene requires. Historically restrained 1947 Judean Desert scene: a young Taamireh Bedouin herder in simple period desert clothing stands below a small cave mouth while goats move among pale rocks; his hand has just released one ordinary stone toward the darkness, no exact facial claim, no heroic pose and no modern gear. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at stone leaving the herder's hand; travel ballistic arc through the small cave mouth; arrive at jar fracture beside seven scroll bundles; settle on fractured jar and first bundles. Treat the exact stone-and-jar sequence as a discovery tradition, not a filmed fact; avoid identifying one named individual. Follow the thrown stone in a rapid handheld arc into the cave, strike the existing clay jar, recoil with the crack and settle on seven bundled scroll forms inside. TTS-locked timing: 0.00-5.60s: Follow the traditional lost-goat and thrown-stone account. 5.60-9.94s: Hear the jar crack and reveal the first seven scrolls. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 009 — SPATIAL_MAP / 발굴확인
+
+- TTS: 8.266s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 그런데 조사 범위가 쿰란 주변 절벽을 따라 약 8킬로미터로 넓어지자, 11개 동굴에서 수만 조각과 900개 넘는 문서가 발견됩니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Large vertical terrain diorama of roughly eight kilometres of Qumran cliffs represented as one continuous eroded ridge above the Dead Sea, eleven distinct real cave openings distributed along the face and thousands of tiny parchment fragments clustered only near their archaeological cave zones; no intact 900 perfect scrolls, no map labels or numerals. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at first Cave 1-style opening; travel fast lateral ridge traverse past separate cave mouths; arrive at overhead full cliff distribution; settle on whole survey ridge in one view. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Race laterally along the ridge, pass each cave mouth as a restrained warm light activates in physical depth, then crane up to reveal the whole distribution and fragment field. TTS-locked timing: 0.00-3.65s: Expand the search along the Qumran cliff line. 3.65-8.27s: Reveal 11 caves and a corpus of more than 900 documents. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 010 — INVENTORY_TABLEAU / 발굴확인
+
+- TTS: 7.152s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 한 동굴의 발견이 거대한 고대 문서군으로 커진 겁니다. 그렇다면 한곳의 도서관이었을까요, 여러 곳에서 모인 기록이었을까요?
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Overhead archaeological sorting diorama: seven larger scroll bundles at one side expand visually into many trays of real-looking irregular fragments from multiple caves, with Cave 4-style dense fragment trays dominating but every piece remaining torn, dusty and incomplete; no modern printed index, no perfect scroll army. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at first seven wrapped bundles; travel rapid pullback over expanding conservation trays; arrive at full multi-cave fragment field; settle on bundles and fragment field together. Start on the seven bundles, pull back rapidly as tray after tray enters the same physical table, then orbit the different parchment colours and stop on the unresolved single-versus-multiple-library question. TTS-locked timing: 0.00-3.29s: Grow the discovery from seven scrolls into a huge corpus. 3.29-7.15s: Ask whether it came from one library or many sources. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 011 — SITE_ESTABLISH / 발굴확인
+
+- TTS: 8.406s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 학자들은 먼저 문서의 제작지를 추적했습니다. 쿰란 정착지에서 잉크병과 긴 탁자가 나오자, 공동체가 도서관을 숨겼다는 가설이 힘을 얻었죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Qumran low pale-stone and mud-plaster communal rooms, stepped water installations, simple timber shelves and tables, and the steep eroded marl cliffs and natural caves above the Dead Sea. Qumran settlement scriptorium-style room diorama based on the archaeological interpretation: pale stone walls, mud plaster, one long low writing table and two small dark ceramic inkwells on a plain surface; sparse shelves and reed pens, no ornate synagogue, no medieval desks and no piles of perfect scrolls. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at low stone doorway threshold; travel over the table surface around both inkwells; arrive at window axis toward cave cliffs; settle on inkwells, table and caves aligned. Present the room as an archaeological interpretation supported by inkwells and a long table, not a conclusively identified script workshop. Enter through the low doorway in a quick handheld move, skim inches over the long table, orbit both inkwells and end looking from the room toward the distant manuscript caves. TTS-locked timing: 0.00-3.82s: Trace manuscript production to the Qumran settlement. 3.82-8.41s: Build the community-library hypothesis from the inkwells and table. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 012 — SCIENTIFIC_EVIDENCE / 학술해석
+
+- TTS: 8.359s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 하지만 문서에는 세 언어와 수많은 필체가 뒤섞였고, 소유·운반 기록은 단 한 줄도 없었습니다. 모두 한곳에서 만든 책이라기엔 차이가 너무 컸어요.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Three adjacent conservation planes hold Hebrew-, Aramaic- and Greek-script manuscript fragments, distinguished only by authentic-looking physical line rhythms and parchment materials while all characters remain unreadable; many different scribal styles appear through line weight, spacing and correction marks, with an empty provenance slot at the centre. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at thick carbon-ink stroke; travel laterally across three fragment planes and correction marks; arrive at empty provenance slot; settle on diverse fragments surrounding one absence. Macro-probe one ink stroke, strafe across all three script planes, snap between several distinct scribal hands and stop at the empty provenance slot. TTS-locked timing: 0.00-4.35s: Reveal three languages and many hands. 4.35-8.36s: Arrive at the missing ownership and transport record. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 013 — DIAGRAM / 미확인
+
+- TTS: 5.248s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 단서는 넘치는데 정작 주인만 가리킬 수 없으니, 그야말로 미치고 팔짝 뛸 노릇이었죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Forensic puzzle-table diorama of many documented-style parchment fragments, inkwells, clay jar shards and cave sediment samples connected by restrained physical threads that converge toward one empty central silhouette; every thread stops before contact, showing abundant evidence without naming an owner, no detective corkboard text and no face. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at jar shard with cave sediment; travel around evidence ring then along three physical threads; arrive at empty central owner position; settle on evidence ring and empty centre. Integrate one restrained force path anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Orbit the evidence quickly, follow three threads toward the centre, let each stop short in turn and finish on the unfilled owner silhouette. TTS-locked timing: 0.00-2.30s: Stack the clues until the answer seems near. 2.30-5.25s: Break every route before it can identify an owner. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 014 — SCIENTIFIC_EVIDENCE / 측정확인
+
+- TTS: 5.666s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 그래서 연구자들은 아예 보는 대상을 바꿨습니다. 글자가 아니라, 글자가 적힌 가죽을 조사한 겁니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Extreme macro conservation-lab diorama of one Dead Sea Scroll parchment fragment under neutral raking light: animal-skin fibre bundles, follicles, cracked collagen layers and carbon ink are visibly distinct; one tiny non-destructive sampling zone is marked only by physical illumination, no floating DNA helix, no screen HUD and no text. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at carbon-ink ridge; travel through cracked collagen fibres then along a follicle channel; arrive at minute sampling zone; settle on ink and skin layers together. Push through the ink surface into the visible fibre layers, turn ninety degrees along a follicle channel and settle on the minute sampling zone as the question shifts from words to skin. TTS-locked timing: 0.00-2.84s: Abandon the unreadable ownership clues in the text. 2.84-5.67s: Enter the parchment material itself as the new evidence. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 015 — SCIENTIFIC_EVIDENCE / 측정확인
+
+- TTS: 10.403s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 양피지의 고대 DNA로 조각을 분류하자, 일부 성서 두루마리가 쿰란 밖에서 들어온 것으로 드러났죠. 문헌군의 제작 배경이 한곳이 아니었다는 첫 실마리였습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Modern clean conservation-table diorama with several parchment fragments grouped by compatible animal-skin material signatures; Qumran limestone sample sits at one side while one verified outside-origin group is physically separated across a shallow terrain model, no species labels, no readable charts and no floating molecular icons. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at parchment fibre bundle; travel pull out over grouped fragments then across terrain; arrive at outside-origin parchment group; settle on Qumran and outside groups in one depth field. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Begin inside one parchment fibre, pull out to the grouped fragments, follow a world-space material route across the terrain and settle on the outside-origin group. TTS-locked timing: 0.00-5.16s: Classify fragments by ancient parchment DNA. 5.16-10.00s: Reveal that some biblical scrolls arrived from outside Qumran. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 016 — ARTIFACT_MACRO / 측정확인
+
+- TTS: 7.570s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 내용을 대조하자 그 범위는 더 선명해졌어요. 7.34미터의 대이사야서에는 66장이 거의 온전하게 이어져 있었어요.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. A museum-scale Great Isaiah Scroll diorama unrolled as a very long stitched parchment sheet across a dark curved conservation surface, genuine beige animal skin with vertical stitched joins, 54 column-like blocks of fully unreadable dark ink texture and irregular lower damage; enough side depth to understand 7.34-metre length without generated numbers. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at first stitched sheet seam; travel low flight along successive columns and seams; arrive at far damaged terminal edge; settle on entire long scroll readable as one object. Integrate one restrained dimension line anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Fly low along the full stitched sheet at speed, pass seam after seam, rise to reveal the extraordinary length and settle on the final damaged edge. TTS-locked timing: 0.00-3.98s: Compare the manuscript contents and sharpen the scale. 3.98-7.57s: Reveal the 7.34-metre nearly complete Isaiah Scroll. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 017 — HISTORICAL_RECONSTRUCTION / 학술해석
+
+- TTS: 7.941s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 후대 성서와 큰 내용은 비슷했지만, 철자 차이와 필사자의 수정도 남아 있었죠. 규칙서와 달력에서는 당시 공동체의 생활까지 드러났습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Second Temple period Judea from the third century BCE to the first century CE, Qumran settlement and marl-limestone caves beside the Dead Sea. Levantine Judean scribes and community members with olive-brown skin, dark hair and beards, undyed linen or wool tunics, simple leather belts, sandals and restrained headcloths appropriate to the Second Temple period. Qumran low pale-stone and mud-plaster communal rooms, stepped water installations, simple timber shelves and tables, and the steep eroded marl cliffs and natural caves above the Dead Sea. Split-depth Second Temple Judean scriptorium and communal-room diorama: a Levantine scribe copies onto parchment with reed pen while another corrects one existing ink line; beyond a stone divider, community members in plain linen follow a shared meal and calendar routine, all manuscript marks unreadable and no named sect claim. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at reed-pen tip at correction stroke; travel across parchment then through divider into communal room; arrive at community routine under changing light; settle on scribe and communal life aligned. Follow the reed pen across one correction, pass through the stone divider, orbit the communal meal and accelerate through a day-to-night light change to the calendar routine. TTS-locked timing: 0.00-3.67s: Reveal textual differences and scribal corrections. 3.67-7.94s: Extend the manuscripts into daily community rules and calendar life. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 018 — CUTAWAY / 학술해석
+
+- TTS: 3.669s
+- 생성 길이: 4s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 주인은 못 찾았지만, 기록이 태어난 세계는 되살아난 겁니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Second Temple period Judea from the third century BCE to the first century CE, Qumran settlement and marl-limestone caves beside the Dead Sea. Levantine Judean scribes and community members with olive-brown skin, dark hair and beards, undyed linen or wool tunics, simple leather belts, sandals and restrained headcloths appropriate to the Second Temple period. Qumran low pale-stone and mud-plaster communal rooms, stepped water installations, simple timber shelves and tables, and the steep eroded marl cliffs and natural caves above the Dead Sea. Deep archaeological cutaway of Qumran daily life reconstructed only from document categories and settlement evidence: writing room, ritual water installation, shared meal room and cave storage zone occupy connected but distinct levels; translucent absence around the central owner figure remains unresolved, no crowded fantasy city. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 4-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at torn manuscript edge; travel through writing room, stepped pool and meal room; arrive at full Qumran-life cutaway; settle on reconstructed world around unresolved centre. Dive from one fragment into the cutaway writing room, travel through the water installation and shared meal, then pull back to reveal the whole recovered world while leaving the owner void unfilled. TTS-locked timing: 0.00-1.29s: Turn fragment evidence into a lived historical world. 1.29-3.67s: Preserve the boundary: the world returns, the exact owner does not. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 019 — INVENTORY_TABLEAU / 학술해석
+
+- TTS: 8.452s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 결국 사해문서는 한 권의 비밀 성경이 아니었습니다. 성서 사본과 규칙서, 달력과 해설이 함께 남은 제2성전기 유대 문헌군이었죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Authoritative artifact-first diorama of the Dead Sea Scrolls corpus: biblical manuscript fragments, rule and calendar fragments, interpretation and prayer fragments, one Copper Scroll section and clay jar shards arranged as a coherent archaeological assemblage around the Great Isaiah Scroll; no single secret book and no religious propaganda. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at single closed scroll silhouette; travel outward orbit across every artifact class; arrive at complete corpus tableau; settle on all artifact classes together. Orbit rapidly from one supposed secret scroll outward as every document class enters the frame, then settle on the complete diverse corpus as the confirmed answer. TTS-locked timing: 0.00-4.64s: Reject the single secret-Bible idea. 4.64-8.45s: Identify a diverse Second Temple Jewish manuscript corpus. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 020 — DIAGRAM / 미확인
+
+- TTS: 10.635s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 하지만 누가 이 문서들을 모아 왜 동굴 11곳에 나눴는지는, 현재 방법으로도 확정할 수 없습니다. 소유·은닉 기록이 없고, 발견 초기 출토 맥락도 흐트러졌기 때문이죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Two-layer Qumran cave cutaway: upper layer shows scroll bundles distributed among several real cave chambers, lower layer shows provenance records torn away and early-market movement represented by empty wrapping and displaced fragment trays; owner and hiding motive remain an unfilled central space, no thief caricature and no claimed Roman-escape scene. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at wrapped bundle in upper cave; travel through cave strata to displaced provenance trays; arrive at unfilled owner-and-motive void; settle on caves and missing record layer together. Traverse the cave deposits, dive through the strata to the missing-record layer, follow displaced fragments toward the central void and stop before any owner or motive appears. TTS-locked timing: 0.00-4.22s: State what present methods cannot decide. 4.22-10.00s: Show why missing records and disturbed provenance block the owner and motive. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 021 — SCIENTIFIC_EVIDENCE / 측정확인
+
+- TTS: 5.619s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 더 정밀한 DNA·재료 분석과 교란되지 않은 새 동굴이 연결된다면 이야기는 달라질 겁니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Modern conservation-science diorama combining a parchment fibre sample, multispectral camera, neutral material-analysis instruments and an untouched newly found cave sediment layer sealed in situ; no futuristic hologram, no excavated new scroll claim and no readable computer screen. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at parchment fibre under spectral light; travel through analysis bay into sealed cave sediment section; arrive at untouched context boundary; settle on analysis and provenance context linked. Integrate one restrained scan wave anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Move from fibre to spectral light, race along a physical analysis path into the untouched cave layer and settle on one sealed context boundary waiting to be tested. TTS-locked timing: 0.00-2.60s: Name the next evidence: better DNA and material analysis. 2.60-5.62s: Add the decisive condition of an undisturbed new cave context. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 022 — SPATIAL_MAP / 학술해석
+
+- TTS: 6.130s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 두루마리가 어디서 쓰이고, 누구의 손을 거쳐, 어떤 날 동굴에 감춰졌는지까지 복원할 수 있겠죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Second Temple period Judea from the third century BCE to the first century CE, Qumran settlement and marl-limestone caves beside the Dead Sea. Levantine Judean scribes and community members with olive-brown skin, dark hair and beards, undyed linen or wool tunics, simple leather belts, sandals and restrained headcloths appropriate to the Second Temple period. Qumran low pale-stone and mud-plaster communal rooms, stepped water installations, simple timber shelves and tables, and the steep eroded marl cliffs and natural caves above the Dead Sea. Continuous deep diorama from a Second Temple parchment workshop through several anonymous hands and transport bundles to a Qumran cave mouth, with every stage physically present but separated by translucent gaps where evidence is missing; no named city, author or exact route claim. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at prepared parchment on workshop frame; travel through anonymous hands across desert to cave mouth; arrive at wrapped scroll at cave deposition point; settle on whole possible journey in depth. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Follow one world-space route from prepared skin to copied scroll, pass hand to hand, bank through desert terrain and enter the cave, briefly darkening at every unknown gap before arrival. TTS-locked timing: 0.00-3.36s: Imagine reconstructing where each scroll was written and handled. 3.36-6.13s: Complete the route only as a future possibility ending at the cave. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 023 — ARTIFACT_MACRO / 미확인
+
+- TTS: 9.009s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 그날까지 문서의 주인과 은닉 이유는 후대가 풀어야 할 미스터리로 남아 있습니다. 시간 속에 잠든 유물, 동굴 속에 묻힌 역사. 사해문서의 비밀이었습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Final hero diorama inside a quiet Qumran cave: one cracked cylindrical clay jar, one partially unrolled dark parchment scroll and several authentic fragments rest on limestone dust under a narrow warm shaft of light; beyond them multiple cave mouths recede into darkness, artifact razor-sharp against restrained background, no person, no text and no magical glow. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at last cave-mouth limestone edge; travel half-orbit around jar then macro push to parchment and pullback; arrive at artifact hero against dark cave network; settle on jar and scroll isolated in light. Begin moving at once through the last cave mouth, orbit the jar and parchment in a fast half-circle, push into the unreadable ink fibres, then pull back slowly until the artifact remains bright and the ownerless cave network falls dark. TTS-locked timing: 0.00-4.57s: Leave the owner and hiding reason as the precise mystery. 4.57-9.01s: Close on the artifact and the channel's buried-history signature. Preserve all objects from the start image. No voice, no music, no subtitles.

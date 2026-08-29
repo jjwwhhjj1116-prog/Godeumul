@@ -1,7 +1,7 @@
 {
   "version": 3,
   "script": "01.대본.txt",
-  "script_sha256": "e6267674e38c033ab8a3fc67948466eb615ded8469cc8fc05677bbfd763c8ac4",
+  "script_sha256": "5cf0f353eb43ad03c35102994d8edb3ba4c9c91fb91c182d8b498c52333f38b1",
   "reviewer": "korean-proofreader + godeumul-context-qa",
   "status": "PASS",
   "approval_state": "USER_APPROVED_2026-08-30",

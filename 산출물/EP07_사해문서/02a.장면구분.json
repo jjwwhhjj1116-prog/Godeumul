@@ -1,0 +1,1731 @@
+[
+  {
+    "n": 1,
+    "chapter": "1. 항아리가 깨진 순간",
+    "ct": "DISCOVERY_ACTION",
+    "txt": "어두컴컴한 절벽 동굴 속, 무려 2천 년 동안 먼지를 뒤집어쓴 항아리 하나가 깨집니다. 그 틈에서 쏟아져 나온 건 검게 말라붙은 낡은 두루마리들이었습니다.",
+    "tts": 9.427,
+    "omni": 10,
+    "playback_speed": 1.0,
+    "evidence": "문헌기록",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "fresh clay fracture edge",
+      "route": "through the widening real seam between two shards",
+      "destination": "first dark parchment roll",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "SURFACE_TO_INTERIOR",
+      "pattern_interrupts": [
+        "1.8s dust burst at the seam",
+        "5.0s rack focus from clay pore to parchment fibre"
+      ],
+      "settle_point": "jar fracture and scroll together"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "IAA discovery tradition and Cave 1 cylindrical scroll jars",
+      "site_artifact_fingerprint": [
+        "tall cylindrical buff-clay jar with bowl lid",
+        "dry Qumran limestone cave floor",
+        "dark compact parchment rolls protected inside"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.343,
+        "narration": "어두컴컴한 절벽 동굴 속, 무려 2천 년 동안 먼지를 뒤집어쓴 항아리",
+        "camera": "Break open the 2,000-year-old jar.",
+        "action": "Break open the 2,000-year-old jar.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 4.343,
+        "end": 9.427,
+        "narration": "하나가 깨집니다. 그 틈에서 쏟아져 나온 건 검게 말라붙은 낡은 두루마리들이었습니다.",
+        "camera": "Reveal the blackened scrolls inside.",
+        "action": "Reveal the blackened scrolls inside.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Inside a dark Cave 1-style Qumran cavity, a tall cylindrical buff-clay storage jar with a fitted bowl lid has just cracked along one existing seam on the limestone floor; dry clay shards separate only slightly and several compact dark-brown ancient parchment rolls and wrapped fragments become visible among limestone dust, dramatic raking torchlike light but no person, no explosion and no readable writing. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at fresh clay fracture edge; travel through the widening real seam between two shards; arrive at first dark parchment roll; settle on jar fracture and scroll together. Crash toward the existing crack as one shard tips outward, pass through the real opening beside falling limestone dust and settle inches above the first dark parchment roll; no object appears from nowhere. TTS-locked timing: 0.00-4.34s: Break open the 2,000-year-old jar. 4.34-9.43s: Reveal the blackened scrolls inside. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 2,
+    "chapter": "1. 사해문서와 염소",
+    "ct": "ARTIFACT_MACRO",
+    "txt": "당시 알려진 가장 오래된 히브리 성서 사본보다 무려 천 년이나 앞선 기록. 바로 사해문서입니다. 그런데 이 엄청난 발견의 시작이, 잃어버린 염소 한 마리였다는 걸 아시나요?",
+    "tts": 11.053,
+    "omni": 10,
+    "playback_speed": 0.9047,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "split parchment fibre",
+      "route": "along the stitched seam then backward through cave depth",
+      "destination": "goat silhouette at cliff ledge",
+      "speed_profile": "MACRO_PROBE_SETTLE",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "3.4s focus snap to ink texture",
+        "7.1s focus pull to goat"
+      ],
+      "settle_point": "scroll foreground and goat background"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Israel Museum Great Isaiah Scroll material and IAA discovery tradition",
+      "site_artifact_fingerprint": [
+        "irregular animal-skin fibre edge",
+        "ancient stitched sheet seam",
+        "dense carbon-ink line texture kept unreadable"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.575,
+        "narration": "당시 알려진 가장 오래된 히브리 성서 사본보다 무려 천 년이나 앞선 기록.",
+        "camera": "Identify the thousand-year-older manuscript evidence.",
+        "action": "Identify the thousand-year-older manuscript evidence.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 4.575,
+        "end": 11.053,
+        "narration": "바로 사해문서입니다. 그런데 이 엄청난 발견의 시작이, 잃어버린 염소 한 마리였다는 걸 아시나요?",
+        "camera": "Turn the reveal toward the lost-goat discovery question.",
+        "action": "Turn the reveal toward the lost-goat discovery question.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Hero macro of a genuine-style Dead Sea Scroll parchment fragment: irregular torn beige-to-dark-brown animal-skin edge, stitched sheet seam, dense but fully unreadable carbon-ink line texture and curled dry fibres, resting on a neutral conservation support; in deep background a 1947 Bedouin goat silhouette searches a Qumran cliff ledge, artifact remains dominant, no modern printed page. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at split parchment fibre; travel along the stitched seam then backward through cave depth; arrive at goat silhouette at cliff ledge; settle on scroll foreground and goat background. Race along the torn fibre edge, widen to the full fragment, then pull focus through the cave mouth to the distant goat and stop on the contradiction between monumental manuscript and accidental discovery. TTS-locked timing: 0.00-4.14s: Identify the thousand-year-older manuscript evidence. 4.14-10.00s: Turn the reveal toward the lost-goat discovery question. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 3,
+    "chapter": "2. 메마른 절벽의 모순",
+    "ct": "SITE_ESTABLISH",
+    "txt": "가만 보면 이상하지 않나요? 사람이 살기조차 버거운 사해의 메마른 절벽. 대체 누가 이곳에 수백 권의 문서를 가져다 숨겼을까요?",
+    "tts": 7.477,
+    "omni": 8,
+    "playback_speed": 1.0,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "salt crystal on the shoreline",
+      "route": "up one ravine then laterally across the cliff face",
+      "destination": "narrow cave storage ledge",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "CONTROLLED_DOCUMENTARY_HANDHELD_GIMBAL",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "2.6s bank around marl spur",
+        "5.2s near-miss past cave mouth"
+      ],
+      "settle_point": "cliff and distant Dead Sea aligned"
+    },
+    "visual_lock": {
+      "civilization": "Second Temple period Judean manuscript culture and the Qumran cave assemblage",
+      "era": "third century BCE to first century CE manuscripts",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Levantine Judean scribes and community members in period-correct linen and wool clothing",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "IAA Qumran discovery sites and regional topography",
+      "site_artifact_fingerprint": [
+        "eroded pale marl cliffs",
+        "multiple small natural cave mouths",
+        "Dead Sea basin below the plateau"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.25,
+        "narration": "가만 보면 이상하지 않나요? 사람이 살기조차 버거운 사해의",
+        "camera": "Establish the hostile Dead Sea cliff.",
+        "action": "Establish the hostile Dead Sea cliff.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 3.25,
+        "end": 7.477,
+        "narration": "메마른 절벽. 대체 누가 이곳에 수백 권의 문서를 가져다 숨겼을까요?",
+        "camera": "Ask how hundreds of manuscripts reached the caves.",
+        "action": "Ask how hundreds of manuscripts reached the caves.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Second Temple period Judea from the third century BCE to the first century CE, Qumran settlement and marl-limestone caves beside the Dead Sea. Qumran low pale-stone and mud-plaster communal rooms, stepped water installations, simple timber shelves and tables, and the steep eroded marl cliffs and natural caves above the Dead Sea. Sweeping museum-scale diorama of the northwest Dead Sea shore at Qumran: pale eroded marl cliffs, steep ravines, tiny natural cave mouths, salt-blue water far below and almost no vegetation; one narrow ancient footpath climbs toward several separate caves, no giant fantasy cavern and no modern road. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at salt crystal on the shoreline; travel up one ravine then laterally across the cliff face; arrive at narrow cave storage ledge; settle on cliff and distant Dead Sea aligned. Start at the salt-crusted shoreline, accelerate up the ravine in a low flying handheld-gimbal move, bank across three cave mouths and end deep at one impossible storage ledge. TTS-locked timing: 0.00-3.25s: Establish the hostile Dead Sea cliff. 3.25-7.48s: Ask how hundreds of manuscripts reached the caves. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 4,
+    "chapter": "2. 천 년 빠른 성서 사본",
+    "ct": "TEXT_RECORD",
+    "txt": "문서를 펼치자, 학계가 발칵 뒤집힙니다. 에스더서를 제외한 히브리 성서 전체가 나왔거든요. 당시 가장 오래된 사본보다 천 년이나 앞선 기록이었죠.",
+    "tts": 8.963,
+    "omni": 10,
+    "playback_speed": 1.0,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "carbon-ink line beside a torn edge",
+      "route": "across fragment field to Isaiah seam then upward",
+      "destination": "ancient-scroll plane above later codex",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "2.2s snap to Isaiah seam",
+        "6.1s crane reveals chronology contrast"
+      ],
+      "settle_point": "ancient and later material separated by depth"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "IAA scroll content and Israel Museum Great Isaiah Scroll",
+      "site_artifact_fingerprint": [
+        "Qumran parchment fragments from multiple biblical books",
+        "long stitched Isaiah sheet",
+        "later codex held only as distant chronology contrast"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.842,
+        "narration": "문서를 펼치자, 학계가 발칵 뒤집힙니다. 에스더서를 제외한 히브리 성서 전체가",
+        "camera": "Open the scrolls and trigger the scholarly shock.",
+        "action": "Open the scrolls and trigger the scholarly shock.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 4.842,
+        "end": 8.963,
+        "narration": "나왔거든요. 당시 가장 오래된 사본보다 천 년이나 앞선 기록이었죠.",
+        "camera": "Reveal the corpus as roughly a millennium earlier than the known medieval witnesses.",
+        "action": "Reveal the corpus as roughly a millennium earlier than the known medieval witnesses.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Dark museum conservation-table diorama with several genuine-style Qumran biblical fragments arranged around one long Isaiah-scroll section, each parchment piece bearing physically carved-looking but unreadable carbon-ink line texture; a much later medieval codex silhouette remains far behind and softly out of focus only for age comparison, no legible letters and no modern Bible cover. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at carbon-ink line beside a torn edge; travel across fragment field to Isaiah seam then upward; arrive at ancient-scroll plane above later codex; settle on ancient and later material separated by depth. Slide rapidly over several fragments, snap to the Isaiah stitched seam, then crane backward so the ancient scroll plane dominates while the later codex recedes by physical depth. TTS-locked timing: 0.00-4.84s: Open the scrolls and trigger the scholarly shock. 4.84-8.96s: Reveal the corpus as roughly a millennium earlier than the known medieval witnesses. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 5,
+    "chapter": "2. 성서만이 아니었다",
+    "ct": "DISCOVERY_REVEAL",
+    "txt": "그런데 진짜 이상한 건 그다음이었습니다. 동굴에 들어 있던 건 성서만이 아니었어요.",
+    "tts": 5.108,
+    "omni": 6,
+    "playback_speed": 1.0,
+    "evidence": "문헌기록",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "biblical fragment torn corner",
+      "route": "short whip-orbit into the surrounding evidence ring",
+      "destination": "rule-calendar-war fragment group",
+      "speed_profile": "CONTROLLED_ORBIT_REVEAL",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "SURFACE_TO_INTERIOR",
+      "pattern_interrupts": [
+        "2.0s orbit direction change",
+        "4.2s light sweep across evidence ring"
+      ],
+      "settle_point": "all document classes visible together"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "IAA scroll content: biblical and non-biblical compositions",
+      "site_artifact_fingerprint": [
+        "biblical parchment centre",
+        "community-rule and calendar fragments",
+        "war-scroll manuscript fragment"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 2.525,
+        "narration": "그런데 진짜 이상한 건 그다음이었습니다.",
+        "camera": "Hold the biblical explanation.",
+        "action": "Hold the biblical explanation.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 2.525,
+        "end": 5.108,
+        "narration": "동굴에 들어 있던 건 성서만이 아니었어요.",
+        "camera": "Reverse it by revealing the non-biblical manuscripts.",
+        "action": "Reverse it by revealing the non-biblical manuscripts.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. A central biblical parchment fragment on a matte dark support rotates only a few degrees while surrounding verified-style categories emerge from existing shadow: a rule-scroll fragment, a calendrical table fragment and a war-scroll fragment, all on distinct parchment shades with no readable generated writing; restrained forensic lighting and real material depth. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at biblical fragment torn corner; travel short whip-orbit into the surrounding evidence ring; arrive at rule-calendar-war fragment group; settle on all document classes visible together. Begin close on the biblical fragment, whip-orbit around its torn edge and settle on the wider ring of non-biblical texts already present in the darkness. TTS-locked timing: 0.00-2.52s: Hold the biblical explanation. 2.52-5.11s: Reverse it by revealing the non-biblical manuscripts. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 6,
+    "chapter": "2. 문헌군의 범위",
+    "ct": "INVENTORY_TABLEAU",
+    "txt": "공동체의 생활 규칙과 달력, 종말 전쟁에 관한 기록, 심지어 금과 은을 숨긴 장소로 보이는 목록까지 섞여 있었습니다.",
+    "tts": 6.827,
+    "omni": 8,
+    "playback_speed": 1.0,
+    "evidence": "문헌기록",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "community-rule torn edge",
+      "route": "across four physical evidence stations",
+      "destination": "oxidized copper-sheet opening",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "2.4s drop from calendar to war fragment",
+        "5.3s orbit around copper corrosion"
+      ],
+      "settle_point": "four categories in one evidence field"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "IAA and Library of Congress representative scroll categories and Copper Scroll",
+      "site_artifact_fingerprint": [
+        "community-rule parchment",
+        "calendar and war manuscript fragments",
+        "oxidized copper-sheet scroll without treasure"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.057,
+        "narration": "공동체의 생활 규칙과 달력, 종말 전쟁에 관한 기록, 심지어 금과",
+        "camera": "Inventory rules, calendar and war texts.",
+        "action": "Inventory rules, calendar and war texts.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 4.057,
+        "end": 6.827,
+        "narration": "은을 숨긴 장소로 보이는 목록까지 섞여 있었습니다.",
+        "camera": "End on the Copper Scroll's unverified treasure list.",
+        "action": "End on the Copper Scroll's unverified treasure list.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Archaeological inventory diorama with four separate evidence stations: a community-rule parchment, a 364-day calendar-style ruled fragment, a darker war-scroll fragment, and the real-form Copper Scroll as two heavily oxidized green copper cylinders and opened thin copper sheet fragments; tiny sealed containers suggest treasure locations without showing treasure, no gold piles and no readable text. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at community-rule torn edge; travel across four physical evidence stations; arrive at oxidized copper-sheet opening; settle on four categories in one evidence field. Crane fast from the rule fragment to the calendar, descend across the war fragment, then arc around the oxidized copper sheet and stop before the empty space where treasure would have been. TTS-locked timing: 0.00-4.06s: Inventory rules, calendar and war texts. 4.06-6.83s: End on the Copper Scroll's unverified treasure list. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 7,
+    "chapter": "2. 거대한 고대 도서관",
+    "ct": "CUTAWAY",
+    "txt": "이쯤 되면 단순한 성서 보관소라고 볼 수 없겠죠. 대체 누가, 무엇을 지키기 위해 이 거대한 고대 도서관을 동굴 깊숙이 감춰버린 걸까요?",
+    "tts": 7.895,
+    "omni": 8,
+    "playback_speed": 1.0,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "outer marl stratum seam",
+      "route": "through first cave then along cliff to a second chamber",
+      "destination": "separate deposit network",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "2.1s pass through first chamber",
+        "5.0s direction change along cliff"
+      ],
+      "settle_point": "multiple caves aligned in cutaway"
+    },
+    "visual_lock": {
+      "civilization": "Second Temple period Judean manuscript culture and the Qumran cave assemblage",
+      "era": "third century BCE to first century CE manuscripts",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Levantine Judean scribes and community members in period-correct linen and wool clothing",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "IAA 11 Qumran cave assemblages; conceptual distribution only",
+      "site_artifact_fingerprint": [
+        "separate natural cave chambers",
+        "few jars or fragment groups per chamber",
+        "continuous marl-limestone cliff strata"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.617,
+        "narration": "이쯤 되면 단순한 성서 보관소라고 볼 수 없겠죠. 대체 누가,",
+        "camera": "Question the simple storage-room explanation.",
+        "action": "Question the simple storage-room explanation.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 3.617,
+        "end": 7.895,
+        "narration": "무엇을 지키기 위해 이 거대한 고대 도서관을 동굴 깊숙이 감춰버린 걸까요?",
+        "camera": "Expand the question to the person and motive behind the distributed library.",
+        "action": "Expand the question to the person and motive behind the distributed library.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Second Temple period Judea from the third century BCE to the first century CE, Qumran settlement and marl-limestone caves beside the Dead Sea. Qumran low pale-stone and mud-plaster communal rooms, stepped water installations, simple timber shelves and tables, and the steep eroded marl cliffs and natural caves above the Dead Sea. Vertical cliff cutaway diorama of several separate small Qumran cave chambers, each containing only a few clay jars, wrapped scroll bundles or scattered fragments appropriate to different archaeological contexts; limestone strata and narrow connecting exterior paths are physically visible, no single gigantic library hall, no shelves full of perfect books. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at outer marl stratum seam; travel through first cave then along cliff to a second chamber; arrive at separate deposit network; settle on multiple caves aligned in cutaway. Dive through the exposed cliff section, enter one cave, exit through the real mouth, traverse the rock face to another chamber and end on the unresolved network of deposits. TTS-locked timing: 0.00-3.62s: Question the simple storage-room explanation. 3.62-7.89s: Expand the question to the person and motive behind the distributed library. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 8,
+    "chapter": "3. 1947년 발견 전승",
+    "ct": "HISTORICAL_RECONSTRUCTION",
+    "txt": "전해지는 이야기로는 1947년, 염소를 찾던 베두인 목동이 동굴에 돌을 던집니다. 곧 항아리 깨지는 소리가 들렸다고 하죠. 처음 나온 건 일곱 두루마리였습니다.",
+    "tts": 9.938,
+    "omni": 10,
+    "playback_speed": 1.0,
+    "evidence": "문헌기록",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "stone leaving the herder's hand",
+      "route": "ballistic arc through the small cave mouth",
+      "destination": "jar fracture beside seven scroll bundles",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "CONTROLLED_DOCUMENTARY_HANDHELD_GIMBAL",
+      "depth_transition": "SURFACE_TO_INTERIOR",
+      "pattern_interrupts": [
+        "1.8s cave-entry exposure change",
+        "4.3s impact recoil"
+      ],
+      "settle_point": "fractured jar and first bundles"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "IAA discovery account explicitly framed as tradition",
+      "site_artifact_fingerprint": [
+        "young Ta'amireh Bedouin herder",
+        "small Qumran cave mouth",
+        "goats among pale marl rocks"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 5.602,
+        "narration": "전해지는 이야기로는 1947년, 염소를 찾던 베두인 목동이 동굴에 돌을 던집니다.",
+        "camera": "Follow the traditional lost-goat and thrown-stone account.",
+        "action": "Follow the traditional lost-goat and thrown-stone account.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 5.602,
+        "end": 9.938,
+        "narration": "곧 항아리 깨지는 소리가 들렸다고 하죠. 처음 나온 건 일곱 두루마리였습니다.",
+        "camera": "Hear the jar crack and reveal the first seven scrolls.",
+        "action": "Hear the jar crack and reveal the first seven scrolls.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Taamireh Bedouin youths in historically restrained 1940s desert clothing, mid-twentieth-century archaeologists in period field wear, or modern conservators in neutral laboratory clothing only as the scene requires. Historically restrained 1947 Judean Desert scene: a young Taamireh Bedouin herder in simple period desert clothing stands below a small cave mouth while goats move among pale rocks; his hand has just released one ordinary stone toward the darkness, no exact facial claim, no heroic pose and no modern gear. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at stone leaving the herder's hand; travel ballistic arc through the small cave mouth; arrive at jar fracture beside seven scroll bundles; settle on fractured jar and first bundles. Treat the exact stone-and-jar sequence as a discovery tradition, not a filmed fact; avoid identifying one named individual. Follow the thrown stone in a rapid handheld arc into the cave, strike the existing clay jar, recoil with the crack and settle on seven bundled scroll forms inside. TTS-locked timing: 0.00-5.60s: Follow the traditional lost-goat and thrown-stone account. 5.60-9.94s: Hear the jar crack and reveal the first seven scrolls. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 9,
+    "chapter": "3. 11개 동굴",
+    "ct": "SPATIAL_MAP",
+    "txt": "그런데 조사 범위가 쿰란 주변 절벽을 따라 약 8킬로미터로 넓어지자, 11개 동굴에서 수만 조각과 900개 넘는 문서가 발견됩니다.",
+    "tts": 8.266,
+    "omni": 10,
+    "playback_speed": 1.0,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "first Cave 1-style opening",
+      "route": "fast lateral ridge traverse past separate cave mouths",
+      "destination": "overhead full cliff distribution",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "3.0s near-miss past cave cluster",
+        "6.4s crane to overhead"
+      ],
+      "settle_point": "whole survey ridge in one view"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "IAA 1951-1956 survey: 11 manuscript caves across about 8 kilometres, over 900 documents",
+      "site_artifact_fingerprint": [
+        "continuous eight-kilometre cliff-ridge model",
+        "eleven distinct cave openings",
+        "fragment clusters rather than 900 intact books"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.651,
+        "narration": "그런데 조사 범위가 쿰란 주변 절벽을 따라 약 8킬로미터로",
+        "camera": "Expand the search along the Qumran cliff line.",
+        "action": "Expand the search along the Qumran cliff line.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 3.651,
+        "end": 8.266,
+        "narration": "넓어지자, 11개 동굴에서 수만 조각과 900개 넘는 문서가 발견됩니다.",
+        "camera": "Reveal 11 caves and a corpus of more than 900 documents.",
+        "action": "Reveal 11 caves and a corpus of more than 900 documents.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Large vertical terrain diorama of roughly eight kilometres of Qumran cliffs represented as one continuous eroded ridge above the Dead Sea, eleven distinct real cave openings distributed along the face and thousands of tiny parchment fragments clustered only near their archaeological cave zones; no intact 900 perfect scrolls, no map labels or numerals. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at first Cave 1-style opening; travel fast lateral ridge traverse past separate cave mouths; arrive at overhead full cliff distribution; settle on whole survey ridge in one view. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Race laterally along the ridge, pass each cave mouth as a restrained warm light activates in physical depth, then crane up to reveal the whole distribution and fragment field. TTS-locked timing: 0.00-3.65s: Expand the search along the Qumran cliff line. 3.65-8.27s: Reveal 11 caves and a corpus of more than 900 documents. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "veo_graphic": {
+      "function": "ROUTE_PATH",
+      "evidence_relation": "A physical survey route links only the documented cave openings and does not invent a hidden tunnel",
+      "visual_language": "thin warm sand-coloured route ribbon hugging the cliff surface",
+      "start": "first cave mouth",
+      "via": [
+        "central cave cluster",
+        "Cave 4-style opening"
+      ],
+      "end": "last documented cave zone",
+      "occlusion": "the graphic passes behind the stone edge, document, column, wall or terrain and reappears with correct world-space parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors, settle, then fade before the end",
+      "camera_relation": "anchored to named physical surfaces with correct perspective, depth, lighting, reflections, occlusion and camera parallax",
+      "arrival_reaction": "each already-present cave mouth catches one restrained amber reflection"
+    }
+  },
+  {
+    "n": 10,
+    "chapter": "3. 한 동굴에서 문서군으로",
+    "ct": "INVENTORY_TABLEAU",
+    "txt": "한 동굴의 발견이 거대한 고대 문서군으로 커진 겁니다. 그렇다면 한곳의 도서관이었을까요, 여러 곳에서 모인 기록이었을까요?",
+    "tts": 7.152,
+    "omni": 8,
+    "playback_speed": 1.0,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "first seven wrapped bundles",
+      "route": "rapid pullback over expanding conservation trays",
+      "destination": "full multi-cave fragment field",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "2.3s first tray expansion",
+        "5.5s orbit across parchment colours"
+      ],
+      "settle_point": "bundles and fragment field together"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "IAA discovery publication history and Cave 4 fragment concentration",
+      "site_artifact_fingerprint": [
+        "first seven scroll bundles",
+        "many irregular manuscript-fragment trays",
+        "Cave 4-style dense fragment concentration"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.291,
+        "narration": "한 동굴의 발견이 거대한 고대 문서군으로 커진 겁니다.",
+        "camera": "Grow the discovery from seven scrolls into a huge corpus.",
+        "action": "Grow the discovery from seven scrolls into a huge corpus.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 3.291,
+        "end": 7.152,
+        "narration": "그렇다면 한곳의 도서관이었을까요, 여러 곳에서 모인 기록이었을까요?",
+        "camera": "Ask whether it came from one library or many sources.",
+        "action": "Ask whether it came from one library or many sources.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Overhead archaeological sorting diorama: seven larger scroll bundles at one side expand visually into many trays of real-looking irregular fragments from multiple caves, with Cave 4-style dense fragment trays dominating but every piece remaining torn, dusty and incomplete; no modern printed index, no perfect scroll army. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at first seven wrapped bundles; travel rapid pullback over expanding conservation trays; arrive at full multi-cave fragment field; settle on bundles and fragment field together. Start on the seven bundles, pull back rapidly as tray after tray enters the same physical table, then orbit the different parchment colours and stop on the unresolved single-versus-multiple-library question. TTS-locked timing: 0.00-3.29s: Grow the discovery from seven scrolls into a huge corpus. 3.29-7.15s: Ask whether it came from one library or many sources. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 11,
+    "chapter": "4. 쿰란 도서관 가설",
+    "ct": "SITE_ESTABLISH",
+    "txt": "학자들은 먼저 문서의 제작지를 추적했습니다. 쿰란 정착지에서 잉크병과 긴 탁자가 나오자, 공동체가 도서관을 숨겼다는 가설이 힘을 얻었죠.",
+    "tts": 8.406,
+    "omni": 10,
+    "playback_speed": 1.0,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": true,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "low stone doorway threshold",
+      "route": "over the table surface around both inkwells",
+      "destination": "window axis toward cave cliffs",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "CONTROLLED_DOCUMENTARY_HANDHELD_GIMBAL",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "2.1s skim over table",
+        "5.6s focus pull toward caves"
+      ],
+      "settle_point": "inkwells, table and caves aligned"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Qumran settlement inkwells and long-table interpretation, presented as evidence not certainty",
+      "site_artifact_fingerprint": [
+        "two small ceramic inkwells",
+        "long low plastered table",
+        "simple Qumran pale-stone communal room"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.82,
+        "narration": "학자들은 먼저 문서의 제작지를 추적했습니다. 쿰란 정착지에서",
+        "camera": "Trace manuscript production to the Qumran settlement.",
+        "action": "Trace manuscript production to the Qumran settlement.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 3.82,
+        "end": 8.406,
+        "narration": "잉크병과 긴 탁자가 나오자, 공동체가 도서관을 숨겼다는 가설이 힘을 얻었죠.",
+        "camera": "Build the community-library hypothesis from the inkwells and table.",
+        "action": "Build the community-library hypothesis from the inkwells and table.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Qumran low pale-stone and mud-plaster communal rooms, stepped water installations, simple timber shelves and tables, and the steep eroded marl cliffs and natural caves above the Dead Sea. Qumran settlement scriptorium-style room diorama based on the archaeological interpretation: pale stone walls, mud plaster, one long low writing table and two small dark ceramic inkwells on a plain surface; sparse shelves and reed pens, no ornate synagogue, no medieval desks and no piles of perfect scrolls. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at low stone doorway threshold; travel over the table surface around both inkwells; arrive at window axis toward cave cliffs; settle on inkwells, table and caves aligned. Present the room as an archaeological interpretation supported by inkwells and a long table, not a conclusively identified script workshop. Enter through the low doorway in a quick handheld move, skim inches over the long table, orbit both inkwells and end looking from the room toward the distant manuscript caves. TTS-locked timing: 0.00-3.82s: Trace manuscript production to the Qumran settlement. 3.82-8.41s: Build the community-library hypothesis from the inkwells and table. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 12,
+    "chapter": "4. 가설을 흔든 다양성",
+    "ct": "SCIENTIFIC_EVIDENCE",
+    "txt": "하지만 문서에는 세 언어와 수많은 필체가 뒤섞였고, 소유·운반 기록은 단 한 줄도 없었습니다. 모두 한곳에서 만든 책이라기엔 차이가 너무 컸어요.",
+    "tts": 8.359,
+    "omni": 10,
+    "playback_speed": 1.0,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "thick carbon-ink stroke",
+      "route": "laterally across three fragment planes and correction marks",
+      "destination": "empty provenance slot",
+      "speed_profile": "MACRO_PROBE_SETTLE",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "2.0s first script-plane crossing",
+        "5.0s focus snap across scribal styles"
+      ],
+      "settle_point": "diverse fragments surrounding one absence"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "IAA languages and scripts; palaeographic diversity",
+      "site_artifact_fingerprint": [
+        "three script traditions on real fragment materials",
+        "multiple line weights and scribal correction patterns",
+        "empty ownership-provenance slot"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.354,
+        "narration": "하지만 문서에는 세 언어와 수많은 필체가 뒤섞였고, 소유·운반 기록은 단",
+        "camera": "Reveal three languages and many hands.",
+        "action": "Reveal three languages and many hands.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 4.354,
+        "end": 8.359,
+        "narration": "한 줄도 없었습니다. 모두 한곳에서 만든 책이라기엔 차이가 너무 컸어요.",
+        "camera": "Arrive at the missing ownership and transport record.",
+        "action": "Arrive at the missing ownership and transport record.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Three adjacent conservation planes hold Hebrew-, Aramaic- and Greek-script manuscript fragments, distinguished only by authentic-looking physical line rhythms and parchment materials while all characters remain unreadable; many different scribal styles appear through line weight, spacing and correction marks, with an empty provenance slot at the centre. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at thick carbon-ink stroke; travel laterally across three fragment planes and correction marks; arrive at empty provenance slot; settle on diverse fragments surrounding one absence. Macro-probe one ink stroke, strafe across all three script planes, snap between several distinct scribal hands and stop at the empty provenance slot. TTS-locked timing: 0.00-4.35s: Reveal three languages and many hands. 4.35-8.36s: Arrive at the missing ownership and transport record. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 13,
+    "chapter": "4. 단서는 넘치고 주인은 없다",
+    "ct": "DIAGRAM",
+    "txt": "단서는 넘치는데 정작 주인만 가리킬 수 없으니, 그야말로 미치고 팔짝 뛸 노릇이었죠.",
+    "tts": 5.248,
+    "omni": 6,
+    "playback_speed": 1.0,
+    "evidence": "미확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "jar shard with cave sediment",
+      "route": "around evidence ring then along three physical threads",
+      "destination": "empty central owner position",
+      "speed_profile": "CONTROLLED_ORBIT_REVEAL",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "2.2s first thread stop",
+        "4.6s second direction change"
+      ],
+      "settle_point": "evidence ring and empty centre"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Synthesis of documented evidence limits; exact owner remains unknown",
+      "site_artifact_fingerprint": [
+        "realistic parchment and jar evidence",
+        "separate cave-sediment samples",
+        "empty owner position with all links stopping short"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 2.298,
+        "narration": "단서는 넘치는데 정작 주인만 가리킬 수",
+        "camera": "Stack the clues until the answer seems near.",
+        "action": "Stack the clues until the answer seems near.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 2.298,
+        "end": 5.248,
+        "narration": "없으니, 그야말로 미치고 팔짝 뛸 노릇이었죠.",
+        "camera": "Break every route before it can identify an owner.",
+        "action": "Break every route before it can identify an owner.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Forensic puzzle-table diorama of many documented-style parchment fragments, inkwells, clay jar shards and cave sediment samples connected by restrained physical threads that converge toward one empty central silhouette; every thread stops before contact, showing abundant evidence without naming an owner, no detective corkboard text and no face. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at jar shard with cave sediment; travel around evidence ring then along three physical threads; arrive at empty central owner position; settle on evidence ring and empty centre. Integrate one restrained force path anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Orbit the evidence quickly, follow three threads toward the centre, let each stop short in turn and finish on the unfilled owner silhouette. TTS-locked timing: 0.00-2.30s: Stack the clues until the answer seems near. 2.30-5.25s: Break every route before it can identify an owner. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "veo_graphic": {
+      "function": "FORCE_PATH",
+      "evidence_relation": "Links encode real evidence relations but terminate where provenance is missing",
+      "visual_language": "thin dusty-amber physical filaments resting on the table and passing behind fragments",
+      "start": "jar sediment sample",
+      "via": [
+        "inkwell",
+        "script-style group"
+      ],
+      "end": "empty owner boundary",
+      "occlusion": "the graphic passes behind the stone edge, document, column, wall or terrain and reappears with correct world-space parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors, settle, then fade before the end",
+      "camera_relation": "anchored to named physical surfaces with correct perspective, depth, lighting, reflections, occlusion and camera parallax",
+      "arrival_reaction": "all filaments dim when they reach the unresolved boundary"
+    }
+  },
+  {
+    "n": 14,
+    "chapter": "5. 글자에서 가죽으로",
+    "ct": "SCIENTIFIC_EVIDENCE",
+    "txt": "그래서 연구자들은 아예 보는 대상을 바꿨습니다. 글자가 아니라, 글자가 적힌 가죽을 조사한 겁니다.",
+    "tts": 5.666,
+    "omni": 6,
+    "playback_speed": 1.0,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "carbon-ink ridge",
+      "route": "through cracked collagen fibres then along a follicle channel",
+      "destination": "minute sampling zone",
+      "speed_profile": "MACRO_PROBE_SETTLE",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "SURFACE_TO_INTERIOR",
+      "pattern_interrupts": [
+        "2.0s dive beneath ink ridge",
+        "4.0s turn along follicle"
+      ],
+      "settle_point": "ink and skin layers together"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Cell 2020 ancient-DNA analysis of Dead Sea Scroll parchment",
+      "site_artifact_fingerprint": [
+        "animal-skin fibre and follicle microstructure",
+        "carbon ink resting above parchment",
+        "minute documented-style sampling zone"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 2.838,
+        "narration": "그래서 연구자들은 아예 보는 대상을 바꿨습니다.",
+        "camera": "Abandon the unreadable ownership clues in the text.",
+        "action": "Abandon the unreadable ownership clues in the text.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 2.838,
+        "end": 5.666,
+        "narration": "글자가 아니라, 글자가 적힌 가죽을 조사한 겁니다.",
+        "camera": "Enter the parchment material itself as the new evidence.",
+        "action": "Enter the parchment material itself as the new evidence.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Extreme macro conservation-lab diorama of one Dead Sea Scroll parchment fragment under neutral raking light: animal-skin fibre bundles, follicles, cracked collagen layers and carbon ink are visibly distinct; one tiny non-destructive sampling zone is marked only by physical illumination, no floating DNA helix, no screen HUD and no text. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at carbon-ink ridge; travel through cracked collagen fibres then along a follicle channel; arrive at minute sampling zone; settle on ink and skin layers together. Push through the ink surface into the visible fibre layers, turn ninety degrees along a follicle channel and settle on the minute sampling zone as the question shifts from words to skin. TTS-locked timing: 0.00-2.84s: Abandon the unreadable ownership clues in the text. 2.84-5.67s: Enter the parchment material itself as the new evidence. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 15,
+    "chapter": "5. 양피지 DNA의 실마리",
+    "ct": "SCIENTIFIC_EVIDENCE",
+    "txt": "양피지의 고대 DNA로 조각을 분류하자, 일부 성서 두루마리가 쿰란 밖에서 들어온 것으로 드러났죠. 문헌군의 제작 배경이 한곳이 아니었다는 첫 실마리였습니다.",
+    "tts": 10.403,
+    "omni": 10,
+    "playback_speed": 0.9613,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "parchment fibre bundle",
+      "route": "pull out over grouped fragments then across terrain",
+      "destination": "outside-origin parchment group",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "2.4s scale transition to table",
+        "6.5s route arrival"
+      ],
+      "settle_point": "Qumran and outside groups in one depth field"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Cell 2020: ancient parchment DNA groups fragments and suggests some manuscripts came from outside Qumran",
+      "site_artifact_fingerprint": [
+        "fragment groups separated by animal-skin signature",
+        "Qumran limestone reference sample",
+        "one physically distant outside-origin group"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 5.363,
+        "narration": "양피지의 고대 DNA로 조각을 분류하자, 일부 성서 두루마리가 쿰란 밖에서 들어온 것으로",
+        "camera": "Classify fragments by ancient parchment DNA.",
+        "action": "Classify fragments by ancient parchment DNA.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 5.363,
+        "end": 10.403,
+        "narration": "드러났죠. 문헌군의 제작 배경이 한곳이 아니었다는 첫 실마리였습니다.",
+        "camera": "Reveal that some biblical scrolls arrived from outside Qumran.",
+        "action": "Reveal that some biblical scrolls arrived from outside Qumran.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Modern clean conservation-table diorama with several parchment fragments grouped by compatible animal-skin material signatures; Qumran limestone sample sits at one side while one verified outside-origin group is physically separated across a shallow terrain model, no species labels, no readable charts and no floating molecular icons. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at parchment fibre bundle; travel pull out over grouped fragments then across terrain; arrive at outside-origin parchment group; settle on Qumran and outside groups in one depth field. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Begin inside one parchment fibre, pull out to the grouped fragments, follow a world-space material route across the terrain and settle on the outside-origin group. TTS-locked timing: 0.00-5.16s: Classify fragments by ancient parchment DNA. 5.16-10.00s: Reveal that some biblical scrolls arrived from outside Qumran. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "veo_graphic": {
+      "function": "ROUTE_PATH",
+      "evidence_relation": "The route visualizes only the study's outside-origin inference and never names an unknown exact city",
+      "visual_language": "thin parchment-coloured world-space ribbon following the terrain surface",
+      "start": "Qumran fragment group",
+      "via": [
+        "terrain saddle"
+      ],
+      "end": "outside-origin group",
+      "occlusion": "the graphic passes behind the stone edge, document, column, wall or terrain and reappears with correct world-space parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors, settle, then fade before the end",
+      "camera_relation": "anchored to named physical surfaces with correct perspective, depth, lighting, reflections, occlusion and camera parallax",
+      "arrival_reaction": "the destination fragment catches a restrained warm edge light"
+    }
+  },
+  {
+    "n": 16,
+    "chapter": "5. 대이사야서",
+    "ct": "ARTIFACT_MACRO",
+    "txt": "내용을 대조하자 그 범위는 더 선명해졌어요. 7.34미터의 대이사야서에는 66장이 거의 온전하게 이어져 있었어요.",
+    "tts": 7.57,
+    "omni": 8,
+    "playback_speed": 1.0,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "first stitched sheet seam",
+      "route": "low flight along successive columns and seams",
+      "destination": "far damaged terminal edge",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "2.2s seam near-miss",
+        "5.6s crane rise over full length"
+      ],
+      "settle_point": "entire long scroll readable as one object"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Israel Museum Great Isaiah Scroll: 7.34 metres, 54 columns, nearly complete 66 chapters",
+      "site_artifact_fingerprint": [
+        "7.34-metre long stitched parchment sheet",
+        "54 physical column blocks kept unreadable",
+        "nearly complete Isaiah content with real edge damage"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.976,
+        "narration": "내용을 대조하자 그 범위는 더 선명해졌어요. 7.34미터의",
+        "camera": "Compare the manuscript contents and sharpen the scale.",
+        "action": "Compare the manuscript contents and sharpen the scale.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 3.976,
+        "end": 7.57,
+        "narration": "대이사야서에는 66장이 거의 온전하게 이어져 있었어요.",
+        "camera": "Reveal the 7.34-metre nearly complete Isaiah Scroll.",
+        "action": "Reveal the 7.34-metre nearly complete Isaiah Scroll.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. A museum-scale Great Isaiah Scroll diorama unrolled as a very long stitched parchment sheet across a dark curved conservation surface, genuine beige animal skin with vertical stitched joins, 54 column-like blocks of fully unreadable dark ink texture and irregular lower damage; enough side depth to understand 7.34-metre length without generated numbers. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at first stitched sheet seam; travel low flight along successive columns and seams; arrive at far damaged terminal edge; settle on entire long scroll readable as one object. Integrate one restrained dimension line anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Fly low along the full stitched sheet at speed, pass seam after seam, rise to reveal the extraordinary length and settle on the final damaged edge. TTS-locked timing: 0.00-3.98s: Compare the manuscript contents and sharpen the scale. 3.98-7.57s: Reveal the 7.34-metre nearly complete Isaiah Scroll. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "veo_graphic": {
+      "function": "DIMENSION_LINE",
+      "evidence_relation": "The physical line expresses the published total length while exact numbers stay in narration and captions",
+      "visual_language": "thin warm-ivory survey line lying beside the parchment edge without numerals",
+      "start": "first surviving edge",
+      "via": [
+        "central stitched seam"
+      ],
+      "end": "far terminal edge",
+      "occlusion": "the graphic passes behind the stone edge, document, column, wall or terrain and reappears with correct world-space parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors, settle, then fade before the end",
+      "camera_relation": "anchored to named physical surfaces with correct perspective, depth, lighting, reflections, occlusion and camera parallax",
+      "arrival_reaction": "small light ticks contact only the two real surviving ends"
+    }
+  },
+  {
+    "n": 17,
+    "chapter": "5. 필사와 공동체 생활",
+    "ct": "HISTORICAL_RECONSTRUCTION",
+    "txt": "후대 성서와 큰 내용은 비슷했지만, 철자 차이와 필사자의 수정도 남아 있었죠. 규칙서와 달력에서는 당시 공동체의 생활까지 드러났습니다.",
+    "tts": 7.941,
+    "omni": 8,
+    "playback_speed": 1.0,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "reed-pen tip at correction stroke",
+      "route": "across parchment then through divider into communal room",
+      "destination": "community routine under changing light",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "CONTROLLED_DOCUMENTARY_HANDHELD_GIMBAL",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "2.5s correction-rack-focus",
+        "5.2s divider passage"
+      ],
+      "settle_point": "scribe and communal life aligned"
+    },
+    "visual_lock": {
+      "civilization": "Second Temple period Judean manuscript culture and the Qumran cave assemblage",
+      "era": "third century BCE to first century CE manuscripts",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Levantine Judean scribes and community members in period-correct linen and wool clothing",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Great Isaiah Scroll corrections, Community Rule and calendar documents",
+      "site_artifact_fingerprint": [
+        "reed-pen copying and visible correction stroke",
+        "plain Qumran communal meal setting",
+        "calendar rhythm suggested by changing light, not labels"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.675,
+        "narration": "후대 성서와 큰 내용은 비슷했지만, 철자 차이와 필사자의 수정도",
+        "camera": "Reveal textual differences and scribal corrections.",
+        "action": "Reveal textual differences and scribal corrections.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 3.675,
+        "end": 7.941,
+        "narration": "남아 있었죠. 규칙서와 달력에서는 당시 공동체의 생활까지 드러났습니다.",
+        "camera": "Extend the manuscripts into daily community rules and calendar life.",
+        "action": "Extend the manuscripts into daily community rules and calendar life.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Second Temple period Judea from the third century BCE to the first century CE, Qumran settlement and marl-limestone caves beside the Dead Sea. Levantine Judean scribes and community members with olive-brown skin, dark hair and beards, undyed linen or wool tunics, simple leather belts, sandals and restrained headcloths appropriate to the Second Temple period. Qumran low pale-stone and mud-plaster communal rooms, stepped water installations, simple timber shelves and tables, and the steep eroded marl cliffs and natural caves above the Dead Sea. Split-depth Second Temple Judean scriptorium and communal-room diorama: a Levantine scribe copies onto parchment with reed pen while another corrects one existing ink line; beyond a stone divider, community members in plain linen follow a shared meal and calendar routine, all manuscript marks unreadable and no named sect claim. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at reed-pen tip at correction stroke; travel across parchment then through divider into communal room; arrive at community routine under changing light; settle on scribe and communal life aligned. Follow the reed pen across one correction, pass through the stone divider, orbit the communal meal and accelerate through a day-to-night light change to the calendar routine. TTS-locked timing: 0.00-3.67s: Reveal textual differences and scribal corrections. 3.67-7.94s: Extend the manuscripts into daily community rules and calendar life. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 18,
+    "chapter": "5. 기록의 세계 복원",
+    "ct": "CUTAWAY",
+    "txt": "주인은 못 찾았지만, 기록이 태어난 세계는 되살아난 겁니다.",
+    "tts": 3.669,
+    "omni": 4,
+    "playback_speed": 1.0,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "torn manuscript edge",
+      "route": "through writing room, stepped pool and meal room",
+      "destination": "full Qumran-life cutaway",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "2.0s fragment-to-room scale transition",
+        "5.0s underwater-to-meal direction change"
+      ],
+      "settle_point": "reconstructed world around unresolved centre"
+    },
+    "visual_lock": {
+      "civilization": "Second Temple period Judean manuscript culture and the Qumran cave assemblage",
+      "era": "third century BCE to first century CE manuscripts",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Levantine Judean scribes and community members in period-correct linen and wool clothing",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "IAA and LOC Qumran community evidence; identity remains bounded",
+      "site_artifact_fingerprint": [
+        "writing room with parchment evidence",
+        "stepped ritual-water installation",
+        "shared meal and cave storage zones"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 1.294,
+        "narration": "주인은 못 찾았지만,",
+        "camera": "Turn fragment evidence into a lived historical world.",
+        "action": "Turn fragment evidence into a lived historical world.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 1.294,
+        "end": 3.669,
+        "narration": "기록이 태어난 세계는 되살아난 겁니다.",
+        "camera": "Preserve the boundary: the world returns, the exact owner does not.",
+        "action": "Preserve the boundary: the world returns, the exact owner does not.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Second Temple period Judea from the third century BCE to the first century CE, Qumran settlement and marl-limestone caves beside the Dead Sea. Levantine Judean scribes and community members with olive-brown skin, dark hair and beards, undyed linen or wool tunics, simple leather belts, sandals and restrained headcloths appropriate to the Second Temple period. Qumran low pale-stone and mud-plaster communal rooms, stepped water installations, simple timber shelves and tables, and the steep eroded marl cliffs and natural caves above the Dead Sea. Deep archaeological cutaway of Qumran daily life reconstructed only from document categories and settlement evidence: writing room, ritual water installation, shared meal room and cave storage zone occupy connected but distinct levels; translucent absence around the central owner figure remains unresolved, no crowded fantasy city. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 4-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at torn manuscript edge; travel through writing room, stepped pool and meal room; arrive at full Qumran-life cutaway; settle on reconstructed world around unresolved centre. Dive from one fragment into the cutaway writing room, travel through the water installation and shared meal, then pull back to reveal the whole recovered world while leaving the owner void unfilled. TTS-locked timing: 0.00-1.29s: Turn fragment evidence into a lived historical world. 1.29-3.67s: Preserve the boundary: the world returns, the exact owner does not. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 19,
+    "chapter": "6. 사해문서의 정체",
+    "ct": "INVENTORY_TABLEAU",
+    "txt": "결국 사해문서는 한 권의 비밀 성경이 아니었습니다. 성서 사본과 규칙서, 달력과 해설이 함께 남은 제2성전기 유대 문헌군이었죠.",
+    "tts": 8.452,
+    "omni": 10,
+    "playback_speed": 1.0,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "single closed scroll silhouette",
+      "route": "outward orbit across every artifact class",
+      "destination": "complete corpus tableau",
+      "speed_profile": "CONTROLLED_ORBIT_REVEAL",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "2.0s first category reveal",
+        "5.0s orbit widens to corpus"
+      ],
+      "settle_point": "all artifact classes together"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "IAA scroll content and Library of Congress Qumran Library",
+      "site_artifact_fingerprint": [
+        "biblical and non-biblical fragments together",
+        "Great Isaiah Scroll as one member not the whole",
+        "Copper Scroll and jar context retained"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.644,
+        "narration": "결국 사해문서는 한 권의 비밀 성경이 아니었습니다. 성서 사본과 규칙서,",
+        "camera": "Reject the single secret-Bible idea.",
+        "action": "Reject the single secret-Bible idea.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 4.644,
+        "end": 8.452,
+        "narration": "달력과 해설이 함께 남은 제2성전기 유대 문헌군이었죠.",
+        "camera": "Identify a diverse Second Temple Jewish manuscript corpus.",
+        "action": "Identify a diverse Second Temple Jewish manuscript corpus.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Authoritative artifact-first diorama of the Dead Sea Scrolls corpus: biblical manuscript fragments, rule and calendar fragments, interpretation and prayer fragments, one Copper Scroll section and clay jar shards arranged as a coherent archaeological assemblage around the Great Isaiah Scroll; no single secret book and no religious propaganda. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at single closed scroll silhouette; travel outward orbit across every artifact class; arrive at complete corpus tableau; settle on all artifact classes together. Orbit rapidly from one supposed secret scroll outward as every document class enters the frame, then settle on the complete diverse corpus as the confirmed answer. TTS-locked timing: 0.00-4.64s: Reject the single secret-Bible idea. 4.64-8.45s: Identify a diverse Second Temple Jewish manuscript corpus. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 20,
+    "chapter": "6. 남은 주인과 은닉 이유",
+    "ct": "DIAGRAM",
+    "txt": "하지만 누가 이 문서들을 모아 왜 동굴 11곳에 나눴는지는, 현재 방법으로도 확정할 수 없습니다. 소유·은닉 기록이 없고, 발견 초기 출토 맥락도 흐트러졌기 때문이죠.",
+    "tts": 10.635,
+    "omni": 10,
+    "playback_speed": 0.9403,
+    "evidence": "미확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "wrapped bundle in upper cave",
+      "route": "through cave strata to displaced provenance trays",
+      "destination": "unfilled owner-and-motive void",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "2.5s strata dive",
+        "6.0s evidence route breaks"
+      ],
+      "settle_point": "caves and missing record layer together"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "IAA and LOC: ownership, deposit history and exact hiding purpose remain unconfirmed",
+      "site_artifact_fingerprint": [
+        "scroll deposits in separate cave chambers",
+        "missing ownership and hiding record",
+        "disturbed early provenance represented without accusation"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.493,
+        "narration": "하지만 누가 이 문서들을 모아 왜 동굴 11곳에 나눴는지는, 현재 방법으로도",
+        "camera": "State what present methods cannot decide.",
+        "action": "State what present methods cannot decide.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 4.493,
+        "end": 10.635,
+        "narration": "확정할 수 없습니다. 소유·은닉 기록이 없고, 발견 초기 출토 맥락도 흐트러졌기 때문이죠.",
+        "camera": "Show why missing records and disturbed provenance block the owner and motive.",
+        "action": "Show why missing records and disturbed provenance block the owner and motive.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Two-layer Qumran cave cutaway: upper layer shows scroll bundles distributed among several real cave chambers, lower layer shows provenance records torn away and early-market movement represented by empty wrapping and displaced fragment trays; owner and hiding motive remain an unfilled central space, no thief caricature and no claimed Roman-escape scene. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at wrapped bundle in upper cave; travel through cave strata to displaced provenance trays; arrive at unfilled owner-and-motive void; settle on caves and missing record layer together. Traverse the cave deposits, dive through the strata to the missing-record layer, follow displaced fragments toward the central void and stop before any owner or motive appears. TTS-locked timing: 0.00-4.22s: State what present methods cannot decide. 4.22-10.00s: Show why missing records and disturbed provenance block the owner and motive. Preserve all objects from the start image. No voice, no music, no subtitles."
+  },
+  {
+    "n": 21,
+    "chapter": "6. 미래의 증거",
+    "ct": "SCIENTIFIC_EVIDENCE",
+    "txt": "더 정밀한 DNA·재료 분석과 교란되지 않은 새 동굴이 연결된다면 이야기는 달라질 겁니다.",
+    "tts": 5.619,
+    "omni": 6,
+    "playback_speed": 1.0,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "parchment fibre under spectral light",
+      "route": "through analysis bay into sealed cave sediment section",
+      "destination": "untouched context boundary",
+      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "2.1s spectral-light sweep",
+        "5.0s transition into cave strata"
+      ],
+      "settle_point": "analysis and provenance context linked"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Future-evidence scenario bounded by existing DNA, material analysis and provenance methods",
+      "site_artifact_fingerprint": [
+        "parchment micro-sample and spectral camera",
+        "neutral material-analysis instrument",
+        "undisturbed cave sediment context"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 2.595,
+        "narration": "더 정밀한 DNA·재료 분석과 교란되지",
+        "camera": "Name the next evidence: better DNA and material analysis.",
+        "action": "Name the next evidence: better DNA and material analysis.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 2.595,
+        "end": 5.619,
+        "narration": "않은 새 동굴이 연결된다면 이야기는 달라질 겁니다.",
+        "camera": "Add the decisive condition of an undisturbed new cave context.",
+        "action": "Add the decisive condition of an undisturbed new cave context.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Modern conservation-science diorama combining a parchment fibre sample, multispectral camera, neutral material-analysis instruments and an untouched newly found cave sediment layer sealed in situ; no futuristic hologram, no excavated new scroll claim and no readable computer screen. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at parchment fibre under spectral light; travel through analysis bay into sealed cave sediment section; arrive at untouched context boundary; settle on analysis and provenance context linked. Integrate one restrained scan wave anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Move from fibre to spectral light, race along a physical analysis path into the untouched cave layer and settle on one sealed context boundary waiting to be tested. TTS-locked timing: 0.00-2.60s: Name the next evidence: better DNA and material analysis. 2.60-5.62s: Add the decisive condition of an undisturbed new cave context. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "veo_graphic": {
+      "function": "SCAN_WAVE",
+      "evidence_relation": "The scan visualizes analysis of already-present material and never invents a new manuscript",
+      "visual_language": "restrained blue-white volumetric sheet with parchment-gold reflection",
+      "start": "parchment fibre",
+      "via": [
+        "material sample",
+        "cave sediment layer"
+      ],
+      "end": "sealed context boundary",
+      "occlusion": "the graphic passes behind the stone edge, document, column, wall or terrain and reappears with correct world-space parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors, settle, then fade before the end",
+      "camera_relation": "anchored to named physical surfaces with correct perspective, depth, lighting, reflections, occlusion and camera parallax",
+      "arrival_reaction": "the boundary produces one soft reflected pulse and remains closed"
+    }
+  },
+  {
+    "n": 22,
+    "chapter": "6. 두루마리의 여정",
+    "ct": "SPATIAL_MAP",
+    "txt": "두루마리가 어디서 쓰이고, 누구의 손을 거쳐, 어떤 날 동굴에 감춰졌는지까지 복원할 수 있겠죠.",
+    "tts": 6.13,
+    "omni": 8,
+    "playback_speed": 1.0,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS+VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "prepared parchment on workshop frame",
+      "route": "through anonymous hands across desert to cave mouth",
+      "destination": "wrapped scroll at cave deposition point",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "2.2s first handoff",
+        "5.4s desert bank",
+        "8.0s cave entry"
+      ],
+      "settle_point": "whole possible journey in depth"
+    },
+    "visual_lock": {
+      "civilization": "Second Temple period Judean manuscript culture and the Qumran cave assemblage",
+      "era": "third century BCE to first century CE manuscripts",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Levantine Judean scribes and community members in period-correct linen and wool clothing",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Bounded future reconstruction goal: production, circulation and deposition sequence",
+      "site_artifact_fingerprint": [
+        "anonymous parchment production stage",
+        "multiple transfer hands without named identity",
+        "Qumran cave deposition endpoint with evidence gaps"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.356,
+        "narration": "두루마리가 어디서 쓰이고, 누구의 손을 거쳐, 어떤 날",
+        "camera": "Imagine reconstructing where each scroll was written and handled.",
+        "action": "Imagine reconstructing where each scroll was written and handled.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 3.356,
+        "end": 6.13,
+        "narration": "동굴에 감춰졌는지까지 복원할 수 있겠죠.",
+        "camera": "Complete the route only as a future possibility ending at the cave.",
+        "action": "Complete the route only as a future possibility ending at the cave.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Second Temple period Judea from the third century BCE to the first century CE, Qumran settlement and marl-limestone caves beside the Dead Sea. Levantine Judean scribes and community members with olive-brown skin, dark hair and beards, undyed linen or wool tunics, simple leather belts, sandals and restrained headcloths appropriate to the Second Temple period. Qumran low pale-stone and mud-plaster communal rooms, stepped water installations, simple timber shelves and tables, and the steep eroded marl cliffs and natural caves above the Dead Sea. Continuous deep diorama from a Second Temple parchment workshop through several anonymous hands and transport bundles to a Qumran cave mouth, with every stage physically present but separated by translucent gaps where evidence is missing; no named city, author or exact route claim. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at prepared parchment on workshop frame; travel through anonymous hands across desert to cave mouth; arrive at wrapped scroll at cave deposition point; settle on whole possible journey in depth. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Follow one world-space route from prepared skin to copied scroll, pass hand to hand, bank through desert terrain and enter the cave, briefly darkening at every unknown gap before arrival. TTS-locked timing: 0.00-3.36s: Imagine reconstructing where each scroll was written and handled. 3.36-6.13s: Complete the route only as a future possibility ending at the cave. Preserve all objects from the start image. No voice, no music, no subtitles.",
+    "veo_graphic": {
+      "function": "ROUTE_PATH",
+      "evidence_relation": "The route is explicitly a future reconstruction target and dims at every unsupported link",
+      "visual_language": "thin parchment-gold physical ribbon following surfaces and hands",
+      "start": "prepared animal skin",
+      "via": [
+        "copied scroll",
+        "anonymous transfer bundle"
+      ],
+      "end": "Qumran cave deposit",
+      "occlusion": "the graphic passes behind the stone edge, document, column, wall or terrain and reappears with correct world-space parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors, settle, then fade before the end",
+      "camera_relation": "anchored to named physical surfaces with correct perspective, depth, lighting, reflections, occlusion and camera parallax",
+      "arrival_reaction": "the ribbon fades across uncertainty gaps and brightens only at physical evidence anchors"
+    }
+  },
+  {
+    "n": 23,
+    "chapter": "6. 남은 미스터리",
+    "ct": "ARTIFACT_MACRO",
+    "txt": "그날까지 문서의 주인과 은닉 이유는 후대가 풀어야 할 미스터리로 남아 있습니다. 시간 속에 잠든 유물, 동굴 속에 묻힌 역사. 사해문서의 비밀이었습니다.",
+    "tts": 9.009,
+    "omni": 10,
+    "playback_speed": 1.0,
+    "evidence": "미확인",
+    "generation_mode": "I2V_LOCKED",
+    "architecture_anchor_required": false,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "last cave-mouth limestone edge",
+      "route": "half-orbit around jar then macro push to parchment and pullback",
+      "destination": "artifact hero against dark cave network",
+      "speed_profile": "CONTROLLED_ORBIT_REVEAL",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "SURFACE_TO_INTERIOR",
+      "pattern_interrupts": [
+        "2.0s orbit direction change",
+        "5.0s macro ink arrival",
+        "7.2s slow final pullback"
+      ],
+      "settle_point": "jar and scroll isolated in light"
+    },
+    "visual_lock": {
+      "civilization": "Documented 1947-1956 Qumran discovery and modern scientific research history",
+      "era": "1947-1956 discovery and archaeology or contemporary conservation science",
+      "region": "Qumran and the marl-limestone cliffs on the northwest shore of the Dead Sea",
+      "people_lock": "Ta'amireh Bedouin, mid-century archaeologists or modern conservators in exact period clothing and equipment",
+      "forbidden_culture": [
+        "Christian medieval",
+        "Islamic medieval",
+        "Egyptian pharaonic",
+        "East Asian",
+        "European castle",
+        "fantasy"
+      ],
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Synthesis: corpus identity confirmed, exact owner and hiding motive unresolved",
+      "site_artifact_fingerprint": [
+        "cracked cylindrical Qumran jar",
+        "dark parchment scroll with unreadable ink texture",
+        "multiple cave mouths fading into unresolved depth"
+      ]
+    },
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.569,
+        "narration": "그날까지 문서의 주인과 은닉 이유는 후대가 풀어야 할 미스터리로 남아 있습니다.",
+        "camera": "Leave the owner and hiding reason as the precise mystery.",
+        "action": "Leave the owner and hiding reason as the precise mystery.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      },
+      {
+        "start": 4.569,
+        "end": 9.009,
+        "narration": "시간 속에 잠든 유물, 동굴 속에 묻힌 역사. 사해문서의 비밀이었습니다.",
+        "camera": "Close on the artifact and the channel's buried-history signature.",
+        "action": "Close on the artifact and the channel's buried-history signature.",
+        "graphic": "scene-integrated evidence motion only; exact Korean words and numbers remain in final captions"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency parchment fibre, limestone dust, clay pores and ink microtexture, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Dead Sea Scrolls discovery and research history: 1947 Ta'amireh Bedouin discovery tradition, 1949-1956 Qumran cave archaeology, and restrained modern conservation, multispectral imaging and ancient-DNA laboratories. Final hero diorama inside a quiet Qumran cave: one cracked cylindrical clay jar, one partially unrolled dark parchment scroll and several authentic fragments rest on limestone dust under a narrow warm shaft of light; beyond them multiple cave mouths recede into darkness, artifact razor-sharp against restrained background, no person, no text and no magical glow. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Christian cross, no Jesus portrait, no church, no Islamic mosque, no medieval monk, no European castle, no Egyptian pharaoh, no East Asian costume, no Roman legion unless explicitly requested, no fantasy temple, no magical glow, no treasure chest, no modern book, no printed Bible, no glossy new parchment, no intact library of hundreds of perfect scrolls, no fabricated readable Hebrew, Aramaic or Greek text, no English letters, no map labels, no fake manuscript title, no invented author portrait, no DNA double helix floating HUD, no ancient costume on modern researchers, no plastic toy surface, no exterior cube frame, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at last cave-mouth limestone edge; travel half-orbit around jar then macro push to parchment and pullback; arrive at artifact hero against dark cave network; settle on jar and scroll isolated in light. Begin moving at once through the last cave mouth, orbit the jar and parchment in a fast half-circle, push into the unreadable ink fibres, then pull back slowly until the artifact remains bright and the ownerless cave network falls dark. TTS-locked timing: 0.00-4.57s: Leave the owner and hiding reason as the precise mystery. 4.57-9.01s: Close on the artifact and the channel's buried-history signature. Preserve all objects from the start image. No voice, no music, no subtitles."
+  }
+]

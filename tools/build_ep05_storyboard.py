@@ -416,7 +416,12 @@ def image_prompt(item: dict[str, object]) -> str:
 
 def video_prompt(item: dict[str, object], beats: list[dict[str, object]], seconds: int) -> str:
     path = item["camera_path"]
-    schedule = " ".join(f"{beat['start']:.2f}-{beat['end']:.2f}s: {beat['action']}" for beat in beats)
+    source_end = float(beats[-1]["end"]) if beats else float(seconds)
+    scale = min(1.0, float(seconds) / source_end) if source_end > 0 else 1.0
+    schedule = " ".join(
+        f"{float(beat['start']) * scale:.2f}-{float(beat['end']) * scale:.2f}s: {beat['action']}"
+        for beat in beats
+    )
     prompt = (
         f"Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, "
         f"site geometry, material, culture, lighting and composition. Single continuous {seconds}-second I2V shot, "
@@ -452,7 +457,12 @@ def compact_image_prompt(item: dict[str, object]) -> str:
 
 def compact_video_prompt(item: dict[str, object], beats: list[dict[str, object]], seconds: int) -> str:
     path = item["camera_path"]
-    schedule = " ".join(f"{beat['start']:.2f}-{beat['end']:.2f}s: {beat['action']}" for beat in beats)
+    source_end = float(beats[-1]["end"]) if beats else float(seconds)
+    scale = min(1.0, float(seconds) / source_end) if source_end > 0 else 1.0
+    schedule = " ".join(
+        f"{float(beat['start']) * scale:.2f}-{float(beat['end']) * scale:.2f}s: {beat['action']}"
+        for beat in beats
+    )
     parts = [
         f"Preserve the locked start image exactly: every object, artifact identity, geometry, material, era and lighting. One continuous {seconds}s I2V shot; no hard cut, teleport, morph or new object. Start camera by 0.35s.",
         f"Start at {path['entry_anchor']}; move {path['route']}; end at {path['destination']}; settle on {path['settle_point']}.",
@@ -525,6 +535,7 @@ def build() -> None:
             "txt": narration,
             "tts": tts,
             "omni": seconds,
+            "playback_speed": round(seconds / tts, 4) if tts > seconds else 1.0,
             "evidence": item["evidence"],
             "generation_mode": "I2V_LOCKED",
             "architecture_anchor_required": bool(item["architecture"]),

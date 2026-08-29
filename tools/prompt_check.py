@@ -400,9 +400,21 @@ def main() -> int:
             tts_number = -1.0
         report.add(tts_number > 0, n, "TTS 실측", "" if tts_number > 0 else f"{tts!r}")
         if tts_number > 0 and duration_number in ALLOWED_SECONDS:
-            report.add(tts_number <= duration_number, n, "TTS≤생성 길이",
-                       "" if tts_number <= duration_number
-                       else f"TTS {tts_number:.2f}초 > 생성 {duration_number}초")
+            try:
+                playback_speed = float(scene_data.get("playback_speed") or 1.0)
+            except (TypeError, ValueError):
+                playback_speed = -1.0
+            effective_duration = (
+                duration_number / playback_speed if playback_speed > 0 else 0.0
+            )
+            duration_ok = (
+                tts_number <= duration_number
+                or (0.75 <= playback_speed < 1.0 and effective_duration + 0.02 >= tts_number)
+            )
+            report.add(duration_ok, n, "TTS≤생성 길이 또는 안전 저속 재생",
+                       "" if duration_ok else
+                       f"TTS {tts_number:.2f}초 > 생성 {duration_number}초, "
+                       f"playback_speed {playback_speed:.4f}")
             long_review = str(scene_data.get("long_scene_review") or "").strip()
             report.add(tts_number <= 9.0 or bool(long_review), n, "장면 분할 검토",
                        "" if tts_number <= 9.0 or long_review
