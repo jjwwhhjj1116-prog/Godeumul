@@ -46,6 +46,9 @@ REQUIRED_CHECKS_V3 = (
     "information_prerequisites",
     "hook_compactness_and_payload",
     "script_editorial_separation",
+    "investigation_arc_and_future_evidence",
+    "fixed_chapter_story_flow",
+    "approved_predecessor_flow_review",
 )
 
 CONCLUSION_FIELDS = (
@@ -75,6 +78,34 @@ REVEAL_FIELDS = (
     "reveal",
     "meaning",
     "next_question",
+)
+
+INVESTIGATION_FIELDS = (
+    "discovered_anomaly",
+    "investigation_goal",
+    "method_or_evidence",
+    "initial_hypothesis",
+    "why_hypothesis_failed",
+    "question_shift",
+    "newly_visible_information",
+    "confirmed_progress",
+    "unresolved_core",
+    "why_unresolved",
+    "future_evidence",
+    "expected_historical_gain",
+)
+
+CHAPTER_REVIEW_FIELDS = (
+    "role",
+    "must_contain",
+    "next_handoff",
+)
+
+REFERENCE_REVIEW_FIELDS = (
+    "path",
+    "flow_summary",
+    "preserved_principle",
+    "avoided_mistake",
 )
 
 EDITORIAL_PHRASES = (
@@ -311,6 +342,52 @@ def validate_context_review(script: Path, review: Path) -> ContextGateReport:
                 f"누락 {sorted(fact_inventory - reviewed_reveals)} / "
                 f"초과 {sorted(reviewed_reveals - fact_inventory)}"
             )
+
+        investigation = doc.get("investigation_review") or {}
+        if investigation.get("status") != "PASS":
+            failures.append("조사 서사·미래 증거 검수가 PASS가 아님")
+        missing_investigation = [
+            key for key in INVESTIGATION_FIELDS
+            if len(str(investigation.get(key) or "").strip()) < 4
+        ]
+        if missing_investigation:
+            failures.append(f"조사 서사 필드 누락: {missing_investigation}")
+
+        chapter_review = doc.get("chapter_flow_review") or {}
+        if chapter_review.get("status") != "PASS":
+            failures.append("고정 챕터 흐름 검수가 PASS가 아님")
+        structure_type = str(chapter_review.get("structure_type") or "").strip()
+        if structure_type == "SHORT_6":
+            expected_chapters = set(range(1, 7))
+        elif structure_type == "LONG_7":
+            expected_chapters = set(range(1, 8))
+        else:
+            expected_chapters = set()
+            failures.append("챕터 구조 유형은 SHORT_6 또는 LONG_7이어야 함")
+        reviewed_chapters = {
+            item.get("n")
+            for item in (chapter_review.get("chapters") or [])
+            if item.get("status") == "PASS"
+            and all(len(str(item.get(key) or "").strip()) >= 4
+                    for key in CHAPTER_REVIEW_FIELDS)
+        }
+        if reviewed_chapters != expected_chapters:
+            failures.append(
+                "고정 챕터 역할 검수 불일치: "
+                f"{sorted(reviewed_chapters)} / 필요 {sorted(expected_chapters)}"
+            )
+
+        predecessor = doc.get("predecessor_flow_review") or {}
+        if predecessor.get("status") != "PASS":
+            failures.append("이전 승인 대본 전개 비교가 PASS가 아님")
+        reviewed_references = [
+            item for item in (predecessor.get("reference_scripts") or [])
+            if item.get("status") == "PASS"
+            and all(len(str(item.get(key) or "").strip()) >= 4
+                    for key in REFERENCE_REVIEW_FIELDS)
+        ]
+        if not reviewed_references:
+            failures.append("이전 승인 대본 전개 비교 기록이 없음")
 
     reviewed_paragraphs = doc.get("paragraphs") or []
     paragraph_numbers = {item.get("n") for item in reviewed_paragraphs if item.get("role") and item.get("summary")}

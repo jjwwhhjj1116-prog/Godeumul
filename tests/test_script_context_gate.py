@@ -85,6 +85,9 @@ def review_v3_for(script: Path) -> dict:
         "information_prerequisites": "PASS",
         "hook_compactness_and_payload": "PASS",
         "script_editorial_separation": "PASS",
+        "investigation_arc_and_future_evidence": "PASS",
+        "fixed_chapter_story_flow": "PASS",
+        "approved_predecessor_flow_review": "PASS",
     })
     doc["korean_review"] = {
         "status": "PASS",
@@ -141,6 +144,47 @@ def review_v3_for(script: Path) -> dict:
             "status": "PASS",
         }
     ]
+    doc["investigation_review"] = {
+        "status": "PASS",
+        "discovered_anomaly": "무덤에서 여성의 몸이 예외적으로 보존됐다",
+        "investigation_goal": "몸이 남은 원인과 무덤의 성격을 확인한다",
+        "method_or_evidence": "관 주변 생활용품과 매장 환경을 함께 대조한다",
+        "initial_hypothesis": "다층 밀봉이 보존을 만들었다는 가설을 세운다",
+        "why_hypothesis_failed": "매장 당시 환경을 완전히 재현할 수 없어 단일 원인으로 확정하지 못한다",
+        "question_shift": "원인 하나 대신 무덤 전체의 보존 조건을 묻는다",
+        "newly_visible_information": "생활용품과 장례 구조가 함께 보이기 시작한다",
+        "confirmed_progress": "밀봉과 매장 환경이 보존에 기여했음을 확인한다",
+        "unresolved_core": "각 보존 조건의 정확한 기여 비율은 남는다",
+        "why_unresolved": "매장 직후의 온도와 화학 환경 기록이 없다",
+        "future_evidence": "비교 가능한 봉분과 더 정밀한 환경 복원 자료가 필요하다",
+        "expected_historical_gain": "한나라 장례와 보존 과정의 실제 순서를 복원할 수 있다",
+    }
+    doc["chapter_flow_review"] = {
+        "status": "PASS",
+        "structure_type": "SHORT_6",
+        "chapters": [
+            {
+                "n": n,
+                "role": f"챕터 {n}의 고정 역할",
+                "must_contain": f"챕터 {n}이 반드시 담을 증거와 질문",
+                "next_handoff": f"챕터 {n}의 답에서 다음 질문으로 이동",
+                "status": "PASS",
+            }
+            for n in range(1, 7)
+        ],
+    }
+    doc["predecessor_flow_review"] = {
+        "status": "PASS",
+        "reference_scripts": [
+            {
+                "path": "산출물/EP05_로제타석/01.대본.txt",
+                "flow_summary": "발견 뒤 해독 실패와 비교 방법의 전환으로 정체를 밝힌다",
+                "preserved_principle": "조사 목표와 방법, 실패 이유를 순서대로 보여 준다",
+                "avoided_mistake": "이전 회차의 유물과 인물을 현재 회차에 복사하지 않는다",
+                "status": "PASS",
+            }
+        ],
+    }
     return doc
 
 
@@ -271,6 +315,45 @@ class ScriptContextGateTests(unittest.TestCase):
             report = validate_context_review(script, review)
             self.assertFalse(report.passed)
             self.assertTrue(any("편집자 설명 문구" in failure for failure in report.failures))
+
+    def test_v3_rejects_missing_investigation_turn(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            script = root / "01.대본.txt"
+            review = root / "01.문맥검수.json"
+            script.write_text(SCRIPT, encoding="utf-8")
+            doc = review_v3_for(script)
+            del doc["investigation_review"]["question_shift"]
+            review.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
+            report = validate_context_review(script, review)
+            self.assertFalse(report.passed)
+            self.assertTrue(any("조사 서사 필드 누락" in failure for failure in report.failures))
+
+    def test_v3_rejects_missing_one_fixed_chapter_role(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            script = root / "01.대본.txt"
+            review = root / "01.문맥검수.json"
+            script.write_text(SCRIPT, encoding="utf-8")
+            doc = review_v3_for(script)
+            doc["chapter_flow_review"]["chapters"] = doc["chapter_flow_review"]["chapters"][:-1]
+            review.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
+            report = validate_context_review(script, review)
+            self.assertFalse(report.passed)
+            self.assertTrue(any("고정 챕터 역할" in failure for failure in report.failures))
+
+    def test_v3_rejects_missing_predecessor_flow_review(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            script = root / "01.대본.txt"
+            review = root / "01.문맥검수.json"
+            script.write_text(SCRIPT, encoding="utf-8")
+            doc = review_v3_for(script)
+            doc["predecessor_flow_review"]["reference_scripts"] = []
+            review.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
+            report = validate_context_review(script, review)
+            self.assertFalse(report.passed)
+            self.assertTrue(any("이전 승인 대본 전개 비교 기록" in failure for failure in report.failures))
 
     def test_tts_parser_accepts_markdown_storyboard_format(self):
         with tempfile.TemporaryDirectory() as folder:
