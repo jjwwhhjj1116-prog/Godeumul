@@ -1,0 +1,346 @@
+# EP06 안티키테라 기계 — 고증 잠금 I2V 시각화
+
+scene_count: 21
+scene_count_basis: SCRIPT_TTS_MEANING_ACTION_EVIDENCE_DERIVED
+generation_mode: I2V_LOCKED
+image_model: Nano Banana
+video_model: Veo/Flow Omni
+aspect_ratio: 9:16
+image_count_per_scene: 1
+video_count_per_scene: 1
+
+## 장면 001 — ARTIFACT_MACRO / 발굴확인
+
+- TTS: 6.873s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 여기 지중해 바닷속에서, 2천 년 동안 녹슨 청동 덩어리로 잠들어 있던 기계가 있습니다. 바로 안티키테라 기계죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. Hero macro of Antikythera Fragment A: irregular opaque green-brown marine concretion, thin bronze plates crushed sideways into one layered mass, only a few broken triangular tooth tips peeking through white calcareous crust, half embedded in dark Aegean seabed stones, fully underwater, warm pin light against cold deep water, razor-sharp artifact silhouette; no clean circular gear face, intact exposed wheel, clock motif, museum glass or display case. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at bright copper-green tooth edge; travel through one real layer gap then around the concretion; arrive at full Fragment A silhouette; settle on whole fragment isolated from the seabed. Start moving at once along the corroded edge, snap through a gap between bronze layers and widen to the entire dictionary-sized lump while suspended silt trails behind the object. TTS-locked timing: 0.00-3.52s: Reveal the corroded object underwater. 3.52-6.87s: Identify it as the Antikythera Mechanism. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 002 — SCIENTIFIC_EVIDENCE / 측정확인
+
+- TTS: 6.827s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 겉보기엔 돌처럼 굳어 버린 파편뿐이었는데, 엑스레이가 속을 비추자 손톱만 한 톱니까지 빼곡한 장치가 드러났습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Greek Antikythera recovery and research history: Symi sponge divers in 1900-1901, Athens museum examination from 1902, X-ray study in the 1970s and Anglo-Greek microfocus CT in 2005. Same real Fragment A on a matte conservation cradle in a dark museum-scale imaging bay, its marine crust still opaque outside but a prepared depth axis passes through visible bronze layers; no transparent fantasy object, no readable inscription, open side space for a world-space X-ray scan plane. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at outer calcareous crust; travel straight through the prepared depth axis between bronze layers; arrive at cluster of hidden triangular teeth; settle on outer fragment and inner gears aligned. Integrate one restrained scan wave anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Crash toward the real outer crust, let a thin blue-white scan wave travel through the physical depth, then follow the revealed triangular teeth inward without changing the fragment silhouette. TTS-locked timing: 0.00-3.63s: Pass the X-ray through the opaque fragment. 3.63-6.83s: Arrive at the hidden gear teeth. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 003 — MECHANISM / 학술해석
+
+- TTS: 3.808s
+- 생성 길이: 4s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 대체 고대 그리스인은 이 기계로 무엇을 계산했던 걸까요?
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. A research reconstruction of the Antikythera Mechanism held inside a dark walnut rectangular case with front and back bronze dials, only verified surviving gear sectors rendered opaque and missing sectors rendered as faint neutral wireframe gaps; the real corroded fragments remain visible beside it to prevent certainty, no modern clock hands and no readable generated letters. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 4-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at real corroded fragment edge; travel half-orbit toward the model then between two gears; arrive at neutral missing front sector; settle on model and real fragment in the same frame. Orbit from the real fragment toward the restrained research model, push between two meshing verified gears and stop before the unverified front gap as the unanswered question. TTS-locked timing: 0.00-1.80s: Ask what the mechanism calculated. 1.80-3.81s: Stop at the missing front evidence. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 004 — DISCOVERY_ACTION / 발굴확인
+
+- TTS: 5.666s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 1900년, 그리스 안티키테라섬 앞바다. 해면 채취 잠수부들이 로마 시대 난파선을 찾아냈습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Greek Antikythera recovery and research history: Symi sponge divers in 1900-1901, Athens museum examination from 1902, X-ray study in the 1970s and Anglo-Greek microfocus CT in 2005. Greek Symi sponge divers in 1900 with heavy canvas suits, copper helmets, air hoses, lead chest weights and weighted boots; later Greek museum conservators and Anglo-Greek researchers in period-correct clothing. 1900 Antikythera open-sea diorama with a Symi Greek sponge diver in an accurate heavy canvas suit, copper helmet, air hose, lead weights and weighted boots descending beside a rope toward a deep rocky seabed; dark blue Aegean water, surface boat only as a tiny silhouette above, no modern scuba tank or fins. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at copper helmet rim and air hose; travel down the hose past bubbles and under a rock ledge; arrive at wreck timber and first amphora; settle on diver and wreck depth aligned. Dive with the weighted boots immediately, follow the air hose through rising bubbles, bank under one rock ledge and arrive at the first timber and amphora remains. TTS-locked timing: 0.00-2.41s: Descend with the 1900 sponge diver. 2.41-5.67s: Reach the Roman-era wreck. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 005 — INVENTORY_TABLEAU / 발굴확인
+
+- TTS: 6.827s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 배 안에는 청동상과 대리석상, 암포라가 쏟아져 있었고, 그 틈에서 큰 사전만 한 부식 덩어리도 건져 올렸어요.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Greek Antikythera recovery and research history: Symi sponge divers in 1900-1901, Athens museum examination from 1902, X-ray study in the 1970s and Anglo-Greek microfocus CT in 2005. Greek Symi sponge divers in 1900 with heavy canvas suits, copper helmets, air hoses, lead chest weights and weighted boots; later Greek museum conservators and Anglo-Greek researchers in period-correct clothing. Deep rocky Antikythera shipwreck cargo field fully underwater with dark timber hull ribs, stacked transport amphorae, one fallen bronze statue, pale marble sculpture fragments and glass vessels partly buried in sediment; among them sits one unremarkable dictionary-sized corroded lump, composition leading from glamorous cargo to the dull lump; no museum, display case, pedestal, X-ray plate, cleaned gear or reconstructed mechanism. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at bright bronze-statue surface; travel across amphora stacks then downward between hull ribs; arrive at dull mechanism concretion in a rope sling; settle on glamorous cargo and dull lump together. Race laterally across the bronze and marble cargo, drop between amphorae with the diver's gloved hand, then rack-focus from a bright statue face to the dull mechanism lump being lifted. TTS-locked timing: 0.00-3.81s: Show the valuable ship cargo. 3.81-6.83s: Find the overlooked corroded lump among it. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 006 — DISCOVERY_REVEAL / 발굴확인
+
+- TTS: 6.223s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 처음엔 아무도 대단하게 보지 않았죠. 그런데 1902년, 갈라진 파편 안쪽에서 톱니바퀴가 모습을 드러냅니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Greek Antikythera recovery and research history: Symi sponge divers in 1900-1901, Athens museum examination from 1902, X-ray study in the 1970s and Anglo-Greek microfocus CT in 2005. Greek Symi sponge divers in 1900 with heavy canvas suits, copper helmets, air hoses, lead chest weights and weighted boots; later Greek museum conservators and Anglo-Greek researchers in period-correct clothing. Hellenistic Greek limestone-and-timber bronze instrument workshop, Roman-era Mediterranean timber merchant ship, rocky Antikythera seabed, and restrained Athens museum or CT laboratory spaces only as the scene requires. Early-1902 Athens museum conservation-table diorama with the same marine concretion just naturally split along an existing fracture, one bronze gear edge and several triangular teeth visible inside; restrained Greek conservator hands and simple period tools stay outside the fracture, no destructive smashing and no fully cleaned mechanism. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at conservator fingertip beside fracture; travel through the existing opening seam into the bronze layers; arrive at first complete visible tooth arc; settle on fracture and gear arc in one frame. Push along a conservator's pointing finger to the fracture, cross the real opening seam, then orbit a few degrees around the first revealed gear teeth as dust falls away. TTS-locked timing: 0.00-3.22s: Hold the first dismissive impression. 3.22-6.22s: Reverse it when the gear teeth appear. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 007 — INVENTORY_TABLEAU / 측정확인
+
+- TTS: 8.173s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 현재 남은 것은 82개 조각, 원래 장치의 3분의 1가량입니다. 그래도 30개의 청동 기어와 빼곡한 그리스어 설명문이 살아남았죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Greek Antikythera recovery and research history: Symi sponge divers in 1900-1901, Athens museum examination from 1902, X-ray study in the 1970s and Anglo-Greek microfocus CT in 2005. Museum conservation tableau of all 82 surviving Antikythera fragments arranged by size on a dark neutral surface, major fragments A through G physically prominent but without generated labels, the largest layered Fragment A at centre and many small marine-corroded chips surrounding it; no invented missing pieces. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at layered Fragment A centre; travel crane across the full fragment field then short overhead orbit; arrive at complete surviving-fragment footprint; settle on all fragments readable together. Integrate one restrained exploded sequence anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Crane rapidly from Fragment A across the full field, then let the verified fragment groups lift only a few centimetres with visible gaps and settle back into their surviving footprint. TTS-locked timing: 0.00-4.26s: Reveal the 82 fragments and one-third survival. 4.26-8.17s: Locate the surviving gear-bearing pieces. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 008 — MECHANISM / 학술해석
+
+- TTS: 6.177s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 축 하나를 돌리면 앞면의 태양과 달 표시가 날짜에 맞춰 움직이고, 달의 모양까지 달라졌을 것으로 보입니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. Front-face research model in a dark walnut case with a bronze calendar ring, central Earth position, Sun pointer and a black-white Moon-phase sphere, all verified or inscription-supported elements rendered in aged matte bronze; missing planetary sectors remain empty, the side drive axis and interlocking gear train visible through an opened case edge. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at side drive axis; travel through meshing gears toward the front dial; arrive at black-white Moon-phase sphere; settle on front dial with working Moon phase. Integrate one restrained force path anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Follow the drive axis as it turns once, race through the meshing gears, emerge at the front pointer and orbit the black-white Moon sphere as its phase changes in one continuous shot. TTS-locked timing: 0.00-3.00s: Turn the drive axis and move the Sun and Moon indicators. 3.00-6.18s: End on the changing Moon phase. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 009 — ARTIFACT_MACRO / 측정확인
+
+- TTS: 2.136s
+- 생성 길이: 4s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 뒷면은 더 기가 막힙니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. Back dial plate of the Antikythera research reconstruction turning into view, with two physically deep spiral grooves, the upper five-turn spiral and lower four-turn spiral clearly distinct through relief and shadow; aged bronze, tiny unreadable inscription texture only, no generated numerals or labels. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 4-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at right walnut case edge; travel fast half-orbit to the back then into the upper groove; arrive at first upper spiral turn; settle on both spirals visible behind the upper groove. Whip-orbit from the case edge to the back plate, plunge into the upper spiral groove and settle before its first full turn. TTS-locked timing: 0.00-1.36s: Reverse from the front to the back. 1.36-2.14s: Enter the upper spiral dial. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 010 — MECHANISM / 측정확인
+
+- TTS: 8.777s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 위쪽 나선은 19년 235개월의 달력을, 아래쪽 나선은 223개월의 사로스 주기를 따라 일식과 월식이 일어날 가능성을 표시했어요.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. Oblique back-dial mechanism model with the upper five-turn Metonic spiral and lower four-turn Saros spiral both physically visible, a real pin-follower tracking each groove while interlocking verified gears turn behind the plate; no readable generated month names, eclipse glyphs shown only as tiny verified-style notches. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at upper Metonic pointer tip; travel along the upper groove, through rear gears, then down the lower groove; arrive at Saros eclipse-notch sector; settle on upper and lower spiral relation. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Track the upper pointer through two spiral turns, change direction through the visible rear gear train, descend to the lower pointer and accelerate along the Saros groove before a brief settle. TTS-locked timing: 0.00-3.89s: Follow the 19-year 235-month calendar. 3.89-8.78s: Descend to the 223-month eclipse-possibility cycle. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 011 — MECHANISM / 측정확인
+
+- TTS: 8.731s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 작은 보조 눈금에는 4년마다 열리는 범그리스 경기 주기까지 들어갔습니다. 하늘의 움직임과 인간의 축제를 금속 상자 하나에 통째로 접어 넣은 셈이죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. Hellenistic Greek astronomers and bronze instrument makers with eastern Mediterranean features, short curled dark hair or trimmed beards, undyed linen chitons, wool himatia or practical leather aprons. Hellenistic Greek limestone-and-timber bronze instrument workshop, Roman-era Mediterranean timber merchant ship, rocky Antikythera seabed, and restrained Athens museum or CT laboratory spaces only as the scene requires. Complete back-face research model with the small four-year Panhellenic Games subsidiary dial beside the two great spirals, then a deep diorama background linking a Hellenistic festival stadium silhouette to the Moon and Sun above; the mechanical dial remains the foreground evidence and the human scene stays secondary. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at small games-dial pointer; travel across the back spirals then through the case toward the festival horizon; arrive at mechanism-Moon-stadium depth axis; settle on full timekeeping world in one frame. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Snap from the small games dial to the upper celestial spiral, pull through the case into the festival horizon and crane back so mechanism, Moon and stadium occupy one depth axis. TTS-locked timing: 0.00-4.30s: Reveal the four-year games dial. 4.30-8.73s: Unite celestial cycles and human institutions in one box. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 012 — CONSERVATION / 발굴확인
+
+- TTS: 7.384s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 하지만 바닷속 2천 년이 기계 대부분을 싹 다 먹어치웠습니다. 표면만 봐서는 기어가 어디에 물렸는지조차 알 수 없었죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. Time-layer conservation diorama of the same mechanism case collapsing only through documented material loss: walnut case darkens and disappears, bronze plates crack into the real 82-fragment footprint, green chloride corrosion and pale accretion grow over existing surfaces while the verified gears remain in their real positions; no violent explosion. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at intact walnut case corner; travel through the bronze layers during controlled corrosion growth; arrive at present Fragment A surface; settle on real surviving fragment after loss. Begin on the intact research outline, accelerate through a controlled time transition as wood vanishes and corrosion travels along bronze, then reverse into the present Fragment A without inventing destruction events. TTS-locked timing: 0.00-3.83s: Show two millennia of material loss. 3.83-7.38s: Return to the unreadable present fragment. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 013 — SCIENTIFIC_EVIDENCE / 측정확인
+
+- TTS: 7.012s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 연구자들은 1970년대 엑스레이에 이어, 2005년 고해상도 CT로 파편 속을 층층이 갈라 읽었습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Greek Antikythera recovery and research history: Symi sponge divers in 1900-1901, Athens museum examination from 1902, X-ray study in the 1970s and Anglo-Greek microfocus CT in 2005. Greek Symi sponge divers in 1900 with heavy canvas suits, copper helmets, air hoses, lead chest weights and weighted boots; later Greek museum conservators and Anglo-Greek researchers in period-correct clothing. Hellenistic Greek limestone-and-timber bronze instrument workshop, Roman-era Mediterranean timber merchant ship, rocky Antikythera seabed, and restrained Athens museum or CT laboratory spaces only as the scene requires. Split-era research-laboratory diorama built as one continuous physical room: a restrained 1970s X-ray station with film plates on the near side and a 2005 microfocus CT scanner with Fragment A securely mounted on the far side, period-correct Greek and Anglo-Greek researchers, no futuristic hologram and no generated readable screens. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at 1970s X-ray film edge; travel across the shared lab table into the CT scanner ring; arrive at fixed Fragment A inside the CT axis; settle on artifact centered in CT ring. Integrate one restrained scan wave anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Track from an X-ray film silhouette across the shared table, accelerate beside Fragment A into the CT ring and orbit the scanner as the beam rotates around the fixed artifact. TTS-locked timing: 0.00-3.62s: Pass from 1970s X-ray research to 2005 CT. 3.62-7.01s: Enter the fragment layer by layer. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 014 — SCIENTIFIC_EVIDENCE / 측정확인
+
+- TTS: 6.130s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 그제야 감춰진 글자 수천 개와 뒷면 기어 배열, 달의 불규칙한 움직임을 흉내 낸 구조가 드러났어요.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Greek Antikythera recovery and research history: Symi sponge divers in 1900-1901, Athens museum examination from 1902, X-ray study in the 1970s and Anglo-Greek microfocus CT in 2005. Exploded CT evidence model of Fragment A where only measured bronze layers and 27 surviving gears separate along the scan axis with visible gaps, thousands of tiny inscription traces shown as unreadable shallow marks on plate surfaces, and the Moon-anomaly pin-and-slot pair highlighted by material contrast rather than labels. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at first CT slice at the outer crust; travel through separated measured layers between gear planes; arrive at Moon-anomaly pin-and-slot pair; settle on pin-and-slot pair inside the fragment. Integrate one restrained exploded sequence anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Dive through the CT slice stack, let measured bronze layers separate in sequence, weave between two gear planes and settle on the pin-and-slot pair moving with restrained mechanical accuracy. TTS-locked timing: 0.00-2.95s: Reveal hidden letters and rear gear arrangement. 2.95-6.13s: Arrive at the mechanism for irregular lunar motion. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 015 — MECHANISM / 학술해석
+
+- TTS: 5.341s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 그래서 이 물건은 흔히 세계에서 가장 오래된 아날로그 컴퓨터라 불립니다. 문제는 앞면이에요.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. Dignified complete research model turning inside its walnut case beside the much smaller real fragments, dense bronze gears transmitting one input into several astronomical outputs, camera angle emphasizing calculation through ratios rather than modern electronics; no keyboard, screen, electricity or digital symbols. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at main input gear tooth contact; travel through three interlocking ratios to the output dials; arrive at model beside real fragments; settle on calculation model and evidence together. Race from one turning input gear through three ratio changes, burst out to the moving front and back pointers, then pull back to compare the model with the real fragments. TTS-locked timing: 0.00-2.80s: Show why it is called an analogue computer. 2.80-5.34s: Stop before the missing front becomes the new problem. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 016 — TEXT_RECORD / 문헌기록
+
+- TTS: 5.991s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 글에는 태양과 달, 당시 알려진 다섯 행성의 움직임이 적혀 있지만, 그 부분의 기어는 거의 사라졌거든요.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. Macro on real front-cover inscription traces and surviving circular holes beside an intentionally empty front-model volume; Sun, Moon and five-planet functions are represented only by seven neutral unlabelled bronze orbit rings fading into transparency where evidence is missing, no invented Greek words or complete gearing. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at shallow front-cover inscription texture; travel across surviving bearing holes then around neutral orbit rings; arrive at transparent missing-gear volume; settle on evidence and absence in one frame. Probe the inscription texture, snap to each surviving bearing hole, then orbit the seven neutral rings and stop at the transparent missing-gear volume rather than completing it. TTS-locked timing: 0.00-3.38s: Follow the inscription evidence for Sun, Moon and five planets. 3.38-5.99s: Reveal that the associated front gears are mostly gone. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 017 — EXPLODED / 학술해석
+
+- TTS: 7.059s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 오늘날의 정교한 복원도 남은 구멍과 글자, 수학적 주기를 맞춘 연구 모델이지 원본을 그대로 베낀 답안은 아닙니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Greek Antikythera recovery and research history: Symi sponge divers in 1900-1901, Athens museum examination from 1902, X-ray study in the 1970s and Anglo-Greek microfocus CT in 2005. Side-by-side evidence reconstruction in one deep diorama: real corroded fragments and measured opaque gears on the left, proposed front planetary gear train in translucent desaturated bronze on the right, every speculative part floating with visible gaps and no claim of exact replica; dark neutral conservation backdrop. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at opaque measured gear edge; travel laterally across the evidence boundary into translucent gears; arrive at real fragment after a reverse orbit; settle on opaque and translucent systems separated. Integrate one restrained exploded sequence anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Slide along the opaque measured gears, cross one clear boundary plane into the translucent proposal, orbit once and reverse back to the real fragment for the evidence limit. TTS-locked timing: 0.00-3.63s: Show the logic of modern reconstruction. 3.63-7.06s: Separate research model from the lost original. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 018 — SEALED_UNKNOWN / 미확인
+
+- TTS: 9.660s
+- 생성 길이: 10s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 누가 만들었는지도 아직 모릅니다. 코린토스계 달 이름 때문에 시칠리아나 아르키메데스의 기술 전통이 거론되지만, 제작자를 찍어 주는 서명은 없어요.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. Hellenistic Greek limestone-and-timber bronze instrument workshop, Roman-era Mediterranean timber merchant ship, rocky Antikythera seabed, and restrained Athens museum or CT laboratory spaces only as the scene requires. Unclaimed Hellenistic bronze workshop diorama with an unfinished gear sheet, dividers, files, a wooden geometry board and a blank unsigned bronze cover plate on the bench; no identifiable city monument, no portrait, no maker name, with faint distant silhouettes of Syracuse and Corinthian maritime routes kept abstract and secondary. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at blank bronze cover corner; travel around dividers, files and gear sheet; arrive at empty signature area; settle on unsigned plate and tools. Approach the blank cover plate, orbit the period tools and stop at the untouched signature area; never enter a named city or reveal a maker's face. TTS-locked timing: 0.00-5.22s: Raise the question of maker and workshop. 5.22-9.66s: Stop at the missing signature despite proposed traditions. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 019 — HISTORICAL_RECONSTRUCTION / 학술해석
+
+- TTS: 7.709s
+- 생성 길이: 8s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 우리가 확실히 아는 건, 2천 년 전 고대 그리스인이 하늘을 바라보기만 한 게 아니라 톱니바퀴 안에 넣고 실제로 돌렸다는 사실입니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. Hellenistic Greek astronomers and bronze instrument makers with eastern Mediterranean features, short curled dark hair or trimmed beards, undyed linen chitons, wool himatia or practical leather aprons. Hellenistic Greek limestone-and-timber bronze instrument workshop, Roman-era Mediterranean timber merchant ship, rocky Antikythera seabed, and restrained Athens museum or CT laboratory spaces only as the scene requires. Hellenistic Greek astronomer and bronze instrument maker together at a limestone workshop bench, turning a restrained research reconstruction while a physical armillary sky model and Moon-phase sphere move in exact mechanical relation; eastern Mediterranean features, linen chitons and leather apron, no named historical portrait. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at craftsperson hand on drive axis; travel through the case gears toward the armillary model; arrive at moving Moon and Sun against the workshop opening; settle on people, mechanism and sky model aligned. Follow the craftsperson's hand into the turning gear train, pass through the case and surge outward to the moving Moon and Sun model as the astronomer checks the sky. TTS-locked timing: 0.00-3.63s: Show ancient Greeks turning the sky in gears. 3.63-7.71s: Connect observed heavens, mathematics and craft. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 020 — SPATIAL_MAP / 미확인
+
+- TTS: 5.480s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS+VEO_INTEGRATED_3D
+- 모션 공간: WORLD_3D
+- 나레이션: 그리고 그 기술이 어느 공방에서 태어나 어디로 이어졌는지는, 난파선과 함께 끊겨 버렸죠.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. Hellenistic Greek Mediterranean world, 150-100 BCE, and a Roman-era merchant ship carrying Greek luxury cargo that sank near Antikythera around 70 BCE. Hellenistic Greek limestone-and-timber bronze instrument workshop, Roman-era Mediterranean timber merchant ship, rocky Antikythera seabed, and restrained Athens museum or CT laboratory spaces only as the scene requires. Deep historical continuity diorama beginning with a Hellenistic workshop bench, following one restrained chain of bronze gear silhouettes toward a Roman merchant ship, then descending with the wreck into dark seawater where the chain physically breaks; beyond the break is empty darkness, not a claim that all knowledge vanished. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at unfinished workshop gear; travel along the cargo deck then down through water; arrive at broken route beside Fragment A; settle on fragment at the end of documented evidence. Integrate one restrained physical route path ribbon anchored in the physical world space. It shares perspective, depth, lighting and reflections, receives camera parallax and natural occlusion, and never attaches to the screen. No floating HUD, no screen-space graphics, no text, no numbers, no labels. Track a bronze route from the workshop through the ship's cargo deck, dive with it into the water and stop exactly where the evidence chain breaks beside the corroded fragment. TTS-locked timing: 0.00-2.17s: Follow the unknown route of the technology. 2.17-5.48s: Break the route at the wreck rather than invent descendants. Preserve all objects from the start image. No voice, no music, no subtitles.
+
+## 장면 021 — ARTIFACT_MACRO / 발굴확인
+
+- TTS: 5.294s
+- 생성 길이: 6s
+- 모션 소유권: GENERATED_PHYSICS
+- 모션 공간: WORLD_3D
+- 나레이션: 시간 속에 잠든 세계유산, 땅속에 묻힌 역사. 안티키테라 기계의 비밀이었습니다.
+
+### IMAGE
+
+premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, immersive macro-lens depth cues, restrained tilt-shift, layered foreground-midground-background depth, physically based PBR materials, high-frequency microtexture and micro-displacement, sharp material separation, global illumination, high fidelity, 4K source detail, 9:16 vertical composition. documented Greek Antikythera recovery and research history: Symi sponge divers in 1900-1901, Athens museum examination from 1902, X-ray study in the 1970s and Anglo-Greek microfocus CT in 2005. Final high-contrast museum hero portrait of real Antikythera Fragment A and two smaller gear-bearing fragments on matte black conservation supports, warm pin light revealing copper-green patina and triangular teeth, cool rim light cleanly separating every artifact edge from a deep background hint of the ancient Aegean seabed, extremely sharp surface detail and no glass reflection. no Egyptian pharaoh imagery, no Chinese or East Asian gears, no Roman legionaries, no Viking ship, no medieval clock, no Renaissance workshop, no Victorian costume in ancient scenes, no steampunk fantasy, no electricity, no digital screen, no modern calculator, no intact shiny factory-made mechanism, no fabricated readable Greek text, no invented maker signature, no Archimedes portrait claim, no modern scuba tank in 1900, no treasure chest, no magical glow, no alien technology, no plastic toy surface, no ancient costume on modern researchers, no low-poly game asset, no gore, no watermark, no text, no labels, no letters.
+
+### I2V
+
+Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 6-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at lower copper-green Fragment A edge; travel three-degree parallax arc across the supports; arrive at full surviving-fragment hero grouping; settle on complete artifact closing portrait. Treat every supplied start-frame fragment as immutable: never redraw, clean, complete, sharpen, replace, rotate or animate any tooth, plate, crack, accretion or silhouette. Move only the camera by a tiny parallax arc and the raking light; if fidelity conflicts with motion, keep all artifacts frozen. Begin a restrained three-degree parallax arc, let warm pin light travel across the real teeth, then hold perfectly still on the surviving fragments for the final channel line. TTS-locked timing: 0.00-2.26s: Return to the real surviving artifact. 2.26-5.29s: Hold still for the channel closing line. Preserve all objects from the start image. No voice, no music, no subtitles.

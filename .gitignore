@@ -15,6 +15,9 @@ token.json
 산출물/**/images/
 산출물/**/clips/
 산출물/**/qa_v5/
+산출물/**/capcut_staging/
+산출물/**/capcut_release_draft/
+산출물/**/capcut_backup*/
 산출물/**/NotoSansKR-VF.ttf
 *.mp3
 *.wav
@@ -39,5 +42,6 @@ motion-graphics/render/
 __pycache__/
 *.pyc
 .venv/
+temp/
 Thumbs.db
 desktop.ini

@@ -119,6 +119,9 @@ def no_break(prev: str, nxt: str) -> bool:
     n = nxt.rstrip(".,!?")
     if NUM_END.search(p) and n.startswith(UNITS):
         return True
+    # 분수는 `3분의 / 1가량`처럼 갈라지면 의미와 호흡이 동시에 깨진다.
+    if p.endswith("분의") and re.match(r"[0-9일이삼사오육칠팔구십백천]", n):
+        return True
     if p.endswith(("아", "어")) and n.startswith(AUX_VERB):
         return True
     if (p, n) in FIXED_PHRASE_PAIRS:

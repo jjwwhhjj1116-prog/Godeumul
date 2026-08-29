@@ -130,10 +130,11 @@ def main() -> int:
     man_p = audio_dir / "durations.json"
     cue_p = ep / args.cue_file
     cache_p = audio_dir / "alignment.json"
+    generation_alignment_p = audio_dir / "generation_alignment.json"
     if not man_p.exists() or not cue_p.exists():
         sys.exit("[에러] durations.json 또는 자막.json 이 없습니다. 3단계·자막분할을 먼저.")
 
-    key = load_key(args.env_file)
+    key: str | None = None
     scenes = json.loads(man_p.read_text(encoding="utf-8"))["scenes"]
     cues = json.loads(cue_p.read_text(encoding="utf-8"))["cues"]
 
@@ -145,17 +146,33 @@ def main() -> int:
             cache = cache_doc.get("scenes") or {}
             cache_signatures = cache_doc.get("signatures") or {}
 
+    local_generation: dict = {}
+    if generation_alignment_p.exists():
+        try:
+            local_generation = json.loads(generation_alignment_p.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            local_generation = {}
+
     # ── 장면별 정렬 ─────────────────────────────────────
     print(f"\n에피소드 : {ep.name}")
     print(f"장면 {len(scenes)}개 · 자막 큐 {len(cues)}개\n")
     for k in sorted(scenes, key=int):
         spoken_text = scenes[k].get("tts_text") or scenes[k]["text"]
         align_signature = hashlib.sha256(spoken_text.encode("utf-8")).hexdigest()[:16]
+        local_signatures = local_generation.get("signatures") or {}
+        local_scenes = local_generation.get("scenes") or {}
+        if local_signatures.get(k) == align_signature and local_scenes.get(k):
+            cache[k] = local_scenes[k]
+            cache_signatures[k] = align_signature
+            print(f"  [로컬]   장면 {k:>2}  TTS 생성 타임스탬프")
+            continue
         if k in cache and cache_signatures.get(k) == align_signature and not args.force:
             print(f"  [건너뜀] 장면 {k}")
             continue
         audio = audio_dir / scenes[k]["file"]
         try:
+            if key is None:
+                key = load_key(args.env_file)
             cache[k] = align(key, audio, spoken_text)
             cache_signatures[k] = align_signature
             print(f"  [정렬]   장면 {k:>2}  문자 {len(cache[k]):>3}개")

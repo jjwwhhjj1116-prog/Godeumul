@@ -10,6 +10,7 @@ tools/ 안의 코드는 건드리지 않는다. 다른 PC에서 이 저장소를
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -63,9 +64,15 @@ def load() -> Config:
 
 
 def load_env() -> dict[str, str]:
-    """의존성 없이 .env 를 읽는다(python-dotenv 불필요)."""
+    """의존성 없이 .env 를 읽는다(python-dotenv 불필요).
+
+    Git에서 제외된 보안 파일을 다른 로컬 체크아웃에서 재사용할 때는
+    `GODEUMUL_ENV_FILE`에 정확한 파일 경로만 지정한다. 키 값은 복사하거나
+    콘솔에 출력하지 않는다.
+    """
     env: dict[str, str] = {}
-    p = ROOT / ".env"
+    override = os.environ.get("GODEUMUL_ENV_FILE", "").strip()
+    p = Path(override).expanduser() if override else ROOT / ".env"
     if not p.exists():
         return env
     for line in p.read_text(encoding="utf-8").splitlines():

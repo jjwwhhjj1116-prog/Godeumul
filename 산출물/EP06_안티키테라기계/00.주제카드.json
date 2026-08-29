@@ -1,0 +1,71 @@
+{
+  "status": "TOPIC_APPROVED",
+  "target": "안티키테라 기계",
+  "one_sentence_promise": "지중해 난파선에서 건진 녹슨 청동 덩어리가 어떻게 태양·달·달력·식의 주기를 계산한 2천 년 전 천문 계산 장치였음이 밝혀졌는지 추적한다.",
+  "discovery_action": "1900~1901년 그리스 안티키테라섬 앞바다의 로마 시대 난파선에서 시미섬 해면 채취 잠수부들이 조각상·암포라와 함께 부식된 청동 덩어리를 인양한 사건에서 시작한다.",
+  "representative_artifacts": [
+    "국립고고학박물관에 남은 82개 부식 파편",
+    "파편 속에 확인된 30개의 청동 톱니바퀴",
+    "19년·235태음월을 표시하는 메톤 주기 뒷면 나선 눈금",
+    "223태음월의 사로스 식 예측 주기와 식 문양",
+    "태양·달·행성 표시를 설명하는 고대 그리스어 사용 설명문"
+  ],
+  "historical_context": "기원전 2세기 말 헬레니즘 세계에서 그리스 기하학, 바빌로니아 천문 주기, 청동 정밀 가공이 결합된 배경과 기원전 1세기 로마계 상선의 고급 미술품 화물을 함께 살핀다.",
+  "central_question": "2천 년 전 고대 그리스인은 녹슨 상자 속 톱니바퀴로 하늘의 어떤 움직임까지 계산했으며, 왜 그 제작 전통은 한 난파선 밖에서 거의 보이지 않을까?",
+  "confirmed_answer_scope": "난파선 발견과 인양, 82개 잔존 파편과 30개 기어, 메톤·사로스·올림피아드 눈금, 달 운동과 식 가능성 계산, 2005년 CT가 밝힌 명문과 뒷면 구조까지만 사실로 잠근다.",
+  "unknowns": "정확한 제작자·공방·사용자, 원래 앞면 행성 표시의 완전한 기어 배열, 전체 기어 수와 외형, 제작 전통이 어디로 이어졌는지는 확정되지 않았다.",
+  "claims_to_avoid": [
+    "현대 컴퓨터처럼 전기·프로그램·디지털 계산을 했다고 말하기",
+    "행성 표시 복원 모델을 원본과 동일한 확정 복제품으로 제시하기",
+    "아르키메데스가 직접 만들었다고 단정하기",
+    "정확한 일식 발생 장소까지 예언했다고 과장하기",
+    "고대 기술이 천 년 동안 완전히 사라졌다고 단정하기"
+  ],
+  "official_sources": [
+    {
+      "institution": "National Archaeological Museum of Greece",
+      "title": "The Mysteries of the Mechanism of Antikythera",
+      "url": "https://antikythera-mechanism.namuseum.gr/en/"
+    },
+    {
+      "institution": "National Archaeological Museum of Greece",
+      "title": "Science historian — Antikythera Mechanism",
+      "url": "https://antikythera-mechanism.namuseum.gr/en/science-historian/"
+    },
+    {
+      "institution": "Nature",
+      "title": "Decoding the ancient Greek astronomical calculator known as the Antikythera Mechanism",
+      "url": "https://www.nature.com/articles/nature05357"
+    },
+    {
+      "institution": "Nature",
+      "title": "Calendars with Olympiad display and eclipse prediction on the Antikythera Mechanism",
+      "url": "https://www.nature.com/articles/nature07130"
+    },
+    {
+      "institution": "Scientific Reports",
+      "title": "A Model of the Cosmos in the ancient Greek Antikythera Mechanism",
+      "url": "https://www.nature.com/articles/s41598-021-84310-w"
+    }
+  ],
+  "visual_route": [
+    "거친 지중해 수면에서 잠수부를 따라 수심 깊은 난파선으로 급강하",
+    "청동상·대리석상·암포라 사이에서 사전만 한 부식 덩어리를 인양",
+    "파편이 갈라지며 안쪽의 삼각 톱니 기어가 매크로로 드러남",
+    "82개 파편을 CT 단면으로 통과해 숨은 기어와 명문을 층별로 확인",
+    "앞면 태양·달 표시와 달의 위상이 기어 회전에 맞춰 움직임",
+    "뒷면 메톤·사로스 나선 눈금을 따라 카메라와 3D 주기선이 이동",
+    "소실된 앞면을 확정 복원이 아닌 반투명 연구 모델로 구분",
+    "완전한 기계에서 남은 파편으로 역분해하며 제작자·공방의 미확인으로 닫음"
+  ],
+  "routing": "초기 공개 순서 6편. 140~165초 9:16 숏다큐로 제작하고 장면 수는 대본의 의미 전환에 따라 결정한다.",
+  "scores": {
+    "artifact_context": 20,
+    "historical_density": 20,
+    "question_ladder": 20,
+    "reference_quality": 15,
+    "visual_journey": 15,
+    "title_interest": 10,
+    "total": 100
+  }
+}

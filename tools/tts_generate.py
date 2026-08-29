@@ -20,6 +20,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import hashlib
 import json
 import os
@@ -45,6 +46,7 @@ for _stream in (sys.stdout, sys.stderr):
 
 ROOT = Path(__file__).resolve().parent.parent
 API_URL = "https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
+API_URL_WITH_TIMESTAMPS = "https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/with-timestamps"
 
 CFG = load()
 CPS_MEASURED = CFG.get("tts.실측_자당초", 9.35)
@@ -175,7 +177,7 @@ def parse_script(path: Path) -> list[Scene]:
 # ──────────────────────────────────────────────────────────────
 # 생성
 # ──────────────────────────────────────────────────────────────
-def synth(cfg: Config, text: str, out: Path) -> None:
+def synth(cfg: Config, text: str, out: Path) -> list[dict[str, object]]:
     payload = {
         "text": text,
         "model_id": cfg.model,
@@ -195,7 +197,7 @@ def synth(cfg: Config, text: str, out: Path) -> None:
         query = urllib.parse.urlencode(
             {"output_format": cfg.output_format} if cfg.output_format else {}
         )
-        url = API_URL.format(voice_id=cfg.voice_id)
+        url = API_URL_WITH_TIMESTAMPS.format(voice_id=cfg.voice_id)
         if query:
             url = f"{url}?{query}"
         request = urllib.request.Request(
@@ -223,11 +225,27 @@ def synth(cfg: Config, text: str, out: Path) -> None:
     if status != 200:
         raise RuntimeError(f"HTTP {status}: {error_text[:400]}")
 
-    # 무협 파이프라인에서 겪은 0바이트 mp3 사고를 여기서 차단한다.
-    if len(body) < 1024:
-        raise RuntimeError(f"응답이 너무 작습니다({len(body)}바이트). 키/보이스 확인 필요.")
+    try:
+        response = json.loads(body.decode("utf-8"))
+        audio = base64.b64decode(response["audio_base64"])
+    except (KeyError, ValueError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise RuntimeError(f"타임스탬프 TTS 응답 형식 오류: {exc}") from exc
 
-    out.write_bytes(body)
+    # 무협 파이프라인에서 겪은 0바이트 mp3 사고를 여기서 차단한다.
+    if len(audio) < 1024:
+        raise RuntimeError(f"오디오 응답이 너무 작습니다({len(audio)}바이트). 키/보이스 확인 필요.")
+
+    alignment = response.get("alignment") or response.get("normalized_alignment") or {}
+    chars = alignment.get("characters") or []
+    starts = alignment.get("character_start_times_seconds") or []
+    ends = alignment.get("character_end_times_seconds") or []
+    if not chars or not (len(chars) == len(starts) == len(ends)):
+        raise RuntimeError("TTS 응답에 문자 타임스탬프가 없거나 길이가 맞지 않습니다.")
+    out.write_bytes(audio)
+    return [
+        {"c": str(char), "s": float(start), "e": float(end)}
+        for char, start, end in zip(chars, starts, ends)
+    ]
 
 
 def probe_duration(path: Path) -> float:
@@ -275,7 +293,9 @@ def main() -> int:
         f"문장 {context_report.sentences} · 접속 표지 {context_report.marker_count}"
     )
 
-    cfg = Config.from_env(load_env(ROOT / ".env"), require_api_key=args.run)
+    env_override = os.environ.get("GODEUMUL_ENV_FILE", "").strip()
+    env_path = Path(env_override).expanduser() if env_override else ROOT / ".env"
+    cfg = Config.from_env(load_env(env_path), require_api_key=args.run)
     all_scenes = parse_script(args.script)
     pronunciation = PronunciationDictionary(args.pronunciation_dictionary)
 
@@ -287,6 +307,7 @@ def main() -> int:
     outdir = args.outdir or args.script.parent / "audio"
     outdir.mkdir(parents=True, exist_ok=True)
     manifest_path = outdir / "durations.json"
+    generation_alignment_path = outdir / "generation_alignment.json"
 
     manifest: dict = {}
     if manifest_path.exists():
@@ -294,7 +315,14 @@ def main() -> int:
     previous_scenes: dict = manifest.get("scenes", {})
     cache: dict = {} if args.force else previous_scenes
 
-    sig = cfg.signature() + "|pron:" + pronunciation.signature
+    generation_alignment: dict = {"signatures": {}, "scenes": {}}
+    if generation_alignment_path.exists():
+        try:
+            generation_alignment = json.loads(generation_alignment_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            generation_alignment = {"signatures": {}, "scenes": {}}
+
+    sig = cfg.signature() + "|pron:" + pronunciation.signature + "|aligned:v1"
     prepared = {s.seq: pronunciation.apply(s.text) for s in scenes}
     total_chars = sum(len(s.text) for s in scenes)
     total_tts_chars = sum(len(prepared[s.seq][0]) for s in scenes)
@@ -348,7 +376,7 @@ def main() -> int:
             continue
 
         try:
-            synth(cfg, tts_text, dest)
+            character_alignment = synth(cfg, tts_text, dest)
             dur = probe_duration(dest)
             results[str(s.seq)] = {"hash": digest, "chars": len(s.text),
                                    "tts_chars": len(tts_text), "file": name,
@@ -357,6 +385,10 @@ def main() -> int:
                                    "pronunciation_changes": changes_json}
             billed_chars += len(tts_text)
             made += 1
+            generation_alignment.setdefault("signatures", {})[str(s.seq)] = hashlib.sha256(
+                tts_text.encode("utf-8")
+            ).hexdigest()[:16]
+            generation_alignment.setdefault("scenes", {})[str(s.seq)] = character_alignment
             print(f"  [생성]   {name}  {dur:>6.2f}s  {len(s.text):>4}자  {preview}")
             if pronunciation_changes:
                 print(f"           TTS 치환 → {tts_preview}")
@@ -379,6 +411,9 @@ def main() -> int:
         manifest_path.write_text(
             json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
         )
+        generation_alignment_path.write_text(
+            json.dumps(generation_alignment, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
 
     print(f"\n  생성 {made} · 건너뜀 {skipped} · 실패 {failed}")
     if args.run:
@@ -390,6 +425,7 @@ def main() -> int:
         print("  드라이런이므로 기존 길이표는 변경하지 않았습니다.")
     if args.run:
         print(f"  길이표 → {manifest_path}")
+        print(f"  문자 정렬 → {generation_alignment_path}")
     print()
 
     return 1 if failed else 0

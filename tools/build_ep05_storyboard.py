@@ -12,6 +12,8 @@ import _config  # noqa: F401
 
 ROOT = Path(__file__).resolve().parents[1]
 EPISODE = ROOT / "산출물" / "EP05_로제타석"
+EPISODE_LABEL = "EP05 로제타석"
+SCENE_COUNT_NOTE = "승인 대본·실측 TTS·의미/행동/장소/증거 전환에서 파생했다. 목표 컷 수가 아니다."
 
 STYLE = (
     "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted "
@@ -58,6 +60,13 @@ LOCK_BASE = {
     "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
     "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
 }
+MODERN_LOCK_UPDATE = {
+    "civilization": "Documented French discovery and European decipherment history",
+    "era": "1799 Rashid fortification work or early nineteenth-century scholarship through 1822",
+    "people_lock": "late-eighteenth-century French military engineers or early-nineteenth-century European scholars only",
+}
+COMPACT_ANCIENT_CONTEXT = "Ptolemaic Egypt, 196 BCE."
+COMPACT_MODERN_CONTEXT = "Period-correct 1799-1822 Egypt and European scholarship."
 
 
 def cam(entry: str, route: str, destination: str, speed: str, operator: str, depth: str,
@@ -433,15 +442,11 @@ def compact_image_prompt(item: dict[str, object]) -> str:
     # Flow의 contenteditable 프롬프트 창은 자동 붙여넣기를 내부 생성 값으로
     # 반영하지 않는 경우가 있어 실제 키 입력으로 전송한다. 따라서 장면 고증
     # 문장은 보존하고, 모든 장면에 중복되던 스타일/금지어만 짧게 고정한다.
-    context = (
-        "Period-correct 1799-1822 Egypt and European scholarship."
-        if item["modern"] else
-        "Ptolemaic Egypt, 196 BCE."
-    )
+    context = COMPACT_MODERN_CONTEXT if item["modern"] else COMPACT_ANCIENT_CONTEXT
     return (
         "9:16 archaeological 3D diorama miniature, macro PBR microtexture, not live-action. "
         + context + " " + str(item["image"])
-        + " No text. No labels. No letters, pseudo-writing, fantasy, pyramids, modern tools or watermark."
+        + " No text. No labels. No letters. No fantasy, wrong culture, watermark or exterior cube frame."
     )
 
 
@@ -511,11 +516,7 @@ def build() -> None:
         beats = make_beats(n, tts, item["beat_actions"], sync_cues, starts[n])
         lock = dict(LOCK_BASE)
         if item["modern"]:
-            lock.update({
-                "civilization": "Documented French discovery and European decipherment history",
-                "era": "1799 Rashid fortification work or early nineteenth-century scholarship through 1822",
-                "people_lock": "late-eighteenth-century French military engineers or early-nineteenth-century European scholars only",
-            })
+            lock.update(MODERN_LOCK_UPDATE)
         lock.update({"source_reference": item["source"], "site_artifact_fingerprint": item["fingerprints"]})
         row: dict[str, object] = {
             "n": n,
@@ -536,6 +537,11 @@ def build() -> None:
             "img_v2": image_prompt(item),
             "status": "PROMPT_LOCKED_IMAGE_PENDING",
         }
+        if tts > 9.0:
+            row["long_scene_review"] = (
+                "The narration is one indivisible claim-and-evidence unit in one physical location; "
+                "two timed camera interruptions preserve pace without a semantic or spatial reset."
+            )
         row["vid"] = video_prompt(item, beats, seconds)
         if item["veo"] is not None:
             row["veo_graphic"] = item["veo"]
@@ -544,13 +550,13 @@ def build() -> None:
     (EPISODE / "02a.장면구분.json").write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     table = [
-        "# EP05 로제타석 — 장면 구분표", "",
-        "> 24장면은 승인 대본·실측 TTS·의미/행동/장소/증거 전환에서 파생했다. 목표 컷 수가 아니다.", "",
+        f"# {EPISODE_LABEL} — 장면 구분표", "",
+        f"> {len(rows)}장면은 {SCENE_COUNT_NOTE}", "",
         "| 장면 | 장 | TTS | 생성 | 유형 | 증거 | 모션 | 핵심 화면 |",
         "|---:|---|---:|---:|---|---|---|---|",
     ]
     visual = [
-        "# EP05 로제타석 — 고증 잠금 I2V 시각화", "", f"scene_count: {len(rows)}",
+        f"# {EPISODE_LABEL} — 고증 잠금 I2V 시각화", "", f"scene_count: {len(rows)}",
         "scene_count_basis: SCRIPT_TTS_MEANING_ACTION_EVIDENCE_DERIVED", "generation_mode: I2V_LOCKED",
         "image_model: Nano Banana", "video_model: Veo/Flow Omni", "aspect_ratio: 9:16",
         "image_count_per_scene: 1", "video_count_per_scene: 1", "",
@@ -595,7 +601,7 @@ def build() -> None:
     failures = [item for item in ui_check if item["status"] != "PASS"]
     if failures:
         raise ValueError(f"Flow UI 프롬프트 자가검수 실패: {failures}")
-    print(f"EP05 시각화 빌드 완료: {len(rows)}장면 / {elapsed:.3f}초")
+    print(f"{EPISODE_LABEL} 시각화 빌드 완료: {len(rows)}장면 / {elapsed:.3f}초")
 
 
 if __name__ == "__main__":

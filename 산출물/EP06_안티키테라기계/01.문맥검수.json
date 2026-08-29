@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "script": "01.대본.txt",
+  "script_sha256": "85d0997deac8b1a2eb396f76b7f4c8d9330a482f892292ad3004bed815937cae",
+  "reviewer": "korean-proofreader + godeumul-context-qa",
+  "status": "PASS",
+  "approval_state": "USER_AUTHORIZED_FULL_PIPELINE",
+  "tts_authorization": "AUTHORIZED",
+  "checks": {
+    "paragraph_roles_and_flow": "PASS",
+    "adjacent_sentence_relations": "PASS",
+    "connector_deletion_test": "PASS",
+    "duplicate_information": "PASS",
+    "tts_release_gate": "PASS"
+  },
+  "paragraphs": [
+    {
+      "n": 1,
+      "role": "ARTIFACT_FIRST_HOOK",
+      "summary": "안티키테라 기계의 이름과 녹슨 파편 속 기어라는 모순을 즉시 밝히고 고대인이 무엇을 계산했는지 묻는다."
+    },
+    {
+      "n": 2,
+      "role": "DISCOVERY_AND_RECOGNITION",
+      "summary": "1900년 난파선 발견과 다른 화물 사이의 부식 덩어리 인양, 1902년 기어 노출로 정체가 뒤집힌 과정을 보여준다."
+    },
+    {
+      "n": 3,
+      "role": "SURVIVING_PHYSICAL_EVIDENCE",
+      "summary": "82개 파편과 30개 기어·명문을 제시하고 앞면 태양·달 표시의 확인 범위를 설명한다."
+    },
+    {
+      "n": 4,
+      "role": "FUNCTION_REVEAL",
+      "summary": "메톤·사로스·범그리스 경기 눈금을 따라 기계가 하늘과 인간의 시간을 함께 계산했음을 공개한다."
+    },
+    {
+      "n": 5,
+      "role": "LOSS_AND_XRAY_RECOVERY",
+      "summary": "해수 부식으로 사라진 구조와 엑스레이·CT로 되찾은 기어 배열·명문을 대조한다."
+    },
+    {
+      "n": 6,
+      "role": "COMPUTER_LABEL_AND_EVIDENCE_LIMIT",
+      "summary": "아날로그 컴퓨터라는 평가를 설명하되 소실된 앞면 행성 장치를 연구 모델과 원본으로 구분한다."
+    },
+    {
+      "n": 7,
+      "role": "MAKER_MYSTERY_AND_CONCLUSION",
+      "summary": "제작자 후보와 서명 부재를 분리하고 고대인이 하늘을 기어에 구현했다는 확인 사실과 끊긴 제작 전통을 회수한다."
+    }
+  ],
+  "transitions": [
+    {
+      "from": 1,
+      "to": 2,
+      "relation": "녹슨 기계의 정체 질문에서 실제 난파선 발견 순간으로 이동",
+      "reason": "기능을 설명하기 전에 언제 어디서 어떤 상태로 발견됐는지 물리적 맥락을 세운다.",
+      "status": "PASS"
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "relation": "기어가 처음 드러난 순간에서 현재 남은 파편과 부품의 수량으로 확대",
+      "reason": "발견 당시 반전 직후 관찰 가능한 실물 증거의 범위를 제시해 과장을 막는다.",
+      "status": "PASS"
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "relation": "앞면 태양·달 표시에서 뒷면 주기 눈금과 실제 계산 기능으로 확장",
+      "reason": "기어와 명문이 살아남았다는 물리적 증거가 어떤 기능을 가리키는지 순서대로 답한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 4,
+      "to": 5,
+      "relation": "정교한 기능 공개에서 해수 부식으로 잃은 구조와 현대 비파괴 조사로 반전",
+      "reason": "완전한 장치처럼 오해하지 않도록 알려진 기능 뒤에 파손과 조사 방법을 곧바로 배치한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 5,
+      "to": 6,
+      "relation": "CT로 되찾은 기능에서 아날로그 컴퓨터라는 평가와 앞면 복원의 한계로 이동",
+      "reason": "현대 조사가 무엇을 확인했는지 보여준 뒤, 그 결과로 가능한 평가와 여전히 확정할 수 없는 부분을 구분한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 6,
+      "to": 7,
+      "relation": "소실된 앞면 구조의 미확인에서 제작자·공방·기술 전통의 더 큰 미확인으로 확대",
+      "reason": "부품 수준의 증거 경계를 사람과 제작 맥락의 질문으로 키운 뒤 확인된 역사적 의미로 결론을 회수한다.",
+      "status": "PASS"
+    }
+  ],
+  "connectors": [
+    {
+      "sentence": 9,
+      "text": "그런데",
+      "relation": "처음에는 중요하게 보지 않았다는 판단과 기어 노출의 반전",
+      "decision": "KEEP",
+      "reason": "삭제해도 사실 전달은 되지만 당시 평가가 뒤집히는 발견 순간의 대비가 약해지므로 유지한다."
+    },
+    {
+      "sentence": 17,
+      "text": "하지만",
+      "relation": "정교한 계산 기능과 해수 부식으로 사라진 실물의 대조",
+      "decision": "KEEP",
+      "reason": "앞 문단의 감탄을 그대로 이어 가지 않고 현존 증거의 손실을 명확히 가르는 대조 신호다."
+    },
+    {
+      "sentence": 21,
+      "text": "그래서",
+      "relation": "CT로 확인한 복잡한 계산 기능에서 아날로그 컴퓨터라는 평가로 인과 종합",
+      "decision": "KEEP",
+      "reason": "복잡한 기어·달 운동·식 계산이 왜 컴퓨터라는 평가로 이어지는지 앞 문단과 직접 묶는다."
+    }
+  ],
+  "duplicate_review": {
+    "status": "PASS",
+    "acknowledged_pairs": [],
+    "note": "도입의 2천 년·녹슨 파편과 중반의 해수 부식은 각각 후킹과 조사 한계 역할이며 새 정보를 더하므로 중복 나열이 아니다."
+  },
+  "findings": [
+    {
+      "id": "EP06-CONTEXT-001",
+      "category": "기능 과장",
+      "before": "일식과 월식을 정확히 예측했다",
+      "after": "사로스 주기로 일식과 월식이 일어날 가능성을 표시했다",
+      "reason": "사로스 눈금은 식 가능성·시간·특징을 표시하지만 현대식 위치 예측으로 확대하면 안 된다.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "EP06-CONTEXT-002",
+      "category": "복원 확정",
+      "before": "복원된 앞면은 원래 모습이다",
+      "after": "남은 구멍·명문·주기를 맞춘 연구 모델이며 원본의 확정 답안은 아니다",
+      "reason": "앞면 기어 대부분이 소실됐다는 증거 경계를 결말 전 핵심 반전으로 유지한다.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "EP06-CONTEXT-003",
+      "category": "제작자 통설",
+      "before": "아르키메데스가 만든 기계",
+      "after": "코린토스계 달 이름과 고대 기술 전통 때문에 연관성이 거론되지만 서명은 없다",
+      "reason": "흥미로운 후보를 지우지 않되 제작자 확정으로 바꾸지 않는다.",
+      "status": "RESOLVED"
+    }
+  ]
+}

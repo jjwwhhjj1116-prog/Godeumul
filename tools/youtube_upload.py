@@ -19,8 +19,10 @@
 사용법
   python tools/youtube_upload.py 산출물/EP01_진시황릉                 # 점검만
   python tools/youtube_upload.py 산출물/EP01_진시황릉 --run           # 비공개 업로드
-  python tools/youtube_upload.py 산출물/EP01_진시황릉 --run --공개 예약 --시각 "2026-08-25 19:00"
-  python tools/youtube_upload.py 산출물/EP01_진시황릉 --run --공개 공개
+  python tools/youtube_upload.py 산출물/EP01_진시황릉 --run --공개 예약
+
+기본 게시 절차는 비공개 업로드 → 처리·저작권 확인 → youtube_status_update.py의
+자동 예약이다. 채널설정에서 즉시 공개를 금지하면 `--공개 공개`는 실행되지 않는다.
 
 메타데이터는 에피소드 폴더의 06.메타.json 에서 읽는다.
   {"제목": "...", "설명": "...", "태그": ["..."]}
@@ -62,6 +64,34 @@ KST = timezone(timedelta(hours=9))
 # 공식 쿼터표
 Q_UPLOAD, Q_THUMB, Q_PLAYLIST = 1600, 50, 50
 THUMB_MAX = 2 * 1024 * 1024          # 유튜브 썸네일 상한 2MB
+
+
+def configured_publish_datetime(now: datetime | None = None) -> datetime:
+    """채널설정의 고정 예약 정책을 KST 시각으로 계산한다."""
+    now = now or datetime.now(KST)
+    days = int(CFG.get("업로드.예약정책.일수후", 1))
+    clock = str(CFG.get("업로드.예약정책.시각", "16:00"))
+    try:
+        hour, minute = (int(part) for part in clock.split(":", 1))
+    except (TypeError, ValueError):
+        sys.exit(f"[에러] 채널설정 업로드.예약정책.시각 오류: {clock!r}")
+    return (now + timedelta(days=days)).replace(
+        hour=hour, minute=minute, second=0, microsecond=0,
+    )
+
+
+def resolve_publish_datetime(value: str | None, now: datetime | None = None) -> datetime:
+    """`auto` 또는 생략값은 고정 정책으로, 명시값은 정책 위반 여부까지 확인한다."""
+    expected = configured_publish_datetime(now)
+    if not value or value.strip().lower() == "auto":
+        return expected
+    dt = datetime.strptime(value, "%Y-%m-%d %H:%M").replace(tzinfo=KST)
+    if CFG.get("업로드.예약정책.시각고정", True) and dt != expected:
+        sys.exit(
+            "[에러] 예약 정책 위반: 항상 예약 실행일 기준 다음날 "
+            f"{expected:%H:%M} KST만 허용합니다. 이번 허용 시각: {expected:%Y-%m-%d %H:%M}"
+        )
+    return dt
 
 
 def _need_libs() -> None:
@@ -329,10 +359,11 @@ def main() -> int:
                     help="기존 OAuth token.json 경로 (기본: 저장소 루트)")
     ap.add_argument("--client-secret", dest="client_secret", type=Path, default=SECRETS,
                     help="OAuth client_secret JSON 경로 (기본: 저장소 루트에서 자동 검색)")
-    ap.add_argument("--공개", dest="privacy", default="비공개",
+    ap.add_argument("--공개", dest="privacy",
+                    default=CFG.get("업로드.기본공개상태", "비공개"),
                     choices=["비공개", "일부공개", "공개", "예약"])
     ap.add_argument("--시각", dest="when", default=None,
-                    help='예약 시각 KST. "2026-08-25 19:00"')
+                    help='예약 시각 KST. 생략 또는 auto면 채널 고정 정책(다음날 16:00)')
     ap.add_argument("--영상", dest="video", type=Path, default=None)
     ap.add_argument("--썸네일", dest="thumb", type=Path, default=None)
     ap.add_argument("--재생목록", dest="playlist", default=None,
@@ -369,11 +400,12 @@ def main() -> int:
 
     privacy = {"비공개": "private", "일부공개": "unlisted",
                "공개": "public", "예약": "private"}[args.privacy]
+    if args.privacy == "공개" and CFG.get("업로드.즉시공개금지", True):
+        sys.exit("[에러] 채널 정책상 즉시 공개는 금지됩니다. 비공개 업로드 뒤 다음날 16:00로 예약하세요.")
     publish_at = None
     if args.privacy == "예약":
-        if not args.when:
-            sys.exit("[에러] --공개 예약 은 --시각 이 필요합니다.")
-        dt = datetime.strptime(args.when, "%Y-%m-%d %H:%M").replace(tzinfo=KST)
+        dt = resolve_publish_datetime(args.when)
+        args.when = dt.strftime("%Y-%m-%d %H:%M")
         if dt <= datetime.now(KST):
             sys.exit(f"[에러] 예약 시각이 과거입니다: {dt:%Y-%m-%d %H:%M} KST")
         publish_at = dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")

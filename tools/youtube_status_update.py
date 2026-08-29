@@ -10,7 +10,9 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from youtube_upload import CFG, KST, SECRETS, TOKEN, service, whoami
+from youtube_upload import (
+    CFG, KST, SECRETS, TOKEN, resolve_publish_datetime, service, whoami,
+)
 
 
 WRITABLE_STATUS_FIELDS = (
@@ -33,7 +35,10 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="기존 유튜브 영상 상태 수정")
     ap.add_argument("video_id")
     ap.add_argument("--synthetic", choices=["yes", "no"])
-    ap.add_argument("--schedule", help='예약 시각 KST. 예: "2026-08-27 01:59"')
+    ap.add_argument(
+        "--schedule", nargs="?", const="auto",
+        help='예약 시각 KST. 값 생략 또는 auto면 채널 정책대로 다음날 16:00',
+    )
     ap.add_argument("--token", type=Path, default=TOKEN)
     ap.add_argument("--client-secret", dest="client_secret", type=Path, default=SECRETS)
     ap.add_argument("--run", action="store_true")
@@ -63,7 +68,7 @@ def main() -> int:
     if args.synthetic is not None:
         status["containsSyntheticMedia"] = args.synthetic == "yes"
     if args.schedule:
-        dt = datetime.strptime(args.schedule, "%Y-%m-%d %H:%M").replace(tzinfo=KST)
+        dt = resolve_publish_datetime(args.schedule)
         if dt <= datetime.now(KST):
             sys.exit(f"[에러] 예약 시각이 과거입니다: {dt:%Y-%m-%d %H:%M} KST")
         status["privacyStatus"] = "private"
