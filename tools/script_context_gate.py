@@ -35,6 +35,19 @@ REQUIRED_CHECKS = (
     "tts_release_gate",
 )
 
+REQUIRED_CHECKS_V2 = (
+    "conclusion_answer_and_boundary",
+)
+
+CONCLUSION_FIELDS = (
+    "opening_question",
+    "confirmed_answer",
+    "historical_meaning",
+    "unresolved_core",
+    "why_unresolved",
+    "fixed_closing",
+)
+
 # 길이가 긴 표지를 먼저 검사해 `그런데 말이죠`를 `그런데`와 중복 집계하지 않는다.
 REVIEW_MARKERS = (
     "그런데 말이죠",
@@ -141,6 +154,26 @@ def validate_context_review(script: Path, review: Path) -> ContextGateReport:
     for key in REQUIRED_CHECKS:
         if checks.get(key) != "PASS":
             failures.append(f"필수 검문 미통과: {key}")
+
+    # v1 잠금은 이미 게시된 회차의 재현성을 위해 그대로 인정한다. 새 회차(v2+)부터는
+    # "아직 모른다"는 분위기만 남기는 결말을 막고, 도입 질문의 답과 미해결 경계를
+    # 검수 문서에 각각 명시해야 한다.
+    if int(doc.get("version") or 1) >= 2:
+        for key in REQUIRED_CHECKS_V2:
+            if checks.get(key) != "PASS":
+                failures.append(f"결론 필수 검문 미통과: {key}")
+        conclusion = doc.get("conclusion_review") or {}
+        if conclusion.get("status") != "PASS":
+            failures.append("결론 회수 검수가 PASS가 아님")
+        missing_conclusion = [
+            key for key in CONCLUSION_FIELDS
+            if len(str(conclusion.get(key) or "").strip()) < 4
+        ]
+        if missing_conclusion:
+            failures.append(f"결론 회수 필드 누락: {missing_conclusion}")
+        fixed_closing = str(conclusion.get("fixed_closing") or "").strip()
+        if fixed_closing and not fixed_closing.endswith("의 비밀이었습니다."):
+            failures.append("채널 고정 마무리가 `[대상]의 비밀이었습니다.`로 끝나지 않음")
 
     reviewed_paragraphs = doc.get("paragraphs") or []
     paragraph_numbers = {item.get("n") for item in reviewed_paragraphs if item.get("role") and item.get("summary")}

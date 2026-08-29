@@ -9,7 +9,7 @@
   · 무조건 한 줄. 줄바꿈을 만들지 않는다  (실측: 111개 전부 1줄)
   · 최대 16자                              (실측 최대 17자, 1자 여유)
   · 목표 9자 안팎                          (실측 중앙값 9자)
-  · 어절(공백) 경계에서만 자른다
+  · 어절(공백) 경계에서만 자르되, 지시·관형어와 다음 체언은 한 의미 단위로 묶는다
   · 조사·의존명사만 다음 줄로 넘어가지 않게 막는다
   · ★ 문장 전체를 보고 줄 길이를 고르게 나눈다(DP). 앞에서부터 욕심껏 채우면
     문장 끝에 「보죠.」 같은 3자짜리 꼬리가 남아 0.26초 만에 사라진다
@@ -61,6 +61,14 @@ UNITS = ("년", "월", "일", "시", "분", "초", "명", "개", "톤", "미터"
 AUX_VERB = ("넣", "버리", "놓", "두", "주", "대", "내", "치")
 # 구어체 강조구는 화면에서도 한 호흡으로 읽혀야 한다.
 FIXED_PHRASE_PAIRS = {("싹", "다")}
+
+# 혼자서는 다음 대상을 가리키거나 꾸밀 뿐인 말. 큐 끝에 남으면
+# `이 / 기계로`, `그 / 틈에서`처럼 문법과 시선이 동시에 끊긴다.
+# 채널설정에서 확장할 수 있으나, 기존 회차 호환을 위해 안전한 기본값도 둔다.
+BOUND_TO_NEXT = tuple(CFG.get("자막.다음어절결합", (
+    "이", "그", "저", "이런", "그런", "저런", "어느", "어떤", "무슨",
+    "몇", "모든", "각", "해당", "한",
+)))
 
 
 # ── 한글 수사 → 아라비아 숫자 ────────────────────────────
@@ -126,11 +134,13 @@ def no_break(prev: str, nxt: str) -> bool:
         return True
     if (p, n) in FIXED_PHRASE_PAIRS:
         return True
+    if p in BOUND_TO_NEXT:
+        return True
     return False
 
 
 def atoms(words: list[str]) -> list[str]:
-    """끊으면 안 되는 어절 짝을 하나로 미리 묶는다."""
+    """끊으면 안 되는 어절 짝과 한국어 의미 결합을 하나로 미리 묶는다."""
     out: list[str] = []
     for w in words:
         if out and no_break(out[-1], w):
@@ -138,6 +148,16 @@ def atoms(words: list[str]) -> list[str]:
         else:
             out.append(w)
     return out
+
+
+def dangling_determiners(lines: list[str]) -> list[tuple[int, str]]:
+    """다음 말을 꾸미는 어절이 자막 끝에 홀로 남은 큐를 찾는다."""
+    failures: list[tuple[int, str]] = []
+    for index, line in enumerate(lines, 1):
+        words = line.split()
+        if words and words[-1].rstrip(".,!?") in BOUND_TO_NEXT:
+            failures.append((index, line))
+    return failures
 
 
 def sentences(text: str) -> list[str]:
@@ -222,13 +242,17 @@ def main() -> int:
 
     text = args.script.read_text(encoding="utf-8")
     cues: list[dict] = []
+    packed_lines: list[str] = []
     for si, sent in enumerate(sentences(text), 1):
-        for line in pack(atoms(sent.split()), args.max, args.target):
+        sentence_lines = pack(atoms(sent.split()), args.max, args.target)
+        packed_lines.extend(sentence_lines)
+        for line in sentence_lines:
             shown = to_digits(line)
             cues.append({"n": len(cues) + 1, "sent": si,
                          "text": shown, "raw": line, "len": len(shown)})
 
     over = [c for c in cues if c["len"] > args.max]
+    dangling = dangling_determiners(packed_lines)
     lens = [c["len"] for c in cues]
 
     print(f"\n대본   : {args.script}")
@@ -245,6 +269,11 @@ def main() -> int:
         print("\n★ 상한 초과 — 대본 문장을 줄이거나 --max 를 조정하세요:")
         for c in over:
             print(f"    {c['n']}. [{c['len']}] {c['text']}")
+
+    if dangling:
+        print("\n★ 의미 단위 오류 — 지시·관형어를 다음 어절과 같은 큐에 두세요:")
+        for n, line in dangling:
+            print(f"    {n}. {line}")
 
     if args.out is None:
         out = args.script.parent / "자막.json"
@@ -269,7 +298,7 @@ def main() -> int:
         print(f"  SRT     → {p}  (총 {t/60:.2f}분 — 실제 싱크는 TTS에 맞춰 캡컷에서 조정)")
 
     print()
-    return 1 if over else 0
+    return 1 if over or dangling else 0
 
 
 if __name__ == "__main__":

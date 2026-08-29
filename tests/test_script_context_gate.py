@@ -59,6 +59,22 @@ def review_for(script: Path) -> dict:
     }
 
 
+def review_v2_for(script: Path) -> dict:
+    doc = review_for(script)
+    doc["version"] = 2
+    doc["checks"]["conclusion_answer_and_boundary"] = "PASS"
+    doc["conclusion_review"] = {
+        "status": "PASS",
+        "opening_question": "왜 이 몸만 남았는가",
+        "confirmed_answer": "무덤의 다층 밀봉과 매장 환경이 보존에 기여했다",
+        "historical_meaning": "한나라 귀족의 삶과 장례를 함께 보여준다",
+        "unresolved_core": "정확한 보존 원인의 기여 비율",
+        "why_unresolved": "매장 당시 환경을 완전히 재현할 수 없다",
+        "fixed_closing": "시간 속에 잠든 유물, 땅속에 묻힌 역사. 이 무덤의 비밀이었습니다.",
+    }
+    return doc
+
+
 class ScriptContextGateTests(unittest.TestCase):
     def test_passes_complete_review_lock(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -94,6 +110,29 @@ class ScriptContextGateTests(unittest.TestCase):
             report = validate_context_review(script, review)
             self.assertFalse(report.passed)
             self.assertTrue(any("삭제 비교 미검수" in failure for failure in report.failures))
+
+    def test_v2_requires_explicit_conclusion_review(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            script = root / "01.대본.txt"
+            review = root / "01.문맥검수.json"
+            script.write_text(SCRIPT, encoding="utf-8")
+            doc = review_v2_for(script)
+            del doc["conclusion_review"]["why_unresolved"]
+            review.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
+            report = validate_context_review(script, review)
+            self.assertFalse(report.passed)
+            self.assertTrue(any("결론 회수 필드 누락" in failure for failure in report.failures))
+
+    def test_v2_accepts_answered_and_bounded_conclusion(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            script = root / "01.대본.txt"
+            review = root / "01.문맥검수.json"
+            script.write_text(SCRIPT, encoding="utf-8")
+            review.write_text(json.dumps(review_v2_for(script), ensure_ascii=False), encoding="utf-8")
+            report = validate_context_review(script, review)
+            self.assertTrue(report.passed, report.failures)
 
     def test_tts_parser_accepts_markdown_storyboard_format(self):
         with tempfile.TemporaryDirectory() as folder:
