@@ -1,7 +1,7 @@
 {
   "version": 3,
   "script": "01.대본.txt",
-  "script_sha256": "4ddfd8635f30a03811a46e71274b93cb029a8d20de89039980ad38290c1e9328",
+  "script_sha256": "4fa5fe411fa9fe621c2d214da3dbe2d9b8e3c833e624ddb0ddac70f31ef90d5a",
   "reviewer": "korean-proofreader + godeumul-context-qa + korean-reels-hook-engine",
   "status": "PASS",
   "approval_state": "USER_APPROVED_2026-08-30",
@@ -24,15 +24,15 @@
     "approved_predecessor_flow_review": "PASS"
   },
   "paragraphs": [
-    {"n": 1, "role": "ARTIFACT_FIRST_HOOK", "summary": "대한민국 부여의 척박한 진흙탕에서 1400년 만에 모습을 드러낸 금빛 물체, 국보 중의 국보, 왕궁터가 아닌 주차장 조성 전 절터 공방 구덩이라는 반전과 발견 장소 미스터리를 네 문장에 건다."},
-    {"n": 2, "role": "ANOMALY_AND_ESCALATING_REVEALS", "summary": "용에서 봉황까지의 우주와 연기 움직임을 공개하고 향 그릇의 과도한 세계와 공방 구덩이라는 두 모순을 묻는다."},
+    {"n": 1, "role": "ARTIFACT_FIRST_HOOK", "summary": "대한민국 부여의 척박한 진흙탕에서 1400년 만에 모습을 드러낸 금빛 물체, 국보 중의 국보, 왕궁터가 아닌 주차장 조성 전 절터 공방 구덩이라는 반전과 왜 진흙탕에서 발견됐는지라는 미스터리를 네 문장에 건다."},
+    {"n": 2, "role": "ANOMALY_AND_ESCALATING_REVEALS", "summary": "향로의 가치를 확인할수록 발견 장소가 더 말이 안 된다고 모순을 증폭한 뒤, 용에서 봉황까지의 우주와 연기 움직임을 공개하고 향 그릇의 과도한 세계와 공방 구덩이라는 두 질문을 묻는다."},
     {"n": 3, "role": "DISCOVERY_AND_PRESERVATION", "summary": "1993년 발견, 분리된 몸통과 뚜껑, 약 450점, 진흙과 도금의 보존 효과를 밝히고 은닉 이유만 남긴다."},
     {"n": 4, "role": "INVESTIGATION_BLOCK_AND_FAILED_HYPOTHESIS", "summary": "660년 화재층·긴급 은닉설·왕실 사찰·박산향로 비교를 차례로 쌓지만 직접 기록과 완전한 비교품 부재로 막힌다."},
     {"n": 5, "role": "QUESTION_SHIFT_AND_BAEKJE_REINTERPRETATION", "summary": "없는 기록 대신 도상과 출토 맥락을 읽어 외부 전통을 백제의 입체 세계로 바꾼 창조성을 확인한다."},
     {"n": 6, "role": "IDENTITY_ANSWER_BOUNDED_MYSTERY_NATIONAL_PAYOFF", "summary": "왕실 사찰 의례용 향로라는 정체, 제작·사용·은닉의 미해결 경계와 61.8센티미터 유물이 증명한 백제의 수준을 결론으로 회수한다."}
   ],
   "transitions": [
-    {"from": 1, "to": 2, "relation": "왜 공방 구덩이에 있었는지라는 발견 반전에서 향로 내부의 더 큰 조형 모순으로 확대", "reason": "발견 장소만 자극적으로 소비하지 않고 유물 자체의 의미를 다음 질문으로 만든다.", "status": "PASS"},
+    {"from": 1, "to": 2, "relation": "왜 진흙탕에서 발견됐는지라는 질문을 향로의 압도적 가치로 증폭한 뒤 내부 조형으로 확대", "reason": "발견 장소의 모순을 버리지 않고, 유물의 가치를 하나씩 보여줄수록 그 모순이 커지게 만든다.", "status": "PASS"},
     {"from": 2, "to": 3, "relation": "향로의 용도와 발견 장소 질문에서 실제 발굴 현장과 보존 원인 조사로 이동", "reason": "상상으로 답하지 않고 1993년 출토 상태부터 검증한다.", "status": "PASS"},
     {"from": 3, "to": 4, "relation": "보존 원인은 밝혔지만 구덩이에 들어간 이유는 남았다는 문제를 연대·장소·비교 조사로 받음", "reason": "앞 문단의 미해결 질문이 다음 문단의 조사 목표가 된다.", "status": "PASS"},
     {"from": 4, "to": 5, "relation": "기록과 비교품 부족으로 막힌 조사에서 향로의 수직 도상 자체를 읽는 방식으로 전환", "reason": "기존 질문이 실패한 이유 뒤에 관찰 대상을 바꾸는 돌파구를 둔다.", "status": "PASS"},
@@ -53,8 +53,8 @@
     {"from":1,"to":2,"relation":"척박한 진흙탕의 금빛 물체에서 유물명 공개","reason":"첫 발견 이미지의 정체를 바로 백제 금동대향로로 지명한다.","status":"PASS"},
     {"from":2,"to":3,"relation":"국보 가치에서 왕궁터가 아닌 발견 장소 반전","reason":"유물의 위상과 절터 공방 구덩이라는 장소를 강하게 충돌시킨다.","status":"PASS"},
     {"from":3,"to":4,"relation":"장소 반전에서 중심 질문","reason":"주차장 조성 전 조사라는 사실을 왜 그곳에 있었는지라는 미스터리로 바꾼다.","status":"PASS"},
-    {"from":4,"to":5,"relation":"발견 장소 질문에서 유물 자체의 이상점","reason":"공방 구덩이 미스터리를 반복하지 않고 조형의 이상함으로 확대한다.","status":"PASS"},
-    {"from":5,"to":6,"relation":"이상함 선언에서 하단 도상 공개","reason":"추상적 예고를 용과 연꽃이라는 구체적 형상으로 증명한다.","status":"PASS"},
+    {"from":4,"to":5,"relation":"진흙탕 발견 질문에서 향로의 가치로 모순 증폭","reason":"질문의 대상을 그대로 유지한 채, 유물의 가치가 높을수록 발견 장소가 더 말이 안 된다고 받는다.","status":"PASS"},
+    {"from":5,"to":6,"relation":"가치 예고에서 하단 도상 공개","reason":"향로의 가치라는 추상적 예고를 용과 연꽃이라는 구체적 형상으로 증명한다.","status":"PASS"},
     {"from":6,"to":7,"relation":"용과 연꽃에서 산악 세계 상승","reason":"카메라가 아래에서 위로 올라가며 악사·동물·봉황을 보여준다.","status":"PASS"},
     {"from":7,"to":8,"relation":"도상 목록에서 세계 규모 종합","reason":"여러 형상이 61.8센티미터 안에 들어간 하나의 세계임을 압축한다.","status":"PASS"},
     {"from":8,"to":9,"relation":"정지 조형에서 향 연기 움직임","reason":"향로의 기능이 청동산을 어떻게 살아 움직이게 했는지 보여준다.","status":"PASS"},
@@ -101,13 +101,13 @@
     "artifact": "백제 금동대향로",
     "visual_action": "대한민국 부여의 척박한 진흙탕에서 1400년 만에 금빛 물체가 드러나고 용과 봉황의 형상이 즉시 보인다.",
     "scale_or_contradiction": "1400년·국보 중의 국보와 왕궁터가 아닌 주차장 조성 전 절터 공방 구덩이의 대비",
-    "open_question": "백제 최고의 보물이 왜 공방 구덩이에 숨어 있었는가"
+    "open_question": "백제 최고의 보물이 왜 진흙탕 속에서 발견되었는가"
   },
   "prerequisite_review": {"status": "PASS", "unintroduced_terms": [], "pronoun_referents": "PASS", "note": "이곳·그 난리·여기까지·그 장면의 선행 대상은 각각 능산리 절터, 약 450점이 뒤엉킨 구덩이, 보존 원인, 긴급 은닉 가설로 단일하다."},
   "major_fact_inventory": ["F1_PARKING_LOT_DISCOVERY","F2_VERTICAL_COSMOS","F3_PRESERVATION","F4_660_AND_ROYAL_TEMPLE","F5_BAEKJE_RECREATION","F6_IDENTITY_AND_NATIONAL_PAYOFF"],
   "reveal_blocks": [
     {"id":"F1_PARKING_LOT_DISCOVERY","setup":"진흙 속 금빛 물체를 먼저 공개","reveal":"백제 금동대향로와 주차장 조성 전 공방 구덩이 발굴","meaning":"국보의 위상과 뜻밖의 발견 장소가 충돌","next_question":"왜 그곳에 있었는가","status":"PASS"},
-    {"id":"F2_VERTICAL_COSMOS","setup":"가만 보면 더 이상하다고 예고","reveal":"용·연꽃·산·악사·동물·봉황과 연기","meaning":"향로가 백제의 움직이는 입체 세계임","next_question":"왜 향 그릇에 우주를 세웠는가","status":"PASS"},
+    {"id":"F2_VERTICAL_COSMOS","setup":"향로의 가치를 들여다볼수록 진흙탕 발견이 더 말이 안 된다고 예고","reveal":"용·연꽃·산·악사·동물·봉황과 연기","meaning":"향로가 백제의 움직이는 입체 세계임","next_question":"왜 향 그릇에 우주를 세웠는가","status":"PASS"},
     {"id":"F3_PRESERVATION","setup":"1993년 발견 현장으로 이동","reveal":"분리된 몸통과 뚜껑·약 450점·진흙 공기 차단·도금","meaning":"보존 이유는 기술과 환경으로 설명 가능","next_question":"누가 왜 구덩이에 넣었는가","status":"PASS"},
     {"id":"F4_660_AND_ROYAL_TEMPLE","setup":"은닉 이유를 찾는 두 단서 제시","reveal":"660년 화재층·긴급 은닉설·왕릉군·567년 왕실 명문","meaning":"멸망기 은닉과 왕실 의례 가설은 강하지만 직접 기록은 없음","next_question":"기록이 없으면 향로에서 무엇을 읽을 것인가","status":"PASS"},
     {"id":"F5_BAEKJE_RECREATION","setup":"향로 자체를 아래에서 위로 읽음","reveal":"불교·신선 세계·왕실 의례와 박산향로 계통의 백제식 재구성","meaning":"외부 문화를 백제의 독자적 입체 언어로 바꿈","next_question":"확인된 정체와 남은 한계는 무엇인가","status":"PASS"},
