@@ -1,0 +1,52 @@
+{
+  "status": "SCHEDULED",
+  "video_id": "kw18YsbDRCU",
+  "url": "https://youtube.com/shorts/kw18YsbDRCU",
+  "studio_url": "https://studio.youtube.com/video/kw18YsbDRCU/edit",
+  "채널": {
+    "name": "고대유물의 비밀",
+    "id": "UCjgXauHJ8z2Kbbl9O9hu4eA",
+    "verified": true
+  },
+  "제목": "염소를 찾다 발견한 2천 년 전 기록, 사해문서",
+  "공개": "예약",
+  "예약": "2026-08-31 09:00 KST",
+  "privacy_status": "private",
+  "publish_at_utc": "2026-08-31T00:00:00Z",
+  "upload_status": "processed",
+  "processing_status": "succeeded",
+  "copyright_claims": null,
+  "copyright_status": "Data API 제한 없음·licensedContent=false; Studio Content ID 패널은 예약 공개 후 재확인",
+  "source_video": {
+    "width": 2160,
+    "height": 3840,
+    "fps": 30,
+    "codec": "h264",
+    "duration_ms": 179235,
+    "file_size": 518879561
+  },
+  "재생목록": "▶고대유물의 비밀",
+  "합성콘텐츠고지": true,
+  "아동용": false,
+  "썸네일": {
+    "applied": true,
+    "verified": true,
+    "source": "산출물\\EP07_사해문서\\고대유물의비밀_사해문서_썸네일_1080x1920.jpg",
+    "dimensions": "1080x1920",
+    "bytes": 798500,
+    "remote_sizes": ["default", "medium", "high", "standard", "maxres"],
+    "remote_visual_verified": true
+  },
+  "uploaded_at": "2026-08-30T12:05:51+09:00",
+  "verified_at": "2026-08-30T12:08:16+09:00",
+  "first_comment": {
+    "text": "11개 동굴에서 900개가 넘는 문서의 수만 조각이 발견됐지만, 누가 모아 왜 숨겼는지는 아직 확정되지 않았습니다. 여러분은 쿰란 공동체의 도서관이라고 보시나요, 여러 곳에서 옮겨온 기록이라고 보시나요?",
+    "posted": false,
+    "pinned": false,
+    "reason": "예약 공개 전이므로 공개 후 한 번만 게시·고정"
+  },
+  "남은일": [
+    "2026-08-31 09:00 공개 후 공개 페이지 재생 확인",
+    "첫 댓글 1회 게시·고정"
+  ]
+}

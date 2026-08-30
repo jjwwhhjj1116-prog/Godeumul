@@ -1,0 +1,117 @@
+{
+  "schema_version": "platform-publish-lock/1.0",
+  "release_id": "EP07_사해문서",
+  "platform": "youtube",
+  "brand": "고대유물의 비밀",
+  "target_handle": "@ancient_artifacts_kr",
+  "target_channel_id": "UCjgXauHJ8z2Kbbl9O9hu4eA",
+  "publisher_skill": "publish-youtube-agent",
+  "approved_package_path": "06.릴리스패키지.json",
+  "approved_package_sha256": "b1f2a726b7c3491dda648645827322d227327960fd9265de3d7a8859f9b9bf77",
+  "status": "scheduled",
+  "idempotency_key": "b8e96dad-4bc9-4f0a-b003-08639436b718",
+  "topic_key": "dead-sea-scrolls",
+  "publication_intent": "youtube_shorts_scheduled",
+  "account_verified_at": "2026-08-30T12:00:23+09:00",
+  "account_evidence": "YouTube Data API returned channel 고대유물의 비밀 / UCjgXauHJ8z2Kbbl9O9hu4eA immediately before upload; the latest 25 uploads contained no Dead Sea Scrolls duplicate.",
+  "rights_review_required": true,
+  "rights_review_completed": true,
+  "source_ids": [
+    "IAA_DSS_DISCOVERY_PUBLICATION",
+    "IAA_DSS_DISCOVERY_SITES",
+    "IAA_DSS_SCROLLS_CONTENT",
+    "IAA_DSS_LANGUAGES_SCRIPTS",
+    "IAA_DSS_CONSERVATION",
+    "ISRAEL_MUSEUM_GREAT_ISAIAH_SCROLL",
+    "LOC_QUMRAN_LIBRARY",
+    "LOC_QUMRAN_COMMUNITY",
+    "CELL_2020_DSS_GENETICS"
+  ],
+  "media": [
+    {
+      "kind": "video",
+      "path": "EP07_사해문서_최종_capcut_4K.mp4",
+      "sha256": "2422c19c92656d6bf4206a204c66f1bbbf8752751b046f2687262d196a31f6a4"
+    },
+    {
+      "kind": "thumbnail",
+      "path": "고대유물의비밀_사해문서_썸네일_1080x1920.jpg",
+      "sha256": "a6745a677a1121682f1edc46bb3db2077c3a52d540ebc93e05d32f8c43be13e0"
+    }
+  ],
+  "copy_artifacts": [
+    {
+      "kind": "metadata",
+      "path": "06.메타.json",
+      "sha256": "d10f6aa3cf9452429eb76a889167953196c51a7fee6e0abf88674493cfc4f11b"
+    },
+    {
+      "kind": "description",
+      "path": "06.설명.txt"
+    }
+  ],
+  "canonical_urls": [
+    "https://youtube.com/shorts/kw18YsbDRCU",
+    "https://youtu.be/kw18YsbDRCU"
+  ],
+  "blockers": [],
+  "next_action": "After the scheduled public release, post and pin the approved first comment exactly once and verify public playback.",
+  "submitted_at": "2026-08-30T12:05:51+09:00",
+  "processing_verified_at": "2026-08-30T12:07:59+09:00",
+  "copyright_verified_at": "2026-08-30T12:07:59+09:00",
+  "thumbnail_verified_at": "2026-08-30T12:08:16+09:00",
+  "scheduled_public_at": "2026-08-31T09:00:00+09:00",
+  "published_at": null,
+  "post_publish_verified_at": null,
+  "youtube_video_id": "kw18YsbDRCU",
+  "canonical_url": "https://youtube.com/shorts/kw18YsbDRCU",
+  "studio_url": "https://studio.youtube.com/video/kw18YsbDRCU/edit",
+  "channel_id": "UCjgXauHJ8z2Kbbl9O9hu4eA",
+  "channel_name": "고대유물의 비밀",
+  "channel_handle": "@ancient_artifacts_kr",
+  "privacy_status": "private",
+  "upload_status": "processed",
+  "processing_status": "succeeded",
+  "definition": "hd",
+  "source_width": 2160,
+  "source_height": 3840,
+  "copyright_claims": null,
+  "thumbnail_applied": true,
+  "thumbnail_remote_verified": true,
+  "synthetic_content_disclosure": true,
+  "made_for_kids": false,
+  "category_id": 27,
+  "language": "ko",
+  "playlist": "▶고대유물의 비밀",
+  "title": "염소를 찾다 발견한 2천 년 전 기록, 사해문서",
+  "delivered_media_checks": {
+    "public_page_playback": false,
+    "visible_channel_name": "고대유물의 비밀",
+    "visible_title_matches": true,
+    "vertical_9_16_source": true,
+    "custom_thumbnail_remote_verified": true,
+    "copyright_protected_content_detected": false
+  },
+  "first_comment": {
+    "text": "11개 동굴에서 900개가 넘는 문서의 수만 조각이 발견됐지만, 누가 모아 왜 숨겼는지는 아직 확정되지 않았습니다. 여러분은 쿰란 공동체의 도서관이라고 보시나요, 여러 곳에서 옮겨온 기록이라고 보시나요?",
+    "posted": false,
+    "pinned": false,
+    "verified_at": null
+  },
+  "hashes": {
+    "video_sha256": "2422c19c92656d6bf4206a204c66f1bbbf8752751b046f2687262d196a31f6a4",
+    "thumbnail_sha256": "a6745a677a1121682f1edc46bb3db2077c3a52d540ebc93e05d32f8c43be13e0",
+    "metadata_sha256": "d10f6aa3cf9452429eb76a889167953196c51a7fee6e0abf88674493cfc4f11b",
+    "title_sha256": "26f1164d2d5ce2c1baca239672f591295638a1bc2b6b2a59d085885677bbfe76",
+    "description_sha256": "7ff4c3e3e6061125bbeeba752610809c70c7e0e6ad027ca2ee45b43a3d5554e3"
+  },
+  "notes": [
+    "Uploaded private-first to the verified channel 고대유물의 비밀.",
+    "YouTube Data API reports uploadStatus=processed and processingStatus=succeeded.",
+    "The source master is 2160x3840 30fps H.264, 179.235 seconds, and 518879561 bytes.",
+    "YouTube reports licensedContent=false, no region restriction, and no processing failure; the Data API does not expose the Studio Content ID panel.",
+    "The custom 1080x1920 thumbnail was applied, all five remote thumbnail sizes were returned, and the signed max-resolution image was visually verified.",
+    "Scheduled for 2026-08-31 09:00 KST by the user's explicit schedule override.",
+    "The first comment is deferred until the video becomes public so it can be posted and pinned exactly once."
+  ]
+}
