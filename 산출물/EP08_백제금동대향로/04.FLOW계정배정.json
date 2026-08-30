@@ -1,0 +1,34 @@
+{
+  "episode": "EP08_백제금동대향로",
+  "recorded_at_kst": "2026-08-30",
+  "clip_model": "Flow Omni",
+  "clip_duration_seconds": 8,
+  "routing": [
+    {
+      "effective_through": "2026-08-31",
+      "scene_range": "001-021",
+      "account": "jy04210810@gmail.com",
+      "plan": "PRO",
+      "verified_credit_balance": 262
+    },
+    {
+      "effective_through": "2026-08-31",
+      "scene_range": "022+",
+      "account": "jjwwhhjj1116@gmail.com",
+      "plan": "ULTRA",
+      "condition": "PRO 계정 21컷 배정분을 초과한 장면"
+    },
+    {
+      "effective_from": "2026-09-01",
+      "scene_range": "all",
+      "account": "jjwwhhjj1116@gmail.com",
+      "plan": "ULTRA",
+      "condition": "월간 크레딧 리셋 후 기본 Flow 생성 계정"
+    }
+  ],
+  "safety": {
+    "no_passwords_stored": true,
+    "verify_visible_account_before_each_paid_generation": true,
+    "generate_and_download_one_scene_before_starting_the_next": true
+  }
+}

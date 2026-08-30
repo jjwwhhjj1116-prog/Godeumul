@@ -37,6 +37,7 @@ import tempfile
 from pathlib import Path
 
 from _config import load
+from visual_timeline import load_visual_timeline
 
 CFG = load()
 ROOT = Path(__file__).resolve().parent.parent
@@ -136,25 +137,32 @@ def main() -> int:
     out = args.out or (ep / f"완성본_{ep.name}.mp4")
 
     man = json.loads((ep / "audio" / "durations.json").read_text(encoding="utf-8"))["scenes"]
-    keys = sorted(man, key=int)
+    audio_keys = sorted(man, key=int)
+    try:
+        visual_plan = load_visual_timeline(ep, man)
+    except (OSError, ValueError, json.JSONDecodeError) as exc:
+        sys.exit(f"[에러] 영상-음성 장면 매핑 실패: {exc}")
     clips = {int(p.stem): p for p in (ep / "clips").glob("*.mp4")}
     audios = {int(p.stem): p for p in (ep / "audio").glob("*.mp3")}
 
-    missing = [k for k in keys if int(k) not in clips or int(k) not in audios]
-    if missing:
-        sys.exit(f"[에러] 소재가 없는 장면: {missing}")
+    missing_clips = [row["visual_scene"] for row in visual_plan
+                     if row["visual_scene"] not in clips]
+    missing_audio = [int(k) for k in audio_keys if int(k) not in audios]
+    if missing_clips or missing_audio:
+        sys.exit(f"[에러] 소재 누락 — 영상 {missing_clips}, 오디오 {missing_audio}")
 
     # ── 계획 ────────────────────────────────────────────
     plan, total = [], 0.0
     lo, hi = CFG.get("영상.배속_안전", [0.75, 3.0])
-    for k in keys:
-        n = int(k)
-        tts = man[k]["duration"]
+    for visual in visual_plan:
+        n = visual["visual_scene"]
+        tts = visual["duration"]
         src = probe(clips[n])
         speed = src / tts
         plan.append({"n": n, "tts": tts, "src": src, "speed": speed,
-                     "clip": clips[n], "audio": audios[n], "start": total})
-        total += tts
+                     "clip": clips[n], "audio_scene": visual["audio_scene"],
+                     "start": visual["timeline_start"]})
+        total = visual["timeline_end"]
 
     bad = [p for p in plan if not (lo <= p["speed"] <= hi)]
 
@@ -215,7 +223,8 @@ def main() -> int:
     (work / "v.txt").write_text(
         "".join(f"file 'v{p['n']:03d}.mp4'\n" for p in plan), encoding="utf-8")
     (work / "a.txt").write_text(
-        "".join(f"file '{p['audio'].as_posix()}'\n" for p in plan), encoding="utf-8")
+        "".join(f"file '{audios[int(k)].as_posix()}'\n" for k in audio_keys),
+        encoding="utf-8")
 
     # ── 2단계: 나레이션 이어붙이기 ──────────────────────
     print("  [2/3] 나레이션 결합")

@@ -28,6 +28,7 @@ import sys
 from pathlib import Path
 
 from _config import load
+from visual_timeline import load_visual_timeline
 
 for _stream in (sys.stdout, sys.stderr):
     try:
@@ -104,13 +105,19 @@ def main() -> int:
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     scenes = manifest.get("scenes", {})
 
+    try:
+        visual_plan = load_visual_timeline(args.episode, scenes)
+    except (OSError, ValueError, json.JSONDecodeError) as exc:
+        sys.exit(f"[에러] 영상-음성 장면 매핑 실패: {exc}")
+
     rows = []
     missing = []
-    for key in sorted(scenes, key=int):
-        seq = int(key)
-        tts = scenes[key].get("duration") or 0.0
+    for visual in visual_plan:
+        seq = visual["visual_scene"]
+        audio_scene = visual["audio_scene"]
+        tts = visual["duration"]
         if tts <= 0:
-            missing.append((seq, "TTS 길이 없음 — --run 으로 실제 생성 필요"))
+            missing.append((seq, "영상 구간 길이 없음 — 장면표 확인 필요"))
             continue
 
         media, kind = find_media(clips, seq)
@@ -119,7 +126,9 @@ def main() -> int:
             continue
 
         if kind == "image":
-            rows.append({"seq": seq, "kind": "이미지", "clip": 0.0, "tts": tts,
+            rows.append({"seq": seq, "audio_scene": audio_scene,
+                         "audio_part": visual["audio_part"],
+                         "kind": "이미지", "clip": 0.0, "tts": tts,
                          "ratio": None, "state": "—",
                          "note": f"정지컷 → {tts:.2f}초로 길이 지정 + 켄번즈",
                          "file": media.name})
@@ -132,16 +141,19 @@ def main() -> int:
 
         ratio = round(clip / tts, 3)
         state, note = verdict(ratio)
-        rows.append({"seq": seq, "kind": "영상", "clip": clip, "tts": tts,
+        rows.append({"seq": seq, "audio_scene": audio_scene,
+                     "audio_part": visual["audio_part"],
+                     "kind": "영상", "clip": clip, "tts": tts,
                      "ratio": ratio, "state": state, "note": note,
                      "file": media.name})
 
     # ── 출력 ──────────────────────────────────────────────
     print(f"\n에피소드 : {args.episode}")
     print(f"클립     : {clips}")
-    print(f"장면     : {len(rows)}개 처리 / {len(missing)}개 누락\n")
+    print(f"영상 장면: {len(rows)}개 처리 / {len(missing)}개 누락 "
+          f"(TTS {len(scenes)}개)\n")
 
-    head = f"  {'장면':>4} {'종류':<5} {'클립':>7} {'나레이션':>9} {'배속':>7}  {'판정':<5} 비고"
+    head = f"  {'영상':>4} {'TTS':>7} {'종류':<5} {'클립':>7} {'나레이션':>9} {'배속':>7}  {'판정':<5} 비고"
     print(head)
     print("  " + "─" * (len(head) + 12))
 
@@ -154,7 +166,8 @@ def main() -> int:
             warn += 1
         if r["state"] == "위험":
             crit += 1
-        print(f" {mark}{r['seq']:>4} {r['kind']:<5} {clip:>7} {r['tts']:>8.2f}s "
+        tts_ref = f"{r['audio_scene']}:{r['audio_part']}"
+        print(f" {mark}{r['seq']:>4} {tts_ref:>7} {r['kind']:<5} {clip:>7} {r['tts']:>8.2f}s "
               f"{ratio:>8}  {r['state']:<5} {r['note']}")
 
     if missing:

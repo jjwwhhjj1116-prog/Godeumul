@@ -29,6 +29,7 @@ import sys
 from pathlib import Path
 
 from _config import load
+from tts_generate import parse_script as parse_tts_scenes
 
 for _s in (sys.stdout, sys.stderr):
     try:
@@ -167,6 +168,11 @@ def sentences(text: str) -> list[str]:
     return out
 
 
+def norm_text(text: str) -> str:
+    """확정 대본과 TTS 장면을 비교할 때 장면 경계의 공백만 무시한다."""
+    return re.sub(r"\s+", "", text)
+
+
 def bad_head(word: str) -> bool:
     """이 어절로 줄을 시작하면 어색한가."""
     if JOSA_ONLY.match(word.rstrip(".,!?")):
@@ -233,6 +239,15 @@ def main() -> int:
     ap.add_argument("--target", type=int, default=TARGET)
     ap.add_argument("--out", type=Path, default=None,
                     help="출력 JSON(기본: 대본 폴더/자막.json)")
+    ap.add_argument(
+        "--tts-scenes",
+        type=Path,
+        default=None,
+        help=(
+            "TTS 장면 파일. 지정하지 않아도 대본 폴더의 02a.TTS장면.txt가 있으면 "
+            "자동 사용하며, 자막 큐가 TTS 장면 경계를 가로지르지 않게 한다."
+        ),
+    )
     ap.add_argument("--srt", action="store_true", help="SRT도 저장(길이 균등 배분)")
     ap.add_argument("--cps", type=float, default=CFG.get("출력.발화속도_실측", 9.35), help="SRT 타이밍용 자/초")
     args = ap.parse_args()
@@ -241,15 +256,49 @@ def main() -> int:
         sys.exit(f"[에러] 파일이 없습니다: {args.script}")
 
     text = args.script.read_text(encoding="utf-8")
+    tts_scene_path = args.tts_scenes
+    if tts_scene_path is None:
+        candidate = args.script.parent / "02a.TTS장면.txt"
+        if candidate.exists():
+            tts_scene_path = candidate
+    elif not tts_scene_path.is_absolute():
+        tts_scene_path = args.script.parent / tts_scene_path
+
+    # 전역 대본을 한꺼번에 DP 분할하면 한 큐가 TTS 장면 끝과 다음 장면 시작을
+    # 동시에 품을 수 있다. 그러면 문자 타임스탬프를 어느 mp3에 붙여도 틀어진다.
+    # TTS 장면 파일이 있으면 그 경계를 먼저 고정한 뒤 장면 안에서만 분할한다.
+    source_groups: list[tuple[int | None, str]]
+    if tts_scene_path is not None:
+        if not tts_scene_path.exists():
+            sys.exit(f"[에러] TTS 장면 파일이 없습니다: {tts_scene_path}")
+        parsed_scenes = parse_tts_scenes(tts_scene_path)
+        scene_joined = "".join(norm_text(scene.text) for scene in parsed_scenes)
+        script_joined = norm_text(text)
+        if scene_joined != script_joined:
+            sys.exit(
+                "[에러] 확정 대본과 TTS 장면의 나레이션이 다릅니다. "
+                "대본 동일성을 먼저 복구하세요."
+            )
+        source_groups = [(scene.seq, scene.text) for scene in parsed_scenes]
+        print(f"TTS경계: {tts_scene_path} ({len(parsed_scenes)}개 장면)")
+    else:
+        source_groups = [(None, text)]
+
     cues: list[dict] = []
     packed_lines: list[str] = []
-    for si, sent in enumerate(sentences(text), 1):
-        sentence_lines = pack(atoms(sent.split()), args.max, args.target)
-        packed_lines.extend(sentence_lines)
-        for line in sentence_lines:
-            shown = to_digits(line)
-            cues.append({"n": len(cues) + 1, "sent": si,
-                         "text": shown, "raw": line, "len": len(shown)})
+    sentence_number = 0
+    for scene_number, group_text in source_groups:
+        for sent in sentences(group_text):
+            sentence_number += 1
+            sentence_lines = pack(atoms(sent.split()), args.max, args.target)
+            packed_lines.extend(sentence_lines)
+            for line in sentence_lines:
+                shown = to_digits(line)
+                cue = {"n": len(cues) + 1, "sent": sentence_number,
+                       "text": shown, "raw": line, "len": len(shown)}
+                if scene_number is not None:
+                    cue["scene"] = scene_number
+                cues.append(cue)
 
     over = [c for c in cues if c["len"] > args.max]
     dangling = dangling_determiners(packed_lines)

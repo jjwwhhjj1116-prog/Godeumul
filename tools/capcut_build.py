@@ -39,6 +39,7 @@ from pathlib import Path
 
 from _config import load
 from script_context_gate import validate_context_review
+from visual_timeline import load_visual_timeline
 
 for _s in (sys.stdout, sys.stderr):
     try:
@@ -348,9 +349,13 @@ def main() -> int:
     if not WATERMARK.exists():
         problems.append(f"워터마크 없음: {WATERMARK}")
 
-    scenes, cues, sync_document = {}, [], {}
+    scenes, cues, sync_document, visual_plan = {}, [], {}, []
     if dur_path.exists():
         scenes = json.loads(dur_path.read_text(encoding="utf-8"))["scenes"]
+        try:
+            visual_plan = load_visual_timeline(ep, scenes)
+        except (OSError, ValueError, json.JSONDecodeError) as exc:
+            problems.append(f"영상-음성 장면 매핑 실패: {exc}")
     if cue_path.exists():
         cues = json.loads(cue_path.read_text(encoding="utf-8"))["cues"]
     if sync_path.exists():
@@ -365,6 +370,8 @@ def main() -> int:
         n = int(k)
         if not find_media(audio_dir, n, (".mp3", ".wav", ".m4a")):
             missing_audio.append(n)
+    for visual in visual_plan:
+        n = visual["visual_scene"]
         if not find_media(clip_dir, n, (".mp4", ".mov", ".webm", ".mkv", ".jpg", ".png")):
             missing_clip.append(n)
     if missing_audio:
@@ -373,7 +380,7 @@ def main() -> int:
         problems.append(f"영상/이미지 없는 장면: {missing_clip}")
 
     print(f"\n에피소드 : {ep}")
-    print(f"장면     : {len(scenes)}개   자막 : {len(cues)}개")
+    print(f"장면     : 영상 {len(visual_plan)}개 / TTS {len(scenes)}개   자막 : {len(cues)}개")
     print(f"템플릿   : {args.template.name}")
     if context.passed:
         print(f"문맥 QA  : PASS ({context.paragraphs}문단/{context.sentences}문장)")
@@ -404,26 +411,31 @@ def main() -> int:
     wm_track["id"] = uid()
     wm_track["segments"] = wm_track["segments"][:1]
 
-    # ── 영상 + 오디오 ──────────────────────────────────────
-    cursor = 0
+    # ── 영상 ───────────────────────────────────────────────
+    # 승인 TTS 한 장면이 둘 이상의 시각 장면으로 나뉠 수 있다. 영상은
+    # 02a.장면구분.json의 절대 타임라인에, 오디오는 durations.json의 원래
+    # 장면 순서에 각각 놓는다. 둘을 장면 번호로 억지로 1:1 결합하지 않는다.
     timeline: list[dict] = []
     media_registry: list[tuple[Path, str, int]] = []   # (경로, 종류, 길이us)
     used_media: list[Path] = []
-    for k in sorted(scenes, key=int):
-        n = int(k)
-        tts = float(scenes[k]["duration"])
-        dur = snap(int(tts * US))
+    for visual in visual_plan:
+        n = visual["visual_scene"]
+        audio_scene = visual["audio_scene"]
+        visual_seconds = float(visual["duration"])
+        target_start = snap(int(float(visual["timeline_start"]) * US))
+        target_end = snap(int(float(visual["timeline_end"]) * US))
+        dur = target_end - target_start
         media = find_media(clip_dir, n, (".mp4", ".mov", ".webm", ".mkv", ".jpg", ".png"))
         is_img = media.suffix.lower() in (".jpg", ".png")
         native_audio = False if is_img else has_audio_stream(media)
-        src = probe(media) if not is_img else tts
-        speed = round(src / tts, 4) if (src > 0 and not is_img) else 1.0
+        src = probe(media) if not is_img else visual_seconds
+        speed = round(src / visual_seconds, 4) if (src > 0 and not is_img) else 1.0
 
         # 영상 소재
         vm = copy.deepcopy(tpl["materials"]["videos"][0])
         vm.update(id=uid(), path=str(media.resolve()).replace("\\", "/"),
                   material_name=media.name, local_material_id=uid(),
-                  duration=int((src if src > 0 else tts) * US),
+                  duration=int((src if src > 0 else visual_seconds) * US),
                   type="photo" if is_img else "video",
                   has_audio=native_audio,
                   width=CFG.get("출력.해상도",[1080,1920])[0],
@@ -439,7 +451,7 @@ def main() -> int:
                 if native_audio else NO_AUDIO_PROCESSING_BUCKETS
             ),
         )
-        vs["target_timerange"] = {"start": cursor, "duration": dur}
+        vs["target_timerange"] = {"start": target_start, "duration": dur}
         vs["source_timerange"] = {"start": 0, "duration": snap(int(dur * speed))}
         # Omni/Veo가 장면과 함께 만든 문·발걸음·바람·충격음은 버리지 않는다.
         # 나레이션을 가리지 않는 낮은 베드로 유지하고, 캡컷 AI 음성 처리는 금지한다.
@@ -456,10 +468,24 @@ def main() -> int:
             )
         cl.set_speed(vs, speed)
         v_track["segments"].append(vs)
-        media_registry.append((media.resolve(), "video", int((src if src > 0 else tts) * US)))
+        media_registry.append((media.resolve(), "video", int((src if src > 0 else visual_seconds) * US)))
         used_media.append(media.resolve())
 
-        # 오디오 소재
+        timeline.append({"scene": n, "audio_scene": audio_scene,
+                         "audio_part": visual["audio_part"],
+                         "start": target_start, "dur": dur,
+                         "tts": visual_seconds, "speed": speed, "img": is_img})
+
+    # ── 오디오 ─────────────────────────────────────────────
+    audio_seconds_cursor = 0.0
+    audio_cursor = 0
+    for k in sorted(scenes, key=int):
+        n = int(k)
+        tts = float(scenes[k]["duration"])
+        audio_start = snap(int(audio_seconds_cursor * US))
+        audio_seconds_cursor += tts
+        audio_end = snap(int(audio_seconds_cursor * US))
+        dur = audio_end - audio_start
         amedia = find_media(audio_dir, n, (".mp3", ".wav", ".m4a"))
         am = copy.deepcopy(tpl["materials"]["audios"][0])
         am.update(id=uid(), path=str(amedia.resolve()).replace("\\", "/"),
@@ -470,7 +496,7 @@ def main() -> int:
         as_["id"] = uid(); as_["material_id"] = am["id"]
         as_["extra_material_refs"] = cl.clone_extras(
             a_proto, exclude_buckets=FORBIDDEN_AUDIO_PROCESSING_BUCKETS)
-        as_["target_timerange"] = {"start": cursor, "duration": dur}
+        as_["target_timerange"] = {"start": audio_start, "duration": dur}
         as_["source_timerange"] = {"start": 0, "duration": dur}
         as_["speed"] = 1.0
         # 채널 수동 편집 표준: 음성 +5dB, 영상 원음 -15dB. 음성 보정은 쓰지 않고
@@ -487,12 +513,18 @@ def main() -> int:
         a_track["segments"].append(as_)
         media_registry.append((amedia.resolve(), "music", int(tts * US)))
         used_media.append(amedia.resolve())
+        audio_cursor = audio_end
 
-        timeline.append({"scene": n, "start": cursor, "dur": dur,
-                         "tts": tts, "speed": speed, "img": is_img})
-        cursor += dur
-
-    total = cursor
+    total = audio_cursor
+    visual_end = max(
+        (seg["target_timerange"]["start"] + seg["target_timerange"]["duration"]
+         for seg in v_track["segments"]),
+        default=0,
+    )
+    if abs(visual_end - total) > FRAME:
+        raise ValueError(
+            f"영상 타임라인({visual_end / US:.3f}s)과 오디오({total / US:.3f}s)가 다릅니다"
+        )
 
     # ── 자막 ────────────────────────────────────────────────
     # 검증을 통과한 ElevenLabs 실측 타임스탬프만 허용한다.
