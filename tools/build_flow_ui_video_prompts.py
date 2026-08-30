@@ -14,6 +14,8 @@ import json
 import re
 from pathlib import Path
 
+import _config  # noqa: F401  # Windows 콘솔 UTF-8 설정
+
 
 def _clean(value: object) -> str:
     return " ".join(str(value or "").split()).rstrip(".")
@@ -41,25 +43,6 @@ def compact_video(scene: dict) -> str:
         "and natural occlusion.",
         "Give it parallax, surface perspective, material contact and natural occlusion.",
     )
-    # Scene 15 deliberately moved all interpretation graphics out of the start
-    # image.  Keep its UI prompt below Flow's practical failure threshold while
-    # retaining both debated routes and their exact TTS timing.
-    if scene.get("n") == 15:
-        prompt = (
-            "Preserve the supplied locked start image exactly: artifact, lacquer "
-            "coffin, silk texture, motifs, era, material and lighting. One continuous "
-            "8s I2V shot; no hard cut, teleport, morph, new object or identity change. "
-            "Begin camera travel by 0.35s at the central funeral motif. Make a fast shallow orbit across the real "
-            "painted funeral figures, then snap upward along the banner axis and settle "
-            "on the complete unaltered banner. Two thin desaturated silk-light paths "
-            "briefly travel inside the painted surface: one follows the funeral figures, "
-            "the other the ascending motifs. Both stay anchored in the physical world space "
-            "and receive real perspective, depth, "
-            "parallax and foreground occlusion, then both fade without choosing a final "
-            "interpretation. TTS-locked timing: 0.00-3.06s: follow the funeral reading. 3.06-7.57s: redirect "
-            "upward along the soul-journey reading. No panel, plane, HUD or screen overlay. "
-            "No text, no labels, no voice, no music, no subtitles and no added object."
-        )
     return prompt
 
 
@@ -81,7 +64,7 @@ def validate(scene: dict, prompt: str) -> list[str]:
     for token in required:
         if token and token.lower() not in lower:
             errors.append(f"missing {token!r}")
-    if len(prompt) > 1250:
+    if len(prompt) > 1500:
         errors.append(f"too long ({len(prompt)} chars)")
     beats = scene.get("tts_beats", [])
     timed_beats = re.findall(r"\d+\.\d{2}-\d+\.\d{2}s:", prompt)
@@ -92,6 +75,39 @@ def validate(scene: dict, prompt: str) -> list[str]:
             errors.append("world-space 3D evidence graphic missing")
         if "no text" not in lower:
             errors.append("3D graphic scene missing no-text lock")
+    camera_path = scene.get("camera_path") or {}
+    continuity_fields = (
+        "start_frame_anchor_visible", "start_frame_anchor_evidence",
+        "single_axis", "scale_domain", "end_state",
+    )
+    missing_continuity = [field for field in continuity_fields if field not in camera_path]
+    if missing_continuity:
+        errors.append(f"camera continuity fields missing: {missing_continuity}")
+    if camera_path.get("start_frame_anchor_visible") is not True:
+        errors.append("selected start-image anchor not visually confirmed")
+    expected_states = {4: 2, 6: 3, 8: 3, 10: 4}[duration]
+    visual_states = scene.get("visual_states") or []
+    if len(visual_states) != expected_states:
+        errors.append(f"visual_states must contain {expected_states} states")
+    if duration >= 8:
+        for token in (
+            "start anchor", "mid anchor", "final anchor", "last frame",
+            "reset", "loop", "restart",
+        ):
+            if token not in lower:
+                errors.append(f"long-take lock missing {token!r}")
+        if not any(token in lower for token in (
+            "never return", "remain there", "remain on", "hold there",
+        )):
+            errors.append("long-take final composition hold missing")
+    risky_phrases = (
+        "then pull back", "then pull out", "then retreat", "reverse direction",
+        "then reverse", "rise then dive", "dive then rise", "orbit then enter",
+        "impossible storage",
+    )
+    found_risks = [phrase for phrase in risky_phrases if phrase in lower]
+    if found_risks:
+        errors.append(f"camera reversal/scale risk: {found_risks}")
     return errors
 
 

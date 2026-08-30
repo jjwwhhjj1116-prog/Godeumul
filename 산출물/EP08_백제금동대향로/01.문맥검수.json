@@ -1,11 +1,11 @@
 {
   "version": 3,
   "script": "01.대본.txt",
-  "script_sha256": "49e4f63767f0c7a243f63a6e7b608ac01a2fef2682e4faa86f818bea0d57e0f7",
+  "script_sha256": "4ddfd8635f30a03811a46e71274b93cb029a8d20de89039980ad38290c1e9328",
   "reviewer": "korean-proofreader + godeumul-context-qa + korean-reels-hook-engine",
   "status": "PASS",
-  "approval_state": "USER_APPROVAL_PENDING",
-  "tts_authorization": "PROHIBITED_UNTIL_USER_APPROVAL",
+  "approval_state": "USER_APPROVED_2026-08-30",
+  "tts_authorization": "AUTHORIZED",
   "checks": {
     "paragraph_roles_and_flow": "PASS",
     "adjacent_sentence_relations": "PASS",
@@ -24,7 +24,7 @@
     "approved_predecessor_flow_review": "PASS"
   },
   "paragraphs": [
-    {"n": 1, "role": "ARTIFACT_FIRST_HOOK", "summary": "대한민국 부여의 진흙 속 금빛 물체, 국보 중의 국보, 주차장 조성 전 조사라는 반전과 발견 장소 미스터리를 네 문장에 건다."},
+    {"n": 1, "role": "ARTIFACT_FIRST_HOOK", "summary": "대한민국 부여의 척박한 진흙탕에서 1400년 만에 모습을 드러낸 금빛 물체, 국보 중의 국보, 왕궁터가 아닌 주차장 조성 전 절터 공방 구덩이라는 반전과 발견 장소 미스터리를 네 문장에 건다."},
     {"n": 2, "role": "ANOMALY_AND_ESCALATING_REVEALS", "summary": "용에서 봉황까지의 우주와 연기 움직임을 공개하고 향 그릇의 과도한 세계와 공방 구덩이라는 두 모순을 묻는다."},
     {"n": 3, "role": "DISCOVERY_AND_PRESERVATION", "summary": "1993년 발견, 분리된 몸통과 뚜껑, 약 450점, 진흙과 도금의 보존 효과를 밝히고 은닉 이유만 남긴다."},
     {"n": 4, "role": "INVESTIGATION_BLOCK_AND_FAILED_HYPOTHESIS", "summary": "660년 화재층·긴급 은닉설·왕실 사찰·박산향로 비교를 차례로 쌓지만 직접 기록과 완전한 비교품 부재로 막힌다."},
@@ -39,6 +39,7 @@
     {"from": 5, "to": 6, "relation": "백제식 문화 재창조라는 확인된 답에서 왕실 의례용 정체·은닉 미스터리·국뽕 결론으로 회수", "reason": "근거 기반 자부심과 아직 모르는 사실의 경계를 동시에 지킨다.", "status": "PASS"}
   ],
   "connectors": [
+    {"sentence": 3, "text": "그런데", "relation": "국보 중의 국보라는 위상과 왕궁터가 아닌 절터 공방 구덩이라는 발견 장소의 대조", "decision": "KEEP", "reason": "유물의 가치와 뜻밖의 출토 지점을 즉시 충돌시켜 중심 미스터리를 연다."},
     {"sentence": 21, "text": "그래서", "relation": "660년 연대에서 긴급 은닉 가설로 이어지는 인과", "decision": "KEEP", "reason": "연대 측정이 왜 은닉 가설을 만들었는지 명확히 묶는다."},
     {"sentence": 22, "text": "하지만", "relation": "유력한 은닉 가설과 직접 기록 부재의 대조", "decision": "KEEP", "reason": "극적인 가설을 확정된 역사처럼 오해하지 않게 경계를 세운다."},
     {"sentence": 28, "text": "그래서", "relation": "기록·비교 조사 실패에서 도상 읽기로 전환하는 인과", "decision": "KEEP", "reason": "새 조사 방식이 앞선 막힘에서 필연적으로 나왔음을 보여준다."},
@@ -49,8 +50,8 @@
   "duplicate_review": {"status": "PASS", "acknowledged_pairs": [], "note": "용·연꽃·산·악사·봉황은 첫 공개에서는 시각적 규모, 후반에서는 상징을 읽는 조사 근거로 기능해 새 정보 없는 중복이 아니다."},
   "korean_review": {"status": "PASS", "reviewer": "korean-proofreader", "document": "PASS", "paragraph": "PASS", "sentence": "PASS", "note": "문서→문단→문장 순서로 훅, 조사 인과, 지시어, 종결 리듬, 문법과 과장 수위를 전수 교정했다."},
   "sentence_links": [
-    {"from":1,"to":2,"relation":"금빛 물체에서 유물명 공개","reason":"첫 발견 이미지의 정체를 바로 백제 금동대향로로 지명한다.","status":"PASS"},
-    {"from":2,"to":3,"relation":"국보 가치에서 발견 장소 반전","reason":"유물의 위상과 공방 구덩이라는 장소를 강하게 충돌시킨다.","status":"PASS"},
+    {"from":1,"to":2,"relation":"척박한 진흙탕의 금빛 물체에서 유물명 공개","reason":"첫 발견 이미지의 정체를 바로 백제 금동대향로로 지명한다.","status":"PASS"},
+    {"from":2,"to":3,"relation":"국보 가치에서 왕궁터가 아닌 발견 장소 반전","reason":"유물의 위상과 절터 공방 구덩이라는 장소를 강하게 충돌시킨다.","status":"PASS"},
     {"from":3,"to":4,"relation":"장소 반전에서 중심 질문","reason":"주차장 조성 전 조사라는 사실을 왜 그곳에 있었는지라는 미스터리로 바꾼다.","status":"PASS"},
     {"from":4,"to":5,"relation":"발견 장소 질문에서 유물 자체의 이상점","reason":"공방 구덩이 미스터리를 반복하지 않고 조형의 이상함으로 확대한다.","status":"PASS"},
     {"from":5,"to":6,"relation":"이상함 선언에서 하단 도상 공개","reason":"추상적 예고를 용과 연꽃이라는 구체적 형상으로 증명한다.","status":"PASS"},
@@ -98,8 +99,8 @@
     "sentence_start": 1,
     "sentence_end": 4,
     "artifact": "백제 금동대향로",
-    "visual_action": "대한민국 부여의 진흙에서 금빛 물체가 드러나고 용과 봉황의 실루엣이 즉시 보인다.",
-    "scale_or_contradiction": "1,400년·국보 중의 국보와 주차장 조성 전 조사에서 발견된 공방 구덩이의 대비",
+    "visual_action": "대한민국 부여의 척박한 진흙탕에서 1400년 만에 금빛 물체가 드러나고 용과 봉황의 형상이 즉시 보인다.",
+    "scale_or_contradiction": "1400년·국보 중의 국보와 왕궁터가 아닌 주차장 조성 전 절터 공방 구덩이의 대비",
     "open_question": "백제 최고의 보물이 왜 공방 구덩이에 숨어 있었는가"
   },
   "prerequisite_review": {"status": "PASS", "unintroduced_terms": [], "pronoun_referents": "PASS", "note": "이곳·그 난리·여기까지·그 장면의 선행 대상은 각각 능산리 절터, 약 450점이 뒤엉킨 구덩이, 보존 원인, 긴급 은닉 가설로 단일하다."},

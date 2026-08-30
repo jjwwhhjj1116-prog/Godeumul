@@ -145,8 +145,8 @@
 |---|---|
 | 4초 | 단일 디테일, 한 번의 시선 이동, 한 동작 |
 | 6초 | 한 행동과 반응, 또는 한 번의 명확한 카메라 이동 |
-| 8초 | 같은 공간의 연속된 두 비트, 발견 후 공개, 표면에서 단면으로 진입 |
-| 10초 | 같은 대상과 구도를 유지하는 큰 공간 이동 또는 최대 세 비트의 연속 변화 |
+| 8초 | 같은 공간·같은 진행축·같은 화면 규모에서 이어지는 두 비트 |
+| 10초 | 같은 공간·같은 진행축·같은 화면 규모에서 한 대상만 관찰. 큰 진입·단면·와이드→매크로에는 사용 금지 |
 
 규칙:
 
@@ -154,7 +154,33 @@
 - 생성 길이는 TTS보다 짧으면 안 된다.
 - TTS가 9초를 넘으면 우선 문장 또는 장면 분할을 검토한다.
 - 서로 다른 행동·구도·증거 상태를 10초 하나에 억지로 넣지 않는다.
+- `와이드 전경→유물 공개→극단 매크로`, `문 밖→문 안`, `표면→지하 단면`처럼 화면
+  규모나 공간 층위가 두 번 이상 바뀌는 동선은 **4~6초 두 장면**으로 나눈다. 긴
+  원테이크를 지시해도 생성 모델이 5~7초에 동선을 끝내고 첫 구도로 리셋할 수 있다.
+- 8~10초를 쓰려면 `한 공간 + 한 카메라 진행축 + 한 화면 규모 + 한 도착점`을 모두
+  만족해야 한다. 하나라도 바뀌면 6초 이하로 분할한다.
+- 긴 이동을 이어야 하면 앞 클립의 마지막 선명 프레임을 다음 I2V의 승인된 시작 이미지로
+  사용하고 진행 방향·렌즈·광원·대상 위치를 그대로 잠근다.
+- `패턴 인터럽트`는 같은 진행축 안의 짧은 속도 변화나 전경 가림만 뜻한다. 방향 반전,
+  와이드↔매크로 전환, 새로운 공간 진입을 패턴 인터럽트로 넣지 않는다.
 - 편집 시 클립을 늘이거나 줄이기 전에 대본과 장면 분할이 옳은지 먼저 확인한다.
+
+#### 시간 상태표 — 프롬프트보다 먼저 잠금
+
+`TTS 비트`만으로는 카메라가 어디에 있어야 하는지 알 수 없다. 각 장면은 영상 프롬프트를
+쓰기 전에 아래 개수의 **실제 화면 상태**를 `visual_states`로 확정한다.
+
+| 길이 | 상태 수 | 시각 |
+|---|---:|---|
+| 4초 | 2 | 0초, 4초 |
+| 6초 | 3 | 0초, 약 3초, 6초 |
+| 8초 | 3 | 0초, 약 4초, 8초 |
+| 10초 | 4 | 0초, 약 3.3초, 약 6.6초, 10초 |
+
+각 상태에는 `time`, `composition`, `camera_pose`, `visible_anchors`를 쓴다. 첫 상태는
+선택된 I2V 시작 이미지와 동일해야 하고, 마지막 상태는 `end_state`와 동일해야 한다.
+인접 상태 사이에 카메라가 실제로 지나갈 연속 공간이 없거나 WIDE→MACRO처럼 화면 규모가
+바뀌면 그 장면은 분할한다. 모델이 중간 동작을 임의로 발명하게 두지 않는다.
 
 ### STEP 4 — 장면표 잠금
 
@@ -300,21 +326,35 @@ Veo가 깨뜨리기 쉬운 한글·숫자만 기존 자막·제목 렌더 단계
   "entry_anchor": "첫 프레임에서 카메라가 붙잡을 물체",
   "route": "전경→문턱/지층/통로→중경을 잇는 실제 이동 경로",
   "destination": "대본의 핵심 명사와 동시에 도착할 대상",
+  "start_frame_anchor_visible": true,
+  "start_frame_anchor_evidence": "선택된 실제 이미지에서 앵커가 보이는 위치와 형태",
+  "single_axis": "처음부터 끝까지 유지할 전진·횡이동·회전 중 하나",
+  "scale_domain": "WIDE | MEDIUM | MACRO 중 하나",
+  "end_state": "마지막 프레임에 반드시 남아 있을 구도",
   "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
   "operator_style": "CONTROLLED_DOCUMENTARY_HANDHELD_GIMBAL",
   "depth_transition": "DOOR_ENTRY | SECTION_DIVE | SURFACE_TO_INTERIOR | ORBIT_REVEAL | BOUNDARY_STOP | NONE",
-  "pattern_interrupts": ["0.3s snap push", "3.1s direction change"],
+  "pattern_interrupts": ["0.3s speed pulse", "3.1s foreground occlusion on the same axis"],
   "settle_point": "마지막 0.4~0.7초 동안만 멈출 대상"
 }
 ```
 
 - `entry_anchor`, `route`, `destination`이 시작 이미지 안에 실제로 보여야 한다.
+- 이미지 선택 뒤 눈으로 다시 확인해 `entry_anchor`가 첫 프레임에 보이지 않으면 영상
+  프롬프트를 쓰지 않는다. 텍스트상 이미지 프롬프트에 존재한다는 이유만으로 통과시키지 않는다.
+- 시작 이미지가 항공 와이드인데 `소금 결정에서 시작`, 실내 전경인데 `문 밖에서 진입`처럼
+  실제 첫 카메라 위치와 충돌하는 앵커는 금지한다. 첫 동사는 현재 프레임에서 바로 실행할 수
+  있어야 한다.
+- 한 클립의 `single_axis`와 `scale_domain`은 하나씩만 둔다. `push in ... then pull back`,
+  `rise ... then dive`, `orbit ... then enter`처럼 방향·고도·화면 규모를 되돌리는 문장은
+  별도 클립으로 나눈다.
 - `zoom-in`은 렌즈 화각만 바꾸므로 공간 진입을 대신할 수 없다. 문 안·땅속·통로 안으로
   이동할 때는 `rapid dolly-in`, `tracked push-through`, `POV follow`, `section dive`를 쓴다.
 - 발견·진입 장면은 첫 0.35초 안에 이동을 시작한다. 느린 establishing shot으로 시간을
   쓰지 않는다.
-- 6초 이상 장면은 2~4초 사이에 속도·방향·피사체 크기 중 하나를 바꾸는 패턴 인터럽트를
-  최소 1개 둔다. 10초 장면은 최소 2개다.
+- 6초 이상 장면은 2~4초 사이에 같은 진행축을 유지한 채 짧은 속도 펄스·랙포커스·전경
+  가림 중 하나를 패턴 인터럽트로 둔다. 10초 장면은 최소 2개다. 방향 반전·고도 점프·
+  WIDE↔MACRO 전환은 패턴 인터럽트가 아니라 장면 분할 신호다.
 - 마지막 정지는 보상 대상을 읽는 0.4~0.7초에만 둔다. 보존·과학 증거·미확인 경계처럼
   오래 봐야 정확한 장면은 예외다.
 
@@ -609,6 +649,26 @@ through the artifact or invents an unexcavated room. No labels, no morphing, no 
 
 장면표의 `연결 대상`이 비어 있지 않으면 앞 장면의 마지막 초점이 다음 장면의 첫 프레임에 존재해야 한다.
 
+8~10초 장면과 깊은 진입 장면은 `single continuous shot` 한 줄만으로 통과시키지 않는다.
+영상 프롬프트 끝에 다음 **시작·중간·끝 상태 잠금**을 장면에 맞게 구체화한다.
+
+```text
+ONE UNBROKEN TAKE FOR THE ENTIRE [N] SECONDS.
+Keep the same physical camera, the same geometry, the same object identities, and one
+continuous [forward OR lateral OR orbit] trajectory.
+Start anchor: [object visibly present in the supplied first frame].
+Mid anchor: [one reachable object on the same physical path].
+Final anchor: [one explicit final composition in the same scale domain].
+After reaching the final anchor, remain there until the last frame.
+The last frame must remain on [final composition]. Never return to the opening composition.
+No cut, reset, loop, replay, teleport, reverse direction, second shot, or restart from the
+source image. Preserve all objects and spatial relationships from the supplied start image.
+```
+
+`Start anchor`, `Mid anchor`, `Final anchor`는 선택된 시작 이미지에서 한 동선으로 실제
+연결돼야 한다. 마지막 구도를 `macro inscription`처럼 명시했다면 남은 시간은 그 구도에서
+미세한 관찰 움직임만 이어가며 첫 프레임으로 돌아가거나 새 쇼트를 시작하지 않는다.
+
 ---
 
 ## 10. 지도·단면·치수·모션그래픽
@@ -704,6 +764,10 @@ civilization / era / region / source_reference / site_artifact_fingerprint(3개 
 people_lock / forbidden_culture / diorama_style / material_fidelity
 [TTS 비트]
 0.0~1.8초 나레이션 / 카메라 / 주 행동 / 3D 그래픽
+[시간 상태]
+0.0초 composition / camera_pose / visible_anchors
+3.0초 composition / camera_pose / visible_anchors
+6.0초 composition / camera_pose / visible_anchors
 [장면 유형]
 DISCOVERY_ACTION
 [주 행동]
@@ -770,6 +834,11 @@ SCENE 001 — 6s
 - [ ] 25컷 등 목표 숫자에 맞추려고 장면을 쪼개거나 합치지 않았는가
 - [ ] 생성 길이가 4·6·8·10초 중 하나이며 TTS보다 짧지 않은가
 - [ ] 한 장면이 한 시작 이미지로 가능한 연속 행동인가
+- [ ] 선택된 실제 시작 이미지에 `entry_anchor`가 눈으로 확인되는가
+- [ ] 8~10초 장면이 한 공간·한 진행축·한 화면 규모·한 도착점만 가지는가
+- [ ] 와이드→매크로·문 밖→안·표면→단면처럼 규모/공간 층위가 크게 바뀌면 4~6초로 분할했는가
+- [ ] 긴 장면 프롬프트에 Start/Mid/Final anchor와 마지막 프레임 유지·reset/loop/restart 금지가 있는가
+- [ ] 4/6/8/10초에 각각 2/3/3/4개의 `visual_states`가 있고 첫·마지막 상태가 실제 시작 이미지·end_state와 일치하는가
 - [ ] 모든 본편 장면이 `I2V_LOCKED`이며 T2V 최종 클립이 섞이지 않았는가
 - [ ] 실제 TTS 구절별 카메라·행동·그래픽 비트가 잠겼는가
 
@@ -801,5 +870,6 @@ SCENE 001 — 6s
 - [ ] `VEO_INTEGRATED_3D` 장면에 10개 필수 분석 필드와 시간 순서가 있는가
 - [ ] 연결 장면의 물체 위치·광원·카메라 축이 맞는가
 - [ ] 각 장면의 마지막 초점이 다음 장면의 시작점을 준비하는가
+- [ ] 다운로드한 생성 원본에 첫 구도 복귀·카메라 방향 반전·중간 재시작이 없는가
 
 핵심 항목 하나라도 실패하면 이미지 또는 영상 생성에 들어가지 않는다.

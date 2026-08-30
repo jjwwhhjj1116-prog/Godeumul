@@ -45,10 +45,18 @@ VISUAL_LOCK_FIELDS = {
     "material_fidelity",
 }
 TTS_BEAT_FIELDS = {"start", "end", "narration", "camera", "action", "graphic"}
+VISUAL_STATE_FIELDS = {"time", "composition", "camera_pose", "visible_anchors"}
+VISUAL_STATE_COUNTS = {4: 2, 6: 3, 8: 3, 10: 4}
 CAMERA_PATH_FIELDS = {
     "entry_anchor", "route", "destination", "speed_profile", "operator_style",
     "depth_transition", "pattern_interrupts", "settle_point",
 }
+CAMERA_PATH_V6_FIELDS = {
+    "start_frame_anchor_visible", "start_frame_anchor_evidence",
+    "single_axis", "scale_domain", "end_state",
+}
+CAMERA_AXES = {"FORWARD", "LATERAL", "ORBIT", "LOCKED"}
+SCALE_DOMAINS = {"WIDE", "MEDIUM", "MACRO"}
 SPEED_PROFILES = {
     "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE", "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
     "CONTROLLED_ORBIT_REVEAL", "MACRO_PROBE_SETTLE", "EVIDENCE_HOLD",
@@ -288,11 +296,35 @@ def main() -> int:
             missing_camera = sorted(CAMERA_PATH_FIELDS - set(camera_path))
             report.add(not missing_camera, n, "카메라 경로 필수 필드",
                        "" if not missing_camera else f"누락: {', '.join(missing_camera)}")
+            if camera_path_required:
+                missing_v6 = sorted(CAMERA_PATH_V6_FIELDS - set(camera_path))
+                report.add(not missing_v6, n, "카메라 연속성 v6 필드",
+                           "" if not missing_v6 else f"누락: {', '.join(missing_v6)}")
+                anchor_visible = camera_path.get("start_frame_anchor_visible") is True
+                anchor_evidence = str(
+                    camera_path.get("start_frame_anchor_evidence") or ""
+                ).strip()
+                report.add(anchor_visible and bool(anchor_evidence), n,
+                           "실제 첫 프레임 앵커 확인",
+                           "선택 이미지에서 보이는 위치·형태를 기록하고 visible=true 필요")
+                single_axis = str(camera_path.get("single_axis") or "").strip().upper()
+                scale_domain = str(camera_path.get("scale_domain") or "").strip().upper()
+                end_state = str(camera_path.get("end_state") or "").strip()
+                report.add(single_axis in CAMERA_AXES, n, "단일 카메라 진행축",
+                           "single_axis는 FORWARD/LATERAL/ORBIT/LOCKED 중 하나")
+                report.add(scale_domain in SCALE_DOMAINS, n, "단일 화면 규모",
+                           "scale_domain은 WIDE/MEDIUM/MACRO 중 하나")
+                report.add(bool(end_state), n, "마지막 프레임 구도",
+                           "end_state에 마지막 프레임의 고정 구도 필요")
             speed_profile = str(camera_path.get("speed_profile") or "").strip().upper()
             operator_style = str(camera_path.get("operator_style") or "").strip().upper()
             depth_transition = str(camera_path.get("depth_transition") or "").strip().upper()
             report.add(speed_profile in SPEED_PROFILES, n, "카메라 속도 곡선",
                        "" if speed_profile in SPEED_PROFILES else speed_profile or "없음")
+            if camera_path_required:
+                report.add(speed_profile != "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE", n,
+                           "신규 장면 방향 반전 속도곡선 금지",
+                           "같은 진행축의 속도 펄스·전경 가림으로 바꾸거나 장면 분할")
             report.add(operator_style in OPERATOR_STYLES, n, "카메라 운용 방식",
                        "" if operator_style in OPERATOR_STYLES else operator_style or "없음")
             report.add(depth_transition in DEPTH_TRANSITIONS, n, "깊이 전환",
@@ -392,6 +424,49 @@ def main() -> int:
             duration_number = -1
         report.add(duration_number in ALLOWED_SECONDS, n, "생성 길이",
                    "" if duration_number in ALLOWED_SECONDS else f"{duration!r}초")
+
+        if camera_path_required and duration_number in ALLOWED_SECONDS:
+            visual_states = scene_data.get("visual_states") or []
+            expected_states = VISUAL_STATE_COUNTS[duration_number]
+            states_are_list = isinstance(visual_states, list)
+            report.add(states_are_list and len(visual_states) == expected_states, n,
+                       "시간 상태표 개수",
+                       f"{duration_number}초는 visual_states {expected_states}개 필요")
+            if states_are_list and visual_states:
+                malformed_states = [
+                    state_index for state_index, state in enumerate(visual_states, 1)
+                    if not isinstance(state, dict) or VISUAL_STATE_FIELDS - set(state)
+                ]
+                report.add(not malformed_states, n, "시간 상태표 필수 필드",
+                           "" if not malformed_states
+                           else f"형식 오류 상태: {malformed_states}")
+                state_times: list[float] = []
+                for state in visual_states:
+                    try:
+                        state_times.append(float(state.get("time")))
+                    except (AttributeError, TypeError, ValueError):
+                        state_times.append(-1.0)
+                ordered = all(
+                    current > previous
+                    for previous, current in zip(state_times, state_times[1:])
+                )
+                endpoints = (
+                    bool(state_times)
+                    and abs(state_times[0]) <= 0.05
+                    and abs(state_times[-1] - duration_number) <= 0.1
+                )
+                report.add(ordered and endpoints, n, "시간 상태표 시각",
+                           "첫 상태는 0초, 마지막은 생성 길이, 중간은 오름차순이어야 함")
+                anchors_present = all(
+                    isinstance(state, dict)
+                    and bool(str(state.get("composition") or "").strip())
+                    and bool(str(state.get("camera_pose") or "").strip())
+                    and isinstance(state.get("visible_anchors"), list)
+                    and bool(state.get("visible_anchors"))
+                    for state in visual_states
+                )
+                report.add(anchors_present, n, "시간 상태표 화면 앵커",
+                           "각 상태에 composition/camera_pose/visible_anchors 필요")
 
         tts = scene_data.get("tts")
         try:
@@ -501,6 +576,28 @@ def main() -> int:
         continuous = "continuous" in video_low and "no hard cut" in video_low
         report.add(continuous, n, "I2V 연속 촬영",
                    "" if continuous else "continuous와 no hard cut 지시 필요")
+        if camera_path_required and duration_number >= 8:
+            anchor_lock = all(term in video_low for term in (
+                "start anchor", "mid anchor", "final anchor", "last frame",
+            ))
+            report.add(anchor_lock, n, "장시간 I2V 시작·중간·끝 잠금",
+                       "8~10초는 start/mid/final anchor와 last frame 지시 필요")
+            no_reset = all(term in video_low for term in (
+                "no cut", "reset", "loop", "restart",
+            )) and any(term in video_low for term in (
+                "never return", "remain there", "remain on", "hold there",
+            ))
+            report.add(no_reset, n, "장시간 I2V 리셋·루프 금지",
+                       "no cut/reset/loop/restart와 마지막 구도 유지 지시 필요")
+        if camera_path_required:
+            reversal_phrases = (
+                "then pull back", "then pull out", "then retreat",
+                "reverse direction", "then reverse", "rise then dive",
+                "dive then rise", "orbit then enter", "impossible storage",
+            )
+            found_reversal = [phrase for phrase in reversal_phrases if phrase in video_low]
+            report.add(not found_reversal, n, "카메라 방향·규모 반전 금지",
+                       "" if not found_reversal else f"위험 문구: {found_reversal}")
         preserve = "no new object" in video_low or "preserve all object" in video_low
         report.add(preserve, n, "I2V 새 물체 금지",
                    "" if preserve else "no new objects 또는 preserve all objects 지시 필요")

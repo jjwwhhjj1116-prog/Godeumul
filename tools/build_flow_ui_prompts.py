@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build compact, UI-safe Flow prompts from the locked storyboard.
+"""EP02 마왕퇴한묘 전용 compact Flow image prompts.
 
 The canonical prompts in ``02a.장면구분.json`` remain the audit source.  This
 tool removes repeated boilerplate only; it does not rewrite scene evidence.
@@ -13,6 +13,8 @@ import argparse
 import json
 import re
 from pathlib import Path
+
+import _config  # noqa: F401  # Windows 콘솔 UTF-8 설정
 
 
 DROP_PREFIXES = (
@@ -98,6 +100,12 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("episode", type=Path)
     args = ap.parse_args()
+
+    if args.episode.name != "EP02_마왕퇴한묘":
+        ap.error(
+            "이 도구는 마왕퇴 전용 문명·연대 문구를 포함합니다. "
+            "다른 회차에는 사용하지 마세요."
+        )
 
     src = args.episode / "02a.장면구분.json"
     scenes = json.loads(src.read_text(encoding="utf-8"))
