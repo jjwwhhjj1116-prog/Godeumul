@@ -1,0 +1,27 @@
+{
+  "episode": "EP08_백제금동대향로",
+  "thumbnail": "썸네일.jpg",
+  "width": 1080,
+  "height": 1920,
+  "format": "JPEG",
+  "title": "백제 금동대향로",
+  "kicker": "고대유물의 비밀",
+  "sha256": "2d31c8170aeae774a6f80a864ab1b07585351d5602c36f91b211febb9a6f003e",
+  "artifact_shape_reference": {
+    "museum": "국립부여박물관",
+    "relic_number": "부여-005333",
+    "height_cm": 61.8,
+    "max_diameter_cm": 19.0,
+    "source_url": "https://buyeo.museum.go.kr/rprsPsn/view.do?key=2302150017&rprsPsnCmdtyMngSn=2001010001",
+    "photo_reference_url": "https://www.worldhistory.org/image/5730/baekje-incense-burner/",
+    "photo_license": "CC BY"
+  },
+  "qa": {
+    "single_dragon_base": true,
+    "lotus_body": true,
+    "mountain_lid": true,
+    "single_small_phoenix": true,
+    "fantasy_oversized_figures": false,
+    "korean_text_rendered_locally": true
+  }
+}
