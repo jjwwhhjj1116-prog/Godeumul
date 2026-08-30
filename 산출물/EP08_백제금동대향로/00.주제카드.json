@@ -1,0 +1,44 @@
+{
+  "status": "TOPIC_APPROVED",
+  "target": "백제 금동대향로 — 부여 능산리 절터 출토 왕실 의례용 향로",
+  "one_sentence_promise": "진흙 구덩이에서 거의 온전하게 발견된 백제 금동대향로를 용·연꽃·산봉우리·다섯 악사·동물·봉황의 순서로 읽어 백제 왕실의 의례와 세계관을 복원하고, 누가 왜 몸통과 뚜껑을 나눠 감췄는지 남은 미스터리까지 추적한다.",
+  "discovery_action": "1993년 12월 12일 부여 능산리 절터의 공방 건물 발굴 중, 수조로 보이는 구덩이 바닥에서 몸통과 뚜껑이 분리된 향로가 깨진 기와와 여러 공방 유물 사이에서 발견된 현장으로 들어간다.",
+  "representative_artifacts": [
+    "높이 61.8센티미터·무게 약 11.8킬로그램의 금동향로",
+    "물에서 솟구쳐 연꽃 몸체를 받치는 용 받침",
+    "산봉우리 사이에서 완함·종적·배소·거문고·북을 연주하는 다섯 악사",
+    "실재 동물과 상상 동물이 뒤섞인 산악형 뚜껑",
+    "향로 정상에 선 봉황"
+  ],
+  "historical_context": "6~7세기 백제 사비기 왕릉군 가까이에 세워진 능산리 절터, 567년 왕실 공주가 사리를 공양했다는 석조사리감 명문, 660년 전후 백제 멸망기의 화재·폐기 정황을 함께 살핀다.",
+  "central_question": "백제인은 왜 향로 하나에 자신들이 믿던 세계를 통째로 세웠으며, 누가 왜 이 왕실급 유물을 공방 구덩이에 나눠 감췄는가?",
+  "confirmed_answer_scope": "1993년 능산리 절터 공방 구덩이 출토, 높이 61.8센티미터, 용·연꽃·산악·악사·동물·봉황의 입체 구성, 중국 박산향로 전통과의 관계, 왕릉군 인접 왕실 사찰이라는 출토 맥락까지만 사실로 잠근다.",
+  "unknowns": "정확한 제작자와 주문자, 향로가 사용된 구체적인 의식, 각 도상의 단일한 의미, 몸통과 뚜껑을 분리해 구덩이에 넣은 사람과 시점·이유는 확정되지 않았다.",
+  "claims_to_avoid": [
+    "중국의 영향이 전혀 없는 순수 독자 발명이라고 단정하기",
+    "반대로 중국 박산향로를 그대로 복제했다고 축소하기",
+    "도상의 의미를 불교·도교·왕실 제사 중 하나로만 확정하기",
+    "백제 멸망 직전 누군가가 침략군을 피해 숨겼다고 사실처럼 단정하기",
+    "향로가 특정 왕의 장례식에서 사용됐다고 말하기",
+    "12개 구멍의 기능과 연기 경로를 실험 결과 이상으로 과장하기"
+  ],
+  "official_sources": [
+    {"institution": "국립중앙박물관", "title": "백제금동대향로", "url": "https://www.museum.go.kr/MUSEUM/contents/M0501000000.do?pageSize=10&relicRecommendCategory=&relicRecommendId=16891&sc=&schM=view&sv="},
+    {"institution": "국립부여박물관", "title": "백제금동대향로 대표 소장품", "url": "https://buyeo.museum.go.kr/rprsPsn/view.do?rprsPsnCmdtyMngSn=2001010001"},
+    {"institution": "국립부여박물관", "title": "백제금동대향로 전용 전시관", "url": "https://buyeo.museum.go.kr/content.do?key=2605140001"},
+    {"institution": "우리역사넷", "title": "백제 금동 대향로의 발견과 구조", "url": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_r100315"},
+    {"institution": "우리역사넷", "title": "능산리 사지와 왕실", "url": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_r100420"}
+  ],
+  "visual_route": [
+    "대한민국 부여의 절터 전경에서 진흙 찬 공방 구덩이로 급강하",
+    "몸통과 뚜껑이 떨어진 발굴 상태에서 완성된 61.8센티미터 향로로 조립",
+    "맨 아래 용의 비늘과 발톱에서 연꽃잎을 따라 상승",
+    "산봉우리 사이의 다섯 악사와 실재·상상 동물을 360도 회전하며 확인",
+    "연기가 산악형 뚜껑의 구멍을 통과해 봉황 아래로 피어오르는 장면",
+    "중국 박산향로의 산악형 뚜껑과 백제 향로의 독자적 입체 구성을 나란히 비교",
+    "능산리 왕릉군·절터·공방을 3D 단면으로 연결",
+    "660년 전후 화재층과 기울여 넣은 향로를 보여준 뒤 제작자·은닉자 미상으로 닫음"
+  ],
+  "routing": "초기 공개 순서 8편. 140~170초 9:16 숏다큐이며 장면 수는 대본 승인과 TTS 실측 뒤 의미 전환에서 파생한다.",
+  "scores": {"artifact_context": 20, "historical_density": 20, "question_ladder": 20, "reference_quality": 15, "visual_journey": 15, "title_interest": 10, "total": 100}
+}
