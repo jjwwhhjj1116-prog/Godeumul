@@ -1,12 +1,12 @@
 {
   "episode": "EP08_백제금동대향로",
-  "thumbnail": "백제금동대향로_썸네일_v3_1080x1920.jpg",
+  "thumbnail": "백제금동대향로_썸네일_v4_상단문구없음_1080x1920.jpg",
   "width": 1080,
   "height": 1920,
   "format": "JPEG",
   "title_lines": ["백  제", "금동대향로"],
-  "kicker": "고대유물의 비밀",
-  "sha256": "ab39227b9fe6ca93fcc13e5a2e82e373050d1f1801556af6a8787de1dca99074",
+  "kicker": null,
+  "sha256": "9f1061739e75470ce2a5f227d16ae547966895bf065492daa953119ce6ffb322",
   "artifact_shape_reference": {
     "museum": "국립부여박물관",
     "relic_number": "부여-005333",
@@ -23,6 +23,7 @@
     "single_small_phoenix": true,
     "fantasy_oversized_figures": false,
     "korean_text_rendered_locally": true,
+    "white_kicker_omitted_by_user_request": true,
     "artifact_scale": 1.14,
     "artifact_color_separation": "PASS",
     "background_dimmed": true

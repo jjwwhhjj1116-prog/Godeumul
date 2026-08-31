@@ -255,6 +255,8 @@ def main() -> int:
     ap.add_argument("--title", required=True, help="유물명 (초대형 골드 텍스트)")
     ap.add_argument("--kicker", default=None,
                     help="상단 미스터리 한 줄 (없으면 채널 기본 문구)")
+    ap.add_argument("--no-kicker", action="store_true",
+                    help="사용자가 명시한 경우 상단 흰색 문구를 완전히 생략")
     ap.add_argument("--bg", type=Path, default=None, help="배경 이미지 (기본: 자산/썸네일배경.png → images/001.jpg)")
     ap.add_argument("--out", type=Path, default=None)
     ap.add_argument("--kicker-y", type=float, default=None,
@@ -277,7 +279,9 @@ def main() -> int:
     ep = args.episode.resolve()
     W, H = CFG.get("출력.해상도", [1080, 1920])
     T = CFG.get("썸네일", {})
-    brand = args.kicker or T.get("상단문구", CFG.get("채널.이름", ""))
+    brand = "" if args.no_kicker else (
+        args.kicker or T.get("상단문구", CFG.get("채널.이름", ""))
+    )
 
     # ── 배경 ────────────────────────────────────────────
     if args.dry:
@@ -318,17 +322,19 @@ def main() -> int:
     margin = int(W * 0.06)
 
     # ── 상단 채널명 ─────────────────────────────────────
-    bf = fit_font(
-        T.get("상단폰트"),
-        brand,
-        W - margin * 2,
-        int(H * (args.kicker_size if args.kicker_size is not None
-                 else T.get("상단문구크기비율", 0.033))),
-    )
-    bw = bf.getbbox(brand)[2] - bf.getbbox(brand)[0]
-    by = int(H * (args.kicker_y if args.kicker_y is not None
-                  else T.get("상단문구Y비율", 0.03)))
-    draw_outlined(d, ((W - bw) // 2, by), brand, bf, (255, 255, 255), (0, 0, 0), 5)
+    bf = None
+    if brand:
+        bf = fit_font(
+            T.get("상단폰트"),
+            brand,
+            W - margin * 2,
+            int(H * (args.kicker_size if args.kicker_size is not None
+                     else T.get("상단문구크기비율", 0.033))),
+        )
+        bw = bf.getbbox(brand)[2] - bf.getbbox(brand)[0]
+        by = int(H * (args.kicker_y if args.kicker_y is not None
+                      else T.get("상단문구Y비율", 0.03)))
+        draw_outlined(d, ((W - bw) // 2, by), brand, bf, (255, 255, 255), (0, 0, 0), 5)
 
     # ── 초대형 유물명 (레퍼런스형 금속 양각) ─────────────
     title = args.title.replace("\\n", "\n")
@@ -351,9 +357,10 @@ def main() -> int:
     save_youtube_jpeg(base, out)
 
     print(f"\n제목   : {title}")
-    print(f"채널명 : {brand}")
+    print(f"채널명 : {brand or '(생략)'}")
     print(f"크기   : {W}x{H}  ({out.stat().st_size // 1024} KB)")
-    print(f"글자   : 제목 {'/'.join(str(size) for size in tf_sizes)}px / 채널명 {bf.size}px")
+    brand_size = f"{bf.size}px" if bf is not None else "생략"
+    print(f"글자   : 제목 {'/'.join(str(size) for size in tf_sizes)}px / 채널명 {brand_size}")
     if tw > W * 0.92:
         print("★ 제목이 화면 폭에 꽉 찹니다. 더 짧은 유물명을 권합니다.")
     print(f"\n  썸네일 → {out}\n")
