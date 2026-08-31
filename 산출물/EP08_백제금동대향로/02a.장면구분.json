@@ -110,7 +110,8 @@
     "flow_account": "jy04210810@gmail.com",
     "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at wet clay pore at the sump edge; travel down the visible mud-and-tile seam; arrive at exposed gilt-bronze curve; settle on gold glint inside the real pit. Dive through the wet mud layers along the existing exposed seam and arrive on the first gold glint as clay grains slide naturally; one camera route, no reveal reset. TTS-locked timing: 0.00-3.47s: Enter the Buyeo temple-site mud. 3.47-7.94s: Reach the 1,400-year-old gold glint. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: wet clay pore at the sump edge is already visible in the locked first frame. Mid anchor: remain on the same forward axis through down the visible mud-and-tile seam. Final anchor: arrive once at exposed gilt-bronze curve. Last frame: Last frame holds the unchanged composition on gold glint inside the real pit. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
     "artifact_visibility": "NON_IDENTIFIABLE",
-    "artifact_reference_ids": []
+    "artifact_reference_ids": [],
+    "routing_reason": "출토 구덩이 속 비식별 금빛 흔적의 위치와 노출 상태를 승인 시작 프레임으로 잠그는 장면"
   },
   {
     "n": 2,
@@ -239,7 +240,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 향로의 전체 윤곽과 단일 용 받침·연꽃 몸체·산악 뚜껑·봉황을 식별하는 장면"
   },
   {
     "n": 3,
@@ -352,7 +354,8 @@
     "flow_account": "jy04210810@gmail.com",
     "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at survey string at the temple foundation; travel across the grid behind the trowel into the open sump; arrive at artifact find position; settle on measured pit find spot. Fly low across the survey grid, follow one archaeologist's trowel toward the sump and descend through the existing open pit to end where the treasure lay. TTS-locked timing: 0.00-3.65s: Correct the parking-lot discovery context. 3.65-7.52s: Ask why the treasure was in the workshop sump. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: survey string at the temple foundation is already visible in the locked first frame. Mid anchor: remain on the same lateral axis through across the grid behind the trowel into the open sump. Final anchor: arrive once at artifact find position. Last frame: Last frame holds the unchanged composition on measured pit find spot. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
     "artifact_visibility": "NONE",
-    "artifact_reference_ids": []
+    "artifact_reference_ids": [],
+    "routing_reason": "공식 발굴 위치와 사비기 절터 배치를 승인 시작 프레임으로 고정해야 하는 장면"
   },
   {
     "n": 4,
@@ -481,7 +484,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 향로의 용 받침에서 봉황까지 이어지는 고유 수직 구조를 식별하는 장면"
   },
   {
     "n": 5,
@@ -625,7 +629,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 향로의 연꽃잎과 산악형 뚜껑 세부 문양을 형태 소유자와 대조하는 장면"
   },
   {
     "n": 6,
@@ -754,7 +759,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 정상부 봉황과 산봉우리 장식의 수와 위치를 바꾸지 않고 보여 주는 장면"
   },
   {
     "n": 7,
@@ -867,7 +873,8 @@
     "flow_account": "jy04210810@gmail.com",
     "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at brush bristle in wet mud; travel along the tile edge toward the exposed metal; arrive at gilt-bronze flash; settle on first exposed metal. Follow the brush bristles across wet clay, make a quick handheld push as the gold catches light, then settle inches above the exposed bronze without uncovering a new object. TTS-locked timing: 0.00-4.49s: Start the documented excavation. 4.49-7.99s: Hit the first gold flash between roof tiles. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: brush bristle in wet mud is already visible in the locked first frame. Mid anchor: remain on the same lateral axis through along the tile edge toward the exposed metal. Final anchor: arrive once at gilt-bronze flash. Last frame: Last frame holds the unchanged composition on first exposed metal. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
     "artifact_visibility": "NON_IDENTIFIABLE",
-    "artifact_reference_ids": []
+    "artifact_reference_ids": [],
+    "routing_reason": "발굴 당시 몸체와 뚜껑이 분리된 비식별 출토 맥락을 공식 배치로 잠그는 장면"
   },
   {
     "n": 8,
@@ -1011,7 +1018,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 향로와 출토층의 관계를 같은 화면에서 식별하며 재설계를 금지해야 하는 장면"
   },
   {
     "n": 9,
@@ -1140,7 +1148,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 표면의 부분 금빛과 청동 부식 상태를 확대해 재질 증거를 식별하는 장면"
   },
   {
     "n": 10,
@@ -1269,7 +1278,8 @@
       "arrival_reaction": "the ribbon fractures and extinguishes at the missing-record edge"
     },
     "artifact_visibility": "NONE",
-    "artifact_reference_ids": []
+    "artifact_reference_ids": [],
+    "routing_reason": "공식 발굴 단면에서 진흙층과 공기 차단 경계를 정확한 위치로 잠그는 장면"
   },
   {
     "n": 11,
@@ -1397,7 +1407,8 @@
       "arrival_reaction": "a small dust ring settles at each real context anchor"
     },
     "artifact_visibility": "NONE",
-    "artifact_reference_ids": []
+    "artifact_reference_ids": [],
+    "routing_reason": "확인된 소토층과 비어 있는 기록 공백을 하나의 증거 배치로 고정하는 장면"
   },
   {
     "n": 12,
@@ -1527,7 +1538,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 향로와 왕릉·사찰 배치의 연결을 공식 공간 프레임 안에서 식별하는 장면"
   },
   {
     "n": 13,
@@ -1656,7 +1668,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 향로와 박산향로 계보를 비교하되 백제 향로의 고유 부품을 보존하는 장면"
   },
   {
     "n": 14,
@@ -1800,7 +1813,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 향로 자체를 새 조사 방향의 중심 증거로 식별시키는 전환 장면"
   },
   {
     "n": 15,
@@ -1929,7 +1943,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "연꽃·산악·봉황의 실제 상하 배치를 따라 상징 체계를 읽는 장면"
   },
   {
     "n": 16,
@@ -2058,7 +2073,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 향로의 용 받침에서 봉황까지 이어지는 형태를 계보 비교와 함께 식별하는 장면"
   },
   {
     "n": 17,
@@ -2179,7 +2195,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 향로의 전체 형상을 최종 결과로 크게 보여 주며 장식 추가를 금지하는 장면"
   },
   {
     "n": 18,
@@ -2300,7 +2317,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 향로를 백제 왕실 사찰의 의식용 향로로 식별하는 복원 장면"
   },
   {
     "n": 19,
@@ -2429,7 +2447,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 미세 조각과 주조 기술 증거를 확대해 유물 자체로 회수하는 장면"
   },
   {
     "n": 20,
@@ -2556,7 +2575,8 @@
       "arrival_reaction": "both paths crumble and disappear at the same distance"
     },
     "artifact_visibility": "NONE",
-    "artifact_reference_ids": []
+    "artifact_reference_ids": [],
+    "routing_reason": "제작자와 의식 기록이 비어 있는 증거 공간을 승인된 도식 프레임으로 잠그는 장면"
   },
   {
     "n": 21,
@@ -2700,7 +2720,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 향로와 미확인 제작·의식 단서를 같은 증거 축에서 식별하는 장면"
   },
   {
     "n": 22,
@@ -2830,7 +2851,8 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "발굴 상태의 몸체와 뚜껑을 임의 조립하지 않고 실물 형태와 함께 보여 주는 장면"
   },
   {
     "n": 23,
@@ -2959,6 +2981,7 @@
       "part_count",
       "ornament_layout",
       "patina_pattern"
-    ]
+    ],
+    "routing_reason": "실물 향로의 정확한 전체 윤곽을 마지막 채널 회수 장면으로 고정해 보여 주는 장면"
   }
 ]

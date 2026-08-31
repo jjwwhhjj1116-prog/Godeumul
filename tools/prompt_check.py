@@ -330,6 +330,9 @@ def main() -> int:
         # A-1. I2V·T2V 하이브리드 라우팅과 실물 형태 소유자
         report.add(generation_mode in GENERATION_MODES, n, "하이브리드 생성 방식",
                    "generation_mode은 I2V_LOCKED 또는 T2V_CONTEXT")
+        routing_reason = str(scene_data.get("routing_reason") or "").strip()
+        report.add(len(routing_reason) >= 12, n, "하이브리드 선택 근거",
+                   "모든 장면에 구체적인 routing_reason이 필요")
         report.add(artifact_visibility in ARTIFACT_VISIBILITIES, n, "유물 가시성",
                    "artifact_visibility는 IDENTIFIABLE/NON_IDENTIFIABLE/NONE")
         if generation_mode == "T2V_CONTEXT":

@@ -40,8 +40,12 @@ def apply_routing(episode: Path) -> int:
         route = route_by_scene[n]
         mode = str(route["generation_mode"]).upper()
         visibility = str(route["artifact_visibility"]).upper()
+        reason = str(route.get("routing_reason") or "").strip()
+        if len(reason) < 12:
+            raise ValueError(f"장면 {n:03d}: routing_reason을 구체적으로 기록해야 합니다")
         scene["generation_mode"] = mode
         scene["artifact_visibility"] = visibility
+        scene["routing_reason"] = reason
         scene["artifact_reference_ids"] = route.get("artifact_reference_ids", [])
 
         if visibility == "IDENTIFIABLE":

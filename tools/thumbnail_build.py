@@ -213,6 +213,32 @@ def draw_reference_gold_title(base: Image.Image, title: str, font_path: str,
     return font.size, tw
 
 
+def draw_reference_gold_title_lines(base: Image.Image, title: str, font_path: str,
+                                    max_w: int, start_size: int, y: int,
+                                    line_gap: int, first_line_scale: float,
+                                    style: dict) -> tuple[list[int], int]:
+    """줄바꿈 제목을 줄마다 독립적으로 맞춰 큰 금속 양각으로 합성한다."""
+    lines = [line for line in title.replace("\\n", "\n").splitlines() if line.strip()]
+    if not lines:
+        raise ValueError("제목이 비어 있습니다")
+    if len(lines) > 2:
+        raise ValueError("썸네일 제목은 최대 두 줄만 지원합니다")
+
+    sizes: list[int] = []
+    widest = 0
+    for index, line in enumerate(lines):
+        line_start = start_size
+        if len(lines) == 2 and index == 0:
+            line_start = max(20, int(start_size * first_line_scale))
+        size, width = draw_reference_gold_title(
+            base, line, font_path, max_w, line_start,
+            y + index * line_gap, style,
+        )
+        sizes.append(size)
+        widest = max(widest, width)
+    return sizes, widest
+
+
 def save_youtube_jpeg(image: Image.Image, out: Path, max_bytes: int = 1_950_000) -> None:
     """유튜브 썸네일 2MB 제한 아래가 될 때까지 품질을 안전하게 낮춘다."""
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -241,6 +267,10 @@ def main() -> int:
                     help="금색 제목 최대 폭 비율 (예: 0.96)")
     ap.add_argument("--title-size", type=float, default=None,
                     help="금색 제목 시작 크기 비율 (예: 0.16)")
+    ap.add_argument("--title-line-gap", type=float, default=0.078,
+                    help="두 줄 제목의 줄 시작점 간격 비율 (기본: 0.078)")
+    ap.add_argument("--title-first-line-scale", type=float, default=0.72,
+                    help="두 줄 제목 첫 줄 시작 크기 배율 (기본: 0.72)")
     ap.add_argument("--dry", action="store_true", help="배경 없이 단색으로 미리보기")
     args = ap.parse_args()
 
@@ -301,8 +331,8 @@ def main() -> int:
     draw_outlined(d, ((W - bw) // 2, by), brand, bf, (255, 255, 255), (0, 0, 0), 5)
 
     # ── 초대형 유물명 (레퍼런스형 금속 양각) ─────────────
-    title = args.title
-    tf_size, tw = draw_reference_gold_title(
+    title = args.title.replace("\\n", "\n")
+    tf_sizes, tw = draw_reference_gold_title_lines(
         base,
         title,
         T.get("제목폰트"),
@@ -312,6 +342,8 @@ def main() -> int:
                  else T.get("제목시작크기비율", 0.14))),
         int(H * (args.title_y if args.title_y is not None
                  else T.get("제목Y비율", 0.075))),
+        int(H * args.title_line_gap),
+        args.title_first_line_scale,
         T,
     )
 
@@ -321,7 +353,7 @@ def main() -> int:
     print(f"\n제목   : {title}")
     print(f"채널명 : {brand}")
     print(f"크기   : {W}x{H}  ({out.stat().st_size // 1024} KB)")
-    print(f"글자   : 제목 {tf_size}px / 채널명 {bf.size}px")
+    print(f"글자   : 제목 {'/'.join(str(size) for size in tf_sizes)}px / 채널명 {bf.size}px")
     if tw > W * 0.92:
         print("★ 제목이 화면 폭에 꽉 찹니다. 더 짧은 유물명을 권합니다.")
     print(f"\n  썸네일 → {out}\n")

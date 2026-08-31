@@ -8,6 +8,7 @@
     "omni": 8,
     "generation_mode": "I2V_LOCKED",
     "artifact_visibility": "NONE",
+    "routing_reason": "공식 공간 배치를 승인 시작 프레임으로 고정해야 하는 장면",
     "motion_owner": "VEO_INTEGRATED_3D",
     "motion_space": "WORLD_3D",
     "camera_path": {

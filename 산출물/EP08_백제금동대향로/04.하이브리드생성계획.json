@@ -1,5 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
+  "fixed_order": [
+    "1Q",
+    "2a",
+    "3",
+    "2c",
+    "2d",
+    "2b/2v",
+    "2G",
+    "4"
+  ],
+  "gate": "PASS",
+  "source_hashes": {
+    "02a.장면구분.json": "8793FBF0EB7ADA4BF9541E86C2A061AE4D3FE67E84DAECA192CA0FB561BC1F40",
+    "audio/durations.json": "A00BBDBC20BCCF66F08284BAB7A1092E08C53E84B2AA4567149E51F3E7C1A41C",
+    "02c.유물레퍼런스.json": "D772AFF9E8478EBDCDA7AEA1DBCF6261F2BF97B21E3E466118B027E9CCBD66DA",
+    "02d.유물장면라우팅.json": "3E269C54A418A7E9FECC4B3F4C8F8E2BA66A0F6A9E7225101C8738A9EB77360D"
+  },
   "scene_count": 23,
   "i2v_count": 23,
   "t2v_count": 0,
@@ -8,6 +25,8 @@
       "scene": 1,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "NON_IDENTIFIABLE",
+      "routing_reason": "출토 구덩이 속 비식별 금빛 흔적의 위치와 노출 상태를 승인 시작 프레임으로 잠그는 장면",
+      "artifact_reference_ids": [],
       "mode_index": 1,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "001.mp4"
@@ -16,6 +35,10 @@
       "scene": 2,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 향로의 전체 윤곽과 단일 용 받침·연꽃 몸체·산악 뚜껑·봉황을 식별하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 2,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "002.mp4"
@@ -24,6 +47,8 @@
       "scene": 3,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "NONE",
+      "routing_reason": "공식 발굴 위치와 사비기 절터 배치를 승인 시작 프레임으로 고정해야 하는 장면",
+      "artifact_reference_ids": [],
       "mode_index": 3,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "003.mp4"
@@ -32,6 +57,10 @@
       "scene": 4,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 향로의 용 받침에서 봉황까지 이어지는 고유 수직 구조를 식별하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 4,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "004.mp4"
@@ -40,6 +69,10 @@
       "scene": 5,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 향로의 연꽃잎과 산악형 뚜껑 세부 문양을 형태 소유자와 대조하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 5,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "005.mp4"
@@ -48,6 +81,10 @@
       "scene": 6,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 정상부 봉황과 산봉우리 장식의 수와 위치를 바꾸지 않고 보여 주는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 6,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "006.mp4"
@@ -56,6 +93,8 @@
       "scene": 7,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "NON_IDENTIFIABLE",
+      "routing_reason": "발굴 당시 몸체와 뚜껑이 분리된 비식별 출토 맥락을 공식 배치로 잠그는 장면",
+      "artifact_reference_ids": [],
       "mode_index": 7,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "007.mp4"
@@ -64,6 +103,10 @@
       "scene": 8,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 향로와 출토층의 관계를 같은 화면에서 식별하며 재설계를 금지해야 하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 8,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "008.mp4"
@@ -72,6 +115,10 @@
       "scene": 9,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 표면의 부분 금빛과 청동 부식 상태를 확대해 재질 증거를 식별하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 9,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "009.mp4"
@@ -80,6 +127,8 @@
       "scene": 10,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "NONE",
+      "routing_reason": "공식 발굴 단면에서 진흙층과 공기 차단 경계를 정확한 위치로 잠그는 장면",
+      "artifact_reference_ids": [],
       "mode_index": 10,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "010.mp4"
@@ -88,6 +137,8 @@
       "scene": 11,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "NONE",
+      "routing_reason": "확인된 소토층과 비어 있는 기록 공백을 하나의 증거 배치로 고정하는 장면",
+      "artifact_reference_ids": [],
       "mode_index": 11,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "011.mp4"
@@ -96,6 +147,10 @@
       "scene": 12,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 향로와 왕릉·사찰 배치의 연결을 공식 공간 프레임 안에서 식별하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 12,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "012.mp4"
@@ -104,6 +159,10 @@
       "scene": 13,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 향로와 박산향로 계보를 비교하되 백제 향로의 고유 부품을 보존하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 13,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "013.mp4"
@@ -112,6 +171,10 @@
       "scene": 14,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 향로 자체를 새 조사 방향의 중심 증거로 식별시키는 전환 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 14,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "014.mp4"
@@ -120,6 +183,10 @@
       "scene": 15,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "연꽃·산악·봉황의 실제 상하 배치를 따라 상징 체계를 읽는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 15,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "015.mp4"
@@ -128,6 +195,10 @@
       "scene": 16,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 향로의 용 받침에서 봉황까지 이어지는 형태를 계보 비교와 함께 식별하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 16,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "016.mp4"
@@ -136,6 +207,10 @@
       "scene": 17,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 향로의 전체 형상을 최종 결과로 크게 보여 주며 장식 추가를 금지하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 17,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "017.mp4"
@@ -144,6 +219,10 @@
       "scene": 18,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 향로를 백제 왕실 사찰의 의식용 향로로 식별하는 복원 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 18,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "018.mp4"
@@ -152,6 +231,10 @@
       "scene": 19,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 미세 조각과 주조 기술 증거를 확대해 유물 자체로 회수하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 19,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "019.mp4"
@@ -160,6 +243,8 @@
       "scene": 20,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "NONE",
+      "routing_reason": "제작자와 의식 기록이 비어 있는 증거 공간을 승인된 도식 프레임으로 잠그는 장면",
+      "artifact_reference_ids": [],
       "mode_index": 20,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "020.mp4"
@@ -168,6 +253,10 @@
       "scene": 21,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 향로와 미확인 제작·의식 단서를 같은 증거 축에서 식별하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 21,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "021.mp4"
@@ -176,6 +265,10 @@
       "scene": 22,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "발굴 상태의 몸체와 뚜껑을 임의 조립하지 않고 실물 형태와 함께 보여 주는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 22,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "022.mp4"
@@ -184,6 +277,10 @@
       "scene": 23,
       "generation_mode": "I2V_LOCKED",
       "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 향로의 정확한 전체 윤곽을 마지막 채널 회수 장면으로 고정해 보여 주는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
       "mode_index": 23,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "023.mp4"
