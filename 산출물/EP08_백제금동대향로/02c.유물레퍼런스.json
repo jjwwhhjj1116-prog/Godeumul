@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "artifact_id": "BAEKJE_GILT_BRONZE_INCENSE_BURNER",
+  "artifact_name_ko": "백제 금동대향로",
+  "form_owner_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+  "institution_source": {
+    "institution": "국립부여박물관",
+    "title": "백제금동대향로",
+    "url": "https://buyeo.museum.go.kr/rprsPsn/view.do?key=2302150017&rprsPsnCmdtyMngSn=2001010001"
+  },
+  "secondary_image_source": {
+    "title": "Baekje Incense Burner",
+    "publisher": "World History Encyclopedia",
+    "credit": "National Museum of Korea",
+    "license": "CC BY-NC-SA",
+    "url": "https://www.worldhistory.org/image/5730/baekje-incense-burner/"
+  },
+  "dimensions": {
+    "height_cm": 61.8,
+    "maximum_diameter_cm": 19.0,
+    "proportion_note": "폭에 비해 매우 가늘고 높은 수직 비례"
+  },
+  "invariant_fingerprints": [
+    "비대칭으로 몸을 틀어 연꽃 몸체를 받치는 단 한 마리의 용 받침",
+    "겹겹의 연꽃잎이 위를 향해 감싸는 둥근 몸체와 뚜껑 결합선",
+    "작은 인물과 동물이 분산된 다봉형 산악 뚜껑과 실제 투공",
+    "산악 뚜껑보다 훨씬 작은 단 한 마리의 봉황 정상 장식",
+    "검붉은 갈색 청동·부분 금빛·녹청과 마모가 함께 남은 실물 표면"
+  ],
+  "forbidden_deviations": [
+    "받침을 여러 마리의 용 또는 대칭 쌍룡으로 바꾸기",
+    "몸체를 두껍고 낮은 일반 향로 또는 항아리로 바꾸기",
+    "산악 뚜껑의 인물과 동물을 거대한 판타지 조각상으로 확대하기",
+    "봉황을 두 마리 이상 만들거나 몸체만큼 크게 만들기",
+    "실물 표면을 새 금제품처럼 전면 황금색으로 재도금하기",
+    "전체 윤곽·상중하 비례·부품 수·장식 위치를 바꾸기"
+  ],
+  "references": [
+    {
+      "id": "FORM_OWNER_FRONT_3Q",
+      "role": "FORM_OWNER",
+      "view": "front three-quarter full object",
+      "file": "references/baekje_incense_burner_form_owner.jpg",
+      "sha256": "239D7007386B9F6C99266FF46702286A24398C480E6957E324DE9A2EE37DE373"
+    }
+  ]
+}

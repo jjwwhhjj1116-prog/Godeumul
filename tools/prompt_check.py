@@ -6,8 +6,8 @@
   A 장면 구조      번호 연속, 대본·이미지·영상 1:1, 증거 상태
   B 시간            생성 길이 4/6/8/10초, TTS보다 짧지 않음
   C 고증            고증 카드의 문명·인물·건축·금지어·네거티브
-  D I2V 잠금        3D 디오라마·대상 고유 지문·금지 문화권·TTS 비트
-  E 생성 안정성     9:16, 이미지 문자 금지, I2V 연속 촬영·시작 이미지 보존
+  D 하이브리드      식별 유물 I2V·비식별 맥락 T2V 라우팅·실물 형태 소유자
+  E 생성 안정성     9:16, 이미지 문자 금지, I2V 시작 이미지 보존·T2V 유물 배제
   F 카메라 경로     디오라마 스케일, 진입점·경로·도착점, 속도 곡선, 깊이 전환
 
 사용법
@@ -18,6 +18,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -27,6 +28,14 @@ import _config  # noqa: F401  # Windows 콘솔 UTF-8 설정
 
 
 ALLOWED_SECONDS = {4, 6, 8, 10}
+GENERATION_MODES = {"I2V_LOCKED", "T2V_CONTEXT"}
+ARTIFACT_VISIBILITIES = {"IDENTIFIABLE", "NON_IDENTIFIABLE", "NONE"}
+T2V_ALLOWED_SCENE_TYPES = {
+    "DISCOVERY_ACTION", "EXCAVATION", "HISTORICAL_RECONSTRUCTION",
+    "SITE_ESTABLISH", "CONSERVATION",
+}
+ARTIFACT_FORM_POLICY = "SOURCE_PHOTO_GEOMETRY_LOCK"
+ARTIFACT_REFERENCE_FILE = "02c.유물레퍼런스.json"
 EVIDENCE_STATES = {"발굴확인", "측정확인", "문헌기록", "학술해석", "미확인"}
 MOTION_OWNERS = {"GENERATED_PHYSICS", "VEO_INTEGRATED_3D", "INFO_OVERLAY", "NONE"}
 MOTION_SPACES = {"WORLD_3D", "SURFACE_2_5D", "SCREEN_INFO", "NONE"}
@@ -51,10 +60,8 @@ CAMERA_PATH_FIELDS = {
     "entry_anchor", "route", "destination", "speed_profile", "operator_style",
     "depth_transition", "pattern_interrupts", "settle_point",
 }
-CAMERA_PATH_V6_FIELDS = {
-    "start_frame_anchor_visible", "start_frame_anchor_evidence",
-    "single_axis", "scale_domain", "end_state",
-}
+CAMERA_PATH_COMMON_V6_FIELDS = {"single_axis", "scale_domain", "end_state"}
+CAMERA_PATH_I2V_FIELDS = {"start_frame_anchor_visible", "start_frame_anchor_evidence"}
 CAMERA_AXES = {"FORWARD", "LATERAL", "ORBIT", "LOCKED"}
 SCALE_DOMAINS = {"WIDE", "MEDIUM", "MACRO"}
 SPEED_PROFILES = {
@@ -171,6 +178,33 @@ def selected_image(scene: dict, requested: str | None) -> str:
     return str(scene.get("img_v2") or scene.get("img") or "")
 
 
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest().upper()
+
+
+def load_artifact_manifest(episode: Path) -> tuple[Path, dict[str, object], dict[str, dict]]:
+    path = episode / ARTIFACT_REFERENCE_FILE
+    if not path.exists():
+        return path, {}, {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return path, {}, {}
+    if not isinstance(data, dict):
+        return path, {}, {}
+    references = data.get("references") or []
+    by_id = {
+        str(item.get("id")): item
+        for item in references
+        if isinstance(item, dict) and str(item.get("id") or "").strip()
+    }
+    return path, data, by_id
+
+
 def scene_number(value: object, fallback: int) -> int:
     try:
         return int(value)
@@ -199,6 +233,7 @@ def main() -> int:
         sys.exit(f"[에러] 장면표가 빈 배열이거나 형식이 잘못됐습니다: {scene_path}")
 
     report = Report()
+    manifest_path, artifact_manifest, artifact_references = load_artifact_manifest(episode)
     print(f"\n에피소드 : {episode.name}")
     print(f"문명 앵커 : {card['civ']}")
     print(f"장면      : {len(scenes)}개\n")
@@ -225,6 +260,12 @@ def main() -> int:
         else:
             motion_spaces = [value.strip().upper() for value in re.split(r"[+,|]", str(motion_space_raw)) if value.strip()]
         scene_type = str(scene_data.get("ct") or scene_data.get("type") or "").strip()
+        generation_mode = str(
+            scene_data.get("generation_mode") or scene_data.get("생성방식") or ""
+        ).strip().upper()
+        artifact_visibility = str(
+            scene_data.get("artifact_visibility") or scene_data.get("유물가시성") or ""
+        ).strip().upper()
         low = image.lower()
 
         # A. 한 장면 1:1 구조
@@ -286,7 +327,67 @@ def main() -> int:
         report.add(scene_type in SCENE_TYPES, n, "장면 유형",
                    "" if scene_type in SCENE_TYPES else f"'{scene_type or '없음'}'")
 
-        # A-1. 신규 회차 카메라 경로 잠금
+        # A-1. I2V·T2V 하이브리드 라우팅과 실물 형태 소유자
+        report.add(generation_mode in GENERATION_MODES, n, "하이브리드 생성 방식",
+                   "generation_mode은 I2V_LOCKED 또는 T2V_CONTEXT")
+        report.add(artifact_visibility in ARTIFACT_VISIBILITIES, n, "유물 가시성",
+                   "artifact_visibility는 IDENTIFIABLE/NON_IDENTIFIABLE/NONE")
+        if generation_mode == "T2V_CONTEXT":
+            report.add(scene_type in T2V_ALLOWED_SCENE_TYPES, n, "T2V 허용 장면 유형",
+                       f"T2V_CONTEXT 허용: {sorted(T2V_ALLOWED_SCENE_TYPES)}")
+            report.add(artifact_visibility in {"NON_IDENTIFIABLE", "NONE"}, n,
+                       "T2V 주 유물 비식별",
+                       "T2V_CONTEXT에서 주 유물을 식별 가능한 형태로 보여 줄 수 없음")
+            t2v_ban = any(term in video.lower() for term in (
+                "do not show the named hero artifact in identifiable form",
+                "no identifiable hero artifact",
+            ))
+            report.add(t2v_ban, n, "T2V 주 유물 생성 금지",
+                       "영상 프롬프트에 식별 가능한 주 유물 생성 금지 문구 필요")
+
+        if artifact_visibility == "IDENTIFIABLE":
+            report.add(generation_mode == "I2V_LOCKED", n, "식별 유물 I2V 잠금",
+                       "IDENTIFIABLE 장면은 I2V_LOCKED만 허용")
+            form_policy = str(scene_data.get("artifact_form_policy") or "").strip().upper()
+            report.add(form_policy == ARTIFACT_FORM_POLICY, n, "실물 형태 정책",
+                       f"artifact_form_policy는 {ARTIFACT_FORM_POLICY}")
+            reference_ids = scene_data.get("artifact_reference_ids") or []
+            references_ok = isinstance(reference_ids, list) and bool(reference_ids)
+            report.add(references_ok, n, "유물 형태 레퍼런스",
+                       "artifact_reference_ids는 1개 이상의 배열이어야 함")
+            report.add(bool(artifact_manifest), n, "유물 레퍼런스 매니페스트",
+                       f"{manifest_path.name} 필요")
+            if references_ok and artifact_manifest:
+                missing_ids = [rid for rid in reference_ids if str(rid) not in artifact_references]
+                report.add(not missing_ids, n, "유물 레퍼런스 ID",
+                           "" if not missing_ids else f"매니페스트에 없음: {missing_ids}")
+                for reference_id in reference_ids:
+                    reference = artifact_references.get(str(reference_id))
+                    if not reference:
+                        continue
+                    relative_file = str(reference.get("file") or "").strip()
+                    expected_hash = str(reference.get("sha256") or "").strip().upper()
+                    reference_path = episode / relative_file
+                    report.add(bool(relative_file) and reference_path.exists(), n,
+                               f"형태 소유자 파일 {reference_id}",
+                               relative_file or "file 누락")
+                    if relative_file and reference_path.exists():
+                        actual_hash = sha256_file(reference_path)
+                        report.add(bool(expected_hash) and actual_hash == expected_hash, n,
+                                   f"형태 소유자 SHA {reference_id}",
+                                   "" if actual_hash == expected_hash else
+                                   f"기대 {expected_hash or '없음'} / 실제 {actual_hash}")
+            allowed_changes = scene_data.get("allowed_artifact_changes") or []
+            forbidden_changes = scene_data.get("forbidden_artifact_changes") or []
+            report.add(isinstance(allowed_changes, list) and "camera" in allowed_changes
+                       and "lighting" in allowed_changes, n, "유물 허용 변화",
+                       "allowed_artifact_changes에 camera와 lighting 필요")
+            must_forbid = {"silhouette", "proportion", "part_count", "ornament_layout"}
+            report.add(isinstance(forbidden_changes, list)
+                       and must_forbid.issubset(set(forbidden_changes)), n, "유물 금지 변화",
+                       "silhouette/proportion/part_count/ornament_layout 변경 금지 필요")
+
+        # A-2. 신규 회차 카메라 경로 잠금
         camera_path = scene_data.get("camera_path") or scene_data.get("카메라경로") or {}
         camera_path_required = not released_episode
         camera_path_is_dict = isinstance(camera_path, dict) and bool(camera_path)
@@ -297,16 +398,26 @@ def main() -> int:
             report.add(not missing_camera, n, "카메라 경로 필수 필드",
                        "" if not missing_camera else f"누락: {', '.join(missing_camera)}")
             if camera_path_required:
-                missing_v6 = sorted(CAMERA_PATH_V6_FIELDS - set(camera_path))
+                required_v6 = set(CAMERA_PATH_COMMON_V6_FIELDS)
+                if generation_mode == "I2V_LOCKED":
+                    required_v6.update(CAMERA_PATH_I2V_FIELDS)
+                else:
+                    required_v6.add("opening_state_evidence")
+                missing_v6 = sorted(required_v6 - set(camera_path))
                 report.add(not missing_v6, n, "카메라 연속성 v6 필드",
                            "" if not missing_v6 else f"누락: {', '.join(missing_v6)}")
-                anchor_visible = camera_path.get("start_frame_anchor_visible") is True
-                anchor_evidence = str(
-                    camera_path.get("start_frame_anchor_evidence") or ""
-                ).strip()
-                report.add(anchor_visible and bool(anchor_evidence), n,
-                           "실제 첫 프레임 앵커 확인",
-                           "선택 이미지에서 보이는 위치·형태를 기록하고 visible=true 필요")
+                if generation_mode == "I2V_LOCKED":
+                    anchor_visible = camera_path.get("start_frame_anchor_visible") is True
+                    anchor_evidence = str(
+                        camera_path.get("start_frame_anchor_evidence") or ""
+                    ).strip()
+                    report.add(anchor_visible and bool(anchor_evidence), n,
+                               "실제 첫 프레임 앵커 확인",
+                               "선택 이미지에서 보이는 위치·형태를 기록하고 visible=true 필요")
+                else:
+                    opening_evidence = str(camera_path.get("opening_state_evidence") or "").strip()
+                    report.add(bool(opening_evidence), n, "T2V 첫 상태 증거",
+                               "opening_state_evidence에 첫 구도·시대 앵커 필요")
                 single_axis = str(camera_path.get("single_axis") or "").strip().upper()
                 scale_domain = str(camera_path.get("scale_domain") or "").strip().upper()
                 end_state = str(camera_path.get("end_state") or "").strip()
@@ -357,12 +468,7 @@ def main() -> int:
                            "미확인 경계 보존",
                            "SEALED_UNKNOWN은 문 개방·단면 진입 금지")
 
-        # A-2. 본편 I2V·시각 고증 잠금·TTS 비트
-        generation_mode = str(
-            scene_data.get("generation_mode") or scene_data.get("생성방식") or ""
-        ).strip().upper()
-        report.add(generation_mode == "I2V_LOCKED", n, "본편 I2V 잠금",
-                   "generation_mode은 I2V_LOCKED여야 함")
+        # A-3. 시각 고증 잠금·TTS 비트
 
         visual_lock = scene_data.get("visual_lock") or scene_data.get("시각잠금") or {}
         visual_lock_is_dict = isinstance(visual_lock, dict)
@@ -574,7 +680,7 @@ def main() -> int:
 
         video_low = video.lower()
         continuous = "continuous" in video_low and "no hard cut" in video_low
-        report.add(continuous, n, "I2V 연속 촬영",
+        report.add(continuous, n, "생성 영상 연속 촬영",
                    "" if continuous else "continuous와 no hard cut 지시 필요")
         if camera_path_required and duration_number >= 8:
             anchor_lock = all(term in video_low for term in (
@@ -598,15 +704,26 @@ def main() -> int:
             found_reversal = [phrase for phrase in reversal_phrases if phrase in video_low]
             report.add(not found_reversal, n, "카메라 방향·규모 반전 금지",
                        "" if not found_reversal else f"위험 문구: {found_reversal}")
-        preserve = "no new object" in video_low or "preserve all object" in video_low
-        report.add(preserve, n, "I2V 새 물체 금지",
-                   "" if preserve else "no new objects 또는 preserve all objects 지시 필요")
-        locked_start = (
-            ("start image" in video_low or "supplied locked" in video_low)
-            and "preserve" in video_low
-        )
-        report.add(locked_start, n, "I2V 시작 이미지 보존",
-                   "start image/supplied locked + preserve 지시 필요")
+        if generation_mode == "I2V_LOCKED":
+            preserve = "no new object" in video_low or "preserve all object" in video_low
+            report.add(preserve, n, "I2V 새 물체 금지",
+                       "" if preserve else "no new objects 또는 preserve all objects 지시 필요")
+            locked_start = (
+                ("start image" in video_low or "supplied locked" in video_low)
+                and "preserve" in video_low
+            )
+            report.add(locked_start, n, "I2V 시작 이미지 보존",
+                       "start image/supplied locked + preserve 지시 필요")
+            if artifact_visibility == "IDENTIFIABLE":
+                rigid_lock = all(term in video_low for term in (
+                    "exact supplied reference artifact", "completely rigid",
+                    "no redesign", "no changed part count",
+                ))
+                report.add(rigid_lock, n, "식별 유물 강체 잠금",
+                           "실물 형태 보존·강체·재설계/부품 수 변경 금지 문구 필요")
+        elif generation_mode == "T2V_CONTEXT":
+            t2v_declared = "t2v" in video_low or "text-to-video" in video_low
+            report.add(t2v_declared, n, "T2V 명시", "T2V 또는 text-to-video 문구 필요")
         if camera_path_required:
             report.add("vlog" not in video_low and "influencer" not in video_low
                        and "selfie" not in video_low, n,

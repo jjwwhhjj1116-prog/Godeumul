@@ -1,0 +1,315 @@
+{
+  "version": 1,
+  "reference_manifest": "02c.유물레퍼런스.json",
+  "policy": "10%·50%·90% 세 프레임과 형태 소유자를 확대 대조; 한 프레임이라도 다르면 FAIL",
+  "overall_status": "ARTIFACT_FORM_FAIL",
+  "manual_review_reason": "실물 형태 소유자와 대조한 결과 기존 컷의 비례·용 받침·산악 뚜껑·봉황·표면이 다수 변형됨",
+  "scenes": [
+    {
+      "scene": 2,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_002_t10.jpg",
+        "QA_유물형태키프레임/scene_002_t50.jpg",
+        "QA_유물형태키프레임/scene_002_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 4,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_004_t10.jpg",
+        "QA_유물형태키프레임/scene_004_t50.jpg",
+        "QA_유물형태키프레임/scene_004_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 5,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_005_t10.jpg",
+        "QA_유물형태키프레임/scene_005_t50.jpg",
+        "QA_유물형태키프레임/scene_005_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 6,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_006_t10.jpg",
+        "QA_유물형태키프레임/scene_006_t50.jpg",
+        "QA_유물형태키프레임/scene_006_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 8,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_008_t10.jpg",
+        "QA_유물형태키프레임/scene_008_t50.jpg",
+        "QA_유물형태키프레임/scene_008_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 9,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_009_t10.jpg",
+        "QA_유물형태키프레임/scene_009_t50.jpg",
+        "QA_유물형태키프레임/scene_009_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 12,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_012_t10.jpg",
+        "QA_유물형태키프레임/scene_012_t50.jpg",
+        "QA_유물형태키프레임/scene_012_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 13,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_013_t10.jpg",
+        "QA_유물형태키프레임/scene_013_t50.jpg",
+        "QA_유물형태키프레임/scene_013_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 14,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_014_t10.jpg",
+        "QA_유물형태키프레임/scene_014_t50.jpg",
+        "QA_유물형태키프레임/scene_014_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 15,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_015_t10.jpg",
+        "QA_유물형태키프레임/scene_015_t50.jpg",
+        "QA_유물형태키프레임/scene_015_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 16,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_016_t10.jpg",
+        "QA_유물형태키프레임/scene_016_t50.jpg",
+        "QA_유물형태키프레임/scene_016_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 17,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_017_t10.jpg",
+        "QA_유물형태키프레임/scene_017_t50.jpg",
+        "QA_유물형태키프레임/scene_017_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 18,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_018_t10.jpg",
+        "QA_유물형태키프레임/scene_018_t50.jpg",
+        "QA_유물형태키프레임/scene_018_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 19,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_019_t10.jpg",
+        "QA_유물형태키프레임/scene_019_t50.jpg",
+        "QA_유물형태키프레임/scene_019_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 21,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_021_t10.jpg",
+        "QA_유물형태키프레임/scene_021_t50.jpg",
+        "QA_유물형태키프레임/scene_021_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 22,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_022_t10.jpg",
+        "QA_유물형태키프레임/scene_022_t50.jpg",
+        "QA_유물형태키프레임/scene_022_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    },
+    {
+      "scene": 23,
+      "reference_ids": [
+        "FORM_OWNER_FRONT_3Q"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_023_t10.jpg",
+        "QA_유물형태키프레임/scene_023_t50.jpg",
+        "QA_유물형태키프레임/scene_023_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "FAIL",
+        "support_and_part_count": "FAIL",
+        "lid_and_summit_ornament": "FAIL",
+        "surface_and_damage": "FAIL"
+      },
+      "status": "ARTIFACT_FORM_FAIL"
+    }
+  ]
+}

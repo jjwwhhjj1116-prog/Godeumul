@@ -7,20 +7,26 @@
     "tts": 7.0,
     "omni": 8,
     "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "NONE",
     "motion_owner": "VEO_INTEGRATED_3D",
     "motion_space": "WORLD_3D",
     "camera_path": {
       "entry_anchor": "outer survey marker",
       "route": "documented outer route around the foreground earth ridge",
       "destination": "sealed central boundary",
-      "speed_profile": "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
       "operator_style": "CRANE_ORBIT_REVEAL",
       "depth_transition": "BOUNDARY_STOP",
       "pattern_interrupts": [
         "0.25s immediate push",
         "3.2s direction change around the ridge"
       ],
-      "settle_point": "sealed central boundary for the final 0.5 seconds"
+      "settle_point": "sealed central boundary for the final 0.5 seconds",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The supplied start image visibly contains the outer survey marker.",
+      "single_axis": "FORWARD",
+      "scale_domain": "WIDE",
+      "end_state": "Hold on the sealed central boundary without returning to the opening."
     },
     "visual_lock": {
       "civilization": "Ancient China, Qin dynasty",
@@ -58,6 +64,26 @@
         "graphic": "route ends and fades"
       }
     ],
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Opening on the outer survey marker",
+        "camera_pose": "wide forward-axis start",
+        "visible_anchors": ["outer survey marker"]
+      },
+      {
+        "time": 4.0,
+        "composition": "Following the documented route behind the earth ridge",
+        "camera_pose": "wide forward-axis travel",
+        "visible_anchors": ["rammed-earth corner", "foreground earth ridge"]
+      },
+      {
+        "time": 8.0,
+        "composition": "Hold on the sealed central boundary",
+        "camera_pose": "wide settled final pose",
+        "visible_anchors": ["sealed central boundary"]
+      }
+    ],
     "veo_graphic": {
       "function": "ROUTE_PATH",
       "evidence_relation": "only the measured outer route is shown",
@@ -73,6 +99,6 @@
       "arrival_reaction": "one faint dust lift at the boundary"
     },
     "img": "Ancient China, Qin dynasty, premium museum-scale cinematic archaeological 3D diorama, unmistakably a crafted miniature world and not live-action, macro-lens depth cues and selective tilt-shift focal falloff, physically based materials and high-frequency microtexture, Qin rammed-earth architecture, a square rammed-earth mound, the documented outer route and a sealed central boundary visible as a precise site-scale reconstruction, 9:16 vertical composition, no European faces, no classical columns, no text, no labels, no letters.",
-    "vid": "Single continuous 8-second I2V shot from the supplied locked diorama start image. Preserve all objects, site geometry, materials, and lighting. The camera makes a slow forward dolly. One warm ivory stone-dust 3D route ribbon emerges from the outer survey marker, follows the measured path around the rammed-earth corner, passes behind the foreground earth ridge, and ends at the sealed central boundary. Keep it anchored in the physical world with correct parallax and one faint dust reaction on arrival. No new objects, no floating HUD, no text, no hard cut."
+    "vid": "Single continuous 8-second I2V shot from the supplied locked diorama start image. Preserve all objects, site geometry, materials, and lighting. Start anchor: the outer survey marker. Mid anchor: the measured path behind the foreground earth ridge. Final anchor: the sealed central boundary. Last frame: hold on the sealed central boundary. Never return to the opening composition. No cut, reset, loop, replay, teleport or restart. The camera makes a slow forward dolly. One warm ivory stone-dust 3D route ribbon emerges from the outer survey marker, follows the measured path around the rammed-earth corner, passes behind the foreground earth ridge, and ends at the sealed central boundary. Keep it anchored in the physical world with correct parallax and one faint dust reaction on arrival. No new objects, no floating HUD, no text, no hard cut."
   }
 ]

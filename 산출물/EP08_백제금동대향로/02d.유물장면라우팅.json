@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "reference_manifest": "02c.유물레퍼런스.json",
+  "note": "현재 생성본 감사 결과를 반영한 재생성 라우팅. 유물이 식별되는 컷은 실물 형태 소유자 I2V만 허용한다.",
+  "scenes": {
+    "1": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "NON_IDENTIFIABLE", "artifact_reference_ids": []},
+    "2": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "3": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "NONE", "artifact_reference_ids": []},
+    "4": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "5": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "6": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "7": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "NON_IDENTIFIABLE", "artifact_reference_ids": []},
+    "8": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "9": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "10": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "NONE", "artifact_reference_ids": []},
+    "11": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "NONE", "artifact_reference_ids": []},
+    "12": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "13": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "14": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "15": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "16": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "17": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "18": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "19": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "20": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "NONE", "artifact_reference_ids": []},
+    "21": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "22": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]},
+    "23": {"generation_mode": "I2V_LOCKED", "artifact_visibility": "IDENTIFIABLE", "artifact_reference_ids": ["FORM_OWNER_FRONT_3Q"]}
+  }
+}

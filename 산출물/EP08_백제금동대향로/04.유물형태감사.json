@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "audited_at_kst": "2026-08-31",
+  "reference_manifest": "02c.유물레퍼런스.json",
+  "contact_sheet": "QA_유물형태감사/EP08_23컷_중간프레임.jpg",
+  "overall_status": "ARTIFACT_FORM_FAIL",
+  "reason": "실물 사진과 다른 비례·받침·장식 수·봉황 크기·표면으로 생성된 식별 유물 컷이 다수 존재함",
+  "keep_context_scenes": [1, 3, 7, 10, 11, 20],
+  "replace_identifiable_artifact_scenes": [2, 4, 5, 6, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23],
+  "observed_failures": [
+    "낮고 두꺼운 일반 향로형 몸체",
+    "여러 마리 또는 대칭형 용 받침",
+    "산악 뚜껑의 거대 판타지 인물상",
+    "과도하게 큰 봉황 또는 변형된 조류 장식",
+    "실물의 검붉은 청동·부분 금빛 대신 전면 금제품처럼 표현",
+    "장면마다 전체 윤곽과 부품 수가 서로 달라 동일 유물로 이어지지 않음"
+  ],
+  "thumbnail_status": "ARTIFACT_FORM_FAIL",
+  "corrected_thumbnail": {
+    "file": "썸네일_실물형태잠금_v2.jpg",
+    "sha256": "05B0D2A4F6A15A8DF7E50D6B5B655E0C0B5D376388AED9E86152D8BEA86AEFCB",
+    "size": [1080, 1920],
+    "status": "FORM_VISUAL_PASS_USER_APPROVAL_PENDING",
+    "method": "실물 고해상도 사진을 편집 대상으로 고정하고 배경·조명만 변경한 뒤 한글을 후합성"
+  },
+  "repair_policy": "실물 형태 소유자 유물 픽셀을 보존하고 배경·조명·색감·텍스트만 편집",
+  "release_note": "현재 영상은 시각적으로 화려하지만 고증 마스터로 승인할 수 없음. 식별 유물 장면을 형태 잠금 I2V로 교체한 뒤 재감사 필요"
+}
