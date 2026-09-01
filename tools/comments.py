@@ -92,9 +92,14 @@ def main() -> int:
     ap.add_argument("--내용", dest="body", default=None, help="답글 본문")
     ap.add_argument("--run", action="store_true", help="실제로 게시한다")
     ap.add_argument("--초안", dest="draft", action="store_true", help="답글 초안 틀 출력")
+    ap.add_argument("--token", type=Path, default=ROOT / "token.json",
+                    help="기존 OAuth token.json 경로")
+    ap.add_argument("--client-secret", dest="client_secret", type=Path,
+                    default=ROOT / "client_secrets.json",
+                    help="토큰 재인증이 필요할 때 사용할 OAuth 클라이언트 JSON")
     args = ap.parse_args()
 
-    yt = service()
+    yt = service(token_path=args.token, secrets_path=args.client_secret)
 
     # ── 답글 게시 ───────────────────────────────────────
     if args.reply_to:
