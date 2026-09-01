@@ -2,9 +2,9 @@
   "status": "PASS",
   "editor": "CapCut",
   "project_name": "EP08 백제 금동대향로",
-  "video": "EP08_백제금동대향로_최종_capcut_4K.mp4",
-  "video_sha256": "9b61feb717e50c186242c1a580f5cd996560c85c8fb9d4d7aece4f895f42588a",
-  "locked_at": "2026-08-31T05:05:20+09:00",
+  "video": "EP08_백제금동대향로_최종_capcut_4K_형태고증수정.mp4",
+  "video_sha256": "975dcf5ec9a4a87e7bbd8457a84fa0711b3d48ebeeb44baf6d38d3063917891f",
+  "locked_at": "2026-09-01T10:53:48+09:00",
   "checks": {
     "caption_style_verified": true,
     "caption_sync_verified": true,
@@ -21,9 +21,32 @@
     "audio_codec": "aac"
   },
   "context_review": "01.문맥검수.json",
+  "artifact_release_gate": {
+    "flow_binding": "04.FLOW참조첨부기록.json",
+    "form_qa": "04.유물형태키프레임검수.json",
+    "identifiable_scenes": [
+      2,
+      4,
+      5,
+      6,
+      8,
+      9,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23
+    ]
+  },
   "draft_audio_guard": {
     "path": "C:\\Users\\7500F\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\EP08 백제 금동대향로\\draft_content.json",
-    "sha256": "981a3b3519077f14c237a833cbaad2313edaf896e3f81df300594e6b5eff9110",
+    "sha256": "28eaff4c3139f1fd3074f1efed6f62981753b67948fc93654b187382e81f6f31",
     "passed": true,
     "forbidden_materials": {
       "audio_effects": 0,

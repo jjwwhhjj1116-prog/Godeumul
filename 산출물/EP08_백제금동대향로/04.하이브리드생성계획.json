@@ -1,10 +1,11 @@
 {
-  "version": 2,
+  "version": 3,
   "fixed_order": [
     "1Q",
     "2a",
     "3",
     "2c",
+    "2e",
     "2d",
     "2b/2v",
     "2G",
@@ -14,7 +15,8 @@
   "source_hashes": {
     "02a.장면구분.json": "8793FBF0EB7ADA4BF9541E86C2A061AE4D3FE67E84DAECA192CA0FB561BC1F40",
     "audio/durations.json": "A00BBDBC20BCCF66F08284BAB7A1092E08C53E84B2AA4567149E51F3E7C1A41C",
-    "02c.유물레퍼런스.json": "D772AFF9E8478EBDCDA7AEA1DBCF6261F2BF97B21E3E466118B027E9CCBD66DA",
+    "02c.유물레퍼런스.json": "D6A60B84E25A96696F138B93EB73101096D676C270FBC9680F39E914A8F26D34",
+    "02e.FLOW유물참조잠금.json": "78F500028CAA3A6BE27BA18CAD210BF300F32997085252480F23BE05552C7AB1",
     "02d.유물장면라우팅.json": "3E269C54A418A7E9FECC4B3F4C8F8E2BA66A0F6A9E7225101C8738A9EB77360D"
   },
   "scene_count": 23,
@@ -27,6 +29,9 @@
       "artifact_visibility": "NON_IDENTIFIABLE",
       "routing_reason": "출토 구덩이 속 비식별 금빛 흔적의 위치와 노출 상태를 승인 시작 프레임으로 잠그는 장면",
       "artifact_reference_ids": [],
+      "flow_reference_asset": null,
+      "flow_reference_token": null,
+      "flow_reference_required": false,
       "mode_index": 1,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "001.mp4"
@@ -39,6 +44,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 2,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "002.mp4"
@@ -49,6 +57,9 @@
       "artifact_visibility": "NONE",
       "routing_reason": "공식 발굴 위치와 사비기 절터 배치를 승인 시작 프레임으로 고정해야 하는 장면",
       "artifact_reference_ids": [],
+      "flow_reference_asset": null,
+      "flow_reference_token": null,
+      "flow_reference_required": false,
       "mode_index": 3,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "003.mp4"
@@ -61,6 +72,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 4,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "004.mp4"
@@ -73,6 +87,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 5,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "005.mp4"
@@ -85,6 +102,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 6,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "006.mp4"
@@ -95,6 +115,9 @@
       "artifact_visibility": "NON_IDENTIFIABLE",
       "routing_reason": "발굴 당시 몸체와 뚜껑이 분리된 비식별 출토 맥락을 공식 배치로 잠그는 장면",
       "artifact_reference_ids": [],
+      "flow_reference_asset": null,
+      "flow_reference_token": null,
+      "flow_reference_required": false,
       "mode_index": 7,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "007.mp4"
@@ -107,6 +130,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 8,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "008.mp4"
@@ -119,6 +145,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 9,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "009.mp4"
@@ -129,6 +158,9 @@
       "artifact_visibility": "NONE",
       "routing_reason": "공식 발굴 단면에서 진흙층과 공기 차단 경계를 정확한 위치로 잠그는 장면",
       "artifact_reference_ids": [],
+      "flow_reference_asset": null,
+      "flow_reference_token": null,
+      "flow_reference_required": false,
       "mode_index": 10,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "010.mp4"
@@ -139,6 +171,9 @@
       "artifact_visibility": "NONE",
       "routing_reason": "확인된 소토층과 비어 있는 기록 공백을 하나의 증거 배치로 고정하는 장면",
       "artifact_reference_ids": [],
+      "flow_reference_asset": null,
+      "flow_reference_token": null,
+      "flow_reference_required": false,
       "mode_index": 11,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "011.mp4"
@@ -151,6 +186,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 12,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "012.mp4"
@@ -163,6 +201,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 13,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "013.mp4"
@@ -175,6 +216,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 14,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "014.mp4"
@@ -187,6 +231,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 15,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "015.mp4"
@@ -199,6 +246,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 16,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "016.mp4"
@@ -211,6 +261,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 17,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "017.mp4"
@@ -223,6 +276,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 18,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "018.mp4"
@@ -235,6 +291,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 19,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "019.mp4"
@@ -245,6 +304,9 @@
       "artifact_visibility": "NONE",
       "routing_reason": "제작자와 의식 기록이 비어 있는 증거 공간을 승인된 도식 프레임으로 잠그는 장면",
       "artifact_reference_ids": [],
+      "flow_reference_asset": null,
+      "flow_reference_token": null,
+      "flow_reference_required": false,
       "mode_index": 20,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "020.mp4"
@@ -257,6 +319,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 21,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "021.mp4"
@@ -269,6 +334,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 22,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "022.mp4"
@@ -281,6 +349,9 @@
       "artifact_reference_ids": [
         "FORM_OWNER_FRONT_3Q"
       ],
+      "flow_reference_asset": "백제금동대향로",
+      "flow_reference_token": "@백제금동대향로",
+      "flow_reference_required": true,
       "mode_index": 23,
       "prompt_file": "flow_i2v_videos.txt",
       "download_name": "023.mp4"

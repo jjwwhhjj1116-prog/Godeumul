@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "artifact_name_ko": "백제금동대향로",
+  "asset_name": "백제금동대향로",
+  "diorama_sha256": "A8CDF64709F416784194E5910E1591EBF751ABD9119FD05C810F337E48D29C71",
+  "flow_project_id": "a692afa2-de3c-4c2d-b81c-0b2bfcd2bdcc",
+  "account": "jjwwhhjj1116@gmail.com",
+  "model": "Omni 1.1 Flash",
+  "format": "720x1280, 24fps, 8s",
+  "scenes": {
+    "2": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "3081807e-e968-4536-be1d-e8f6cdf92c71", "clip": "clips_repair_formlocked/002.mp4", "clip_sha256": "D4DF8E09ED44F7075EDFAEE1BE6168A56E5FE5A6C6B44A28BCA420D7DC3DFDCD"},
+    "4": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "24755f37-9ad6-4a09-ae62-d42dc762baef", "clip": "clips_repair_formlocked/004.mp4", "clip_sha256": "BB78C86F3A4AE9542A2D902993FDD097B1AB094253764E1FC3DEAAA3D944F4E7"},
+    "5": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "5460c106-b635-4b31-8b26-968b1f1a12cd", "clip": "clips_repair_formlocked/005.mp4", "clip_sha256": "98CD2B5D41B429BB7FA6CD492E0F991BC565FE8691BC8C88185DD2888F3DCCA9"},
+    "6": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "aae8a312-c15b-4209-9a4c-5f8a1de39482", "clip": "clips_repair_formlocked/006.mp4", "clip_sha256": "14CFFEBF2FAA75D0991234C84ABAE1A933AD2BF68475B44974B25977871ACF87"},
+    "8": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "f5fdd4a6-7d08-4caf-89e1-862c969241a3", "clip": "clips_repair_formlocked/008.mp4", "clip_sha256": "F6FFFCEAAC62930C5F1472DB09BBAD5AD4710122F49FC30A84534AD754D40DF2"},
+    "9": {"attached": true, "asset_name": "백제금동대향로", "binding": "START_END_FRAME", "media_id": "b553850e-a0a9-4c0d-a294-d46ea0b44fdb", "clip": "clips_repair_formlocked/009.mp4", "flow_download_sha256": "EAEA604EDB15207A6E989A3038DBA0F51A048851D3CA4431A1EAA713CDD8F603", "clip_sha256": "99B1D5A87D3A915FE4E73D06326E64001229CB0E30A3BAA6FF13FE0A1F72B894", "postprocess": "FORM_PRESERVING_CENTER_CROP_REMOVED_GENERATED_LABEL"},
+    "12": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "1f6056ed-e1c2-448e-9883-ea2f02167e3f", "clip": "clips_repair_formlocked/012.mp4", "clip_sha256": "379A13131BF7CD7251E9240A46FEBE4507379076109226C0CED89E1ABB87A163"},
+    "13": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "ebd2b0e2-50b1-4ce9-9a87-cf83fc572fc2", "clip": "clips_repair_formlocked/013.mp4", "clip_sha256": "4A5E16BC2E0485568EE38150FF884A8F689AAD7239BF6454244E7E7C4A4CDFE5"},
+    "14": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "e32e44e3-f4e5-4e20-a074-db82ef595e1d", "clip": "clips_repair_formlocked/014.mp4", "clip_sha256": "5814FDD29613C6CEA438602B0EA2E9B4D1E0936F325E446CF149C79D742FEE7D"},
+    "15": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "6a2622df-679d-49b0-a59a-b59473ae03f3", "clip": "clips_repair_formlocked/015.mp4", "clip_sha256": "CDA667F4BA1DD5BAFB056946AED4781035FD867C0F5ADE5D8BBF9A9658D878B9"},
+    "16": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "d8efccd7-1636-40cd-ab45-6ff0d8c68abe", "clip": "clips_repair_formlocked/016.mp4", "clip_sha256": "67DFAA9E6A947A14C9BA9CDCF50C168F6AA279760E0E83FA6F4169A43E62B143"},
+    "17": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "d89ddf16-7c48-4af4-af4d-2c501873c3f7", "clip": "clips_repair_formlocked/017.mp4", "clip_sha256": "FAE4BEB25A86727B8C49611B1126FE7CF3434A582A2CF9674A12568CDD654788"},
+    "18": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "dfb0164f-67a8-4d5b-9dc2-082d79b8f175", "clip": "clips_repair_formlocked/018.mp4", "clip_sha256": "7B9E8E85AE1F22AC274D935A644D5EA368AD54419DA5C10F9914E2B740C6485D"},
+    "19": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "a0aab699-4062-47f1-bc7b-b589077420e7", "clip": "clips_repair_formlocked/019.mp4", "clip_sha256": "E7CB6352D835227089A5A36E5B403DFD19F88C5F231F2E23E4B1EFAD24635E2D"},
+    "21": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "d440fc8d-98e2-4e8b-a41a-9b3ac1a79750", "clip": "clips_repair_formlocked/021.mp4", "clip_sha256": "D3B25999915B23533485873C4C943D19F396C170881FDC3B353C923F25E33E04"},
+    "22": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "e51c8f3e-d672-4b98-bd30-35b3767328ec", "clip": "clips_repair_formlocked/022.mp4", "clip_sha256": "F6F85F96DC7CE84E4C880D898E39C5558FBD67666F3AF7B392250EFA8A5EED06"},
+    "23": {"attached": true, "asset_name": "백제금동대향로", "binding": "INGREDIENT", "media_id": "08c731f3-fd64-491a-ae2a-6c37836c8f7e", "clip": "clips_repair_formlocked/023.mp4", "clip_sha256": "E0C3BFA9EE496D4052DEF2A31025723E504BE37365CB02F3484E3C83F0ABCAB7"}
+  }
+}

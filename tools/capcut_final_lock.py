@@ -18,6 +18,7 @@ from datetime import datetime
 from pathlib import Path
 
 from _config import load
+from artifact_form_gate import validate_artifact_release_gate
 from capcut_audio_guard import audit_draft
 from script_context_gate import validate_context_review
 
@@ -147,6 +148,8 @@ def validate_capcut_lock(ep: Path, video: Path | None = None) -> FinalLockReport
             failures.append(f"CapCut GUI 필수 확인 누락: {key}")
     if not str(doc.get("project_name") or "").strip():
         failures.append("CapCut 프로젝트 이름 누락")
+    artifact_gate = validate_artifact_release_gate(ep)
+    failures.extend(f"유물 형태 QA: {failure}" for failure in artifact_gate.failures)
     return FinalLockReport(selected, lock_path, failures, doc)
 
 
@@ -230,6 +233,8 @@ def main() -> int:
 
     context = validate_context_review(ep / "01.대본.txt", ep / "01.문맥검수.json")
     failures.extend(f"문맥 QA: {failure}" for failure in context.failures)
+    artifact_gate = validate_artifact_release_gate(ep)
+    failures.extend(f"유물 형태 QA: {failure}" for failure in artifact_gate.failures)
     media_info: dict = {}
     if video.exists():
         media_info, media_failures = probe_video(video)
@@ -251,6 +256,11 @@ def main() -> int:
         "checks": checks,
         "media": media_info,
         "context_review": "01.문맥검수.json",
+        "artifact_release_gate": {
+            "flow_binding": "04.FLOW참조첨부기록.json",
+            "form_qa": "04.유물형태키프레임검수.json",
+            "identifiable_scenes": artifact_gate.details.get("identifiable_scenes", []),
+        },
         "draft_audio_guard": draft_guard,
     }
     lock_path = ep / LOCK_NAME

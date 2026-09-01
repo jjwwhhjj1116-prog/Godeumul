@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "artifact_name_ko": "백제금동대향로",
+  "prompt_anchor": "백제금동대향로",
+  "approved_diorama": {
+    "file": "references/백제금동대향로_FLOW_디오라마_형태잠금_v1.png",
+    "sha256": "A8CDF64709F416784194E5910E1591EBF751ABD9119FD05C810F337E48D29C71",
+    "derived_from_reference_ids": [
+      "FORM_OWNER_FRONT_3Q"
+    ],
+    "shape_identity_review": "PASS",
+    "review_note": "실물 형태 소유자와 나란히 대조해 단일 용 받침, 연꽃 몸체, 산악 뚜껑, 정상 봉황, 전체 수직 비례를 유지한 디오라마 참조로 승인"
+  },
+  "flow_reference": {
+    "asset_name": "백제금동대향로",
+    "prompt_token": "@백제금동대향로",
+    "preferred_binding": "INGREDIENT_AND_CHARACTER",
+    "source_assets": [
+      "references/baekje_incense_burner_form_owner.jpg",
+      "references/백제금동대향로_FLOW_디오라마_형태잠금_v1.png"
+    ],
+    "usage": "실물 사진으로 형태를 잠그고 디오라마 이미지로 스타일·배경을 잠근 뒤, 모든 IDENTIFIABLE 이미지·영상 프롬프트에서 @백제금동대향로를 실제 첨부한다"
+  }
+}

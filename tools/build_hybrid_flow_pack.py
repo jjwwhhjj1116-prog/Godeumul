@@ -10,6 +10,7 @@ import json
 from pathlib import Path
 
 import _config  # noqa: F401
+from artifact_form_gate import REFERENCE_LOCK_NAME, validate_reference_lock
 
 
 MODES = {"I2V_LOCKED", "T2V_CONTEXT"}
@@ -32,13 +33,26 @@ def _write_blocks(path: Path, blocks: list[str]) -> None:
     path.write_text("\n\n".join(blocks) + ("\n" if blocks else ""), encoding="utf-8")
 
 
+def _lock_artifact_prompt(prompt: str, artifact_name: str, prompt_token: str) -> str:
+    """Flow 제출본에 유물 참조 토큰과 형태 불변 조건을 자동 주입한다."""
+    if artifact_name in prompt and prompt_token in prompt:
+        return prompt
+    return (
+        f"{prompt_token}. Exact named hero artifact: {artifact_name}. "
+        "Use the actually attached Flow visual reference as the immutable form owner. "
+        "Preserve exactly the same silhouette, height-to-width ratio, part count, "
+        "part placement, ornament layout, patina and damage. Never redraw or substitute "
+        f"a generic lookalike. {prompt}"
+    )
+
+
 def verify_pack(episode: Path) -> dict[str, object]:
     plan_path = episode / "04.하이브리드생성계획.json"
     if not plan_path.exists():
         raise ValueError("04.하이브리드생성계획.json이 없습니다. 2G를 먼저 실행하세요")
     plan = json.loads(plan_path.read_text(encoding="utf-8"))
-    if plan.get("version") != 2 or plan.get("gate") != "PASS":
-        raise ValueError("하이브리드 생성계획 version 2 PASS 잠금이 아닙니다")
+    if plan.get("version") != 3 or plan.get("gate") != "PASS":
+        raise ValueError("하이브리드 생성계획 version 3 PASS 잠금이 아닙니다")
     hashes = plan.get("source_hashes")
     if not isinstance(hashes, dict) or not hashes:
         raise ValueError("하이브리드 생성계획에 source_hashes가 없습니다")
@@ -60,9 +74,16 @@ def build_pack(episode: Path) -> dict[str, object]:
     routing_path = episode / "02d.유물장면라우팅.json"
     duration_path = episode / "audio" / "durations.json"
     reference_path = episode / "02c.유물레퍼런스.json"
-    for required in (scene_path, routing_path, duration_path, reference_path):
+    reference_lock_path = episode / REFERENCE_LOCK_NAME
+    for required in (scene_path, routing_path, duration_path, reference_path, reference_lock_path):
         if not required.exists():
             raise ValueError(f"고정 순서 누락: {required.name}이 없습니다")
+
+    reference_lock = validate_reference_lock(episode)
+    if not reference_lock.passed:
+        raise ValueError("Flow 유물 참조 잠금 실패: " + " / ".join(reference_lock.failures))
+    artifact_name = str(reference_lock.details["artifact_name_ko"])
+    prompt_token = str(reference_lock.details["prompt_token"])
 
     scenes = json.loads(scene_path.read_text(encoding="utf-8"))
     if not isinstance(scenes, list) or not scenes:
@@ -91,6 +112,7 @@ def build_pack(episode: Path) -> dict[str, object]:
         video = str(scene.get("vid") or "").strip()
         if not video:
             raise ValueError(f"장면 {n:03d}: 영상 프롬프트 없음")
+        image = str(scene.get("img_v2") or scene.get("img") or "").strip()
 
         route = route_by_scene[n]
         route_mode = str(route.get("generation_mode") or "").strip().upper()
@@ -109,6 +131,8 @@ def build_pack(episode: Path) -> dict[str, object]:
         if visibility == "IDENTIFIABLE":
             if mode != "I2V_LOCKED" or not reference_ids:
                 raise ValueError(f"장면 {n:03d}: 식별 유물은 참조가 잠긴 I2V_LOCKED여야 합니다")
+            image = _lock_artifact_prompt(image, artifact_name, prompt_token)
+            video = _lock_artifact_prompt(video, artifact_name, prompt_token)
         if mode == "T2V_CONTEXT":
             if visibility == "IDENTIFIABLE":
                 raise ValueError(f"장면 {n:03d}: T2V에서 식별 유물을 보여 줄 수 없습니다")
@@ -119,7 +143,6 @@ def build_pack(episode: Path) -> dict[str, object]:
                 raise ValueError(f"장면 {n:03d}: T2V 주 유물 배제 문구가 없습니다")
 
         if mode == "I2V_LOCKED":
-            image = str(scene.get("img_v2") or scene.get("img") or "").strip()
             if not image:
                 raise ValueError(f"장면 {n:03d}: I2V 시작 이미지 프롬프트 없음")
             i2v_images.append(image)
@@ -137,6 +160,9 @@ def build_pack(episode: Path) -> dict[str, object]:
             "artifact_visibility": scene.get("artifact_visibility"),
             "routing_reason": reason,
             "artifact_reference_ids": reference_ids,
+            "flow_reference_asset": artifact_name if visibility == "IDENTIFIABLE" else None,
+            "flow_reference_token": prompt_token if visibility == "IDENTIFIABLE" else None,
+            "flow_reference_required": visibility == "IDENTIFIABLE",
             "mode_index": mode_index,
             "prompt_file": target_file,
             "download_name": f"{n:03d}.mp4",
@@ -147,13 +173,14 @@ def build_pack(episode: Path) -> dict[str, object]:
     _write_blocks(episode / "flow_t2v_videos.txt", t2v_videos)
 
     plan = {
-        "version": 2,
-        "fixed_order": ["1Q", "2a", "3", "2c", "2d", "2b/2v", "2G", "4"],
+        "version": 3,
+        "fixed_order": ["1Q", "2a", "3", "2c", "2e", "2d", "2b/2v", "2G", "4"],
         "gate": "PASS",
         "source_hashes": {
             "02a.장면구분.json": _sha256(scene_path),
             "audio/durations.json": _sha256(duration_path),
             "02c.유물레퍼런스.json": _sha256(reference_path),
+            REFERENCE_LOCK_NAME: _sha256(reference_lock_path),
             "02d.유물장면라우팅.json": _sha256(routing_path),
         },
         "scene_count": len(scenes),
@@ -171,7 +198,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Flow I2V·T2V 입력 파일 분리")
     parser.add_argument("episode", type=Path)
     parser.add_argument("--verify", action="store_true",
-                        help="기존 version 2 생성계획의 원본 해시만 재검증")
+                        help="기존 version 3 생성계획의 원본 해시만 재검증")
     args = parser.parse_args()
     episode = args.episode.resolve()
     plan = verify_pack(episode) if args.verify else build_pack(episode)
