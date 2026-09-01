@@ -1,0 +1,59 @@
+{
+  "status": "SCHEDULED_PROCESSING_VERIFIED",
+  "platform": "youtube",
+  "idempotency_key": "a911e262-f271-4bca-b22b-6f22c6f75311",
+  "submitted_at": "2026-09-01T13:27:53+09:00",
+  "processing_verified_at": "2026-09-01T13:35:25+09:00",
+  "scheduled_public_at": "2026-09-01T14:00:00+09:00",
+  "youtube_video_id": "z-swjv41SE0",
+  "canonical_url": "https://youtu.be/z-swjv41SE0",
+  "studio_url": "https://studio.youtube.com/video/z-swjv41SE0/edit",
+  "channel": {
+    "id": "UCjgXauHJ8z2Kbbl9O9hu4eA",
+    "name": "고대유물의 비밀",
+    "handle": "@ancient_artifacts_kr"
+  },
+  "assets": {
+    "release_package": "06.릴리스패키지.json",
+    "release_package_sha256": "eff52bd10d522e5d933de0cb52c6efcbdb61f73d21ed6d1b4b66afc73c768b41",
+    "video": "EP08_백제금동대향로_최종_capcut_4K_형태고증수정.mp4",
+    "video_sha256": "975dcf5ec9a4a87e7bbd8457a84fa0711b3d48ebeeb44baf6d38d3063917891f",
+    "thumbnail": "썸네일.jpg",
+    "thumbnail_sha256": "9f1061739e75470ce2a5f227d16ae547966895bf065492daa953119ce6ffb322",
+    "metadata": "06.메타.json",
+    "metadata_sha256": "1160fc3eea693dfb241b9a34d15941a4573908db94c941b316d6195bfc0c746a"
+  },
+  "youtube_state": {
+    "title": "1400년 전 백제금동대향로, 왜 진흙 속에 있었나",
+    "privacy_status": "private",
+    "publish_at_utc": "2026-09-01T05:00:00Z",
+    "upload_status": "processed",
+    "processing_status": "succeeded",
+    "definition": "hd",
+    "duration": "PT3M",
+    "made_for_kids": false,
+    "category_id": "27",
+    "licensed_content": false,
+    "region_restriction": null,
+    "contains_synthetic_media_submitted": true,
+    "playlist": "▶고대유물의 비밀"
+  },
+  "thumbnail_verification": {
+    "custom_thumbnail": true,
+    "remote_available": true,
+    "remote_visual_check": "PASS",
+    "remote_maxres_url": "https://i9.ytimg.com/vi/z-swjv41SE0/maxresdefault.jpg?sqp=CMip2dQG&rs=AOn4CLD1DQIbZdICM69EyshhZ7Amhzf_Kw",
+    "note": "YouTube 16:9 preview preserves the complete 9:16 center thumbnail with blurred side fill."
+  },
+  "rights_check": {
+    "api_licensed_content": false,
+    "api_region_restriction": null,
+    "result": "NO_API_RESTRICTION_DETECTED",
+    "note": "The YouTube Data API does not expose the Studio Content ID checks field."
+  },
+  "first_comment": {
+    "status": "PENDING_PUBLICATION",
+    "posted": false,
+    "pinned": false
+  }
+}

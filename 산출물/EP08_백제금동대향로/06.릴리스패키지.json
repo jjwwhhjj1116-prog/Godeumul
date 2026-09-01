@@ -1,0 +1,46 @@
+{
+  "status": "READY_FOR_PRIVATE_UPLOAD",
+  "created_at": "2026-09-01T11:38:00+09:00",
+  "idempotency_key": "a911e262-f271-4bca-b22b-6f22c6f75311",
+  "target": {
+    "platform": "youtube",
+    "channel_id": "UCjgXauHJ8z2Kbbl9O9hu4eA",
+    "channel_name": "고대유물의 비밀",
+    "channel_handle": "@ancient_artifacts_kr",
+    "visibility": "private_scheduled",
+    "scheduled_public_at": "2026-09-01T14:00:00+09:00",
+    "schedule_policy": "USER_APPROVED_SAME_DAY_OVERRIDE",
+    "category_id": 27,
+    "language": "ko",
+    "made_for_kids": false,
+    "contains_synthetic_media": true,
+    "playlist": "▶고대유물의 비밀"
+  },
+  "assets": {
+    "video": "EP08_백제금동대향로_최종_capcut_4K_형태고증수정.mp4",
+    "video_sha256": "975dcf5ec9a4a87e7bbd8457a84fa0711b3d48ebeeb44baf6d38d3063917891f",
+    "thumbnail": "썸네일.jpg",
+    "thumbnail_sha256": "9f1061739e75470ce2a5f227d16ae547966895bf065492daa953119ce6ffb322",
+    "metadata": "06.메타.json",
+    "metadata_sha256": "1160fc3eea693dfb241b9a34d15941a4573908db94c941b316d6195bfc0c746a",
+    "capcut_lock": "05.캡컷마감잠금.json",
+    "capcut_lock_sha256": "9f8b67859ac7f8f6e391013813e84da5a2c0ee3a06a3bce20e1b4cfcd640fb3d"
+  },
+  "rights_and_disclosure": {
+    "third_party_music": false,
+    "copyright_protected_content_detected": false,
+    "visuals": "AI-generated 3D archaeological reconstructions based on cited museum and history sources",
+    "narration": "ElevenLabs generated narration under the channel workflow",
+    "synthetic_media_disclosure_in_description": true,
+    "youtube_contains_synthetic_media": true
+  },
+  "source_ids": [
+    "NMK_BAEKJE_GILT_BRONZE_INCENSE_BURNER",
+    "BUYEO_MUSEUM_REPRESENTATIVE_ARTIFACT",
+    "BUYEO_MUSEUM_INCENSE_BURNER_EXHIBITION",
+    "KOREAN_HISTORY_DISCOVERY_AND_STRUCTURE",
+    "KOREAN_HISTORY_NEUNGSANRI_ROYAL_TEMPLE"
+  ],
+  "blockers": [],
+  "next_action": "Verify channel and duplicates, upload private, verify processing and thumbnail, then schedule for 2026-09-01 14:00 KST."
+}

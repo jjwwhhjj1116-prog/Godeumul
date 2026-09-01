@@ -113,6 +113,7 @@ def service(token_path: Path = TOKEN, secrets_path: Path = SECRETS):
     """인증된 youtube 서비스를 돌려준다. 토큰이 없으면 브라우저를 한 번 연다."""
     _need_libs()
     from google.auth.transport.requests import Request
+    from google.auth.exceptions import RefreshError
     from google.oauth2.credentials import Credentials
     from google_auth_oauthlib.flow import InstalledAppFlow
     from googleapiclient.discovery import build
@@ -121,8 +122,12 @@ def service(token_path: Path = TOKEN, secrets_path: Path = SECRETS):
     if token_path.exists():
         creds = Credentials.from_authorized_user_file(str(token_path), SCOPES)
     if creds and creds.expired and creds.refresh_token:
-        creds.refresh(Request())              # 만료돼도 조용히 갱신된다
-        token_path.write_text(creds.to_json(), encoding="utf-8")
+        try:
+            creds.refresh(Request())          # 정상 만료는 조용히 갱신한다
+            token_path.write_text(creds.to_json(), encoding="utf-8")
+        except RefreshError:
+            # 테스트 OAuth 토큰의 7일 만료·철회는 새 동의 흐름으로 복구한다.
+            creds = None
     if not creds or not creds.valid:
         if not secrets_path.exists():
             sys.exit(f"[에러] client_secrets.json 이 없습니다: {secrets_path}\n"
