@@ -1,0 +1,174 @@
+{
+  "version": 3,
+  "script": "01.대본제안.txt",
+  "script_sha256": "e82f3056ab0a56f729ab8d6cdab0ec5bd9cf953c373f201a06e73f561e423cab",
+  "reviewer": "korean-proofreader + godeumul-context-qa",
+  "status": "PASS",
+  "approval_state": "USER_REVIEW_PENDING",
+  "tts_authorization": "NOT_AUTHORIZED",
+  "checks": {
+    "paragraph_roles_and_flow": "PASS",
+    "adjacent_sentence_relations": "PASS",
+    "connector_deletion_test": "PASS",
+    "duplicate_information": "PASS",
+    "tts_release_gate": "PASS",
+    "conclusion_answer_and_boundary": "PASS",
+    "korean_three_layer_review": "PASS",
+    "all_adjacent_sentence_pairs": "PASS",
+    "major_fact_reveal_ladders": "PASS",
+    "information_prerequisites": "PASS",
+    "hook_compactness_and_payload": "PASS",
+    "script_editorial_separation": "PASS",
+    "investigation_arc_and_future_evidence": "PASS",
+    "fixed_chapter_story_flow": "PASS",
+    "approved_predecessor_flow_review": "PASS"
+  },
+  "paragraphs": [
+    {"n": 1, "role": "ARTIFACT_FIRST_HOOK", "summary": "피라미드 아래의 문보다 큰 석관과 파칼 왕을 먼저 공개하고 운반 불가능이라는 중심 질문을 연다."},
+    {"n": 2, "role": "VALUE_AND_CONTRADICTION", "summary": "옥 가면·장신구·아홉 존재·마야 문자·덮개 부조로 무덤이 설계한 사후 세계와 봉인의 의문을 키운다."},
+    {"n": 3, "role": "DISCOVERY_AND_INVESTIGATION", "summary": "1949년 계단 발견부터 1952년 묘실 개방과 석관 덮개 인양까지 조사 난도를 따라간다."},
+    {"n": 4, "role": "IDENTITY_AND_DEAD_END", "summary": "문자로 파칼의 정체를 확인하지만 문보다 큰 석관 때문에 운반 경로 가설이 막히며 질문을 바꾼다."},
+    {"n": 5, "role": "QUESTION_SHIFT_AND_RECONSTRUCTION", "summary": "건축 순서를 거꾸로 읽고 지하 수로와 부조를 함께 보며 무덤을 죽음과 재생의 장례 무대로 복원한다."},
+    {"n": 6, "role": "ANSWER_BOUNDARY_AND_PAYOFF", "summary": "석관이 장례 건축의 중심이었다는 답과 물의 의식이라는 미해결 범위, 필요한 미래 증거를 분리해 닫는다."}
+  ],
+  "transitions": [
+    {"from": 1, "to": 2, "relation": "운반 불가능 질문에서 내부 증거 공개", "reason": "석관이 어떻게 들어갔는지 묻고 곧바로 그 안과 표면에 담긴 장례 세계를 보여준다.", "status": "PASS"},
+    {"from": 2, "to": 3, "relation": "봉인 이유 질문에서 실제 발견 조사", "reason": "상징 해석을 단정하지 않고 계단을 찾아 묘실까지 내려간 발굴 과정으로 이동한다.", "status": "PASS"},
+    {"from": 3, "to": 4, "relation": "묘실 개방에서 주인과 운반 경로 확인", "reason": "발굴이 확보한 문자와 부장품으로 피장자를 밝힌 뒤 석관 크기의 물리적 모순을 검증한다.", "status": "PASS"},
+    {"from": 4, "to": 5, "relation": "운반 경로 막힘에서 건축 순서 전환", "reason": "완성된 신전으로는 설명되지 않자 석관을 중심으로 건축 순서를 거꾸로 읽는다.", "status": "PASS"},
+    {"from": 5, "to": 6, "relation": "장례 무대 복원에서 답과 한계 결론", "reason": "무덤·수로·부조가 만든 재생의 구조를 밝힌 뒤 확인된 답과 남은 의식을 분리한다.", "status": "PASS"}
+  ],
+  "connectors": [
+    {"sentence": 23, "text": "먼저", "relation": "묘실 선행과 상부 건축 순서", "decision": "KEEP", "reason": "무엇을 먼저 만들었는지가 운반 불가능의 답이므로 삭제하면 핵심 인과가 약해진다."},
+    {"sentence": 25, "text": "먼저", "relation": "수로와 피라미드의 선후 관계", "decision": "KEEP", "reason": "수로가 피라미드보다 앞섰다는 조사 해석이 설계 출발점의 미스터리를 여는 핵심이다."},
+    {"sentence": 29, "text": "먼저", "relation": "석관 중심의 건축 순서 재확인", "decision": "KEEP", "reason": "도입 질문의 확정 답을 한 문장으로 회수하는 결론이므로 반복이 아니라 답의 재진술이다."}
+  ],
+  "duplicate_review": {
+    "status": "PASS",
+    "acknowledged_pairs": [],
+    "note": "자동 유사 문장 후보가 없으며 석관 크기·선행 건축의 반복은 각각 문제 제시, 증거 전환, 결론 회수를 담당한다."
+  },
+  "korean_review": {
+    "status": "PASS",
+    "reviewer": "korean-proofreader",
+    "document": "PASS",
+    "paragraph": "PASS",
+    "sentence": "PASS",
+    "note": "문서 구조, 문단별 정보 역할, 문장 호응·조사·지시어·종결 리듬을 세 층으로 검수했다."
+  },
+  "sentence_links": [
+    {"from": 1, "to": 2, "relation": "발견에서 규모 수치", "reason": "문보다 크다는 첫 모순을 실제 덮개 치수로 즉시 증명한다.", "status": "PASS"},
+    {"from": 2, "to": 3, "relation": "석관 규모에서 피장자 공개", "reason": "거대한 물체의 수치 뒤 그 안에 잠든 파칼 왕을 밝혀 대상을 고정한다.", "status": "PASS"},
+    {"from": 3, "to": 4, "relation": "왕의 정체에서 중심 질문", "reason": "유명 왕의 무덤이라는 가치와 문을 통과할 수 없다는 모순을 질문으로 묶는다.", "status": "PASS"},
+    {"from": 4, "to": 5, "relation": "운반 질문에서 내부 개봉", "reason": "정답을 미루되 석관 안에서 실제 확인된 부장품 조사로 자연스럽게 들어간다.", "status": "PASS"},
+    {"from": 5, "to": 6, "relation": "개인 부장품에서 묘실 세계", "reason": "왕의 몸 주변 유물에서 묘실 벽 전체의 지하세계 표현으로 시야를 넓힌다.", "status": "PASS"},
+    {"from": 6, "to": 7, "relation": "묘실 벽에서 석관 표면", "reason": "주변 장식 다음에 해석의 핵심인 석관 자체를 새 미니훅으로 꺼낸다.", "status": "PASS"},
+    {"from": 7, "to": 8, "relation": "석관 예고에서 문자와 부조", "reason": "놀라움의 근거를 생애 문자와 죽음·재생 부조라는 구체 정보로 제시한다.", "status": "PASS"},
+    {"from": 8, "to": 9, "relation": "기록과 부조에서 설계 평가", "reason": "개별 정보들을 왕의 마지막 세계라는 하나의 장례 설계로 묶는다.", "status": "PASS"},
+    {"from": 9, "to": 10, "relation": "치밀한 설계에서 봉인 질문", "reason": "감탄으로 끝내지 않고 누가 왜 봉인했는지 조사 목표를 다시 연다.", "status": "PASS"},
+    {"from": 10, "to": 11, "relation": "봉인 질문에서 발견 연대", "reason": "추측 대신 1949년 막힌 계단 발견이라는 실제 조사 출발점으로 이동한다.", "status": "PASS"},
+    {"from": 11, "to": 12, "relation": "막힌 계단에서 발굴 난도", "reason": "계단 발견 뒤 흙과 돌을 여러 해 퍼낸 과정을 보여 조사 난도를 체감시킨다.", "status": "PASS"},
+    {"from": 12, "to": 13, "relation": "장기 제거에서 묘실 개방", "reason": "여러 해의 작업이 1952년 묘실 개방이라는 보상으로 이어진다.", "status": "PASS"},
+    {"from": 13, "to": 14, "relation": "묘실 개방에서 덮개 인양", "reason": "방을 연 것과 석관을 연 것은 별도 난관이므로 실제 장비 동원을 차례로 보여준다.", "status": "PASS"},
+    {"from": 14, "to": 15, "relation": "개봉 성공에서 조사 과제", "reason": "발견 장면을 끝낸 뒤 정체와 운반 경로라는 두 조사 목표를 명시한다.", "status": "PASS"},
+    {"from": 15, "to": 16, "relation": "조사 과제에서 문자 해독", "reason": "주인 정체를 풀기 위해 석관과 신전의 문자를 맞춰 읽은 방법을 제시한다.", "status": "PASS"},
+    {"from": 16, "to": 17, "relation": "연대 기록에서 파칼 확인", "reason": "출생·즉위·통치·죽음의 연속 기록과 왕실 부장품으로 피장자를 좁힌다.", "status": "PASS"},
+    {"from": 17, "to": 18, "relation": "정체 해결에서 물리적 모순", "reason": "첫 조사 과제를 닫자마자 남은 석관 운반 문제를 크기 비교로 다시 세운다.", "status": "PASS"},
+    {"from": 18, "to": 19, "relation": "크기 모순에서 경로 부재", "reason": "문보다 크다는 사실이 완성된 신전에는 운반로가 없다는 결론으로 이어진다.", "status": "PASS"},
+    {"from": 19, "to": 20, "relation": "가설 막힘에서 질문 전환", "reason": "들어온 길을 찾는 방식이 실패했음을 짧게 닫고 조사 방향을 전환한다.", "status": "PASS"},
+    {"from": 20, "to": 21, "relation": "전환 선언에서 새 질문", "reason": "막연한 발상 전환이 아니라 피라미드가 무엇을 중심으로 세워졌는지로 바꾼다.", "status": "PASS"},
+    {"from": 21, "to": 22, "relation": "새 질문에서 역순 분석", "reason": "건축의 중심을 묻는 질문을 실제 건축 순서를 거꾸로 읽는 방법으로 연결한다.", "status": "PASS"},
+    {"from": 22, "to": 23, "relation": "분석 방법에서 첫 답", "reason": "역순 분석의 결과로 묘실과 석관 선행, 피라미드 후축을 명확히 밝힌다.", "status": "PASS"},
+    {"from": 23, "to": 24, "relation": "운반 답에서 새 증거", "reason": "첫 질문을 해결한 뒤 묘실 아래 수로라는 더 깊은 설계 증거로 확장한다.", "status": "PASS"},
+    {"from": 24, "to": 25, "relation": "수로 발견에서 선후 해석", "reason": "수로의 존재만 나열하지 않고 피라미드 이전 가능성과 현재 흐르는 물을 제시한다.", "status": "PASS"},
+    {"from": 25, "to": 26, "relation": "지하 물길에서 부조 재해석", "reason": "물의 실제 공간을 덮개 속 파칼의 세계수·옥수수 신 재생 장면과 연결한다.", "status": "PASS"},
+    {"from": 26, "to": 27, "relation": "재생 장면에서 장례 무대", "reason": "무덤·물길·부조 세 증거를 합쳐 죽음과 재생을 잇는 건축의 의미를 도출한다.", "status": "PASS"},
+    {"from": 27, "to": 28, "relation": "해석 완성에서 도입 답", "reason": "장례 무대라는 해석을 바탕으로 완성된 피라미드로 옮긴 보물이 아님을 확정한다.", "status": "PASS"},
+    {"from": 28, "to": 29, "relation": "부정 답에서 긍정 정체", "reason": "무엇이 아니었는지에 이어 석관이 장례 건축의 중심이었다는 답을 세운다.", "status": "PASS"},
+    {"from": 29, "to": 30, "relation": "확인된 답에서 미해결 경계", "reason": "운반 문제를 해결한 뒤 수원과 실제 의식 가운데 모르는 범위만 남긴다.", "status": "PASS"},
+    {"from": 30, "to": 31, "relation": "미해결 질문에서 이유", "reason": "미스터리를 분위기로 남기지 않고 의식문과 건축 명령의 부재를 이유로 밝힌다.", "status": "PASS"},
+    {"from": 31, "to": 32, "relation": "증거 부재에서 미래 해법", "reason": "수로 순서·제물·새 문자 기록이 무엇을 복원할지 구체적으로 제시한다.", "status": "PASS"},
+    {"from": 32, "to": 33, "relation": "미래 복원에서 채널 운율", "reason": "학술적 기대를 시간과 피라미드라는 이미지로 가라앉혀 고정 마무리를 준비한다.", "status": "PASS"},
+    {"from": 33, "to": 34, "relation": "고정 운율에서 대상명 종결", "reason": "마지막에 파칼 왕 석관을 다시 명명해 회차의 대상을 정확하게 닫는다.", "status": "PASS"}
+  ],
+  "hook_review": {
+    "status": "PASS",
+    "sentence_start": 1,
+    "sentence_end": 4,
+    "artifact": "석관",
+    "visual_action": "마야 피라미드 아래 묘실에서 문보다 큰 석관과 파칼 왕이 드러난다.",
+    "scale_or_contradiction": "3.8미터 곱하기 2.2미터의 덮개가 더 작은 묘실 문 안에 존재한다.",
+    "open_question": "문도 통과 못 할 석관이 어떻게 피라미드 가장 깊은 곳에 들어갔는가"
+  },
+  "prerequisite_review": {
+    "status": "PASS",
+    "unintroduced_terms": [],
+    "pronoun_referents": "PASS",
+    "note": "그 안은 직전 석관, 그의 죽음은 직전 파칼, 이 돌은 석관, 그 과정은 직전 물과 석관 사이의 의식을 각각 명확히 가리킨다."
+  },
+  "major_fact_inventory": [
+    "F1_OVERSIZED_SARCOPHAGUS",
+    "F2_PAKAL_AND_FUNERARY_WORLD",
+    "F3_1949_TO_1952_DISCOVERY",
+    "F4_TOMB_BEFORE_PYRAMID",
+    "F5_UNDERGROUND_WATER_AND_REBIRTH",
+    "F6_ANSWER_AND_UNRESOLVED_RITUAL"
+  ],
+  "reveal_blocks": [
+    {"id": "F1_OVERSIZED_SARCOPHAGUS", "setup": "정글 피라미드 아래 무덤방을 먼저 제시", "reveal": "문보다 큰 3.8미터 곱하기 2.2미터 석관 덮개", "meaning": "완성된 건축물로는 운반을 설명할 수 없음", "next_question": "석관은 어떻게 가장 깊은 곳에 들어갔는가", "status": "PASS"},
+    {"id": "F2_PAKAL_AND_FUNERARY_WORLD", "setup": "파칼 왕의 석관을 개봉", "reveal": "옥 가면·왕실 장신구·아홉 존재·생애 문자·재생 부조", "meaning": "묘실 전체가 왕의 사후 세계를 설계한 공간", "next_question": "누가 왜 이 장면을 봉인했는가", "status": "PASS"},
+    {"id": "F3_1949_TO_1952_DISCOVERY", "setup": "1949년 막힌 계단 발견", "reveal": "여러 해 잔해 제거 뒤 1952년 묘실 개방과 잭을 이용한 덮개 인양", "meaning": "발견 자체가 장기간의 고고학 조사였음", "next_question": "주인은 누구이며 석관의 경로는 무엇인가", "status": "PASS"},
+    {"id": "F4_TOMB_BEFORE_PYRAMID", "setup": "문자와 부장품으로 파칼의 정체 확인", "reveal": "석관과 묘실을 먼저 만들고 그 위에 피라미드와 신전을 건축", "meaning": "석관은 반입품이 아니라 건축의 출발점", "next_question": "왜 무덤 아래에 물길까지 만들었는가", "status": "PASS"},
+    {"id": "F5_UNDERGROUND_WATER_AND_REBIRTH", "setup": "묘실 아래 수로 발견", "reveal": "피라미드 이전 가능성이 있는 흐르는 물과 덮개의 옥수수 신 재생 장면", "meaning": "죽음을 지하세계의 물과 재생으로 연결한 장례 무대", "next_question": "실제 물의 의식은 어떻게 진행됐는가", "status": "PASS"},
+    {"id": "F6_ANSWER_AND_UNRESOLVED_RITUAL", "setup": "운반 질문과 장례 의미를 함께 회수", "reveal": "석관 중심 선행 건축이라는 답과 의식문·건축 명령의 부재", "meaning": "건축 목적은 복원했지만 수원과 의식의 세부는 미해결", "next_question": "새 제물과 문자 기록이 파칼의 마지막 의식을 복원할 수 있는가", "status": "PASS"}
+  ],
+  "investigation_review": {
+    "status": "PASS",
+    "discovered_anomaly": "묘실 문보다 큰 석관이 피라미드 가장 깊은 곳에 놓여 있음",
+    "investigation_goal": "피장자의 정체, 석관의 운반 경로, 무덤과 수로가 설계한 장례 의미를 밝힘",
+    "method_or_evidence": "마야 문자 대조, 왕실 부장품, 건축 선후 관계, 지하 돌 수로, 석관 덮개 부조를 함께 분석",
+    "initial_hypothesis": "완성된 피라미드의 통로나 별도 운반 경로를 통해 석관을 반입했을 가능성",
+    "why_hypothesis_failed": "석관과 덮개가 묘실 문보다 커서 완성된 신전에는 물리적으로 통과할 경로가 없음",
+    "question_shift": "석관이 어떻게 들어왔는지에서 피라미드가 무엇을 중심으로 세워졌는지로 전환",
+    "newly_visible_information": "묘실과 석관 선행 건축, 피라미드 이전 가능성이 있는 수로, 부조의 죽음과 재생 구조",
+    "confirmed_progress": "파칼의 석관이 왕의 생애와 재생을 중심에 둔 장례 건축의 출발점임을 복원",
+    "unresolved_core": "지하 수원이 전체 설계의 최초 출발점이었는지와 물과 석관 사이의 실제 의식",
+    "why_unresolved": "의식 과정을 적은 기록과 건축 명령, 수로의 절대 연대를 확정할 직접 자료가 부족함",
+    "future_evidence": "수로의 세부 건축 순서, 봉인된 제물, 추가 마야 문자와 의식 기록",
+    "expected_historical_gain": "파칼이 죽은 날 팔렝케 왕실이 물과 피라미드로 재생 의식을 수행한 과정을 복원"
+  },
+  "chapter_flow_review": {
+    "status": "PASS",
+    "structure_type": "SHORT_6",
+    "chapters": [
+      {"n": 1, "role": "상식 파괴 훅", "must_contain": "마야 피라미드·문보다 큰 석관·실측 크기·파칼 왕·운반 질문", "next_handoff": "석관 안과 표면에 담긴 장례 세계 공개", "status": "PASS"},
+      {"n": 2, "role": "유물 가치와 모순 증폭", "must_contain": "옥 가면·왕실 장신구·아홉 존재·마야 문자·죽음과 재생 부조", "next_handoff": "실제 계단 발견과 묘실 조사로", "status": "PASS"},
+      {"n": 3, "role": "발견과 조사 난관", "must_contain": "1949년 계단·여러 해 잔해 제거·1952년 묘실·트럭 잭과 통나무", "next_handoff": "피장자 정체와 운반 경로 검증", "status": "PASS"},
+      {"n": 4, "role": "정체 확인과 초기 가설 실패", "must_contain": "문자 대조·파칼 확인·문보다 큰 석관·완성 신전의 경로 부재·질문 전환", "next_handoff": "건축 순서를 거꾸로 읽는 발상의 전환", "status": "PASS"},
+      {"n": 5, "role": "발상의 전환과 장례 무대 복원", "must_contain": "묘실 선행·피라미드 후축·지하 수로·옥수수 신 재생·물과 세계수", "next_handoff": "운반 답과 미해결 의식의 경계", "status": "PASS"},
+      {"n": 6, "role": "확인된 답과 제한된 미스터리", "must_contain": "장례 건축 중심·수원의 설계 역할·의식문 부재·미래 증거·고정 마무리", "next_handoff": "파칼의 마지막 의식을 후대 조사 과제로 남기고 종결", "status": "PASS"}
+    ]
+  },
+  "predecessor_flow_review": {
+    "status": "PASS",
+    "reference_scripts": [
+      {"path": "산출물/EP07_사해문서/01.대본.txt", "flow_summary": "소유자 추적이 막힌 뒤 유물 자체와 출토 맥락으로 질문을 전환해 문헌군의 정체를 밝힌다.", "preserved_principle": "조사 막힘을 보여 준 뒤 관찰 대상을 바꾸고 확인된 답과 미래 증거를 분리한다.", "avoided_mistake": "문서 발견과 해독 소재를 마야 무덤에 억지로 복사하지 않는다.", "status": "PASS"},
+      {"path": "산출물/EP08_백제금동대향로/01.대본.txt", "flow_summary": "발견 장소의 모순을 키우고 직접 기록이 막히자 유물의 구조 자체를 읽어 정체와 가치를 회수한다.", "preserved_principle": "유물 먼저, 실제 조사, 가설 실패, 질문 전환, 확인된 정체, 남은 미스터리 순서를 유지한다.", "avoided_mistake": "국뽕 표현과 백제 도상 소재를 파칼 왕 석관에 가져오지 않는다.", "status": "PASS"}
+    ]
+  },
+  "conclusion_review": {
+    "status": "PASS",
+    "opening_question": "문도 통과 못 할 석관이 어떻게 피라미드 가장 깊은 곳에 들어갔는가",
+    "confirmed_answer": "석관을 완성된 피라미드 안으로 옮긴 것이 아니라 묘실과 석관을 먼저 만들고 그 위에 피라미드와 신전을 쌓았다.",
+    "historical_meaning": "파칼의 생애와 왕조의 기억, 죽음과 재생을 건축·문자·부조·물길로 결합한 장례 건축의 중심이었다.",
+    "unresolved_core": "지하 수원이 전체 설계의 출발점이었는지와 물과 석관 사이에서 어떤 의식이 벌어졌는지",
+    "why_unresolved": "그 과정을 적은 의식문과 건축 명령, 수로의 정확한 절대 연대가 남지 않았기 때문이다.",
+    "fixed_closing": "파칼 왕 석관의 비밀이었습니다."
+  },
+  "findings": [
+    {"id": "EP09-CONTEXT-001", "category": "도입 대상 지연", "before": "마야 피라미드의 신비를 길게 설명한 뒤 파칼을 공개", "after": "첫 4문장 안에 석관 실측·파칼 왕·운반 불가능 질문을 모두 배치", "reason": "중심 유물과 한 가지 질문을 훅에서 즉시 잠근다.", "status": "RESOLVED"},
+    {"id": "EP09-CONTEXT-002", "category": "우주비행사 오독 소재", "before": "덮개 부조를 우주선 조종 장면처럼 소비", "after": "INAH 해석 범위 안에서 죽음·세계수·옥수수 신 재생으로 묘사", "reason": "유명한 자극적 오해 대신 확인된 마야 도상 해석을 사용한다.", "status": "RESOLVED"},
+    {"id": "EP09-CONTEXT-003", "category": "운반 문제와 수로의 단절", "before": "큰 석관과 지하 수로를 별개 미스터리로 나열", "after": "건축 순서 질문으로 전환한 뒤 묘실 선행과 수로 선행 가능성을 단계적으로 공개", "reason": "한 질문의 답이 더 깊은 질문을 여는 꼬리형 전개를 만든다.", "status": "RESOLVED"},
+    {"id": "EP09-CONTEXT-004", "category": "결론의 미스터리 남발", "before": "파칼 왕 무덤에는 아직 비밀이 많다고 두루뭉술하게 종료", "after": "석관 선행 건축은 확정 답으로, 수원 설계와 실제 의식만 미해결로 한정", "reason": "확인된 지식과 후대가 풀 숙제를 명확히 분리한다.", "status": "RESOLVED"}
+  ]
+}
