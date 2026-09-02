@@ -1,7 +1,7 @@
 {
   "version": 3,
   "script": "01.대본.txt",
-  "script_sha256": "89252bbd4955654423e9f4aa501421d00e56c442e141d1ac8050cc20483352fc",
+  "script_sha256": "91de2061c0244888b9b345b611b51cddadd2e3a46ccb7228afbf76af41873333",
   "reviewer": "korean-proofreader + godeumul-context-qa",
   "status": "PASS",
   "approval_state": "USER_APPROVED_COMPACT",
@@ -373,15 +373,15 @@
     "sentence_start": 1,
     "sentence_end": 5,
     "artifact": "네브라 스카이 디스크",
-    "visual_action": "독일의 깊은 숲속 땅밑에서 3,600년 동안 잠들어 있던 직경 30cm 녹슨 청동 원판이 발견된다.",
+    "visual_action": "독일 깊은 숲속 땅밑에서 3,600년 동안 잠들어 있던 직경 30cm 녹슨 청동 원판이 발견된다.",
     "scale_or_contradiction": "순금 태양과 별들이 새겨진 정밀한 천문도가 글자조차 없던 청동기 시대에 만들어졌다.",
-    "open_question": "도대체 3천 년도 더 된 고대인들은 왜 이런 정밀한 우주를 청동판 하나에 새겨 땅속에 묻었던 걸까요?"
+    "open_question": "도대체 3천 년 전 고대인들은 왜 이런 정밀한 우주를 새겨 땅속에 묻었던 걸까요?"
   },
   "prerequisite_review": {
     "status": "PASS",
     "unintroduced_terms": [],
     "pronoun_referents": "PASS",
-    "note": "그 곁은 태양과 초승달 곁을, 원판 양쪽은 네브라 디스크를, 이들은 청동기인들을 명확히 가리킨다."
+    "note": "그 곁은 태양과 초승달 곁을, 양쪽 가장자리는 네브라 디스크를, 이들은 청동기인들을 명확히 가리킨다."
   },
   "major_fact_inventory": [
     "F1_DISCOVERY_AND_ARTIFACT",
@@ -419,7 +419,7 @@
     {
       "id": "F4_MEASUREMENT_AND_TRADE",
       "setup": "단순 장식품 가설에 대한 과학적 수치 측정",
-      "reveal": "82도 호와 하지·동지 일몰 각도 일치 및 오스트리아 구리·영국 콘월 사금 확인",
+      "reveal": "82도 호와 하지·동지 일몰 각도 일치 및 오스트리아 구리·영국 사금 확인",
       "meaning": "유럽 전역을 잇는 거대 무역망과 정밀 천문 관측의 결합",
       "next_question": "이 정밀한 판으로 어떤 계산을 수행했는가",
       "status": "PASS"
@@ -518,9 +518,9 @@
   },
   "conclusion_review": {
     "status": "PASS",
-    "opening_question": "문자조차 없던 3천 년도 더 된 고대인들은 왜 이런 정밀한 우주를 청동판 하나에 새겨 땅속에 묻었던 걸까요?",
+    "opening_question": "도대체 3천 년 전 고대인들은 왜 이런 정밀한 우주를 새겨 땅속에 묻었던 걸까요?",
     "confirmed_answer": "네브라 스카이 디스크는 태양의 하지·동지 일몰 각도와 4.5일 초승달-플레이아데스 규칙으로 3년 윤달을 계산해 파종 시기를 맞추던 인류 최초의 휴대용 천문 역법 컴퓨터였다.",
-    "historical_meaning": "바빌로니아 기록보다 1천 년 앞서 우주의 운행 법칙을 시각화했으며, 오스트리아 구리와 영국 콘월 사금을 엮은 청동기 유럽의 광역 지식·무역망을 실증한다.",
+    "historical_meaning": "바빌로니아 기록보다 1천 년 앞서 우주 법칙을 시각화했으며, 오스트리아 구리와 영국 콘월 사금을 엮은 청동기 유럽의 광역 지식·무역망을 실증한다.",
     "unresolved_core": "문자가 없던 사회에서 이 고도화된 천문 지식을 체계화한 방법과, 39개 구멍을 뚫어 쓰다가 무기들과 함께 숲속에 묻어버린 제사적·사회적 배경.",
     "why_unresolved": "당시 문자 기록이나 공방 유적이 없고, 직접적인 제사 의례 기록이 남아있지 않다.",
     "fixed_closing": "시간 속에 잠든 유물, 땅속에 묻힌 역사. 네브라 스카이 디스크의 비밀이었습니다."
