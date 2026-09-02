@@ -1,0 +1,528 @@
+{
+  "version": 3,
+  "script": "01.대본.txt",
+  "script_sha256": "89252bbd4955654423e9f4aa501421d00e56c442e141d1ac8050cc20483352fc",
+  "reviewer": "korean-proofreader + godeumul-context-qa",
+  "status": "PASS",
+  "approval_state": "USER_APPROVED_COMPACT",
+  "tts_authorization": "AUTHORIZED_AFTER_DURATION_CHECK",
+  "checks": {
+    "paragraph_roles_and_flow": "PASS",
+    "adjacent_sentence_relations": "PASS",
+    "connector_deletion_test": "PASS",
+    "duplicate_information": "PASS",
+    "tts_release_gate": "PASS",
+    "conclusion_answer_and_boundary": "PASS",
+    "korean_three_layer_review": "PASS",
+    "all_adjacent_sentence_pairs": "PASS",
+    "major_fact_reveal_ladders": "PASS",
+    "information_prerequisites": "PASS",
+    "hook_compactness_and_payload": "PASS",
+    "script_editorial_separation": "PASS",
+    "investigation_arc_and_future_evidence": "PASS",
+    "fixed_chapter_story_flow": "PASS",
+    "approved_predecessor_flow_review": "PASS"
+  },
+  "paragraphs": [
+    {
+      "n": 1,
+      "role": "ARTIFACT_FIRST_HOOK",
+      "summary": "숲속에서 발견된 3,600년 전 녹슨 청동 원판과 황금 천문도를 공개하고, 문자 없던 시대의 정밀한 제작 배경 질문을 연다."
+    },
+    {
+      "n": 2,
+      "role": "VALUE_AND_CONTRADICTION",
+      "summary": "태양과 초승달, 플레이아데스 성단과 82도 황금 호를 공개해 문자가 없던 청동기 시대의 모순을 키운다."
+    },
+    {
+      "n": 3,
+      "role": "DISCOVERY_AND_DEAD_END",
+      "summary": "1999년 도굴과 2002년 바젤 회수 과정을 따라가며 제작 목적에 대한 본질적 의문을 제기한다."
+    },
+    {
+      "n": 4,
+      "role": "QUESTION_SHIFT",
+      "summary": "단순 장식품 가설을 깨고 82도 하지·동지 일몰 각도와 영국·오스트리아를 잇는 거대 무역망을 밝힌다."
+    },
+    {
+      "n": 5,
+      "role": "NEW_EVIDENCE_AND_RECONSTRUCTION",
+      "summary": "4.5일 된 초승달과 플레이아데스의 만남으로 3년 주기 윤달을 계산하던 휴대용 천문 컴퓨터 기능을 규명한다."
+    },
+    {
+      "n": 6,
+      "role": "ANSWER_BOUNDARY_AND_PAYOFF",
+      "summary": "농경 역법 도구라는 과학적 답과 문자 부재 및 매장 제사 배경이라는 미해결 영역을 구분해 닫는다."
+    }
+  ],
+  "transitions": [
+    {
+      "from": 1,
+      "to": 2,
+      "relation": "유물 발견에서 세부 관찰",
+      "reason": "원판 발견을 알린 뒤 표면의 태양·초승달·별자리와 82도 호를 구체적으로 관찰한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "relation": "시각적 모순에서 발굴 경위",
+      "reason": "상식을 깨는 유물의 실체를 제시한 뒤 1999년 실제 도굴과 회수 추적으로 이동한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "relation": "제작 목적 의문에서 장식품 가설 반증",
+      "reason": "누가 왜 만들었는가라는 질문을 단순 장식품 셀프 문답으로 받아 82도 각도 일치로 반증한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 4,
+      "to": 5,
+      "relation": "무역망과 각도에서 윤달 계산 원리",
+      "reason": "각도와 무역망 확인에 이어 초승달과 플레이아데스의 3년 윤달 역법 메커니즘을 밝힌다.",
+      "status": "PASS"
+    },
+    {
+      "from": 5,
+      "to": 6,
+      "relation": "역법 컴퓨터에서 결론 및 미지의 경계",
+      "reason": "휴대용 천문 컴퓨터의 과학적 가치를 회수한 뒤 남은 지식 전승과 매장 의례 미스터리를 분리한다.",
+      "status": "PASS"
+    }
+  ],
+  "connectors": [
+    {
+      "sentence": 19,
+      "text": "하지만",
+      "relation": "가설 반증",
+      "decision": "KEEP",
+      "reason": "단순 장식품 가설을 82도 정밀 수치 측정 결과로 뒤집는 핵심 접속어다."
+    },
+    {
+      "sentence": 26,
+      "text": "그런데",
+      "relation": "초승달 두께 단서 전환",
+      "decision": "KEEP",
+      "reason": "일반적인 초승달 상식을 깨고 4.5일 된 굵은 달의 윤달 의미로 전환하는 핵심 접속어다."
+    },
+    {
+      "sentence": 31,
+      "text": "하지만",
+      "relation": "남은 미스터리 전환",
+      "decision": "KEEP",
+      "reason": "확인된 천문 역법 성과 뒤에 여전히 풀리지 않은 매장 미스터리로 전환하는 필수 접속어다."
+    }
+  ],
+  "duplicate_review": {
+    "status": "PASS",
+    "acknowledged_pairs": [],
+    "note": "자동 유사 문장 후보가 없으며 청동판과 역법의 재언급은 질문·해답·결론의 서로 다른 단계적 기능을 맡는다."
+  },
+  "korean_review": {
+    "status": "PASS",
+    "reviewer": "korean-proofreader",
+    "document": "PASS",
+    "paragraph": "PASS",
+    "sentence": "PASS",
+    "note": "문서 서사 구조, 문단 간 인과 전환, 문장별 어미 리듬 교차와 지시어 대상을 3층위로 완벽히 검수했다."
+  },
+  "sentence_links": [
+    {
+      "from": 1,
+      "to": 2,
+      "relation": "원판에서 표면",
+      "reason": "녹슨 청동 원판 발견 직후 표면의 순금 태양과 별들을 공개한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "relation": "표면에서 정체",
+      "reason": "황금 별과 달을 인류 최초의 구체적 천문도 네브라 디스크로 명명한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "relation": "정체에서 시대",
+      "reason": "천문도의 가치를 글자조차 없던 청동기 시대 배경으로 대비한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 4,
+      "to": 5,
+      "relation": "시대에서 질문",
+      "reason": "문자 없는 고대인들이 왜 정밀한 우주를 새겨 묻었는지 중심 질문을 연다.",
+      "status": "PASS"
+    },
+    {
+      "from": 5,
+      "to": 6,
+      "relation": "질문에서 관찰",
+      "reason": "도입 질문을 던진 뒤 시청자에게 손바닥 크기 원판의 관찰을 제안한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 6,
+      "to": 7,
+      "relation": "관찰에서 중심",
+      "reason": "원판을 들여다보며 중심의 태양과 초승달, 32개 황금 별을 공개한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 7,
+      "to": 8,
+      "relation": "별에서 성단",
+      "reason": "32개 별 중 7개가 뭉친 무리를 플레이아데스 성단으로 구체화한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 8,
+      "to": 9,
+      "relation": "성단에서 외곽",
+      "reason": "별자리 다음에 양쪽 가장자리의 82도 황금 호를 새 증거로 제시한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 9,
+      "to": 10,
+      "relation": "82도에서 배경",
+      "reason": "정밀한 각도 다음에 당시 유럽에 문자 기록이 없던 시기임을 환기한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 10,
+      "to": 11,
+      "relation": "배경에서 모순",
+      "reason": "문자 없는 사회와 정밀한 각도·별자리의 공존을 상식적 모순으로 짚는다.",
+      "status": "PASS"
+    },
+    {
+      "from": 11,
+      "to": 12,
+      "relation": "모순에서 발굴",
+      "reason": "유물의 모순을 제시한 뒤 1999년 도굴꾼의 실제 발굴 사건으로 이동한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 12,
+      "to": 13,
+      "relation": "발굴에서 출토",
+      "reason": "흙을 파헤치는 행동 직후 청동 무기와 녹슨 쟁반의 출토를 보여준다.",
+      "status": "PASS"
+    },
+    {
+      "from": 13,
+      "to": 14,
+      "relation": "출토에서 유출",
+      "reason": "녹슨 원판을 거칠게 털어 암시장에 헐값으로 넘긴 상황을 전개한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 14,
+      "to": 15,
+      "relation": "유출에서 회수",
+      "reason": "암흑가를 떠돌던 유물을 2002년 바젤 함정 수사로 극적 회수한 과정을 잇는다.",
+      "status": "PASS"
+    },
+    {
+      "from": 15,
+      "to": 16,
+      "relation": "회수에서 질문",
+      "reason": "유물 회수 직후 학자들이 매달린 단 하나의 핵심 질문으로 좁힌다.",
+      "status": "PASS"
+    },
+    {
+      "from": 16,
+      "to": 17,
+      "relation": "질문에서 내용",
+      "reason": "학자들의 질문을 문명 없던 시대의 제작 목적 의문으로 직접 진술한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 17,
+      "to": 18,
+      "relation": "의문에서 가설",
+      "reason": "제작 목적 의문을 단순한 제사용 장식품 아니냐는 셀프 문답으로 받는다.",
+      "status": "PASS"
+    },
+    {
+      "from": 18,
+      "to": 19,
+      "relation": "가설에서 붕괴",
+      "reason": "장식품이라는 가설을 수치 측정 결과로 즉시 반증한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 19,
+      "to": 20,
+      "relation": "붕괴에서 각도",
+      "reason": "수치 측정의 실체를 82도 황금 호와 네브라 하지·동지 일몰 각도 일치로 공개한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 20,
+      "to": 21,
+      "relation": "각도에서 산지",
+      "reason": "천문 각도에 이어 오스트리아 구리와 영국 콘월 사금이라는 원산지를 공개한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 21,
+      "to": 22,
+      "relation": "산지에서 종합",
+      "reason": "원거리 광물 산지와 정밀 관측을 유럽 대륙 전체의 거대 무역망으로 요약한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 22,
+      "to": 23,
+      "relation": "무역망에서 단서",
+      "reason": "무역망 확인 직후 과학자들이 찾아낸 결정적 역법 단서로 전환한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 23,
+      "to": 24,
+      "relation": "단서에서 오차",
+      "reason": "태양력 365일과 태음력 354일의 11일 연간 오차를 설명한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 24,
+      "to": 25,
+      "relation": "오차에서 위기",
+      "reason": "3년에 한 달씩 벌어지는 오차가 농경 사회의 파종 위기임을 밝힌다.",
+      "status": "PASS"
+    },
+    {
+      "from": 25,
+      "to": 26,
+      "relation": "위기에서 달두께",
+      "reason": "계절 오차 문제 직후 원판 초승달이 4.5일 된 굵은 달이라는 점을 지목한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 26,
+      "to": 27,
+      "relation": "달두께에서 공식",
+      "reason": "4.5일 달과 플레이아데스의 만남이 13번째 윤달을 넣는 역법 공식임을 규명한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 27,
+      "to": 28,
+      "relation": "공식에서 비유",
+      "reason": "스톤헨지 없이도 손에 쥐고 계절을 맞춘 인류 최초의 휴대용 천문 컴퓨터로 비유한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 28,
+      "to": 29,
+      "relation": "비유에서 답",
+      "reason": "휴대용 컴퓨터 비유를 바탕으로 농경의 때를 맞추던 청동기인의 지혜로 답을 확정한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 29,
+      "to": 30,
+      "relation": "답에서 가치",
+      "reason": "바빌로니아 기록보다 1천 년 앞서 우주 법칙을 시각화한 역사적 가치를 강조한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 30,
+      "to": 31,
+      "relation": "가치에서 미스터리",
+      "reason": "확인된 가치 직후 진짜 미스터리는 지금부터라고 긴장감을 전환한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 31,
+      "to": 32,
+      "relation": "미스터리에서 미지",
+      "reason": "문자 없는 지식 체계화 방식과 39개 구멍 타공 및 숲속 매장의 미지를 명시한다.",
+      "status": "PASS"
+    },
+    {
+      "from": 32,
+      "to": 33,
+      "relation": "미지에서 미래",
+      "reason": "새로운 유적과 제사 증거가 나오기 전까지 침묵이 계속될 것임을 밝힌다.",
+      "status": "PASS"
+    },
+    {
+      "from": 33,
+      "to": 34,
+      "relation": "미래에서 운율",
+      "reason": "역사적 침묵을 시간과 땅속의 운율로 차분히 가라앉힌다.",
+      "status": "PASS"
+    },
+    {
+      "from": 34,
+      "to": 35,
+      "relation": "운율에서 종결",
+      "reason": "네브라 스카이 디스크를 다시 호명하며 공식 시그니처로 회차를 닫는다.",
+      "status": "PASS"
+    }
+  ],
+  "hook_review": {
+    "status": "PASS",
+    "sentence_start": 1,
+    "sentence_end": 5,
+    "artifact": "네브라 스카이 디스크",
+    "visual_action": "독일의 깊은 숲속 땅밑에서 3,600년 동안 잠들어 있던 직경 30cm 녹슨 청동 원판이 발견된다.",
+    "scale_or_contradiction": "순금 태양과 별들이 새겨진 정밀한 천문도가 글자조차 없던 청동기 시대에 만들어졌다.",
+    "open_question": "도대체 3천 년도 더 된 고대인들은 왜 이런 정밀한 우주를 청동판 하나에 새겨 땅속에 묻었던 걸까요?"
+  },
+  "prerequisite_review": {
+    "status": "PASS",
+    "unintroduced_terms": [],
+    "pronoun_referents": "PASS",
+    "note": "그 곁은 태양과 초승달 곁을, 원판 양쪽은 네브라 디스크를, 이들은 청동기인들을 명확히 가리킨다."
+  },
+  "major_fact_inventory": [
+    "F1_DISCOVERY_AND_ARTIFACT",
+    "F2_DETAILS_AND_CONTRADICTION",
+    "F3_ILLICIT_EXCAVATION_AND_STING",
+    "F4_MEASUREMENT_AND_TRADE",
+    "F5_LEAP_MONTH_COMPUTER",
+    "F6_ANSWER_AND_UNKNOWN_BOUNDARY"
+  ],
+  "reveal_blocks": [
+    {
+      "id": "F1_DISCOVERY_AND_ARTIFACT",
+      "setup": "독일 깊은 숲속 땅밑에서 3,600년 전 녹슨 청동 원판 발견",
+      "reveal": "직경 30cm 청동판 표면에 순금으로 상감된 태양과 별",
+      "meaning": "인류 역사상 가장 오래된 구체적인 천문도의 실체",
+      "next_question": "문자조차 없던 청동기인들이 왜 이를 새겨 묻었는가",
+      "status": "PASS"
+    },
+    {
+      "id": "F2_DETAILS_AND_CONTRADICTION",
+      "setup": "손바닥 크기 원판의 정밀 관찰",
+      "reveal": "플레이아데스 성단과 정확히 82도 각도를 이루는 황금 지평선 호",
+      "meaning": "문자 없는 시대와 정밀 천문 관측의 상식적 모순",
+      "next_question": "누가 무엇을 위해 이 천문판을 만들었는가",
+      "status": "PASS"
+    },
+    {
+      "id": "F3_ILLICIT_EXCAVATION_AND_STING",
+      "setup": "1999년 도굴꾼의 금속탐지기 발굴과 암시장 유출",
+      "reveal": "2002년 스위스 바젤 호텔에서의 극적인 위장 함정 수사 회수",
+      "meaning": "국경을 넘나든 유물의 여정과 제작 목적에 대한 의문 고조",
+      "next_question": "단순한 제사용 장식품에 불과한가",
+      "status": "PASS"
+    },
+    {
+      "id": "F4_MEASUREMENT_AND_TRADE",
+      "setup": "단순 장식품 가설에 대한 과학적 수치 측정",
+      "reveal": "82도 호와 하지·동지 일몰 각도 일치 및 오스트리아 구리·영국 콘월 사금 확인",
+      "meaning": "유럽 전역을 잇는 거대 무역망과 정밀 천문 관측의 결합",
+      "next_question": "이 정밀한 판으로 어떤 계산을 수행했는가",
+      "status": "PASS"
+    },
+    {
+      "id": "F5_LEAP_MONTH_COMPUTER",
+      "setup": "태양력과 태음력의 11일 연간 오차 및 농경 파종 위기",
+      "reveal": "4.5일 초승달과 플레이아데스의 만남으로 3년 주기 13번째 윤달을 맞추는 공식",
+      "meaning": "스톤헨지 없이 손에 쥐고 계절을 맞추던 인류 최초의 휴대용 천문 컴퓨터",
+      "next_question": "이 천문 지식은 어떻게 전승되고 왜 숲속에 묻혔는가",
+      "status": "PASS"
+    },
+    {
+      "id": "F6_ANSWER_AND_UNKNOWN_BOUNDARY",
+      "setup": "휴대용 천문 컴퓨터의 과학적 가치 종합 회수",
+      "reveal": "바빌로니아보다 1천 년 앞선 농경 역법 지혜라는 답과 39개 타공·매장 미스터리",
+      "meaning": "확인된 천문 역법 과학과 아직 풀리지 않은 제사 의례 경계의 확립",
+      "next_question": "새로운 유적 발굴이 청동판의 침묵을 깰 수 있는가",
+      "status": "PASS"
+    }
+  ],
+  "investigation_review": {
+    "status": "PASS",
+    "discovered_anomaly": "문자가 없던 3,600년 전 청동기 시대에 직경 30cm 청동판에 순금으로 태양, 초승달, 플레이아데스, 82도 호가 정밀하게 새겨졌다.",
+    "investigation_goal": "네브라 스카이 디스크의 제작 목적, 천문학적 역법 기능, 광물 원산지와 교역망, 매장 배경을 밝힌다.",
+    "method_or_evidence": "82도 지평선 호 각도 계산, 태양력·태음력 윤달 규칙 분석, XRF 및 동위원소 금속 분석, 발굴 정황을 함께 조사한다.",
+    "initial_hypothesis": "밤하늘을 단순히 본떠 만든 종교적·제사용 장식품일 가능성을 살핀다.",
+    "why_hypothesis_failed": "82도 각도가 네브라의 하지·동지 일몰 각도와 일치하고 금속이 영국·오스트리아산으로 확인되어 단순 장식품을 뛰어넘었다.",
+    "question_shift": "단순 장식이 아니라면 이 판으로 구체적으로 어떤 천문 계산을 수행했는가로 질문을 전환한다.",
+    "newly_visible_information": "4.5일 된 초승달과 플레이아데스의 만남이 3년 주기 13번째 윤달을 판별하는 고대 역법 공식임을 확인한다.",
+    "confirmed_progress": "스톤헨지 없이도 손에 쥐고 계절을 맞추던 인류 최초의 휴대용 천문 컴퓨터였음을 규명한다.",
+    "unresolved_core": "문자가 없던 사회에서 이 지식을 어떻게 체계화했는지, 왜 39개 구멍을 뚫어 쓰다가 무기와 함께 숲에 묻었는지는 모른다.",
+    "why_unresolved": "당시 문자로 기록된 문헌이나 작업 공방 기록이 없고 제사 행위의 직접 기록이 없다.",
+    "future_evidence": "주변 우네티체 문화권 주거지·제사 유적 발굴, 추가 청동기 천문 도구의 발견이 필요하다.",
+    "expected_historical_gain": "청동기 유럽의 고도화된 천문 지식 전승 경로와 종교·제사 의례의 실체를 복원할 수 있다."
+  },
+  "chapter_flow_review": {
+    "status": "PASS",
+    "structure_type": "SHORT_6",
+    "chapters": [
+      {
+        "n": 1,
+        "role": "유물 선공개와 중앙 미스터리",
+        "must_contain": "숲속 30cm 청동 원판 발견, 순금 천문도, 문자 없던 청동기 시대, 왜 만들었는가 질문",
+        "next_handoff": "원판의 중심과 가장자리 황금 상감 세부 관찰로 연결",
+        "status": "PASS"
+      },
+      {
+        "n": 2,
+        "role": "규모의 충격과 첫 모순",
+        "must_contain": "태양, 초승달, 서른두 개 별, 플레이아데스 성단, 82도 황금 호, 문자 없는 시대의 모순",
+        "next_handoff": "상식을 깨는 유물의 실체에서 1999년 실제 도굴과 회수 사건으로 연결",
+        "status": "PASS"
+      },
+      {
+        "n": 3,
+        "role": "발견 경위와 본격 조사",
+        "must_contain": "1999년 도굴꾼 금속탐지기 발굴, 암시장 유출, 2002년 바젤 함정 수사 회수, 학자들의 질문",
+        "next_handoff": "제작 목적 질문을 단순 장식품 셀프 문답으로 받아 수치 측정으로 연결",
+        "status": "PASS"
+      },
+      {
+        "n": 4,
+        "role": "조사 난관과 가설의 붕괴",
+        "must_contain": "단순 장식품 가설 반증, 82도 하지·동지 일몰 각도 일치, 오스트리아 구리와 영국 콘월 사금 무역망",
+        "next_handoff": "무역망과 각도 확인에서 태양력·태음력의 윤달 계산 단서로 연결",
+        "status": "PASS"
+      },
+      {
+        "n": 5,
+        "role": "발상의 전환과 정체의 규명",
+        "must_contain": "태양력·태음력 오차와 파종 위기, 4.5일 초승달과 플레이아데스의 3년 윤달 역법 공식, 휴대용 천문 컴퓨터",
+        "next_handoff": "휴대용 천문 컴퓨터 규명에서 최종 과학적 가치 회수와 남은 미스터리로 연결",
+        "status": "PASS"
+      },
+      {
+        "n": 6,
+        "role": "확인된 정체와 마지막 미스터리",
+        "must_contain": "농경 역법 지혜 답 회수, 바빌로니아보다 1천 년 앞선 가치, 39개 타공과 매장 미스터리, 고정 마무리 시그니처",
+        "next_handoff": "회차 완결",
+        "status": "PASS"
+      }
+    ]
+  },
+  "predecessor_flow_review": {
+    "status": "PASS",
+    "reference_scripts": [
+      {
+        "path": "산출물/EP09_파칼왕석관/01.대본.txt",
+        "flow_summary": "5문장 안에서 문보다 큰 석관의 치수와 무게를 공개해 반입 불가능 모순을 열고, 묘실 선시공과 지하 수로로 장례 무대를 복원한 뒤 실제 물 의식이라는 미해결 경계를 남김.",
+        "preserved_principle": "5문장 이내 실물 선공개, 물리적 수치 측정 기반 가설 반증, 셀프 문답을 통한 질문 전환, 과학적 답과 미해결 경계의 명확한 분리 회수.",
+        "avoided_mistake": "외계인설이나 오파츠 초고대문명설 차단, 단순 메커니즘 편향 차단, 불필요한 접속어 남발 방지.",
+        "status": "PASS"
+      }
+    ]
+  },
+  "conclusion_review": {
+    "status": "PASS",
+    "opening_question": "문자조차 없던 3천 년도 더 된 고대인들은 왜 이런 정밀한 우주를 청동판 하나에 새겨 땅속에 묻었던 걸까요?",
+    "confirmed_answer": "네브라 스카이 디스크는 태양의 하지·동지 일몰 각도와 4.5일 초승달-플레이아데스 규칙으로 3년 윤달을 계산해 파종 시기를 맞추던 인류 최초의 휴대용 천문 역법 컴퓨터였다.",
+    "historical_meaning": "바빌로니아 기록보다 1천 년 앞서 우주의 운행 법칙을 시각화했으며, 오스트리아 구리와 영국 콘월 사금을 엮은 청동기 유럽의 광역 지식·무역망을 실증한다.",
+    "unresolved_core": "문자가 없던 사회에서 이 고도화된 천문 지식을 체계화한 방법과, 39개 구멍을 뚫어 쓰다가 무기들과 함께 숲속에 묻어버린 제사적·사회적 배경.",
+    "why_unresolved": "당시 문자 기록이나 공방 유적이 없고, 직접적인 제사 의례 기록이 남아있지 않다.",
+    "fixed_closing": "시간 속에 잠든 유물, 땅속에 묻힌 역사. 네브라 스카이 디스크의 비밀이었습니다."
+  }
+}
