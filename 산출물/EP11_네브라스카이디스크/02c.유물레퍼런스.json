@@ -1,7 +1,7 @@
 {
   "version": 1,
   "artifact_id": "NEBRA_SKY_DISC",
-  "artifact_name_ko": "네브라 스카이 디스크",
+  "artifact_name_ko": "네브라스카이디스크",
   "form_owner_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
   "institution_source": {
     "institution": "독일 할레 주립 선사박물관 (Landesmuseum für Vorgeschichte Halle)",
@@ -43,7 +43,7 @@
       "role": "FORM_OWNER",
       "view": "front full disk view",
       "file": "references/nebra_sky_disc_form_owner.jpg",
-      "sha256": "LOCKED_REFERENCE_GEOMETRY_NEBRA_V1"
+      "sha256": "304330E118D401454634B6D760FD8EA2D819C89B02D57064EB5A6308810B071B"
     }
   ]
 }

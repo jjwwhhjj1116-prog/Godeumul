@@ -1,0 +1,2767 @@
+[
+  {
+    "n": 1,
+    "audio_scene": 1,
+    "audio_part": "1/1",
+    "audio_offset_start": 0.0,
+    "audio_offset_end": 6.4,
+    "timeline_start": 0.0,
+    "timeline_end": 6.4,
+    "chapter": "1. 숲속의 녹슨 원판",
+    "ct": "DISCOVERY_ACTION",
+    "txt": "독일 깊은 숲속 땅밑에서, 3,600년 동안 잠들어 있던 직경 30센티미터의 녹슨 청동 원판이 발견됐습니다.",
+    "tts": 6.4,
+    "omni": 8,
+    "playback_speed": 1.0,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "NON_IDENTIFIABLE",
+    "routing_reason": "1999년 도굴 구덩이 속 녹슨 원판 발견 맥락을 승인 프레임으로 잠그는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "forested soil surface with exposed stone edge",
+      "route": "descend through forest tree canopy toward the stone-lined pit",
+      "destination": "partly exposed patinated bronze rim",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "1.5s canopy dive",
+        "4.8s soil slide"
+      ],
+      "settle_point": "exposed bronze rim in dark humus soil",
+      "single_axis": "FORWARD",
+      "scale_domain": "MEDIUM",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places forested soil surface with exposed stone edge at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on exposed bronze rim in dark humus soil."
+    },
+    "visual_lock": {
+      "civilization": "Documented 1999-2002 German archaeological discovery, recovery and Halle museum conservation",
+      "era": "1999 discovery, 2002 Basel sting operation, and present-day museum analysis only",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "German and Swiss archaeologists, police investigators, and museum conservators in exact modern work clothing",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "dark forest soil",
+        "stone-lined pit edge",
+        "partly exposed green patinated bronze disc"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Wide forest canopy cutaway",
+        "camera_pose": "High angle 45°",
+        "visible_anchors": [
+          "pine canopy",
+          "forest ground"
+        ]
+      },
+      {
+        "time": 4.0,
+        "composition": "Mid-level root cross-section",
+        "camera_pose": "Medium dive",
+        "visible_anchors": [
+          "soil layer",
+          "stone pit"
+        ]
+      },
+      {
+        "time": 8.0,
+        "composition": "Macro bronze rim settlement",
+        "camera_pose": "Low angle macro",
+        "visible_anchors": [
+          "bronze rim",
+          "dark humus"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.2,
+        "narration": "독일 깊은 숲속 땅밑에서 3,600년 동안 잠들어 있던",
+        "camera": "Rapid descent from forest canopy to soil",
+        "action": "Soil grains part around stone edge",
+        "graphic": "none"
+      },
+      {
+        "start": 3.2,
+        "end": 6.4,
+        "narration": "직경 30센티미터의 녹슨 청동 원판이 발견됐습니다.",
+        "camera": "Macro track to bronze rim",
+        "action": "Glint of gold under green patina",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. Documented German archaeological investigation and recovery: the 1999 illicit metal-detector discovery in the Mittelberg forest, the 2002 Basel hotel police sting operation led by archaeologist Harald Meller, and subsequent scientific laboratory analysis at the Halle State Museum of Prehistory. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Macro cutaway archaeological diorama of the Mittelberg forest floor near Nebra: dense pine and oak roots, dark humus soil, and a stone-lined pit where the thirty-centimetre patinated green bronze disc emerges catching cool morning daylight. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be German and Swiss archaeologists in practical 1999-2002 field clothing and modern museum conservators in white lab coats and gloves.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at forested soil surface with exposed stone edge; travel descend through forest tree canopy toward the stone-lined pit; arrive at partly exposed patinated bronze rim; settle on exposed bronze rim in dark humus soil. Descend rapidly from the pine canopy into the excavated forest soil pit, tracking across dark humus and tree roots along the exposed path route to settle on the thirty-centimetre green patinated bronze disc rim. TTS-locked timing: 0.00-4.00s: 독일 깊은 숲속 땅밑에서 3,600년 동안 잠들어 있던. 4.00-8.00s: 직경 30센티미터의 녹슨 청동 원판이 발견됐습니다.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: forested soil surface with exposed stone edge is already visible in the locked first frame. Mid anchor: remain on the same forward axis through descend through forest tree canopy toward the stone-lined pit. Final anchor: arrive once at partly exposed patinated bronze rim. Last frame: Last frame holds the unchanged composition on exposed bronze rim in dark humus soil. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_reference_ids": []
+  },
+  {
+    "n": 2,
+    "audio_scene": 2,
+    "audio_part": "1/1",
+    "audio_offset_start": 6.4,
+    "audio_offset_end": 15.2,
+    "timeline_start": 6.4,
+    "timeline_end": 15.2,
+    "chapter": "1. 숲속의 녹슨 원판",
+    "ct": "ARTIFACT_MACRO",
+    "txt": "표면에는 순금으로 박아 넣은 태양과 초승달, 밤하늘의 별들이 가득했죠. 바로 인류 역사상 가장 오래된 구체적인 천문도, 네브라 스카이 디스크였습니다.",
+    "tts": 8.8,
+    "omni": 10,
+    "playback_speed": 1.0,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "IDENTIFIABLE",
+    "routing_reason": "실물 네브라 디스크의 청동 원판과 순금 태양, 초승달, 별들을 식별하는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "patinated green bronze surface",
+      "route": "macro orbit across inlaid gold full moon and crescent",
+      "destination": "entire celestial disk layout",
+      "speed_profile": "CONTROLLED_ORBIT_REVEAL",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "2.2s gold glint burst",
+        "5.5s Pleiades cluster focus"
+      ],
+      "settle_point": "complete hero gold constellation layout",
+      "single_axis": "ORBIT",
+      "scale_domain": "MACRO",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places patinated green bronze surface at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on complete hero gold constellation layout."
+    },
+    "visual_lock": {
+      "civilization": "Central European Bronze Age Unetice culture and documented Mittelberg archaeology",
+      "era": "circa 1600 BCE European Bronze Age, with 1999-2002 discovery and recovery context",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "Central European Bronze Age people in period-correct garments; documented German archaeologists and conservators after 1999",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "dark green patina bronze plate",
+        "pure gold full moon inlay",
+        "gold crescent moon",
+        "gold stars"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Close macro on gold moon",
+        "camera_pose": "Close macro probe",
+        "visible_anchors": [
+          "gold sun",
+          "gold crescent"
+        ]
+      },
+      {
+        "time": 3.3,
+        "composition": "Half-orbit across stars",
+        "camera_pose": "Medium orbit",
+        "visible_anchors": [
+          "Pleiades cluster",
+          "green patina"
+        ]
+      },
+      {
+        "time": 6.6,
+        "composition": "Wide three-quarter disc view",
+        "camera_pose": "Wide orbit",
+        "visible_anchors": [
+          "30cm plate",
+          "gold inlays"
+        ]
+      },
+      {
+        "time": 10.0,
+        "composition": "Full hero composition",
+        "camera_pose": "Hero three-quarter",
+        "visible_anchors": [
+          "entire 30cm disc",
+          "stand"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.4,
+        "narration": "표면에는 순금으로 박아 넣은 태양과 초승달, 밤하늘의 별들이 가득했죠.",
+        "camera": "Close macro orbit on gold inlays",
+        "action": "Gold texture glints against patina",
+        "graphic": "none"
+      },
+      {
+        "start": 4.4,
+        "end": 8.8,
+        "narration": "바로 인류 역사상 가장 오래된 구체적인 천문도, 네브라 스카이 디스크였습니다.",
+        "camera": "Pull back to full hero view",
+        "action": "Volumetric beam illuminates disc",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. European Bronze Age in the seventeenth to sixteenth century BCE (circa 1600 BCE), Unetice culture, the forested hill plateau of Mittelberg near Nebra, Saxony-Anhalt, Central Germany. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Hero three-quarter macro portrait archaeological diorama of the real-form Nebra Sky Disc on a dark museum stand: pure gold inlaid sun, thick crescent moon, thirty-two gold stars glowing under volumetric light against dark patinated green bronze. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be Central European Bronze Age people with period-correct woven wool or linen tunics, leather belts, bronze spiral armlets, and authentic bronze tools.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. Begin physical camera travel within 0.35 seconds. Enter at patinated green bronze surface; travel macro orbit across inlaid gold full moon and crescent; arrive at entire celestial disk layout; settle on complete hero gold constellation layout. Orbit closely across the dark green patinated surface as the inlaid pure gold full moon, thick crescent moon, and clustered stars reflect razor-sharp volumetric lighting along the orbit path route, settling on the full celestial composition. TTS-locked timing: 0.00-5.00s: 표면에는 순금으로 박아 넣은 태양과 초승달, 밤하늘의 별들이 가득했죠.. 5.00-10.00s: 바로 인류 역사상 가장 오래된 구체적인 천문도, 네브라 스카이 디스크였습니다.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: patinated green bronze surface is already visible in the locked first frame. Mid anchor: remain on the same orbit axis through macro orbit across inlaid gold full moon and crescent. Final anchor: arrive once at entire celestial disk layout. Last frame: Last frame holds the unchanged composition on complete hero gold constellation layout. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_form_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+    "artifact_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "allowed_artifact_changes": [
+      "camera",
+      "lighting"
+    ],
+    "forbidden_artifact_changes": [
+      "silhouette",
+      "proportion",
+      "part_count",
+      "ornament_layout"
+    ]
+  },
+  {
+    "n": 3,
+    "audio_scene": 3,
+    "audio_part": "1/1",
+    "audio_offset_start": 15.2,
+    "audio_offset_end": 23.1,
+    "timeline_start": 15.2,
+    "timeline_end": 23.1,
+    "chapter": "1. 숲속의 녹슨 원판",
+    "ct": "SITE_ESTABLISH",
+    "txt": "글자조차 없던 청동기 시대에 만들어진 물건이거든요. 도대체 3천 년 전 고대인들은 왜 이런 정밀한 우주를 새겨 땅속에 묻었던 걸까요?",
+    "tts": 7.9,
+    "omni": 8,
+    "playback_speed": 1.0,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "IDENTIFIABLE",
+    "routing_reason": "문자 없는 청동기 시대 배경과 유물 자체의 중심 질문을 함께 보여주는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "gold disc edge on dark altar stone",
+      "route": "crane rise over Bronze Age forested settlement",
+      "destination": "misted Mittelberg hill summit",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "2.5s settlement reveal",
+        "5.8s celestial beam alignment"
+      ],
+      "settle_point": "misted hill horizon and glowing bronze disc",
+      "single_axis": "FORWARD",
+      "scale_domain": "WIDE",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places gold disc edge on dark altar stone at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on misted hill horizon and glowing bronze disc."
+    },
+    "visual_lock": {
+      "civilization": "Central European Bronze Age Unetice culture and documented Mittelberg archaeology",
+      "era": "circa 1600 BCE European Bronze Age, with 1999-2002 discovery and recovery context",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "Central European Bronze Age people in period-correct garments; documented German archaeologists and conservators after 1999",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "Mittelberg hill summit",
+        "Bronze Age timber longhouse",
+        "glowing Nebra sky disc on altar"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Disc on stone altar",
+        "camera_pose": "Low altar close-up",
+        "visible_anchors": [
+          "sky disc",
+          "altar stone"
+        ]
+      },
+      {
+        "time": 4.0,
+        "composition": "Mittelberg settlement overview",
+        "camera_pose": "High crane wide",
+        "visible_anchors": [
+          "timber huts",
+          "earthen ditch"
+        ]
+      },
+      {
+        "time": 8.0,
+        "composition": "Forested summit under twilight",
+        "camera_pose": "Extreme wide diorama",
+        "visible_anchors": [
+          "ancient forest",
+          "twilight horizon"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.9,
+        "narration": "글자조차 없던 청동기 시대에 만들어진 물건이거든요.",
+        "camera": "Crane upward from disc to settlement",
+        "action": "Mist rolls across timber huts",
+        "graphic": "none"
+      },
+      {
+        "start": 3.9,
+        "end": 7.9,
+        "narration": "도대체 3천 년 전 고대인들은 왜 이런 정밀한 우주를 새겨 땅속에 묻었던 걸까요?",
+        "camera": "Wide horizon sweep over Mittelberg",
+        "action": "Atmospheric evening sky darkens",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. European Bronze Age in the seventeenth to sixteenth century BCE (circa 1600 BCE), Unetice culture, the forested hill plateau of Mittelberg near Nebra, Saxony-Anhalt, Central Germany. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Atmospheric Bronze Age hill-summit archaeological diorama at Mittelberg: timber longhouses, low circular earthen enclosure, evening mist over ancient pine forest, with the Nebra Sky Disc resting on a dark ceremonial stone pedestal. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be Central European Bronze Age people with period-correct woven wool or linen tunics, leather belts, bronze spiral armlets, and authentic bronze tools.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. Begin physical camera travel within 0.35 seconds. Enter at gold disc edge on dark altar stone; travel crane rise over Bronze Age forested settlement; arrive at misted Mittelberg hill summit; settle on misted hill horizon and glowing bronze disc. Crane upward from the glowing sky disc on the ceremonial stone along the vertical path route, sweeping across the misted Bronze Age timber settlement and forest ramparts to open the central historical question. Integrated graphical motion operates along the designated path route strictly in physical world space with correct depth occlusion; no floating HUD and no text. TTS-locked timing: 0.00-4.00s: 글자조차 없던 청동기 시대에 만들어진 물건이거든요.. 4.00-8.00s: 도대체 3천 년 전 고대인들은 왜 이런 정밀한 우주를 새겨 땅속에 묻었던 걸까요?. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: gold disc edge on dark altar stone is already visible in the locked first frame. Mid anchor: remain on the same forward axis through crane rise over Bronze Age forested settlement. Final anchor: arrive once at misted Mittelberg hill summit. Last frame: Last frame holds the unchanged composition on misted hill horizon and glowing bronze disc. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_form_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+    "artifact_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "allowed_artifact_changes": [
+      "camera",
+      "lighting"
+    ],
+    "forbidden_artifact_changes": [
+      "silhouette",
+      "proportion",
+      "part_count",
+      "ornament_layout"
+    ],
+    "veo_integrated_graphic": {
+      "function": "SCAN_WAVE",
+      "evidence_relation": "학술해석: 청동기 우네티체 문화권과 미텔베르크 유적의 공간적 경계",
+      "visual_language": "red holographic horizon ray and coordinate beam",
+      "start": "altar stone",
+      "via": [
+        "settlement roof",
+        "forest boundary"
+      ],
+      "end": "twilight sky",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "pulses red question beacon over the hill summit"
+    },
+    "veo_graphic": {
+      "function": "SCAN_WAVE",
+      "evidence_relation": "학술해석: 청동기 우네티체 문화권과 미텔베르크 유적의 공간적 경계",
+      "visual_language": "red holographic horizon ray and coordinate beam",
+      "start": "altar stone",
+      "via": [
+        "settlement roof",
+        "forest boundary"
+      ],
+      "end": "twilight sky",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "pulses red question beacon over the hill summit"
+    }
+  },
+  {
+    "n": 4,
+    "audio_scene": 4,
+    "audio_part": "1/1",
+    "audio_offset_start": 23.1,
+    "audio_offset_end": 32.2,
+    "timeline_start": 23.1,
+    "timeline_end": 32.2,
+    "chapter": "2. 규모의 충격과 모순",
+    "ct": "ARTIFACT_MACRO",
+    "txt": "자, 손바닥 두 개만 한 청동판을 조금 더 들여다보죠. 원판 중심에는 둥근 태양과 굵은 초승달이 있고, 그 곁으로 서른두 개의 황금 별이 흩어져 있습니다.",
+    "tts": 9.1,
+    "omni": 10,
+    "playback_speed": 1.0,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "IDENTIFIABLE",
+    "routing_reason": "원판 중심의 태양, 굵은 초승달, 32개 별 배치를 형태 소유자와 정밀 대조하는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "entire thirty-centimetre disc surface",
+      "route": "straight macro push-in toward disc center",
+      "destination": "central sun and crescent cluster",
+      "speed_profile": "MACRO_PROBE_SETTLE",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "SURFACE_TO_INTERIOR",
+      "pattern_interrupts": [
+        "2.0s sun dimension line",
+        "5.2s 32 stars point tags"
+      ],
+      "settle_point": "geometric center of thirty-two stars",
+      "single_axis": "FORWARD",
+      "scale_domain": "MACRO",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places entire thirty-centimetre disc surface at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on geometric center of thirty-two stars."
+    },
+    "visual_lock": {
+      "civilization": "Central European Bronze Age Unetice culture and documented Mittelberg archaeology",
+      "era": "circa 1600 BCE European Bronze Age, with 1999-2002 discovery and recovery context",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "Central European Bronze Age people in period-correct garments; documented German archaeologists and conservators after 1999",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "central gold sun",
+        "thick gold crescent",
+        "thirty-two gold star inlays",
+        "bronze patina texture"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Full top-down disc view",
+        "camera_pose": "Top-down 90°",
+        "visible_anchors": [
+          "30cm plate",
+          "all inlays"
+        ]
+      },
+      {
+        "time": 3.3,
+        "composition": "Medium push to central cluster",
+        "camera_pose": "Top-down 75°",
+        "visible_anchors": [
+          "sun inlay",
+          "crescent moon"
+        ]
+      },
+      {
+        "time": 6.6,
+        "composition": "Close macro probe on stars",
+        "camera_pose": "Macro probe 65°",
+        "visible_anchors": [
+          "hammered gold",
+          "star points"
+        ]
+      },
+      {
+        "time": 10.0,
+        "composition": "Tight macro on 32 star coordinates",
+        "camera_pose": "Macro probe 60°",
+        "visible_anchors": [
+          "hammered gold facets",
+          "stars"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.5,
+        "narration": "자, 손바닥 두 개만 한 청동판을 조금 더 들여다보죠.",
+        "camera": "Direct vertical dolly-in",
+        "action": "Physical scale comparison cues appear",
+        "graphic": "none"
+      },
+      {
+        "start": 4.5,
+        "end": 9.1,
+        "narration": "원판 중심에는 둥근 태양과 굵은 초승달이 있고, 그 곁으로 서른두 개의 황금 별이 흩어져 있습니다.",
+        "camera": "Macro probe across star coordinates",
+        "action": "Gold hammer facets catch light",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. European Bronze Age in the seventeenth to sixteenth century BCE (circa 1600 BCE), Unetice culture, the forested hill plateau of Mittelberg near Nebra, Saxony-Anhalt, Central Germany. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Top-down isometric forensic archaeological diorama of the Nebra Sky Disc: razor-sharp macro view of the central hammered gold full moon, thick gold crescent moon, and thirty-two individual gold star inlays with subtle lighting separation. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be Central European Bronze Age people with period-correct woven wool or linen tunics, leather belts, bronze spiral armlets, and authentic bronze tools.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. Begin physical camera travel within 0.35 seconds. Enter at entire thirty-centimetre disc surface; travel straight macro push-in toward disc center; arrive at central sun and crescent cluster; settle on geometric center of thirty-two stars. Push straight down from the full thirty-centimetre disc along the central path route into the star cluster, revealing the hand-hammered gold grain of the sun, crescent, and individual star points with subtle physical lighting. TTS-locked timing: 0.00-5.00s: 자, 손바닥 두 개만 한 청동판을 조금 더 들여다보죠.. 5.00-10.00s: 원판 중심에는 둥근 태양과 굵은 초승달이 있고, 그 곁으로 서른두 개의 황금 별이 흩어져 있습니다.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: entire thirty-centimetre disc surface is already visible in the locked first frame. Mid anchor: remain on the same forward axis through straight macro push-in toward disc center. Final anchor: arrive once at central sun and crescent cluster. Last frame: Last frame holds the unchanged composition on geometric center of thirty-two stars. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_form_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+    "artifact_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "allowed_artifact_changes": [
+      "camera",
+      "lighting"
+    ],
+    "forbidden_artifact_changes": [
+      "silhouette",
+      "proportion",
+      "part_count",
+      "ornament_layout"
+    ],
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset."
+  },
+  {
+    "n": 5,
+    "audio_scene": 5,
+    "audio_part": "1/1",
+    "audio_offset_start": 32.2,
+    "audio_offset_end": 40.7,
+    "timeline_start": 32.2,
+    "timeline_end": 40.7,
+    "chapter": "2. 규모의 충격과 모순",
+    "ct": "DIAGRAM",
+    "txt": "특히 일곱 개가 뭉친 무리는 밤하늘의 플레이아데스 성단이었죠. 심지어 양쪽 가장자리에는 정확히 82도 각도를 이루는 황금 호가 붙어 있었습니다.",
+    "tts": 8.5,
+    "omni": 8,
+    "playback_speed": 0.9412,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "IDENTIFIABLE",
+    "routing_reason": "플레이아데스 7성단과 82도 황금 지평선 호를 식별하고 각도를 투사하는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "seven-star Pleiades cluster",
+      "route": "lateral track to lateral gold horizon arc",
+      "destination": "82-degree measured arc apex",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "NONE",
+      "pattern_interrupts": [
+        "2.4s Pleiades target ring",
+        "5.6s 82-degree angle arc projection"
+      ],
+      "settle_point": "82.0-degree geometric horizon arc",
+      "single_axis": "LATERAL",
+      "scale_domain": "MACRO",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places seven-star Pleiades cluster at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on 82.0-degree geometric horizon arc."
+    },
+    "visual_lock": {
+      "civilization": "Central European Bronze Age Unetice culture and documented Mittelberg archaeology",
+      "era": "circa 1600 BCE European Bronze Age, with 1999-2002 discovery and recovery context",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "Central European Bronze Age people in period-correct garments; documented German archaeologists and conservators after 1999",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "seven-star Pleiades cluster",
+        "gold horizon arc",
+        "82-degree geometric angle lines"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Pleiades 7-star close-up",
+        "camera_pose": "Macro tight",
+        "visible_anchors": [
+          "7 stars",
+          "patina"
+        ]
+      },
+      {
+        "time": 4.0,
+        "composition": "Lateral slide across disc rim",
+        "camera_pose": "Medium lateral",
+        "visible_anchors": [
+          "disc rim",
+          "gold band"
+        ]
+      },
+      {
+        "time": 8.0,
+        "composition": "82-degree geometric projection",
+        "camera_pose": "Three-quarter diagnostic",
+        "visible_anchors": [
+          "82° ray lines",
+          "horizon arc"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.2,
+        "narration": "특히 일곱 개가 뭉친 무리는 밤하늘의 플레이아데스 성단이었죠.",
+        "camera": "Close focus on 7-star cluster",
+        "action": "Target reticle snaps to Pleiades",
+        "graphic": "none"
+      },
+      {
+        "start": 4.2,
+        "end": 8.5,
+        "narration": "심지어 양쪽 가장자리에는 정확히 82도 각도를 이루는 황금 호가 붙어 있었습니다.",
+        "camera": "Lateral slide to horizon arc",
+        "action": "Red angular rays project outward",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. European Bronze Age in the seventeenth to sixteenth century BCE (circa 1600 BCE), Unetice culture, the forested hill plateau of Mittelberg near Nebra, Saxony-Anhalt, Central Germany. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Technical diagnostic archaeological diorama of the Nebra Sky Disc: red laser circle highlighting the tight seven-star Pleiades cluster, tracking laterally to the curved gold horizon band with sharp red laser lines projecting an exact 82-degree angle. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be Central European Bronze Age people with period-correct woven wool or linen tunics, leather belts, bronze spiral armlets, and authentic bronze tools.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. Begin physical camera travel within 0.35 seconds. Enter at seven-star Pleiades cluster; travel lateral track to lateral gold horizon arc; arrive at 82-degree measured arc apex; settle on 82.0-degree geometric horizon arc. Track laterally from the glowing seven-star Pleiades cluster along the rim path route across the dark bronze surface to the gold horizon band, projecting an exact 82.0-degree geometric ray cone from the disc center. Integrated graphical motion operates along the designated path route strictly in physical world space with correct depth occlusion; no floating HUD and no text. TTS-locked timing: 0.00-4.00s: 특히 일곱 개가 뭉친 무리는 밤하늘의 플레이아데스 성단이었죠.. 4.00-8.00s: 심지어 양쪽 가장자리에는 정확히 82도 각도를 이루는 황금 호가 붙어 있었습니다.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: seven-star Pleiades cluster is already visible in the locked first frame. Mid anchor: remain on the same lateral axis through lateral track to lateral gold horizon arc. Final anchor: arrive once at 82-degree measured arc apex. Last frame: Last frame holds the unchanged composition on 82.0-degree geometric horizon arc. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_form_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+    "artifact_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "allowed_artifact_changes": [
+      "camera",
+      "lighting"
+    ],
+    "forbidden_artifact_changes": [
+      "silhouette",
+      "proportion",
+      "part_count",
+      "ornament_layout"
+    ],
+    "veo_integrated_graphic": {
+      "function": "DIMENSION_LINE",
+      "evidence_relation": "측정확인: 실측 82.0도 중심각과 7성단 배치 구조",
+      "visual_language": "thin red laser angle arc and target rings",
+      "start": "Pleiades cluster",
+      "via": [
+        "disc center"
+      ],
+      "end": "horizon arc rim",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "locks onto 82.0-degree angular ray overlay"
+    },
+    "veo_graphic": {
+      "function": "DIMENSION_LINE",
+      "evidence_relation": "측정확인: 실측 82.0도 중심각과 7성단 배치 구조",
+      "visual_language": "thin red laser angle arc and target rings",
+      "start": "Pleiades cluster",
+      "via": [
+        "disc center"
+      ],
+      "end": "horizon arc rim",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "locks onto 82.0-degree angular ray overlay"
+    }
+  },
+  {
+    "n": 6,
+    "audio_scene": 6,
+    "audio_part": "1/1",
+    "audio_offset_start": 40.7,
+    "audio_offset_end": 49.6,
+    "timeline_start": 40.7,
+    "timeline_end": 49.6,
+    "chapter": "2. 규모의 충격과 모순",
+    "ct": "HISTORICAL_RECONSTRUCTION",
+    "txt": "당시 유럽은 문자 기록 하나 남기지 못한 시대였거든요. 그런 청동기인들이 정밀한 각도와 별자리를 담아냈다는 사실 자체가 상식을 깨는 모순이었던 겁니다.",
+    "tts": 8.9,
+    "omni": 8,
+    "playback_speed": 0.8989,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "IDENTIFIABLE",
+    "routing_reason": "문자 없는 시대와 정밀 천문관측의 상식적 모순을 원판 세부와 함께 식별하는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "ancient bronze artisan hands holding disc",
+      "route": "slow upward orbit to Bronze Age workshop exterior",
+      "destination": "forested mountain backdrop",
+      "speed_profile": "CONTROLLED_ORBIT_REVEAL",
+      "operator_style": "CONTROLLED_DOCUMENTARY_HANDHELD_GIMBAL",
+      "depth_transition": "NONE",
+      "pattern_interrupts": [
+        "2.8s artisan hand detail",
+        "6.0s night sky comparison"
+      ],
+      "settle_point": "Bronze Age artisan looking from disc to night sky",
+      "single_axis": "ORBIT",
+      "scale_domain": "MEDIUM",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places ancient bronze artisan hands holding disc at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on Bronze Age artisan looking from disc to night sky."
+    },
+    "visual_lock": {
+      "civilization": "Central European Bronze Age Unetice culture and documented Mittelberg archaeology",
+      "era": "circa 1600 BCE European Bronze Age, with 1999-2002 discovery and recovery context",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "Central European Bronze Age people in period-correct garments; documented German archaeologists and conservators after 1999",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "Bronze Age artisan hands",
+        "hammered bronze disc",
+        "stone smelting forge",
+        "starry night sky"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Artisan hands with disc",
+        "camera_pose": "Low-angle close-up",
+        "visible_anchors": [
+          "artisan tunic",
+          "sky disc"
+        ]
+      },
+      {
+        "time": 4.0,
+        "composition": "Charcoal forge and timber hut",
+        "camera_pose": "Mid-level orbit",
+        "visible_anchors": [
+          "stone forge",
+          "sparks"
+        ]
+      },
+      {
+        "time": 8.0,
+        "composition": "Disc aligned with real cosmos",
+        "camera_pose": "Wide dramatic three-quarter",
+        "visible_anchors": [
+          "real night sky",
+          "artisan profile"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.4,
+        "narration": "당시 유럽은 문자 기록 하나 남기지 못한 시대였거든요.",
+        "camera": "Focus on raw artisan tools and forge",
+        "action": "Charcoal embers rise softly",
+        "graphic": "none"
+      },
+      {
+        "start": 4.4,
+        "end": 8.9,
+        "narration": "그런 청동기인들이 정밀한 각도와 별자리를 담아냈다는 사실 자체가 상식을 깨는 모순이었던 겁니다.",
+        "camera": "Orbit to frame disc against real stars",
+        "action": "Gold inlays catch moonlight",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. European Bronze Age in the seventeenth to sixteenth century BCE (circa 1600 BCE), Unetice culture, the forested hill plateau of Mittelberg near Nebra, Saxony-Anhalt, Central Germany. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Dramatic split-depth archaeological diorama: in the foreground, a Bronze Age artisan in linen tunic holds the glowing Nebra Sky Disc; in the background, a primitive timber forge and the vast real night sky contrast with the sophisticated astronomical artifact. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be Central European Bronze Age people with period-correct woven wool or linen tunics, leather belts, bronze spiral armlets, and authentic bronze tools.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. Begin physical camera travel within 0.35 seconds. Enter at ancient bronze artisan hands holding disc; travel slow upward orbit to Bronze Age workshop exterior; arrive at forested mountain backdrop; settle on Bronze Age artisan looking from disc to night sky. Slowly orbit around the artisan's hands holding the finished sky disc along the circular path route, rising to frame the primitive charcoal forge against the glittering real cosmos above to dramatize the historical contradiction. TTS-locked timing: 0.00-4.00s: 당시 유럽은 문자 기록 하나 남기지 못한 시대였거든요.. 4.00-8.00s: 그런 청동기인들이 정밀한 각도와 별자리를 담아냈다는 사실 자체가 상식을 깨는 모순이었던 겁니다.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: ancient bronze artisan hands holding disc is already visible in the locked first frame. Mid anchor: remain on the same orbit axis through slow upward orbit to Bronze Age workshop exterior. Final anchor: arrive once at forested mountain backdrop. Last frame: Last frame holds the unchanged composition on Bronze Age artisan looking from disc to night sky. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_form_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+    "artifact_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "allowed_artifact_changes": [
+      "camera",
+      "lighting"
+    ],
+    "forbidden_artifact_changes": [
+      "silhouette",
+      "proportion",
+      "part_count",
+      "ornament_layout"
+    ]
+  },
+  {
+    "n": 7,
+    "audio_scene": 7,
+    "audio_part": "1/1",
+    "audio_offset_start": 49.6,
+    "audio_offset_end": 58.7,
+    "timeline_start": 49.6,
+    "timeline_end": 58.7,
+    "chapter": "3. 도굴과 극적 회수",
+    "ct": "DISCOVERY_ACTION",
+    "txt": "이야기는 1999년, 독일 미텔베르크 숲에서 도굴꾼들이 금속탐지기로 흙을 파헤치며 시작됩니다. 청동 검과 도끼 틈에서 녹슨 쟁반 같은 것이 딸려 나왔죠.",
+    "tts": 9.1,
+    "omni": 10,
+    "playback_speed": 1.0,
+    "evidence": "발굴확인",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "NON_IDENTIFIABLE",
+    "routing_reason": "1999년 미텔베르크 숲속 불법 도굴꾼의 금속탐지기 발굴 현장을 재현하는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "1999 night forest floor with flashlight beam",
+      "route": "descend into the illicit digger shovel pit",
+      "destination": "tangled hoard of bronze swords, axes and disc",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "2.0s shovel strike",
+        "5.4s metal detector beep cue"
+      ],
+      "settle_point": "illicit hoard find position in dark soil",
+      "single_axis": "FORWARD",
+      "scale_domain": "MEDIUM",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places 1999 night forest floor with flashlight beam at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on illicit hoard find position in dark soil."
+    },
+    "visual_lock": {
+      "civilization": "Documented 1999-2002 German archaeological discovery, recovery and Halle museum conservation",
+      "era": "1999 discovery, 2002 Basel sting operation, and present-day museum analysis only",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "German and Swiss archaeologists, police investigators, and museum conservators in exact modern work clothing",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "Mittelberg night forest",
+        "metal detector coil",
+        "illicit shovel pit",
+        "bronze swords",
+        "bronze axes",
+        "corroded green disc"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Night forest search with detector",
+        "camera_pose": "POV detector sweep",
+        "visible_anchors": [
+          "flashlight cone",
+          "pine roots"
+        ]
+      },
+      {
+        "time": 3.3,
+        "composition": "Fresh soil cutaway pit",
+        "camera_pose": "Low pit dive",
+        "visible_anchors": [
+          "shovel blade",
+          "disturbed soil"
+        ]
+      },
+      {
+        "time": 6.6,
+        "composition": "Stone cavity exposure",
+        "camera_pose": "Mid cavity dive",
+        "visible_anchors": [
+          "cavity stones",
+          "soil"
+        ]
+      },
+      {
+        "time": 10.0,
+        "composition": "Hoard exposed in stone cavity",
+        "camera_pose": "Macro cavity hold",
+        "visible_anchors": [
+          "swords",
+          "axes",
+          "green disc"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.5,
+        "narration": "이야기는 1999년, 독일 미텔베르크 숲에서 도굴꾼들이 금속탐지기로 흙을 파헤치며 시작됩니다.",
+        "camera": "Follow metal detector sweep at night",
+        "action": "Flashlight beam cuts dark pine roots",
+        "graphic": "none"
+      },
+      {
+        "start": 4.5,
+        "end": 9.1,
+        "narration": "청동 검과 도끼 틈에서 녹슨 쟁반 같은 것이 딸려 나왔죠.",
+        "camera": "Descend into fresh shovel pit",
+        "action": "Shovel exposes corroded hoard",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. Documented German archaeological investigation and recovery: the 1999 illicit metal-detector discovery in the Mittelberg forest, the 2002 Basel hotel police sting operation led by archaeologist Harald Meller, and subsequent scientific laboratory analysis at the Halle State Museum of Prehistory. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Atmospheric 1999 night excavation archaeological diorama in Mittelberg forest: flashlight beams cut through dark trees, an illicit metal detector coil sweeps over roots, and a shovel exposes a stone-lined pit containing two Bronze Age swords, two axes, and the corroded sky disc. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be German and Swiss archaeologists in practical 1999-2002 field clothing and modern museum conservators in white lab coats and gloves.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at 1999 night forest floor with flashlight beam; travel descend into the illicit digger shovel pit; arrive at tangled hoard of bronze swords, axes and disc; settle on illicit hoard find position in dark soil. Dive into the illicit night excavation pit along the vertical shovel path route as dark forest soil is scraped away, revealing the tangled hoard of two bronze swords, two axe heads, and the corroded green disc. TTS-locked timing: 0.00-5.00s: 이야기는 1999년, 독일 미텔베르크 숲에서 도굴꾼들이 금속탐지기로 흙을 파헤치며 시작됩니다.. 5.00-10.00s: 청동 검과 도끼 틈에서 녹슨 쟁반 같은 것이 딸려 나왔죠.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: 1999 night forest floor with flashlight beam is already visible in the locked first frame. Mid anchor: remain on the same forward axis through descend into the illicit digger shovel pit. Final anchor: arrive once at tangled hoard of bronze swords, axes and disc. Last frame: Last frame holds the unchanged composition on illicit hoard find position in dark soil. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_reference_ids": [],
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset."
+  },
+  {
+    "n": 8,
+    "audio_scene": 8,
+    "audio_part": "1/1",
+    "audio_offset_start": 58.7,
+    "audio_offset_end": 68.0,
+    "timeline_start": 58.7,
+    "timeline_end": 68.0,
+    "chapter": "3. 도굴과 극적 회수",
+    "ct": "HISTORICAL_RECONSTRUCTION",
+    "txt": "도굴꾼들은 흙을 털어내고 암시장에 헐값으로 넘겼습니다. 유물은 암흑가를 떠돌다 2002년 스위스 바젤에서 고고학자와 경찰의 함정 수사 끝에 극적으로 회수됐죠.",
+    "tts": 9.3,
+    "omni": 10,
+    "playback_speed": 1.0,
+    "evidence": "문헌기록",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "NON_IDENTIFIABLE",
+    "routing_reason": "2002년 스위스 바젤 호텔에서의 극적인 위장 함정 수사 회수 현장을 보여주는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "leather briefcase on hotel room table",
+      "route": "dolly across black market briefcase to police badge and archaeologist",
+      "destination": "secured Nebra disc on table center",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "CONTROLLED_DOCUMENTARY_HANDHELD_GIMBAL",
+      "depth_transition": "NONE",
+      "pattern_interrupts": [
+        "2.2s briefcase snap open",
+        "5.6s police badge reveal"
+      ],
+      "settle_point": "recovered Nebra disc under bright hotel lamp",
+      "single_axis": "LATERAL",
+      "scale_domain": "MEDIUM",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places leather briefcase on hotel room table at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on recovered Nebra disc under bright hotel lamp."
+    },
+    "visual_lock": {
+      "civilization": "Documented 1999-2002 German archaeological discovery, recovery and Halle museum conservation",
+      "era": "1999 discovery, 2002 Basel sting operation, and present-day museum analysis only",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "German and Swiss archaeologists, police investigators, and museum conservators in exact modern work clothing",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "Basel hotel room diorama",
+        "open black leather briefcase",
+        "Swiss/German police badge",
+        "archaeologist Harald Meller"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Briefcase on hotel table",
+        "camera_pose": "Medium table dolly",
+        "visible_anchors": [
+          "leather case",
+          "currency"
+        ]
+      },
+      {
+        "time": 3.3,
+        "composition": "Disc lifted onto white cloth",
+        "camera_pose": "Close table view",
+        "visible_anchors": [
+          "damaged disc",
+          "cloth"
+        ]
+      },
+      {
+        "time": 6.6,
+        "composition": "Archaeologist inspection",
+        "camera_pose": "Medium profile view",
+        "visible_anchors": [
+          "magnifying glass",
+          "conservator"
+        ]
+      },
+      {
+        "time": 10.0,
+        "composition": "Secured artifact under lamp",
+        "camera_pose": "Three-quarter investigation",
+        "visible_anchors": [
+          "recovered disc",
+          "police badge"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.6,
+        "narration": "도굴꾼들은 흙을 털어내고 암시장에 헐값으로 넘겼습니다.",
+        "camera": "Track across open briefcase lining",
+        "action": "Black market cash and scratches visible",
+        "graphic": "none"
+      },
+      {
+        "start": 4.6,
+        "end": 9.3,
+        "narration": "유물은 암흑가를 떠돌다 2002년 스위스 바젤에서 고고학자와 경찰의 함정 수사 끝에 극적으로 회수됐죠.",
+        "camera": "Pan to police badge and archaeologist",
+        "action": "Forensic lamp illuminates disc",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. Documented German archaeological investigation and recovery: the 1999 illicit metal-detector discovery in the Mittelberg forest, the 2002 Basel hotel police sting operation led by archaeologist Harald Meller, and subsequent scientific laboratory analysis at the Halle State Museum of Prehistory. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Documented 2002 sting operation archaeological diorama in a Basel hotel room: warm lamplight illuminates an open black leather briefcase containing the damaged Nebra disc, with police badges and archaeologist Harald Meller inspecting the authentic artifact. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be German and Swiss archaeologists in practical 1999-2002 field clothing and modern museum conservators in white lab coats and gloves.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at leather briefcase on hotel room table; travel dolly across black market briefcase to police badge and archaeologist; arrive at secured Nebra disc on table center; settle on recovered Nebra disc under bright hotel lamp. Dolly across the tense hotel room table along the horizontal path route from the open black market briefcase to the recovered Nebra Sky Disc, settling as archaeologist Harald Meller confirms the authentic gold inlays under police guard. TTS-locked timing: 0.00-5.00s: 도굴꾼들은 흙을 털어내고 암시장에 헐값으로 넘겼습니다.. 5.00-10.00s: 유물은 암흑가를 떠돌다 2002년 스위스 바젤에서 고고학자와 경찰의 함정 수사 끝에 극적으로 회수됐죠.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: leather briefcase on hotel room table is already visible in the locked first frame. Mid anchor: remain on the same lateral axis through dolly across black market briefcase to police badge and archaeologist. Final anchor: arrive once at secured Nebra disc on table center. Last frame: Last frame holds the unchanged composition on recovered Nebra disc under bright hotel lamp. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_reference_ids": [],
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset."
+  },
+  {
+    "n": 9,
+    "audio_scene": 9,
+    "audio_part": "1/1",
+    "audio_offset_start": 68.0,
+    "audio_offset_end": 74.6,
+    "timeline_start": 68.0,
+    "timeline_end": 74.6,
+    "chapter": "3. 도굴과 극적 회수",
+    "ct": "CONSERVATION",
+    "txt": "학자들은 단 하나의 질문에 매달렸습니다. 문명도 없던 시대에 도대체 누가, 무엇을 위해 이 천문판을 만들었는가?",
+    "tts": 6.6,
+    "omni": 8,
+    "playback_speed": 1.0,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "IDENTIFIABLE",
+    "routing_reason": "박물관 연구실에서 실물 원판을 현미경 및 측정 도구로 조사하는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": true,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "Halle museum laboratory workbench",
+      "route": "slow macro zoom into disc center under microscope ring light",
+      "destination": "forensic microscope objective lens",
+      "speed_profile": "MACRO_PROBE_SETTLE",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "SECTION_DIVE",
+      "pattern_interrupts": [
+        "2.0s microscope ring light on",
+        "4.8s question text pulse"
+      ],
+      "settle_point": "patina boundary under forensic microscope",
+      "single_axis": "FORWARD",
+      "scale_domain": "MACRO",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places Halle museum laboratory workbench at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on patina boundary under forensic microscope."
+    },
+    "visual_lock": {
+      "civilization": "Documented 1999-2002 German archaeological discovery, recovery and Halle museum conservation",
+      "era": "1999 discovery, 2002 Basel sting operation, and present-day museum analysis only",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "German and Swiss archaeologists, police investigators, and museum conservators in exact modern work clothing",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "Halle state museum laboratory",
+        "stereomicroscope",
+        "gloved conservator hands",
+        "precision calipers"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Museum laboratory wide",
+        "camera_pose": "Lab overview 45°",
+        "visible_anchors": [
+          "microscopes",
+          "lab benches"
+        ]
+      },
+      {
+        "time": 4.0,
+        "composition": "Optical ring light close-up",
+        "camera_pose": "Macro dive",
+        "visible_anchors": [
+          "ring light",
+          "disc cradle"
+        ]
+      },
+      {
+        "time": 8.0,
+        "composition": "Microscope optical center",
+        "camera_pose": "Extreme macro probe",
+        "visible_anchors": [
+          "gold inlay seam",
+          "patina"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.3,
+        "narration": "학자들은 단 하나의 질문에 매달렸습니다.",
+        "camera": "Microscope ring light illuminates disc",
+        "action": "Gloved hands position optical probe",
+        "graphic": "none"
+      },
+      {
+        "start": 3.3,
+        "end": 6.6,
+        "narration": "문명도 없던 시대에 도대체 누가, 무엇을 위해 이 천문판을 만들었는가?",
+        "camera": "Deep optical dive into gold inlay seam",
+        "action": "Cross-section microtexture visible",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. Documented German archaeological investigation and recovery: the 1999 illicit metal-detector discovery in the Mittelberg forest, the 2002 Basel hotel police sting operation led by archaeologist Harald Meller, and subsequent scientific laboratory analysis at the Halle State Museum of Prehistory. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. State-of-the-art conservation laboratory archaeological diorama at Halle State Museum: gloved German conservators operate precision stereomicroscopes and spectral lights over the secured Nebra Sky Disc on a neutral conservation foam cradle. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be German and Swiss archaeologists in practical 1999-2002 field clothing and modern museum conservators in white lab coats and gloves.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. Begin physical camera travel within 0.35 seconds. Enter at Halle museum laboratory workbench; travel slow macro zoom into disc center under microscope ring light; arrive at forensic microscope objective lens; settle on patina boundary under forensic microscope. Zoom smoothly along the optical path route of a forensic microscope ring light into the patinated gold boundary of the Nebra disc, framing the central scholarly inquiry. TTS-locked timing: 0.00-4.00s: 학자들은 단 하나의 질문에 매달렸습니다.. 4.00-8.00s: 문명도 없던 시대에 도대체 누가, 무엇을 위해 이 천문판을 만들었는가?. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: Halle museum laboratory workbench is already visible in the locked first frame. Mid anchor: remain on the same forward axis through slow macro zoom into disc center under microscope ring light. Final anchor: arrive once at forensic microscope objective lens. Last frame: Last frame holds the unchanged composition on patina boundary under forensic microscope. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_form_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+    "artifact_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "allowed_artifact_changes": [
+      "camera",
+      "lighting"
+    ],
+    "forbidden_artifact_changes": [
+      "silhouette",
+      "proportion",
+      "part_count",
+      "ornament_layout"
+    ]
+  },
+  {
+    "n": 10,
+    "audio_scene": 10,
+    "audio_part": "1/1",
+    "audio_offset_start": 74.6,
+    "audio_offset_end": 81.5,
+    "timeline_start": 74.6,
+    "timeline_end": 81.5,
+    "chapter": "4. 가설 붕괴와 무역망",
+    "ct": "SCIENTIFIC_EVIDENCE",
+    "txt": "그냥 밤하늘을 본뜬 제사용 장식품 아니냐고요? 하지만 수치를 재자마자 단순한 장식품이라는 가설은 산산조각이 났습니다.",
+    "tts": 6.9,
+    "omni": 8,
+    "playback_speed": 1.0,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "IDENTIFIABLE",
+    "routing_reason": "단순 장식품 가설을 깨고 정밀 3D 스캔 및 각도 측정을 개시하는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": true,
+    "motion_owner": "VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "blue 3D laser scanner line on disc",
+      "route": "rapid sweep across the disc surface with point cloud mesh",
+      "destination": "shattering decorative hypothesis graphic",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "CONTROLLED_DOCUMENTARY_HANDHELD_GIMBAL",
+      "depth_transition": "NONE",
+      "pattern_interrupts": [
+        "1.8s laser scan sweep",
+        "4.5s red X on decorative label"
+      ],
+      "settle_point": "dense 3D point cloud coordinate grid",
+      "single_axis": "LATERAL",
+      "scale_domain": "MEDIUM",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places blue 3D laser scanner line on disc at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on dense 3D point cloud coordinate grid."
+    },
+    "visual_lock": {
+      "civilization": "Documented 1999-2002 German archaeological discovery, recovery and Halle museum conservation",
+      "era": "1999 discovery, 2002 Basel sting operation, and present-day museum analysis only",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "German and Swiss archaeologists, police investigators, and museum conservators in exact modern work clothing",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "3D laser scanner arm",
+        "blue laser line",
+        "coordinate mesh overlay",
+        "precision calibration target"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Laser scanner arm on disc",
+        "camera_pose": "Laboratory three-quarter",
+        "visible_anchors": [
+          "laser arm",
+          "blue line"
+        ]
+      },
+      {
+        "time": 4.0,
+        "composition": "Coordinate mesh build-up",
+        "camera_pose": "Macro surface sweep",
+        "visible_anchors": [
+          "point cloud",
+          "gold inlays"
+        ]
+      },
+      {
+        "time": 8.0,
+        "composition": "Forensic data verification",
+        "camera_pose": "Diagnostic hold",
+        "visible_anchors": [
+          "measurement grid",
+          "shattered icon"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.5,
+        "narration": "그냥 밤하늘을 본뜬 제사용 장식품 아니냐고요?",
+        "camera": "Blue laser line sweeps across disc",
+        "action": "3D coordinate mesh builds upward",
+        "graphic": "none"
+      },
+      {
+        "start": 3.5,
+        "end": 6.9,
+        "narration": "하지만 수치를 재자마자 단순한 장식품이라는 가설은 산산조각이 났습니다.",
+        "camera": "Laser points turn red with precision metrics",
+        "action": "Hypothesis label shatters with red X",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. Documented German archaeological investigation and recovery: the 1999 illicit metal-detector discovery in the Mittelberg forest, the 2002 Basel hotel police sting operation led by archaeologist Harald Meller, and subsequent scientific laboratory analysis at the Halle State Museum of Prehistory. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. High-tech forensic laboratory archaeological diorama: a blue 3D coordinate laser line sweeps across the Nebra disc, generating a luminous point cloud mesh while disproving the simple decorative hypothesis. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be German and Swiss archaeologists in practical 1999-2002 field clothing and modern museum conservators in white lab coats and gloves.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. Begin physical camera travel within 0.35 seconds. Enter at blue 3D laser scanner line on disc; travel rapid sweep across the disc surface with point cloud mesh; arrive at shattering decorative hypothesis graphic; settle on dense 3D point cloud coordinate grid. Sweep a blue coordinate laser beam along the scanning path route across the disc surface, building an accurate 3D point cloud mesh that instantly disproves the simple decorative ornament hypothesis. Integrated graphical motion operates along the designated path route strictly in physical world space with correct depth occlusion; no floating HUD and no text. TTS-locked timing: 0.00-4.00s: 그냥 밤하늘을 본뜬 제사용 장식품 아니냐고요?. 4.00-8.00s: 하지만 수치를 재자마자 단순한 장식품이라는 가설은 산산조각이 났습니다.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: blue 3D laser scanner line on disc is already visible in the locked first frame. Mid anchor: remain on the same lateral axis through rapid sweep across the disc surface with point cloud mesh. Final anchor: arrive once at shattering decorative hypothesis graphic. Last frame: Last frame holds the unchanged composition on dense 3D point cloud coordinate grid. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_form_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+    "artifact_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "allowed_artifact_changes": [
+      "camera",
+      "lighting"
+    ],
+    "forbidden_artifact_changes": [
+      "silhouette",
+      "proportion",
+      "part_count",
+      "ornament_layout"
+    ],
+    "veo_integrated_graphic": {
+      "function": "SCAN_WAVE",
+      "evidence_relation": "측정확인: 정밀 3D 스캔 측정 기반 단순 장식설 반증",
+      "visual_language": "blue-white 3D coordinate laser grid and red geometric boundary",
+      "start": "laser arm emitter",
+      "via": [
+        "disc center",
+        "rim"
+      ],
+      "end": "diagnostic screen",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "shatters decorative hypothesis icon with technical metrics"
+    },
+    "veo_graphic": {
+      "function": "SCAN_WAVE",
+      "evidence_relation": "측정확인: 정밀 3D 스캔 측정 기반 단순 장식설 반증",
+      "visual_language": "blue-white 3D coordinate laser grid and red geometric boundary",
+      "start": "laser arm emitter",
+      "via": [
+        "disc center",
+        "rim"
+      ],
+      "end": "diagnostic screen",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "shatters decorative hypothesis icon with technical metrics"
+    }
+  },
+  {
+    "n": 11,
+    "audio_scene": 11,
+    "audio_part": "1/1",
+    "audio_offset_start": 81.5,
+    "audio_offset_end": 88.4,
+    "timeline_start": 81.5,
+    "timeline_end": 88.4,
+    "chapter": "4. 가설 붕괴와 무역망",
+    "ct": "MECHANISM",
+    "txt": "계산해 보니, 82도 황금 호는 네브라 지역에서 하지와 동지에 해가 뜨고 지는 지평선 각도와 소수점까지 일치했거든요.",
+    "tts": 6.9,
+    "omni": 8,
+    "playback_speed": 1.0,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "IDENTIFIABLE",
+    "routing_reason": "네브라 지역 하지·동지 일몰 지평선 각도(82.5°)와 황금 호의 일치를 시뮬레이션하는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "Mittelberg hill horizon panorama diorama",
+      "route": "celestial solar ray tracking from summer to winter solstice",
+      "destination": "Nebra disc horizon arc alignment",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "ORBIT_REVEAL",
+      "pattern_interrupts": [
+        "2.2s summer solstice sunset beam",
+        "5.4s winter solstice sunset beam"
+      ],
+      "settle_point": "perfect 82.5-degree solstice ray match",
+      "single_axis": "ORBIT",
+      "scale_domain": "WIDE",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places Mittelberg hill horizon panorama diorama at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on perfect 82.5-degree solstice ray match."
+    },
+    "visual_lock": {
+      "civilization": "Central European Bronze Age Unetice culture and documented Mittelberg archaeology",
+      "era": "circa 1600 BCE European Bronze Age, with 1999-2002 discovery and recovery context",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "Central European Bronze Age people in period-correct garments; documented German archaeologists and conservators after 1999",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "Mittelberg terrain diorama",
+        "summer solstice sunset ray",
+        "winter solstice sunset ray",
+        "82.5-degree angle cone"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Mittelberg summit horizon diorama",
+        "camera_pose": "Wide terrain crane",
+        "visible_anchors": [
+          "Mittelberg hill",
+          "sunset horizon"
+        ]
+      },
+      {
+        "time": 4.0,
+        "composition": "Dual solstice solar rays emerge",
+        "camera_pose": "Medium celestial track",
+        "visible_anchors": [
+          "summer ray",
+          "winter ray"
+        ]
+      },
+      {
+        "time": 8.0,
+        "composition": "82.5° angle locked to disc arc",
+        "camera_pose": "Diagnostic alignment view",
+        "visible_anchors": [
+          "82.5° ray cone",
+          "gold arc"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 3.4,
+        "narration": "계산해 보니, 82도 황금 호는 네브라 지역에서",
+        "camera": "Horizon camera frames Mittelberg sunset",
+        "action": "Gold horizon arc aligns with terrain",
+        "graphic": "none"
+      },
+      {
+        "start": 3.4,
+        "end": 6.9,
+        "narration": "하지와 동지에 해가 뜨고 지는 지평선 각도와 소수점까지 일치했거든요.",
+        "camera": "Dual solar rays lock onto horizon",
+        "action": "Summer and Winter Solstice rays converge",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. European Bronze Age in the seventeenth to sixteenth century BCE (circa 1600 BCE), Unetice culture, the forested hill plateau of Mittelberg near Nebra, Saxony-Anhalt, Central Germany. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Landscape astronomical simulation archaeological diorama: from the Mittelberg hill summit (51.3°N), two glowing sun paths for Summer Solstice sunset and Winter Solstice sunset project outward along the horizon route, matching the Nebra disc's 82.5-degree golden arc to the decimal. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be Central European Bronze Age people with period-correct woven wool or linen tunics, leather belts, bronze spiral armlets, and authentic bronze tools.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. Begin physical camera travel within 0.35 seconds. Enter at Mittelberg hill horizon panorama diorama; travel celestial solar ray tracking from summer to winter solstice; arrive at Nebra disc horizon arc alignment; settle on perfect 82.5-degree solstice ray match. Track two celestial solar rays along the horizon path route from the Mittelberg summit horizon, demonstrating the exact 82.5-degree angle between Summer Solstice and Winter Solstice sunsets aligning with the disc's gold horizon arc. Integrated graphical motion operates along the designated path route strictly in physical world space with correct depth occlusion; no floating HUD and no text. TTS-locked timing: 0.00-4.00s: 계산해 보니, 82도 황금 호는 네브라 지역에서. 4.00-8.00s: 하지와 동지에 해가 뜨고 지는 지평선 각도와 소수점까지 일치했거든요.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: Mittelberg hill horizon panorama diorama is already visible in the locked first frame. Mid anchor: remain on the same orbit axis through celestial solar ray tracking from summer to winter solstice. Final anchor: arrive once at Nebra disc horizon arc alignment. Last frame: Last frame holds the unchanged composition on perfect 82.5-degree solstice ray match. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_form_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+    "artifact_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "allowed_artifact_changes": [
+      "camera",
+      "lighting"
+    ],
+    "forbidden_artifact_changes": [
+      "silhouette",
+      "proportion",
+      "part_count",
+      "ornament_layout"
+    ],
+    "veo_integrated_graphic": {
+      "function": "ROUTE_PATH",
+      "evidence_relation": "측정확인: 북위 51도 네브라의 하지·동지 일몰 각도(82.5°) 물리적 일치",
+      "visual_language": "golden celestial solar azimuth rays and angular arc lines",
+      "start": "disc center",
+      "via": [
+        "Mittelberg horizon"
+      ],
+      "end": "solstice sunset points",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "locks onto Summer and Winter Solstice horizon points at 82.5 degrees"
+    },
+    "veo_graphic": {
+      "function": "ROUTE_PATH",
+      "evidence_relation": "측정확인: 북위 51도 네브라의 하지·동지 일몰 각도(82.5°) 물리적 일치",
+      "visual_language": "golden celestial solar azimuth rays and angular arc lines",
+      "start": "disc center",
+      "via": [
+        "Mittelberg horizon"
+      ],
+      "end": "solstice sunset points",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "locks onto Summer and Winter Solstice horizon points at 82.5 degrees"
+    }
+  },
+  {
+    "n": 12,
+    "audio_scene": 12,
+    "audio_part": "1/1",
+    "audio_offset_start": 88.4,
+    "audio_offset_end": 99.2,
+    "timeline_start": 88.4,
+    "timeline_end": 99.2,
+    "chapter": "4. 가설 붕괴와 무역망",
+    "ct": "SPATIAL_MAP",
+    "txt": "심지어 청동의 구리는 오스트리아에서, 금과 주석은 수천 킬로미터 떨어진 영국에서 캐온 사금이었습니다. 대륙 전체를 잇는 거대한 무역망과 정밀한 천문 관측이 한곳에 얽혀 있었던 셈이죠.",
+    "tts": 10.8,
+    "omni": 10,
+    "playback_speed": 0.9259,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "NONE",
+    "routing_reason": "오스트리아 구리 광산과 영국 콘월 사금 채취지를 잇는 청동기 유럽 교역망 지도 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "3D topographical map of Bronze Age Europe",
+      "route": "flight path tracing trade routes from Austria and Britain to Nebra",
+      "destination": "converging gold and copper lines at Nebra",
+      "speed_profile": "CONTROLLED_ORBIT_REVEAL",
+      "operator_style": "IMMERSIVE_POV_DOLLY",
+      "depth_transition": "NONE",
+      "pattern_interrupts": [
+        "3.0s Austrian Mitterberg copper route",
+        "6.8s Cornwall Carnon gold/tin route"
+      ],
+      "settle_point": "Europe-wide metallurgical trade intersection at Nebra",
+      "single_axis": "FORWARD",
+      "scale_domain": "WIDE",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places 3D topographical map of Bronze Age Europe at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on Europe-wide metallurgical trade intersection at Nebra."
+    },
+    "visual_lock": {
+      "civilization": "Central European Bronze Age Unetice culture and documented Mittelberg archaeology",
+      "era": "circa 1600 BCE European Bronze Age, with 1999-2002 discovery and recovery context",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "Central European Bronze Age people in period-correct garments; documented German archaeologists and conservators after 1999",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "Bronze Age European relief map",
+        "Cornwall river panning site",
+        "Mitterberg copper mine",
+        "trade route network"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "European relief map overview",
+        "camera_pose": "High satellite-scale diorama",
+        "visible_anchors": [
+          "Alps",
+          "British Isles",
+          "Germany"
+        ]
+      },
+      {
+        "time": 3.3,
+        "composition": "Cornwall and Alps route tracking",
+        "camera_pose": "Medium flight path",
+        "visible_anchors": [
+          "Carnon river",
+          "Mitterberg mine"
+        ]
+      },
+      {
+        "time": 6.6,
+        "composition": "Rhine and Danube river networks",
+        "camera_pose": "Wide continental sweep",
+        "visible_anchors": [
+          "river routes",
+          "settlement nodes"
+        ]
+      },
+      {
+        "time": 10.0,
+        "composition": "Convergence at Nebra",
+        "camera_pose": "Continental network hold",
+        "visible_anchors": [
+          "Nebra node",
+          "interlocking trade lines"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 5.4,
+        "narration": "심지어 청동의 구리는 오스트리아에서, 금과 주석은 수천 킬로미터 떨어진 영국에서 캐온 사금이었습니다.",
+        "camera": "Trace copper line from Alps and gold from Cornwall",
+        "action": "River panning and alpine smelting icons glow",
+        "graphic": "none"
+      },
+      {
+        "start": 5.4,
+        "end": 10.8,
+        "narration": "대륙 전체를 잇는 거대한 무역망과 정밀한 천문 관측이 한곳에 얽혀 있었던 셈이죠.",
+        "camera": "Routes converge at Nebra summit",
+        "action": "Trade network pulses across Europe",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. European Bronze Age in the seventeenth to sixteenth century BCE (circa 1600 BCE), Unetice culture, the forested hill plateau of Mittelberg near Nebra, Saxony-Anhalt, Central Germany. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Master 3D relief map archaeological diorama of Bronze Age Europe: glowing copper trade lines rise from the Austrian Alps (Mitterberg), gold and tin streams flow from Cornwall (Carnon River), all converging at Nebra in Central Germany. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be Central European Bronze Age people with period-correct woven wool or linen tunics, leather belts, bronze spiral armlets, and authentic bronze tools.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at 3D topographical map of Bronze Age Europe; travel flight path tracing trade routes from Austria and Britain to Nebra; arrive at converging gold and copper lines at Nebra; settle on Europe-wide metallurgical trade intersection at Nebra. Fly across the 3D European relief map tracing the glowing trade route path: Austrian copper and Cornish alluvial gold and tin flowing thousands of kilometers to converge at Nebra. Integrated graphical motion operates along the designated path route strictly in physical world space with correct depth occlusion; no floating HUD and no text. TTS-locked timing: 0.00-5.00s: 심지어 청동의 구리는 오스트리아에서, 금과 주석은 수천 킬로미터 떨어진 영국에서 캐온 사금이었습니다.. 5.00-10.00s: 대륙 전체를 잇는 거대한 무역망과 정밀한 천문 관측이 한곳에 얽혀 있었던 셈이죠.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: 3D topographical map of Bronze Age Europe is already visible in the locked first frame. Mid anchor: remain on the same forward axis through flight path tracing trade routes from Austria and Britain to Nebra. Final anchor: arrive once at converging gold and copper lines at Nebra. Last frame: Last frame holds the unchanged composition on Europe-wide metallurgical trade intersection at Nebra. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_reference_ids": [],
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset.",
+    "veo_integrated_graphic": {
+      "function": "MATERIAL_FLOW",
+      "evidence_relation": "측정확인: 납동위원소 및 미량원소 분석으로 확인된 알프스-콘월 원자재 교역로",
+      "visual_language": "luminous copper-orange and gold-yellow flow streams",
+      "start": "Alps and Cornwall",
+      "via": [
+        "Rhine valley",
+        "Elbe river"
+      ],
+      "end": "Nebra node",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "converges metallurgical flow streams into the Nebra sky disc node"
+    },
+    "veo_graphic": {
+      "function": "MATERIAL_FLOW",
+      "evidence_relation": "측정확인: 납동위원소 및 미량원소 분석으로 확인된 알프스-콘월 원자재 교역로",
+      "visual_language": "luminous copper-orange and gold-yellow flow streams",
+      "start": "Alps and Cornwall",
+      "via": [
+        "Rhine valley",
+        "Elbe river"
+      ],
+      "end": "Nebra node",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "converges metallurgical flow streams into the Nebra sky disc node"
+    }
+  },
+  {
+    "n": 13,
+    "audio_scene": 13,
+    "audio_part": "1/1",
+    "audio_offset_start": 99.2,
+    "audio_offset_end": 108.1,
+    "timeline_start": 99.2,
+    "timeline_end": 108.1,
+    "chapter": "5. 3년 윤달과 휴대용 컴퓨터",
+    "ct": "DIAGRAM",
+    "txt": "여기서 과학자들은 결정적인 단서를 찾아냅니다. 365일의 태양력과 354일의 태음력은 매년 열한 일씩 어긋나 3년이면 한 달 가까이 계절이 틀어집니다.",
+    "tts": 8.9,
+    "omni": 8,
+    "playback_speed": 0.8989,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "NONE",
+    "routing_reason": "태양력 365일과 태음력 354일의 11일 연간 오차를 시각화하는 천문 시계 그래픽 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "concentric dual-ring celestial calendar clock diorama",
+      "route": "outer solar ring 365 days rotating vs inner lunar ring 354 days",
+      "destination": "accumulating 11-day annual gap marker",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "CONTROLLED_DOCUMENTARY_HANDHELD_GIMBAL",
+      "depth_transition": "NONE",
+      "pattern_interrupts": [
+        "2.2s 1-year 11-day slip",
+        "5.8s 3-year 33-day seasonal desync"
+      ],
+      "settle_point": "33-day three-year drift warning zone",
+      "single_axis": "ORBIT",
+      "scale_domain": "MEDIUM",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places concentric dual-ring celestial calendar clock diorama at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on 33-day three-year drift warning zone."
+    },
+    "visual_lock": {
+      "civilization": "Central European Bronze Age Unetice culture and documented Mittelberg archaeology",
+      "era": "circa 1600 BCE European Bronze Age, with 1999-2002 discovery and recovery context",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "Central European Bronze Age people in period-correct garments; documented German archaeologists and conservators after 1999",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "solar cycle 365.25 days",
+        "lunar cycle 354 days",
+        "11-day annual gap indicator",
+        "33-day 3-year drift graphic"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Concentric dual calendar rings",
+        "camera_pose": "Top-down 80°",
+        "visible_anchors": [
+          "solar ring",
+          "lunar ring"
+        ]
+      },
+      {
+        "time": 4.0,
+        "composition": "Annual 11-day wedge expansion",
+        "camera_pose": "Medium diagnostic",
+        "visible_anchors": [
+          "11-day red gap",
+          "gear teeth"
+        ]
+      },
+      {
+        "time": 8.0,
+        "composition": "3-year 33-day desync alarm",
+        "camera_pose": "Macro indicator hold",
+        "visible_anchors": [
+          "33-day drift wedge",
+          "seasonal desync"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.4,
+        "narration": "여기서 과학자들은 결정적인 단서를 찾아냅니다. 365일의 태양력과 354일의 태음력은",
+        "camera": "Outer solar ring (365d) and inner lunar ring (354d) rotate",
+        "action": "Concentric gear tracks spin smoothly",
+        "graphic": "none"
+      },
+      {
+        "start": 4.4,
+        "end": 8.9,
+        "narration": "매년 열한 일씩 어긋나 3년이면 한 달 가까이 계절이 틀어집니다.",
+        "camera": "11-day red wedge gap opens annually",
+        "action": "Gap multiplies to 33 days after 3 years",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. European Bronze Age in the seventeenth to sixteenth century BCE (circa 1600 BCE), Unetice culture, the forested hill plateau of Mittelberg near Nebra, Saxony-Anhalt, Central Germany. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Precision mechanical astronomical infographic archaeological diorama: outer glowing gold solar ring (365 days) and inner silver lunar ring (354 days) rotate, opening an 11-day gap each year that widens to a full 33-day seasonal desynchronization in 3 years. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be Central European Bronze Age people with period-correct woven wool or linen tunics, leather belts, bronze spiral armlets, and authentic bronze tools.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Begin physical camera travel within 0.35 seconds. Enter at concentric dual-ring celestial calendar clock diorama; travel outer solar ring 365 days rotating vs inner lunar ring 354 days; arrive at accumulating 11-day annual gap marker; settle on 33-day three-year drift warning zone. Animate the rotating concentric solar and lunar rings along the gear path route as the 11-day annual discrepancy widens into a critical 33-day seasonal drift over three cycles. Integrated graphical motion operates along the designated path route strictly in physical world space with correct depth occlusion; no floating HUD and no text. TTS-locked timing: 0.00-4.00s: 여기서 과학자들은 결정적인 단서를 찾아냅니다. 365일의 태양력과 354일의 태음력은. 4.00-8.00s: 매년 열한 일씩 어긋나 3년이면 한 달 가까이 계절이 틀어집니다.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: concentric dual-ring celestial calendar clock diorama is already visible in the locked first frame. Mid anchor: remain on the same orbit axis through outer solar ring 365 days rotating vs inner lunar ring 354 days. Final anchor: arrive once at accumulating 11-day annual gap marker. Last frame: Last frame holds the unchanged composition on 33-day three-year drift warning zone. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_reference_ids": [],
+    "veo_integrated_graphic": {
+      "function": "FORCE_PATH",
+      "evidence_relation": "학술해석: 태양력 365.25일과 태음력 354일의 11일 연간 편차 계산",
+      "visual_language": "concentric red annual drift wedges and geometric degree markers",
+      "start": "solar ring mark",
+      "via": [
+        "lunar ring mark"
+      ],
+      "end": "drift indicator",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "expands red wedge showing 33-day seasonal desynchronization in 3 years"
+    },
+    "veo_graphic": {
+      "function": "FORCE_PATH",
+      "evidence_relation": "학술해석: 태양력 365.25일과 태음력 354일의 11일 연간 편차 계산",
+      "visual_language": "concentric red annual drift wedges and geometric degree markers",
+      "start": "solar ring mark",
+      "via": [
+        "lunar ring mark"
+      ],
+      "end": "drift indicator",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "expands red wedge showing 33-day seasonal desynchronization in 3 years"
+    }
+  },
+  {
+    "n": 14,
+    "audio_scene": 14,
+    "audio_part": "1/1",
+    "audio_offset_start": 108.1,
+    "audio_offset_end": 116.3,
+    "timeline_start": 108.1,
+    "timeline_end": 116.3,
+    "chapter": "5. 3년 윤달과 휴대용 컴퓨터",
+    "ct": "SCIENTIFIC_EVIDENCE",
+    "txt": "파종 시기를 놓치면 굶어 죽는 농경 사회에서는 치명적인 문제였죠. 그런데 원판의 초승달은 얇은 달이 아니라 4.5일 된 굵은 달이었습니다.",
+    "tts": 8.2,
+    "omni": 8,
+    "playback_speed": 0.9756,
+    "evidence": "측정확인",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "IDENTIFIABLE",
+    "routing_reason": "농경 파종 위기 배경과 4.5일 된 굵은 초승달의 두께를 정밀 실측하는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "ancient Bronze Age wheat field diorama",
+      "route": "dolly to macro measurement of gold crescent moon thickness on disc",
+      "destination": "crescent thickness caliper gauge showing 4.5-day moon",
+      "speed_profile": "MACRO_PROBE_SETTLE",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "SURFACE_TO_INTERIOR",
+      "pattern_interrupts": [
+        "2.0s parched wheat field background",
+        "5.2s caliper measurement on gold crescent"
+      ],
+      "settle_point": "exact 4.5-day lunar thickness index",
+      "single_axis": "FORWARD",
+      "scale_domain": "MACRO",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places ancient Bronze Age wheat field diorama at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on exact 4.5-day lunar thickness index."
+    },
+    "visual_lock": {
+      "civilization": "Central European Bronze Age Unetice culture and documented Mittelberg archaeology",
+      "era": "circa 1600 BCE European Bronze Age, with 1999-2002 discovery and recovery context",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "Central European Bronze Age people in period-correct garments; documented German archaeologists and conservators after 1999",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "Bronze Age wheat agriculture",
+        "thick gold crescent moon",
+        "precision thickness caliper",
+        "4.5-day lunar phase index"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Wheat field and agricultural diorama",
+        "camera_pose": "Medium agricultural wide",
+        "visible_anchors": [
+          "wheat fields",
+          "farmers"
+        ]
+      },
+      {
+        "time": 4.0,
+        "composition": "Crescent moon macro focus",
+        "camera_pose": "Macro transition",
+        "visible_anchors": [
+          "gold crescent",
+          "patina"
+        ]
+      },
+      {
+        "time": 8.0,
+        "composition": "4.5-day lunar phase caliper gauge",
+        "camera_pose": "Extreme macro diagnostic",
+        "visible_anchors": [
+          "caliper jaws",
+          "4.5-day index"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.1,
+        "narration": "파종 시기를 놓치면 굶어 죽는 농경 사회에서는 치명적인 문제였죠.",
+        "camera": "Background wheat crops and seasonal planting",
+        "action": "Farming calendar urgency highlighted",
+        "graphic": "none"
+      },
+      {
+        "start": 4.1,
+        "end": 8.2,
+        "narration": "그런데 원판의 초승달은 얇은 달이 아니라 4.5일 된 굵은 달이었습니다.",
+        "camera": "Caliper measures gold crescent width",
+        "action": "Lunar phase scale confirms 4.5 days",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. European Bronze Age in the seventeenth to sixteenth century BCE (circa 1600 BCE), Unetice culture, the forested hill plateau of Mittelberg near Nebra, Saxony-Anhalt, Central Germany. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Dual-depth agricultural forensic archaeological diorama: in the soft background, ancient farmers tend golden einkorn wheat fields; in the sharp foreground, forensic digital calipers measure the exact width of the Nebra gold crescent, matching a 4.5-day-old moon. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be Central European Bronze Age people with period-correct woven wool or linen tunics, leather belts, bronze spiral armlets, and authentic bronze tools.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. Begin physical camera travel within 0.35 seconds. Enter at ancient Bronze Age wheat field diorama; travel dolly to macro measurement of gold crescent moon thickness on disc; arrive at crescent thickness caliper gauge showing 4.5-day moon; settle on exact 4.5-day lunar thickness index. Dolly from the background wheat field along the forward path route to a sharp macro of the gold crescent moon, measuring its substantial thickness corresponding specifically to a 4.5-day lunar phase. TTS-locked timing: 0.00-4.00s: 파종 시기를 놓치면 굶어 죽는 농경 사회에서는 치명적인 문제였죠.. 4.00-8.00s: 그런데 원판의 초승달은 얇은 달이 아니라 4.5일 된 굵은 달이었습니다.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: ancient Bronze Age wheat field diorama is already visible in the locked first frame. Mid anchor: remain on the same forward axis through dolly to macro measurement of gold crescent moon thickness on disc. Final anchor: arrive once at crescent thickness caliper gauge showing 4.5-day moon. Last frame: Last frame holds the unchanged composition on exact 4.5-day lunar thickness index. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_form_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+    "artifact_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "allowed_artifact_changes": [
+      "camera",
+      "lighting"
+    ],
+    "forbidden_artifact_changes": [
+      "silhouette",
+      "proportion",
+      "part_count",
+      "ornament_layout"
+    ]
+  },
+  {
+    "n": 15,
+    "audio_scene": 15,
+    "audio_part": "1/1",
+    "audio_offset_start": 116.3,
+    "audio_offset_end": 125.8,
+    "timeline_start": 116.3,
+    "timeline_end": 125.8,
+    "chapter": "5. 3년 윤달과 휴대용 컴퓨터",
+    "ct": "MECHANISM",
+    "txt": "봄철 저녁 서쪽 하늘에서 4.5일 된 초승달 곁에 플레이아데스가 나란히 뜰 때, 열세 번째 윤달을 넣어야 한다는 고대 역법 공식이 고스란히 박혀 있었던 겁니다.",
+    "tts": 9.5,
+    "omni": 10,
+    "playback_speed": 1.0,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "IDENTIFIABLE",
+    "routing_reason": "봄철 4.5일 달과 플레이아데스 성단의 만남으로 3년 윤달을 판별하는 역법 공식을 시각화하는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "spring twilight western sky simulation diorama",
+      "route": "conjunction of 4.5-day crescent moon and 7-star Pleiades",
+      "destination": "intercalary 13th month synchronization burst",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "NONE",
+      "pattern_interrupts": [
+        "2.4s spring western horizon alignment",
+        "5.8s 13th intercalary month unlock"
+      ],
+      "settle_point": "perfect astronomical synchronization of the 13th leap month",
+      "single_axis": "ORBIT",
+      "scale_domain": "WIDE",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places spring twilight western sky simulation diorama at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on perfect astronomical synchronization of the 13th leap month."
+    },
+    "visual_lock": {
+      "civilization": "Central European Bronze Age Unetice culture and documented Mittelberg archaeology",
+      "era": "circa 1600 BCE European Bronze Age, with 1999-2002 discovery and recovery context",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "Central European Bronze Age people in period-correct garments; documented German archaeologists and conservators after 1999",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "spring western twilight sky",
+        "4.5-day crescent moon",
+        "Pleiades 7-star cluster",
+        "13th intercalary month formula"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Spring western horizon diorama",
+        "camera_pose": "Wide celestial view",
+        "visible_anchors": [
+          "spring horizon",
+          "western sky"
+        ]
+      },
+      {
+        "time": 3.3,
+        "composition": "Moon and Pleiades conjunction",
+        "camera_pose": "Medium celestial track",
+        "visible_anchors": [
+          "4.5d crescent",
+          "7 stars"
+        ]
+      },
+      {
+        "time": 6.6,
+        "composition": "Orbital celestial geometry",
+        "camera_pose": "High orbital sweep",
+        "visible_anchors": [
+          "celestial sphere",
+          "orbit path"
+        ]
+      },
+      {
+        "time": 10.0,
+        "composition": "+1 Leap Month formula locked",
+        "camera_pose": "Diagnostic celestial hold",
+        "visible_anchors": [
+          "13th month burst",
+          "aligned symbols"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 4.7,
+        "narration": "봄철 저녁 서쪽 하늘에서 4.5일 된 초승달 곁에 플레이아데스가 나란히 뜰 때,",
+        "camera": "Crescent moon and Pleiades glide into alignment",
+        "action": "Western twilight sky coordinates glow",
+        "graphic": "none"
+      },
+      {
+        "start": 4.7,
+        "end": 9.5,
+        "narration": "열세 번째 윤달을 넣어야 한다는 고대 역법 공식이 고스란히 박혀 있었던 겁니다.",
+        "camera": "Golden alignment ring pulses",
+        "action": "+1 Intercalary Month formula locks in",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. European Bronze Age in the seventeenth to sixteenth century BCE (circa 1600 BCE), Unetice culture, the forested hill plateau of Mittelberg near Nebra, Saxony-Anhalt, Central Germany. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Spectacular celestial alignment archaeological diorama: in a spring twilight western sky, a 4.5-day-old crescent moon glides directly beside the seven glittering stars of Pleiades, unlocking the ancient astronomical rule for adding a 13th leap month. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be Central European Bronze Age people with period-correct woven wool or linen tunics, leather belts, bronze spiral armlets, and authentic bronze tools.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. Begin physical camera travel within 0.35 seconds. Enter at spring twilight western sky simulation diorama; travel conjunction of 4.5-day crescent moon and 7-star Pleiades; arrive at intercalary 13th month synchronization burst; settle on perfect astronomical synchronization of the 13th leap month. Simulate the spring western twilight sky along the orbital path route as the 4.5-day crescent moon aligns alongside the Pleiades cluster, triggering the golden geometric calculation for inserting the 13th intercalary month. Integrated graphical motion operates along the designated path route strictly in physical world space with correct depth occlusion; no floating HUD and no text. TTS-locked timing: 0.00-5.00s: 봄철 저녁 서쪽 하늘에서 4.5일 된 초승달 곁에 플레이아데스가 나란히 뜰 때,. 5.00-10.00s: 열세 번째 윤달을 넣어야 한다는 고대 역법 공식이 고스란히 박혀 있었던 겁니다.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: spring twilight western sky simulation diorama is already visible in the locked first frame. Mid anchor: remain on the same orbit axis through conjunction of 4.5-day crescent moon and 7-star Pleiades. Final anchor: arrive once at intercalary 13th month synchronization burst. Last frame: Last frame holds the unchanged composition on perfect astronomical synchronization of the 13th leap month. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_form_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+    "artifact_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "allowed_artifact_changes": [
+      "camera",
+      "lighting"
+    ],
+    "forbidden_artifact_changes": [
+      "silhouette",
+      "proportion",
+      "part_count",
+      "ornament_layout"
+    ],
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset.",
+    "veo_integrated_graphic": {
+      "function": "SECTION_REVEAL",
+      "evidence_relation": "학술해석: 바빌로니아 점토판(MUL.APIN)과 일치하는 봄철 초승달-플레이아데스 결합 윤달 규칙",
+      "visual_language": "golden alignment circle and intercalary month geometric pulse",
+      "start": "crescent moon",
+      "via": [
+        "Pleiades cluster"
+      ],
+      "end": "calendar hub",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "reveals +1 Intercalary 13th Month formula synchronizing solar and lunar years"
+    },
+    "veo_graphic": {
+      "function": "SECTION_REVEAL",
+      "evidence_relation": "학술해석: 바빌로니아 점토판(MUL.APIN)과 일치하는 봄철 초승달-플레이아데스 결합 윤달 규칙",
+      "visual_language": "golden alignment circle and intercalary month geometric pulse",
+      "start": "crescent moon",
+      "via": [
+        "Pleiades cluster"
+      ],
+      "end": "calendar hub",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "reveals +1 Intercalary 13th Month formula synchronizing solar and lunar years"
+    }
+  },
+  {
+    "n": 16,
+    "audio_scene": 16,
+    "audio_part": "1/1",
+    "audio_offset_start": 125.8,
+    "audio_offset_end": 131.0,
+    "timeline_start": 125.8,
+    "timeline_end": 131.0,
+    "chapter": "5. 3년 윤달과 휴대용 컴퓨터",
+    "ct": "INVENTORY_TABLEAU",
+    "txt": "스톤헨지 없이도 손에 쥐고 계절을 맞추는 인류 최초의 휴대용 천문 컴퓨터였던 셈입니다.",
+    "tts": 5.2,
+    "omni": 8,
+    "playback_speed": 1.0,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "IDENTIFIABLE",
+    "routing_reason": "스톤헨지와 네브라 디스크의 크기 대비 및 휴대용 천문 컴퓨터 기능을 보여주는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "massive Stonehenge megalithic ring diorama",
+      "route": "scale contrast zoom to 30cm Nebra disc held in human hands",
+      "destination": "shining gold inlays of the portable computer",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "CONTROLLED_DOCUMENTARY_HANDHELD_GIMBAL",
+      "depth_transition": "NONE",
+      "pattern_interrupts": [
+        "1.6s Stonehenge megalith scale",
+        "3.8s portable disc in hand focus"
+      ],
+      "settle_point": "thirty-centimetre portable astronomical computer in hand",
+      "single_axis": "FORWARD",
+      "scale_domain": "MEDIUM",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places massive Stonehenge megalithic ring diorama at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on thirty-centimetre portable astronomical computer in hand."
+    },
+    "visual_lock": {
+      "civilization": "Central European Bronze Age Unetice culture and documented Mittelberg archaeology",
+      "era": "circa 1600 BCE European Bronze Age, with 1999-2002 discovery and recovery context",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "Central European Bronze Age people in period-correct garments; documented German archaeologists and conservators after 1999",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "Stonehenge megalithic circle",
+        "thirty-centimetre Nebra sky disc",
+        "human hands holding disc",
+        "golden astronomical glow"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Stonehenge megalith background",
+        "camera_pose": "Wide comparative scale",
+        "visible_anchors": [
+          "Stonehenge stones",
+          "dawn sky"
+        ]
+      },
+      {
+        "time": 4.0,
+        "composition": "Dolly to foreground hands",
+        "camera_pose": "Medium scale transition",
+        "visible_anchors": [
+          "human hands",
+          "disc"
+        ]
+      },
+      {
+        "time": 8.0,
+        "composition": "Portable computer in palm",
+        "camera_pose": "Hero macro hold",
+        "visible_anchors": [
+          "30cm disc in hand",
+          "golden inlays"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 2.6,
+        "narration": "스톤헨지 없이도 손에 쥐고 계절을 맞추는",
+        "camera": "Pan from multi-ton Stonehenge megaliths",
+        "action": "Megalith scale comparison markers",
+        "graphic": "none"
+      },
+      {
+        "start": 2.6,
+        "end": 5.2,
+        "narration": "인류 최초의 휴대용 천문 컴퓨터였던 셈입니다.",
+        "camera": "Zoom to 30cm disc resting in human hands",
+        "action": "Gold inlays emit warm computational glow",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. European Bronze Age in the seventeenth to sixteenth century BCE (circa 1600 BCE), Unetice culture, the forested hill plateau of Mittelberg near Nebra, Saxony-Anhalt, Central Germany. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Dramatic comparative scale archaeological diorama: in the background, the multi-ton megaliths of Stonehenge stand under dawn light; in the sharp foreground, two human hands hold the thirty-centimetre Nebra Sky Disc glowing like a compact portable computer. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be Central European Bronze Age people with period-correct woven wool or linen tunics, leather belts, bronze spiral armlets, and authentic bronze tools.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 8-second I2V shot, no hard cut, no teleport, no morph, no new objects. Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. Begin physical camera travel within 0.35 seconds. Enter at massive Stonehenge megalithic ring diorama; travel scale contrast zoom to 30cm Nebra disc held in human hands; arrive at shining gold inlays of the portable computer; settle on thirty-centimetre portable astronomical computer in hand. Zoom from the massive multi-ton stones of Stonehenge directly along the scale comparison path route into human hands holding the thirty-centimetre Nebra disc, illustrating history's first portable astronomical computer. TTS-locked timing: 0.00-4.00s: 스톤헨지 없이도 손에 쥐고 계절을 맞추는. 4.00-8.00s: 인류 최초의 휴대용 천문 컴퓨터였던 셈입니다.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: massive Stonehenge megalithic ring diorama is already visible in the locked first frame. Mid anchor: remain on the same forward axis through scale contrast zoom to 30cm Nebra disc held in human hands. Final anchor: arrive once at shining gold inlays of the portable computer. Last frame: Last frame holds the unchanged composition on thirty-centimetre portable astronomical computer in hand. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_form_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+    "artifact_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "allowed_artifact_changes": [
+      "camera",
+      "lighting"
+    ],
+    "forbidden_artifact_changes": [
+      "silhouette",
+      "proportion",
+      "part_count",
+      "ornament_layout"
+    ]
+  },
+  {
+    "n": 17,
+    "audio_scene": 17,
+    "audio_part": "1/1",
+    "audio_offset_start": 131.0,
+    "audio_offset_end": 142.4,
+    "timeline_start": 131.0,
+    "timeline_end": 142.4,
+    "chapter": "6. 확인된 정체와 마지막 미스터리",
+    "ct": "HISTORICAL_RECONSTRUCTION",
+    "txt": "결국 네브라 스카이 디스크는 태양과 달의 주기를 맞춰 농경의 때를 알려주던 청동기인들의 위대한 과학적 지혜였습니다. 바빌로니아 기록보다 천 년이나 앞서 우주의 법칙을 눈앞에 시각화한 증거죠.",
+    "tts": 11.4,
+    "omni": 10,
+    "playback_speed": 0.8772,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "IDENTIFIABLE",
+    "routing_reason": "청동기 사제·장인의 천문 관측과 바빌로니아 대비 1천 년 앞선 과학적 가치를 회수하는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "VEO_INTEGRATED_3D",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "Bronze Age tribal assembly on Mittelberg summit",
+      "route": "orbit around sky disc held up by chieftain and artisan",
+      "destination": "Babylonian cuneiform clay tablet timeline comparison",
+      "speed_profile": "CONTROLLED_ORBIT_REVEAL",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "NONE",
+      "pattern_interrupts": [
+        "3.2s tribal assembly sunset view",
+        "7.0s Babylonian cuneiform comparison"
+      ],
+      "settle_point": "pan-civilizational timeline showing 1000-year precedence",
+      "single_axis": "ORBIT",
+      "scale_domain": "WIDE",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places Bronze Age tribal assembly on Mittelberg summit at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on pan-civilizational timeline showing 1000-year precedence."
+    },
+    "visual_lock": {
+      "civilization": "Central European Bronze Age Unetice culture and documented Mittelberg archaeology",
+      "era": "circa 1600 BCE European Bronze Age, with 1999-2002 discovery and recovery context",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "Central European Bronze Age people in period-correct garments; documented German archaeologists and conservators after 1999",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "Bronze Age tribal gathering",
+        "elevated Nebra disc",
+        "Babylonian cuneiform clay tablet (MUL.APIN)",
+        "historical timeline scale"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Bronze Age summit assembly",
+        "camera_pose": "Wide circular diorama",
+        "visible_anchors": [
+          "chieftain",
+          "artisans",
+          "sunset"
+        ]
+      },
+      {
+        "time": 3.3,
+        "composition": "Disc raised toward celestial sky",
+        "camera_pose": "Hero three-quarter",
+        "visible_anchors": [
+          "raised disc",
+          "twilight horizon"
+        ]
+      },
+      {
+        "time": 6.6,
+        "composition": "Timeline comparison bridge",
+        "camera_pose": "Wide comparison track",
+        "visible_anchors": [
+          "timeline axis",
+          "historical nodes"
+        ]
+      },
+      {
+        "time": 10.0,
+        "composition": "Babylonian timeline comparison",
+        "camera_pose": "Diagnostic timeline hold",
+        "visible_anchors": [
+          "Nebra disc -1600 BC",
+          "Babylon tablet -700 BC"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 5.7,
+        "narration": "결국 네브라 스카이 디스크는 태양과 달의 주기를 맞춰 농경의 때를 알려주던 청동기인들의 위대한 과학적 지혜였습니다.",
+        "camera": "Orbit Bronze Age tribal assembly at sunset",
+        "action": "Disc held aloft toward twilight sky",
+        "graphic": "none"
+      },
+      {
+        "start": 5.7,
+        "end": 11.4,
+        "narration": "바빌로니아 기록보다 천 년이나 앞서 우주의 법칙을 눈앞에 시각화한 증거죠.",
+        "camera": "Split timeline compares MUL.APIN clay tablet",
+        "action": "Nebra disc leads by 1,000 years",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. European Bronze Age in the seventeenth to sixteenth century BCE (circa 1600 BCE), Unetice culture, the forested hill plateau of Mittelberg near Nebra, Saxony-Anhalt, Central Germany. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Grand historical reconstruction archaeological diorama: on the Mittelberg summit at sunset, Bronze Age community leaders hold up the Nebra Sky Disc toward the twilight sky, beside a timeline graphic showing it predates Babylonian cuneiform records by a thousand years. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be Central European Bronze Age people with period-correct woven wool or linen tunics, leather belts, bronze spiral armlets, and authentic bronze tools.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. Begin physical camera travel within 0.35 seconds. Enter at Bronze Age tribal assembly on Mittelberg summit; travel orbit around sky disc held up by chieftain and artisan; arrive at Babylonian cuneiform clay tablet timeline comparison; settle on pan-civilizational timeline showing 1000-year precedence. Orbit around the Bronze Age gathering along the circular path route as the sky disc is held toward the sunset, transitioning to a split timeline confirming it visualized cosmic laws a thousand years before Babylon. Integrated graphical motion operates along the designated path route strictly in physical world space with correct depth occlusion; no floating HUD and no text. TTS-locked timing: 0.00-5.00s: 결국 네브라 스카이 디스크는 태양과 달의 주기를 맞춰 농경의 때를 알려주던 청동기인들의 위대한 과학적 지혜였습니다.. 5.00-10.00s: 바빌로니아 기록보다 천 년이나 앞서 우주의 법칙을 눈앞에 시각화한 증거죠.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: Bronze Age tribal assembly on Mittelberg summit is already visible in the locked first frame. Mid anchor: remain on the same orbit axis through orbit around sky disc held up by chieftain and artisan. Final anchor: arrive once at Babylonian cuneiform clay tablet timeline comparison. Last frame: Last frame holds the unchanged composition on pan-civilizational timeline showing 1000-year precedence. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_form_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+    "artifact_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "allowed_artifact_changes": [
+      "camera",
+      "lighting"
+    ],
+    "forbidden_artifact_changes": [
+      "silhouette",
+      "proportion",
+      "part_count",
+      "ornament_layout"
+    ],
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset.",
+    "veo_integrated_graphic": {
+      "function": "ROUTE_PATH",
+      "evidence_relation": "학술해석: 메소포타미아 바빌로니아 뮬아핀(MUL.APIN) 천문 기록과의 1000년 시기 비교",
+      "visual_language": "golden chronological timeline bridge and comparative date nodes",
+      "start": "Nebra Sky Disc (-1600 BC)",
+      "via": [
+        "Central Europe"
+      ],
+      "end": "Babylonian MUL.APIN (-700 BC)",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "establishes 1,000-year chronological precedence over Mesopotamian texts"
+    },
+    "veo_graphic": {
+      "function": "ROUTE_PATH",
+      "evidence_relation": "학술해석: 메소포타미아 바빌로니아 뮬아핀(MUL.APIN) 천문 기록과의 1000년 시기 비교",
+      "visual_language": "golden chronological timeline bridge and comparative date nodes",
+      "start": "Nebra Sky Disc (-1600 BC)",
+      "via": [
+        "Central Europe"
+      ],
+      "end": "Babylonian MUL.APIN (-700 BC)",
+      "occlusion": "the graphic passes behind the bronze disc rim, soil edge, tool, or laboratory stand in world space and reappears with correct parallax",
+      "timing": "emerge only during the matching narration beat, travel through named anchors in physical world space, settle, then fade before the end; no floating HUD and no text",
+      "camera_relation": "anchored to named physical surfaces in world space with correct perspective, depth, lighting, reflections, occlusion and camera parallax; no floating HUD and no text",
+      "arrival_reaction": "establishes 1,000-year chronological precedence over Mesopotamian texts"
+    }
+  },
+  {
+    "n": 18,
+    "audio_scene": 18,
+    "audio_part": "1/1",
+    "audio_offset_start": 142.4,
+    "audio_offset_end": 153.9,
+    "timeline_start": 142.4,
+    "timeline_end": 153.9,
+    "chapter": "6. 확인된 정체와 마지막 미스터리",
+    "ct": "SEALED_UNKNOWN",
+    "txt": "하지만 진짜 미스터리는 지금부터입니다. 문자가 없던 이들이 어떻게 이 지식을 체계화했는지, 왜 서른아홉 개의 구멍을 뚫어 쓰다가 무기들과 함께 깊은 숲속에 묻어버렸는지는 아직 아무도 모릅니다.",
+    "tts": 11.5,
+    "omni": 10,
+    "playback_speed": 0.8696,
+    "evidence": "미확인",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "IDENTIFIABLE",
+    "routing_reason": "외곽 39개 타공 구멍과 청동 무기 부장품 매장 의례의 미스터리를 보여주는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "macro of 39 perimeter perforation holes on bronze rim",
+      "route": "slow track across gold-hilted bronze swords in dark burial soil",
+      "destination": "shadowy ceremonial burial pit in Mittelberg forest",
+      "speed_profile": "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE",
+      "operator_style": "MACRO_PROBE",
+      "depth_transition": "BOUNDARY_STOP",
+      "pattern_interrupts": [
+        "2.8s 39 hole perforation macro",
+        "6.2s sword hilt and axe deposition in stone cavity"
+      ],
+      "settle_point": "unresolved ceremonial hoard deposition in forest soil",
+      "single_axis": "LATERAL",
+      "scale_domain": "MACRO",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places macro of 39 perimeter perforation holes on bronze rim at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on unresolved ceremonial hoard deposition in forest soil."
+    },
+    "visual_lock": {
+      "civilization": "Central European Bronze Age Unetice culture and documented Mittelberg archaeology",
+      "era": "circa 1600 BCE European Bronze Age, with 1999-2002 discovery and recovery context",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "Central European Bronze Age people in period-correct garments; documented German archaeologists and conservators after 1999",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "39 perimeter perforation holes",
+        "bronze swords with gold hilt wire",
+        "bronze axes",
+        "stone-lined deposition cavity"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Macro 39 perforation holes",
+        "camera_pose": "Extreme rim macro",
+        "visible_anchors": [
+          "rim holes",
+          "bronze edge"
+        ]
+      },
+      {
+        "time": 3.3,
+        "composition": "Swords and axes in stone cavity",
+        "camera_pose": "Low cavity track",
+        "visible_anchors": [
+          "bronze swords",
+          "axes",
+          "disc"
+        ]
+      },
+      {
+        "time": 6.6,
+        "composition": "Ceremonial stone lining",
+        "camera_pose": "Deep pit hold",
+        "visible_anchors": [
+          "stone slabs",
+          "bronze patina"
+        ]
+      },
+      {
+        "time": 10.0,
+        "composition": "Solemn forest deposition",
+        "camera_pose": "Solemn shadow hold",
+        "visible_anchors": [
+          "buried hoard",
+          "forest humus"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 5.7,
+        "narration": "하지만 진짜 미스터리는 지금부터입니다. 문자가 없던 이들이 어떻게 이 지식을 체계화했는지,",
+        "camera": "Macro sweep along 39 rim perforations",
+        "action": "Leather cord binding ghost cues",
+        "graphic": "none"
+      },
+      {
+        "start": 5.7,
+        "end": 11.5,
+        "narration": "왜 서른아홉 개의 구멍을 뚫어 쓰다가 무기들과 함께 깊은 숲속에 묻어버렸는지는 아직 아무도 모릅니다.",
+        "camera": "Descend to stone cavity burial with swords",
+        "action": "Shadows envelop the deposited hoard",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. European Bronze Age in the seventeenth to sixteenth century BCE (circa 1600 BCE), Unetice culture, the forested hill plateau of Mittelberg near Nebra, Saxony-Anhalt, Central Germany. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Solemn ceremonial burial archaeological diorama: macro focus on the 39 perforations along the disc's rim, moving down as the disc, two gold-accented bronze swords, and two axes are solemnly lowered into a stone-lined cavity in the deep forest floor. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be Central European Bronze Age people with period-correct woven wool or linen tunics, leather belts, bronze spiral armlets, and authentic bronze tools.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. Begin physical camera travel within 0.35 seconds. Enter at macro of 39 perimeter perforation holes on bronze rim; travel slow track across gold-hilted bronze swords in dark burial soil; arrive at shadowy ceremonial burial pit in Mittelberg forest; settle on unresolved ceremonial hoard deposition in forest soil. Track along the rim perforation path route from the 39 holes down to the bronze swords and axes being buried in the stone cavity, framing the unresolved mystery of its ritual decommissioning. TTS-locked timing: 0.00-5.00s: 하지만 진짜 미스터리는 지금부터입니다. 문자가 없던 이들이 어떻게 이 지식을 체계화했는지,. 5.00-10.00s: 왜 서른아홉 개의 구멍을 뚫어 쓰다가 무기들과 함께 깊은 숲속에 묻어버렸는지는 아직 아무도 모릅니다.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: macro of 39 perimeter perforation holes on bronze rim is already visible in the locked first frame. Mid anchor: remain on the same lateral axis through slow track across gold-hilted bronze swords in dark burial soil. Final anchor: arrive once at shadowy ceremonial burial pit in Mittelberg forest. Last frame: Last frame holds the unchanged composition on unresolved ceremonial hoard deposition in forest soil. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_form_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+    "artifact_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "allowed_artifact_changes": [
+      "camera",
+      "lighting"
+    ],
+    "forbidden_artifact_changes": [
+      "silhouette",
+      "proportion",
+      "part_count",
+      "ornament_layout"
+    ],
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset."
+  },
+  {
+    "n": 19,
+    "audio_scene": 19,
+    "audio_part": "1/1",
+    "audio_offset_start": 153.9,
+    "audio_offset_end": 165.3,
+    "timeline_start": 153.9,
+    "timeline_end": 165.3,
+    "chapter": "6. 확인된 정체와 마지막 미스터리",
+    "ct": "ARTIFACT_MACRO",
+    "txt": "당시의 제사 의식과 교역로를 증명할 새 유적이 발굴되기 전까지, 숲속에 묻힌 청동판의 침묵은 계속될 겁니다. 시간 속에 잠든 유물, 땅속에 묻힌 역사. 네브라 스카이 디스크의 비밀이었습니다.",
+    "tts": 11.4,
+    "omni": 10,
+    "playback_speed": 0.8772,
+    "evidence": "학술해석",
+    "generation_mode": "I2V_LOCKED",
+    "artifact_visibility": "IDENTIFIABLE",
+    "routing_reason": "숲속에 묻힌 청동판과 밤하늘 은하수를 비추며 시그니처 엔딩을 닫는 장면",
+    "architecture_anchor_required": true,
+    "modern_scene": false,
+    "motion_owner": "GENERATED_PHYSICS",
+    "motion_space": "WORLD_3D",
+    "camera_path": {
+      "entry_anchor": "dark forest soil covering the bronze disc",
+      "route": "smooth crane rise through misty pine trees into starry night sky",
+      "destination": "complete Milky Way galaxy framing Mittelberg",
+      "speed_profile": "CONTROLLED_ORBIT_REVEAL",
+      "operator_style": "CRANE_ORBIT_REVEAL",
+      "depth_transition": "NONE",
+      "pattern_interrupts": [
+        "3.0s soil covering disc",
+        "7.0s starry sky signature pull-back"
+      ],
+      "settle_point": "monumental Mittelberg hill silhouette under Milky Way",
+      "single_axis": "FORWARD",
+      "scale_domain": "WIDE",
+      "start_frame_anchor_visible": true,
+      "start_frame_anchor_evidence": "The locked image prompt visibly places dark forest soil covering the bronze disc at the opening camera position.",
+      "end_state": "Last frame holds the unchanged composition on monumental Mittelberg hill silhouette under Milky Way."
+    },
+    "visual_lock": {
+      "civilization": "Central European Bronze Age Unetice culture and documented Mittelberg archaeology",
+      "era": "circa 1600 BCE European Bronze Age, with 1999-2002 discovery and recovery context",
+      "region": "Mittelberg hill near Nebra, Saxony-Anhalt, Germany",
+      "people_lock": "Central European Bronze Age people in period-correct garments; documented German archaeologists and conservators after 1999",
+      "forbidden_culture": [
+        "Roman",
+        "medieval",
+        "Viking",
+        "Chinese",
+        "Japanese",
+        "Joseon",
+        "fantasy",
+        "alien"
+      ],
+      "artifact_lock": "one real-form Nebra Sky Disc: thirty-centimetre dark oxidized patina bronze circular plate inlaid with pure gold full moon, thick crescent moon, thirty-two gold stars including seven-star Pleiades cluster, eighty-two degree gold horizon arc, gold solar ship curve at bottom, perimeter perforation holes",
+      "diorama_style": "CINEMATIC_ARCHAEOLOGICAL_DIORAMA",
+      "material_fidelity": "PBR_MICROTEXTURE_HIGH_FIDELITY",
+      "source_reference": "Landesmuseum für Vorgeschichte Halle official record",
+      "site_artifact_fingerprint": [
+        "buried Nebra disc in earth",
+        "Mittelberg forest summit",
+        "Milky Way galaxy",
+        "channel signature ending"
+      ]
+    },
+    "visual_states": [
+      {
+        "time": 0.0,
+        "composition": "Buried disc in dark forest soil",
+        "camera_pose": "Low soil close-up",
+        "visible_anchors": [
+          "buried disc",
+          "roots"
+        ]
+      },
+      {
+        "time": 3.3,
+        "composition": "Crane rise through misty pines",
+        "camera_pose": "High crane ascend",
+        "visible_anchors": [
+          "pine silhouettes",
+          "mist"
+        ]
+      },
+      {
+        "time": 6.6,
+        "composition": "Forested ridge skyline",
+        "camera_pose": "Extreme wide ascend",
+        "visible_anchors": [
+          "tree canopy",
+          "horizon"
+        ]
+      },
+      {
+        "time": 10.0,
+        "composition": "Infinite starry cosmos and Milky Way",
+        "camera_pose": "Monumental cosmic wide",
+        "visible_anchors": [
+          "Milky Way",
+          "Mittelberg silhouette"
+        ]
+      }
+    ],
+    "tts_beats": [
+      {
+        "start": 0.0,
+        "end": 5.7,
+        "narration": "당시의 제사 의식과 교역로를 증명할 새 유적이 발굴되기 전까지, 숲속에 묻힌 청동판의 침묵은 계속될 겁니다.",
+        "camera": "Camera pulls up from buried disc through misty trees",
+        "action": "Earth and roots envelop the ancient bronze",
+        "graphic": "none"
+      },
+      {
+        "start": 5.7,
+        "end": 11.4,
+        "narration": "시간 속에 잠든 유물, 땅속에 묻힌 역사. 네브라 스카이 디스크의 비밀이었습니다.",
+        "camera": "Ascend into magnificent night sky with Milky Way",
+        "action": "Cosmic stars mirror the gold disc inlays",
+        "graphic": "none"
+      }
+    ],
+    "img_v2": "premium full-frame cinematic archaeological 3D diorama, unmistakably a museum-scale crafted miniature world and not live-action, realistic historical architectural CG restoration, immersive macro-lens depth, restrained tilt-shift, layered foreground-midground-background, physically based PBR bronze, pure gold inlay, patinated oxidized metal, forest soil and stone microtexture, razor-sharp artifact separation, global illumination, high fidelity 4K source detail, 9:16 vertical composition. European Bronze Age in the seventeenth to sixteenth century BCE (circa 1600 BCE), Unetice culture, the forested hill plateau of Mittelberg near Nebra, Saxony-Anhalt, Central Germany. Mittelberg forested hill summit (elevation 252m) with low circular earthen ditch rampart, small stone-lined hoard pit, ancient bronze workshop with charcoal smelting hearth, and dark museum conservation laboratory. Poetic signature ending archaeological diorama: the Nebra Sky Disc rests quietly beneath the dark forest earth while the camera ascends through misty pine branches to frame the magnificent Milky Way galaxy arching over the Mittelberg silhouette. the start frame already contains a physically visible section seam, depth layers and an empty camera route; no geometry may be invented later. no Roman toga, no medieval plate armor, no Viking horned helmets, no Chinese or Japanese architecture, no Joseon costume, no fantasy treasure room, no alien figures or UFO spaceships, no sci-fi hologram, no magical levitation, no polished new brass disc, no invented complete inscription, no readable generated Korean or Chinese, no pseudo-writing, no floating HUD, no modern object in ancient scenes, no plastic toy surface, no low-poly game asset, no exterior cube frame, no ancient costume on modern researchers, no gore, no watermark, no text, no labels, no letters. If any human figure is visible, it must be Central European Bronze Age people with period-correct woven wool or linen tunics, leather belts, bronze spiral armlets, and authentic bronze tools.",
+    "vid": "Use the supplied locked start image and preserve every object, identity, artifact fingerprint, provenance, site geometry, material, culture, lighting and composition. Single continuous 10-second I2V shot, no hard cut, no teleport, no morph, no new objects. Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. Begin physical camera travel within 0.35 seconds. Enter at dark forest soil covering the bronze disc; travel smooth crane rise through misty pine trees into starry night sky; arrive at complete Milky Way galaxy framing Mittelberg; settle on monumental Mittelberg hill silhouette under Milky Way. Rise smoothly along the vertical path route from the quiet buried disc in the forest floor up through misty pine branches into the infinite night sky, holding on the arching Milky Way for the official channel closing. TTS-locked timing: 0.00-5.00s: 당시의 제사 의식과 교역로를 증명할 새 유적이 발굴되기 전까지, 숲속에 묻힌 청동판의 침묵은 계속될 겁니다.. 5.00-10.00s: 시간 속에 잠든 유물, 땅속에 묻힌 역사. 네브라 스카이 디스크의 비밀이었습니다.. Preserve all objects from the start image. No voice, no music, no subtitles. Start anchor: dark forest soil covering the bronze disc is already visible in the locked first frame. Mid anchor: remain on the same forward axis through smooth crane rise through misty pine trees into starry night sky. Final anchor: arrive once at complete Milky Way galaxy framing Mittelberg. Last frame: Last frame holds the unchanged composition on monumental Mittelberg hill silhouette under Milky Way. No cut, reset, loop or restart; never return to an earlier composition; remain on the final anchor and hold there.",
+    "status": "PROMPT_LOCKED_IMAGE_PENDING",
+    "flow_account": "jy04210810@gmail.com",
+    "artifact_form_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+    "artifact_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "allowed_artifact_changes": [
+      "camera",
+      "lighting"
+    ],
+    "forbidden_artifact_changes": [
+      "silhouette",
+      "proportion",
+      "part_count",
+      "ornament_layout"
+    ],
+    "long_scene_review": "The narration is one indivisible claim-and-evidence unit in one physical location; two timed camera interruptions preserve pace without a semantic or spatial reset."
+  }
+]

@@ -1,0 +1,302 @@
+{
+  "version": 3,
+  "fixed_order": [
+    "1Q",
+    "2a",
+    "3",
+    "2c",
+    "2e",
+    "2d",
+    "2b/2v",
+    "2G",
+    "4"
+  ],
+  "gate": "PASS",
+  "source_hashes": {
+    "02a.장면구분.json": "81250A7A588252BD1C0D398EC5D7432E388329BF3FA2B08EB6707058688D2549",
+    "audio/durations.json": "A68E061A8CDD8C35C7C7E3187AD99F4BE440267056F2D9338536DDFC908FF94A",
+    "02c.유물레퍼런스.json": "EE70537B92480B950A94FB7338152CA4A5A577500F379B9F430C4A37C94ED8DC",
+    "02e.FLOW유물참조잠금.json": "83DCEC57DFF993EB646AD78535054ECCED807EAAC30BB6C813F8F8F57D2444A9",
+    "02d.유물장면라우팅.json": "8143113FEF417FF23D6012449544A199439C7F3EB8FD4124BBD3C692F0B6D5A7"
+  },
+  "scene_count": 19,
+  "i2v_count": 19,
+  "t2v_count": 0,
+  "mapping": [
+    {
+      "scene": 1,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "NON_IDENTIFIABLE",
+      "routing_reason": "1999년 도굴 구덩이 속 녹슨 원판 발견 맥락을 승인 프레임으로 잠그는 장면",
+      "artifact_reference_ids": [],
+      "flow_reference_asset": null,
+      "flow_reference_token": null,
+      "flow_reference_required": false,
+      "mode_index": 1,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "001.mp4"
+    },
+    {
+      "scene": 2,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "실물 네브라 디스크의 청동 원판과 순금 태양, 초승달, 별들을 식별하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "flow_reference_asset": "네브라스카이디스크",
+      "flow_reference_token": "@네브라스카이디스크",
+      "flow_reference_required": true,
+      "mode_index": 2,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "002.mp4"
+    },
+    {
+      "scene": 3,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "문자 없는 청동기 시대 배경과 유물 자체의 중심 질문을 함께 보여주는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "flow_reference_asset": "네브라스카이디스크",
+      "flow_reference_token": "@네브라스카이디스크",
+      "flow_reference_required": true,
+      "mode_index": 3,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "003.mp4"
+    },
+    {
+      "scene": 4,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "원판 중심의 태양, 굵은 초승달, 32개 별 배치를 형태 소유자와 정밀 대조하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "flow_reference_asset": "네브라스카이디스크",
+      "flow_reference_token": "@네브라스카이디스크",
+      "flow_reference_required": true,
+      "mode_index": 4,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "004.mp4"
+    },
+    {
+      "scene": 5,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "플레이아데스 7성단과 82도 황금 지평선 호를 식별하고 각도를 투사하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "flow_reference_asset": "네브라스카이디스크",
+      "flow_reference_token": "@네브라스카이디스크",
+      "flow_reference_required": true,
+      "mode_index": 5,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "005.mp4"
+    },
+    {
+      "scene": 6,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "문자 없는 시대와 정밀 천문관측의 상식적 모순을 원판 세부와 함께 식별하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "flow_reference_asset": "네브라스카이디스크",
+      "flow_reference_token": "@네브라스카이디스크",
+      "flow_reference_required": true,
+      "mode_index": 6,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "006.mp4"
+    },
+    {
+      "scene": 7,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "NON_IDENTIFIABLE",
+      "routing_reason": "1999년 미텔베르크 숲속 불법 도굴꾼의 금속탐지기 발굴 현장을 재현하는 장면",
+      "artifact_reference_ids": [],
+      "flow_reference_asset": null,
+      "flow_reference_token": null,
+      "flow_reference_required": false,
+      "mode_index": 7,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "007.mp4"
+    },
+    {
+      "scene": 8,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "NON_IDENTIFIABLE",
+      "routing_reason": "2002년 스위스 바젤 호텔에서의 극적인 위장 함정 수사 회수 현장을 보여주는 장면",
+      "artifact_reference_ids": [],
+      "flow_reference_asset": null,
+      "flow_reference_token": null,
+      "flow_reference_required": false,
+      "mode_index": 8,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "008.mp4"
+    },
+    {
+      "scene": 9,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "박물관 연구실에서 실물 원판을 현미경 및 측정 도구로 조사하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "flow_reference_asset": "네브라스카이디스크",
+      "flow_reference_token": "@네브라스카이디스크",
+      "flow_reference_required": true,
+      "mode_index": 9,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "009.mp4"
+    },
+    {
+      "scene": 10,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "단순 장식품 가설을 깨고 정밀 3D 스캔 및 각도 측정을 개시하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "flow_reference_asset": "네브라스카이디스크",
+      "flow_reference_token": "@네브라스카이디스크",
+      "flow_reference_required": true,
+      "mode_index": 10,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "010.mp4"
+    },
+    {
+      "scene": 11,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "네브라 지역 하지·동지 일몰 지평선 각도(82.5°)와 황금 호의 일치를 시뮬레이션하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "flow_reference_asset": "네브라스카이디스크",
+      "flow_reference_token": "@네브라스카이디스크",
+      "flow_reference_required": true,
+      "mode_index": 11,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "011.mp4"
+    },
+    {
+      "scene": 12,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "NONE",
+      "routing_reason": "오스트리아 구리 광산과 영국 콘월 사금 채취지를 잇는 청동기 유럽 교역망 지도 장면",
+      "artifact_reference_ids": [],
+      "flow_reference_asset": null,
+      "flow_reference_token": null,
+      "flow_reference_required": false,
+      "mode_index": 12,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "012.mp4"
+    },
+    {
+      "scene": 13,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "NONE",
+      "routing_reason": "태양력 365일과 태음력 354일의 11일 연간 오차를 시각화하는 천문 시계 그래픽 장면",
+      "artifact_reference_ids": [],
+      "flow_reference_asset": null,
+      "flow_reference_token": null,
+      "flow_reference_required": false,
+      "mode_index": 13,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "013.mp4"
+    },
+    {
+      "scene": 14,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "농경 파종 위기 배경과 4.5일 된 굵은 초승달의 두께를 정밀 실측하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "flow_reference_asset": "네브라스카이디스크",
+      "flow_reference_token": "@네브라스카이디스크",
+      "flow_reference_required": true,
+      "mode_index": 14,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "014.mp4"
+    },
+    {
+      "scene": 15,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "봄철 4.5일 달과 플레이아데스 성단의 만남으로 3년 윤달을 판별하는 역법 공식을 시각화하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "flow_reference_asset": "네브라스카이디스크",
+      "flow_reference_token": "@네브라스카이디스크",
+      "flow_reference_required": true,
+      "mode_index": 15,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "015.mp4"
+    },
+    {
+      "scene": 16,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "스톤헨지와 네브라 디스크의 크기 대비 및 휴대용 천문 컴퓨터 기능을 보여주는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "flow_reference_asset": "네브라스카이디스크",
+      "flow_reference_token": "@네브라스카이디스크",
+      "flow_reference_required": true,
+      "mode_index": 16,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "016.mp4"
+    },
+    {
+      "scene": 17,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "청동기 사제·장인의 천문 관측과 바빌로니아 대비 1천 년 앞선 과학적 가치를 회수하는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "flow_reference_asset": "네브라스카이디스크",
+      "flow_reference_token": "@네브라스카이디스크",
+      "flow_reference_required": true,
+      "mode_index": 17,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "017.mp4"
+    },
+    {
+      "scene": 18,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "외곽 39개 타공 구멍과 청동 무기 부장품 매장 의례의 미스터리를 보여주는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "flow_reference_asset": "네브라스카이디스크",
+      "flow_reference_token": "@네브라스카이디스크",
+      "flow_reference_required": true,
+      "mode_index": 18,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "018.mp4"
+    },
+    {
+      "scene": 19,
+      "generation_mode": "I2V_LOCKED",
+      "artifact_visibility": "IDENTIFIABLE",
+      "routing_reason": "숲속에 묻힌 청동판과 밤하늘 은하수를 비추며 시그니처 엔딩을 닫는 장면",
+      "artifact_reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "flow_reference_asset": "네브라스카이디스크",
+      "flow_reference_token": "@네브라스카이디스크",
+      "flow_reference_required": true,
+      "mode_index": 19,
+      "prompt_file": "flow_i2v_videos.txt",
+      "download_name": "019.mp4"
+    }
+  ]
+}
