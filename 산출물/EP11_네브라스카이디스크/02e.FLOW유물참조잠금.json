@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "artifact_name_ko": "네브라스카이디스크",
+  "prompt_anchor": "네브라스카이디스크",
+  "approved_diorama": {
+    "file": "references/네브라스카이디스크_FLOW_디오라마_형태잠금_v1.png",
+    "sha256": "LOCKED_NEBRA_DIORAMA_REFERENCE_HASH_V1",
+    "derived_from_reference_ids": [
+      "FORM_OWNER_NEBRA_FRONT"
+    ],
+    "shape_identity_review": "PASS",
+    "review_note": "독일 할레 주립 선사박물관 실물 형태 소유자와 대조하여 30cm 원판, 순금 태양/초승달/32개 별/플레이아데스 7성단, 82도 호, 39개 타공 구멍 비례를 유지한 디오라마 참조 승인"
+  },
+  "flow_reference": {
+    "asset_name": "네브라스카이디스크",
+    "prompt_token": "@네브라스카이디스크",
+    "preferred_binding": "INGREDIENT_AND_CHARACTER",
+    "source_assets": [
+      "references/nebra_sky_disc_form_owner.jpg",
+      "references/네브라스카이디스크_FLOW_디오라마_형태잠금_v1.png"
+    ],
+    "usage": "실물 사진으로 형태를 잠그고 디오라마 이미지로 스타일·배경을 잠근 뒤, 모든 IDENTIFIABLE 이미지·영상 프롬프트에서 @네브라스카이디스크를 실제 첨부한다"
+  }
+}

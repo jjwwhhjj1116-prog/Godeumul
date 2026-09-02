@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "artifact_id": "NEBRA_SKY_DISC",
+  "artifact_name_ko": "네브라 스카이 디스크",
+  "form_owner_policy": "SOURCE_PHOTO_GEOMETRY_LOCK",
+  "institution_source": {
+    "institution": "독일 할레 주립 선사박물관 (Landesmuseum für Vorgeschichte Halle)",
+    "title": "Himmelsscheibe von Nebra",
+    "url": "https://www.landesmuseum-vorgeschichte.de/dauerausstellung/bronzezeit/himmelsscheibe-von-nebra.html"
+  },
+  "secondary_image_source": {
+    "title": "Nebra Sky Disc",
+    "publisher": "UNESCO Memory of the World",
+    "credit": "State Office for Heritage Management and Archaeology Saxony-Anhalt",
+    "license": "Public Record",
+    "url": "https://en.unesco.org/memoryoftheworld/registry/nebra-sky-disc"
+  },
+  "dimensions": {
+    "diameter_cm": 30.2,
+    "thickness_mm": 4.5,
+    "weight_grams": 2060,
+    "proportion_note": "직경 약 30cm, 중심부 두께 4.5mm, 가장자리 1.7mm의 약간 타원형 청동 원판"
+  },
+  "invariant_fingerprints": [
+    "어두운 청록색 산화 청동 바탕에 박힌 순금 박편 상감(태양, 초승달, 별들)",
+    "직경 약 11cm의 둥근 황금 만월/태양과 4.5일 된 굵은 낫 모양 황금 초승달",
+    "32개의 황금 별 점 중 7개가 밀집된 명확한 플레이아데스 7성단",
+    "원판 좌우 가장자리에 부착된 82도 중심각의 황금 지평선 호(한쪽 호와 반대편 탈락 홈)",
+    "원판 하단에 깃털/노 무늬가 새겨진 만곡된 황금 태양의 배(Solar Barge)",
+    "원판 외곽 테두리를 따라 일정한 간격으로 뚫린 39개의 작은 타공 구멍"
+  ],
+  "forbidden_deviations": [
+    "청동판의 짙은 청록색 바탕을 은색이나 현대식 반사 합금으로 바꾸기",
+    "초승달을 아주 얇은 실달이나 그믐달로 임의 변형하기",
+    "플레이아데스 성단의 7개 별 배치를 무작위 별무리로 흩뜨리기",
+    "양쪽 지평선 호의 82도 각도를 임의의 크기나 원형 테두리로 바꾸기",
+    "외계인 우주선이나 SF 홀로그램 광선 등의 판타지 요소 추가하기",
+    "테두리 39개 타공 구멍을 지우거나 매끄러운 링으로 왜곡하기"
+  ],
+  "references": [
+    {
+      "id": "FORM_OWNER_NEBRA_FRONT",
+      "role": "FORM_OWNER",
+      "view": "front full disk view",
+      "file": "references/nebra_sky_disc_form_owner.jpg",
+      "sha256": "LOCKED_REFERENCE_GEOMETRY_NEBRA_V1"
+    }
+  ]
+}
