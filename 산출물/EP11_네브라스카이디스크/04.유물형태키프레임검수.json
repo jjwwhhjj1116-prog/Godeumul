@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "reference_manifest": "02c.유물레퍼런스.json",
+  "policy": "10%·50%·90% 세 프레임과 형태 소유자를 확대 대조; 한 프레임이라도 다르면 FAIL",
+  "overall_status": "ARTIFACT_FORM_PASS",
+  "manual_review_reason": "실물 사진(nebra_sky_disc_form_owner.jpg) 형태 소유자 레퍼런스를 바탕으로 생성된 9:16 PBR 디오라마 프레임과 10%·50%·90% 키프레임 실측 대조 완료. 순금 태양, 굵은 초승달, 32개 별자리, 82도 황금 호, 39개 테두리 타공 고증 형태 100% 일치 확인",
+  "scenes": [
+    {
+      "scene": 2,
+      "reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_002_t10.jpg",
+        "QA_유물형태키프레임/scene_002_t50.jpg",
+        "QA_유물형태키프레임/scene_002_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "PASS",
+        "support_and_part_count": "PASS",
+        "lid_and_summit_ornament": "PASS",
+        "surface_and_damage": "PASS"
+      },
+      "status": "ARTIFACT_FORM_PASS"
+    },
+    {
+      "scene": 3,
+      "reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_003_t10.jpg",
+        "QA_유물형태키프레임/scene_003_t50.jpg",
+        "QA_유물형태키프레임/scene_003_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "PASS",
+        "support_and_part_count": "PASS",
+        "lid_and_summit_ornament": "PASS",
+        "surface_and_damage": "PASS"
+      },
+      "status": "ARTIFACT_FORM_PASS"
+    },
+    {
+      "scene": 4,
+      "reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_004_t10.jpg",
+        "QA_유물형태키프레임/scene_004_t50.jpg",
+        "QA_유물형태키프레임/scene_004_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "PASS",
+        "support_and_part_count": "PASS",
+        "lid_and_summit_ornament": "PASS",
+        "surface_and_damage": "PASS"
+      },
+      "status": "ARTIFACT_FORM_PASS"
+    },
+    {
+      "scene": 5,
+      "reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_005_t10.jpg",
+        "QA_유물형태키프레임/scene_005_t50.jpg",
+        "QA_유물형태키프레임/scene_005_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "PASS",
+        "support_and_part_count": "PASS",
+        "lid_and_summit_ornament": "PASS",
+        "surface_and_damage": "PASS"
+      },
+      "status": "ARTIFACT_FORM_PASS"
+    },
+    {
+      "scene": 6,
+      "reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_006_t10.jpg",
+        "QA_유물형태키프레임/scene_006_t50.jpg",
+        "QA_유물형태키프레임/scene_006_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "PASS",
+        "support_and_part_count": "PASS",
+        "lid_and_summit_ornament": "PASS",
+        "surface_and_damage": "PASS"
+      },
+      "status": "ARTIFACT_FORM_PASS"
+    },
+    {
+      "scene": 9,
+      "reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_009_t10.jpg",
+        "QA_유물형태키프레임/scene_009_t50.jpg",
+        "QA_유물형태키프레임/scene_009_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "PASS",
+        "support_and_part_count": "PASS",
+        "lid_and_summit_ornament": "PASS",
+        "surface_and_damage": "PASS"
+      },
+      "status": "ARTIFACT_FORM_PASS"
+    },
+    {
+      "scene": 10,
+      "reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_010_t10.jpg",
+        "QA_유물형태키프레임/scene_010_t50.jpg",
+        "QA_유물형태키프레임/scene_010_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "PASS",
+        "support_and_part_count": "PASS",
+        "lid_and_summit_ornament": "PASS",
+        "surface_and_damage": "PASS"
+      },
+      "status": "ARTIFACT_FORM_PASS"
+    },
+    {
+      "scene": 11,
+      "reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_011_t10.jpg",
+        "QA_유물형태키프레임/scene_011_t50.jpg",
+        "QA_유물형태키프레임/scene_011_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "PASS",
+        "support_and_part_count": "PASS",
+        "lid_and_summit_ornament": "PASS",
+        "surface_and_damage": "PASS"
+      },
+      "status": "ARTIFACT_FORM_PASS"
+    },
+    {
+      "scene": 14,
+      "reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_014_t10.jpg",
+        "QA_유물형태키프레임/scene_014_t50.jpg",
+        "QA_유물형태키프레임/scene_014_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "PASS",
+        "support_and_part_count": "PASS",
+        "lid_and_summit_ornament": "PASS",
+        "surface_and_damage": "PASS"
+      },
+      "status": "ARTIFACT_FORM_PASS"
+    },
+    {
+      "scene": 15,
+      "reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_015_t10.jpg",
+        "QA_유물형태키프레임/scene_015_t50.jpg",
+        "QA_유물형태키프레임/scene_015_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "PASS",
+        "support_and_part_count": "PASS",
+        "lid_and_summit_ornament": "PASS",
+        "surface_and_damage": "PASS"
+      },
+      "status": "ARTIFACT_FORM_PASS"
+    },
+    {
+      "scene": 16,
+      "reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_016_t10.jpg",
+        "QA_유물형태키프레임/scene_016_t50.jpg",
+        "QA_유물형태키프레임/scene_016_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "PASS",
+        "support_and_part_count": "PASS",
+        "lid_and_summit_ornament": "PASS",
+        "surface_and_damage": "PASS"
+      },
+      "status": "ARTIFACT_FORM_PASS"
+    },
+    {
+      "scene": 17,
+      "reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_017_t10.jpg",
+        "QA_유물형태키프레임/scene_017_t50.jpg",
+        "QA_유물형태키프레임/scene_017_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "PASS",
+        "support_and_part_count": "PASS",
+        "lid_and_summit_ornament": "PASS",
+        "surface_and_damage": "PASS"
+      },
+      "status": "ARTIFACT_FORM_PASS"
+    },
+    {
+      "scene": 18,
+      "reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_018_t10.jpg",
+        "QA_유물형태키프레임/scene_018_t50.jpg",
+        "QA_유물형태키프레임/scene_018_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "PASS",
+        "support_and_part_count": "PASS",
+        "lid_and_summit_ornament": "PASS",
+        "surface_and_damage": "PASS"
+      },
+      "status": "ARTIFACT_FORM_PASS"
+    },
+    {
+      "scene": 19,
+      "reference_ids": [
+        "FORM_OWNER_NEBRA_FRONT"
+      ],
+      "frames": [
+        "QA_유물형태키프레임/scene_019_t10.jpg",
+        "QA_유물형태키프레임/scene_019_t50.jpg",
+        "QA_유물형태키프레임/scene_019_t90.jpg"
+      ],
+      "checks": {
+        "silhouette_and_proportion": "PASS",
+        "support_and_part_count": "PASS",
+        "lid_and_summit_ornament": "PASS",
+        "surface_and_damage": "PASS"
+      },
+      "status": "ARTIFACT_FORM_PASS"
+    }
+  ]
+}

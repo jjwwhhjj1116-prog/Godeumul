@@ -1,0 +1,44 @@
+{
+  "status": "READY_FOR_PRIVATE_UPLOAD",
+  "created_at": "2026-09-04T02:50:37+09:00",
+  "idempotency_key": "88a95aab-61d4-458c-8ae5-6af17188f901",
+  "target": {
+    "platform": "youtube",
+    "channel_id": "UCjgXauHJ8z2Kbbl9O9hu4eA",
+    "channel_name": "고대유물의 비밀",
+    "channel_handle": "@ancient_artifacts_kr",
+    "visibility": "private_scheduled",
+    "scheduled_public_at": "2026-09-04T18:00:00+09:00",
+    "schedule_policy": "USER_APPROVED_SAME_DAY_OVERRIDE",
+    "category_id": 27,
+    "language": "ko",
+    "made_for_kids": false,
+    "contains_synthetic_media": true,
+    "playlist": "▶고대유물의 비밀"
+  },
+  "assets": {
+    "video": "EP11_네브라스카이디스크_최종_capcut.mp4",
+    "video_sha256": "9833be4bef2e92d0c47686d6e4bde474f5c09eaedc72a7aa876edada2b962471",
+    "thumbnail": "썸네일.jpg",
+    "thumbnail_sha256": "6921582db9b38ef2f31809c528485d6a75d7336578eb9e09406198def9136ca2",
+    "metadata": "06.메타.json",
+    "metadata_sha256": "f7974628049c208a8072584bbb6c49b86065b845e093734a5c138c35ace67643",
+    "capcut_lock": "05.캡컷마감잠금.json",
+    "capcut_lock_sha256": "e8de87aecad408af22dd1ef724c99d17cad8a6b92a3edfb9468f964ed17d68b6"
+  },
+  "rights_and_disclosure": {
+    "third_party_music": false,
+    "copyright_protected_content_detected": false,
+    "visuals": "AI-generated 3D archaeological reconstructions based on cited museum and history sources",
+    "narration": "ElevenLabs generated narration under the channel workflow",
+    "synthetic_media_disclosure_in_description": true,
+    "youtube_contains_synthetic_media": true
+  },
+  "source_ids": [
+    "LANDESMUSEUM_HALLE_NEBRA_SKY_DISC",
+    "UNESCO_MEMORY_OF_THE_WORLD_NEBRA",
+    "NATURE_ARCHAEOLOGY_NEBRA_2002"
+  ],
+  "blockers": [],
+  "next_action": "Verify channel and duplicates, upload private, verify processing and thumbnail, then schedule."
+}

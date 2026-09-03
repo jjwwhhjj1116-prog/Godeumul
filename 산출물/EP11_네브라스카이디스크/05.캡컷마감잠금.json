@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "editor": "CapCut",
+  "project_name": "EP11 네브라 스카이 디스크",
+  "video": "EP11_네브라스카이디스크_최종_capcut.mp4",
+  "video_sha256": "9833be4bef2e92d0c47686d6e4bde474f5c09eaedc72a7aa876edada2b962471",
+  "locked_at": "2026-09-04T02:49:32+09:00",
+  "checks": {
+    "caption_style_verified": true,
+    "caption_sync_verified": true,
+    "motion_finish_verified": true,
+    "full_playback_verified": true,
+    "audio_policy_verified": true
+  },
+  "media": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "duration": 175.933,
+    "video_codec": "h264",
+    "audio_codec": "aac"
+  },
+  "context_review": "01.문맥검수.json",
+  "artifact_release_gate": {
+    "flow_binding": "04.FLOW참조첨부기록.json",
+    "form_qa": "04.유물형태키프레임검수.json",
+    "identifiable_scenes": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      9,
+      10,
+      11,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ]
+  },
+  "draft_audio_guard": {
+    "path": "C:\\Users\\7500F\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\EP11 네브라 스카이 디스크\\draft_content.json",
+    "sha256": "b5ae409466d93f77b0de58ee0f9fb8790bc9a79eb2232ac7015191d410e0640d",
+    "passed": true,
+    "forbidden_materials": {
+      "audio_effects": 0,
+      "realtime_denoises": 0,
+      "vocal_beautifys": 0,
+      "vocal_separations": 0
+    },
+    "forbidden_refs": {
+      "audio_effects": 0,
+      "realtime_denoises": 0,
+      "vocal_beautifys": 0,
+      "vocal_separations": 0
+    },
+    "queued_tasks": {
+      "enhance_voice_segid_list": 0,
+      "normalize_loudness_segid_list": 0,
+      "normalize_loudness_audio_denoise_segid_list": 0
+    },
+    "normalization_mismatches": 0,
+    "narration_volume_mismatches": 0,
+    "video_volume_mismatches": 0
+  }
+}

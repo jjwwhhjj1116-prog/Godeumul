@@ -11,7 +11,7 @@ video_count_per_visual_scene: 1
 
 ## 영상 001 — TTS 001 (1/1)
 
-- 타임라인: 0.000-6.400s
+- 타임라인: 0.000-7.245s
 - 나레이션: 독일 깊은 숲속 땅밑에서, 3,600년 동안 잠들어 있던 직경 30센티미터의 녹슨 청동 원판이 발견됐습니다.
 - Flow 계정: jy04210810@gmail.com
 
@@ -25,7 +25,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 002 — TTS 002 (1/1)
 
-- 타임라인: 6.400-15.200s
+- 타임라인: 7.245-16.254s
 - 나레이션: 표면에는 순금으로 박아 넣은 태양과 초승달, 밤하늘의 별들이 가득했죠. 바로 인류 역사상 가장 오래된 구체적인 천문도, 네브라 스카이 디스크였습니다.
 - Flow 계정: jy04210810@gmail.com
 
@@ -39,7 +39,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 003 — TTS 003 (1/1)
 
-- 타임라인: 15.200-23.100s
+- 타임라인: 16.254-24.195s
 - 나레이션: 글자조차 없던 청동기 시대에 만들어진 물건이거든요. 도대체 3천 년 전 고대인들은 왜 이런 정밀한 우주를 새겨 땅속에 묻었던 걸까요?
 - Flow 계정: jy04210810@gmail.com
 
@@ -53,7 +53,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 004 — TTS 004 (1/1)
 
-- 타임라인: 23.100-32.200s
+- 타임라인: 24.195-33.158s
 - 나레이션: 자, 손바닥 두 개만 한 청동판을 조금 더 들여다보죠. 원판 중심에는 둥근 태양과 굵은 초승달이 있고, 그 곁으로 서른두 개의 황금 별이 흩어져 있습니다.
 - Flow 계정: jy04210810@gmail.com
 
@@ -67,7 +67,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 005 — TTS 005 (1/1)
 
-- 타임라인: 32.200-40.700s
+- 타임라인: 33.158-41.935s
 - 나레이션: 특히 일곱 개가 뭉친 무리는 밤하늘의 플레이아데스 성단이었죠. 심지어 양쪽 가장자리에는 정확히 82도 각도를 이루는 황금 호가 붙어 있었습니다.
 - Flow 계정: jy04210810@gmail.com
 
@@ -81,7 +81,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 006 — TTS 006 (1/1)
 
-- 타임라인: 40.700-49.600s
+- 타임라인: 41.935-51.455s
 - 나레이션: 당시 유럽은 문자 기록 하나 남기지 못한 시대였거든요. 그런 청동기인들이 정밀한 각도와 별자리를 담아냈다는 사실 자체가 상식을 깨는 모순이었던 겁니다.
 - Flow 계정: jy04210810@gmail.com
 
@@ -95,7 +95,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 007 — TTS 007 (1/1)
 
-- 타임라인: 49.600-58.700s
+- 타임라인: 51.455-62.043s
 - 나레이션: 이야기는 1999년, 독일 미텔베르크 숲에서 도굴꾼들이 금속탐지기로 흙을 파헤치며 시작됩니다. 청동 검과 도끼 틈에서 녹슨 쟁반 같은 것이 딸려 나왔죠.
 - Flow 계정: jy04210810@gmail.com
 
@@ -109,7 +109,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 008 — TTS 008 (1/1)
 
-- 타임라인: 58.700-68.000s
+- 타임라인: 62.043-72.910s
 - 나레이션: 도굴꾼들은 흙을 털어내고 암시장에 헐값으로 넘겼습니다. 유물은 암흑가를 떠돌다 2002년 스위스 바젤에서 고고학자와 경찰의 함정 수사 끝에 극적으로 회수됐죠.
 - Flow 계정: jy04210810@gmail.com
 
@@ -123,7 +123,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 009 — TTS 009 (1/1)
 
-- 타임라인: 68.000-74.600s
+- 타임라인: 72.910-80.248s
 - 나레이션: 학자들은 단 하나의 질문에 매달렸습니다. 문명도 없던 시대에 도대체 누가, 무엇을 위해 이 천문판을 만들었는가?
 - Flow 계정: jy04210810@gmail.com
 
@@ -137,7 +137,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 010 — TTS 010 (1/1)
 
-- 타임라인: 74.600-81.500s
+- 타임라인: 80.248-87.586s
 - 나레이션: 그냥 밤하늘을 본뜬 제사용 장식품 아니냐고요? 하지만 수치를 재자마자 단순한 장식품이라는 가설은 산산조각이 났습니다.
 - Flow 계정: jy04210810@gmail.com
 
@@ -151,7 +151,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 011 — TTS 011 (1/1)
 
-- 타임라인: 81.500-88.400s
+- 타임라인: 87.586-94.924s
 - 나레이션: 계산해 보니, 82도 황금 호는 네브라 지역에서 하지와 동지에 해가 뜨고 지는 지평선 각도와 소수점까지 일치했거든요.
 - Flow 계정: jy04210810@gmail.com
 
@@ -165,7 +165,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 012 — TTS 012 (1/1)
 
-- 타임라인: 88.400-99.200s
+- 타임라인: 94.924-107.184s
 - 나레이션: 심지어 청동의 구리는 오스트리아에서, 금과 주석은 수천 킬로미터 떨어진 영국에서 캐온 사금이었습니다. 대륙 전체를 잇는 거대한 무역망과 정밀한 천문 관측이 한곳에 얽혀 있었던 셈이죠.
 - Flow 계정: jy04210810@gmail.com
 
@@ -179,7 +179,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 013 — TTS 013 (1/1)
 
-- 타임라인: 99.200-108.100s
+- 타임라인: 107.184-117.494s
 - 나레이션: 여기서 과학자들은 결정적인 단서를 찾아냅니다. 365일의 태양력과 354일의 태음력은 매년 열한 일씩 어긋나 3년이면 한 달 가까이 계절이 틀어집니다.
 - Flow 계정: jy04210810@gmail.com
 
@@ -193,7 +193,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 014 — TTS 014 (1/1)
 
-- 타임라인: 108.100-116.300s
+- 타임라인: 117.494-126.039s
 - 나레이션: 파종 시기를 놓치면 굶어 죽는 농경 사회에서는 치명적인 문제였죠. 그런데 원판의 초승달은 얇은 달이 아니라 4.5일 된 굵은 달이었습니다.
 - Flow 계정: jy04210810@gmail.com
 
@@ -207,7 +207,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 015 — TTS 015 (1/1)
 
-- 타임라인: 116.300-125.800s
+- 타임라인: 126.039-135.606s
 - 나레이션: 봄철 저녁 서쪽 하늘에서 4.5일 된 초승달 곁에 플레이아데스가 나란히 뜰 때, 열세 번째 윤달을 넣어야 한다는 고대 역법 공식이 고스란히 박혀 있었던 겁니다.
 - Flow 계정: jy04210810@gmail.com
 
@@ -221,7 +221,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 016 — TTS 016 (1/1)
 
-- 타임라인: 125.800-131.000s
+- 타임라인: 135.606-141.132s
 - 나레이션: 스톤헨지 없이도 손에 쥐고 계절을 맞추는 인류 최초의 휴대용 천문 컴퓨터였던 셈입니다.
 - Flow 계정: jy04210810@gmail.com
 
@@ -235,7 +235,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 017 — TTS 017 (1/1)
 
-- 타임라인: 131.000-142.400s
+- 타임라인: 141.132-153.021s
 - 나레이션: 결국 네브라 스카이 디스크는 태양과 달의 주기를 맞춰 농경의 때를 알려주던 청동기인들의 위대한 과학적 지혜였습니다. 바빌로니아 기록보다 천 년이나 앞서 우주의 법칙을 눈앞에 시각화한 증거죠.
 - Flow 계정: jy04210810@gmail.com
 
@@ -249,7 +249,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 018 — TTS 018 (1/1)
 
-- 타임라인: 142.400-153.900s
+- 타임라인: 153.021-165.049s
 - 나레이션: 하지만 진짜 미스터리는 지금부터입니다. 문자가 없던 이들이 어떻게 이 지식을 체계화했는지, 왜 서른아홉 개의 구멍을 뚫어 쓰다가 무기들과 함께 깊은 숲속에 묻어버렸는지는 아직 아무도 모릅니다.
 - Flow 계정: jy04210810@gmail.com
 
@@ -263,7 +263,7 @@ Use the supplied locked start image and preserve every object, identity, artifac
 
 ## 영상 019 — TTS 019 (1/1)
 
-- 타임라인: 153.900-165.300s
+- 타임라인: 165.049-175.962s
 - 나레이션: 당시의 제사 의식과 교역로를 증명할 새 유적이 발굴되기 전까지, 숲속에 묻힌 청동판의 침묵은 계속될 겁니다. 시간 속에 잠든 유물, 땅속에 묻힌 역사. 네브라 스카이 디스크의 비밀이었습니다.
 - Flow 계정: jy04210810@gmail.com
 

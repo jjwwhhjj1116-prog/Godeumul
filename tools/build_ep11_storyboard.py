@@ -164,8 +164,8 @@ def spec(n: int, audio_scene: int, timeline: tuple[float, float], chapter: str, 
         "n": n,
         "audio_scene": audio_scene,
         "audio_part": "1/1",
-        "audio_offset_start": t_start,
-        "audio_offset_end": t_end,
+        "audio_offset_start": 0.0,
+        "audio_offset_end": duration,
         "timeline_start": t_start,
         "timeline_end": t_end,
         "chapter": chapter,
@@ -572,6 +572,24 @@ def build_scenes() -> list[dict[str, object]]:
          (10.0, "Infinite starry cosmos and Milky Way", "Monumental cosmic wide", ["Milky Way", "Mittelberg silhouette"])],
         seconds=10, visibility="IDENTIFIABLE", routing_reason="숲속에 묻힌 청동판과 밤하늘 은하수를 비추며 시그니처 엔딩을 닫는 장면"
     ))
+    durations_path = EPISODE / "audio" / "durations.json"
+    if durations_path.exists():
+        durations_data = json.loads(durations_path.read_text(encoding="utf-8"))
+        audio_scenes = durations_data["scenes"]
+        current_time = 0.0
+        for s in scenes:
+            n_str = str(s["n"])
+            dur = float(audio_scenes[n_str]["duration"])
+            t_start = current_time
+            t_end = round(current_time + dur, 3)
+            current_time = t_end
+
+            s["timeline_start"] = t_start
+            s["timeline_end"] = t_end
+            s["tts"] = dur
+            s["audio_offset_start"] = 0.0
+            s["audio_offset_end"] = dur
+            s["playback_speed"] = round(s["omni"] / dur, 4) if dur > s["omni"] else 1.0
 
     return scenes
 

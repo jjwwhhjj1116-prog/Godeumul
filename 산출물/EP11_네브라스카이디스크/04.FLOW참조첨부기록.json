@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "artifact_name_ko": "네브라스카이디스크",
+  "asset_name": "네브라스카이디스크",
+  "diorama_sha256": "304330E118D401454634B6D760FD8EA2D819C89B02D57064EB5A6308810B071B",
+  "flow_project_id": "9721d5fa-fff7-4e2d-9358-889b51d04669",
+  "flow_project_url": "https://labs.google/fx/ko/tools/flow/project/9721d5fa-fff7-4e2d-9358-889b51d04669",
+  "account": "jjwwhhjj1116@gmail.com",
+  "model": "Flow Omni",
+  "format": "720x1280, 24fps, 8-10s",
+  "scenes": {
+    "2": {"attached": true, "asset_name": "네브라스카이디스크", "binding": "INGREDIENT_AND_CHARACTER"},
+    "3": {"attached": true, "asset_name": "네브라스카이디스크", "binding": "INGREDIENT_AND_CHARACTER"},
+    "4": {"attached": true, "asset_name": "네브라스카이디스크", "binding": "INGREDIENT_AND_CHARACTER"},
+    "5": {"attached": true, "asset_name": "네브라스카이디스크", "binding": "INGREDIENT_AND_CHARACTER"},
+    "6": {"attached": true, "asset_name": "네브라스카이디스크", "binding": "INGREDIENT_AND_CHARACTER"},
+    "9": {"attached": true, "asset_name": "네브라스카이디스크", "binding": "INGREDIENT_AND_CHARACTER"},
+    "10": {"attached": true, "asset_name": "네브라스카이디스크", "binding": "INGREDIENT_AND_CHARACTER"},
+    "11": {"attached": true, "asset_name": "네브라스카이디스크", "binding": "INGREDIENT_AND_CHARACTER"},
+    "14": {"attached": true, "asset_name": "네브라스카이디스크", "binding": "INGREDIENT_AND_CHARACTER"},
+    "15": {"attached": true, "asset_name": "네브라스카이디스크", "binding": "INGREDIENT_AND_CHARACTER"},
+    "16": {"attached": true, "asset_name": "네브라스카이디스크", "binding": "INGREDIENT_AND_CHARACTER"},
+    "17": {"attached": true, "asset_name": "네브라스카이디스크", "binding": "INGREDIENT_AND_CHARACTER"},
+    "18": {"attached": true, "asset_name": "네브라스카이디스크", "binding": "INGREDIENT_AND_CHARACTER"},
+    "19": {"attached": true, "asset_name": "네브라스카이디스크", "binding": "INGREDIENT_AND_CHARACTER"}
+  }
+}
