@@ -1,0 +1,25 @@
+{
+  "episode": "EP11_네브라스카이디스크",
+  "recorded_at_kst": "2026-09-04",
+  "clip_model": "Flow Omni",
+  "clip_duration_seconds": 8,
+  "routing": [
+    {
+      "scene_range": "001-010",
+      "account": "jy04210810@gmail.com",
+      "plan": "PRO",
+      "condition": "1차 전반부 생성 계정"
+    },
+    {
+      "scene_range": "011-019",
+      "account": "jjwwhhjj1116@gmail.com",
+      "plan": "ULTRA",
+      "condition": "2차 후반부 생성 계정"
+    }
+  ],
+  "safety": {
+    "no_passwords_stored": true,
+    "verify_visible_account_before_each_paid_generation": true,
+    "generate_and_download_one_scene_before_starting_the_next": true
+  }
+}

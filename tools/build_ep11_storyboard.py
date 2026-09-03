@@ -206,6 +206,8 @@ def spec(n: int, audio_scene: int, timeline: tuple[float, float], chapter: str, 
         ],
         "img_v2": img_prompt,
         "vid": vid_prompt,
+        "image_scene_prompt": image_scene,
+        "i2v_action_prompt": i2v_action,
         "status": "PROMPT_LOCKED_IMAGE_PENDING",
         "flow_account": flow_account,
     }
@@ -616,6 +618,66 @@ def build_visualization_text(scenes: list[dict[str, object]]) -> str:
     return "\n".join(lines)
 
 
+COMPACT_ANCIENT_CONTEXT = "European Bronze Age, circa 1600 BCE, Mittelberg near Nebra."
+COMPACT_MODERN_CONTEXT = "Documented 1999-2002 discovery or Halle State Museum conservation."
+
+
+def compact_image_prompt(s: dict[str, object]) -> str:
+    context = COMPACT_MODERN_CONTEXT if s["modern_scene"] else COMPACT_ANCIENT_CONTEXT
+    token = "@네브라스카이디스크 " if s["artifact_visibility"] == "IDENTIFIABLE" else ""
+    return (
+        "9:16 archaeological 3D diorama miniature, macro PBR microtexture, not live-action. "
+        + context + " " + token + str(s["image_scene_prompt"])
+        + " No text. No labels. No letters. No fantasy, alien, watermark or exterior cube frame."
+    )
+
+
+def compact_video_prompt(s: dict[str, object]) -> str:
+    path = s["camera_path"]
+    seconds = int(s["omni"])
+    beats = s["tts_beats"]
+    schedule = f"0.00-{seconds/2:.2f}s: {beats[0]['action']}. {seconds/2:.2f}-{seconds:.2f}s: {beats[1]['action']}."
+    rigid = "Keep the exact supplied reference artifact completely rigid with no redesign and no changed part count. " if s["artifact_visibility"] == "IDENTIFIABLE" else ""
+    veo_clause = ""
+    if "veo_graphic" in s:
+        veo = s["veo_graphic"]
+        veo_clause = (
+            f"Use one restrained {veo['function'].lower().replace('_', ' ')} in physical world space: "
+            f"{veo['visual_language']}; start at {veo['start']}, pass {', '.join(veo['via'])}, end at {veo['end']}. "
+            "No floating HUD, text or labels. "
+        )
+    return (
+        f"Preserve the locked start image exactly: every object, artifact identity, geometry, material and lighting. One continuous {seconds}s I2V shot; no hard cut, teleport, morph or new object. Start camera by 0.35s. "
+        f"{rigid}"
+        f"Start at {path['entry_anchor']}; move {path['route']}; end at {path['destination']}; settle on {path['settle_point']}. "
+        f"{s['i2v_action_prompt']} {veo_clause}"
+        f"TTS-locked timing: {schedule} No voice, music or subtitles."
+    )
+
+
+def validate_compact(row: dict[str, object], image: str, video: str) -> list[str]:
+    errors: list[str] = []
+    image_low = image.lower()
+    video_low = video.lower()
+    for token in ("9:16", "3d diorama", "not live-action", "pbr", "no text", "no labels", "no letters"):
+        if token not in image_low:
+            errors.append(f"image missing {token}")
+    if len(image) > 720:
+        errors.append(f"image too long {len(image)}")
+    for token in ("locked start image", f"continuous {row['omni']}s", "0.35s", "no hard cut", "tts-locked timing", "no voice", "subtitles"):
+        if token not in video_low:
+            errors.append(f"video missing {token}")
+    path = row["camera_path"]
+    for token in (str(path["entry_anchor"]).lower(), str(path["destination"]).lower()):
+        if token not in video_low:
+            errors.append(f"video missing anchor {token}")
+    if row.get("veo_graphic") and ("physical world space" not in video_low or "no floating hud" not in video_low):
+        errors.append("video missing world-space graphic lock")
+    if len(video) > 1700:
+        errors.append(f"video too long {len(video)}")
+    return errors
+
+
 def main() -> int:
     scenes = build_scenes()
 
@@ -630,8 +692,76 @@ def main() -> int:
     txt_path.write_text(txt_content, encoding="utf-8")
     print(f"Created: {txt_path}")
 
+    # 3. Compact UI prompts & check
+    ui_images: list[str] = []
+    ui_videos: list[str] = []
+    ui_check: list[dict[str, object]] = []
+
+    for row in scenes:
+        c_img = compact_image_prompt(row)
+        c_vid = compact_video_prompt(row)
+        errs = validate_compact(row, c_img, c_vid)
+        ui_images.append(c_img)
+        ui_videos.append(c_vid)
+        ui_check.append({
+            "n": row["n"],
+            "audio_scene": row["audio_scene"],
+            "account": row["flow_account"],
+            "image_chars": len(c_img),
+            "video_chars": len(c_vid),
+            "status": "PASS" if not errs else "FAIL",
+            "errors": errs,
+        })
+
+    (EPISODE / "flow_images_ui.txt").write_text("\n\n".join(ui_images) + "\n", encoding="utf-8")
+    (EPISODE / "flow_videos_ui.txt").write_text("\n\n".join(ui_videos) + "\n", encoding="utf-8")
+    (EPISODE / "flow_ui_prompt_check.json").write_text(
+        json.dumps(ui_check, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    print(f"Created: {EPISODE / 'flow_images_ui.txt'}")
+    print(f"Created: {EPISODE / 'flow_videos_ui.txt'}")
+    print(f"Created: {EPISODE / 'flow_ui_prompt_check.json'}")
+
+    # 4. Account assignment
+    account_data = {
+        "episode": "EP11_네브라스카이디스크",
+        "recorded_at_kst": "2026-09-04",
+        "clip_model": "Flow Omni",
+        "clip_duration_seconds": 8,
+        "routing": [
+            {
+                "scene_range": "001-010",
+                "account": "jy04210810@gmail.com",
+                "plan": "PRO",
+                "condition": "1차 전반부 생성 계정"
+            },
+            {
+                "scene_range": "011-019",
+                "account": "jjwwhhjj1116@gmail.com",
+                "plan": "ULTRA",
+                "condition": "2차 후반부 생성 계정"
+            }
+        ],
+        "safety": {
+            "no_passwords_stored": True,
+            "verify_visible_account_before_each_paid_generation": True,
+            "generate_and_download_one_scene_before_starting_the_next": True
+        }
+    }
+    (EPISODE / "04.FLOW계정배정.json").write_text(
+        json.dumps(account_data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    print(f"Created: {EPISODE / '04.FLOW계정배정.json'}")
+
+    failures = [item for item in ui_check if item["status"] != "PASS"]
+    if failures:
+        print(f"[경고] Flow UI 프롬프트 검수 실패 항목: {failures}")
+    else:
+        print("Flow UI 프롬프트 길이 및 필수 토큰 검수 19개 전 장면 100% PASS!")
+
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
