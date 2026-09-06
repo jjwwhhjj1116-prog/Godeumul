@@ -11,6 +11,7 @@ from pathlib import Path
 
 import _config  # noqa: F401
 from artifact_form_gate import REFERENCE_LOCK_NAME, validate_reference_lock
+from diorama_style_check import style_errors
 
 
 MODES = {"I2V_LOCKED", "T2V_CONTEXT"}
@@ -66,6 +67,17 @@ def verify_pack(episode: Path) -> dict[str, object]:
     for relative in ("flow_i2v_images.txt", "flow_i2v_videos.txt", "flow_t2v_videos.txt"):
         if not (episode / relative).exists():
             raise ValueError(f"Flow 입력 파일 누락: {relative}")
+    if not (episode / "07.업로드결과.json").exists():
+        images = (episode / "flow_i2v_images.txt").read_text(encoding="utf-8-sig").strip().split("\n\n")
+        videos = (episode / "flow_i2v_videos.txt").read_text(encoding="utf-8-sig").strip().split("\n\n")
+        if (episode / "flow_t2v_videos.txt").read_text(encoding="utf-8-sig").strip():
+            raise ValueError("신규 본편은 전 컷 I2V여야 합니다")
+        if len(images) != len(videos) or len(images) != plan.get("scene_count"):
+            raise ValueError("신규 I2V 입력 수와 장면 수 불일치")
+        for n, (image, video) in enumerate(zip(images, videos), 1):
+            failures = style_errors(image, video)
+            if failures:
+                raise ValueError(f"장면 {n}: " + "; ".join(failures))
     return plan
 
 
@@ -113,6 +125,10 @@ def build_pack(episode: Path) -> dict[str, object]:
         if not video:
             raise ValueError(f"장면 {n:03d}: 영상 프롬프트 없음")
         image = str(scene.get("img_v2") or scene.get("img") or "").strip()
+        if not (episode / "07.업로드결과.json").exists():
+            failures = style_errors(image, video)
+            if mode != "I2V_LOCKED" or failures:
+                raise ValueError(f"장면 {n}: 신규 본편 I2V/디오라마 v2 게이트 실패: " + "; ".join(failures))
 
         route = route_by_scene[n]
         route_mode = str(route.get("generation_mode") or "").strip().upper()

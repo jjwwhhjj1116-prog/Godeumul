@@ -25,6 +25,7 @@ import sys
 from pathlib import Path
 
 import _config  # noqa: F401  # Windows 콘솔 UTF-8 설정
+from diorama_style_check import style_errors
 
 
 ALLOWED_SECONDS = {4, 6, 8, 10}
@@ -247,6 +248,11 @@ def main() -> int:
         n = scene_number(scene_data.get("n"), index)
         image = selected_image(scene_data, args.field)
         video = str(scene_data.get("vid") or "")
+        if not released_episode:
+            new_style_errors = style_errors(image, video)
+            report.add(not new_style_errors, n, "공통 디오라마 스타일 v2", "; ".join(new_style_errors))
+            report.add(scene_data.get("generation_mode") == "I2V_LOCKED", n,
+                       "신규 본편 전 컷 I2V", "T2V는 과거 회차 감사용으로만 유지")
         narration = str(scene_data.get("txt") or "").strip()
         evidence = str(scene_data.get("evidence") or scene_data.get("증거상태") or "").strip()
         motion_raw = scene_data.get("motion_owner") or scene_data.get("모션소유권") or ""
@@ -491,27 +497,28 @@ def main() -> int:
                        "3D 디오라마 스타일",
                        "diorama_style은 CINEMATIC_ARCHAEOLOGICAL_DIORAMA여야 함")
             material_fidelity = str(visual_lock.get("material_fidelity") or "").strip().upper()
-            report.add(material_fidelity == "PBR_MICROTEXTURE_HIGH_FIDELITY", n,
-                       "PBR 미세 재질 품질",
-                       "material_fidelity는 PBR_MICROTEXTURE_HIGH_FIDELITY여야 함")
+            expected_material = "PBR_MICROTEXTURE_HIGH_FIDELITY" if released_episode else "ARTIFACT_DETAIL_MATTE_SET_V2"
+            report.add(material_fidelity == expected_material, n,
+                       "유물 디테일·주변 무광 재질 분리",
+                       f"material_fidelity는 {expected_material}여야 함")
 
         report.add("diorama" in low and "archaeological" in low, n,
                    "이미지 3D 디오라마",
                    "image prompt에 archaeological + diorama 필요")
         pbr_terms = ("physically based", "pbr", "microtexture", "micro-texture",
                      "micro-displacement", "high-frequency texture", "high fidelity")
-        report.add(sum(term in low for term in pbr_terms) >= 2, n,
+        report.add(not released_episode or sum(term in low for term in pbr_terms) >= 2, n,
                    "이미지 미세 재질 지시",
                    "PBR/physically based + microtexture/high fidelity 계열 표현 2개 이상 필요")
         if camera_path_required:
             miniature_terms = (
                 "museum-scale", "crafted miniature", "miniature world", "macro-lens",
-                "tilt-shift", "handcrafted terrain", "crafted physical",
+                "tilt-shift", "handcrafted terrain", "crafted physical", "miniature-scale", "model-set",
             )
             report.add(sum(term in low for term in miniature_terms) >= 2, n,
                        "디오라마 축소모형 단서",
                        "museum-scale/매크로 렌즈/선택적 틸트시프트/제작 가장자리 중 2개 이상 필요")
-            report.add("not live-action" in low or "rather than live-action" in low, n,
+            report.add("not live-action" in low or "rather than live-action" in low or "no live-action" in low, n,
                        "실사 오인 방지", "image prompt에 not live-action 필요")
 
         tts_beats = scene_data.get("tts_beats") or scene_data.get("TTS비트") or []
