@@ -162,12 +162,17 @@ def validate_artifact_release_gate(episode: Path) -> ArtifactGateReport:
             rows = {}
         for scene in scenes:
             row = rows.get(str(scene)) or {}
-            if not isinstance(row, dict) or row.get("attached") is not True:
+            if (not isinstance(row, dict)
+                    or (row.get("attached") is not True
+                        and str(row.get("binding") or "").upper() != "STATIC_SOURCE_REPAIR")):
                 failures.append(f"장면 {scene:03d}: Flow 참조 자산 실제 첨부 확인 누락")
                 continue
             if str(row.get("asset_name") or "").strip() != artifact_name:
                 failures.append(f"장면 {scene:03d}: 잘못된 Flow 참조 자산명")
-            if str(row.get("binding") or "").strip().upper() not in {
+            binding_kind = str(row.get("binding") or "").strip().upper()
+            if binding_kind == "STATIC_SOURCE_REPAIR":
+                failures.extend(validate_static_source_repair(episode, row, scene))
+            elif binding_kind not in {
                 "INGREDIENT", "CHARACTER", "INGREDIENT_AND_CHARACTER",
                 "START_FRAME", "START_END_FRAME", "INGREDIENT_AND_START_END_FRAME",
             }:
@@ -195,3 +200,38 @@ def validate_artifact_release_gate(episode: Path) -> ArtifactGateReport:
         "binding": binding,
         "qa": qa,
     })
+
+
+def validate_static_source_repair(episode: Path, row: dict, scene: int) -> list[str]:
+    """No-cost failed-I2V repair: exact registered source photo, verified CapCut Zoom1 only.
+
+    This is explicitly NOT a successful Flow generation or an inferred attachment.
+    It cannot pass with a generated substitute, changed file, missing authorization,
+    or an unverified CapCut animation.
+    """
+    errors: list[str] = []
+    manifest = _read_json(episode / "02c.유물레퍼런스.json", errors, "정적 보정 원본")
+    rid = str(row.get("source_reference_id") or "")
+    reference = next((r for r in manifest.get("references", []) if r.get("id") == rid), None)
+    prefix = f"장면 {scene:03d}: 정적 원본 보정 "
+    if not reference:
+        return errors + [prefix + "등록된 실물 출처 ID가 없음"]
+    source = episode / str(row.get("source_file") or "__missing__")
+    registered = episode / str(reference.get("file") or "__missing__")
+    expected = str(reference.get("sha256") or "").upper()
+    if not source.is_file() or not registered.is_file():
+        errors.append(prefix + "원본 파일 누락")
+    elif (source.resolve() != registered.resolve()
+          or sha256_file(source) != expected
+          or str(row.get("source_sha256") or "").upper() != expected):
+        errors.append(prefix + "등록된 실물 원본 경로·SHA 불일치")
+    if row.get("source_photo_unchanged") is not True:
+        errors.append(prefix + "실물 원본 무변경 확인 누락")
+    if not str(row.get("user_authorization_basis") or "").strip():
+        errors.append(prefix + "사용자 보정 승인 근거 누락")
+    if (row.get("animation_policy") != "CAPCUT_ZOOM1_ONLY"
+            or row.get("capcut_animation_verified") is not True):
+        errors.append(prefix + "CapCut 줌1 실제 검수 누락")
+    if not str(row.get("failed_generation_file") or "").strip():
+        errors.append(prefix + "반려된 생성물 기록 누락")
+    return errors

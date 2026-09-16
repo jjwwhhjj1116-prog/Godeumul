@@ -90,10 +90,17 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="캡컷 장면별 속도표 생성기")
     ap.add_argument("episode", type=Path, help="에피소드 폴더 (audio/ clips/ 포함)")
     ap.add_argument("--clips", type=Path, default=None, help="클립 폴더 (기본: <episode>/clips)")
+    ap.add_argument(
+        "--audio-dir", default="audio",
+        help="승인 TTS 폴더 이름 또는 경로 (기본: audio, 재생성 최종본은 audio_final)",
+    )
     ap.add_argument("--csv", action="store_true", help="CSV도 함께 저장")
     args = ap.parse_args()
 
-    manifest_path = args.episode / "audio" / "durations.json"
+    audio_dir = Path(args.audio_dir)
+    if not audio_dir.is_absolute():
+        audio_dir = args.episode / audio_dir
+    manifest_path = audio_dir / "durations.json"
     if not manifest_path.exists():
         sys.exit(f"[에러] durations.json 이 없습니다: {manifest_path}\n"
                  f"       3단계(tts_generate.py --run)를 먼저 돌리세요.")

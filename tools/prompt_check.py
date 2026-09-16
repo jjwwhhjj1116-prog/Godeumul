@@ -25,7 +25,7 @@ import sys
 from pathlib import Path
 
 import _config  # noqa: F401  # Windows 콘솔 UTF-8 설정
-from diorama_style_check import style_errors
+from exploration_motion_gate import require as require_exploration
 
 
 ALLOWED_SECONDS = {4, 6, 8, 10}
@@ -63,7 +63,8 @@ CAMERA_PATH_FIELDS = {
 }
 CAMERA_PATH_COMMON_V6_FIELDS = {"single_axis", "scale_domain", "end_state"}
 CAMERA_PATH_I2V_FIELDS = {"start_frame_anchor_visible", "start_frame_anchor_evidence"}
-CAMERA_AXES = {"FORWARD", "LATERAL", "ORBIT", "LOCKED"}
+CAMERA_AXES = {"FORWARD", "BACKWARD", "LATERAL", "ORBIT", "LOCKED"}
+BACKWARD_ROUTE = re.compile(r"\b(?:backward|backwards|back|retreat|pull[- ]?out|dolly[- ]?out)\b|후퇴", re.I)
 SCALE_DOMAINS = {"WIDE", "MEDIUM", "MACRO"}
 SPEED_PROFILES = {
     "IMMEDIATE_ACCELERATE_FOLLOW_SETTLE", "RAPID_DOLLY_DIRECTION_CHANGE_SETTLE",
@@ -217,11 +218,14 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="장면 구조·고증·프롬프트 검증")
     parser.add_argument("episode", type=Path)
     parser.add_argument("-v", "--verbose", action="store_true")
+    parser.add_argument("--phase", choices=("image", "video"), default="video",
+                        help="image=생성 전 구도 계획 검사; 기본 video=실제 시작 이미지 확인까지 검사")
     parser.add_argument("--필드", dest="field", default=None,
                         help="검사할 이미지 필드(기본: img_v2 우선, 없으면 img)")
     args = parser.parse_args()
 
     episode = args.episode.resolve()
+    require_exploration(episode, args.phase)
     # 공개 완료 회차는 당시 프롬프트를 감사 기록으로 보존한다. 카메라 경로 v5 정책은
     # 아직 업로드되지 않은 신규 회차에 강제한다.
     released_episode = (episode / "07.업로드결과.json").exists()
@@ -248,11 +252,6 @@ def main() -> int:
         n = scene_number(scene_data.get("n"), index)
         image = selected_image(scene_data, args.field)
         video = str(scene_data.get("vid") or "")
-        if not released_episode:
-            new_style_errors = style_errors(image, video)
-            report.add(not new_style_errors, n, "공통 디오라마 스타일 v2", "; ".join(new_style_errors))
-            report.add(scene_data.get("generation_mode") == "I2V_LOCKED", n,
-                       "신규 본편 전 컷 I2V", "T2V는 과거 회차 감사용으로만 유지")
         narration = str(scene_data.get("txt") or "").strip()
         evidence = str(scene_data.get("evidence") or scene_data.get("증거상태") or "").strip()
         motion_raw = scene_data.get("motion_owner") or scene_data.get("모션소유권") or ""
@@ -420,9 +419,16 @@ def main() -> int:
                     anchor_evidence = str(
                         camera_path.get("start_frame_anchor_evidence") or ""
                     ).strip()
-                    report.add(anchor_visible and bool(anchor_evidence), n,
-                               "실제 첫 프레임 앵커 확인",
-                               "선택 이미지에서 보이는 위치·형태를 기록하고 visible=true 필요")
+                    if args.phase == "image":
+                        planned = str(camera_path.get("planned_start_frame_anchor") or "").strip()
+                        report.add(bool(planned), n, "생성 예정 첫 프레임 앵커",
+                                   "planned_start_frame_anchor에 생성할 구도를 명시해야 함; 실제 검수 대체 아님")
+                        report.add(not anchor_visible or bool(anchor_evidence), n,
+                                   "실제 검수 허위 표기 금지", "visible=true이면 실제 관찰 근거 필요")
+                    else:
+                        report.add(anchor_visible and bool(anchor_evidence), n,
+                                   "실제 첫 프레임 앵커 확인",
+                                   "선택 이미지에서 보이는 위치·형태를 기록하고 visible=true 필요")
                 else:
                     opening_evidence = str(camera_path.get("opening_state_evidence") or "").strip()
                     report.add(bool(opening_evidence), n, "T2V 첫 상태 증거",
@@ -431,7 +437,12 @@ def main() -> int:
                 scale_domain = str(camera_path.get("scale_domain") or "").strip().upper()
                 end_state = str(camera_path.get("end_state") or "").strip()
                 report.add(single_axis in CAMERA_AXES, n, "단일 카메라 진행축",
-                           "single_axis는 FORWARD/LATERAL/ORBIT/LOCKED 중 하나")
+                           "single_axis는 FORWARD/BACKWARD/LATERAL/ORBIT/LOCKED 중 하나")
+                if single_axis == "BACKWARD":
+                    report.add(bool(BACKWARD_ROUTE.search(str(camera_path.get("route", ""))))
+                               and bool(BACKWARD_ROUTE.search(str(scene_data.get("vid", "")))),
+                               n, "후퇴 카메라 선언 일치",
+                               "BACKWARD는 실제 route와 영상 프롬프트 모두에 후퇴 경로가 명시되어야 함")
                 report.add(scale_domain in SCALE_DOMAINS, n, "단일 화면 규모",
                            "scale_domain은 WIDE/MEDIUM/MACRO 중 하나")
                 report.add(bool(end_state), n, "마지막 프레임 구도",
@@ -497,28 +508,27 @@ def main() -> int:
                        "3D 디오라마 스타일",
                        "diorama_style은 CINEMATIC_ARCHAEOLOGICAL_DIORAMA여야 함")
             material_fidelity = str(visual_lock.get("material_fidelity") or "").strip().upper()
-            expected_material = "PBR_MICROTEXTURE_HIGH_FIDELITY" if released_episode else "ARTIFACT_DETAIL_MATTE_SET_V2"
-            report.add(material_fidelity == expected_material, n,
-                       "유물 디테일·주변 무광 재질 분리",
-                       f"material_fidelity는 {expected_material}여야 함")
+            report.add(material_fidelity == "PBR_MICROTEXTURE_HIGH_FIDELITY", n,
+                       "PBR 미세 재질 품질",
+                       "material_fidelity는 PBR_MICROTEXTURE_HIGH_FIDELITY여야 함")
 
         report.add("diorama" in low and "archaeological" in low, n,
                    "이미지 3D 디오라마",
                    "image prompt에 archaeological + diorama 필요")
         pbr_terms = ("physically based", "pbr", "microtexture", "micro-texture",
                      "micro-displacement", "high-frequency texture", "high fidelity")
-        report.add(not released_episode or sum(term in low for term in pbr_terms) >= 2, n,
+        report.add(sum(term in low for term in pbr_terms) >= 2, n,
                    "이미지 미세 재질 지시",
                    "PBR/physically based + microtexture/high fidelity 계열 표현 2개 이상 필요")
         if camera_path_required:
             miniature_terms = (
                 "museum-scale", "crafted miniature", "miniature world", "macro-lens",
-                "tilt-shift", "handcrafted terrain", "crafted physical", "miniature-scale", "model-set",
+                "tilt-shift", "handcrafted terrain", "crafted physical",
             )
             report.add(sum(term in low for term in miniature_terms) >= 2, n,
                        "디오라마 축소모형 단서",
                        "museum-scale/매크로 렌즈/선택적 틸트시프트/제작 가장자리 중 2개 이상 필요")
-            report.add("not live-action" in low or "rather than live-action" in low or "no live-action" in low, n,
+            report.add("not live-action" in low or "rather than live-action" in low, n,
                        "실사 오인 방지", "image prompt에 not live-action 필요")
 
         tts_beats = scene_data.get("tts_beats") or scene_data.get("TTS비트") or []
@@ -747,8 +757,9 @@ def main() -> int:
                 )
                 report.add(image_has_door_path, n, "문 진입 시작 이미지",
                            "문·문틀과 hinge/threshold/opening/empty passage 중 하나가 이미지에 필요")
-                report.add(any(term in video_low for term in ("opens", "swings", "rotates")), n,
-                           "문 개방 물리", "문짝의 회전·개방 동작 필요")
+                already_open = "already open doorway" in low and "already open doorway" in video_low
+                report.add(already_open or any(term in video_low for term in ("opens", "swings", "rotates")), n,
+                           "문 개방 물리", "닫힌 문은 개방 동작 필요; 열린 통로는 이미지와 영상 양쪽에 already open doorway 명시")
             if depth_transition in {"SECTION_DIVE", "SURFACE_TO_INTERIOR"}:
                 section_ready = any(term in low for term in (
                     "cutaway", "section", "strata", "cut face", "section seam",
@@ -781,7 +792,10 @@ def main() -> int:
         print("  장면표·고증카드·이미지/I2V 프롬프트를 고친 뒤 다시 검사하세요.\n")
         return 1
 
-    print("\n장면 구조·고증·생성 안정성 이상 없음. FLOW 투입 가능.\n")
+    if args.phase == "image":
+        print("\nIMAGE_PREFLIGHT PASS — 이미지 제작만 허용. 영상 변환은 실제 시작 이미지 전수 검수 후 기본 video 검사를 다시 통과해야 함.\n")
+    else:
+        print("\n장면 구조·고증·생성 안정성 이상 없음. FLOW 투입 가능.\n")
     return 0
 
 

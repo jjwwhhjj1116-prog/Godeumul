@@ -21,6 +21,8 @@ from _config import load
 from artifact_form_gate import validate_artifact_release_gate
 from capcut_audio_guard import audit_draft
 from script_context_gate import validate_context_review
+from exploration_motion_gate import validate as validate_exploration
+from continuity_provenance_gate import validate as validate_continuity_provenance
 
 
 CFG = load()
@@ -130,6 +132,8 @@ def validate_capcut_lock(ep: Path, video: Path | None = None) -> FinalLockReport
 
     locked_video = ep / str(doc.get("video") or "")
     selected = (video or locked_video).resolve()
+    failures.extend(validate_exploration(ep, 'release', selected))
+    failures.extend(validate_continuity_provenance(ep, 'release'))
     if doc.get("status") != "PASS":
         failures.append("CapCut 마감 잠금 status가 PASS가 아님")
     if doc.get("editor") != "CapCut":
@@ -232,6 +236,8 @@ def main() -> int:
                 failures.append(f"CapCut 초안 검사 실패: {exc}")
 
     context = validate_context_review(ep / "01.대본.txt", ep / "01.문맥검수.json")
+    failures.extend(validate_exploration(ep, 'release', video))
+    failures.extend(validate_continuity_provenance(ep, 'release'))
     failures.extend(f"문맥 QA: {failure}" for failure in context.failures)
     artifact_gate = validate_artifact_release_gate(ep)
     failures.extend(f"유물 형태 QA: {failure}" for failure in artifact_gate.failures)

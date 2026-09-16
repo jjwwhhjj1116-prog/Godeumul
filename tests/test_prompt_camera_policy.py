@@ -14,6 +14,24 @@ FIXTURE = ROOT / "tests" / "fixtures" / "prompt_check_i2v_locked"
 
 
 class PromptCameraPolicyTests(unittest.TestCase):
+    def test_backward_requires_matching_route_and_video(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            episode = Path(directory) / "EP_TEST"
+            shutil.copytree(FIXTURE, episode)
+            path = episode / "02a.장면구분.json"
+            scenes = json.loads(path.read_text(encoding="utf-8"))
+            scenes[0]["camera_path"]["single_axis"] = "BACKWARD"
+            scenes[0]["camera_path"]["route"] = "Pull backward through the existing clear corridor."
+            scenes[0]["vid"] += " Camera pulls backward along the same clear corridor."
+            path.write_text(json.dumps(scenes, ensure_ascii=False), encoding="utf-8")
+            result = self.run_episode(episode)
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            scenes[0]["camera_path"]["route"] = "Move forward toward the object."
+            path.write_text(json.dumps(scenes, ensure_ascii=False), encoding="utf-8")
+            result = self.run_episode(episode)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("후퇴 카메라 선언 일치", result.stdout)
+
     def run_episode(self, episode: Path) -> subprocess.CompletedProcess[str]:
         return subprocess.run(
             [sys.executable, str(TOOL), str(episode)],

@@ -14,6 +14,64 @@ import json
 from pathlib import Path
 
 
+def _load_measured_scene_table(episode: Path, audio_scenes: dict) -> list[dict]:
+    """Use the approved, TTS-measured visual splits without altering the older storyboard."""
+    table_path = episode / "02.장면시간표.json"
+    document = json.loads(table_path.read_text(encoding="utf-8"))
+    source_rows = document.get("scenes") if isinstance(document, dict) else None
+    if not isinstance(source_rows, list) or not source_rows:
+        raise ValueError(f"실측 장면시간표가 비어 있습니다: {table_path}")
+
+    rows: list[dict] = []
+    for item in source_rows:
+        try:
+            visual = int(item["n"])
+            audio = int(Path(item["audio_file"]).stem)
+            start = float(item["timeline_in"])
+            end = float(item["timeline_out"])
+            audio_start = float(item["audio_in"])
+            audio_end = float(item["audio_out"])
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError(f"실측 장면시간표 필드 오류: {table_path}") from exc
+        if end <= start or audio_end <= audio_start:
+            raise ValueError(f"실측 영상/TTS 구간이 0 이하: {visual}")
+        rows.append({
+            "visual_scene": visual,
+            "audio_scene": audio,
+            "audio_part": str(item.get("audio_part", "measured")),
+            "timeline_start": start,
+            "timeline_end": end,
+            "duration": end - start,
+            "audio_offset_start": audio_start,
+            "audio_offset_end": audio_end,
+        })
+
+    rows.sort(key=lambda row: row["visual_scene"])
+    if [row["visual_scene"] for row in rows] != list(range(1, len(rows) + 1)):
+        raise ValueError("실측 영상 장면 번호가 연속이 아닙니다")
+    audio_keys = [int(key) for key in sorted(audio_scenes, key=int)]
+    if sorted({row["audio_scene"] for row in rows}) != audio_keys:
+        raise ValueError("실측 장면시간표와 승인 TTS 파일 번호가 다릅니다")
+
+    tolerance = 0.05
+    previous_end = 0.0
+    for row in rows:
+        if abs(row["timeline_start"] - previous_end) > tolerance:
+            raise ValueError(f"실측 영상 장면 {row['visual_scene']}에 틈/겹침이 있습니다")
+        audio_duration = float(audio_scenes[str(row["audio_scene"])]["duration"])
+        if row["audio_offset_start"] < -tolerance or row["audio_offset_end"] > audio_duration + tolerance:
+            raise ValueError(f"실측 영상 장면 {row['visual_scene']}이 TTS 구간을 벗어납니다")
+        if abs((row["audio_offset_end"] - row["audio_offset_start"]) - row["duration"]) > tolerance:
+            raise ValueError(f"실측 영상 장면 {row['visual_scene']}의 TTS/화면 길이가 다릅니다")
+        previous_end = row["timeline_end"]
+    total_audio = sum(float(audio_scenes[str(key)]["duration"]) for key in audio_keys)
+    if abs(previous_end - total_audio) > tolerance:
+        raise ValueError(f"실측 화면 총 길이 {previous_end:.3f}s와 TTS {total_audio:.3f}s가 다릅니다")
+    if abs(float(document.get("tts_seconds", total_audio)) - total_audio) > tolerance:
+        raise ValueError("실측 장면시간표의 총 길이가 승인 TTS와 다릅니다")
+    return rows
+
+
 def load_visual_timeline(episode: Path, audio_scenes: dict) -> list[dict]:
     """Return a validated, chronological visual plan.
 
@@ -23,6 +81,8 @@ def load_visual_timeline(episode: Path, audio_scenes: dict) -> list[dict]:
     """
 
     episode = Path(episode)
+    if (episode / "02.장면시간표.json").exists():
+        return _load_measured_scene_table(episode, audio_scenes)
     storyboard = episode / "02a.장면구분.json"
     audio_keys = [int(k) for k in sorted(audio_scenes, key=int)]
 
@@ -109,4 +169,3 @@ def load_visual_timeline(episode: Path, audio_scenes: dict) -> list[dict]:
             f"영상 타임라인 총 길이 {previous_end:.3f}s와 TTS {total_audio:.3f}s가 다릅니다"
         )
     return rows
-
