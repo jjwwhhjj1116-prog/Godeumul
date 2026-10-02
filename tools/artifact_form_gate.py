@@ -133,6 +133,16 @@ def validate_reference_lock(episode: Path) -> ArtifactGateReport:
 
 
 def validate_artifact_release_gate(episode: Path) -> ArtifactGateReport:
+    import re
+    match = re.match(r'EP(\d+)(?:_|$)', episode.name, re.I)
+    if match and int(match.group(1)) >= 18:
+        routing = episode / '02d.유물장면라우팅.json'
+        try:
+            doc = json.loads(routing.read_text(encoding='utf-8'))
+            if not isinstance(doc.get('scenes'), dict) or not doc['scenes']:
+                raise ValueError('nonempty scenes required')
+        except (OSError, ValueError, AttributeError):
+            return ArtifactGateReport(['EP18+ 유물 라우팅 누락/오류: 적용 제외로 통과할 수 없음'], {'applicable': True})
     """식별 유물이 있는 회차는 실제 Flow 첨부 기록과 형태 QA까지 PASS여야 한다."""
     scenes = identifiable_scenes(episode)
     if not scenes:

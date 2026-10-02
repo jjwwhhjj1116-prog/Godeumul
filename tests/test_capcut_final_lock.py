@@ -25,14 +25,17 @@ class CapCutFinalLockTests(unittest.TestCase):
 
     def test_accepts_matching_capcut_export_hash_and_gui_checks(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
-            ep = Path(tmp)
-            video = ep / "완성본_EP99_capcut.mp4"
+            # Legacy locks predate the EP16/18 continuity and semantic gates.
+            # Do not model a new episode as a bare temporary directory.
+            ep = Path(tmp) / "EP07_legacy"
+            ep.mkdir()
+            video = ep / "완성본_EP07_capcut.mp4"
             video.write_bytes(b"capcut-export-test")
             digest = hashlib.sha256(video.read_bytes()).hexdigest()
             (ep / "05.캡컷마감잠금.json").write_text(json.dumps({
                 "status": "PASS",
                 "editor": "CapCut",
-                "project_name": "EP99 QA",
+                "project_name": "EP07 QA",
                 "video": video.name,
                 "video_sha256": digest,
                 "checks": {

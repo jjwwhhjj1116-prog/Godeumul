@@ -44,6 +44,18 @@ def validate(episode: Path, phase: str = "selection") -> list[str]:
     except (OSError, ValueError) as exc:
         return [f"연속탐방 계약 읽기 실패: {exc}"]
 
+    mode_path = episode / '02d.영상생성모드.json'
+    if mode_path.is_file():
+        try:
+            mode = _read(mode_path)
+        except (OSError, ValueError) as exc:
+            return [f'생성 모드 읽기 실패: {exc}']
+        if mode.get('mode') == 'T2V_OUTPUT_FRAME_CHAIN_LOCKED':
+            from output_frame_chain_gate import validate_output_chain
+            return validate_output_chain(episode, phase, mode, contract)
+        if contract.get('mode') == 'T2V_OUTPUT_FRAME_CHAIN_LOCKED':
+            return ['선언된 생성 모드와 output-chain 계약이 다름']
+
     count = int(contract.get("scene_count") or 0)
     route = contract.get("route") or []
     shared_frames = contract.get("shared_frames") or []

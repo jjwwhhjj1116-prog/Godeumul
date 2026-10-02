@@ -21,6 +21,7 @@ from _config import load
 from artifact_form_gate import validate_artifact_release_gate
 from capcut_audio_guard import audit_draft
 from script_context_gate import validate_context_review
+from semantic_video_gate import validate as validate_semantic_video, validate_draft_sources, required_for
 from exploration_motion_gate import validate as validate_exploration
 from continuity_provenance_gate import validate as validate_continuity_provenance
 
@@ -134,6 +135,7 @@ def validate_capcut_lock(ep: Path, video: Path | None = None) -> FinalLockReport
     selected = (video or locked_video).resolve()
     failures.extend(validate_exploration(ep, 'release', selected))
     failures.extend(validate_continuity_provenance(ep, 'release'))
+    failures.extend(f"영상 의미 QA: {failure}" for failure in validate_semantic_video(ep, selected))
     if doc.get("status") != "PASS":
         failures.append("CapCut 마감 잠금 status가 PASS가 아님")
     if doc.get("editor") != "CapCut":
@@ -150,6 +152,21 @@ def validate_capcut_lock(ep: Path, video: Path | None = None) -> FinalLockReport
     for key in REQUIRED_CHECKS:
         if checks.get(key) is not True:
             failures.append(f"CapCut GUI 필수 확인 누락: {key}")
+    draft_guard = doc.get("draft_audio_guard") or {}
+    draft_path_text = draft_guard.get("path")
+    if required_for(ep):
+        if not draft_path_text:
+            failures.append("CapCut 초안 경로 잠금 누락")
+        else:
+            draft_path = Path(draft_path_text)
+            if not draft_path.is_file() or draft_guard.get("sha256") != sha256_file(draft_path):
+                failures.append("CapCut 초안 파일/해시 변경 — 재검수 필요")
+            else:
+                try:
+                    draft_doc = json.loads(draft_path.read_text(encoding="utf-8"))
+                    failures.extend(f"CapCut 영상 출처 QA: {failure}" for failure in validate_draft_sources(ep, draft_doc))
+                except (OSError, ValueError) as exc:
+                    failures.append(f"CapCut 초안 읽기 실패: {exc}")
     if not str(doc.get("project_name") or "").strip():
         failures.append("CapCut 프로젝트 이름 누락")
     artifact_gate = validate_artifact_release_gate(ep)
@@ -225,6 +242,7 @@ def main() -> int:
             try:
                 draft_document = json.loads(draft_path.read_text(encoding="utf-8"))
                 draft_report = audit_draft(draft_document)
+                failures.extend(f"CapCut 영상 출처 QA: {failure}" for failure in validate_draft_sources(ep, draft_document))
                 draft_guard = {
                     "path": str(draft_path),
                     "sha256": sha256_file(draft_path),
@@ -239,6 +257,7 @@ def main() -> int:
     failures.extend(validate_exploration(ep, 'release', video))
     failures.extend(validate_continuity_provenance(ep, 'release'))
     failures.extend(f"문맥 QA: {failure}" for failure in context.failures)
+    failures.extend(f"영상 의미 QA: {failure}" for failure in validate_semantic_video(ep, video))
     artifact_gate = validate_artifact_release_gate(ep)
     failures.extend(f"유물 형태 QA: {failure}" for failure in artifact_gate.failures)
     media_info: dict = {}

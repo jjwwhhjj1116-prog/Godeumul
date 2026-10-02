@@ -30,7 +30,6 @@ import copy
 import json
 import math
 import re
-import shutil
 import subprocess
 import sys
 import time
@@ -39,6 +38,11 @@ from pathlib import Path
 
 from _config import load
 from script_context_gate import validate_context_review
+from semantic_video_gate import (
+    CONTRACT_NAME, effective_media, required_for, sha256_file,
+    validate as validate_semantic_prebuild, validate_draft_sources,
+)
+from continuity_provenance_gate import validate as validate_continuity
 from visual_timeline import load_visual_timeline
 
 for _s in (sys.stdout, sys.stderr):
@@ -112,6 +116,61 @@ def has_audio_stream(path: Path) -> bool:
         return bool(result.stdout.strip())
     except Exception:
         return False
+
+
+def select_visual_sources(episode: Path, visual_plan: list[dict]) -> dict[int, dict]:
+    """Freeze exactly the media selection reviewed by the semantic gate.
+
+    New episodes must not fall back to an old numbered clip when a corrected
+    source or trim was selected. Legacy episodes keep their existing lookup.
+    """
+    episode = episode.resolve()
+    strict = required_for(episode)
+    contract = {}
+    if strict:
+        contract = json.loads((episode / CONTRACT_NAME).read_text(encoding="utf-8"))
+    selected = {}
+    errors = []
+    for visual in visual_plan:
+        n = visual["visual_scene"]
+        if strict:
+            sid = f"{n:03d}"
+            target = contract.get("scenes", {}).get(sid)
+            if not isinstance(target, dict):
+                errors.append(f"{sid}: 현재 선택 계약 없음")
+                continue
+            path, kind, binding = effective_media(episode, sid, target, errors)
+            span = copy.deepcopy(binding.get("source_range")) if binding else None
+        else:
+            path = find_media(episode / "clips", n, (".mp4", ".mov", ".webm", ".mkv", ".jpg", ".png"))
+            kind = "photo" if path and path.suffix.lower() in (".jpg", ".png") else "video"
+            span = None
+        if path is None or not path.is_file():
+            errors.append(f"{n:03d}: 선택 영상 파일 없음")
+            continue
+        selected[n] = {"path": path.resolve(), "kind": kind, "source_range": span,
+                       "sha256": sha256_file(path)}
+    if errors:
+        raise ValueError("; ".join(errors))
+    return selected
+
+
+def selected_source_range(selection: dict, native_seconds: float) -> dict | None:
+    if selection["kind"] == "photo":
+        raise ValueError("사진 본영상은 전길이 줌1을 검수하는 별도 승인 경로가 필요합니다")
+    native_us = int(round(native_seconds * US))
+    span = selection["source_range"]
+    if span is None:
+        span = {"start": 0, "duration": native_us}
+    if native_us <= 0 or span["start"] + span["duration"] > native_us:
+        raise ValueError(f"선택 소스 구간이 실제 영상 길이를 초과: {selection['path']}")
+    return copy.deepcopy(span)
+
+
+def validate_frozen_sources(selected: dict[int, dict]) -> list[str]:
+    return [f"{n:03d}: 검수 후 선택 소스 파일/해시 변경"
+            for n, item in selected.items()
+            if not item["path"].is_file() or sha256_file(item["path"]) != item["sha256"]]
 
 
 def db_to_linear(db: float) -> float:
@@ -330,7 +389,7 @@ def main() -> int:
 
     ep = args.episode.resolve()          # 캡컷은 절대경로만 인식한다
     name = args.name or f"{ep.name}_자동"
-    audio_dir, clip_dir = ep / "audio", ep / "clips"
+    audio_dir = ep / "audio"
     dur_path, cue_path = audio_dir / "durations.json", ep / "자막.json"
     sync_path = ep / "자막_싱크.json"
 
@@ -338,6 +397,12 @@ def main() -> int:
     problems: list[str] = []
     context = validate_context_review(ep / "01.대본.txt", ep / "01.문맥검수.json")
     problems.extend(f"문맥 QA: {failure}" for failure in context.failures)
+    # The source clips must pass a full-playback semantic review before any
+    # release draft is assembled. Composite photo layers are checked later,
+    # against the exported master, by capcut_final_lock.py.
+    problems.extend(f"대본-화면 원본 검수: {failure}" for failure in validate_semantic_prebuild(ep))
+    if required_for(ep):
+        problems.extend(f"실제 출력 프레임 연쇄: {failure}" for failure in validate_continuity(ep, "release"))
     if not args.template.exists():
         problems.append(f"템플릿 없음: {args.template}")
     if not dur_path.exists():
@@ -365,19 +430,19 @@ def main() -> int:
         except (OSError, json.JSONDecodeError) as exc:
             problems.append(f"자막_싱크.json 오류: {exc}")
 
-    missing_audio, missing_clip = [], []
+    selected_sources = {}
+    if visual_plan:
+        try:
+            selected_sources = select_visual_sources(ep, visual_plan)
+        except (OSError, ValueError, TypeError, KeyError) as exc:
+            problems.append(f"검수 소스 선택 실패: {exc}")
+    missing_audio = []
     for k in sorted(scenes, key=int):
         n = int(k)
         if not find_media(audio_dir, n, (".mp3", ".wav", ".m4a")):
             missing_audio.append(n)
-    for visual in visual_plan:
-        n = visual["visual_scene"]
-        if not find_media(clip_dir, n, (".mp4", ".mov", ".webm", ".mkv", ".jpg", ".png")):
-            missing_clip.append(n)
     if missing_audio:
         problems.append(f"오디오 없는 장면: {missing_audio}")
-    if missing_clip:
-        problems.append(f"영상/이미지 없는 장면: {missing_clip}")
 
     print(f"\n에피소드 : {ep}")
     print(f"장면     : 영상 {len(visual_plan)}개 / TTS {len(scenes)}개   자막 : {len(cues)}개")
@@ -425,11 +490,15 @@ def main() -> int:
         target_start = snap(int(float(visual["timeline_start"]) * US))
         target_end = snap(int(float(visual["timeline_end"]) * US))
         dur = target_end - target_start
-        media = find_media(clip_dir, n, (".mp4", ".mov", ".webm", ".mkv", ".jpg", ".png"))
-        is_img = media.suffix.lower() in (".jpg", ".png")
+        selection = selected_sources[n]
+        media = selection["path"]
+        is_img = selection["kind"] == "photo"
         native_audio = False if is_img else has_audio_stream(media)
         src = probe(media) if not is_img else visual_seconds
-        speed = round(src / visual_seconds, 4) if (src > 0 and not is_img) else 1.0
+        source_range = (None if is_img else selected_source_range(selection, src))
+        speed = source_range["duration"] / dur if source_range else 1.0
+        if is_img and required_for(ep):
+            raise ValueError("검수된 사진 전길이 줌1 지원 없이 사진 본영상을 조립하지 않습니다")
 
         # 영상 소재
         vm = copy.deepcopy(tpl["materials"]["videos"][0])
@@ -444,15 +513,17 @@ def main() -> int:
 
         vs = copy.deepcopy(v_proto)
         vs["id"] = uid(); vs["material_id"] = vm["id"]
+        # 움직이는 Flow 원본에는 템플릿의 고정 길이 '줌 1'을 상속하지 않는다.
+        # 원본 길이와 TTS 배속이 다를 때 애니메이션이 중간에 끝나 영상이 씹힌다.
+        video_excluded = (
+            FORBIDDEN_AUDIO_PROCESSING_BUCKETS
+            if native_audio else NO_AUDIO_PROCESSING_BUCKETS
+        ) | {"material_animations"}
         vs["extra_material_refs"] = cl.clone_extras(
-            v_proto,
-            exclude_buckets=(
-                FORBIDDEN_AUDIO_PROCESSING_BUCKETS
-                if native_audio else NO_AUDIO_PROCESSING_BUCKETS
-            ),
+            v_proto, exclude_buckets=video_excluded,
         )
         vs["target_timerange"] = {"start": target_start, "duration": dur}
-        vs["source_timerange"] = {"start": 0, "duration": snap(int(dur * speed))}
+        vs["source_timerange"] = source_range
         # Omni/Veo가 장면과 함께 만든 문·발걸음·바람·충격음은 버리지 않는다.
         # 나레이션을 가리지 않는 낮은 베드로 유지하고, 캡컷 AI 음성 처리는 금지한다.
         sfx_db = float(CFG.get("오디오.영상원음dB", -15.0))
@@ -542,15 +613,29 @@ def main() -> int:
         content["text"] = c["text"]
         for stl in content.get("styles", []):
             stl["range"] = [0, len(c["text"])]
+            stl["size"] = 23
         tm["id"] = uid()
+        tm["font_size"] = 23
         tm["content"] = json.dumps(content, ensure_ascii=False)
         tm["base_content"] = c["text"]
+        # 템플릿 자동자막의 단어 타임스탬프가 남으면 새 문구가 표시되지 않거나
+        # 이전 영상의 문구가 잠깐 나타난다. 각 큐 전체를 실측 구간에 고정한다.
+        tm["recognize_text"] = c["text"]
+        tm["words"] = {
+            "start_time": [0],
+            "end_time": [max(1, int(round(d / 1000)))],
+            "text": [c["text"]],
+        }
+        tm["current_words"] = {"start_time": [], "end_time": [], "text": []}
         cl.out["texts"].append(tm)
 
         ts = copy.deepcopy(t_proto)
         ts["id"] = uid(); ts["material_id"] = tm["id"]
-        ts["extra_material_refs"] = cl.clone_extras(t_proto)
-        set_caption_fade_in(cl, ts["extra_material_refs"])
+        # 템플릿의 자막 등장 애니메이션이 일부 실측 큐를 미리보기에서
+        # 렌더링하지 않는 현상이 있어, 이번 드래프트에는 효과를 상속하지 않는다.
+        ts["extra_material_refs"] = cl.clone_extras(
+            t_proto, exclude_buckets={"material_animations"})
+        ts["clip"]["transform"]["y"] = -0.4427083333333333
         ts["target_timerange"] = {"start": st, "duration": d}
         t_track["segments"].append(ts)
 
@@ -579,13 +664,24 @@ def main() -> int:
 
     out["group_container"] = None
 
+    # Verify the assembled draft, not only the inputs checked before assembly.
+    failures = validate_frozen_sources(selected_sources)
+    failures.extend(validate_semantic_prebuild(ep))
+    if required_for(ep):
+        failures.extend(validate_continuity(ep, "release"))
+    failures.extend(validate_draft_sources(ep, out, require_evidence_layers=False))
+    if failures:
+        raise ValueError("CapCut 저장 차단: " + "; ".join(failures))
+
     # ★ 템플릿 폴더를 통째로 복사하면 안 된다.
     #   draft.extra / key_value.json / Timelines/ 등 옛 프로젝트 상태가 남아
     #   캡컷이 프로젝트를 열지 못한다. 깨끗한 폴더에 3개 파일만 쓴다.
     draft_root = args.draft_root.resolve()
-    dest = draft_root / name
+    dest = (draft_root / name).resolve()
+    if dest.parent != draft_root or not name.strip():
+        raise ValueError("CapCut 프로젝트 이름은 드래프트 루트 아래 한 폴더여야 합니다")
     if dest.exists():
-        shutil.rmtree(dest)
+        raise FileExistsError(f"기존 CapCut 프로젝트는 덮어쓰지 않습니다: {dest}")
     dest.mkdir(parents=True)
     (dest / "draft_content.json").write_text(
         json.dumps(out, ensure_ascii=False), encoding="utf-8")
