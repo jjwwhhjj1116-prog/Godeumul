@@ -39,6 +39,12 @@ class UploadResumeTests(unittest.TestCase):
         (self.ep / "06.메타.json").write_text(json.dumps(self.meta), encoding="utf-8")
         self.body = uploader.build_body(self.meta, "private", None)
         self.owner = "channel-owned"
+        original_config = uploader.CFG
+        test_config = MagicMock()
+        test_config.get.side_effect = lambda key, default=None: self.owner if key == "업로드.채널ID" else original_config.get(key, default)
+        config_patch = patch.object(uploader, "CFG", test_config)
+        config_patch.start()
+        self.addCleanup(config_patch.stop)
         self.vid = "video-owned"
         self.identity = uploader.upload_identity(self.video, self.body, self.owner)
         self.yt = MagicMock()
@@ -92,12 +98,12 @@ class UploadResumeTests(unittest.TestCase):
             self.path, channel_id=owner or self.owner,
         )
 
-    def run_main(self, *, failures=()):
+    def run_main(self, *, failures=(), privacy="비공개"):
         with (
-            patch.object(sys, "argv", ["youtube_upload.py", str(self.ep), "--run", "--공개", "비공개"]),
+            patch.object(sys, "argv", ["youtube_upload.py", str(self.ep), "--run", "--공개", privacy]),
             patch.object(uploader, "service", return_value=self.yt) as service,
             patch.object(uploader, "validate_capcut_lock", return_value=types.SimpleNamespace(failures=failures)) as gate,
-            patch.object(uploader, "CFG", {"업로드.채널명": "test channel", "업로드.합성콘텐츠고지": True}),
+            patch.object(uploader, "CFG", {"업로드.채널명": "test channel", "업로드.채널ID": self.owner, "업로드.합성콘텐츠고지": True}),
         ):
             result = uploader.main()
         return result, service, gate
@@ -368,6 +374,97 @@ class UploadResumeTests(unittest.TestCase):
             with self.assertRaises(uploader.UploadRecoveryError):
                 uploader.add_to_playlist(self.yt, self.vid, "missing")
         self.yt.playlistItems.return_value.insert.assert_not_called()
+
+    def test_missing_or_wrong_configured_channel_blocks_first_insert(self):
+        for configured in ("", "another-channel"):
+            with patch.object(uploader, "CFG", {"업로드.채널ID": configured}):
+                with self.assertRaisesRegex(uploader.UploadRecoveryError, "채널ID"):
+                    self.upload()
+        self.yt.videos.return_value.insert.assert_not_called()
+        self.assertFalse(self.path.exists())
+
+    def test_changed_remote_thumbnail_requires_review_without_writes(self):
+        self.checkpoint(thumb=True)
+        before = self.path.read_bytes()
+        self.remote["snippet"]["thumbnails"]["default"]["url"] = "changed"
+        with self.assertRaisesRegex(uploader.UploadRecoveryError, "REVIEW_REQUIRED"):
+            self.upload(thumb=True)
+        self.assertEqual(self.path.read_bytes(), before)
+        self.yt.videos.return_value.insert.assert_not_called()
+
+    def test_original_schedule_reused_without_recomputing_today(self):
+        saved = uploader.build_body(self.meta, "private", "2020-01-01T07:00:00Z")
+        cp = {"request_body": saved}
+        with patch.object(uploader, "resolve_publish_datetime", side_effect=AssertionError("must not recalculate")):
+            self.assertEqual(uploader.resume_body(self.meta, "private", "auto", cp), saved)
+        with self.assertRaises(uploader.UploadRecoveryError):
+            uploader.resume_body({**self.meta, "제목": "changed"}, "private", "auto", cp)
+        with self.assertRaises(uploader.UploadRecoveryError):
+            uploader.resume_body(self.meta, "private", "2020-01-02 16:00", cp)
+        with self.assertRaises(uploader.UploadRecoveryError):
+            uploader.resume_body(self.meta, "private", "auto", {})
+
+    def test_stale_saved_request_body_blocks(self):
+        self.checkpoint(request_body={"changed": True})
+        with self.assertRaisesRegex(uploader.UploadRecoveryError, "본문 해시"):
+            self.upload()
+        self.yt.videos.assert_not_called()
+
+    def test_main_completed_old_schedule_resumes_read_only(self):
+        self.body["status"]["publishAt"] = "2020-01-01T07:00:00Z"
+        self.identity = uploader.upload_identity(self.video, self.body, self.owner)
+        self.checkpoint(request_body=copy.deepcopy(self.body))
+        before = self.path.read_bytes()
+        with patch.object(uploader, "resolve_publish_datetime", side_effect=AssertionError("must not recompute")):
+            self.assertEqual(self.run_main(privacy="예약")[0], 0)
+        self.yt.videos.return_value.insert.assert_not_called()
+        self.assertEqual(self.path.read_bytes(), before)
+
+    def test_no_error_no_progress_is_bounded(self):
+        req = self.yt.videos.return_value.insert.return_value
+        req.next_chunk.return_value = (None, None)
+        with patch.object(uploader.time, "monotonic", side_effect=[0, 0, uploader.UPLOAD_IDLE_SECONDS]):
+            with self.assertRaisesRegex(uploader.UploadRecoveryError, "무진행"):
+                self.upload()
+        self.assertEqual(req.next_chunk.call_count, 1)
+        self.assertEqual(json.loads(self.path.read_text())["status"], "UPLOAD_OUTCOME_UNKNOWN")
+
+    def test_progress_does_not_reset_total_deadline(self):
+        req = self.yt.videos.return_value.insert.return_value
+        req.next_chunk.return_value = (types.SimpleNamespace(progress=lambda: .5), None)
+        with patch.object(uploader.time, "monotonic", side_effect=[0, 0, 1, uploader.UPLOAD_TOTAL_SECONDS]):
+            with self.assertRaisesRegex(uploader.UploadRecoveryError, "총 시간"):
+                self.upload()
+        self.assertEqual(req.next_chunk.call_count, 1)
+
+    def test_success_at_deadline_keeps_confirmed_id_and_defers_thumbnail(self):
+        req = self.yt.videos.return_value.insert.return_value
+        req.next_chunk.return_value = (None, {"id": self.vid})
+        with patch.object(uploader.time, "monotonic", side_effect=[0, 0, uploader.UPLOAD_TOTAL_SECONDS]), \
+             patch.object(uploader, "set_and_verify_thumbnail") as thumbnail:
+            with self.assertRaisesRegex(uploader.UploadRecoveryError, "업로드 성공 확정"):
+                self.upload(thumb=True)
+        thumbnail.assert_not_called()
+        saved = uploader.read_upload_checkpoint(self.path)
+        self.assertEqual(saved["video_id"], self.vid)
+        self.assertEqual(saved["status"], "VIDEO_UPLOADED_THUMBNAIL_PENDING")
+        with patch.object(uploader, "set_and_verify_thumbnail", return_value={
+            "applied": True, "verified": True, "remote_urls": {"default": "url"}}):
+            self.assertEqual(self.upload(thumb=True)[0], self.vid)
+        self.yt.videos.return_value.insert.assert_called_once()
+
+    def test_auth_checks_exact_channel_without_deleting_token(self):
+        token = self.ep / "preserved-token.json"
+        token.write_text("preserve", encoding="utf-8")
+        for configured in ("", "wrong-channel"):
+            with patch.object(sys, "argv", ["youtube_upload.py", "--auth", "--token", str(token)]), \
+                 patch.object(uploader, "CFG", {"업로드.채널ID": configured}), \
+                 patch.object(uploader, "service", return_value=self.yt) as service:
+                self.assertEqual(uploader.main(), 1)
+                if not configured:
+                    service.assert_not_called()
+            self.assertEqual(token.read_text(), "preserve")
+        self.yt.videos.return_value.insert.assert_not_called()
 
 
 if __name__ == "__main__":

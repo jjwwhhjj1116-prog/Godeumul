@@ -1,3 +1,4 @@
+import io
 import json
 import subprocess
 import sys
@@ -7,7 +8,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
-from workflow_status import FILES, snapshot, check_command, run_check
+from workflow_status import FILES, snapshot, check_command, run_check, main
 
 
 class WorkflowStatusTests(unittest.TestCase):
@@ -53,6 +54,70 @@ class WorkflowStatusTests(unittest.TestCase):
         report = snapshot(self.ep)
         self.assertEqual(report["blocker"], "UNREADABLE_RECORD")
         self.assertEqual(report["records"]["mode"]["state"], "READ_ERROR")
+
+    def fill_current_records(self):
+        for name in FILES.values():
+            self.put(name, {"status": "PASS"})
+
+    def test_missing_explicit_qa_is_missing_evidence(self):
+        self.fill_current_records()
+        self.put(FILES["mode"], {"progress_note": "qa/current.json"})
+        report = snapshot(self.ep)
+        self.assertEqual(report["blocker"], "MISSING_EVIDENCE")
+        self.assertEqual(report["records"]["qa/current.json"]["state"], "MISSING")
+        self.assertIn("qa/current.json", report["next_action"])
+
+    def test_core_review_failure_needs_no_progress_note_reference(self):
+        self.fill_current_records()
+        self.put(FILES["review"], {"status": "FAIL_SEMANTIC"})
+        report = snapshot(self.ep)
+        self.assertEqual(report["blocker"], "RECORDED_FAILURE_OR_AUTHORIZATION_PENDING")
+        self.assertEqual(report["findings"][0]["status"], "FAIL_SEMANTIC")
+
+    def test_direct_scene_verdicts_are_not_hidden_by_top_level_pass(self):
+        self.fill_current_records()
+        self.put(FILES["review"], {"status": "PASS", "scenes": {"006": {"gate": "FAIL"}}})
+        report = snapshot(self.ep)
+        self.assertEqual(report["findings"][0]["scene"], "006")
+        self.assertFalse(report["verified"])
+
+    def test_history_prose_does_not_create_false_failure(self):
+        self.fill_current_records()
+        self.put(FILES["review"], {"status": "PASS", "history": [{"status": "FAIL"}],
+                                  "note": "old FAIL repaired"})
+        self.assertEqual(snapshot(self.ep)["findings"], [])
+
+    def test_direct_boundary_failure_is_not_hidden_by_scene_pass(self):
+        self.fill_current_records()
+        self.put(FILES["chain"], {"status": "PASS", "scenes": {"001": {"status": "PASS"}},
+                                 "boundaries": [{"after": 1, "status": "FAIL"}]})
+        report = snapshot(self.ep)
+        self.assertEqual(report["findings"][0]["boundary"], "0")
+        self.assertEqual(report["blocker"], "RECORDED_FAILURE_OR_AUTHORIZATION_PENDING")
+
+    def test_cli_displays_blocker_before_recorded_pass(self):
+        self.fill_current_records()
+        self.put(FILES["review"], {"status": "FAIL"})
+        output = io.StringIO()
+        with patch.object(sys, "argv", ["workflow_status.py", str(self.ep)]), \
+             patch("sys.stdout", output):
+            self.assertEqual(main(), 0)  # successful read, not QA PASS
+        first_line = output.getvalue().splitlines()[0]
+        self.assertIn(": RECORDED_FAILURE_OR_AUTHORIZATION_PENDING", first_line)
+        self.assertFalse(first_line.startswith(f"{self.ep.name}: PASS"))
+
+    def test_invalid_qa_reference_does_not_read_outside_episode(self):
+        self.put(FILES["mode"], {"progress_note": "qa/../../private.json"})
+        report = snapshot(self.ep)
+        self.assertEqual(report["findings"][0]["status"], "INVALID_REFERENCE")
+        self.assertNotIn("qa/../../private.json", report["records"])
+
+    def test_corrupt_explicit_qa_is_unreadable(self):
+        self.fill_current_records()
+        self.put(FILES["mode"], {"progress_note": "qa/current.json"})
+        (self.ep / "qa").mkdir()
+        (self.ep / "qa/current.json").write_text("{bad", encoding="utf-8")
+        self.assertEqual(snapshot(self.ep)["blocker"], "UNREADABLE_RECORD")
 
     def test_commands_preserve_gate_mode_and_inputs(self):
         cmd = check_command(self.ep, "script")

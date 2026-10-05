@@ -7,7 +7,8 @@
 draft_content.json 을 다시 쓴다. 무협 파이프라인의 capcut_export.py 와 같은 전략이며,
 그쪽 코드는 건드리지 않는다.
 
-템플릿: "투탕카멘_고대유물의 비밀" (주인님이 직접 편집·검증한 프로젝트)
+템플릿: 채널설정.json의 캡컷.템플릿드래프트 (--template으로 별도 지정 가능)
+  --check부터 두 JSON과 필수 트랙·소재·등록부를 읽고 검증한다.
   → 자막 스타일(KCC간판체 12 / 획 0.08 / y=-0.206 / 페이드 인 0.25초),
     워터마크(우하단 크로마키), 캔버스(1080x1920 30fps)를 그대로 물려받는다.
 
@@ -29,9 +30,11 @@ import argparse
 import copy
 import json
 import math
+import os
 import re
 import subprocess
 import sys
+import tempfile
 import time
 import uuid
 from pathlib import Path
@@ -95,6 +98,158 @@ def snap(us: int) -> int:
 
 
 FFPROBE_TIMEOUT_SECONDS = 30
+FFMPEG_COVER_TIMEOUT_SECONDS = 30
+
+
+def load_validated_template(folder: Path) -> tuple[dict, dict]:
+    """Read both template documents once and reject unusable prototypes before --check passes."""
+    documents = {}
+    errors = []
+    for name in ("draft_content.json", "draft_meta_info.json"):
+        path = folder / name
+        try:
+            item = json.loads(path.read_text(encoding="utf-8-sig"))
+            if not isinstance(item, dict):
+                raise ValueError("JSON 객체 필요")
+            documents[name] = item
+        except (OSError, ValueError) as exc:
+            errors.append(f"{name}: {exc}")
+    if errors:
+        raise ValueError(f"템플릿 {folder}: " + "; ".join(errors))
+    content, meta = documents["draft_content.json"], documents["draft_meta_info.json"]
+    materials, tracks = content.get("materials"), content.get("tracks")
+    if not isinstance(materials, dict):
+        errors.append("materials 객체 누락")
+        materials = {}
+    by_id = {}
+    for bucket, items in materials.items():
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            if not isinstance(item, dict) or not isinstance(item.get("id"), str) or not item["id"]:
+                errors.append(f"materials.{bucket}: 소재 객체/id 오류")
+                continue
+            if item["id"] in by_id:
+                errors.append(f"materials.{bucket}: 중복 소재 id")
+            by_id[item["id"]] = bucket
+    for bucket in ("videos", "audios", "texts"):
+        if not isinstance(materials.get(bucket), list) or not materials[bucket]:
+            errors.append(f"materials.{bucket}: 필수 소재 없음")
+    if (not isinstance(tracks, list)
+            or any(not isinstance(track, dict) or not isinstance(track.get("type"), str)
+                   or not isinstance(track.get("segments"), list) for track in tracks)):
+        errors.append("tracks/segments 배열 오류")
+        tracks = []
+    for kind, flag, bucket in (("video", 0, "videos"), ("audio", None, "audios"),
+                               ("text", None, "texts"), ("video", 2, "videos")):
+        label = f"{kind}(flag={flag})"
+        track = next((track for track in tracks if track["type"] == kind
+                      and (flag is None or track.get("flag") == flag)), None)
+        if not track or not track["segments"] or not isinstance(track["segments"][0], dict):
+            errors.append(f"{label}: 필수 트랙/첫 세그먼트 없음")
+            continue
+        segment = track["segments"][0]
+        material_id = segment.get("material_id")
+        if not isinstance(material_id, str) or by_id.get(material_id) != bucket:
+            errors.append(f"{label}: material_id가 {bucket} 소재와 연결되지 않음")
+        refs = segment.get("extra_material_refs", [])
+        if (not isinstance(refs, list)
+                or any(not isinstance(ref, str) or ref not in by_id for ref in refs)):
+            errors.append(f"{label}: extra_material_refs 소재 누락/형식 오류")
+        if kind == "text":
+            clip = segment.get("clip")
+            if not isinstance(clip, dict) or not isinstance(clip.get("transform"), dict):
+                errors.append("text: clip.transform 객체 누락")
+    texts = materials.get("texts")
+    if isinstance(texts, list) and texts and isinstance(texts[0], dict):
+        try:
+            text_content = json.loads(texts[0].get("content", ""))
+            if (not isinstance(text_content, dict)
+                    or not isinstance(text_content.get("styles", []), list)
+                    or any(not isinstance(style, dict) for style in text_content.get("styles", []))):
+                raise ValueError("content/styles 형식 오류")
+        except (ValueError, TypeError) as exc:
+            errors.append(f"texts[0].content: {exc}")
+    blocks = meta.get("draft_materials")
+    if (not isinstance(blocks, list) or not blocks
+            or any(not isinstance(block, dict) or not isinstance(block.get("value"), list)
+                   or any(not isinstance(item, dict) for item in block["value"]) for block in blocks)):
+        errors.append("draft_meta_info.json: draft_materials 등록부 배열 오류")
+    elif not any(block.get("type") == 0 for block in blocks):
+        errors.append("draft_meta_info.json: type=0 미디어 등록부 없음")
+    if errors:
+        raise ValueError(f"템플릿 {folder}: " + "; ".join(errors))
+    return content, meta
+
+
+def draft_destination(root: Path, name: str) -> Path:
+    """Keep the final Windows project directly inside its declared root without overwriting."""
+    if (not name or name in {".", ".."} or name != name.strip()
+            or name.endswith(".") or re.search(r'[<>:"/\\|?*\x00-\x1f]', name)
+            or re.match(r"^(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\.|$)", name, re.I)):
+        raise ValueError("CapCut 프로젝트 이름은 드래프트 루트 아래 유효한 한 폴더여야 합니다")
+    root = root.resolve()
+    candidate = root / name
+    if os.path.lexists(candidate) or getattr(candidate, "is_junction", lambda: False)():
+        raise FileExistsError(f"기존 CapCut 프로젝트는 덮어쓰지 않습니다: {candidate}")
+    dest = candidate.resolve()
+    if dest.parent != root:
+        raise ValueError("CapCut 프로젝트 경로가 드래프트 루트를 벗어났습니다")
+    if os.path.lexists(dest):
+        raise FileExistsError(f"기존 CapCut 프로젝트는 덮어쓰지 않습니다: {dest}")
+    return dest
+
+
+def extract_draft_cover(source: Path, output: Path) -> None:
+    try:
+        subprocess.run(
+            ["ffmpeg", "-nostdin", "-n", "-v", "error", "-i", str(source), "-vf",
+             "thumbnail,scale=480:-1", "-frames:v", "1", str(output)],
+            capture_output=True, text=True, encoding="utf-8", errors="replace",
+            check=True, timeout=FFMPEG_COVER_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise ValueError(f"표지 ffmpeg 시간 초과 ({FFMPEG_COVER_TIMEOUT_SECONDS}초): {source}") from exc
+    except subprocess.CalledProcessError as exc:
+        detail = str(exc.stderr or "오류 상세 없음").strip()[:500]
+        raise ValueError(f"표지 ffmpeg 실패 (exit {exc.returncode}): {source}: {detail}") from exc
+    except OSError as exc:
+        raise ValueError(f"표지 ffmpeg 실행 불가: {source}: {exc}") from exc
+    if not output.is_file() or output.stat().st_size == 0:
+        raise ValueError(f"표지 ffmpeg가 성공을 반환했으나 출력이 없거나 비어 있습니다: {output}")
+
+
+def save_complete_draft(root: Path, name: str, content: dict, meta: dict, cover_source: Path) -> Path:
+    """Publish a complete staged folder with Windows' non-overwriting atomic rename."""
+    root = root.resolve()
+    dest = draft_destination(root, name)
+    # POSIX rename may replace an existing empty directory; this CapCut writer targets Windows.
+    if sys.platform != "win32":
+        raise RuntimeError("CapCut 원자적 프로젝트 저장은 Windows에서만 지원합니다")
+    encoded = {
+        "draft_content.json": json.dumps(content, ensure_ascii=False),
+        "draft_meta_info.json": json.dumps(meta, ensure_ascii=False),
+    }
+    root.mkdir(parents=True, exist_ok=True)
+    staging = Path(tempfile.mkdtemp(prefix=".capcut-build-", dir=root)).resolve()
+    if staging.parent != root or not staging.name.startswith(".capcut-build-"):
+        raise ValueError(f"임시 폴더 범위 오류: {staging}")
+    try:
+        for filename, text in encoded.items():
+            with (staging / filename).open("x", encoding="utf-8") as handle:
+                handle.write(text)
+                handle.flush()
+                os.fsync(handle.fileno())
+        extract_draft_cover(cover_source, staging / "draft_cover.jpg")
+        # Check again after subprocess work; os.rename also rejects a raced-in Windows target.
+        if draft_destination(root, name) != dest:
+            raise ValueError("저장 직전 프로젝트 경로가 바뀌었습니다")
+        os.rename(staging, dest)
+    except (Exception, KeyboardInterrupt) as exc:
+        raise RuntimeError(
+            f"CapCut 프로젝트 저장 실패: {exc}; 복구용 임시 폴더 보존: {staging}"
+        ) from exc
+    return dest
 
 
 def probe_video_metadata(path: Path) -> dict:
@@ -217,7 +372,8 @@ class Cloner:
             if not found:
                 continue
             bucket, m = found
-            if bucket in exclude_buckets:
+            # 새 회차의 장면 전환은 0개다. 어떤 템플릿 프로토타입에서도 상속하지 않는다.
+            if bucket == "transitions" or bucket in exclude_buckets:
                 continue
             m2 = copy.deepcopy(m)
             m2["id"] = uid()
@@ -407,6 +563,16 @@ def main() -> int:
 
     # ── 준비물 점검 ─────────────────────────────────────────
     problems: list[str] = []
+    tpl, template_meta = {}, {}
+    try:
+        tpl, template_meta = load_validated_template(args.template)
+    except ValueError as exc:
+        problems.append(str(exc))
+    draft_root = args.draft_root.resolve()
+    try:
+        dest = draft_destination(draft_root, name)
+    except (ValueError, OSError) as exc:
+        problems.append(str(exc))
     context = validate_context_review(ep / "01.대본.txt", ep / "01.문맥검수.json")
     problems.extend(f"문맥 QA: {failure}" for failure in context.failures)
     # The source clips must pass a full-playback semantic review before any
@@ -415,8 +581,6 @@ def main() -> int:
     problems.extend(f"대본-화면 원본 검수: {failure}" for failure in validate_semantic_prebuild(ep))
     if required_for(ep):
         problems.extend(f"실제 출력 프레임 연쇄: {failure}" for failure in validate_continuity(ep, "release"))
-    if not args.template.exists():
-        problems.append(f"템플릿 없음: {args.template}")
     if not dur_path.exists():
         problems.append(f"durations.json 없음 — 3단계를 먼저 (경로 {dur_path})")
     if not cue_path.exists():
@@ -471,8 +635,7 @@ def main() -> int:
         print()
         return 1 if problems else 0
 
-    # ── 템플릿 로드 ─────────────────────────────────────────
-    tpl = json.loads((args.template / "draft_content.json").read_text(encoding="utf-8"))
+    # --check와 같은 검문이 실제 읽어 검증한 두 문서를 그대로 사용한다.
     cl = Cloner(tpl)
 
     v_proto = proto(tpl, "video", 0)
@@ -689,21 +852,8 @@ def main() -> int:
     if failures:
         raise ValueError("CapCut 저장 차단: " + "; ".join(failures))
 
-    # ★ 템플릿 폴더를 통째로 복사하면 안 된다.
-    #   draft.extra / key_value.json / Timelines/ 등 옛 프로젝트 상태가 남아
-    #   캡컷이 프로젝트를 열지 못한다. 깨끗한 폴더에 3개 파일만 쓴다.
-    draft_root = args.draft_root.resolve()
-    dest = (draft_root / name).resolve()
-    if dest.parent != draft_root or not name.strip():
-        raise ValueError("CapCut 프로젝트 이름은 드래프트 루트 아래 한 폴더여야 합니다")
-    if dest.exists():
-        raise FileExistsError(f"기존 CapCut 프로젝트는 덮어쓰지 않습니다: {dest}")
-    dest.mkdir(parents=True)
-    (dest / "draft_content.json").write_text(
-        json.dumps(out, ensure_ascii=False), encoding="utf-8")
-
     # ── draft_meta_info ──────────────────────────────────
-    meta = json.loads((args.template / "draft_meta_info.json").read_text(encoding="utf-8"))
+    meta = copy.deepcopy(template_meta)
     now = int(time.time() * US)
     meta.update(draft_id=uid(), draft_name=name,
                 draft_fold_path=str(dest).replace("\\", "/"),
@@ -733,19 +883,12 @@ def main() -> int:
         reg.append(e)
     for blk in meta.get("draft_materials") or []:
         blk["value"] = reg if blk.get("type") == 0 else []
-    (dest / "draft_meta_info.json").write_text(
-        json.dumps(meta, ensure_ascii=False), encoding="utf-8")
-
-    # ── 표지 (첫 클립에서 뽑는다. 템플릿 표지를 물려받으면 안 된다) ──
+    # 템플릿 폴더의 옛 상태를 복제하지 않는다. 새 JSON 두 개와 표지가 모두
+    # 준비된 고유 임시 폴더만 최종 프로젝트 이름으로 원자적으로 이동한다.
     first = next((p for p, k, _ in media_registry if k == "video"), None)
-    if first:
-        try:
-            subprocess.run(["ffmpeg", "-y", "-i", str(first), "-vf",
-                            "thumbnail,scale=480:-1", "-frames:v", "1",
-                            str(dest / "draft_cover.jpg")],
-                           capture_output=True, check=True)
-        except Exception:
-            pass
+    if first is None:
+        raise ValueError("CapCut 표지에 사용할 첫 영상이 없습니다")
+    dest = save_complete_draft(draft_root, name, out, meta, first)
 
     # ── 보고 ────────────────────────────────────────────────
     print(f"\n{'장면':>4} {'시작':>8} {'길이':>7} {'TTS':>7} {'배속':>7}")

@@ -76,6 +76,9 @@ THUMB_MAX = 2 * 1024 * 1024          # 유튜브 썸네일 상한 2MB
 UPLOAD_MAX_ATTEMPTS = 5             # 전체 업로드의 5xx 재시도 예산: 최초 시도 + 4회
 UPLOAD_BACKOFF_SECONDS = 1
 UPLOAD_BACKOFF_MAX_SECONDS = 30
+REMOTE_TIMEOUT_SECONDS = 60
+UPLOAD_TOTAL_SECONDS = 1800
+UPLOAD_IDLE_SECONDS = 180
 UPLOADED_STATES = {
     "VIDEO_UPLOADED_THUMBNAIL_PENDING", "THUMBNAIL_APPLIED_VERIFIED", "PACKAGING_COMPLETE",
 }
@@ -142,7 +145,8 @@ def service(token_path: Path = TOKEN, secrets_path: Path = SECRETS):
         creds = Credentials.from_authorized_user_file(str(token_path), SCOPES)
     if creds and creds.expired and creds.refresh_token:
         try:
-            creds.refresh(Request())          # 정상 만료는 조용히 갱신한다
+            request = Request()
+            creds.refresh(lambda *a, **kw: request(*a, **{**kw, "timeout": REMOTE_TIMEOUT_SECONDS}))
             token_path.write_text(creds.to_json(), encoding="utf-8")
         except RefreshError:
             # 테스트 OAuth 토큰의 7일 만료·철회는 새 동의 흐름으로 복구한다.
@@ -168,7 +172,10 @@ def service(token_path: Path = TOKEN, secrets_path: Path = SECRETS):
             timeout_seconds=600)
         token_path.write_text(creds.to_json(), encoding="utf-8")
         print(f"\n  토큰 저장 -> {token_path}  (이제 브라우저는 다시 안 열립니다)")
-    return build("youtube", "v3", credentials=creds, cache_discovery=False)
+    import httplib2
+    from google_auth_httplib2 import AuthorizedHttp
+    transport = AuthorizedHttp(creds, http=httplib2.Http(timeout=REMOTE_TIMEOUT_SECONDS))
+    return build("youtube", "v3", http=transport, cache_discovery=False)
 
 
 def channel_identity(yt) -> tuple[str, str]:
@@ -351,6 +358,7 @@ def set_and_verify_thumbnail(yt, vid: str, thumb: Path) -> dict:
     return {
         "applied": True,
         "verified": True,
+        "verification_scope": "API_APPLIED_AND_URL_OBSERVED_NOT_PIXEL_IDENTITY",
         "source": str(thumb),
         "remote_urls": urls,
     }
@@ -435,7 +443,28 @@ def read_upload_checkpoint(path: Path) -> dict | None:
         if (not isinstance(result, dict) or result.get("applied") is not True
                 or result.get("verified") is not True or not result.get("remote_urls")):
             raise UploadRecoveryError("체크포인트의 썸네일 완료 증거가 불완전합니다. 기존 영상부터 확인하세요.")
+    if "request_body" in checkpoint:
+        body = checkpoint["request_body"]
+        encoded = json.dumps(body, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        if not isinstance(body, dict) or hashlib.sha256(encoded.encode("utf-8")).hexdigest() != identity["metadata_sha256"]:
+            raise UploadRecoveryError("체크포인트 최초 요청 본문 해시 불일치. 새 업로드 금지.")
     return checkpoint
+
+
+def resume_body(meta: dict, privacy: str, when: str | None, checkpoint: dict) -> dict:
+    """Reuse original scheduling intent, never today's recomputed default date."""
+    saved = checkpoint.get("request_body")
+    if not isinstance(saved, dict) or not isinstance(saved.get("status"), dict):
+        raise UploadRecoveryError("기존 예약의 최초 요청 본문 증거가 없습니다. 명시 상태 변경 도구로 확인하세요.")
+    publish = saved["status"].get("publishAt")
+    if when and when.lower() != "auto":
+        explicit = datetime.strptime(when, "%Y-%m-%d %H:%M").replace(tzinfo=KST)
+        if explicit.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ") != publish:
+            raise UploadRecoveryError("예약 변경 요청은 기존 영상 상태 변경 도구를 사용하세요.")
+    requested = build_body(meta, privacy, publish)
+    if requested != saved:
+        raise UploadRecoveryError("최초 요청과 메타/공개 설정이 다릅니다. 명시 변경 도구를 사용하세요.")
+    return requested
 
 
 def verify_existing_video(yt, checkpoint: dict, identity: dict, body: dict) -> dict:
@@ -482,6 +511,9 @@ def upload(
     checkpoint_path = checkpoint_path or video.parent / "youtube.upload.checkpoint.json"
     checkpoint = read_upload_checkpoint(checkpoint_path)
     owner = channel_id or channel_identity(yt)[0]
+    expected_owner = str(CFG.get("업로드.채널ID", "")).strip()
+    if not expected_owner or owner != expected_owner:
+        raise UploadRecoveryError("정확한 업로드.채널ID 설정이 없거나 실제 채널 ID와 다릅니다. 업로드 금지.")
     identity = upload_identity(video, body, owner)
     thumb_hash = _sha256(thumb) if thumb else None
     if checkpoint is not None:
@@ -491,9 +523,11 @@ def upload(
         vid = checkpoint["video_id"]
         thumbnail_result = checkpoint.get("thumbnail_result")
         if thumb and isinstance(thumbnail_result, dict) and thumbnail_result.get("verified"):
-            if not remote["snippet"].get("thumbnails"):
-                raise UploadRecoveryError("기존 영상의 원격 썸네일을 조회하지 못했습니다.")
-            return vid, thumbnail_result
+            urls = {k: v.get("url") for k, v in remote["snippet"].get("thumbnails", {}).items() if v.get("url")}
+            if not urls or urls != thumbnail_result.get("remote_urls"):
+                raise UploadRecoveryError("REVIEW_REQUIRED: 원격 썸네일 URL 변경/증거 누락. 픽셀 동일성 미확인.")
+            return vid, {**thumbnail_result, "current_remote_observation": "URL_MATCH_ONLY",
+                         "pixel_identity_verified": False}
     else:
         from googleapiclient.errors import HttpError
         from googleapiclient.http import MediaFileUpload
@@ -504,13 +538,19 @@ def upload(
             "version": 2, "status": "UPLOAD_OUTCOME_UNKNOWN", "identity": identity,
             "video_id": None, "video": str(video),
             "thumbnail": str(thumb) if thumb else None, "thumbnail_sha256": thumb_hash,
+            "request_body": body,
         }
         # 요청 전 의도를 영속화한다. 응답 유실/강제 종료 뒤에도 신규 insert를 막는다.
         _write_upload_checkpoint(checkpoint_path, exclusive=True, **checkpoint)
         req = yt.videos().insert(part="snippet,status", body=body, media_body=media)
         print("\n  업로드 중...")
         resp, last, errors = None, -1, 0
+        started = progressed = time.monotonic()
+        progress_value = 0.0
         while resp is None:
+            now = time.monotonic()
+            if now - started >= UPLOAD_TOTAL_SECONDS or now - progressed >= UPLOAD_IDLE_SECONDS:
+                raise UploadRecoveryError("업로드 총 시간/무진행 제한 초과. 불명 체크포인트 보존; 새 insert 금지.")
             try:
                 status, resp = req.next_chunk(num_retries=0)
             except HttpError as exc:
@@ -529,6 +569,9 @@ def upload(
                 time.sleep(delay)
                 continue
             if status:
+                value = status.progress()
+                if value > progress_value:
+                    progress_value, progressed = value, time.monotonic()
                 pct = int(status.progress() * 100)
                 if pct >= last + 10:
                     print(f"    {pct:3d}%")
@@ -541,6 +584,12 @@ def upload(
         print(f"    100%\n\n  영상 ID : {vid}")
         print(f"  주소     : https://youtu.be/{vid}")
         thumbnail_result = None
+        finished = time.monotonic()
+        if finished - started >= UPLOAD_TOTAL_SECONDS or finished - progressed >= UPLOAD_IDLE_SECONDS:
+            raise UploadRecoveryError(
+                f"영상 업로드 성공 확정: {vid}. 시간 제한에 도달해 썸네일 등 후속 작업만 보류했습니다. "
+                "저장된 영상 ID로 재개하세요. 새 업로드는 필요 없습니다."
+            )
 
     if thumb:
         thumbnail_result = set_and_verify_thumbnail(yt, vid, thumb)
@@ -572,8 +621,16 @@ def main() -> int:
     args = ap.parse_args()
 
     if args.auth:
+        expected_id = str(CFG.get("업로드.채널ID", "")).strip()
+        if not expected_id:
+            print("정확한 업로드.채널ID 설정이 없습니다. 기존 토큰을 보존하고 대상 ID부터 확인하세요.")
+            return 1
         yt = service(args.token, args.client_secret)
-        title = whoami(yt)
+        owner, title = channel_identity(yt)
+        if owner != expected_id:
+            print(f"채널 ID 불일치: 기대 {expected_id}, 실제 {owner}. 기존 토큰은 보존하세요.")
+            print("올바른 계정으로 명시 재인증하려면 별도의 새 --token 경로와 --auth를 사용하세요.")
+            return 1
         it = yt.channels().list(part="statistics", mine=True).execute()["items"][0]
         print(f"\n  채널   : {title}")
         print(f"  구독자 : {it['statistics'].get('subscriberCount', '비공개')}")
@@ -582,7 +639,7 @@ def main() -> int:
         want = CFG.get("업로드.채널명", "") or CFG.get("채널.이름", "")
         if want and title.strip() != want.strip():
             print(f"\n  ★ 기대한 채널은 '{want}' 입니다. 계정을 잘못 고른 것 같습니다.")
-            print(f"     token.json 을 지우고 --auth 를 다시 하세요:\n       {args.token}\n")
+            print("     기존 토큰을 보존하고 채널 이름 변경 여부를 확인하세요. 재인증은 별도의 새 --token 경로와 --auth를 사용하세요.")
             return 1
         print(f"\n  '{want}' 확인. 이제 업로드할 수 있습니다.\n" if want else "")
         return 0
@@ -598,13 +655,30 @@ def main() -> int:
     thumb = args.thumb or next((p for p in (ep / "썸네일.jpg", ep / "썸네일.png")
                                 if p.exists()), None)
     playlist = args.playlist or CFG.get("업로드.재생목록", "")
+    checkpoint = ep / "youtube.upload.checkpoint.json"
+    try:
+        previous = read_upload_checkpoint(checkpoint)
+    except UploadRecoveryError as exc:
+        print(f"업로드 중단: {exc}")
+        return 1
 
     privacy = {"비공개": "private", "일부공개": "unlisted",
                "공개": "public", "예약": "private"}[args.privacy]
     if args.privacy == "공개" and CFG.get("업로드.즉시공개금지", True):
         sys.exit("[에러] 채널 정책상 즉시 공개는 금지됩니다. 비공개 업로드 뒤 다음날 16:00로 예약하세요.")
     publish_at = None
-    if args.privacy == "예약":
+    if args.privacy == "예약" and previous:
+        try:
+            original_body = resume_body(m, privacy, args.when, previous)
+        except (UploadRecoveryError, ValueError) as exc:
+            print(f"업로드 재개 중단: {exc}")
+            return 1
+        publish_at = original_body["status"].get("publishAt")
+        if not publish_at:
+            print("기존 요청은 예약 업로드가 아닙니다. 예약 변경은 상태 변경 도구를 사용하세요.")
+            return 1
+        args.when = datetime.fromisoformat(publish_at.replace("Z", "+00:00")).astimezone(KST).strftime("%Y-%m-%d %H:%M")
+    elif args.privacy == "예약":
         dt = resolve_publish_datetime(
             args.when, allow_policy_override=args.예약정책예외,
         )
@@ -634,6 +708,8 @@ def main() -> int:
     print(f"쿼터     : {q} / 10,000")
 
     bad = check_release_status(ep) + check_meta(m, ep) + check_thumb(thumb)
+    if not str(CFG.get("업로드.채널ID", "")).strip():
+        bad.append("정확한 업로드.채널ID 설정이 없습니다. 인증/업로드 전 채널 ID 확인 필요.")
     if not video or not video.exists():
         bad.append("CapCut 게시 마스터를 못 찾았습니다. *_capcut.mp4로 내보내고 마감 잠금을 만드세요.")
     else:
@@ -669,7 +745,7 @@ def main() -> int:
     print(f"\n  대상 채널 : {title}")
     if want and title.strip() != want.strip():
         print(f"\n  ★ 중단합니다. 기대한 채널은 '{want}' 인데 토큰은 '{title}' 을 물고 있습니다.")
-        print(f"     token.json 을 지우고 --auth 를 다시 하세요:\n       {args.token}\n")
+        print("     기존 토큰을 보존하고 채널 이름 변경 여부를 확인하세요. 재인증은 별도의 새 --token 경로와 --auth를 사용하세요.")
         return 1
 
     try:

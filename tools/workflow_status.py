@@ -16,6 +16,21 @@ FILES = {
 LIMIT = 2 * 1024 * 1024
 
 
+def recorded_problem(item, path):
+    """Report explicit current verdicts, never infer approval from file presence."""
+    if not isinstance(item, dict):
+        return None
+    states = [str(item.get(key, "")) for key in ("status", "gate", "verdict")]
+    failure = next((state for state in states if re.search(
+        r"(?:^|_)(?:FAIL|FAILED|ERROR|REJECTED|BLOCKED)(?:_|$)", state.upper())), None)
+    if failure or item.get("retry_authorized") is False:
+        return {"path": str(path), "status": failure or states[0] or "RETRY_NOT_AUTHORIZED",
+                "retry_authorized": item.get("retry_authorized"),
+                "retry_authorization_state": item.get("retry_authorization_state"),
+                "video_file": item.get("video_file")}
+    return None
+
+
 def read_small(path, text=False):
     if not path.is_file():
         return {"state": "MISSING", "path": str(path)}, None
@@ -41,6 +56,21 @@ def snapshot(episode):
     # Never infer a failure from a globally hard-coded scene number or scan archives.
     refs = re.findall(r"qa/[\w./-]+\.json", str(mode.get("progress_note", "")))
     findings = []
+    # These are current explicit records, not an archive scan. Read top-level
+    # verdicts and direct scene/boundary verdicts, without interpreting prose/history.
+    for key, item in data.items():
+        finding = recorded_problem(item, records[key]["path"])
+        if finding:
+            findings.append(finding)
+        if isinstance(item, dict) and key in {"review", "chain", "lock"}:
+            for collection, label in (("scenes", "scene"), ("boundaries", "boundary")):
+                entries = item.get(collection, {})
+                rows = (entries.items() if isinstance(entries, dict)
+                        else enumerate(entries) if isinstance(entries, list) else [])
+                for entry_id, entry in rows:
+                    finding = recorded_problem(entry, records[key]["path"])
+                    if finding:
+                        findings.append({**finding, label: str(entry_id)})
     for name in dict.fromkeys(refs):
         path = (ep / name).resolve()
         if not path.is_relative_to(ep):
@@ -48,15 +78,11 @@ def snapshot(episode):
             continue
         rec, item = read_small(path)
         records[name] = rec
-        if item:
-            status = str(item.get("status", ""))
-            if "FAIL" in status.upper() or item.get("retry_authorized") is False:
-                findings.append({"path": str(path), "status": status,
-                    "retry_authorized": item.get("retry_authorized"),
-                    "retry_authorization_state": item.get("retry_authorization_state"),
-                    "video_file": item.get("video_file")})
+        finding = recorded_problem(item, path)
+        if finding:
+            findings.append(finding)
     bad = next((k for k, r in records.items() if r["state"] == "READ_ERROR"), None)
-    missing = next((k for k in FILES if records[k]["state"] == "MISSING"), None)
+    missing = next((k for k, record in records.items() if record["state"] == "MISSING"), None)
     if findings:
         action = "현재 명시 QA 실패/재시도 권한을 확인. 후속 생성·편집으로 승격하지 않음."
         blocker = "RECORDED_FAILURE_OR_AUTHORIZATION_PENDING"
@@ -112,8 +138,8 @@ def main():
     if args.json:
         print(json.dumps(report, ensure_ascii=False, indent=2))
     else:
-        print(f"{args.episode.name}: {report['recorded_status'] or report['blocker']}")
-        print(f"모드: {report['mode']} | 제작 완료 미확정 | 기본 조회는 검문 미실행")
+        print(f"{args.episode.name}: {report['blocker']} (기록 상태: {report['recorded_status'] or '없음'})")
+        print(f"모드: {report['mode']} | 제작 완료 미확정 | 상태 요약 자체는 검문 아님")
         print("다음: " + report["next_action"])
         for item in report["findings"]:
             print(f"근거: {item['path']} ({item['status']})")
