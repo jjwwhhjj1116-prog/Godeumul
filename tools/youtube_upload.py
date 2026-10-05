@@ -26,13 +26,22 @@
 
 메타데이터는 에피소드 폴더의 06.메타.json 에서 읽는다.
   {"제목": "...", "설명": "...", "태그": ["..."]}
+
+체크포인트 v2는 영상 SHA-256·업로드 요청 메타·채널 ID가 일치할 때만 기존 ID를
+재사용한다. 완료 기록은 원격 조회만, 미완료 후속 단계는 같은 ID로 이어간다.
+ID 없는 중단/응답 유실 및 식별 증거 없는 구형 기록은 수동 대조 전 새 업로드를
+막는다. 같은 요청의 5xx 오류는 최대 5회까지, 1·2·4·8초 간격으로 시도한다.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import os
 import sys
+import tempfile
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -64,6 +73,16 @@ KST = timezone(timedelta(hours=9))
 # 공식 쿼터표
 Q_UPLOAD, Q_THUMB, Q_PLAYLIST = 1600, 50, 50
 THUMB_MAX = 2 * 1024 * 1024          # 유튜브 썸네일 상한 2MB
+UPLOAD_MAX_ATTEMPTS = 5             # 전체 업로드의 5xx 재시도 예산: 최초 시도 + 4회
+UPLOAD_BACKOFF_SECONDS = 1
+UPLOAD_BACKOFF_MAX_SECONDS = 30
+UPLOADED_STATES = {
+    "VIDEO_UPLOADED_THUMBNAIL_PENDING", "THUMBNAIL_APPLIED_VERIFIED", "PACKAGING_COMPLETE",
+}
+
+
+class UploadRecoveryError(RuntimeError):
+    """이전 업로드 결과를 확인하기 전 새 영상 생성을 차단한다."""
 
 
 def configured_publish_datetime(now: datetime | None = None) -> datetime:
@@ -152,13 +171,18 @@ def service(token_path: Path = TOKEN, secrets_path: Path = SECRETS):
     return build("youtube", "v3", credentials=creds, cache_discovery=False)
 
 
-def whoami(yt) -> str:
-    """토큰이 물고 있는 채널 이름."""
+def channel_identity(yt) -> tuple[str, str]:
+    """채널명 검사와 재개 기록에 사용할 실제 소유 채널 ID."""
     r = yt.channels().list(part="snippet", mine=True).execute()
     items = r.get("items") or []
-    if not items:
-        sys.exit("[에러] 이 계정에 유튜브 채널이 없습니다. 채널을 먼저 만드세요.")
-    return items[0]["snippet"]["title"]
+    if len(items) != 1 or not items[0].get("id"):
+        sys.exit("[에러] 이 토큰의 단일 유튜브 채널 ID를 확인하지 못했습니다.")
+    return items[0]["id"], items[0]["snippet"]["title"]
+
+
+def whoami(yt) -> str:
+    """토큰이 물고 있는 채널 이름."""
+    return channel_identity(yt)[1]
 
 
 def find_video(ep: Path) -> Path | None:
@@ -265,7 +289,13 @@ def find_playlist(yt, name: str) -> str | None:
 def add_to_playlist(yt, vid: str, name: str) -> None:
     pid = find_playlist(yt, name)
     if not pid:
-        print(f"  재생목록 : ★ '{name}' 을 못 찾았습니다. 스튜디오에서 직접 추가하세요.")
+        raise UploadRecoveryError(f"재생목록 '{name}'을 못 찾았습니다. 기존 영상 ID로 다시 확인하세요.")
+    # 직전 insert 응답 유실 또는 완료 기록 직전 중단에도 중복 항목을 만들지 않는다.
+    existing = yt.playlistItems().list(
+        part="id", playlistId=pid, videoId=vid, maxResults=1,
+    ).execute().get("items") or []
+    if existing:
+        print(f"  재생목록 : '{name}' 에 이미 있음")
         return
     yt.playlistItems().insert(part="snippet", body={"snippet": {
         "playlistId": pid,
@@ -326,15 +356,118 @@ def set_and_verify_thumbnail(yt, vid: str, thumb: Path) -> dict:
     }
 
 
-def _write_upload_checkpoint(path: Path | None, **fields) -> None:
-    """영상 생성 후 후속 단계가 끊겨도 같은 영상 ID로 복구할 수 있게 남긴다."""
+def _write_upload_checkpoint(path: Path | None, *, exclusive: bool = False, **fields) -> None:
+    """첫 생성은 독점 생성하고, 후속 기록은 원자 교체해 복구 증거를 보존한다."""
     if path is None:
         return
     payload = {
-        "updated_at": datetime.now(KST).isoformat(timespec="seconds"),
         **fields,
+        "updated_at": datetime.now(KST).isoformat(timespec="seconds"),
     }
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    text = json.dumps(payload, ensure_ascii=False, indent=2)
+    if exclusive:
+        # 같은 회차를 동시에 실행해도 새 videos.insert는 한 실행만 진입한다.
+        with path.open("x", encoding="utf-8") as handle:
+            handle.write(text)
+            handle.flush()
+            os.fsync(handle.fileno())
+        return
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", dir=path.parent,
+            prefix=path.name + ".", suffix=".tmp", delete=False,
+        ) as handle:
+            temporary = Path(handle.name)
+            handle.write(text)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+    finally:
+        if temporary is not None and temporary.exists():
+            temporary.unlink()
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def upload_identity(video: Path, body: dict, channel_id: str) -> dict:
+    """파일 경로가 바뀌어도 실제 바이트·요청 메타·소유 채널이 같아야 재개한다."""
+    if not channel_id:
+        raise UploadRecoveryError("업로드 대상 채널 ID가 없습니다.")
+    encoded = json.dumps(body, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return {
+        "video_sha256": _sha256(video),
+        "video_size": video.stat().st_size,
+        "metadata_sha256": hashlib.sha256(encoded.encode("utf-8")).hexdigest(),
+        "channel_id": channel_id,
+    }
+
+
+def read_upload_checkpoint(path: Path) -> dict | None:
+    """불완전·구형 기록도 신규 업로드 허가로 해석하지 않는다."""
+    if not path.exists():
+        if (path.parent / "07.업로드결과.json").exists():
+            raise UploadRecoveryError("기존 업로드 결과는 있지만 체크포인트가 없습니다. 기존 영상부터 확인하세요.")
+        return None
+    try:
+        checkpoint = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        raise UploadRecoveryError("체크포인트를 읽지 못했습니다. 기존 업로드 결과 확인 전 새 업로드 금지.") from exc
+    if not isinstance(checkpoint, dict) or checkpoint.get("version") != 2:
+        raise UploadRecoveryError("구형·잘못된 체크포인트입니다. 기존 영상 ID와 파일·메타·채널 증거를 먼저 대조하세요.")
+    if (checkpoint.get("status") not in UPLOADED_STATES
+            or not isinstance(checkpoint.get("video_id"), str) or not checkpoint["video_id"].strip()):
+        raise UploadRecoveryError("이전 업로드 결과가 불명확합니다. YouTube Studio에서 기존 영상 확인 전 새 업로드 금지.")
+    identity = checkpoint.get("identity")
+    if (not isinstance(identity, dict)
+            or not all(identity.get(key) for key in ("video_sha256", "metadata_sha256", "channel_id"))
+            or not isinstance(identity.get("video_size"), int)):
+        raise UploadRecoveryError("체크포인트에 파일·메타·채널 식별 증거가 없습니다. 새 업로드 금지.")
+    if (checkpoint["status"] in {"THUMBNAIL_APPLIED_VERIFIED", "PACKAGING_COMPLETE"}
+            and checkpoint.get("thumbnail_sha256")):
+        result = checkpoint.get("thumbnail_result")
+        if (not isinstance(result, dict) or result.get("applied") is not True
+                or result.get("verified") is not True or not result.get("remote_urls")):
+            raise UploadRecoveryError("체크포인트의 썸네일 완료 증거가 불완전합니다. 기존 영상부터 확인하세요.")
+    return checkpoint
+
+
+def verify_existing_video(yt, checkpoint: dict, identity: dict, body: dict) -> dict:
+    if checkpoint["identity"] != identity:
+        raise UploadRecoveryError("체크포인트의 영상 파일·메타데이터·채널이 현재 요청과 다릅니다. 새 업로드 금지.")
+    vid = checkpoint["video_id"]
+    items = yt.videos().list(
+        part="snippet,status,processingDetails", id=vid,
+    ).execute().get("items") or []
+    if len(items) != 1 or items[0].get("id") != vid:
+        raise UploadRecoveryError("체크포인트의 기존 영상을 조회하지 못했습니다. 새 업로드 금지.")
+    remote = items[0]
+    snippet = remote.get("snippet") or {}
+    if snippet.get("channelId") != identity["channel_id"]:
+        raise UploadRecoveryError("기존 영상의 소유 채널 ID가 다릅니다. 새 업로드 금지.")
+    for key, expected in body["snippet"].items():
+        actual = snippet.get(key, [] if key == "tags" else None)
+        if key == "tags":
+            actual, expected = sorted(actual), sorted(expected)
+        if actual != expected:
+            raise UploadRecoveryError(f"기존 영상의 원격 메타데이터 불일치: {key}. 수동 확인이 필요합니다.")
+    status = remote.get("status") or {}
+    processing = remote.get("processingDetails", {}).get("processingStatus")
+    if (status.get("uploadStatus") not in {"uploaded", "processed"}
+            or processing in {"failed", "terminated"}):
+        raise UploadRecoveryError("기존 영상의 업로드·처리 상태를 확인하지 못했습니다. 새 업로드 금지.")
+    for key in ("selfDeclaredMadeForKids", "containsSyntheticMedia"):
+        if status.get(key) != body["status"][key]:
+            raise UploadRecoveryError(f"기존 영상의 원격 설정 불일치: {key}. 수동 확인이 필요합니다.")
+    # 예약/공개 상태는 별도 상태 변경 도구가 바꿀 수 있다. 재개가 이를 덮어쓰지 않는다.
+    print(f"  기존 영상 : {vid} / 공개 {status.get('privacyStatus')} / 처리 {processing}")
+    return remote
 
 
 def upload(
@@ -343,53 +476,76 @@ def upload(
     body: dict,
     thumb: Path | None,
     checkpoint_path: Path | None = None,
+    *,
+    channel_id: str | None = None,
 ) -> tuple[str, dict | None]:
-    from googleapiclient.errors import HttpError
-    from googleapiclient.http import MediaFileUpload
+    checkpoint_path = checkpoint_path or video.parent / "youtube.upload.checkpoint.json"
+    checkpoint = read_upload_checkpoint(checkpoint_path)
+    owner = channel_id or channel_identity(yt)[0]
+    identity = upload_identity(video, body, owner)
+    thumb_hash = _sha256(thumb) if thumb else None
+    if checkpoint is not None:
+        remote = verify_existing_video(yt, checkpoint, identity, body)
+        if checkpoint.get("thumbnail_sha256") != thumb_hash:
+            raise UploadRecoveryError("체크포인트 이후 썸네일이 달라졌습니다. 기존 영상용 썸네일 변경 도구를 사용하세요.")
+        vid = checkpoint["video_id"]
+        thumbnail_result = checkpoint.get("thumbnail_result")
+        if thumb and isinstance(thumbnail_result, dict) and thumbnail_result.get("verified"):
+            if not remote["snippet"].get("thumbnails"):
+                raise UploadRecoveryError("기존 영상의 원격 썸네일을 조회하지 못했습니다.")
+            return vid, thumbnail_result
+    else:
+        from googleapiclient.errors import HttpError
+        from googleapiclient.http import MediaFileUpload
 
-    media = MediaFileUpload(str(video), chunksize=8 * 1024 * 1024,
-                            resumable=True, mimetype="video/mp4")
-    req = yt.videos().insert(part="snippet,status", body=body, media_body=media)
-
-    print("\n  업로드 중...")
-    resp, last = None, -1
-    while resp is None:
-        try:
-            status, resp = req.next_chunk()
-        except HttpError as exc:
-            # 5xx 는 재개 가능. 같은 req 로 이어서 올라간다.
-            if exc.resp.status in (500, 502, 503, 504):
-                print(f"    일시 오류 {exc.resp.status} - 재시도")
+        media = MediaFileUpload(str(video), chunksize=8 * 1024 * 1024,
+                                resumable=True, mimetype="video/mp4")
+        checkpoint = {
+            "version": 2, "status": "UPLOAD_OUTCOME_UNKNOWN", "identity": identity,
+            "video_id": None, "video": str(video),
+            "thumbnail": str(thumb) if thumb else None, "thumbnail_sha256": thumb_hash,
+        }
+        # 요청 전 의도를 영속화한다. 응답 유실/강제 종료 뒤에도 신규 insert를 막는다.
+        _write_upload_checkpoint(checkpoint_path, exclusive=True, **checkpoint)
+        req = yt.videos().insert(part="snippet,status", body=body, media_body=media)
+        print("\n  업로드 중...")
+        resp, last, errors = None, -1, 0
+        while resp is None:
+            try:
+                status, resp = req.next_chunk(num_retries=0)
+            except HttpError as exc:
+                errors += 1
+                checkpoint.update(retry_errors=errors, last_http_status=exc.resp.status)
+                _write_upload_checkpoint(checkpoint_path, **checkpoint)
+                if exc.resp.status not in (500, 502, 503, 504):
+                    raise
+                if errors >= UPLOAD_MAX_ATTEMPTS:
+                    raise UploadRecoveryError(
+                        f"서버 오류 {UPLOAD_MAX_ATTEMPTS}회로 재시도를 중단했습니다. "
+                        "체크포인트를 보존했습니다. 기존 업로드 결과 확인 전 새 업로드 금지."
+                    ) from exc
+                delay = min(UPLOAD_BACKOFF_SECONDS * 2 ** (errors - 1), UPLOAD_BACKOFF_MAX_SECONDS)
+                print(f"    일시 오류 {exc.resp.status} - {delay}초 후 같은 요청 재시도 ({errors}/{UPLOAD_MAX_ATTEMPTS - 1})")
+                time.sleep(delay)
                 continue
-            raise
-        if status:
-            pct = int(status.progress() * 100)
-            if pct >= last + 10:
-                print(f"    {pct:3d}%")
-                last = pct
+            if status:
+                pct = int(status.progress() * 100)
+                if pct >= last + 10:
+                    print(f"    {pct:3d}%")
+                    last = pct
+        if not isinstance(resp, dict) or not isinstance(resp.get("id"), str) or not resp["id"].strip():
+            raise UploadRecoveryError("업로드 응답에 영상 ID가 없습니다. 기존 업로드 결과 확인 전 새 업로드 금지.")
+        vid = resp["id"]
+        checkpoint.update(status="VIDEO_UPLOADED_THUMBNAIL_PENDING", video_id=vid)
+        _write_upload_checkpoint(checkpoint_path, **checkpoint)
+        print(f"    100%\n\n  영상 ID : {vid}")
+        print(f"  주소     : https://youtu.be/{vid}")
+        thumbnail_result = None
 
-    vid = resp["id"]
-    print(f"    100%\n\n  영상 ID : {vid}")
-    print(f"  주소     : https://youtu.be/{vid}")
-    _write_upload_checkpoint(
-        checkpoint_path,
-        status="VIDEO_UPLOADED_THUMBNAIL_PENDING",
-        video_id=vid,
-        video=str(video),
-        thumbnail=str(thumb) if thumb else None,
-    )
-
-    thumbnail_result = None
-    if thumb and thumb.exists():
+    if thumb:
         thumbnail_result = set_and_verify_thumbnail(yt, vid, thumb)
-        _write_upload_checkpoint(
-            checkpoint_path,
-            status="THUMBNAIL_APPLIED_VERIFIED",
-            video_id=vid,
-            video=str(video),
-            thumbnail=str(thumb),
-            thumbnail_result=thumbnail_result,
-        )
+        checkpoint.update(status="THUMBNAIL_APPLIED_VERIFIED", thumbnail_result=thumbnail_result)
+        _write_upload_checkpoint(checkpoint_path, **checkpoint)
     return vid, thumbnail_result
 
 
@@ -483,6 +639,14 @@ def main() -> int:
     else:
         final_lock = validate_capcut_lock(ep, video)
         bad.extend(f"CapCut 마감: {failure}" for failure in final_lock.failures)
+    checkpoint = ep / "youtube.upload.checkpoint.json"
+    try:
+        previous = read_upload_checkpoint(checkpoint)
+        if (previous and previous["status"] == "PACKAGING_COMPLETE"
+                and previous.get("playlist", "") != playlist):
+            bad.append("완료한 체크포인트와 재생목록 요청이 다릅니다. 기존 영상의 재생목록을 직접 확인하세요.")
+    except UploadRecoveryError as exc:
+        bad.append(str(exc))
     if bad:
         print("\n  ★ 게이트 위반")
         for b in bad:
@@ -500,7 +664,7 @@ def main() -> int:
     yt = service(args.token, args.client_secret)
 
     # ★ 계정이 여러 개면 엉뚱한 채널에 올라가는 게 최악이다. 올리기 직전에 확인한다.
-    title = whoami(yt)
+    owner, title = channel_identity(yt)
     want = CFG.get("업로드.채널명", "") or CFG.get("채널.이름", "")
     print(f"\n  대상 채널 : {title}")
     if want and title.strip() != want.strip():
@@ -508,12 +672,20 @@ def main() -> int:
         print(f"     token.json 을 지우고 --auth 를 다시 하세요:\n       {args.token}\n")
         return 1
 
-    checkpoint = ep / "youtube.upload.checkpoint.json"
-    vid, thumbnail_result = upload(
-        yt, video, build_body(m, privacy, publish_at), thumb, checkpoint,
-    )
-    if playlist:
-        add_to_playlist(yt, vid, playlist)
+    try:
+        vid, thumbnail_result = upload(
+            yt, video, build_body(m, privacy, publish_at), thumb, checkpoint,
+            channel_id=owner,
+        )
+        if previous and previous["status"] == "PACKAGING_COMPLETE":
+            print("\n  기존 업로드 완료 기록과 원격 영상을 확인했습니다. 새 업로드 없음.")
+            print(f"  스튜디오 : https://studio.youtube.com/video/{vid}/edit\n")
+            return 0
+        if playlist:
+            add_to_playlist(yt, vid, playlist)
+    except UploadRecoveryError as exc:
+        print(f"\n  ★ 업로드 중단: {exc}\n")
+        return 1
 
     (ep / "07.업로드결과.json").write_text(json.dumps(
         {"video_id": vid, "url": f"https://youtu.be/{vid}",
@@ -524,16 +696,12 @@ def main() -> int:
          "올린시각": datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"),
          "남은일": ["첫 댓글 고정"]},
         ensure_ascii=False, indent=1), encoding="utf-8")
-    _write_upload_checkpoint(
-        checkpoint,
-        status="PACKAGING_COMPLETE",
-        video_id=vid,
-        video=str(video),
-        thumbnail=str(thumb) if thumb else None,
-        thumbnail_result=thumbnail_result,
-        playlist=playlist,
-        publish_at=publish_at,
+    completed = read_upload_checkpoint(checkpoint)
+    completed.update(
+        status="PACKAGING_COMPLETE", thumbnail_result=thumbnail_result,
+        playlist=playlist, publish_at=publish_at,
     )
+    _write_upload_checkpoint(checkpoint, **completed)
 
     print("\n  남은 일 : 첫 댓글 고정 (07-2)")
     print(f"  스튜디오 : https://studio.youtube.com/video/{vid}/edit\n")

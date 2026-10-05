@@ -94,28 +94,40 @@ def snap(us: int) -> int:
     return int(round(us / FRAME)) * FRAME
 
 
-def probe(path: Path) -> float:
+FFPROBE_TIMEOUT_SECONDS = 30
+
+
+def probe_video_metadata(path: Path) -> dict:
+    """Read duration and audio presence together; an unreadable source is fatal."""
     try:
         out = subprocess.run(
-            ["ffprobe", "-v", "error", "-show_entries", "format=duration",
-             "-of", "default=noprint_wrappers=1:nokey=1", str(path)],
-            capture_output=True, text=True, check=True)
-        return float(out.stdout.strip())
-    except Exception:
-        return 0.0
-
-
-def has_audio_stream(path: Path) -> bool:
-    """영상에 Omni/Veo가 만든 원본 효과음 스트림이 있는지 확인한다."""
-    try:
-        result = subprocess.run(
-            ["ffprobe", "-v", "error", "-select_streams", "a:0",
-             "-show_entries", "stream=index", "-of", "csv=p=0", str(path)],
-            capture_output=True, text=True, check=True,
+            ["ffprobe", "-v", "error", "-show_entries",
+             "format=duration:stream=codec_type", "-of", "json", str(path)],
+            capture_output=True, text=True, encoding="utf-8", errors="replace",
+            check=True, timeout=FFPROBE_TIMEOUT_SECONDS,
         )
-        return bool(result.stdout.strip())
-    except Exception:
-        return False
+    except subprocess.TimeoutExpired as exc:
+        raise ValueError(f"ffprobe 시간 초과 ({FFPROBE_TIMEOUT_SECONDS}초): {path}") from exc
+    except subprocess.CalledProcessError as exc:
+        detail = str(exc.stderr or "오류 상세 없음").strip()[:500]
+        raise ValueError(f"ffprobe 실패 (exit {exc.returncode}): {path}: {detail}") from exc
+    except OSError as exc:
+        raise ValueError(f"ffprobe 실행 불가: {path}: {exc}") from exc
+    try:
+        data = json.loads(out.stdout)
+        streams = data["streams"]
+        duration = float(data["format"]["duration"])
+        if (not isinstance(streams, list) or not streams
+                or any(not isinstance(s, dict) or not isinstance(s.get("codec_type"), str)
+                       for s in streams)
+                or not any(s["codec_type"] == "video" for s in streams)):
+            raise ValueError("유효한 영상 스트림 없음")
+        if not math.isfinite(duration) or duration <= 0:
+            raise ValueError("영상 길이는 양의 유한값이어야 함")
+    except (ValueError, TypeError, KeyError) as exc:
+        raise ValueError(f"ffprobe 비정상 메타데이터: {path}: {exc}") from exc
+    return {"duration": duration,
+            "has_audio": any(s["codec_type"] == "audio" for s in streams)}
 
 
 def select_visual_sources(episode: Path, visual_plan: list[dict]) -> dict[int, dict]:
@@ -483,6 +495,8 @@ def main() -> int:
     timeline: list[dict] = []
     media_registry: list[tuple[Path, str, int]] = []   # (경로, 종류, 길이us)
     used_media: list[Path] = []
+    # Invocation-local metadata only; all source hash/QA checks remain mandatory.
+    video_metadata: dict[Path, dict] = {}
     for visual in visual_plan:
         n = visual["visual_scene"]
         audio_scene = visual["audio_scene"]
@@ -493,8 +507,10 @@ def main() -> int:
         selection = selected_sources[n]
         media = selection["path"]
         is_img = selection["kind"] == "photo"
-        native_audio = False if is_img else has_audio_stream(media)
-        src = probe(media) if not is_img else visual_seconds
+        if not is_img and media not in video_metadata:
+            video_metadata[media] = probe_video_metadata(media)
+        native_audio = False if is_img else video_metadata[media]["has_audio"]
+        src = visual_seconds if is_img else video_metadata[media]["duration"]
         source_range = (None if is_img else selected_source_range(selection, src))
         speed = source_range["duration"] / dur if source_range else 1.0
         if is_img and required_for(ep):

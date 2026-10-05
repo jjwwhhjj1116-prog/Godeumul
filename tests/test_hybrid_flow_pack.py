@@ -15,6 +15,11 @@ from build_hybrid_flow_pack import build_pack, verify_pack  # noqa: E402
 class HybridFlowPackTests(unittest.TestCase):
     @staticmethod
     def write_inputs(episode: Path, scenes: list[dict], routes: dict[str, dict]) -> None:
+        # These fixtures exercise maintenance of an already-published legacy
+        # hybrid episode. New episodes retain the stricter all-I2V style gate.
+        (episode / "07.업로드결과.json").write_text(
+            json.dumps({"video_id": "legacy-test-only"}), encoding="utf-8"
+        )
         (episode / "audio").mkdir()
         (episode / "references").mkdir()
         (episode / "02a.장면구분.json").write_text(
@@ -107,6 +112,16 @@ class HybridFlowPackTests(unittest.TestCase):
             episode = Path(directory)
             self.write_inputs(episode, scenes, routes)
             with self.assertRaisesRegex(ValueError, "식별 유물"):
+                build_pack(episode)
+
+    def test_new_episode_does_not_bypass_current_style_gate(self) -> None:
+        scenes = [{"n": 1, "ct": "DISCOVERY_ACTION", "generation_mode": "T2V_CONTEXT", "artifact_visibility": "NONE", "vid": "T2V. Do not show the named hero artifact in identifiable form."}]
+        routes = {"1": {"generation_mode": "T2V_CONTEXT", "artifact_visibility": "NONE", "artifact_reference_ids": [], "routing_reason": "과거 모드 테스트가 신규 본편 검문을 우회하지 않는지 검사"}}
+        with tempfile.TemporaryDirectory() as directory:
+            episode = Path(directory)
+            self.write_inputs(episode, scenes, routes)
+            (episode / "07.업로드결과.json").unlink()
+            with self.assertRaisesRegex(ValueError, "신규 본편 I2V/디오라마 v2 게이트 실패"):
                 build_pack(episode)
 
 
